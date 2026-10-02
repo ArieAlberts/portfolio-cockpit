@@ -1,23 +1,42 @@
 # Portfolio Cockpit
 
-A repository-ready foundation for a portfolio monitoring system that keeps four concepts strictly separated:
+A portfolio-monitoring and research system that keeps four concepts strictly separated:
 
 1. **Fundamental Quality (0–100)** — absolute/peer-relative business quality.
 2. **Quality Drift (baseline 50)** — deterioration or improvement versus the company's own starting snapshot.
 3. **Valuation (0–100)** — current market valuation, independent of business quality.
 4. **Data Confidence (0–100)** — reliability, completeness and freshness of the underlying data.
 
-The project intentionally does **not** implement live trading yet. It reserves interfaces for Interactive Brokers, market data, trading signals, risk management and order routing so those can be added after the fundamental model has been validated.
+## Permanent execution boundary
+
+**This repository is decision-support only. It must never place, route, submit, modify or cancel live brokerage orders.**
+
+No data selected, synthesized, scored or inferred by this repository may directly trigger execution in an Interactive Brokers account or any other broker.
+
+The repository may later:
+- read broker positions and account data,
+- calculate portfolio exposures,
+- generate research signals,
+- simulate trades,
+- backtest strategies,
+- produce paper-trading instructions,
+- produce a proposed order ticket for human review.
+
+The repository must never:
+- call a live-order endpoint,
+- submit or cancel an order,
+- switch itself from paper to live,
+- infer approval from a score or signal,
+- execute because a threshold was crossed.
+
+Any real trade must be initiated separately by a human outside this repository.
 
 ## Phase 1 scope
 
-Phase 1 validates the model on three structurally different companies:
-
+Phase 1 validates the model on:
 - WKL — general operating company
 - ASR — insurer
 - OKLO — pre-revenue/development company
-
-Only after these profiles behave correctly should the model be rolled out portfolio-wide.
 
 ## Key rules
 
@@ -26,50 +45,11 @@ Only after these profiles behave correctly should the model be rolled out portfo
 - Fundamental Quality uses sector/company-type appropriate metrics.
 - Valuation is separate from quality.
 - Missing/stale/conflicting data lowers Data Confidence.
-- No automatic order placement in Phase 1.
 - Historical snapshots are immutable.
 - Every calculated value must be traceable to source, period and formula.
+- **Live brokerage execution is permanently out of scope.**
 
-## Repository layout
-
-```text
-portfolio-cockpit/
-├─ config/
-│  ├─ company_types.yaml
-│  └─ scoring.yaml
-├─ data/
-│  └─ examples/
-│     └─ wkl_baseline.json
-├─ docs/
-│  ├─ ARCHITECTURE.md
-│  ├─ DATA_MODEL.md
-│  ├─ IMPLEMENTATION_PROMPT.md
-│  └─ ROADMAP.md
-├─ scripts/
-│  └─ demo.py
-├─ src/
-│  └─ portfolio_cockpit/
-│     ├─ adapters/
-│     ├─ domain/
-│     ├─ scoring/
-│     └─ future/
-├─ tests/
-├─ .env.example
-├─ .gitignore
-└─ pyproject.toml
-```
-
-## Local setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"
-pytest
-python scripts/demo.py
-```
-
-## Future IBKR architecture
+## Intended architecture
 
 ```text
 Fundamental data
@@ -78,13 +58,13 @@ Fundamental Engine
       ↓
 Portfolio Cockpit
       ↓
-Trading Signal Engine
+Trading Research / Signal Engine
       ↓
-Risk Engine
+Risk & Simulation Engine
       ↓
-Order Manager
+Human-reviewed proposed order ticket
       ↓
-IBKR Adapter
+STOP — no live broker execution in this repo
 ```
 
-The IBKR adapter is deliberately a stub in Phase 1.
+A future IBKR adapter may be read-only for positions/account/market data or paper-trading only.

@@ -2,36 +2,37 @@
 
 ## Design principle
 
-The system must not mix business quality, price, data reliability and portfolio risk.
+The system must not mix business quality, price, data reliability, portfolio risk or execution.
+
+## Permanent no-live-execution invariant
+
+This repository is an analytical and decision-support system.
+
+It may ingest, select, normalize, synthesize and score information, but **no result produced by those processes may directly or indirectly cause a live brokerage order to be placed, changed or cancelled**.
+
+The architecture must enforce a hard boundary:
 
 ```text
-                    ┌─────────────────────┐
-                    │ Fundamental Sources │
-                    └──────────┬──────────┘
-                               │
-                      provenance + snapshots
-                               │
-                 ┌─────────────▼─────────────┐
-                 │   Fundamental Engine      │
-                 │                           │
-                 │ Fundamental Quality       │
-                 │ Quality Drift             │
-                 │ Data Confidence           │
-                 └─────────────┬─────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │     Valuation Engine      │
-                 └─────────────┬─────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │    Portfolio Cockpit      │
-                 └─────────────┬─────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │ Future Trading Layer      │
-                 │ (not Phase 1)             │
-                 └───────────────────────────┘
+Research + portfolio data
+          ↓
+Fundamental Engine
+          ↓
+Valuation / Quality / Drift
+          ↓
+Portfolio Cockpit
+          ↓
+Trading Research
+          ↓
+Simulation / Paper Trading
+          ↓
+Proposed Order Ticket
+          ↓
+HUMAN REVIEW
+          ↓
+STOP IN THIS REPOSITORY
 ```
+
+A live broker execution service must not exist in this codebase.
 
 ## Hard boundaries
 
@@ -55,16 +56,21 @@ The system must not mix business quality, price, data reliability and portfolio 
 
 ### Portfolio Risk
 - Uses actual position weight and scenario shocks.
-- Example: 5% weight × -30% shock = -1.5 percentage-point portfolio impact.
+- Is analytical only.
 
-## Future interfaces
+## Broker integration boundary
 
-The codebase reserves interfaces for:
-
-- `IBKRPortfolioAdapter`
+Permitted future interfaces:
+- `IBKRReadOnlyPortfolioAdapter`
 - `MarketDataAdapter`
 - `TradingSignalEngine`
 - `RiskEngine`
-- `OrderManager`
+- `PaperTradingAdapter`
+- `ProposedOrderTicketBuilder`
 
-They must remain non-live during Phase 1.
+Forbidden:
+- live order placement
+- live order modification
+- live order cancellation
+- automatic live execution
+- automatic transition from paper to live

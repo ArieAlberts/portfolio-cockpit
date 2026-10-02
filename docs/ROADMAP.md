@@ -14,9 +14,8 @@ Deliver:
 - WKL / ASR / OKLO validation
 - portfolio shock calculation
 
-No live trading.
-
 ## Phase 2 — Portfolio integration
+
 Deliver:
 - current positions
 - target weights
@@ -24,11 +23,12 @@ Deliver:
 - cash exposure
 - portfolio stress scenarios
 - dry-run rebalance simulator
-- read-only IBKR position/account adapter
+- read-only IBKR account/position adapter
 
-Still no automated order placement.
+No order placement.
 
 ## Phase 3 — Trading research
+
 Deliver:
 - VWAP
 - standard-deviation bands
@@ -39,18 +39,19 @@ Deliver:
 - backtest engine
 - paper-trading engine
 
-## Phase 4 — IBKR execution
-Only after validated Phase 3 results.
+No live order placement.
+
+## Phase 4 — Human-reviewed trade preparation
 
 Deliver:
-- IB Gateway/TWS API adapter
-- order manager
-- idempotent order state
-- circuit breakers
-- daily loss limits
-- position limits
-- disconnect/reconnect handling
-- paper account first
-- explicit switch for live account
+- proposed order tickets
+- expected size, limit, stop and rationale
+- risk impact before/after proposed trade
+- explicit paper-trading support
+- read-only IBKR reconciliation after the user trades manually
 
-The Fundamental Engine must remain independent from execution.
+## Permanent rule
+
+There is no phase for automated live execution.
+
+The repository must never submit, modify or cancel a live brokerage order based on selected, synthesized, scored or inferred information.
