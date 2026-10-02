@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "target_ticker": "WKL",
+  "collected_at": "2026-10-02",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or trading execution.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "WKL",
+    "RELX.L",
+    "TRI.TO",
+    "VRSK",
+    "FDS",
+    "SPGI",
+    "MCO"
+  ],
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "prohibit_forced_margin_equivalence": true,
+    "min_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_STANDARDIZATION_REVIEW"
+  },
+  "companies": {
+    "WKL": {
+      "company": "Wolters Kluwer N.V.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Wolters Kluwer 2026 Half-Year Report",
+        "url": "https://www.wolterskluwer.com/en/news/wolters-kluwer-2026-half-year-report"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 14,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "diluted adjusted EPS growth in constant currencies",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 17.57336,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "adjusted free cash flow / revenue",
+          "calculation": "533 / 3033 * 100",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": 2,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": true
+        },
+        "share_count_change_pct": {
+          "value": -3.717949,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares, H1 YoY",
+          "calculation": "225.3 / 234.0 - 1",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": 91,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": "adjusted operating cash flow / adjusted operating profit",
+          "score_eligible": true
+        },
+        "reported_margin_pct": {
+          "value": 29.4,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit margin",
+          "score_eligible": true
+        }
+      }
+    },
+    "RELX.L": {
+      "company": "RELX plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "RELX 2026 First Half Results",
+        "url": "https://www.relx.com/media/press-releases/year-2026/first-half-2026"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 7,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "underlying revenue growth",
+          "score_eligible": true,
+          "notes": "Company-defined underlying growth; retained as organic-like rather than relabeled organic."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 11,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth at constant currency",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.3,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": true
+        },
+        "share_count_change_pct": {
+          "value": null,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "cash_conversion_pct": {
+          "value": 98,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": "adjusted cash flow conversion",
+          "score_eligible": true
+        },
+        "reported_margin_pct": {
+          "value": 35.5,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "group adjusted operating margin",
+          "score_eligible": true
+        }
+      }
+    },
+    "TRI.TO": {
+      "company": "Thomson Reuters Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Thomson Reuters Reports Second-Quarter 2026 Results",
+        "url": "https://ir.thomsonreuters.com/news-releases/news-release-details/thomson-reuters-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 8,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 11,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS H1 YoY, also 11% at constant currency",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 26.206385,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "1059 / 4041 * 100",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": 0.9,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / adjusted EBITDA",
+          "score_eligible": true
+        },
+        "share_count_change_pct": {
+          "value": null,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": null,
+          "score_eligible": false,
+          "notes": "Return of capital reduced shares, but no aligned H1 diluted weighted-average comparison stored yet."
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 40.2,
+          "comparison_class": "ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false,
+          "notes": "Not interchangeable with adjusted operating margin."
+        }
+      }
+    },
+    "VRSK": {
+      "company": "Verisk Analytics, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT_AND_SEC",
+        "title": "Verisk Q2 2026 Financial Results / Form 10-Q",
+        "url": "https://investor.verisk.com/financials/quarterly-results/default.aspx"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 5.698961,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenues H1 YoY",
+          "calculation": "1576.5 / 1491.5 - 1",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 5,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "diluted adjusted EPS H1 YoY",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 39.291334,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "624.3 / 1588.9 * 100",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "share_count_change_pct": {
+          "value": -5.406014,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "133.036554 / 140.639547 - 1",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 56.7,
+          "comparison_class": "ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false,
+          "notes": "Not interchangeable with adjusted operating margin."
+        }
+      }
+    },
+    "FDS": {
+      "company": "FactSet Research Systems Inc.",
+      "role": "PEER",
+      "period": "FY_2026",
+      "period_end": "2026-08-31",
+      "period_alignment": "NON_ALIGNED_LATEST_FY",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "FactSet Q4 and Fiscal 2026 Earnings Release",
+        "url": "https://investor.factset.com/static-files/ba920b54-c271-426a-84e9-fd1208cfee67"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 6.7,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth FY2026",
+          "score_eligible": false,
+          "notes": "Full-year period is not aligned with H1 reference period."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 6.1,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS FY YoY",
+          "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 28.570552,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue FY",
+          "calculation": "707.480 / 2476.256 * 100",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "share_count_change_pct": {
+          "value": null,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 34.5,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin FY2026",
+          "score_eligible": false
+        }
+      }
+    },
+    "SPGI": {
+      "company": "S&P Global Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "S&P Global Q2 2026 Earnings Release with Mobility separation pro forma",
+        "url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000040/spgi2q2026-earningsrelease.htm"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 10,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "pro forma organic constant-currency revenue growth H1",
+          "score_eligible": true,
+          "notes": "Post-Mobility-separation pro forma continuing business basis."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 19,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "pro forma non-GAAP adjusted diluted EPS H1 YoY",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "reported free cash flow exists but denominator would be pro forma revenue",
+          "score_eligible": false,
+          "notes": "Blocked: reported H1 FCF includes Mobility while pro forma H1 revenue excludes Mobility."
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "share_count_change_pct": {
+          "value": -3.356142,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "296.6 / 306.9 - 1",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 54,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "pro forma non-GAAP adjusted operating profit margin excluding OSTTRA",
+          "score_eligible": true,
+          "notes": "Pro forma post-separation basis; retained with explicit basis flag."
+        }
+      }
+    },
+    "MCO": {
+      "company": "Moody's Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Moody's Q2 2026 Earnings Release",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049104/a2q26earningsrelease.htm"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 11,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic constant-currency MCO revenue growth H1",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 21.95122,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS H1 YoY",
+          "calculation": "9.00 / 7.38 - 1",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 35.928705,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "1532 / 4264 * 100",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "share_count_change_pct": {
+          "value": -2.548476,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "175.9 / 180.5 - 1",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 54.2,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin H1",
+          "score_eligible": true
+        }
+      }
+    }
+  }
+}
