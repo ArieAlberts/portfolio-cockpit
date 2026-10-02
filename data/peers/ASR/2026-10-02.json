@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ASR",
+  "collected_at": "2026-10-02",
+  "purpose": "Standardized insurer peer financial observations for Fundamental Quality normalization. No valuation or live trading execution.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "ASR",
+    "NN.AS",
+    "AGS.BR",
+    "SAMPO.HE",
+    "AV.L",
+    "ZURN.SW"
+  ],
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "prohibit_cross_regime_solvency_equivalence": true,
+    "min_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_STANDARDIZATION_REVIEW"
+  },
+  "companies": {
+    "ASR": {
+      "company": "ASR Nederland N.V.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "a.s.r. presents strong results over the first half of 2026",
+        "url": "https://asrnl.com/news-and-press/press-releases/20260819-asr-presenteert-sterke-resultaten-over-eerste-helft-2026"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 222,
+          "comparison_class": "SOLVENCY_II_RATIO",
+          "source_definition": "Solvency II ratio",
+          "score_eligible": true
+        },
+        "operating_earnings_growth_pct": {
+          "value": 9.8,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "source_definition": "operating result growth",
+          "score_eligible": true
+        },
+        "operating_capital_generation_growth_pct": {
+          "value": 7.3,
+          "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
+          "source_definition": "organic capital creation growth",
+          "score_eligible": true
+        },
+        "combined_ratio_pct": {
+          "value": 91.6,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "source_definition": "Non-life combined ratio excluding Health",
+          "score_eligible": true,
+          "notes": "Target scope is ASR Non-life excluding Health."
+        },
+        "reported_roe_pct": {
+          "value": 15.4,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": "operating return on equity",
+          "score_eligible": false,
+          "notes": "Stored but blocked until ROE definitions are harmonized across insurers."
+        },
+        "dividend_growth_pct": {
+          "value": 9.4,
+          "comparison_class": "INTERIM_DIVIDEND_GROWTH",
+          "source_definition": "interim dividend per share growth",
+          "score_eligible": false
+        },
+        "share_count_change_pct": {
+          "value": -1.7,
+          "comparison_class": "WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+          "source_definition": "weighted average issued and outstanding shares H1 YoY",
+          "score_eligible": false
+        }
+      }
+    },
+    "NN.AS": {
+      "company": "NN Group N.V.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Continued strong commercial performance in the first half of 2026",
+        "url": "https://www.nn-group.com/news/continued-strong-commercial-performance-in-the-first-half-of-2026-resulting-in-5-growth-in-operating-capital-generation/"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 224,
+          "comparison_class": "SOLVENCY_II_RATIO",
+          "source_definition": "NN Group Solvency II ratio",
+          "score_eligible": true
+        },
+        "operating_earnings_growth_pct": {
+          "value": 4.435204,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "source_definition": "operating result growth",
+          "calculation": "1507 / 1443 - 1",
+          "score_eligible": true
+        },
+        "operating_capital_generation_growth_pct": {
+          "value": 5,
+          "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
+          "source_definition": "operating capital generation growth",
+          "score_eligible": true
+        },
+        "combined_ratio_pct": {
+          "value": 90.5,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "source_definition": "Netherlands Non-life combined ratio",
+          "score_eligible": true,
+          "notes": "Scope is Netherlands Non-life, not total group."
+        },
+        "reported_roe_pct": {
+          "value": null,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "dividend_growth_pct": {
+          "value": 12,
+          "comparison_class": "INTERIM_DIVIDEND_GROWTH",
+          "source_definition": "interim dividend growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "AGS.BR": {
+      "company": "ageas SA/NV",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Ageas reports first half-year results 2026",
+        "url": "https://www.ageas.com/en/newsroom/ageas-reports-first-half-year-results-2026-3351770"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 195,
+          "comparison_class": "SOLVENCY_II_RATIO",
+          "source_definition": "Solvency II Pillar II ratio",
+          "score_eligible": true
+        },
+        "operating_earnings_growth_pct": {
+          "value": 6,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "source_definition": "net operating result growth",
+          "score_eligible": true
+        },
+        "operating_capital_generation_growth_pct": {
+          "value": -3.887884,
+          "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
+          "source_definition": "operational capital generation H1 YoY",
+          "calculation": "1063 / 1106 - 1",
+          "score_eligible": true
+        },
+        "combined_ratio_pct": {
+          "value": 95.2,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "source_definition": "Non-Life combined ratio",
+          "score_eligible": true
+        },
+        "reported_roe_pct": {
+          "value": 15.8,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": "return on shareholders' equity",
+          "score_eligible": false,
+          "notes": "Different definition from ASR operating ROE."
+        },
+        "dividend_growth_pct": {
+          "value": null,
+          "comparison_class": "INTERIM_DIVIDEND_GROWTH",
+          "source_definition": "interim dividend EUR 1.50; aligned prior interim not stored",
+          "score_eligible": false
+        }
+      }
+    },
+    "SAMPO.HE": {
+      "company": "Sampo plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_EXCHANGE_RELEASE",
+        "title": "Sampo Group's results for January-June 2026",
+        "url": "https://view.news.eu.nasdaq.com/view?id=b35f039030605001dab0aec9fa93fc60a&lang=en&src=listed"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 174,
+          "comparison_class": "SOLVENCY_II_RATIO",
+          "source_definition": "Solvency II ratio including distribution accrual",
+          "score_eligible": true
+        },
+        "operating_earnings_growth_pct": {
+          "value": 9.924812,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "source_definition": "operating result growth",
+          "calculation": "731 / 665 - 1",
+          "score_eligible": true
+        },
+        "operating_capital_generation_growth_pct": {
+          "value": null,
+          "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "combined_ratio_pct": {
+          "value": 83.6,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "source_definition": "Group combined ratio",
+          "score_eligible": true
+        },
+        "reported_roe_pct": {
+          "value": null,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "operating_eps_growth_pct": {
+          "value": 12,
+          "comparison_class": "OPERATING_EPS_GROWTH",
+          "source_definition": "operating EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "AV.L": {
+      "company": "Aviva plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Half year 2026 results announcement",
+        "url": "https://www.aviva.com/newsroom/news-and-research-overview/news-releases/2026/08/half-year-2026-results-announcement/"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 176,
+          "comparison_class": "SOLVENCY_II_RATIO",
+          "source_definition": "Solvency II shareholder cover ratio",
+          "score_eligible": true
+        },
+        "operating_earnings_growth_pct": {
+          "value": 24,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "source_definition": "Group operating profit growth",
+          "score_eligible": true
+        },
+        "operating_capital_generation_growth_pct": {
+          "value": -4.806688,
+          "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
+          "source_definition": "Solvency II operating capital generation growth",
+          "calculation": "911 / 957 - 1",
+          "score_eligible": true
+        },
+        "combined_ratio_pct": {
+          "value": 93.3,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "source_definition": "Group undiscounted combined operating ratio",
+          "score_eligible": true
+        },
+        "reported_roe_pct": {
+          "value": 20.3,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": "IFRS return on equity",
+          "score_eligible": false,
+          "notes": "Different definition from ASR operating ROE."
+        },
+        "dividend_growth_pct": {
+          "value": 7,
+          "comparison_class": "INTERIM_DIVIDEND_GROWTH",
+          "source_definition": "interim dividend per share growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "ZURN.SW": {
+      "company": "Zurich Insurance Group Ltd",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Zurich accelerates growth in most profitable areas",
+        "url": "https://www.zurich.com/media/news-releases/2026/2026-0806-01"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 266,
+          "comparison_class": "SWISS_SOLVENCY_TEST_RATIO",
+          "source_definition": "Swiss Solvency Test ratio",
+          "score_eligible": false,
+          "notes": "Regulatory basis differs from Solvency II and is not normalized as equivalent."
+        },
+        "operating_earnings_growth_pct": {
+          "value": 13,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "source_definition": "business operating profit growth",
+          "score_eligible": true
+        },
+        "operating_capital_generation_growth_pct": {
+          "value": null,
+          "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "combined_ratio_pct": {
+          "value": 92.7,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "source_definition": "P&C combined ratio",
+          "score_eligible": true
+        },
+        "reported_roe_pct": {
+          "value": 27.1,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": "core return on equity",
+          "score_eligible": false,
+          "notes": "Core ROE definition differs from ASR operating ROE."
+        },
+        "core_eps_growth_pct": {
+          "value": 11.5,
+          "comparison_class": "CORE_EPS_GROWTH",
+          "source_definition": "core EPS growth",
+          "score_eligible": false
+        }
+      }
+    }
+  }
+}

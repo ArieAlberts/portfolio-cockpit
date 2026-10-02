@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "WKL": "data/peers/WKL/2026-10-02.json",
+    "ASR": "data/peers/ASR/2026-10-02.json"
+  },
+  "note": "Only listed datasets have completed a first standardized peer-financial pass. More portfolio companies will be added sequentially."
+}
