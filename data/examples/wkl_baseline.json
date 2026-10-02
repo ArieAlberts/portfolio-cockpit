@@ -1,0 +1,7 @@
+{
+  "ticker": "WKL",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_status": "TO_BE_POPULATED_FROM_VALIDATED_SOURCE",
+  "quality_drift_score": 50.0,
+  "note": "Do not invent historical values. Populate baseline only after validating the source date and metrics."
+}
