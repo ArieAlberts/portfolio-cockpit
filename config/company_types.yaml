@@ -1,0 +1,86 @@
+GENERAL_OPERATING_COMPANY:
+  description: Mature operating company with meaningful revenue, earnings and cash flow.
+  quality_components:
+    balance_sheet: 0.25
+    profitability_capital_efficiency: 0.25
+    cashflow_quality: 0.20
+    growth_stability: 0.15
+    value_per_share: 0.15
+  preferred_metrics:
+    - net_debt_to_ebitda
+    - interest_coverage
+    - roic
+    - operating_margin
+    - fcf_conversion
+    - organic_revenue_growth
+    - eps_growth
+    - fcf_per_share_growth
+    - share_count_change
+
+INSURER:
+  description: Insurance company; do not use industrial FCF/EV-EBITDA logic as primary quality measures.
+  quality_components:
+    capital_strength: 0.30
+    underwriting_quality: 0.25
+    profitability: 0.20
+    growth_stability: 0.10
+    value_per_share: 0.15
+  preferred_metrics:
+    - solvency_ratio
+    - combined_ratio
+    - roe
+    - book_value_per_share_growth
+    - earnings_per_share_growth
+    - premium_growth
+    - share_count_change
+
+CYCLICAL_MINING:
+  description: Commodity/cyclical producer.
+  quality_components:
+    balance_sheet: 0.25
+    cost_position: 0.25
+    normalized_cashflow: 0.20
+    execution: 0.15
+    value_per_share: 0.15
+  preferred_metrics:
+    - net_debt_to_ebitda
+    - unit_cost_position
+    - normalized_fcf
+    - production_growth
+    - project_execution
+    - fcf_per_share_growth
+    - share_count_change
+
+PRE_REVENUE_DEVELOPMENT:
+  description: Development/pre-revenue company where normal P/E and EV/EBITDA may be meaningless.
+  quality_components:
+    liquidity_runway: 0.30
+    financing_dilution: 0.25
+    regulatory_milestones: 0.20
+    project_execution: 0.15
+    commercial_validation: 0.10
+  preferred_metrics:
+    - cash_runway_months
+    - net_cash
+    - expected_financing_need
+    - dilution_rate
+    - regulatory_progress
+    - project_milestone_progress
+    - contracted_backlog
+
+FINANCIAL_SERVICES:
+  description: Non-insurance financial-services company.
+  quality_components:
+    balance_sheet: 0.25
+    profitability: 0.25
+    asset_quality: 0.20
+    growth_stability: 0.15
+    value_per_share: 0.15
+  preferred_metrics:
+    - capital_ratio
+    - roe
+    - roa
+    - credit_or_asset_quality
+    - book_value_per_share_growth
+    - earnings_per_share_growth
+    - share_count_change
