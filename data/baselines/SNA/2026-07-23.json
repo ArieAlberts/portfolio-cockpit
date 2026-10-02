@@ -1,0 +1,45 @@
+{
+  "baseline_version": 1,
+  "ticker": "SNA",
+  "company_name": "Snap-on Incorporated",
+  "portfolio_weight_pct": 5,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-23",
+  "reporting_period_end": "2026-Q2",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING_EXHIBIT",
+    "title": "Snap-on Announces Second Quarter 2026 Results",
+    "publication_date": "2026-07-23",
+    "url": "https://www.sec.gov/Archives/edgar/data/91440/000009144026000141/q22026pressreleaseforpress.htm"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "gross_margin_pct": 51.4,
+      "operating_earnings_before_financial_services_usd_m": 268.9,
+      "operating_margin_before_financial_services_pct": 21.8
+    },
+    "growth_stability": {
+      "net_sales_usd_m": 1235.1,
+      "net_sales_growth_pct": 4.7,
+      "organic_sales_growth_pct": 3
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 4.96,
+      "prior_year_diluted_eps_usd": 4.72
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "baseline_version": 1,
+  "ticker": "PLMR",
+  "company_name": "Palomar Holdings, Inc.",
+  "portfolio_weight_pct": 6,
+  "portfolio_role": "GROWTH",
+  "company_type": "INSURER",
+  "baseline_date": "2026-08-04",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING_EXHIBIT",
+    "title": "Palomar Holdings, Inc. Reports Second Quarter 2026 Results",
+    "publication_date": "2026-08-04",
+    "url": "https://www.sec.gov/Archives/edgar/data/1761312/000119312526332846/plmr-ex99_1.htm"
+  },
+  "metrics": {
+    "capital_strength": {
+      "total_investments_usd_m": 1678.252,
+      "cash_and_cash_equivalents_usd_m": 62.689,
+      "term_loan_usd_m": 295.773,
+      "stockholders_equity_usd_m": 980.942
+    },
+    "underwriting_quality": {
+      "loss_ratio_pct": 34.5,
+      "combined_ratio_pct": 83.3,
+      "adjusted_combined_ratio_pct": 76.7
+    },
+    "profitability": {
+      "net_income_usd_m": 52.6,
+      "adjusted_net_income_usd_m": 63.8,
+      "annualized_roe_pct": 21.7,
+      "annualized_adjusted_roe_pct": 26.3
+    },
+    "growth_stability": {
+      "gross_written_premiums_usd_m": 630.5,
+      "gross_written_premiums_growth_pct": 27
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 1.94,
+      "adjusted_diluted_eps_usd": 2.36,
+      "common_shares_outstanding_m": 26.187
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

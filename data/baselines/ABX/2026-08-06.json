@@ -1,0 +1,47 @@
+{
+  "baseline_version": 1,
+  "ticker": "ABX",
+  "company_name": "Abacus Global Management, Inc.",
+  "portfolio_weight_pct": 4,
+  "portfolio_role": "GROWTH",
+  "company_type": "FINANCIAL_SERVICES",
+  "baseline_date": "2026-08-06",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING",
+    "title": "Abacus Global Management Q2 2026 Form 10-Q and earnings release",
+    "publication_date": "2026-08-06",
+    "url": "https://www.sec.gov/Archives/edgar/data/1814287/000162828026055287/abx-20260630.htm"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_cash_equivalents_usd_m": 23.388,
+      "long_term_debt_usd_m": 275.834,
+      "related_party_long_term_debt_usd_m": 14.983,
+      "total_liabilities_usd_m": 428.053
+    },
+    "profitability": {
+      "adjusted_net_income_usd_m": 27.1,
+      "adjusted_ebitda_usd_m": 39.9
+    },
+    "growth_stability": {
+      "total_revenue_usd_m": 73
+    },
+    "value_per_share": {
+      "adjusted_eps_usd": 0.28
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

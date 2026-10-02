@@ -1,0 +1,55 @@
+{
+  "baseline_version": 1,
+  "ticker": "ADM.L",
+  "company_name": "Admiral Group plc",
+  "portfolio_weight_pct": 4,
+  "portfolio_role": "CORE",
+  "company_type": "INSURER",
+  "baseline_date": "2026-08-06",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "Admiral Group reports good H1 2026 results and continued growth",
+    "publication_date": "2026-08-06",
+    "url": "https://www.admiralgroup.co.uk/news-releases/news-release-details/admiral-group-reports-good-h1-2026-results-and-continued-growth"
+  },
+  "metrics": {
+    "capital_strength": {
+      "solvency_ratio_pct": 190,
+      "solvency_ratio_prior_pct": 194
+    },
+    "profitability": {
+      "profit_before_tax_gbp_m": 429.2,
+      "earnings_per_share_pence": 109,
+      "return_on_equity_pct": 45
+    },
+    "underwriting_quality": {
+      "uk_household_combined_ratio_pct": 78.2,
+      "european_insurance_combined_ratio_pct": 88.7
+    },
+    "growth_stability": {
+      "group_turnover_gbp_bn": 3.11,
+      "group_risks_m": 12.03,
+      "group_risks_growth_pct": 5
+    },
+    "value_per_share": {
+      "interim_dividend_per_share_pence": 70.5
+    },
+    "capital_allocation": {
+      "share_buyback_gbp_m": 45
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

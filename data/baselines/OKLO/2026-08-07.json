@@ -1,0 +1,49 @@
+{
+  "baseline_version": 1,
+  "ticker": "OKLO",
+  "company_name": "Oklo Inc.",
+  "portfolio_weight_pct": 2,
+  "portfolio_role": "ASYMMETRIC",
+  "company_type": "PRE_REVENUE_DEVELOPMENT",
+  "baseline_date": "2026-08-07",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING",
+    "title": "Oklo Q2 2026 Form 10-Q",
+    "publication_date": "2026-08-07",
+    "url": "https://www.sec.gov/Archives/edgar/data/1849056/000162828026054571/oklo-20260630.htm"
+  },
+  "metrics": {
+    "liquidity_runway": {
+      "cash_and_cash_equivalents_usd_m": 1644.704,
+      "marketable_debt_securities_usd_m": 1361.585,
+      "cash_and_marketable_securities_usd_m": 3006.289
+    },
+    "financing_dilution": {
+      "atm_shares_issued_h1_m": 10.712,
+      "common_shares_outstanding_m": 185.09,
+      "financing_cash_inflow_h1_usd_m": 1851.349
+    },
+    "project_execution": {
+      "quarter_revenue_usd_m": 1.21
+    },
+    "cash_burn": {
+      "half_year_operating_loss_usd_m": 124.166,
+      "half_year_net_loss_usd_m": 81.601,
+      "half_year_operating_cash_used_usd_m": 65.459
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

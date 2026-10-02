@@ -1,0 +1,51 @@
+{
+  "baseline_version": 1,
+  "ticker": "ERO",
+  "company_name": "Ero Copper Corp.",
+  "portfolio_weight_pct": 4,
+  "portfolio_role": "GROWTH",
+  "company_type": "CYCLICAL_MINING",
+  "baseline_date": "2026-08-05",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING_EXHIBIT",
+    "title": "Ero Copper Reports Second Quarter 2026 Operating and Financial Results",
+    "publication_date": "2026-08-05",
+    "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026053508/erocopper-pressreleasex202.htm"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_short_term_investments_usd_m": 101.7,
+      "total_debt_usd_m": 554.4,
+      "net_debt_usd_m": 452.7,
+      "available_liquidity_usd_m": 181.7
+    },
+    "cost_position": {
+      "copper_c1_cash_cost_usd_per_lb": 2.42
+    },
+    "normalized_cashflow": {
+      "quarter_operating_cash_flow_usd_m": 137.9,
+      "adjusted_ebitda_usd_m": 144
+    },
+    "execution": {
+      "quarter_copper_production_tonnes": 17315,
+      "quarter_gold_production_ounces": 20553
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 0.85
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

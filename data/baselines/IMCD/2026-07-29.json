@@ -1,0 +1,49 @@
+{
+  "baseline_version": 1,
+  "ticker": "IMCD",
+  "company_name": "IMCD N.V.",
+  "portfolio_weight_pct": 4,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-29",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "IMCD reports EBITA of EUR 285 million (+4%) in the first half of 2026",
+    "publication_date": "2026-07-29",
+    "url": "https://www.imcdgroup.com/investors/investor-news?filters=D9FCFC134FB2409082AE72D02691D099"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "operating_ebita_eur_m": 285,
+      "operating_ebita_constant_currency_growth_pct": 8
+    },
+    "cashflow_quality": {
+      "free_cash_flow_eur_m": 222,
+      "free_cash_flow_growth_pct": 29
+    },
+    "growth_stability": {
+      "revenue_eur_m": 2638,
+      "revenue_constant_currency_growth_pct": 11,
+      "gross_profit_eur_m": 658,
+      "gross_profit_constant_currency_growth_pct": 7
+    },
+    "value_per_share": {
+      "cash_eps_eur": 3.18,
+      "cash_eps_prior_eur": 2.94
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "baseline_version": 1,
+  "ticker": "DKS",
+  "company_name": "DICK'S Sporting Goods, Inc.",
+  "portfolio_weight_pct": 3,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-08-25",
+  "reporting_period_end": "2026-08-01",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "DICK'S Sporting Goods, Inc. Reports Second Quarter Results",
+    "publication_date": "2026-08-25",
+    "url": "https://investors.dicks.com/news/press-releases/news-details/2026/DICKS-Sporting-Goods-Inc--Reports-Second-Quarter-Results/default.aspx"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_cash_equivalents_usd_m": 914,
+      "inventory_usd_m": 5565
+    },
+    "profitability_capital_efficiency": {
+      "year_to_date_operating_margin_pct": 8.3
+    },
+    "growth_stability": {
+      "dicks_business_comparable_sales_growth_pct": 4.9,
+      "foot_locker_proforma_comparable_sales_growth_pct": -3.6
+    },
+    "value_per_share": {
+      "quarter_diluted_eps_usd": 3.5,
+      "quarter_non_gaap_diluted_eps_usd": 3.53,
+      "year_to_date_diluted_weighted_average_shares_m": 90,
+      "prior_year_diluted_weighted_average_shares_m": 81
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

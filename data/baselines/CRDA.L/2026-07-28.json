@@ -1,0 +1,53 @@
+{
+  "baseline_version": 1,
+  "ticker": "CRDA.L",
+  "company_name": "Croda International Plc",
+  "portfolio_weight_pct": 3,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-28",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "Half Year Results Announcement 2026",
+    "publication_date": "2026-07-28",
+    "url": "https://www.croda.com/en-gb/media-hub/news/general/2026-half-year-results"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "net_debt_gbp_m": 577.9
+    },
+    "profitability_capital_efficiency": {
+      "adjusted_ebitda_gbp_m": 207.9,
+      "adjusted_ebitda_margin_pct": 23.6,
+      "adjusted_operating_profit_gbp_m": 155.8,
+      "adjusted_operating_margin_pct": 17.7
+    },
+    "cashflow_quality": {
+      "free_cash_flow_gbp_m": 38.3,
+      "free_cash_flow_growth_pct": 36.8
+    },
+    "growth_stability": {
+      "sales_gbp_m": 880.5,
+      "organic_sales_growth_pct": 4.6
+    },
+    "value_per_share": {
+      "basic_eps_pence": 56.5,
+      "adjusted_eps_pence": 78.6,
+      "interim_dividend_per_share_pence": 48
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

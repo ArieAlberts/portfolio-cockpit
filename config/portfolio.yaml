@@ -1,0 +1,29 @@
+# Strategic target weights from the August 2026 portfolio plan.
+# CASH is tracked separately and does not receive a company baseline.
+
+positions:
+  ASR: {company: "ASR Nederland", weight_pct: 7, role: "CORE", company_type: "INSURER"}
+  ADM.L: {company: "Admiral Group", weight_pct: 4, role: "CORE", company_type: "INSURER"}
+  WKL: {company: "Wolters Kluwer", weight_pct: 5, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  CAP.PA: {company: "Capgemini", weight_pct: 5, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  IMCD: {company: "IMCD", weight_pct: 4, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  CRDA.L: {company: "Croda International", weight_pct: 3, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  ROR.L: {company: "Rotork", weight_pct: 4, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  EMN: {company: "Eastman Chemical", weight_pct: 3, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  WSM: {company: "Williams-Sonoma", weight_pct: 4, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  DKS: {company: "DICK'S Sporting Goods", weight_pct: 3, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  TXRH: {company: "Texas Roadhouse", weight_pct: 3, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  SNA: {company: "Snap-on", weight_pct: 5, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
+  MSM: {company: "MSC Industrial Direct", weight_pct: 0, role: "EXIT", company_type: "GENERAL_OPERATING_COMPANY"}
+  PLMR: {company: "Palomar Holdings", weight_pct: 6, role: "GROWTH", company_type: "INSURER"}
+  MOD: {company: "Modine Manufacturing", weight_pct: 7, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
+  FUL: {company: "H.B. Fuller", weight_pct: 5, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
+  POWL: {company: "Powell Industries", weight_pct: 5, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
+  ESI: {company: "Element Solutions", weight_pct: 4, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
+  ABX: {company: "Abacus Global Management", weight_pct: 4, role: "GROWTH", company_type: "FINANCIAL_SERVICES"}
+  ERO: {company: "Ero Copper", weight_pct: 4, role: "GROWTH", company_type: "CYCLICAL_MINING"}
+  TMDX: {company: "TransMedics", weight_pct: 3, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
+  LEU: {company: "Centrus Energy", weight_pct: 3, role: "ASYMMETRIC", company_type: "GENERAL_OPERATING_COMPANY"}
+  OKLO: {company: "Oklo", weight_pct: 2, role: "ASYMMETRIC", company_type: "PRE_REVENUE_DEVELOPMENT"}
+
+cash_weight_pct: 7

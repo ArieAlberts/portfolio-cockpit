@@ -1,0 +1,56 @@
+{
+  "baseline_version": 1,
+  "ticker": "MOD",
+  "company_name": "Modine Manufacturing Company",
+  "portfolio_weight_pct": 7,
+  "portfolio_role": "GROWTH",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-29",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "Modine Reports First Quarter Fiscal 2027 Results",
+    "publication_date": "2026-07-29",
+    "url": "https://investors.modine.com/news/news-details/2026/Modine-Reports-First-Quarter-Fiscal-2027-Results/default.aspx"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_cash_equivalents_usd_m": 95.3,
+      "total_debt_usd_m": 528.2,
+      "net_debt_usd_m": 432.9,
+      "leverage_ratio": 0.9
+    },
+    "profitability_capital_efficiency": {
+      "net_earnings_usd_m": 74.3,
+      "adjusted_ebitda_usd_m": 106.5,
+      "gross_margin_pct": 20.8
+    },
+    "cashflow_quality": {
+      "free_cash_flow_usd_m": -5,
+      "capex_usd_m": 46.4
+    },
+    "growth_stability": {
+      "net_sales_usd_m": 874.1,
+      "net_sales_growth_pct": 28,
+      "data_centers_revenue_growth_pct": 90,
+      "commercial_hvac_revenue_growth_pct": 22
+    },
+    "value_per_share": {
+      "eps_usd": 1.37,
+      "adjusted_eps_usd": 1.53
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

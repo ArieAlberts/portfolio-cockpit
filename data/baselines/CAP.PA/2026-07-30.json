@@ -1,0 +1,53 @@
+{
+  "baseline_version": 1,
+  "ticker": "CAP.PA",
+  "company_name": "Capgemini SE",
+  "portfolio_weight_pct": 5,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-30",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "H1 2026 results",
+    "publication_date": "2026-07-30",
+    "url": "https://investors.capgemini.com/en/publication/2026-h1-results/"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "net_debt_eur_m": 6454
+    },
+    "profitability_capital_efficiency": {
+      "operating_margin_eur_m": 1506,
+      "operating_margin_pct": 12.5,
+      "operating_profit_eur_m": 878
+    },
+    "cashflow_quality": {
+      "organic_free_cash_flow_eur_m": 37
+    },
+    "growth_stability": {
+      "revenue_eur_m": 12082,
+      "revenue_growth_pct": 8.8,
+      "constant_currency_growth_pct": 11.3,
+      "bookings_eur_m": 12602,
+      "book_to_bill": 1.04
+    },
+    "value_per_share": {
+      "basic_eps_eur": 2.96,
+      "normalized_eps_eur": 5.29
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

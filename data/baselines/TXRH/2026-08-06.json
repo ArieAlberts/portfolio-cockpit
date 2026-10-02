@@ -1,0 +1,51 @@
+{
+  "baseline_version": 1,
+  "ticker": "TXRH",
+  "company_name": "Texas Roadhouse, Inc.",
+  "portfolio_weight_pct": 3,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-08-06",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING_EXHIBIT",
+    "title": "Texas Roadhouse second quarter 2026 results",
+    "publication_date": "2026-08-06",
+    "url": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926091980/txrh-20260805xex99d1.htm"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_cash_equivalents_usd_m": 202.427,
+      "long_term_debt_usd_m": 50
+    },
+    "profitability_capital_efficiency": {
+      "quarter_operating_income_usd_m": 142.788
+    },
+    "cashflow_quality": {
+      "half_year_operating_cash_flow_usd_m": 439.227,
+      "half_year_capex_usd_m": 178.845
+    },
+    "growth_stability": {
+      "quarter_revenue_usd_m": 1679.976,
+      "quarter_revenue_growth_pct": 11.1,
+      "half_year_revenue_usd_m": 3313.142,
+      "half_year_revenue_growth_pct": 11.9
+    },
+    "value_per_share": {
+      "shares_outstanding_m": 65.586
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

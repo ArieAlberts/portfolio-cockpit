@@ -1,0 +1,52 @@
+{
+  "baseline_version": 1,
+  "ticker": "ASR",
+  "company_name": "ASR Nederland N.V.",
+  "portfolio_weight_pct": 7,
+  "portfolio_role": "CORE",
+  "company_type": "INSURER",
+  "baseline_date": "2026-08-19",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "a.s.r. presents strong results over the first half of 2026",
+    "publication_date": "2026-08-19",
+    "url": "https://asrnl.com/news-and-press/press-releases/20260819-asr-presenteert-sterke-resultaten-over-eerste-helft-2026"
+  },
+  "metrics": {
+    "capital_strength": {
+      "solvency_ii_ratio_pct": 222,
+      "solvency_ii_ratio_prior_year_end_pct": 218
+    },
+    "profitability": {
+      "operating_result_eur_m": 901,
+      "operating_result_growth_pct": 9.8,
+      "operating_roe_pct": 15.4,
+      "operating_roe_prior_pct": 14.2
+    },
+    "capital_generation": {
+      "organic_capital_creation_eur_m": 773,
+      "organic_capital_creation_growth_pct": 7.3
+    },
+    "value_per_share": {
+      "interim_dividend_per_share_eur": 1.39,
+      "interim_dividend_growth_pct": 9.4
+    },
+    "capital_allocation": {
+      "completed_share_buyback_eur_m": 175
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

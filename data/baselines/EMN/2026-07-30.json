@@ -1,0 +1,45 @@
+{
+  "baseline_version": 1,
+  "ticker": "EMN",
+  "company_name": "Eastman Chemical Company",
+  "portfolio_weight_pct": 3,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-30",
+  "reporting_period_end": "2026-Q2",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "Eastman Announces Second-Quarter 2026 Financial Results",
+    "publication_date": "2026-07-30",
+    "url": "https://www.eastman.com/en/media-center/news-stories/2026/eastman-announces-second-quarter-2026-financial-results"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "ebit_usd_m": 311,
+      "adjusted_ebit_usd_m": 320
+    },
+    "cashflow_quality": {
+      "operating_cash_flow_usd_m": 224
+    },
+    "growth_stability": {
+      "sales_revenue_usd_m": 2513
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 1.59,
+      "adjusted_diluted_eps_usd": 1.97
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}

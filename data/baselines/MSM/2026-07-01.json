@@ -1,0 +1,48 @@
+{
+  "baseline_version": 1,
+  "ticker": "MSM",
+  "company_name": "MSC Industrial Direct Co., Inc.",
+  "portfolio_weight_pct": 0,
+  "portfolio_role": "EXIT",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-07-01",
+  "reporting_period_end": "2026-05-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING_EXHIBIT",
+    "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Third Quarter Results",
+    "publication_date": "2026-07-01",
+    "url": "https://www.sec.gov/Archives/edgar/data/1003078/000100307826000078/pressreleaseq3fy2607012026.htm"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "operating_income_usd_m": 106.7,
+      "operating_margin_pct": 10.2,
+      "adjusted_operating_margin_pct": 10.6,
+      "gross_margin_pct": 41.1
+    },
+    "growth_stability": {
+      "net_sales_usd_m": 1047.1,
+      "net_sales_growth_pct": 7.8
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 1.44,
+      "adjusted_diluted_eps_usd": 1.43
+    },
+    "guidance": {
+      "full_year_free_cash_flow_conversion_pct": 95
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift."
+  ]
+}
