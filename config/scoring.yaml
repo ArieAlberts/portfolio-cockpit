@@ -1,0 +1,37 @@
+fundamental_quality:
+  scale_min: 0
+  scale_mid: 50
+  scale_max: 100
+  peer_method: sector_or_company_type
+  winsorize_z_score: 3.0
+
+quality_drift:
+  baseline: 50.0
+  scale_min: 0
+  scale_max: 100
+  price_changes_affect_score: false
+  allowed_update_triggers:
+    - official_results
+    - official_trading_update
+    - regulatory_filing
+    - material_guidance_change
+    - confirmed_thesis_event
+
+valuation:
+  scale_min: 0
+  scale_mid: 50
+  scale_max: 100
+  higher_is_more_attractive: true
+
+data_confidence:
+  scale_min: 0
+  scale_max: 100
+  decision_threshold: 80
+  components:
+    completeness: 0.30
+    source_quality: 0.30
+    freshness: 0.20
+    consistency: 0.20
+
+portfolio_risk:
+  default_single_stock_shock: -0.30
