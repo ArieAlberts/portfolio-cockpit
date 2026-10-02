@@ -1,0 +1,82 @@
+{
+  "ticker": "WKL",
+  "company_name": "Wolters Kluwer N.V.",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-08-05",
+  "reporting_period_end": "2026-06-30",
+  "baseline_rule": "Quality Drift starts at exactly 50.0 on the first validated fundamental snapshot.",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "OUT_OF_SCOPE_FOR_BASELINE_SNAPSHOT",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "Wolters Kluwer 2026 Half-Year Results",
+    "publication_date": "2026-08-05",
+    "url": "https://assets.contenthub.wolterskluwer.com/api/public/content/3775537-2026-08-05-wolters-kluwer-2026-half-year-results-7d85c04c6c?v=15135ed1"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "net_debt_eur_m": 4024,
+      "net_debt_to_ebitda": 2,
+      "gross_debt_eur_m": 5548,
+      "net_cash_available_eur_m": 1211,
+      "cash_and_cash_equivalents_eur_m": 1494,
+      "revolving_credit_facility_eur_m": 600,
+      "revolving_credit_facility_drawn_eur_m": 0
+    },
+    "profitability_capital_efficiency": {
+      "adjusted_operating_profit_eur_m": 893,
+      "adjusted_operating_margin_pct": 29.4,
+      "adjusted_operating_margin_prior_pct": 28.4,
+      "roic_pct": 18.2,
+      "roic_prior_pct": 18.5
+    },
+    "cashflow_quality": {
+      "adjusted_free_cash_flow_eur_m": 533,
+      "adjusted_free_cash_flow_prior_eur_m": 505,
+      "adjusted_free_cash_flow_cc_growth_pct": 14,
+      "adjusted_operating_cash_flow_eur_m": 812,
+      "cash_conversion_ratio_pct": 91,
+      "cash_conversion_ratio_prior_pct": 85
+    },
+    "growth_stability": {
+      "revenue_eur_m": 3033,
+      "organic_revenue_growth_pct": 5,
+      "recurring_revenue_share_pct": 85,
+      "recurring_revenue_organic_growth_pct": 7,
+      "recurring_cloud_share_pct": 24,
+      "recurring_cloud_organic_growth_pct": 14
+    },
+    "value_per_share": {
+      "diluted_adjusted_eps_eur": 2.83,
+      "diluted_adjusted_eps_prior_eur": 2.7,
+      "diluted_adjusted_eps_cc_growth_pct": 14,
+      "diluted_weighted_average_shares_m": 225.3,
+      "diluted_weighted_average_shares_prior_m": 234,
+      "diluted_share_count_change_pct": -3.7,
+      "interim_dividend_per_share_eur": 1.01
+    },
+    "capital_allocation": {
+      "buyback_2026_authorized_eur_m": 500,
+      "buyback_completed_through_2026_08_04_eur_m": 244,
+      "shares_repurchased_m": 3.6,
+      "average_buyback_price_eur": 67.79,
+      "planned_share_cancellation_m": 7.8
+    }
+  },
+  "guidance_2026": {
+    "adjusted_operating_margin_pct": "approximately 28.0",
+    "adjusted_free_cash_flow_eur_m": "1300-1350",
+    "roic_pct": "18-19",
+    "diluted_adjusted_eps_growth": "high single-digit"
+  },
+  "notes": [
+    "Baseline values are stored as reported; no peer-relative Fundamental Quality score is invented.",
+    "Daily market-price changes must not alter this baseline or Quality Drift.",
+    "Future Quality Drift changes must be driven by new validated fundamental information."
+  ]
+}

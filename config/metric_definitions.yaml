@@ -1,0 +1,89 @@
+# Economic meaning and direction of core metrics.
+# Materiality thresholds are intentionally not fixed yet; they will be calibrated
+# after WKL, ASR and OKLO validation.
+
+GENERAL_OPERATING_COMPANY:
+  balance_sheet:
+    net_debt_to_ebitda:
+      direction: lower_is_better
+      unit: x
+      drift_eligible: true
+    net_cash_available:
+      direction: higher_is_better
+      unit: currency
+      drift_eligible: true
+  profitability_capital_efficiency:
+    roic:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+    adjusted_operating_margin:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+  cashflow_quality:
+    adjusted_free_cash_flow:
+      direction: higher_is_better
+      unit: currency
+      drift_eligible: true
+    cash_conversion_ratio:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+  growth_stability:
+    organic_revenue_growth:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+    recurring_revenue_growth:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+  value_per_share:
+    diluted_adjusted_eps:
+      direction: higher_is_better
+      unit: currency_per_share
+      drift_eligible: true
+    diluted_share_count:
+      direction: lower_is_better
+      unit: shares
+      drift_eligible: true
+
+INSURER:
+  capital_strength:
+    solvency_ratio:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+  underwriting_quality:
+    combined_ratio:
+      direction: lower_is_better
+      unit: percent
+      drift_eligible: true
+  profitability:
+    roe:
+      direction: higher_is_better
+      unit: percent
+      drift_eligible: true
+  value_per_share:
+    book_value_per_share:
+      direction: higher_is_better
+      unit: currency_per_share
+      drift_eligible: true
+
+PRE_REVENUE_DEVELOPMENT:
+  liquidity_runway:
+    cash_runway_months:
+      direction: higher_is_better
+      unit: months
+      drift_eligible: true
+  financing_dilution:
+    dilution_rate:
+      direction: lower_is_better
+      unit: percent
+      drift_eligible: true
+  regulatory_milestones:
+    regulatory_progress:
+      direction: higher_is_better
+      unit: score
+      drift_eligible: true
