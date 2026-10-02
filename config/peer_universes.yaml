@@ -1,0 +1,183 @@
+# Curated peer universes for Fundamental Quality normalization.
+# These are MODEL-CURATED business-model peers, not claims of official company peer lists.
+# Scores must not be calculated if status is INSUFFICIENT or if the minimum peer count is not met.
+
+defaults:
+  minimum_peer_count: 4
+  method: robust_peer_zscore
+  winsorize_z: 3.0
+  require_public_financials: true
+
+universes:
+  ASR:
+    label: European diversified insurers
+    status: VALIDATE
+    confidence: HIGH
+    peers: [NN.AS, AGS.BR, SAMPO.HE, AV.L, ZURN.SW]
+    comparable_metrics: [solvency_ratio, roe, operating_result_growth, book_value_per_share_growth, dividend_per_share_growth]
+
+  ADM.L:
+    label: UK personal-lines insurers
+    status: LIMITED
+    confidence: MEDIUM
+    peers: [SBRE.L, SAGA.L, AV.L]
+    minimum_peer_count: 3
+    comparable_metrics: [solvency_ratio, combined_ratio, roe, earnings_per_share_growth, dividend_per_share_growth]
+    note: Direct listed peers are scarce; use only the metric subset that is genuinely comparable.
+
+  WKL:
+    label: Professional information and analytics services
+    status: VALIDATE
+    confidence: HIGH
+    peers: [RELX.L, TRI.TO, VRSK, FDS, SPGI, MCO]
+    comparable_metrics: [net_debt_to_ebitda, roic, operating_margin, fcf_conversion, organic_revenue_growth, eps_growth, share_count_change]
+
+  CAP.PA:
+    label: Global IT services and consulting
+    status: VALIDATE
+    confidence: HIGH
+    peers: [ACN, GIB.A.TO, CTSH, SOP.PA, EPAM, INFY]
+    comparable_metrics: [net_debt_to_ebitda, operating_margin, fcf_conversion, organic_revenue_growth, bookings_growth, eps_growth]
+
+  IMCD:
+    label: Specialty chemical distribution
+    status: LIMITED
+    confidence: HIGH
+    peers: [BNR.DE, AZE.BR, DKSH.SW]
+    minimum_peer_count: 3
+    comparable_metrics: [net_debt_to_ebitda, ebita_margin, fcf_conversion, organic_revenue_growth, cash_eps_growth]
+    note: Brenntag and Azelis are the closest listed direct peers; DKSH is a broader distribution comparator.
+
+  CRDA.L:
+    label: Specialty chemicals and high-value ingredients
+    status: VALIDATE
+    confidence: MEDIUM
+    peers: [ASH, CLN.SW, EVK.DE, SY1.DE, IFF]
+    comparable_metrics: [net_debt_to_ebitda, operating_margin, fcf_conversion, organic_revenue_growth, eps_growth]
+
+  ROR.L:
+    label: Flow control and industrial automation
+    status: VALIDATE
+    confidence: HIGH
+    peers: [IMI.L, FLS, SPX.L, CR, METSO.HE]
+    comparable_metrics: [net_cash_or_leverage, roce, operating_margin, cash_conversion, organic_revenue_growth, eps_growth]
+
+  EMN:
+    label: Specialty materials and diversified chemicals
+    status: VALIDATE
+    confidence: MEDIUM
+    peers: [CE, HUN, WLK, DD, ALB]
+    comparable_metrics: [net_debt_to_ebitda, operating_margin, fcf_conversion, revenue_growth, eps_growth]
+
+  WSM:
+    label: Premium home furnishings retail
+    status: VALIDATE
+    confidence: HIGH
+    peers: [RH, ARHS, ETD, W, LZB]
+    comparable_metrics: [net_cash_or_leverage, operating_margin, fcf_margin, comparable_sales_growth, eps_growth, share_count_change]
+
+  DKS:
+    label: Sporting-goods retail
+    status: LIMITED
+    confidence: MEDIUM
+    peers: [ASO, JD.L, BGFV]
+    minimum_peer_count: 3
+    comparable_metrics: [net_cash_or_leverage, operating_margin, inventory_growth, comparable_sales_growth, eps_growth, share_count_change]
+
+  TXRH:
+    label: US casual dining
+    status: VALIDATE
+    confidence: HIGH
+    peers: [DRI, EAT, CAKE, BJRI, BLMN]
+    comparable_metrics: [net_cash_or_leverage, restaurant_margin, operating_margin, same_store_sales_growth, eps_growth, unit_growth]
+
+  SNA:
+    label: Industrial tools and equipment
+    status: VALIDATE
+    confidence: HIGH
+    peers: [SWK, LECO, ITW, ESAB, DOV]
+    comparable_metrics: [net_debt_to_ebitda, operating_margin, roic, fcf_conversion, organic_revenue_growth, eps_growth]
+
+  MSM:
+    label: Industrial distribution
+    status: VALIDATE
+    confidence: HIGH
+    peers: [GWW, FAST, AIT, CNM, WCC]
+    comparable_metrics: [net_debt_to_ebitda, operating_margin, fcf_conversion, organic_revenue_growth, eps_growth]
+
+  PLMR:
+    label: US specialty property and casualty insurance
+    status: VALIDATE
+    confidence: HIGH
+    peers: [KNSL, SKWD, HCI, HRTG, RLI]
+    comparable_metrics: [combined_ratio, loss_ratio, roe, gross_written_premium_growth, book_value_per_share_growth, eps_growth]
+
+  MOD:
+    label: Thermal management and HVAC equipment
+    status: VALIDATE
+    confidence: MEDIUM
+    peers: [VRT, NVT, TT, LII, CARR]
+    comparable_metrics: [net_debt_to_ebitda, adjusted_ebitda_margin, fcf_conversion, organic_revenue_growth, eps_growth]
+
+  FUL:
+    label: Adhesives and specialty bonding materials
+    status: VALIDATE
+    confidence: HIGH
+    peers: [HEN3.DE, SIKA.SW, ARK.PA, RPM, WCH.DE]
+    comparable_metrics: [net_debt_to_ebitda, adjusted_ebitda_margin, fcf_conversion, organic_revenue_growth, eps_growth]
+
+  POWL:
+    label: Electrical equipment and power infrastructure
+    status: VALIDATE
+    confidence: HIGH
+    peers: [NVT, HUBB, RRX, ETN, GNRC]
+    comparable_metrics: [net_cash_or_leverage, gross_margin, operating_margin, backlog_growth, order_growth, eps_growth]
+
+  ESI:
+    label: Electronics and industrial specialty chemicals
+    status: VALIDATE
+    confidence: MEDIUM
+    peers: [ENTG, MKSI, DD, KWR, ASH]
+    comparable_metrics: [net_debt_to_ebitda, adjusted_ebitda_margin, fcf_conversion, organic_revenue_growth, eps_growth]
+
+  ABX:
+    label: Life-settlement and alternative asset management
+    status: INSUFFICIENT
+    confidence: LOW
+    peers: []
+    comparable_metrics: []
+    note: No sufficiently close listed direct peer set has been validated. Do not calculate a peer-normalized Fundamental Quality score yet.
+
+  ERO:
+    label: Copper producers
+    status: VALIDATE
+    confidence: HIGH
+    peers: [HBM, CS.TO, LUN.TO, IVN.TO, FM.TO]
+    comparable_metrics: [net_debt_to_ebitda, c1_cash_cost, operating_cash_flow_margin, production_growth, reserve_growth, eps_growth]
+
+  TMDX:
+    label: High-growth medtech platforms
+    status: LIMITED
+    confidence: LOW
+    peers: [INSP, PODD, DXCM, MASI]
+    minimum_peer_count: 4
+    comparable_metrics: [net_cash_or_leverage, operating_margin, revenue_growth, fcf_margin, eps_growth]
+    note: These are broad medtech comparators, not direct transplant-platform peers. Score must carry a low-confidence flag.
+
+  LEU:
+    label: Nuclear fuel and nuclear technology
+    status: LIMITED
+    confidence: LOW
+    peers: [CCJ, BWXT, UUUU, KAP.L]
+    minimum_peer_count: 4
+    comparable_metrics: [net_cash_or_leverage, backlog_growth, contract_coverage, revenue_growth, eps_growth]
+    note: Centrus has a distinctive enrichment/HALEU model; comparability is limited.
+
+  OKLO:
+    label: Public advanced-nuclear development companies
+    status: LIMITED
+    confidence: MEDIUM
+    peers: [SMR, NNE, LTBR]
+    minimum_peer_count: 3
+    comparable_metrics: [cash_runway_months, net_cash, dilution_rate, operating_cash_burn, regulatory_progress, project_milestone_progress]
+    note: Use development-stage metrics only; never use P/E or EV/EBITDA as quality measures.
