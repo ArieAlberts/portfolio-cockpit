@@ -1,46 +1,54 @@
 schema_version: 1
 
-# Absolute anchors are explanatory context beside peer-relative Fundamental Quality.
-# They must never alter the peer score, readiness gates or execution behavior.
-affects_fundamental_quality_score: false
-affects_readiness: false
-execution_effect: NONE
-methodology: configurable_house_thresholds
+policy:
+  calibration_status: PILOT
+  alters_fundamental_quality: false
+  decision_gate: false
+  price_inputs_allowed: false
+  execution_effect: NONE
+
+assignments:
+  WKL: PROFESSIONAL_INFORMATION_SERVICES
 
 profiles:
-  GENERAL_OPERATING_COMPANY:
-    net_debt_to_ebitda:
-      direction: lower_is_better
-      strong_threshold: 2.5
-      acceptable_threshold: 3.5
-      rationale: "Balance-sheet leverage context; lower is better."
-    reported_margin_pct:
-      direction: higher_is_better
-      strong_threshold: 20.0
-      acceptable_threshold: 10.0
-      rationale: "Operating-margin context for mature operating companies."
-    free_cash_flow_margin_pct:
-      direction: higher_is_better
-      strong_threshold: 15.0
-      acceptable_threshold: 8.0
-      rationale: "Cash-generation context independent of peer ranking."
-    cash_conversion_pct:
-      direction: higher_is_better
-      strong_threshold: 80.0
-      acceptable_threshold: 60.0
-      rationale: "Conversion of operating profit into operating cash flow."
-    organic_like_revenue_growth_pct:
-      direction: higher_is_better
-      strong_threshold: 5.0
-      acceptable_threshold: 0.0
-      rationale: "Underlying top-line growth context."
-    adjusted_eps_growth_pct:
-      direction: higher_is_better
-      strong_threshold: 8.0
-      acceptable_threshold: 0.0
-      rationale: "Per-share earnings growth context."
-    share_count_change_pct:
-      direction: lower_is_better
-      strong_threshold: 0.0
-      acceptable_threshold: 2.0
-      rationale: "No dilution is preferred; a falling share count is favorable."
+  PROFESSIONAL_INFORMATION_SERVICES:
+    description: >
+      Absolute quality guardrails for mature professional-information businesses.
+      These are diagnostic minimums, not a peer ranking and not a replacement
+      for Fundamental Quality.
+    metrics:
+      net_debt_to_ebitda:
+        source_path: metrics.balance_sheet.net_debt_to_ebitda
+        direction: lower_is_better
+        threshold: 3.0
+        required: true
+      roic_pct:
+        source_path: metrics.profitability_capital_efficiency.roic_pct
+        direction: higher_is_better
+        threshold: 10.0
+        required: true
+      adjusted_operating_margin_pct:
+        source_path: metrics.profitability_capital_efficiency.adjusted_operating_margin_pct
+        direction: higher_is_better
+        threshold: 20.0
+        required: false
+      cash_conversion_ratio_pct:
+        source_path: metrics.cashflow_quality.cash_conversion_ratio_pct
+        direction: higher_is_better
+        threshold: 80.0
+        required: true
+      organic_revenue_growth_pct:
+        source_path: metrics.growth_stability.organic_revenue_growth_pct
+        direction: higher_is_better
+        threshold: 3.0
+        required: true
+      recurring_revenue_share_pct:
+        source_path: metrics.growth_stability.recurring_revenue_share_pct
+        direction: higher_is_better
+        threshold: 70.0
+        required: true
+      diluted_share_count_change_pct:
+        source_path: metrics.value_per_share.diluted_share_count_change_pct
+        direction: lower_is_better
+        threshold: 2.0
+        required: false
