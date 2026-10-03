@@ -10,6 +10,8 @@ from typing import Any
 
 import yaml
 
+from portfolio_cockpit.config import component_metric_aliases, load_config, metric_directions
+
 from .normalization import calculate_fundamental_quality
 from .peer_confidence import peer_metric_confidence
 from .peer_data import EligibleMetricSet, eligible_metric_set
@@ -25,6 +27,7 @@ CONFIG_FILES = (
 )
 
 CODE_FILES = (
+    "src/portfolio_cockpit/config.py",
     "src/portfolio_cockpit/scoring/pipeline.py",
     "src/portfolio_cockpit/scoring/normalization.py",
     "src/portfolio_cockpit/scoring/peer_data.py",
@@ -148,6 +151,8 @@ def _candidate_score(
     selected: dict[str, dict[str, Any]],
     clip_z: float,
     minimum_peers: int,
+    stable_width: float,
+    unstable_width: float,
 ) -> Any | None:
     if not selected:
         return None
@@ -175,6 +180,8 @@ def _candidate_score(
         min_metric_coverage=0.0,
         clip_z=clip_z,
         minimum_peer_values=minimum_peers,
+        stable_band_width_points=stable_width,
+        unstable_band_width_points=unstable_width,
     )
 
 
@@ -213,11 +220,11 @@ def build_score_snapshot(
     code_version: str | None = None,
     confidence_path: Path | None = None,
 ) -> dict[str, Any]:
-    portfolio = _read_yaml(root / "config/portfolio.yaml")
-    company_types = _read_yaml(root / "config/company_types.yaml")
-    readiness_cfg = _read_yaml(root / "config/readiness.yaml")
-    scoring_cfg = _read_yaml(root / "config/scoring.yaml")
-    metric_cfg = _read_yaml(root / "config/score_metrics.yaml")
+    config = load_config(root)
+    portfolio = config["portfolio"]
+    company_types = config["company_types"]
+    readiness_cfg = config["readiness"]
+    scoring_cfg = config["scoring"]
     peer_index_path = root / "data/peers/index.json"
     peer_index = _read_json(peer_index_path)
 
@@ -230,6 +237,7 @@ def build_score_snapshot(
     minimum_coverage = float(fq_cfg["minimum_metric_coverage"])
     clip_z = float(fq_cfg["clip_z_score"])
     stable_width = float(fq_cfg["sensitivity"]["stable_band_width_points"])
+    unstable_width = float(fq_cfg["sensitivity"]["unstable_band_width_points"])
     hard_tokens = list(readiness_cfg["hard_block_status_contains"])
 
     config_hash, config_hashes = _bundle_hash(root, CONFIG_FILES)
@@ -260,8 +268,8 @@ def build_score_snapshot(
             k: float(v) for k, v in type_cfg["quality_components"].items()
         }
         required_components = tuple(type_cfg.get("required_components", ()))
-        aliases = readiness_cfg["component_metric_aliases"][company_type]
-        directions = metric_cfg["metric_directions"][company_type]
+        aliases = component_metric_aliases(config, company_type)
+        directions = metric_directions(config, company_type)
 
         selected, selection_warnings = _select_component_metrics(
             dataset=dataset,
@@ -298,18 +306,14 @@ def build_score_snapshot(
             selected=selected,
             clip_z=clip_z,
             minimum_peers=minimum_peers,
+            stable_width=stable_width,
+            unstable_width=unstable_width,
         )
         stability_flag = (
             candidate.sensitivity.stability_flag
             if candidate is not None and candidate.sensitivity is not None
             else None
         )
-
-        # Enforce the configured stability threshold in one place even if the
-        # lower-level helper's default is changed later.
-        if candidate is not None and candidate.sensitivity is not None:
-            width = candidate.sensitivity.score_high - candidate.sensitivity.score_low
-            stability_flag = "STABLE" if width < stable_width else "PEER_SENSITIVE"
 
         target_confidence = confidence.get("results", {}).get(ticker, {}).get(
             "data_confidence_score"
@@ -428,6 +432,7 @@ def build_score_snapshot(
             "dataset_rule_consistency_required": True,
             "sensitivity_method": fq_cfg["sensitivity"]["method"],
             "stable_band_width_points": stable_width,
+            "unstable_band_width_points": unstable_width,
             "data_confidence_threshold": confidence_threshold,
             "peer_input_confidence_threshold": confidence_threshold,
         },
