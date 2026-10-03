@@ -16,6 +16,7 @@ cockpit-score = "portfolio_cockpit.scoring.pipeline:main"
 cockpit-drift = "portfolio_cockpit.decision_layer.drift:main"
 cockpit-valuation = "portfolio_cockpit.decision_layer.valuation:main"
 cockpit-check-inputs = "portfolio_cockpit.decision_layer.inputs:main"
+cockpit-decide = "portfolio_cockpit.decision_layer.decision:main"
 
 [project.optional-dependencies]
 dev = [
