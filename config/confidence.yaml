@@ -1,0 +1,33 @@
+source_quality:
+  SEC_FILING: 100
+  SEC_FILING_EXHIBIT: 100
+  OFFICIAL_COMPANY_REPORT: 100
+  OFFICIAL_EXCHANGE_RELEASE: 100
+  OFFICIAL_COMPANY_RELEASE: 100
+  OFFICIAL_DIGITAL_REPORT: 100
+  OFFICIAL_COMPANY_CORRIGENDUM: 100
+  OFFICIAL_COMPANY_REPORT_AND_SEC: 100
+  OTHER_PRIMARY: 90
+  SECONDARY_VERIFIED: 70
+  UNKNOWN: 0
+
+freshness:
+  - max_age_days: 120
+    score: 100
+  - max_age_days: 180
+    score: 80
+  - max_age_days: 365
+    score: 60
+  - max_age_days: 730
+    score: 30
+
+consistency:
+  regulatory_plus_primary_crosscheck: 100
+  two_primary_documents_crosscheck: 90
+  internal_crossfoot_only: 70
+  single_source_unchecked: null
+  material_conflict: 0
+
+baseline_component_aliases:
+  INSURER:
+    growth_stability: [growth_stability, capital_generation]

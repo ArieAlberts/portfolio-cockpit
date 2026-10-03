@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "rules": {
+    "completeness": "weighted presence of configured company-type fundamental components in the baseline snapshot",
+    "source_quality": "primary official/regulatory sources score 100",
+    "freshness": "<=120 days scores 100",
+    "consistency": "remains null until an explicit cross-check is recorded",
+    "threshold": 80
+  },
+  "results": {
+    "ASR": {
+      "completeness": 75,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 72.5,
+      "minimum_consistency_needed_for_80": 37.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "ADM.L": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "WKL": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "CAP.PA": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "IMCD": {
+      "completeness": 75,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 72.5,
+      "minimum_consistency_needed_for_80": 37.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "CRDA.L": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "ROR.L": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "EMN": {
+      "completeness": 75,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 72.5,
+      "minimum_consistency_needed_for_80": 37.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "WSM": {
+      "completeness": 55,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 66.5,
+      "minimum_consistency_needed_for_80": 67.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "DKS": {
+      "completeness": 80,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 74,
+      "minimum_consistency_needed_for_80": 30,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "TXRH": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "SNA": {
+      "completeness": 55,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 66.5,
+      "minimum_consistency_needed_for_80": 67.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "MSM": {
+      "completeness": 55,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 66.5,
+      "minimum_consistency_needed_for_80": 67.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "PLMR": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "MOD": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "FUL": {
+      "completeness": 55,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 66.5,
+      "minimum_consistency_needed_for_80": 67.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "POWL": {
+      "completeness": 55,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 66.5,
+      "minimum_consistency_needed_for_80": 67.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "ESI": {
+      "completeness": 85,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 75.5,
+      "minimum_consistency_needed_for_80": 22.5,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "ABX": {
+      "completeness": 80,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 74,
+      "minimum_consistency_needed_for_80": 30,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "ERO": {
+      "completeness": 100,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 80,
+      "minimum_consistency_needed_for_80": 0,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "TMDX": {
+      "completeness": 80,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 74,
+      "minimum_consistency_needed_for_80": 30,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "LEU": {
+      "completeness": 40,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 62,
+      "minimum_consistency_needed_for_80": 90,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    },
+    "OKLO": {
+      "completeness": 70,
+      "source_quality": 100,
+      "freshness": 100,
+      "consistency": null,
+      "known_weighted_contribution": 71,
+      "minimum_consistency_needed_for_80": 45,
+      "data_confidence_score": null,
+      "status": "DATA_CHECK",
+      "reason": "CONSISTENCY_PENDING"
+    }
+  }
+}
