@@ -17,7 +17,28 @@
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
     "minimum_peer_values_per_metric": 4,
-    "final_score_status": "DATA_CHECK_MISSING_REQUIRED_CAPITAL_STRENGTH"
+    "final_score_status": "DATA_CHECK_MISSING_REQUIRED_CAPITAL_STRENGTH",
+    "capital_strength_policy": {
+      "metric_family": "US_P&C_STATUTORY_CAPITAL",
+      "accepted_metrics": [
+        "rbc_ratio_pct",
+        "net_written_premium_to_surplus_ratio"
+      ],
+      "rbc_measurement_basis": "POINT_IN_TIME_PERIOD_END",
+      "premium_to_surplus_measurement_basis": {
+        "numerator": "TRAILING_TWELVE_MONTHS_NET_WRITTEN_PREMIUM",
+        "denominator": "PERIOD_END_POLICYHOLDERS_SURPLUS"
+      },
+      "prohibit_eu_or_uk_solvency_substitution": true,
+      "prohibit_h1_premium_annualization_as_ttm_substitute": true,
+      "status": "PENDING_STATUTORY_SOURCE_VALIDATION"
+    },
+    "period_basis_policy": {
+      "underwriting_and_growth": "ALIGNED_H1_YTD",
+      "profitability_roe": "H1_ANNUALIZED_WHERE_EXPLICITLY_DEFINED",
+      "regulatory_capital": "POINT_IN_TIME_OR_TTM_AS_DEFINED_BY_CAPITAL_STRENGTH_POLICY",
+      "do_not_mix_fy_ttm_h1_silently": true
+    }
   },
   "companies": {
     "PLMR": {
