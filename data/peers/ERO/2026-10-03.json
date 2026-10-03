@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ERO",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_2026",
+  "peer_universe_status": "CYCLICAL_MINING_SCOPE_REVIEW_REQUIRED",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "ERO": {
+      "company": "Ero Copper Corp.",
+      "role": "TARGET",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Ero Copper Reports Second Quarter 2026 Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026053508/erocopper-pressreleasex202.htm"
+      },
+      "metrics": {
+        "c1_cash_cost_usd_per_lb": {
+          "value": 2.42,
+          "comparison_class": "COPPER_C1_CASH_COST",
+          "source_definition": "copper C1 cash cost",
+          "score_eligible": true
+        },
+        "copper_production_tonnes": {
+          "value": 17315,
+          "comparison_class": "Q2_COPPER_PRODUCTION",
+          "source_definition": "copper production",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_usd_m": {
+          "value": 144,
+          "comparison_class": "Q2_ADJUSTED_EBITDA",
+          "source_definition": "adjusted EBITDA",
+          "score_eligible": false
+        },
+        "net_debt_usd_m": {
+          "value": 452.7,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net debt",
+          "score_eligible": false
+        },
+        "operating_cash_flow_usd_m": {
+          "value": 137.9,
+          "comparison_class": "Q2_OPERATING_CASH_FLOW",
+          "source_definition": "operating cash flow",
+          "score_eligible": false
+        }
+      }
+    },
+    "CS.TO": {
+      "company": "Capstone Copper Corp.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Capstone Copper Reports Second Quarter 2026 Results",
+        "url": "https://capstonecopper.com/news/capstone-copper-reports-second-quarter-2026-results/"
+      },
+      "metrics": {
+        "c1_cash_cost_usd_per_lb": {
+          "value": 2.82,
+          "comparison_class": "COPPER_C1_CASH_COST",
+          "source_definition": "consolidated C1 cash cost",
+          "score_eligible": true
+        },
+        "copper_production_tonnes": {
+          "value": 51759,
+          "comparison_class": "Q2_COPPER_PRODUCTION",
+          "source_definition": "consolidated copper production",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_usd_m": {
+          "value": 354,
+          "comparison_class": "Q2_ADJUSTED_EBITDA",
+          "source_definition": "adjusted EBITDA",
+          "score_eligible": false
+        },
+        "net_debt_usd_m": {
+          "value": 674.9,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net debt",
+          "score_eligible": false
+        }
+      }
+    },
+    "HBM": {
+      "company": "Hudbay Minerals Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Hudbay Q2 2026 Results",
+        "url": "https://www.hudbay.com/investors/press-releases/press-release-details/2026/Hudbay-Delivers-Strong-Second-Quarter-2026-Results-and-Improves-Cash-Cost-Guidance/default.aspx"
+      },
+      "metrics": {
+        "c1_cash_cost_usd_per_lb": {
+          "value": -0.4,
+          "comparison_class": "COPPER_C1_CASH_COST_BYPRODUCT_CREDIT_HEAVY",
+          "source_definition": "consolidated cash cost net of by-product credits",
+          "score_eligible": false,
+          "notes": "Large gold by-product credits make direct comparison with Ero C1 structurally distorted."
+        },
+        "copper_production_tonnes": {
+          "value": 28267,
+          "comparison_class": "Q2_COPPER_PRODUCTION",
+          "source_definition": "contained copper produced",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_usd_m": {
+          "value": 321.2,
+          "comparison_class": "Q2_ADJUSTED_EBITDA",
+          "source_definition": "adjusted EBITDA",
+          "score_eligible": false
+        },
+        "net_debt_to_adjusted_ebitda": {
+          "value": -0.1,
+          "comparison_class": "NET_DEBT_TO_ADJUSTED_EBITDA",
+          "source_definition": "net debt / adjusted EBITDA",
+          "score_eligible": false
+        }
+      }
+    },
+    "IVN.TO": {
+      "company": "Ivanhoe Mines Ltd.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2_PROJECT_BASIS",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Ivanhoe Mines Q2 2026 Results",
+        "url": "https://www.ivanhoemines.com/news-stories/news-release/ivanhoe-mines-issues-2026-second-quarter-financial-results-overview-of-operations-and-exploration-activities/"
+      },
+      "metrics": {
+        "c1_cash_cost_usd_per_lb": {
+          "value": 2.84,
+          "comparison_class": "COPPER_C1_CASH_COST_PROJECT_BASIS",
+          "source_definition": "Kamoa-Kakula C1 cash cost on 100% project basis",
+          "score_eligible": false,
+          "notes": "Joint-venture/project basis, not group consolidated."
+        },
+        "copper_production_tonnes": {
+          "value": 64328,
+          "comparison_class": "Q2_COPPER_PRODUCTION_PROJECT_BASIS",
+          "source_definition": "Kamoa-Kakula copper anode/blister production",
+          "score_eligible": false
+        }
+      }
+    },
+    "LUN.TO": {
+      "company": "Lundin Mining Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "DATA_SOURCE_AVAILABLE_METRIC_PENDING",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Lundin Mining 2026 Q2 financial reports",
+        "url": "https://lundinmining.com/investors/financial-reports/2026/"
+      },
+      "metrics": {
+        "c1_cash_cost_guidance_usd_per_lb": {
+          "value": 2.05,
+          "comparison_class": "FY_C1_CASH_COST_GUIDANCE",
+          "source_definition": "midpoint of 2026 consolidated C1 cash-cost guidance $1.95-$2.15",
+          "score_eligible": false
+        }
+      }
+    },
+    "FM.TO": {
+      "company": "First Quantum Minerals Ltd.",
+      "role": "CONTEXT_PEER",
+      "period": "Q1_2026",
+      "period_end": "2026-03-31",
+      "period_alignment": "NON_ALIGNED_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "First Quantum Q1 2026 results",
+        "url": "https://www.first-quantum.com/English/investors/results-center/default.aspx"
+      },
+      "metrics": {}
+    }
+  }
+}

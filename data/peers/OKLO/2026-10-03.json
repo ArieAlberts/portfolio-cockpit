@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "target_ticker": "OKLO",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "DEVELOPMENT_STAGE_2026_06_30",
+  "peer_universe_status": "LIMITED_DEVELOPMENT_STAGE_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_H1_DEV"
+    ]
+  },
+  "companies": {
+    "OKLO": {
+      "company": "Oklo Inc.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DEV",
+      "source": {
+        "type": "SEC_FILING",
+        "title": "Oklo Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1849056/000162828026054571/oklo-20260630.htm"
+      },
+      "metrics": {
+        "cash_and_investments_usd_m": {
+          "value": 3006.289,
+          "comparison_class": "DEV_CASH_AND_MARKETABLE_SECURITIES",
+          "source_definition": "cash and marketable debt securities",
+          "score_eligible": true
+        },
+        "operating_cash_burn_usd_m": {
+          "value": 65.459,
+          "comparison_class": "H1_OPERATING_CASH_BURN",
+          "source_definition": "cash used in operating activities",
+          "score_eligible": true
+        },
+        "net_loss_usd_m": {
+          "value": 81.601,
+          "comparison_class": "H1_NET_LOSS",
+          "source_definition": "net loss",
+          "score_eligible": true
+        },
+        "financing_cash_inflow_usd_m": {
+          "value": 1851.349,
+          "comparison_class": "H1_FINANCING_CASH_INFLOW",
+          "source_definition": "financing cash inflow",
+          "score_eligible": false
+        },
+        "shares_issued_h1_m": {
+          "value": 10.712,
+          "comparison_class": "H1_NEW_SHARES_ISSUED",
+          "source_definition": "ATM shares issued H1",
+          "score_eligible": false
+        }
+      }
+    },
+    "SMR": {
+      "company": "NuScale Power Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2_ONLY",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "NuScale Power Reports Second Quarter 2026 Results",
+        "url": "https://www.nuscalepower.com/press-releases/2026/nuscale-power-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "cash_and_investments_usd_m": {
+          "value": 1900,
+          "comparison_class": "DEV_CASH_AND_MARKETABLE_SECURITIES",
+          "source_definition": "cash, cash equivalents and short/long-term investments",
+          "score_eligible": true
+        },
+        "operating_cash_burn_usd_m": {
+          "value": null,
+          "comparison_class": "H1_OPERATING_CASH_BURN",
+          "source_definition": "not standardized in this pass",
+          "score_eligible": false
+        }
+      }
+    },
+    "NNE": {
+      "company": "NANO Nuclear Energy Inc.",
+      "role": "PEER",
+      "period": "9M_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_NINE_MONTHS",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "NANO Nuclear Q3 FY2026 Results",
+        "url": "https://ir.nanonuclearenergy.com/news-releases/news-release-details/nano-nuclear-reports-q3-fy-2026-financial-results-and-provides"
+      },
+      "metrics": {
+        "cash_and_investments_usd_m": {
+          "value": 580,
+          "comparison_class": "DEV_CASH_AND_MARKETABLE_SECURITIES",
+          "source_definition": "cash, cash equivalents and short-term investments",
+          "score_eligible": true
+        },
+        "operating_cash_burn_usd_m": {
+          "value": 18.664484,
+          "comparison_class": "9M_OPERATING_CASH_BURN",
+          "source_definition": "cash used in operating activities",
+          "score_eligible": false
+        },
+        "net_loss_usd_m": {
+          "value": 25.80058,
+          "comparison_class": "9M_NET_LOSS",
+          "source_definition": "net loss",
+          "score_eligible": false
+        }
+      }
+    },
+    "LTBR": {
+      "company": "Lightbridge Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DEV",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Lightbridge First Half 2026 Financial Results",
+        "url": "https://www.ltbridge.com/news-media/press-releases/detail/475/lightbridge-provides-business-update-and-announces-first-half-fiscal-2026-financial-results"
+      },
+      "metrics": {
+        "cash_and_investments_usd_m": {
+          "value": 237.5,
+          "comparison_class": "DEV_CASH_AND_MARKETABLE_SECURITIES",
+          "source_definition": "cash and cash equivalents",
+          "score_eligible": true
+        },
+        "operating_cash_burn_usd_m": {
+          "value": 8.296739,
+          "comparison_class": "H1_OPERATING_CASH_BURN",
+          "source_definition": "cash used in operating activities",
+          "score_eligible": true
+        },
+        "net_loss_usd_m": {
+          "value": 12.099357,
+          "comparison_class": "H1_NET_LOSS",
+          "source_definition": "net loss",
+          "score_eligible": true
+        }
+      }
+    }
+  }
+}

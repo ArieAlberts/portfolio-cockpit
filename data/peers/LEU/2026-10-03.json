@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "target_ticker": "LEU",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_2026",
+  "peer_universe_status": "LIMITED_LOW_CONFIDENCE_NUCLEAR_FUEL_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "LEU": {
+      "company": "Centrus Energy Corp.",
+      "role": "TARGET",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Centrus Reports Second Quarter 2026 Results",
+        "url": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "revenue_growth_pct": {
+          "value": 13.980583,
+          "comparison_class": "Q2_REVENUE_GROWTH",
+          "source_definition": "total revenue growth",
+          "score_eligible": true,
+          "notes": "176.1 / 154.5 - 1"
+        },
+        "adjusted_net_income_usd_m": {
+          "value": 38.7,
+          "comparison_class": "Q2_ADJUSTED_NET_INCOME",
+          "source_definition": "adjusted net income",
+          "score_eligible": false
+        },
+        "backlog_usd_bn": {
+          "value": 4.5,
+          "comparison_class": "BACKLOG_ABSOLUTE",
+          "source_definition": "total backlog",
+          "score_eligible": false
+        },
+        "contingent_leu_haleu_commitments_usd_bn": {
+          "value": 3,
+          "comparison_class": "CONTINGENT_COMMITMENTS",
+          "source_definition": "contingent LEU/HALEU commitments",
+          "score_eligible": false
+        }
+      }
+    },
+    "CCJ": {
+      "company": "Cameco Corporation",
+      "role": "BROAD_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2_DIFFERENT_MODEL",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Cameco Q2 2026 results",
+        "url": "https://www.cameco.com/invest/financial-information/quarterly-reports"
+      },
+      "metrics": {
+        "h1_adjusted_ebitda_cad_m": {
+          "value": 899,
+          "comparison_class": "H1_ADJUSTED_EBITDA",
+          "source_definition": "H1 adjusted EBITDA",
+          "score_eligible": false
+        },
+        "cash_cad_bn": {
+          "value": 1.1,
+          "comparison_class": "CASH_ABSOLUTE",
+          "source_definition": "cash",
+          "score_eligible": false
+        },
+        "debt_cad_bn": {
+          "value": 1,
+          "comparison_class": "DEBT_ABSOLUTE",
+          "source_definition": "debt",
+          "score_eligible": false
+        }
+      }
+    },
+    "BWXT": {
+      "company": "BWX Technologies, Inc.",
+      "role": "BROAD_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2_DIFFERENT_MODEL",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "BWXT Q2 2026 results",
+        "url": "https://investors.bwxt.com/"
+      },
+      "metrics": {
+        "revenue_growth_pct": {
+          "value": 18,
+          "comparison_class": "Q2_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": false,
+          "notes": "Nuclear components/services model differs materially from enrichment."
+        },
+        "adjusted_ebitda_usd_m": {
+          "value": 155.5,
+          "comparison_class": "Q2_ADJUSTED_EBITDA",
+          "source_definition": "adjusted EBITDA",
+          "score_eligible": false
+        },
+        "free_cash_flow_usd_m": {
+          "value": 115,
+          "comparison_class": "Q2_FREE_CASH_FLOW",
+          "source_definition": "free cash flow",
+          "score_eligible": false
+        }
+      }
+    },
+    "UUUU": {
+      "company": "Energy Fuels Inc.",
+      "role": "BROAD_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2_DIFFERENT_MODEL",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Energy Fuels Q2 2026 results",
+        "url": "https://investors.energyfuels.com/"
+      },
+      "metrics": {
+        "revenue_usd_m": {
+          "value": 25,
+          "comparison_class": "Q2_REVENUE_ABSOLUTE",
+          "source_definition": "revenue",
+          "score_eligible": false
+        },
+        "cash_usd_m": {
+          "value": 58.4,
+          "comparison_class": "CASH_ABSOLUTE",
+          "source_definition": "cash",
+          "score_eligible": false
+        },
+        "marketable_securities_usd_m": {
+          "value": 878.3,
+          "comparison_class": "MARKETABLE_SECURITIES",
+          "source_definition": "marketable securities",
+          "score_eligible": false
+        }
+      }
+    },
+    "KAP.L": {
+      "company": "NAC Kazatomprom JSC",
+      "role": "CONTEXT_PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "DIFFERENT_BUSINESS_MODEL",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Kazatomprom investor results",
+        "url": "https://www.kazatomprom.kz/en/investors"
+      },
+      "metrics": {}
+    }
+  }
+}

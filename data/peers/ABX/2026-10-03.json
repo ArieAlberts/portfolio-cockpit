@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ABX",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "INSUFFICIENT_DIRECT_PUBLIC_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "ABX": {
+      "company": "Abacus Global Management, Inc.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING",
+        "title": "Abacus Global Management Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1814287/000162828026055287/abx-20260630.htm"
+      },
+      "metrics": {
+        "revenue_usd_m": {
+          "value": 73,
+          "comparison_class": "H1_REVENUE_ABSOLUTE",
+          "source_definition": "total revenue",
+          "score_eligible": false
+        },
+        "adjusted_net_income_usd_m": {
+          "value": 27.1,
+          "comparison_class": "H1_ADJUSTED_NET_INCOME",
+          "source_definition": "adjusted net income",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_usd_m": {
+          "value": 39.9,
+          "comparison_class": "H1_ADJUSTED_EBITDA",
+          "source_definition": "adjusted EBITDA",
+          "score_eligible": false
+        },
+        "adjusted_eps_usd": {
+          "value": 0.28,
+          "comparison_class": "H1_ADJUSTED_EPS",
+          "source_definition": "adjusted EPS",
+          "score_eligible": false
+        },
+        "long_term_debt_usd_m": {
+          "value": 275.834,
+          "comparison_class": "BALANCE_SHEET_DEBT",
+          "source_definition": "long-term debt",
+          "score_eligible": false
+        }
+      }
+    },
+    "PEER_GATE": {
+      "company": "No sufficiently close listed direct peer set validated",
+      "role": "GATE",
+      "period": "N/A",
+      "period_end": null,
+      "period_alignment": "NOT_APPLICABLE",
+      "source": {
+        "type": "MODEL_GOVERNANCE",
+        "title": "Peer universe gate",
+        "url": "https://github.com/ArieAlberts/portfolio-cockpit/blob/main/config/peer_universes.yaml"
+      },
+      "metrics": {},
+      "score_eligible": false,
+      "exclusion_reason": "Life-settlement origination/asset-management economics are not safely normalized against generic asset managers or insurers."
+    }
+  }
+}

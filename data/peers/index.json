@@ -1,12 +1,35 @@
 {
   "schema_version": 1,
+  "completed_first_pass_on": "2026-10-03",
+  "coverage": {
+    "portfolio_companies": 23,
+    "peer_datasets": 23,
+    "percent": 100
+  },
   "datasets": {
-    "WKL": "data/peers/WKL/2026-10-02.json",
     "ASR": "data/peers/ASR/2026-10-02.json",
     "ADM.L": "data/peers/ADM.L/2026-10-03.json",
-    "PLMR": "data/peers/PLMR/2026-10-03.json",
+    "WKL": "data/peers/WKL/2026-10-02.json",
     "CAP.PA": "data/peers/CAP.PA/2026-10-03.json",
-    "IMCD": "data/peers/IMCD/2026-10-03.json"
+    "IMCD": "data/peers/IMCD/2026-10-03.json",
+    "CRDA.L": "data/peers/CRDA.L/2026-10-03.json",
+    "ROR.L": "data/peers/ROR.L/2026-10-03.json",
+    "EMN": "data/peers/EMN/2026-10-03.json",
+    "WSM": "data/peers/WSM/2026-10-03.json",
+    "DKS": "data/peers/DKS/2026-10-03.json",
+    "TXRH": "data/peers/TXRH/2026-10-03.json",
+    "SNA": "data/peers/SNA/2026-10-03.json",
+    "MSM": "data/peers/MSM/2026-10-03.json",
+    "PLMR": "data/peers/PLMR/2026-10-03.json",
+    "MOD": "data/peers/MOD/2026-10-03.json",
+    "FUL": "data/peers/FUL/2026-10-03.json",
+    "POWL": "data/peers/POWL/2026-10-03.json",
+    "ESI": "data/peers/ESI/2026-10-03.json",
+    "ABX": "data/peers/ABX/2026-10-03.json",
+    "ERO": "data/peers/ERO/2026-10-03.json",
+    "TMDX": "data/peers/TMDX/2026-10-03.json",
+    "LEU": "data/peers/LEU/2026-10-03.json",
+    "OKLO": "data/peers/OKLO/2026-10-03.json"
   },
-  "note": "Listed datasets have completed a first standardized peer-financial pass. More portfolio companies will be added sequentially."
+  "note": "Every portfolio company now has a first standardized peer-financial pass. Dataset existence does not imply score eligibility."
 }

@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "target_ticker": "TMDX",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_2026",
+  "peer_universe_status": "LOW_CONFIDENCE_BROAD_MEDTECH_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "TMDX": {
+      "company": "TransMedics Group, Inc.",
+      "role": "TARGET",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "TransMedics Q2 2026 Financial Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1756262/000119312526332767/tmdx-ex99_1.htm"
+      },
+      "metrics": {
+        "revenue_growth_pct": {
+          "value": 20.7,
+          "comparison_class": "Q2_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 12.496841,
+          "comparison_class": "Q2_GAAP_OPERATING_MARGIN",
+          "source_definition": "operating income / revenue",
+          "score_eligible": true,
+          "notes": "23.736 / 189.948 * 100"
+        },
+        "gross_margin_pct": {
+          "value": 59.594205,
+          "comparison_class": "Q2_GAAP_GROSS_MARGIN",
+          "source_definition": "gross profit / revenue",
+          "score_eligible": true,
+          "notes": "113.198 / 189.948 * 100"
+        },
+        "cash_usd_m": {
+          "value": 472.675,
+          "comparison_class": "CASH_ABSOLUTE",
+          "source_definition": "cash",
+          "score_eligible": false
+        }
+      }
+    },
+    "PODD": {
+      "company": "Insulet Corporation",
+      "role": "BROAD_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Insulet Reports Second Quarter 2026 Results",
+        "url": "https://investors.insulet.com/news/news-details/2026/Insulet-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "revenue_growth_pct": {
+          "value": 23.5,
+          "comparison_class": "Q2_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 16.2,
+          "comparison_class": "Q2_GAAP_OPERATING_MARGIN",
+          "source_definition": "operating income margin",
+          "score_eligible": true
+        }
+      }
+    },
+    "DXCM": {
+      "company": "DexCom, Inc.",
+      "role": "BROAD_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Dexcom Reports Second Quarter 2026 Financial Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm06302026-exhibit991.htm"
+      },
+      "metrics": {
+        "revenue_growth_pct": {
+          "value": 13,
+          "comparison_class": "Q2_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 24.3,
+          "comparison_class": "Q2_GAAP_OPERATING_MARGIN",
+          "source_definition": "GAAP operating margin",
+          "score_eligible": true
+        },
+        "gross_margin_pct": {
+          "value": 63.4,
+          "comparison_class": "Q2_GAAP_GROSS_MARGIN",
+          "source_definition": "GAAP gross margin",
+          "score_eligible": true
+        }
+      }
+    },
+    "INSP": {
+      "company": "Inspire Medical Systems, Inc.",
+      "role": "BROAD_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Inspire Medical Systems Q2 2026 Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000045/insp2026-q2pressreleaseex9.htm"
+      },
+      "metrics": {
+        "revenue_growth_pct": {
+          "value": -7.6,
+          "comparison_class": "Q2_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": -0.3,
+          "comparison_class": "Q2_GAAP_OPERATING_MARGIN",
+          "source_definition": "GAAP operating margin",
+          "score_eligible": true
+        },
+        "gross_margin_pct": {
+          "value": 85.5,
+          "comparison_class": "Q2_GAAP_GROSS_MARGIN",
+          "source_definition": "gross margin",
+          "score_eligible": true
+        }
+      }
+    },
+    "MASI": {
+      "company": "Masimo Corporation",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "DATA_PENDING",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Masimo investor results",
+        "url": "https://investor.masimo.com/"
+      },
+      "metrics": {}
+    }
+  }
+}
