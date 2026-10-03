@@ -48,6 +48,7 @@ def test_esi_weighted_coverage_is_60_percent_and_remains_blocked():
         dataset=load_esi(),
         company_type=typ,
         component_weights=types[typ]["quality_components"],
+        required_components=tuple(types[typ]["required_components"]),
         component_metric_aliases=cfg["component_metric_aliases"][typ],
         minimum_peer_values_per_metric=cfg["minimum_peer_values_per_metric"],
         minimum_weighted_component_coverage=cfg["minimum_weighted_component_coverage"],

@@ -27,7 +27,7 @@ def evaluate_readiness(
     company_type: str,
     component_weights: Mapping[str, float],
     component_metric_aliases: Mapping[str, list[str]],
-    required_components: tuple[str, ...] = (),
+    required_components: tuple[str, ...],
     minimum_peer_values_per_metric: int = 4,
     minimum_weighted_component_coverage: float = 0.70,
     hard_block_status_contains: tuple[str, ...] = (),

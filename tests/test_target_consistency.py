@@ -30,6 +30,7 @@ def test_production_requires_peer_input_confidence():
         dataset=dataset,
         company_type="T",
         component_weights={"c": 1.0},
+        required_components=("c",),
         component_metric_aliases={"c": ["m"]},
         data_confidence_score=95,
         peer_input_confidence_score=None,
