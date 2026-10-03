@@ -4,10 +4,12 @@ from pathlib import Path
 
 import pytest
 
-from portfolio_cockpit.config import ConfigValidationError, load_config, validate_config
-from portfolio_cockpit.scoring.absolute_anchors import (
-    classify_anchor,
+from portfolio_cockpit.scoring.anchor_pipeline import build_absolute_anchor_snapshot
+from portfolio_cockpit.scoring.anchors import (
+    AbsoluteAnchorConfigError,
     evaluate_absolute_anchors,
+    load_absolute_anchor_config,
+    validate_absolute_anchor_config,
 )
 from portfolio_cockpit.scoring.pipeline import build_score_snapshot
 
@@ -15,73 +17,66 @@ from portfolio_cockpit.scoring.pipeline import build_score_snapshot
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def load_wkl():
+def load_wkl_baseline():
     return json.loads(
-        (ROOT / "data/peers/WKL/2026-10-02.json").read_text(encoding="utf-8")
+        (ROOT / "data/baselines/WKL/2026-08-05.json").read_text(encoding="utf-8")
     )
 
 
-def test_anchor_classifier_respects_metric_direction():
-    assert classify_anchor(
-        value=25, direction="higher_is_better",
-        strong_threshold=20, acceptable_threshold=10,
-    ) == "STRONG"
-    assert classify_anchor(
-        value=15, direction="higher_is_better",
-        strong_threshold=20, acceptable_threshold=10,
-    ) == "ACCEPTABLE"
-    assert classify_anchor(
-        value=4, direction="higher_is_better",
-        strong_threshold=20, acceptable_threshold=10,
-    ) == "BELOW_ANCHOR"
-
-    assert classify_anchor(
-        value=2.0, direction="lower_is_better",
-        strong_threshold=2.5, acceptable_threshold=3.5,
-    ) == "STRONG"
-    assert classify_anchor(
-        value=3.0, direction="lower_is_better",
-        strong_threshold=2.5, acceptable_threshold=3.5,
-    ) == "ACCEPTABLE"
-
-
-def test_wkl_meets_all_configured_absolute_anchors():
-    config=load_config(ROOT)
+def test_wkl_meets_all_configured_absolute_guardrails():
+    config=load_absolute_anchor_config(ROOT)
     result=evaluate_absolute_anchors(
-        dataset=load_wkl(),
-        company_type="GENERAL_OPERATING_COMPANY",
-        config=config["absolute_anchors"],
+        ticker="WKL",
+        baseline=load_wkl_baseline(),
+        config=config,
     )
-    assert result["context_only"] is True
-    assert result["affects_fundamental_quality_score"] is False
-    assert result["affects_readiness"] is False
-    assert result["configured_metrics"] == 7
-    assert result["evaluated_metrics"] == 7
-    assert result["counts"]["STRONG"] == 7
-    assert result["counts"]["ACCEPTABLE"] == 0
-    assert result["counts"]["BELOW_ANCHOR"] == 0
-    assert result["execution_effect"] == "NONE"
+    assert result.profile=="PROFESSIONAL_INFORMATION_SERVICES"
+    assert result.status=="ANCHORS_MET"
+    assert result.required_anchors_met is True
+    assert result.configured_metrics==7
+    assert result.observed_metrics==7
+    assert result.metrics_met==7
+    assert result.metrics_missed==0
+    assert result.metrics_missing==0
+    assert result.execution_effect=="NONE"
 
 
-def test_absolute_anchors_explain_wkl_without_changing_relative_score_or_gate():
+def test_anchor_snapshot_is_separate_and_only_wkl_is_configured_in_v1():
+    payload=build_absolute_anchor_snapshot(root=ROOT)
+    assert payload["summary"]["portfolio_companies"]==23
+    assert payload["summary"]["configured_companies"]==1
+    assert payload["summary"]["anchors_met"]==1
+    assert payload["summary"]["anchor_miss"]==0
+    assert payload["summary"]["data_check"]==0
+    assert payload["summary"]["not_configured"]==22
+    assert payload["results"]["WKL"]["status"]=="ANCHORS_MET"
+    assert payload["execution_effect"]=="NONE"
+
+
+def test_absolute_anchors_do_not_change_wkl_relative_score_or_readiness():
     payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
     assert "WKL" in payload["blocked"]
     wkl=payload["blocked"]["WKL"]
-
     assert wkl["diagnostic_candidate"]["score"] == pytest.approx(16.4960426160)
     assert wkl["weighted_component_coverage"] == pytest.approx(0.50)
-    assert wkl["status"] == "DATA_CHECK"
-    assert wkl["absolute_anchors"]["counts"]["STRONG"] == 7
-    assert wkl["absolute_anchors"]["affects_fundamental_quality_score"] is False
-    assert wkl["absolute_anchors"]["affects_readiness"] is False
+    assert wkl["status"]=="DATA_CHECK"
+    assert "absolute_anchors" not in wkl
 
 
-def test_config_rejects_anchor_direction_drift():
-    config=load_config(ROOT)
+def test_anchor_config_forbids_price_or_valuation_inputs():
+    config=load_absolute_anchor_config(ROOT)
     broken=deepcopy(config)
-    broken["absolute_anchors"]["profiles"]["GENERAL_OPERATING_COMPANY"][
+    broken["profiles"]["PROFESSIONAL_INFORMATION_SERVICES"]["metrics"][
         "net_debt_to_ebitda"
-    ]["direction"]="higher_is_better"
+    ]["source_path"]="metrics.market_price"
 
-    with pytest.raises(ConfigValidationError, match="differs from canonical"):
-        validate_config(broken)
+    with pytest.raises(AbsoluteAnchorConfigError, match="price/valuation inputs"):
+        validate_absolute_anchor_config(broken)
+
+
+def test_anchor_policy_cannot_become_decision_or_execution_gate():
+    config=load_absolute_anchor_config(ROOT)
+    assert config["policy"]["alters_fundamental_quality"] is False
+    assert config["policy"]["decision_gate"] is False
+    assert config["policy"]["price_inputs_allowed"] is False
+    assert config["policy"]["execution_effect"]=="NONE"
