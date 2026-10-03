@@ -17,6 +17,7 @@ from portfolio_cockpit.config import (
     metric_directions,
 )
 
+from .anchors import evaluate_absolute_anchor
 from .normalization import calculate_fundamental_quality
 from .peer_confidence import peer_metric_confidence
 from .peer_data import EligibleMetricSet, eligible_metric_set
@@ -26,6 +27,7 @@ from .readiness import evaluate_readiness
 CONFIG_FILES = (
     "config/portfolio.yaml",
     "config/company_types.yaml",
+    "config/absolute_anchors.yaml",
     "config/readiness.yaml",
     "config/scoring.yaml",
     "config/score_metrics.yaml",
@@ -33,6 +35,7 @@ CONFIG_FILES = (
 
 CODE_FILES = (
     "src/portfolio_cockpit/config.py",
+    "src/portfolio_cockpit/scoring/anchors.py",
     "src/portfolio_cockpit/scoring/pipeline.py",
     "src/portfolio_cockpit/scoring/normalization.py",
     "src/portfolio_cockpit/scoring/peer_data.py",
@@ -237,6 +240,9 @@ def _metric_output(
     selected: dict[str, dict[str, Any]],
     candidate: Any | None,
     peer_confidences: dict[str, float],
+    *,
+    company_type: str,
+    anchors_config: dict[str, Any],
 ) -> dict[str, Any]:
     by_name = {
         score.metric_name: score
@@ -270,6 +276,14 @@ def _metric_output(
                         "clipped_z_score": score.z_score,
                     }
                 )
+            anchor = evaluate_absolute_anchor(
+                metric_name=metric,
+                value=float(item["target_value"]),
+                company_type=company_type,
+                anchors_config=anchors_config,
+            )
+            if anchor is not None:
+                metric_output["absolute_anchor"] = anchor
             component_output["metrics"][item["slot_name"]] = metric_output
 
         result[component] = component_output
@@ -287,6 +301,7 @@ def build_score_snapshot(
     company_types = config["company_types"]
     readiness_cfg = config["readiness"]
     scoring_cfg = config["scoring"]
+    anchors_cfg = config["absolute_anchors"]
     peer_index_path = root / "data/peers/index.json"
     peer_index = _read_json(peer_index_path)
 
@@ -441,7 +456,13 @@ def build_score_snapshot(
             "missing_required_components": list(readiness.missing_required_components),
             "target_data_confidence": target_confidence,
             "peer_input_confidence": overall_peer_confidence,
-            "selected_metrics": _metric_output(selected, candidate, peer_confidences),
+            "selected_metrics": _metric_output(
+                selected,
+                candidate,
+                peer_confidences,
+                company_type=company_type,
+                anchors_config=anchors_cfg,
+            ),
             "peer_set_overlap": overlap_warning,
             "warnings": sorted(set(warnings)),
             "provenance": provenance,
@@ -492,8 +513,8 @@ def build_score_snapshot(
     ).hexdigest()
 
     return {
-        "schema_version": 4,
-        "pipeline_version": 2,
+        "schema_version": 5,
+        "pipeline_version": 3,
         "as_of": confidence["as_of"],
         "reproducibility_hash": reproducibility_hash,
         "methodology": {
@@ -503,6 +524,8 @@ def build_score_snapshot(
             "minimum_weighted_component_coverage": minimum_coverage,
             "minimum_component_metric_weight_coverage": minimum_component_metric_coverage,
             "metric_slot_weighting": True,
+            "absolute_anchors": True,
+            "absolute_anchors_score_effect": anchors_cfg["score_effect"],
             "required_components_enforced": True,
             "dataset_rule_consistency_required": True,
             "sensitivity_method": fq_cfg["sensitivity"]["method"],
