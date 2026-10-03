@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from portfolio_cockpit.scoring.pipeline import build_score_snapshot
+
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -27,3 +29,13 @@ def test_current_pointer_is_reproducibility_backed():
     else:
         # Pipeline v1 historical pointer; next generated snapshot upgrades this.
         assert current["pipeline_version"]==1
+
+
+def test_rebuilt_asr_recovers_required_capital_strength():
+    data=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
+    asr=data["scores"].get("ASR") or data["blocked"]["ASR"]
+    assert "capital_strength" in asr["covered_components"]
+    assert "capital_strength" not in asr["missing_required_components"]
+    capital=asr["selected_metrics"]["capital_strength"]["metrics"]["solvency"]
+    assert set(capital["peer_tickers"])=={"NN.AS","AGS.BR","SAMPO.HE","G.MI"}
+    assert asr["weighted_component_coverage"] == 0.55

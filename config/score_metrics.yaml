@@ -52,6 +52,22 @@ metric_directions:
     dividend_growth_pct: higher_is_better
     share_count_change_pct: lower_is_better
 
+  INSURER_US_P&C:
+    rbc_ratio_pct: higher_is_better
+    net_written_premium_to_surplus_ratio: lower_is_better
+    combined_ratio_pct: lower_is_better
+    loss_ratio_pct: lower_is_better
+    annualized_roe_pct: higher_is_better
+    operating_roe_pct: higher_is_better
+    reported_roe_pct: higher_is_better
+    gross_written_premium_growth_pct: higher_is_better
+    premium_growth_pct: higher_is_better
+    gaap_eps_growth_pct: higher_is_better
+    operating_eps_growth_pct: higher_is_better
+    eps_growth_pct: higher_is_better
+    dividend_growth_pct: higher_is_better
+    share_count_change_pct: lower_is_better
+
   CYCLICAL_MINING:
     net_debt_to_ebitda: lower_is_better
     net_debt_usd_m: lower_is_better
@@ -147,6 +163,27 @@ component_metric_aliases:
       - dividend_growth_pct
       - share_count_change_pct
 
+  INSURER_US_P&C:
+    capital_strength:
+      - rbc_ratio_pct
+      - net_written_premium_to_surplus_ratio
+    underwriting_quality:
+      - combined_ratio_pct
+      - loss_ratio_pct
+    profitability:
+      - annualized_roe_pct
+      - operating_roe_pct
+      - reported_roe_pct
+    growth_stability:
+      - gross_written_premium_growth_pct
+      - premium_growth_pct
+    value_per_share:
+      - gaap_eps_growth_pct
+      - operating_eps_growth_pct
+      - eps_growth_pct
+      - dividend_growth_pct
+      - share_count_change_pct
+
   CYCLICAL_MINING:
     balance_sheet:
       - net_debt_to_ebitda
@@ -228,6 +265,8 @@ metric_kinds:
   share_count_change_pct: percentage
   weighted_average_share_change_pct: percentage
   solvency_ratio_pct: percentage
+  rbc_ratio_pct: percentage
+  net_written_premium_to_surplus_ratio: ratio
   combined_ratio_pct: percentage
   loss_ratio_pct: percentage
   annualized_roe_pct: percentage
@@ -343,6 +382,37 @@ component_metric_slots:
         aliases: [operating_capital_generation_growth_pct]
       premium_growth:
         weight: 0.45
+        aliases: [gross_written_premium_growth_pct, premium_growth_pct]
+    value_per_share:
+      earnings_per_share:
+        weight: 0.60
+        aliases: [gaap_eps_growth_pct, operating_eps_growth_pct, eps_growth_pct]
+      dividend:
+        weight: 0.15
+        aliases: [dividend_growth_pct]
+      share_count:
+        weight: 0.25
+        aliases: [share_count_change_pct]
+
+  INSURER_US_P&C:
+    capital_strength:
+      regulatory_capital:
+        weight: 1.00
+        aliases: [rbc_ratio_pct, net_written_premium_to_surplus_ratio]
+    underwriting_quality:
+      combined_ratio:
+        weight: 0.70
+        aliases: [combined_ratio_pct]
+      loss_ratio:
+        weight: 0.30
+        aliases: [loss_ratio_pct]
+    profitability:
+      roe:
+        weight: 1.00
+        aliases: [annualized_roe_pct, operating_roe_pct, reported_roe_pct]
+    growth_stability:
+      premium_growth:
+        weight: 1.00
         aliases: [gross_written_premium_growth_pct, premium_growth_pct]
     value_per_share:
       earnings_per_share:

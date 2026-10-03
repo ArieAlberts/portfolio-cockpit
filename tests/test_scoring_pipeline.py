@@ -37,11 +37,13 @@ def test_pipeline_records_provenance_and_used_peer_tickers():
     assert all(item["peer_tickers"] for item in underwriting.values())
 
 
-def test_audited_insurers_remain_blocked_by_current_files():
+def test_audited_insurers_remain_blocked_for_current_data_gaps():
     payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
     assert "ASR" in payload["blocked"]
     assert "PLMR" in payload["blocked"]
-    assert "capital_strength" in payload["blocked"]["ASR"]["missing_required_components"]
+    assert "capital_strength" not in payload["blocked"]["ASR"]["missing_required_components"]
+    assert payload["blocked"]["ASR"]["weighted_component_coverage"] == 0.55
+    assert "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE" in payload["blocked"]["ASR"]["warnings"]
     assert "capital_strength" in payload["blocked"]["PLMR"]["missing_required_components"]
 
 

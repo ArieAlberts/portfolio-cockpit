@@ -4,7 +4,7 @@ from pathlib import Path
 from portfolio_cockpit.scoring.peer_data import eligible_metric_set
 
 ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT/"data/peers/ASR/2026-10-02.json"
+DATA=ROOT/"data/peers/ASR/2026-10-03.json"
 
 
 def load_data():
@@ -17,10 +17,17 @@ def test_aviva_is_solvency_uk_and_not_eu_solvency_ii_eligible():
     assert m["score_eligible"] is False
 
 
-def test_asr_solvency_ii_now_has_only_three_eligible_peers_and_is_blocked():
+def test_asr_solvency_ii_has_four_eu_regime_peers_and_is_ready():
     metric=eligible_metric_set(load_data(),"solvency_ratio_pct",min_peers=4)
-    assert metric.status=="INSUFFICIENT_ALIGNED_PEERS"
-    assert set(metric.peer_tickers)=={"NN.AS","AGS.BR","SAMPO.HE"}
+    assert metric.status=="READY"
+    assert set(metric.peer_tickers)=={"NN.AS","AGS.BR","SAMPO.HE","G.MI"}
+
+
+def test_generali_is_eu_solvency_ii_eligible():
+    m=load_data()["companies"]["G.MI"]["metrics"]["solvency_ratio_pct"]
+    assert m["comparison_class"]=="SOLVENCY_II_RATIO"
+    assert m["value"]==216
+    assert m["score_eligible"] is True
 
 
 def test_zurich_sst_remains_excluded():
