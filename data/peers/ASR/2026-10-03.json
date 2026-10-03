@@ -18,7 +18,7 @@
     "preserve_company_definition": true,
     "prohibit_cross_regime_solvency_equivalence": true,
     "min_peer_values_per_metric": 4,
-    "final_score_status": "PIPELINE_GATES_APPLY_AFTER_HARMONIZED_ROE_AND_SHARE_COUNT_REPAIR",
+    "final_score_status": "PENDING_PIPELINE_REVALIDATION_AFTER_HARMONIZED_ROE_AND_VALUE_PER_SHARE",
     "roe_harmonization_policy": {
       "metric": "annualized_ifrs_common_equity_roe_pct",
       "comparison_class": "H1_ANNUALIZED_IFRS_COMMON_EQUITY_ROE",
@@ -35,6 +35,24 @@
       "denominator": "H1_2025_WEIGHTED_AVERAGE_ORDINARY_SHARES",
       "formula": "(current / prior - 1) * 100",
       "same_period_basis_required": true
+    },
+    "harmonized_profitability_policy": {
+      "metric": "annualized_roe_pct",
+      "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
+      "numerator": "H1_IFRS_PROFIT_ATTRIBUTABLE_TO_ORDINARY_SHAREHOLDERS_X2",
+      "denominator": "AVERAGE_BEGINNING_AND_ENDING_IFRS_COMMON_SHAREHOLDERS_EQUITY",
+      "period_alignment": "H1_2026",
+      "exclude_non_controlling_interests": true,
+      "exclude_tier1_or_other_equity_holder_claims": true,
+      "status": "VALIDATED_FOR_TARGET_PLUS_FOUR_PEERS"
+    },
+    "value_per_share_policy": {
+      "earnings_metric": "gaap_eps_growth_pct",
+      "earnings_comparison_class": "H1_IFRS_BASIC_EPS_GROWTH",
+      "share_count_metric": "share_count_change_pct",
+      "share_count_comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
+      "period_alignment": "H1_2026_VS_H1_2025",
+      "status": "VALIDATED_FOR_TARGET_PLUS_FOUR_PEERS"
     }
   },
   "companies": {
@@ -89,12 +107,12 @@
           "score_eligible": false
         },
         "share_count_change_pct": {
-          "value": -1.7,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE_YOY",
-          "source_definition": "weighted average issued and outstanding shares H1 YoY",
+          "value": -1.695736,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
+          "source_definition": "H1 2026 vs H1 2025 weighted average issued and outstanding shares change",
+          "calculation": "(202.9 / 206.4 - 1) * 100",
           "score_eligible": true,
-          "definition_confidence": 95,
-          "notes": "H1 weighted-average issued and outstanding ordinary-share count YoY; target observation was already stored and is now aligned to the peer comparison class."
+          "definition_confidence": 100
         },
         "annualized_ifrs_common_equity_roe_pct": {
           "value": 17.390315,
@@ -107,6 +125,24 @@
           "score_eligible": true,
           "definition_confidence": 100,
           "notes": "Uses profit attributable to shareholders of the parent and excludes holders of other equity instruments. Common equity is equity attributable to shareholders, excluding other equity instruments."
+        },
+        "annualized_roe_pct": {
+          "value": 17.390315,
+          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 IFRS profit attributable to ordinary shareholders / average beginning and ending IFRS common shareholders' equity",
+          "calculation": "(764 * 2 / ((8604 + 8969) / 2)) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100,
+          "notes": "Cross-check: a.s.r. reports IFRS-basis ROE of 17.4%; harmonized formula yields 17.39%."
+        },
+        "gaap_eps_growth_pct": {
+          "value": 693.0397,
+          "comparison_class": "H1_IFRS_BASIC_EPS_GROWTH",
+          "source_definition": "H1 IFRS earnings attributable to ordinary shareholders per weighted average ordinary share, YoY",
+          "calculation": "(((764 / 202.9) / (98 / 206.4)) - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100,
+          "notes": "Large increase reflects the unusually low H1 2025 IFRS earnings base; raw z-score remains visible and published z-score is clipped by the standard ±3 rule."
         }
       }
     },
@@ -174,12 +210,25 @@
         },
         "share_count_change_pct": {
           "value": -1.838649,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE_YOY",
-          "source_definition": "Weighted average ordinary shares H1 2026 versus H1 2025.",
+          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
+          "source_definition": "H1 2026 vs H1 2025 weighted average ordinary shares change",
           "calculation": "(261.6 / 266.5 - 1) * 100",
-          "source_type": "OFFICIAL_INTERIM_REPORT",
-          "source_title": "NN Group Interim Financial Information 1H26",
-          "source_url": "https://www.nn-group.com/site/binaries/content/assets/nn-group/financial-results/2026/nn-group-interim-financial-information-1h26.pdf",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "annualized_roe_pct": {
+          "value": 10.716895,
+          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 IFRS profit available to ordinary shareholders after coupon on undated subordinated notes / average parent shareholders' equity excluding undated subordinated notes",
+          "calculation": "((1066 - 39) * 2 / ((19078 + 19254) / 2)) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "gaap_eps_growth_pct": {
+          "value": 198.924749,
+          "comparison_class": "H1_IFRS_BASIC_EPS_GROWTH",
+          "source_definition": "H1 IFRS earnings available to ordinary shareholders per weighted average ordinary share, YoY",
+          "calculation": "(((1027 / 261.6) / (350 / 266.5)) - 1) * 100",
           "score_eligible": true,
           "definition_confidence": 100
         }
@@ -247,15 +296,29 @@
           "definition_confidence": 100
         },
         "share_count_change_pct": {
-          "value": 4.787234,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE_YOY",
-          "source_definition": "Cumulative average number of outstanding shares H1 2026 versus H1 2025.",
-          "calculation": "(197 / 188 - 1) * 100",
-          "source_type": "OFFICIAL_INTERIM_REPORT",
-          "source_title": "Ageas Interim Financial Statements - First half year 2026",
-          "source_url": "https://assets.ctfassets.net/o6mf177wvfka/6ePkaSt9yrnZY5IvcwUc3n/3beffddbbbdcc4888d7595a88cdc1aa8/IFS_H1_26_ENG.pdf",
+          "value": 6.486486,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
+          "source_definition": "H1 2026 vs H1 2025 cumulative average outstanding shares change",
+          "calculation": "(197 / 185 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "annualized_roe_pct": {
+          "value": 17.209113,
+          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 net result attributable to Ageas shareholders / average beginning and ending shareholders' equity",
+          "calculation": "(846 * 2 / ((9441 + 10223) / 2)) * 100",
           "score_eligible": true,
           "definition_confidence": 100
+        },
+        "gaap_eps_growth_pct": {
+          "value": 17.351109,
+          "comparison_class": "H1_IFRS_BASIC_EPS_GROWTH",
+          "source_definition": "H1 IFRS net result attributable to Ageas shareholders per cumulative average outstanding share, YoY",
+          "calculation": "(((846 / 197) / (677 / 185)) - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "notes": "Average share counts are reported in whole millions; calculation therefore carries a small rounding tolerance."
         }
       }
     },
@@ -322,12 +385,25 @@
         },
         "share_count_change_pct": {
           "value": -1.374954,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE_YOY",
-          "source_definition": "Average number of shares H1 2026 versus H1 2025.",
+          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
+          "source_definition": "H1 2026 vs H1 2025 average number of shares change",
           "calculation": "(2654 / 2691 - 1) * 100",
-          "source_type": "OFFICIAL_EXCHANGE_REPORT",
-          "source_title": "Sampo Group Half-Year Financial Report 2026",
-          "source_url": "https://attachment.news.eu.nasdaq.com/a036fbfb26e58152a2998c5090e90d969",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "annualized_roe_pct": {
+          "value": 11.076337,
+          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 profit attributable to owners less Tier 1 coupon / average shareholders' equity excluding restricted Tier 1 instruments",
+          "calculation": "((416 - 9) * 2 / (((8092 - 298) + (7343 - 439)) / 2)) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "gaap_eps_growth_pct": {
+          "value": -40.000064,
+          "comparison_class": "H1_IFRS_BASIC_EPS_GROWTH",
+          "source_definition": "H1 IFRS profit attributable to owners per average share, YoY",
+          "calculation": "(((416 / 2654) / (703 / 2691)) - 1) * 100",
           "score_eligible": true,
           "definition_confidence": 100
         }
@@ -398,15 +474,28 @@
         },
         "share_count_change_pct": {
           "value": 13.701201,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE_YOY",
-          "source_definition": "Weighted average ordinary shares H1 2026 versus H1 2025.",
+          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
+          "source_definition": "H1 2026 vs H1 2025 weighted average ordinary shares change",
           "calculation": "(3029 / 2664 - 1) * 100",
-          "source_type": "OFFICIAL_FINANCIAL_RESULTS_PACK",
-          "source_title": "Aviva plc Half Year Financial Results Pack 2026",
-          "source_url": "https://data.fca.org.uk/artefacts/NSM/DirectUpload/NI-000150223/NI-000150223.pdf",
           "score_eligible": true,
           "definition_confidence": 100,
-          "notes": "Large increase reflects shares issued in connection with the Direct Line acquisition; no adjustment is made because this metric deliberately measures per-share dilution."
+          "notes": "Increase mainly reflects shares issued to Direct Line shareholders on 1 July 2025; retained because the metric measures actual per-share dilution/accretion context."
+        },
+        "annualized_roe_pct": {
+          "value": 7.955278,
+          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 IFRS profit attributable to ordinary shareholders / average IFRS shareholders' equity excluding Tier 1 and non-controlling interests",
+          "calculation": "(370 * 2 / ((9694 + 8910) / 2)) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "gaap_eps_growth_pct": {
+          "value": -43.699943,
+          "comparison_class": "H1_IFRS_BASIC_EPS_GROWTH",
+          "source_definition": "H1 IFRS profit attributable to ordinary shareholders per weighted average ordinary share, YoY",
+          "calculation": "(((370 / 3029) / (578 / 2664)) - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
         }
       }
     },
@@ -503,5 +592,5 @@
       }
     }
   },
-  "peer_universe_status": "EU_SOLVENCY_AND_HARMONIZED_ROE_SHARE_COUNT_INPUTS_READY"
+  "peer_universe_status": "EU_SOLVENCY_AND_HARMONIZED_ROE_VALUE_PER_SHARE_READY_PENDING_PIPELINE_VALIDATION"
 }
