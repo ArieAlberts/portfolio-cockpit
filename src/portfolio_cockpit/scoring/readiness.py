@@ -72,8 +72,8 @@ def evaluate_readiness(
         warnings.append("PEER_INPUT_CONFIDENCE_BELOW_THRESHOLD")
     if stability_flag is None:
         warnings.append("SENSITIVITY_PENDING")
-    elif stability_flag == "PEER_SENSITIVE":
-        warnings.append("PEER_SENSITIVE")
+    elif stability_flag in {"PEER_SENSITIVE", "UNSTABLE"}:
+        warnings.append(stability_flag)
 
     production_ready = (
         peer_coverage_pass
