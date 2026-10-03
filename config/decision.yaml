@@ -1,0 +1,30 @@
+schema_version: 1
+
+states:
+  - ADD_CANDIDATE
+  - HOLD
+  - NO_ADD
+  - REVIEW_REDUCE
+  - THESIS_REVIEW
+  - DATA_CHECK
+
+data_confidence_threshold: 80.0
+broken_thesis_states:
+  - BROKEN
+
+thresholds:
+  material_quality_deterioration_max: 35.0
+  strong_quality_drift_min: 60.0
+  acceptable_quality_drift_min: 45.0
+  attractive_valuation_min: 70.0
+  expensive_valuation_max: 30.0
+  fundamental_quality_add_floor_when_available: 40.0
+
+# Fundamental Quality is extra context: the Decision Engine must remain useful
+# while peer-normalized scores are still unavailable. If a DISPLAY_READY
+# Fundamental Quality score does exist, it may block ADD_CANDIDATE below the
+# configured floor.
+fundamental_quality_optional: true
+
+missing_valuation_state: HOLD
+execution_effect: NONE
