@@ -7,8 +7,8 @@ defaults:
   peer_source_change_changes_score: false
   live_execution_allowed: false
 
-# Overrides are only needed when SEC ticker resolution is unavailable and the
-# source stored in the peer dataset is not a durable discovery page.
+# Durable official discovery pages for non-US peers where SEC resolution is
+# unavailable or ticker suffixes make issuer discovery less reliable.
 discovery_overrides:
   RELX.L:
     mode: HTML_PAGE
@@ -20,7 +20,7 @@ discovery_overrides:
     source_quality: HIGH
   AGS.BR:
     mode: HTML_PAGE
-    url: https://www.ageas.com/investors/results
+    url: https://www.ageas.com/en/investors/financial-results
     source_quality: HIGH
   SAMPO.HE:
     mode: HTML_PAGE
@@ -33,4 +33,64 @@ discovery_overrides:
   ZURN.SW:
     mode: HTML_PAGE
     url: https://www.zurich.com/investor-relations/results-and-reports
+    source_quality: HIGH
+  ARK.PA:
+    mode: HTML_PAGE
+    url: https://www.arkema.com/global/en/investor-relations/financials/financial-results/
+    source_quality: HIGH
+  AZE.BR:
+    mode: HTML_PAGE
+    url: https://www.azelis.com/en/reports-and-presentations
+    source_quality: HIGH
+  BNR.DE:
+    mode: HTML_PAGE
+    url: https://corporate.brenntag.com/en/investor-relations/publications-and-events/financial-publications/
+    source_quality: HIGH
+  CS.TO:
+    mode: HTML_PAGE
+    url: https://capstonecopper.com/investors/reports-and-filings/
+    source_quality: HIGH
+  GIB.A.TO:
+    mode: HTML_PAGE
+    url: https://www.cgi.com/en/investors/financial-reports
+    source_quality: HIGH
+  HEN3.DE:
+    mode: HTML_PAGE
+    url: https://www.henkel.com/investors-and-analysts
+    source_quality: HIGH
+  IMI.L:
+    mode: HTML_PAGE
+    url: https://www.imiplc.com/en/investors/results-reports-presentations/
+    source_quality: HIGH
+  IVN.TO:
+    mode: HTML_PAGE
+    url: https://www.ivanhoemines.com/investors/document-library/
+    source_quality: HIGH
+  JD.L:
+    mode: HTML_PAGE
+    url: https://www.jdplc.com/investors/reports-presentations/
+    source_quality: HIGH
+  KAP.L:
+    mode: HTML_PAGE
+    url: https://www.kazatomprom.kz/en/investors/finansovaya_otchetnost
+    source_quality: HIGH
+  LUN.TO:
+    mode: HTML_PAGE
+    url: https://www.lundinmining.com/investors/financial-reports/
+    source_quality: HIGH
+  METSO.HE:
+    mode: HTML_PAGE
+    url: https://www.metso.com/corporate/investors/reports-and-presentations/
+    source_quality: HIGH
+  SBRE.L:
+    mode: HTML_PAGE
+    url: https://sabreplc.co.uk/investors/results-reports-and-presentations/
+    source_quality: HIGH
+  SIKA.SW:
+    mode: HTML_PAGE
+    url: https://www.sika.com/en/investors/reports-publications/financial-reports.html
+    source_quality: HIGH
+  SOP.PA:
+    mode: HTML_PAGE
+    url: https://www.soprasteria.com/investors/financial-publications-reports/results-presentation
     source_quality: HIGH

@@ -4,8 +4,8 @@
 
 defaults:
   minimum_peer_count: 4
-  method: robust_peer_zscore
-  winsorize_z: 3.0
+  method: clipped_mean_std_zscore
+  clip_z: 3.0
   require_public_financials: true
 
 universes:
