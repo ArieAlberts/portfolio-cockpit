@@ -8,6 +8,7 @@ on:
       - ".github/workflows/rebuild-fundamental-quality.yml"
       - "config/portfolio.yaml"
       - "config/company_types.yaml"
+      - "config/absolute_anchors.yaml"
       - "config/readiness.yaml"
       - "config/scoring.yaml"
       - "config/score_metrics.yaml"
