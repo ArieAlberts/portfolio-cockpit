@@ -12,7 +12,7 @@ class EligibleMetricSet:
     status: str
 
 
-def eligible_metric_set(dataset: dict, metric_name: str, min_peers: int = 3) -> EligibleMetricSet:
+def eligible_metric_set(dataset: dict, metric_name: str, min_peers: int = 4) -> EligibleMetricSet:
     target_ticker = dataset["target_ticker"]
     target_company = dataset["companies"][target_ticker]
     target_metric = target_company["metrics"].get(metric_name)

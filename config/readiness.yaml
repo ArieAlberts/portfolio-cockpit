@@ -55,8 +55,8 @@ component_metric_aliases:
       - annualized_roe_pct
       - operating_roe_pct
       - reported_roe_pct
-      - operating_earnings_growth_pct
     growth_stability:
+      - operating_earnings_growth_pct
       - operating_capital_generation_growth_pct
       - gross_written_premium_growth_pct
       - premium_growth_pct

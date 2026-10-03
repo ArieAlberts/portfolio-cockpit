@@ -11,10 +11,12 @@ class ReadinessResult:
     ticker: str
     weighted_component_coverage: float
     peer_coverage_pass: bool
+    required_components_pass: bool
     hard_blocked: bool
     production_ready: bool
     covered_components: tuple[str, ...]
     blocked_components: tuple[str, ...]
+    missing_required_components: tuple[str, ...]
     ready_metrics: tuple[str, ...]
     warnings: tuple[str, ...]
 
@@ -25,6 +27,7 @@ def evaluate_readiness(
     company_type: str,
     component_weights: Mapping[str, float],
     component_metric_aliases: Mapping[str, list[str]],
+    required_components: tuple[str, ...] = (),
     minimum_peer_values_per_metric: int = 4,
     minimum_weighted_component_coverage: float = 0.70,
     hard_block_status_contains: tuple[str, ...] = (),
@@ -32,6 +35,7 @@ def evaluate_readiness(
     data_confidence_threshold: float = 80.0,
     peer_input_confidence_score: float | None = None,
     peer_input_confidence_threshold: float = 80.0,
+    stability_flag: str | None = None,
 ) -> ReadinessResult:
     target = dataset["target_ticker"]
     status = str(dataset.get("peer_universe_status", ""))
@@ -49,11 +53,15 @@ def evaluate_readiness(
 
     coverage = sum(component_weights[c] for c in covered_components)
     peer_coverage_pass = coverage >= minimum_weighted_component_coverage
+    missing_required = tuple(c for c in required_components if c not in covered_components)
+    required_components_pass = not missing_required
 
     if hard_blocked:
         warnings.append("HARD_PEER_UNIVERSE_BLOCK")
     if not peer_coverage_pass:
         warnings.append("INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE")
+    for component in missing_required:
+        warnings.append(f"MISSING_REQUIRED_COMPONENT:{component}")
     if data_confidence_score is None:
         warnings.append("DATA_CONFIDENCE_PENDING")
     elif data_confidence_score < data_confidence_threshold:
@@ -62,21 +70,32 @@ def evaluate_readiness(
         warnings.append("PEER_INPUT_CONFIDENCE_PENDING")
     elif peer_input_confidence_score < peer_input_confidence_threshold:
         warnings.append("PEER_INPUT_CONFIDENCE_BELOW_THRESHOLD")
+    if stability_flag is None:
+        warnings.append("SENSITIVITY_PENDING")
+    elif stability_flag == "PEER_SENSITIVE":
+        warnings.append("PEER_SENSITIVE")
 
     production_ready = (
-        peer_coverage_pass and not hard_blocked
-        and data_confidence_score is not None and data_confidence_score >= data_confidence_threshold
-        and peer_input_confidence_score is not None and peer_input_confidence_score >= peer_input_confidence_threshold
+        peer_coverage_pass
+        and required_components_pass
+        and not hard_blocked
+        and data_confidence_score is not None
+        and data_confidence_score >= data_confidence_threshold
+        and peer_input_confidence_score is not None
+        and peer_input_confidence_score >= peer_input_confidence_threshold
+        and stability_flag == "STABLE"
     )
 
     return ReadinessResult(
         ticker=target,
         weighted_component_coverage=coverage,
         peer_coverage_pass=peer_coverage_pass,
+        required_components_pass=required_components_pass,
         hard_blocked=hard_blocked,
         production_ready=production_ready,
         covered_components=tuple(covered_components),
         blocked_components=tuple(blocked_components),
+        missing_required_components=missing_required,
         ready_metrics=tuple(sorted(set(ready_metrics))),
         warnings=tuple(warnings),
     )

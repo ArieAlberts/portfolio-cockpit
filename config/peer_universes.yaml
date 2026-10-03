@@ -4,15 +4,15 @@
 
 defaults:
   minimum_peer_count: 4
-  method: clipped_mean_std_zscore
+  method: clipped_mean_sample_std_zscore
   clip_z: 3.0
   require_public_financials: true
 
 universes:
   ASR:
     label: European diversified insurers
-    status: VALIDATE
-    confidence: HIGH
+    status: LIMITED
+    confidence: MEDIUM
     peers: [NN.AS, AGS.BR, SAMPO.HE, AV.L, ZURN.SW]
     comparable_metrics: [solvency_ratio, roe, operating_result_growth, book_value_per_share_growth, dividend_per_share_growth]
 

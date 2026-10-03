@@ -2,11 +2,12 @@ import pytest
 
 from portfolio_cockpit.scoring.normalization import (
     calculate_fundamental_quality,
+    metric_z_details,
     metric_z_score,
 )
 
 
-def test_peer_median_like_value_is_around_50():
+def test_peer_mean_value_is_50():
     result = calculate_fundamental_quality(
         target_metrics={"roe": 10.0},
         peer_metrics={"roe": [8.0, 10.0, 12.0, 10.0]},
@@ -15,6 +16,15 @@ def test_peer_median_like_value_is_around_50():
     )
     assert result.status == "OK"
     assert result.score == pytest.approx(50.0)
+
+
+def test_sample_standard_deviation_is_used():
+    d = metric_z_details(
+        target_value=20.0,
+        peer_values=[8.0, 10.0, 12.0, 14.0],
+        direction="higher_is_better",
+    )
+    assert d.peer_std == pytest.approx(2.58198889747)
 
 
 def test_higher_is_better_metric_rewards_stronger_target():
@@ -49,11 +59,25 @@ def test_insufficient_metric_coverage_blocks_score():
     assert result.coverage == pytest.approx(0.4)
 
 
-def test_zscore_is_clipped():
-    z, *_ = metric_z_score(
+def test_zscore_is_clipped_but_unclipped_value_is_retained():
+    d = metric_z_details(
         target_value=1000.0,
         peer_values=[1.0, 2.0, 3.0, 4.0],
         direction="higher_is_better",
         clip_z=3.0,
     )
-    assert z == 3.0
+    assert d.clipped_z == 3.0
+    assert d.unclipped_z > 3.0
+
+
+def test_leave_one_out_sensitivity_reports_peer_label():
+    result = calculate_fundamental_quality(
+        target_metrics={"roe": 20.0},
+        peer_metrics={"roe": [8.0, 10.0, 12.0, 14.0]},
+        peer_labels={"roe": ["A", "B", "C", "D"]},
+        metric_directions={"roe": "higher_is_better"},
+        metric_weights={"roe": 1.0},
+    )
+    assert result.sensitivity is not None
+    assert result.sensitivity.most_influential_peer in {"A", "B", "C", "D"}
+    assert result.sensitivity.score_low <= result.score <= result.sensitivity.score_high

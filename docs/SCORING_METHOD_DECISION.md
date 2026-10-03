@@ -1,42 +1,54 @@
-# Scoring method decision — 2026-10-03
-
-The methodology mismatch found in the audit is resolved.
+# Scoring method decision — revised 2026-10-03
 
 ## Selected method
 
-Portfolio Cockpit now uses:
+Portfolio Cockpit uses:
 
 ```
-clipped_mean_std_zscore
+clipped_mean_sample_std_zscore
 ```
 
-For each metric, the peer reference distribution uses:
-- arithmetic peer mean;
-- population standard deviation;
-- the target company is excluded from the reference distribution;
-- the resulting z-score is clipped to +/-3;
-- lower-is-better metrics have their sign inverted.
+For each metric:
+- the arithmetic peer mean is the reference point;
+- dispersion uses the **sample standard deviation** (n-1);
+- the target company is excluded from the peer distribution;
+- the directional z-score is clipped to +/-3;
+- the unclipped z-score is retained for auditability;
+- lower-is-better metrics invert the sign.
 
-This matches the existing implementation and is more stable than median/MAD for the small peer groups currently available.
+A score of 50 therefore means the target equals the **peer mean**, not the median.
 
 ## Minimum sample
 
-A metric now requires at least **4 aligned peer observations** before it can contribute to Fundamental Quality.
+A score-eligible metric requires at least 4 aligned, definition-compatible peer observations.
 
-The previous threshold of 3 was too permissive for small peer sets.
+## Sensitivity
 
-## Weighted readiness
+Every valid score calculation also runs leave-one-peer-out diagnostics per metric. Diagnostic runs may use 3 peers after one omission.
 
-A company must also cover at least **70% of its fixed company-type quality components**.
+The result records:
+- score_low;
+- score_high;
+- the most influential metric and peer;
+- the largest score shift;
+- STABLE if the band width is below 10 points, otherwise PEER_SENSITIVE.
 
-Component weights come from `config/company_types.yaml`.
+PEER_SENSITIVE blocks DISPLAY_READY.
 
-A component counts as covered only when at least one mapped metric in that component has:
-- an eligible target value;
-- at least 4 aligned, definition-compatible peer values.
+## Required components
 
-## Production gate
+Coverage >=70% is necessary but not sufficient. Each company type also has required components in `config/company_types.yaml`.
 
-Even if peer/component coverage passes, a production Fundamental Quality score is not published until Data Confidence is populated and is at least 80.
+For insurers, both are mandatory:
+- capital_strength;
+- underwriting_quality.
 
-Therefore, current candidate calculations remain research outputs only.
+This prevents an insurer from receiving a production quality score while capital strength is missing.
+
+## Robust-method reconsideration
+
+Median/MAD remains deferred while peer groups are small. Reconsider a robust reference distribution when a metric has at least 8 good peers.
+
+## Clipping
+
+Clipping is deliberate information loss. Each MetricScore retains both `unclipped_z_score` and clipped `z_score`, so an extreme signal remains visible even when its contribution is capped.
