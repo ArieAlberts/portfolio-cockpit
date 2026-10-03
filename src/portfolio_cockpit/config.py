@@ -57,6 +57,12 @@ def metric_directions(
     return config["score_metrics"]["metric_directions"][company_type]
 
 
+def component_metric_slots(
+    config: dict[str, dict[str, Any]], company_type: str
+) -> dict[str, dict[str, dict[str, Any]]]:
+    return config["score_metrics"]["component_metric_slots"][company_type]
+
+
 def validate_config(config: dict[str, dict[str, Any]]) -> None:
     errors: list[str] = []
 
@@ -118,6 +124,7 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
 
     aliases_by_type = metric_cfg.get("component_metric_aliases", {})
     directions_by_type = metric_cfg.get("metric_directions", {})
+    slots_by_type = metric_cfg.get("component_metric_slots", {})
     kinds = metric_cfg.get("metric_kinds", {})
 
     for company_type, type_cfg in company_types.items():
@@ -139,11 +146,15 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
 
         aliases = aliases_by_type.get(company_type)
         directions = directions_by_type.get(company_type)
+        slots = slots_by_type.get(company_type)
         if aliases is None:
             errors.append(f"{company_type}: missing component_metric_aliases")
             continue
         if directions is None:
             errors.append(f"{company_type}: missing metric_directions")
+            continue
+        if slots is None:
+            errors.append(f"{company_type}: missing component_metric_slots")
             continue
 
         if set(aliases) != set(components):
@@ -151,6 +162,14 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
             extra = sorted(set(aliases) - set(components))
             errors.append(
                 f"{company_type}: component registry mismatch; missing={missing}, extra={extra}"
+            )
+
+        if set(slots) != set(components):
+            missing = sorted(set(components) - set(slots))
+            extra = sorted(set(slots) - set(components))
+            errors.append(
+                f"{company_type}: metric slot component mismatch; "
+                f"missing={missing}, extra={extra}"
             )
 
         seen: dict[str, str] = {}
@@ -177,6 +196,49 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
                     errors.append(
                         f"{company_type}:{metric_name}: invalid or missing kind {kind!r}"
                     )
+
+            component_slots = slots.get(component, {})
+            slot_weight_sum = sum(float(s.get("weight", 0)) for s in component_slots.values())
+            if abs(slot_weight_sum - 1.0) > 1e-9:
+                errors.append(
+                    f"{company_type}:{component}: slot weights sum to "
+                    f"{slot_weight_sum}, not 1.0"
+                )
+
+            slotted: list[str] = []
+            for slot_name, slot_cfg in component_slots.items():
+                weight = float(slot_cfg.get("weight", 0))
+                if weight <= 0:
+                    errors.append(
+                        f"{company_type}:{component}:{slot_name}: slot weight must be positive"
+                    )
+                slot_aliases = list(slot_cfg.get("aliases", ()))
+                if not slot_aliases:
+                    errors.append(
+                        f"{company_type}:{component}:{slot_name}: empty aliases"
+                    )
+                slotted.extend(slot_aliases)
+
+            if len(slotted) != len(set(slotted)):
+                errors.append(
+                    f"{company_type}:{component}: metric alias appears in multiple slots"
+                )
+            if set(slotted) != set(metric_names):
+                missing = sorted(set(metric_names) - set(slotted))
+                extra = sorted(set(slotted) - set(metric_names))
+                errors.append(
+                    f"{company_type}:{component}: slot aliases mismatch; "
+                    f"missing={missing}, extra={extra}"
+                )
+
+    component_metric_threshold = float(
+        fq.get("minimum_component_metric_weight_coverage", 0)
+    )
+    if not 0 < component_metric_threshold <= 1:
+        errors.append(
+            "fundamental_quality.minimum_component_metric_weight_coverage "
+            "must be in (0, 1]"
+        )
 
     positions = portfolio.get("positions", {})
     if not positions:
