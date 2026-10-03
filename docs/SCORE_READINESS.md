@@ -46,3 +46,20 @@ FactSet publishes useful adjusted operating-margin data, but its fiscal periods 
 The next WKL work should therefore focus on either:
 - a defensible same-basis balance-sheet/leverage metric across at least four peers; or
 - a formally defined near-period policy with an explicit confidence penalty, tested before use.
+
+## ESI progress
+
+Element Solutions has improved from 25% to **60% weighted component coverage**.
+
+Covered components:
+- profitability/capital efficiency — adjusted EBITDA margin;
+- cash-flow quality — company-defined free-cash-flow margin with explicit definition penalties;
+- value per share — adjusted EPS growth.
+
+Still uncovered:
+- balance sheet;
+- growth/stability.
+
+Reported Q2 growth is deliberately not used as the quality-growth signal because ESI's reported growth contains a material acquisition contribution. Organic growth remains preferred, but there are not yet four sufficiently standardized organic/organic-like peer observations.
+
+ESI therefore remains blocked from a Fundamental Quality score at 60% versus the required 70%.
