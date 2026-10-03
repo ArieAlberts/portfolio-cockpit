@@ -1,0 +1,46 @@
+schema_version: 1
+
+# Absolute anchors are explanatory context beside peer-relative Fundamental Quality.
+# They must never alter the peer score, readiness gates or execution behavior.
+affects_fundamental_quality_score: false
+affects_readiness: false
+execution_effect: NONE
+methodology: configurable_house_thresholds
+
+profiles:
+  GENERAL_OPERATING_COMPANY:
+    net_debt_to_ebitda:
+      direction: lower_is_better
+      strong_threshold: 2.5
+      acceptable_threshold: 3.5
+      rationale: "Balance-sheet leverage context; lower is better."
+    reported_margin_pct:
+      direction: higher_is_better
+      strong_threshold: 20.0
+      acceptable_threshold: 10.0
+      rationale: "Operating-margin context for mature operating companies."
+    free_cash_flow_margin_pct:
+      direction: higher_is_better
+      strong_threshold: 15.0
+      acceptable_threshold: 8.0
+      rationale: "Cash-generation context independent of peer ranking."
+    cash_conversion_pct:
+      direction: higher_is_better
+      strong_threshold: 80.0
+      acceptable_threshold: 60.0
+      rationale: "Conversion of operating profit into operating cash flow."
+    organic_like_revenue_growth_pct:
+      direction: higher_is_better
+      strong_threshold: 5.0
+      acceptable_threshold: 0.0
+      rationale: "Underlying top-line growth context."
+    adjusted_eps_growth_pct:
+      direction: higher_is_better
+      strong_threshold: 8.0
+      acceptable_threshold: 0.0
+      rationale: "Per-share earnings growth context."
+    share_count_change_pct:
+      direction: lower_is_better
+      strong_threshold: 0.0
+      acceptable_threshold: 2.0
+      rationale: "No dilution is preferred; a falling share count is favorable."
