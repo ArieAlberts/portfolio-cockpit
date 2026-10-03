@@ -2,6 +2,19 @@ name: rebuild-fundamental-quality
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/rebuild-fundamental-quality.yml"
+      - "config/portfolio.yaml"
+      - "config/company_types.yaml"
+      - "config/readiness.yaml"
+      - "config/scoring.yaml"
+      - "config/score_metrics.yaml"
+      - "data/peers/**"
+      - "data/confidence/**"
+      - "src/portfolio_cockpit/scoring/**"
+      - "scripts/build_fundamental_quality.py"
+      - "pyproject.toml"
 
 permissions:
   contents: write
