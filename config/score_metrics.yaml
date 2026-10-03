@@ -259,3 +259,197 @@ metric_kinds:
   roa: percentage
   credit_or_asset_quality: score
   book_value_per_share_growth: percentage
+
+# Weighted metric slots separate economic signals from fallback aliases.
+# Slot weights sum to 1.0 within each component; aliases inside a slot are fallbacks.
+component_metric_slots:
+  GENERAL_OPERATING_COMPANY:
+    balance_sheet:
+      leverage:
+        weight: 0.70
+        aliases: [net_debt_to_ebitda, leverage_ratio]
+      net_cash_or_debt:
+        weight: 0.30
+        aliases: [net_cash, net_debt]
+    profitability_capital_efficiency:
+      operating_margin:
+        weight: 1.00
+        aliases:
+          - reported_margin_pct
+          - company_adjusted_operating_margin_pct
+          - adjusted_ebita_margin_pct
+          - adjusted_ebitda_margin_pct
+          - adjusted_operating_margin_pct
+          - adjusted_ebit_margin_pct
+          - operating_margin_pct
+          - restaurant_margin_pct
+          - gross_margin_pct
+          - ytd_operating_margin_pct
+    cashflow_quality:
+      cashflow_margin:
+        weight: 0.65
+        aliases: [free_cash_flow_margin_pct, operating_cash_flow_margin_pct]
+      cash_conversion:
+        weight: 0.35
+        aliases: [cash_conversion_pct]
+    growth_stability:
+      organic_or_comparable_growth:
+        weight: 0.50
+        aliases:
+          - organic_like_revenue_growth_pct
+          - organic_revenue_growth_pct
+          - comparable_sales_growth_pct
+          - constant_currency_revenue_growth_pct
+      reported_growth:
+        weight: 0.25
+        aliases: [reported_revenue_growth_pct, revenue_growth_pct]
+      backlog_growth:
+        weight: 0.25
+        aliases: [backlog_growth_pct]
+    value_per_share:
+      earnings_growth:
+        weight: 0.70
+        aliases:
+          - adjusted_eps_growth_pct
+          - company_adjusted_eps_growth_pct
+          - eps_growth_pct
+          - operating_eps_growth_pct
+      share_count:
+        weight: 0.30
+        aliases: [share_count_change_pct, weighted_average_share_change_pct]
+
+  INSURER:
+    capital_strength:
+      solvency:
+        weight: 1.00
+        aliases: [solvency_ratio_pct]
+    underwriting_quality:
+      combined_ratio:
+        weight: 0.70
+        aliases: [combined_ratio_pct]
+      loss_ratio:
+        weight: 0.30
+        aliases: [loss_ratio_pct]
+    profitability:
+      roe:
+        weight: 1.00
+        aliases: [annualized_roe_pct, operating_roe_pct, reported_roe_pct]
+    growth_stability:
+      operating_earnings:
+        weight: 0.35
+        aliases: [operating_earnings_growth_pct]
+      capital_generation:
+        weight: 0.20
+        aliases: [operating_capital_generation_growth_pct]
+      premium_growth:
+        weight: 0.45
+        aliases: [gross_written_premium_growth_pct, premium_growth_pct]
+    value_per_share:
+      earnings_per_share:
+        weight: 0.60
+        aliases: [gaap_eps_growth_pct, operating_eps_growth_pct, eps_growth_pct]
+      dividend:
+        weight: 0.15
+        aliases: [dividend_growth_pct]
+      share_count:
+        weight: 0.25
+        aliases: [share_count_change_pct]
+
+  CYCLICAL_MINING:
+    balance_sheet:
+      leverage:
+        weight: 0.65
+        aliases: [net_debt_to_ebitda]
+      absolute_net_debt:
+        weight: 0.35
+        aliases: [net_debt_usd_m]
+    cost_position:
+      unit_cost:
+        weight: 1.00
+        aliases: [c1_cash_cost_usd_per_lb]
+    normalized_cashflow:
+      cashflow_margin:
+        weight: 0.60
+        aliases: [operating_cash_flow_margin_pct]
+      absolute_cashflow:
+        weight: 0.40
+        aliases: [operating_cash_flow_usd_m]
+    execution:
+      production_level:
+        weight: 0.30
+        aliases: [copper_production_tonnes]
+      production_growth:
+        weight: 0.70
+        aliases: [production_growth_pct]
+    value_per_share:
+      earnings_growth:
+        weight: 1.00
+        aliases: [eps_growth_pct, diluted_eps_growth_pct]
+
+  PRE_REVENUE_DEVELOPMENT:
+    liquidity_runway:
+      runway:
+        weight: 0.60
+        aliases: [cash_runway_months]
+      liquid_assets:
+        weight: 0.25
+        aliases: [cash_and_investments_usd_m]
+      cash_burn:
+        weight: 0.15
+        aliases: [operating_cash_burn_usd_m]
+    financing_dilution:
+      dilution_rate:
+        weight: 0.70
+        aliases: [dilution_rate]
+      shares_issued:
+        weight: 0.30
+        aliases: [shares_issued_h1_m]
+    regulatory_milestones:
+      regulatory_progress:
+        weight: 1.00
+        aliases: [regulatory_progress]
+    project_execution:
+      project_progress:
+        weight: 1.00
+        aliases: [project_milestone_progress]
+    commercial_validation:
+      backlog:
+        weight: 0.70
+        aliases: [contracted_backlog]
+      contracts:
+        weight: 0.30
+        aliases: [commercial_contracts]
+
+  FINANCIAL_SERVICES:
+    balance_sheet:
+      capital_ratio:
+        weight: 0.65
+        aliases: [capital_ratio]
+      leverage:
+        weight: 0.35
+        aliases: [net_debt_to_ebitda]
+    profitability:
+      roe:
+        weight: 0.50
+        aliases: [roe]
+      roa:
+        weight: 0.25
+        aliases: [roa]
+      eps_growth:
+        weight: 0.25
+        aliases: [adjusted_eps_growth_pct]
+    asset_quality:
+      asset_quality:
+        weight: 1.00
+        aliases: [credit_or_asset_quality]
+    growth_stability:
+      revenue_growth:
+        weight: 1.00
+        aliases: [revenue_growth_pct]
+    value_per_share:
+      book_value_growth:
+        weight: 0.70
+        aliases: [book_value_per_share_growth]
+      share_count:
+        weight: 0.30
+        aliases: [share_count_change_pct]
