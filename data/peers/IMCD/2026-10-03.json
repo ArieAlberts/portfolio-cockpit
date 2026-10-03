@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "target_ticker": "IMCD",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized specialty-chemical-distribution peer review. The direct listed peer universe is narrow; the dataset preserves this limitation.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "IMCD",
+    "BNR.DE",
+    "AZE.BR",
+    "DKSH.SW"
+  ],
+  "peer_universe_status": "LIMITED_MEDIUM_CONFIDENCE",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PEER_DATA_CHECK_UNTIL_COMPARABILITY_REVIEW"
+  },
+  "companies": {
+    "IMCD": {
+      "company": "IMCD N.V.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_RELEASE",
+        "title": "IMCD reports EBITA of EUR 285 million (+4%) in the first half of 2026",
+        "url": "https://www.imcdgroup.com/investors/investor-news?filters=D9FCFC134FB2409082AE72D02691D099"
+      },
+      "metrics": {
+        "constant_currency_revenue_growth_pct": {
+          "value": 11,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "revenue growth at constant currency",
+          "score_eligible": false,
+          "notes": "Includes acquisition contribution; not equivalent to organic growth."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth disclosed in H1 presentation commentary",
+          "score_eligible": true
+        },
+        "adjusted_ebita_margin_pct": {
+          "value": 10.803639,
+          "comparison_class": "H1_ADJUSTED_EBITA_MARGIN",
+          "source_definition": "operating EBITA / revenue",
+          "calculation": "285 / 2638 * 100",
+          "score_eligible": true
+        },
+        "cash_eps_growth_pct": {
+          "value": 8.163265,
+          "comparison_class": "H1_CASH_EPS_GROWTH",
+          "source_definition": "cash EPS H1 YoY",
+          "calculation": "3.18 / 2.94 - 1",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 8.415466,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "222 / 2638 * 100",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": 76.2,
+          "comparison_class": "COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "cash conversion margin",
+          "score_eligible": false
+        },
+        "leverage_ratio": {
+          "value": 2.8,
+          "comparison_class": "LEVERAGE_RATIO",
+          "source_definition": "reported leverage ratio",
+          "score_eligible": true
+        },
+        "net_debt_eur_m": {
+          "value": 1559.6,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "reported net debt",
+          "score_eligible": false
+        }
+      }
+    },
+    "AZE.BR": {
+      "company": "Azelis Group NV",
+      "role": "DIRECT_PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "H1 2026 results: Return to organic growth",
+        "url": "https://www.azelis.com/en/news/h1-2026-results-return-to-organic-growth-0"
+      },
+      "metrics": {
+        "constant_currency_revenue_growth_pct": {
+          "value": 3.2,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "constant-currency revenue growth",
+          "score_eligible": false
+        },
+        "organic_revenue_growth_pct": {
+          "value": 0.3,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_ebita_margin_pct": {
+          "value": 10.7,
+          "comparison_class": "H1_ADJUSTED_EBITA_MARGIN",
+          "source_definition": "adjusted EBITA margin",
+          "score_eligible": true
+        },
+        "cash_eps_growth_pct": {
+          "value": 2.4,
+          "comparison_class": "H1_CASH_EPS_GROWTH",
+          "source_definition": "reported cash EPS growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 5.632502,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "122 / 2166 * 100",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": 52.3,
+          "comparison_class": "COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "FCF conversion ratio",
+          "score_eligible": false,
+          "notes": "Definition differs from IMCD cash conversion margin."
+        },
+        "leverage_ratio": {
+          "value": 3.4,
+          "comparison_class": "LEVERAGE_RATIO",
+          "source_definition": "leverage ratio",
+          "score_eligible": true
+        }
+      }
+    },
+    "BNR.DE": {
+      "company": "Brenntag SE",
+      "role": "DIRECT_PEER",
+      "period": "H1_2026_DERIVED_FROM_Q1_Q2",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "OFFICIAL_COMPANY_RELEASES",
+        "title": "Brenntag Q1 and Q2 2026 financial results",
+        "url": "https://corporate.brenntag.com/en/media/news/brenntag-q2-2026-financial-results.html"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": -0.201486,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "derived from official Q1+Q2 sales",
+          "calculation": "(3662+4263)/(4072+3869)-1",
+          "score_eligible": false
+        },
+        "organic_revenue_growth_pct": {
+          "value": null,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": null,
+          "score_eligible": false,
+          "notes": "No strict H1 organic revenue growth value stored in this pass."
+        },
+        "adjusted_ebita_margin_pct": {
+          "value": 7.381703,
+          "comparison_class": "H1_ADJUSTED_EBITA_MARGIN",
+          "source_definition": "derived operating EBITA / sales from Q1+Q2",
+          "calculation": "(217+368)/(3662+4263)*100",
+          "score_eligible": true
+        },
+        "cash_eps_growth_pct": {
+          "value": 55.284553,
+          "comparison_class": "H1_CASH_EPS_GROWTH",
+          "source_definition": "reported EPS growth derived from Q1+Q2",
+          "calculation": "(0.68+1.23)/(0.93+0.30)-1",
+          "score_eligible": false,
+          "notes": "Regular EPS is not the same measure as IMCD/Azelis cash EPS."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 1.198738,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "derived free cash flow / sales",
+          "calculation": "(91+4)/(3662+4263)*100",
+          "score_eligible": true
+        },
+        "leverage_ratio": {
+          "value": null,
+          "comparison_class": "LEVERAGE_RATIO",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "net_financial_liabilities_eur_m": {
+          "value": 3100,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net financial liabilities at 30 June 2026",
+          "score_eligible": false
+        }
+      }
+    },
+    "DKSH.SW": {
+      "company": "DKSH Holding Ltd.",
+      "role": "BROAD_PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_BROAD_MODEL",
+      "source": {
+        "type": "OFFICIAL_COMPANY_CORRIGENDUM",
+        "title": "Corrigendum: DKSH Delivers Another Solid Operating Performance, Strong Cash Flow Generation, and Higher EPS in H1 2026",
+        "url": "https://www.dksh.com/in-en/home/media/news/corrigendum-dksh-delivers-another-solid-operating-performance-strong-cash-flow-generation-and-higher-eps-in-h1-2026"
+      },
+      "metrics": {
+        "constant_currency_revenue_growth_pct": {
+          "value": 4.9,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "net sales growth at CER",
+          "score_eligible": false
+        },
+        "adjusted_ebita_margin_pct": {
+          "value": 3,
+          "comparison_class": "H1_CORE_EBIT_MARGIN",
+          "source_definition": "core EBIT margin",
+          "score_eligible": false,
+          "notes": "Broader distribution mix and EBIT definition; not treated as direct EBITA-margin equivalent."
+        },
+        "eps_growth_pct": {
+          "value": 10.6,
+          "comparison_class": "H1_EPS_GROWTH",
+          "source_definition": "corrected EPS growth",
+          "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 2.699135,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / net sales",
+          "calculation": "147.7 / 5470.9 * 100",
+          "score_eligible": false,
+          "notes": "Stored for context; broad business mix."
+        },
+        "cash_conversion_pct": {
+          "value": 130.8,
+          "comparison_class": "COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "cash conversion rate",
+          "score_eligible": false
+        }
+      }
+    }
+  }
+}

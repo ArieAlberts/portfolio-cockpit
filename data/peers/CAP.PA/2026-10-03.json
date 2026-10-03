@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "target_ticker": "CAP.PA",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized IT-services peer observations for Capgemini. Strict H1 2026 scoring uses only period-aligned peers and comparable definitions.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "CAP.PA",
+    "CTSH",
+    "SOP.PA",
+    "EPAM",
+    "ACN",
+    "GIB.A.TO",
+    "INFY"
+  ],
+  "peer_universe_status": "PARTIAL_METRIC_COVERAGE",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PEER_DATA_CHECK_UNTIL_70_PERCENT_WEIGHTED_COVERAGE"
+  },
+  "companies": {
+    "CAP.PA": {
+      "company": "Capgemini SE",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Capgemini 2026 H1 Results",
+        "url": "https://investors.capgemini.com/en/publication/2026-h1-results/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 8.8,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 12.5,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": -11.9,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "normalized EPS growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 0.30624,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "organic free cash flow / revenue",
+          "calculation": "37 / 12082 * 100",
+          "score_eligible": true
+        },
+        "constant_currency_revenue_growth_pct": {
+          "value": 11.3,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "constant-currency revenue growth including acquisitions",
+          "score_eligible": false,
+          "notes": "Acquisitions made a material contribution; not treated as organic growth."
+        },
+        "net_debt_eur_m": {
+          "value": 6454,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net debt",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -0.9504,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "average number of shares outstanding H1 YoY",
+          "calculation": "168337662 / 169952974 - 1",
+          "score_eligible": false
+        }
+      }
+    },
+    "CTSH": {
+      "company": "Cognizant Technology Solutions Corp.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Cognizant Reports Second Quarter 2026 Results",
+        "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 5.2,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported six-month revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 15.8,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 8.235294,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS H1 YoY",
+          "calculation": "2.76 / 2.55 - 1",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 6.030842,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "657 / 10894 * 100",
+          "score_eligible": true
+        },
+        "constant_currency_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "constant-currency revenue growth",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -4.259635,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "472 / 493 - 1",
+          "score_eligible": false
+        }
+      }
+    },
+    "SOP.PA": {
+      "company": "Sopra Steria Group SA",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_DIGITAL_REPORT",
+        "title": "Sopra Steria Half-Year Report at 30 June 2026",
+        "url": "https://soprasteria.fr.digital-report.net/en/report/6266"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 4.1,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 9.6,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "operating profit on business activity / revenue",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 18,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "basic recurring EPS growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": -4.853155,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "-143.6 / 2958.9 * 100",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": false
+        },
+        "net_debt_eur_m": {
+          "value": 618.7,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net financial debt",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -1.4,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "weighted average shares excluding treasury shares",
+          "score_eligible": false
+        }
+      }
+    },
+    "EPAM": {
+      "company": "EPAM Systems, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "EPAM Reports Results for Second Quarter 2026",
+        "url": "https://investors.epam.com/news/news-details/2026/EPAM-Reports-Results-for-Second-Quarter-2026/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 6,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported six-month revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 15.4,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "non-GAAP operating margin",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 20.46332,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "non-GAAP diluted EPS H1 YoY",
+          "calculation": "6.24 / 5.18 - 1",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": null,
+          "score_eligible": false,
+          "notes": "H1 operating cash flow was negative; no company-defined aligned H1 free-cash-flow metric stored in this pass."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3.5,
+          "comparison_class": "H1_ORGANIC_CONSTANT_CURRENCY_GROWTH",
+          "source_definition": "organic constant-currency revenue growth",
+          "score_eligible": false
+        },
+        "net_cash_usd_m": {
+          "value": 764.397,
+          "comparison_class": "NET_CASH_ABSOLUTE",
+          "source_definition": "cash and cash equivalents less long-term debt",
+          "calculation": "789.397 - 25.000",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -6.464199,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "53.220 / 56.898 - 1",
+          "score_eligible": false
+        }
+      }
+    },
+    "ACN": {
+      "company": "Accenture plc",
+      "role": "CONTEXT_PEER",
+      "period": "Q3_FY2026",
+      "period_end": "2026-05-31",
+      "period_alignment": "NON_ALIGNED_FISCAL_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Accenture Reports Third-Quarter Fiscal 2026 Results",
+        "url": "https://newsroom.accenture.com/news/2026/accenture-reports-third-quarter-fiscal-2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 6,
+          "comparison_class": "QUARTER_REPORTED_REVENUE_GROWTH",
+          "source_definition": "Q3 FY26 reported revenue growth",
+          "score_eligible": false
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 17,
+          "comparison_class": "QUARTER_OPERATING_MARGIN",
+          "source_definition": "Q3 FY26 operating margin",
+          "score_eligible": false
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 9,
+          "comparison_class": "QUARTER_DILUTED_EPS_GROWTH",
+          "source_definition": "Q3 FY26 diluted EPS growth",
+          "score_eligible": false
+        },
+        "free_cash_flow_usd_bn": {
+          "value": 3.6,
+          "comparison_class": "QUARTER_FREE_CASH_FLOW",
+          "source_definition": "Q3 FY26 free cash flow",
+          "score_eligible": false
+        }
+      }
+    },
+    "GIB.A.TO": {
+      "company": "CGI Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_FISCAL_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "CGI reports third quarter Fiscal 2026 results",
+        "url": "https://www.cgi.com/en/cgi-reports-third-quarter-f2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 2.5,
+          "comparison_class": "QUARTER_REPORTED_REVENUE_GROWTH",
+          "source_definition": "Q3 fiscal 2026 revenue growth",
+          "score_eligible": false
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 16.3,
+          "comparison_class": "QUARTER_ADJUSTED_EBIT_MARGIN",
+          "source_definition": "adjusted EBIT margin",
+          "score_eligible": false
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 9,
+          "comparison_class": "QUARTER_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS growth",
+          "score_eligible": false
+        },
+        "operating_cash_flow_margin_pct": {
+          "value": 14.4,
+          "comparison_class": "QUARTER_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "cash provided by operating activities / revenue",
+          "score_eligible": false
+        }
+      }
+    },
+    "INFY": {
+      "company": "Infosys Limited",
+      "role": "CONTEXT_PEER",
+      "period": "Q1_FY2027",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_SINGLE_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Infosys Q1 FY27 results",
+        "url": "https://www.infosys.com/about/last-quarter.html"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 14,
+          "comparison_class": "QUARTER_REPORTED_REVENUE_GROWTH_INR",
+          "source_definition": "reported INR revenue growth",
+          "score_eligible": false
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 21.1,
+          "comparison_class": "QUARTER_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": false
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 14.9,
+          "comparison_class": "QUARTER_BASIC_EPS_GROWTH_INR",
+          "source_definition": "basic EPS growth in INR",
+          "score_eligible": false
+        },
+        "free_cash_flow_usd_bn": {
+          "value": 0.96,
+          "comparison_class": "QUARTER_FREE_CASH_FLOW",
+          "source_definition": "free cash flow",
+          "score_eligible": false
+        }
+      }
+    }
+  }
+}

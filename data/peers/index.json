@@ -4,7 +4,9 @@
     "WKL": "data/peers/WKL/2026-10-02.json",
     "ASR": "data/peers/ASR/2026-10-02.json",
     "ADM.L": "data/peers/ADM.L/2026-10-03.json",
-    "PLMR": "data/peers/PLMR/2026-10-03.json"
+    "PLMR": "data/peers/PLMR/2026-10-03.json",
+    "CAP.PA": "data/peers/CAP.PA/2026-10-03.json",
+    "IMCD": "data/peers/IMCD/2026-10-03.json"
   },
   "note": "Listed datasets have completed a first standardized peer-financial pass. More portfolio companies will be added sequentially."
 }

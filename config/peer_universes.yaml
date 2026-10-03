@@ -43,11 +43,11 @@ universes:
   IMCD:
     label: Specialty chemical distribution
     status: LIMITED
-    confidence: HIGH
+    confidence: MEDIUM
     peers: [BNR.DE, AZE.BR, DKSH.SW]
     minimum_peer_count: 3
     comparable_metrics: [net_debt_to_ebitda, ebita_margin, fcf_conversion, organic_revenue_growth, cash_eps_growth]
-    note: Brenntag and Azelis are the closest listed direct peers; DKSH is a broader distribution comparator.
+    note: Brenntag and Azelis are the closest listed direct peers; DKSH is a broader distribution comparator. Treat DKSH margin metrics cautiously because its group business mix is materially broader.
 
   CRDA.L:
     label: Specialty chemicals and high-value ingredients
