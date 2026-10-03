@@ -23,6 +23,7 @@ from .peer_data import EligibleMetricSet, eligible_metric_set
 from .readiness import evaluate_readiness
 
 
+# Peer-universe config is hashed because validation can block a scoring build.
 CONFIG_FILES = (
     "config/portfolio.yaml",
     "config/company_types.yaml",
