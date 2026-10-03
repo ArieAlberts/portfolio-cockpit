@@ -14,16 +14,30 @@ def test_html_fingerprint_ignores_script_content():
     assert x.fingerprint == y.fingerprint
 
 
+def test_relevant_link_mode_ignores_cosmetic_text_changes():
+    a=b"<html><body><div>Updated 3 Oct</div><a href='/results/h1.pdf'>H1</a></body></html>"
+    b=b"<html><body><div>Updated 4 Oct - cookie banner changed</div><a href='/results/h1.pdf'>H1</a></body></html>"
+    kwargs={"fingerprint_mode":"RELEVANT_LINKS","link_patterns":[r"result",r"\.pdf"]}
+    x=observe_html_page("https://example.com/investors",body=a,headers={},**kwargs)
+    y=observe_html_page("https://example.com/investors",body=b,headers={},**kwargs)
+    assert x.fingerprint == y.fingerprint
+
+
+def test_relevant_link_mode_detects_new_result_link():
+    a=b"<html><body><a href='/results/h1.pdf'>H1</a></body></html>"
+    b=b"<html><body><a href='/results/h1.pdf'>H1</a><a href='/results/q3.pdf'>Q3</a></body></html>"
+    kwargs={"fingerprint_mode":"RELEVANT_LINKS","link_patterns":[r"result",r"\.pdf"]}
+    x=observe_html_page("https://example.com/investors",body=a,headers={},**kwargs)
+    y=observe_html_page("https://example.com/investors",body=b,headers={},**kwargs)
+    assert x.fingerprint != y.fingerprint
+
+
 def test_sec_fingerprint_ignores_nonfinancial_forms():
-    base={
-        "filings":{"recent":{
-            "accessionNumber":["A","B"],
-            "filingDate":["2026-10-01","2026-10-02"],
-            "reportDate":["2026-09-30","2026-09-30"],
-            "form":["10-Q","4"],
-            "primaryDocument":["q.htm","ownership.htm"],
-        }}
-    }
+    base={"filings":{"recent":{
+        "accessionNumber":["A","B"],"filingDate":["2026-10-01","2026-10-02"],
+        "reportDate":["2026-09-30","2026-09-30"],"form":["10-Q","4"],
+        "primaryDocument":["q.htm","ownership.htm"],
+    }}}
     changed=json.loads(json.dumps(base))
     changed["filings"]["recent"]["accessionNumber"][1]="CHANGED"
     x=observe_sec_submissions(body=json.dumps(base).encode(),headers={})

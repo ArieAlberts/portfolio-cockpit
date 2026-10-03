@@ -45,7 +45,7 @@ def main() -> int:
     parser.add_argument("--fail-if-all-error", action="store_true")
     args = parser.parse_args()
 
-    cfg = yaml.safe_load((ROOT / args.config).read_text(encoding="utf-8"))
+    cfg = yaml.safe_load((ROOT / args.config).read_text(encoding="utf-8"))\n    user_agent = os.getenv("COCKPIT_USER_AGENT", "").strip() or cfg["defaults"]["user_agent"]
     peer_index = json.loads((ROOT / args.peer_index).read_text(encoding="utf-8"))
     state_path = ROOT / args.state
     status_path = ROOT / args.status
@@ -61,7 +61,7 @@ def main() -> int:
     if cfg["defaults"].get("resolve_sec_tickers", True):
         try:
             sec_map = fetch_sec_ticker_map(
-                user_agent=cfg["defaults"]["user_agent"],
+                user_agent=user_agent,
                 timeout=int(cfg["defaults"]["timeout_seconds"]),
             )
         except Exception as exc:
@@ -97,7 +97,7 @@ def main() -> int:
         try:
             observation = observe_peer_source(
                 spec,
-                user_agent=cfg["defaults"]["user_agent"],
+                user_agent=user_agent,
                 timeout=int(cfg["defaults"]["timeout_seconds"]),
             )
             observations += 1

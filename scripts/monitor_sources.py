@@ -3,7 +3,8 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import date, datetime, timezone
+import os
+from datetime import date, datetime
 from pathlib import Path
 
 import yaml
@@ -50,6 +51,7 @@ def main() -> int:
     state_path = ROOT / args.state
     status_path = ROOT / args.status
     events_root = ROOT / args.events
+    user_agent = os.getenv("COCKPIT_USER_AGENT", "").strip() or defaults["user_agent"]
 
     state = load_json(state_path, {"schema_version": 1, "sources": {}})
     status = load_json(status_path, {"schema_version": 1, "companies": {}})
@@ -71,19 +73,29 @@ def main() -> int:
             },
         )
         ticker_errors = []
-
         baseline_age = (now.date() - date.fromisoformat(company["baseline_date"])).days
-        if baseline_age > int(company["stale_after_days"]) and ticker_status["fundamental_status"] == "CURRENT":
-            ticker_status["fundamental_status"] = "STALE_DATA"
-            ticker_status["review_required"] = True
-            ticker_status["warnings"] = ["BASELINE_OLDER_THAN_STALE_THRESHOLD"]
+        is_stale = baseline_age > int(company["stale_after_days"])
+        ticker_status["baseline_age_days"] = baseline_age
+        ticker_status["data_age_status"] = "STALE" if is_stale else "CURRENT"
+        warnings = [w for w in ticker_status.get("warnings", []) if w != "BASELINE_OLDER_THAN_STALE_THRESHOLD"]
+        if is_stale:
+            warnings.append("BASELINE_OLDER_THAN_STALE_THRESHOLD")
+            if ticker_status["fundamental_status"] in {"CURRENT", "NOT_YET_POLLED"}:
+                ticker_status["fundamental_status"] = "STALE_DATA"
+                ticker_status["review_required"] = True
+        ticker_status["warnings"] = warnings
 
         for source in company["sources"]:
+            source_entry = dict(source)
+            if source_entry["mode"] == "HTML_PAGE":
+                source_entry.setdefault("fingerprint_mode", defaults.get("html_fingerprint_mode", "RELEVANT_LINKS"))
+                source_entry.setdefault("link_patterns", defaults.get("html_link_patterns"))
+
             key = f"{ticker}:{source['id']}"
             try:
                 observation = observe_source(
-                    source,
-                    user_agent=defaults["user_agent"],
+                    source_entry,
+                    user_agent=user_agent,
                     timeout=int(defaults["timeout_seconds"]),
                 )
                 observations += 1
@@ -108,8 +120,8 @@ def main() -> int:
             if previous is None:
                 state["sources"][key] = current
                 if ticker_status["fundamental_status"] == "NOT_YET_POLLED":
-                    ticker_status["fundamental_status"] = "CURRENT"
-                    ticker_status["warnings"] = []
+                    ticker_status["fundamental_status"] = "STALE_DATA" if is_stale else "CURRENT"
+                    ticker_status["review_required"] = is_stale
                 continue
 
             if previous.get("fingerprint") != observation.fingerprint:
@@ -136,7 +148,6 @@ def main() -> int:
                 ticker_status["review_required"] = True
                 ticker_status["last_source_change_at"] = observed_at
                 ticker_status["last_event_path"] = str(path.relative_to(ROOT))
-                ticker_status["warnings"] = []
                 state["sources"][key] = current
             else:
                 state["sources"][key] = current

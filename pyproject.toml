@@ -22,3 +22,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+markers = [
+  "network: explicit external-network integration test; not part of deterministic unit CI",
+]

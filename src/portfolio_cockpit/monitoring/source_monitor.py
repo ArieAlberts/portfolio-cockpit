@@ -3,7 +3,6 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -75,18 +74,49 @@ def _http_get(url: str, *, user_agent: str, timeout: int) -> tuple[bytes, dict[s
     return body, headers
 
 
-def observe_html_page(url: str, *, body: bytes, headers: dict[str, str]) -> SourceObservation:
+def _filter_links(links: list[str], patterns: list[str] | None) -> list[str]:
+    if not patterns:
+        return links
+    compiled = [re.compile(pattern, re.IGNORECASE) for pattern in patterns]
+    return [link for link in links if any(pattern.search(link) for pattern in compiled)]
+
+
+def observe_html_page(
+    url: str,
+    *,
+    body: bytes,
+    headers: dict[str, str],
+    fingerprint_mode: str = "RELEVANT_LINKS",
+    link_patterns: list[str] | None = None,
+) -> SourceObservation:
     text = body.decode("utf-8", errors="replace")
     parser = _VisiblePageParser(url)
     parser.feed(text)
     visible = re.sub(r"\s+", " ", " ".join(parser.text)).strip()
-    links = sorted(link for link in parser.links if link.startswith(("http://", "https://")))
-    canonical = json.dumps({"text": visible, "links": links}, ensure_ascii=False, separators=(",", ":"))
+    all_links = sorted(link for link in parser.links if link.startswith(("http://", "https://")))
+    selected_links = _filter_links(all_links, link_patterns)
+
+    if fingerprint_mode == "RELEVANT_LINKS":
+        canonical = json.dumps({"links": selected_links}, ensure_ascii=False, separators=(",", ":"))
+    elif fingerprint_mode == "TEXT_AND_LINKS":
+        canonical = json.dumps(
+            {"text": visible, "links": selected_links},
+            ensure_ascii=False,
+            separators=(",", ":"),
+        )
+    else:
+        raise ValueError(f"Unsupported HTML fingerprint mode: {fingerprint_mode}")
+
     return SourceObservation(
         fingerprint=_hash_payload(canonical),
         etag=headers.get("etag"),
         last_modified=headers.get("last-modified"),
-        summary={"visible_text_chars": len(visible), "link_count": len(links)},
+        summary={
+            "fingerprint_mode": fingerprint_mode,
+            "visible_text_chars": len(visible),
+            "link_count": len(all_links),
+            "selected_link_count": len(selected_links),
+        },
     )
 
 
@@ -138,7 +168,13 @@ def observe_source(
     body, headers = getter(entry["url"], user_agent=user_agent, timeout=timeout)
     mode = entry["mode"]
     if mode == "HTML_PAGE":
-        return observe_html_page(entry["url"], body=body, headers=headers)
+        return observe_html_page(
+            entry["url"],
+            body=body,
+            headers=headers,
+            fingerprint_mode=entry.get("fingerprint_mode", "RELEVANT_LINKS"),
+            link_patterns=entry.get("link_patterns"),
+        )
     if mode == "SEC_SUBMISSIONS_JSON":
         return observe_sec_submissions(body=body, headers=headers)
     raise ValueError(f"Unsupported monitor mode: {mode}")
