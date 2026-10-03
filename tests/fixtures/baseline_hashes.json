@@ -1,0 +1,100 @@
+{
+  "baselines": {
+    "ABX": {
+      "path": "data/baselines/ABX/2026-08-06.json",
+      "sha256": "9d3ed6455d40e53f4c0ded6891266b1f2cfc04ee01785235e049b5ba8c9adb9a"
+    },
+    "ADM.L": {
+      "path": "data/baselines/ADM.L/2026-08-06.json",
+      "sha256": "00a4002b533d8b00a3887f8f193eab556bb93d5b65306f57123d68f2705a3dbc"
+    },
+    "ASR": {
+      "path": "data/baselines/ASR/2026-08-19.json",
+      "sha256": "959b8707622d950b6870dea1a6931e59f394b9755dc6bb03eb062dbaa9336b4b"
+    },
+    "CAP.PA": {
+      "path": "data/baselines/CAP.PA/2026-07-30.json",
+      "sha256": "ebcd4bd995a4ba661cc89dfc7e78cdcb6f8e351db16011826ae474467273280e"
+    },
+    "CRDA.L": {
+      "path": "data/baselines/CRDA.L/2026-07-28.json",
+      "sha256": "35774962233267b1128085c269d2a2616e895ae2340f1e3484285d9103e901bd"
+    },
+    "DKS": {
+      "path": "data/baselines/DKS/2026-08-25.json",
+      "sha256": "5feda2e63fe410c021a45e54130b41909769d8ab52fd9c63143b2971033644d1"
+    },
+    "EMN": {
+      "path": "data/baselines/EMN/2026-07-30.json",
+      "sha256": "dbfcdb000dbdf1db3aee17b8086abf51cb1ebb2905d0bc19feadbf54a6f5e55c"
+    },
+    "ERO": {
+      "path": "data/baselines/ERO/2026-08-05.json",
+      "sha256": "338bf3ad071eac0829212082e0b6af060b68c311bfca44fca1797d52477d2550"
+    },
+    "ESI": {
+      "path": "data/baselines/ESI/2026-07-27.json",
+      "sha256": "610454a3100b3e4321727213404a4c24ed1eaa92f5022dbaedfe32597a91573d"
+    },
+    "FUL": {
+      "path": "data/baselines/FUL/2026-09-23.json",
+      "sha256": "8edff24323672927693e98a88d30a8139669b692775250c9867bfb458fea60f8"
+    },
+    "IMCD": {
+      "path": "data/baselines/IMCD/2026-07-29.json",
+      "sha256": "ba817d5ecf636163d87bf4aff6135aba264a5bfca31b58d5a85b8870a54793ec"
+    },
+    "LEU": {
+      "path": "data/baselines/LEU/2026-08-05.json",
+      "sha256": "54e5f0d06f571c5f7b3d9a6acd25418e68897e381918483400b0e7f09316d249"
+    },
+    "MOD": {
+      "path": "data/baselines/MOD/2026-07-29.json",
+      "sha256": "074883d8f6ae922a7759f019271a37fbeb806f2eaaa8cb8a43aff7ebbf4e8664"
+    },
+    "MSM": {
+      "path": "data/baselines/MSM/2026-07-01.json",
+      "sha256": "e5b05be6884e0a12b0766266730fd8fc4cd9cc021a9dd8e07f00a0ade5f25dfb"
+    },
+    "OKLO": {
+      "path": "data/baselines/OKLO/2026-08-07.json",
+      "sha256": "feceb614806b5d32964e69af31591a526a4c80203f2a23354c664bd2ea6affe6"
+    },
+    "PLMR": {
+      "path": "data/baselines/PLMR/2026-08-04.json",
+      "sha256": "70d98d40a223777ea6b9ffa79578188b6819c12b67e41667f5b99ce858239a52"
+    },
+    "POWL": {
+      "path": "data/baselines/POWL/2026-08-03.json",
+      "sha256": "6b960ae933645302d30cddf1075ef28f9bc7ea4fd917bf2cc823a8691542b23e"
+    },
+    "ROR.L": {
+      "path": "data/baselines/ROR.L/2026-08-04.json",
+      "sha256": "0af12b51df372b678a92eed8f8187857b352e7de3ddf10ded08379576c3d15f0"
+    },
+    "SNA": {
+      "path": "data/baselines/SNA/2026-07-23.json",
+      "sha256": "44826af907268e4669345d956db5a8bb3cd92bc9a147c4ec0e1ed69216d31bfb"
+    },
+    "TMDX": {
+      "path": "data/baselines/TMDX/2026-08-04.json",
+      "sha256": "eae0e2d583a039ad0723337ded22848ad25b04e259ca6efe82bdab3b5c9923b0"
+    },
+    "TXRH": {
+      "path": "data/baselines/TXRH/2026-08-06.json",
+      "sha256": "444a63bf66f3c51e0b6c5018963a993f71d3bea8287e20adb27e8070bcc679d0"
+    },
+    "WKL": {
+      "path": "data/baselines/WKL/2026-08-05.json",
+      "sha256": "545efdbaea733d669c32ec278c60cef9cae70a73c923ec8761c19b79212d88c6"
+    },
+    "WSM": {
+      "path": "data/baselines/WSM/2026-08-26.json",
+      "sha256": "7bce13d0bf3164b33d34d7818c43161bc4d06cc33618db2ec10d084c090e67a3"
+    }
+  },
+  "index": {
+    "path": "data/baselines/index.json",
+    "sha256": "c492f31e2e7809585e1dfb0856b6e5a5ba6c86ee6d12e1b0d7d8e181dd1c9bb4"
+  }
+}

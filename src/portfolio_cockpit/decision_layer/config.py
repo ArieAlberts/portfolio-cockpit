@@ -26,6 +26,8 @@ DECISION_CONFIG_FILES = {
 }
 
 VALID_PERIOD_RULES = {"like_for_like"}
+VALID_DRIFT_MODES = {"relative", "absolute", "direct"}
+VALID_DIRECTIONS = {"higher_is_better", "lower_is_better"}
 VALID_SCENARIO_TYPES = {"market", "sector", "single_stock", "combined"}
 REQUIRED_SCENARIOS = (
     "market_shock",
@@ -93,7 +95,11 @@ def _validate_schema_versions(cfg: dict[str, dict[str, Any]], errors: list[str])
             errors.append(f"{name}.schema_version must be 1")
 
 
-def _validate_quality_drift(drift: dict[str, Any], errors: list[str]) -> None:
+def _validate_quality_drift(
+    drift: dict[str, Any],
+    repo_cfg: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> None:
     _check_number(errors, "quality_drift.neutral_score", drift.get("neutral_score"), lo=50, hi=50)
     _check_number(
         errors,
@@ -114,8 +120,122 @@ def _validate_quality_drift(drift: dict[str, Any], errors: list[str]) -> None:
     )
     if drift.get("period_rule") not in VALID_PERIOD_RULES:
         errors.append(f"quality_drift.period_rule must be one of {sorted(VALID_PERIOD_RULES)}")
-    if not isinstance(drift.get("profiles"), dict):
+
+    bases = drift.get("valid_period_bases")
+    if not isinstance(bases, list) or "POINT_IN_TIME" not in bases:
+        errors.append("quality_drift.valid_period_bases must be a list including POINT_IN_TIME")
+        bases = []
+    period_cfg = drift.get("baseline_period_basis") or {}
+    by_ticker = period_cfg.get("by_ticker") or {}
+    tickers = set(repo_cfg["portfolio"]["positions"])
+    if set(by_ticker) != tickers:
+        errors.append(
+            "quality_drift.baseline_period_basis.by_ticker must cover exactly the portfolio tickers"
+        )
+    for ticker, basis in by_ticker.items():
+        if basis not in bases:
+            errors.append(f"quality_drift.baseline_period_basis.by_ticker.{ticker}: invalid basis {basis!r}")
+    for i, pattern in enumerate(period_cfg.get("metric_name_patterns") or []):
+        if not isinstance(pattern.get("contains"), str) or pattern.get("basis") not in bases:
+            errors.append(f"quality_drift.baseline_period_basis.metric_name_patterns[{i}] is invalid")
+
+    excluded = drift.get("excluded_metric_patterns")
+    if not isinstance(excluded, list) or not all(isinstance(p, str) for p in excluded):
+        errors.append("quality_drift.excluded_metric_patterns must be a list of strings")
+        excluded = []
+
+    profiles = drift.get("profiles")
+    if not isinstance(profiles, dict):
         errors.append("quality_drift.profiles must be a mapping")
+        return
+    company_types = set(repo_cfg["company_types"])
+    if set(profiles) != company_types:
+        errors.append(
+            "quality_drift.profiles must define exactly the company types in company_types.yaml: "
+            f"missing={sorted(company_types - set(profiles))} unknown={sorted(set(profiles) - company_types)}"
+        )
+    all_directions = repo_cfg["score_metrics"]["metric_directions"]
+    for company_type, profile in profiles.items():
+        _validate_drift_profile(
+            company_type,
+            profile,
+            all_directions.get(company_type, {}),
+            excluded,
+            errors,
+        )
+
+
+def _validate_drift_profile(
+    company_type: str,
+    profile: dict[str, Any],
+    directions: dict[str, str],
+    excluded_patterns: list[str],
+    errors: list[str],
+) -> None:
+    label = f"quality_drift.profiles.{company_type}"
+    components = profile.get("components")
+    if not isinstance(components, dict) or not components:
+        errors.append(f"{label}.components must be a non-empty mapping")
+        return
+    required = profile.get("required_components") or []
+    unknown_required = sorted(set(required) - set(components))
+    if not required or unknown_required:
+        errors.append(f"{label}.required_components must be non-empty components: {unknown_required}")
+
+    weights = [c.get("weight") for c in components.values()]
+    if not all(_is_number(w) and w > 0 for w in weights):
+        errors.append(f"{label}: component weights must be positive numbers")
+    elif abs(sum(weights) - 1.0) > 1e-9:
+        errors.append(f"{label}: component weights sum to {sum(weights)}, not 1.0")
+
+    seen_aliases: dict[str, str] = {}
+    for component, comp_cfg in components.items():
+        clabel = f"{label}.{component}"
+        sources = comp_cfg.get("source_components", [component])
+        if not isinstance(sources, list) or not sources:
+            errors.append(f"{clabel}.source_components must be a non-empty list")
+        slots = comp_cfg.get("slots")
+        if not isinstance(slots, dict) or not slots:
+            errors.append(f"{clabel}.slots must be a non-empty mapping")
+            continue
+        slot_weights = [s.get("weight") for s in slots.values()]
+        if not all(_is_number(w) and w > 0 for w in slot_weights):
+            errors.append(f"{clabel}: slot weights must be positive numbers")
+        elif abs(sum(slot_weights) - 1.0) > 1e-9:
+            errors.append(f"{clabel}: slot weights sum to {sum(slot_weights)}, not 1.0")
+        for slot_name, slot in slots.items():
+            slabel = f"{clabel}.{slot_name}"
+            if slot.get("mode") not in VALID_DRIFT_MODES:
+                errors.append(f"{slabel}.mode must be one of {sorted(VALID_DRIFT_MODES)}")
+            direction = slot.get("direction")
+            if direction not in VALID_DIRECTIONS:
+                errors.append(f"{slabel}.direction must be one of {sorted(VALID_DIRECTIONS)}")
+            full_scale = slot.get("full_scale")
+            dead_band = slot.get("dead_band")
+            if not _is_number(full_scale) or full_scale <= 0:
+                errors.append(f"{slabel}.full_scale must be > 0")
+            if not _is_number(dead_band) or dead_band < 0:
+                errors.append(f"{slabel}.dead_band must be >= 0")
+            elif _is_number(full_scale) and dead_band >= full_scale:
+                errors.append(f"{slabel}.dead_band must be below full_scale")
+            if not isinstance(slot.get("point_in_time", False), bool):
+                errors.append(f"{slabel}.point_in_time must be a boolean")
+            aliases = slot.get("aliases")
+            if not isinstance(aliases, list) or not aliases or not all(isinstance(a, str) for a in aliases):
+                errors.append(f"{slabel}.aliases must be a non-empty list of metric names")
+                continue
+            for alias in aliases:
+                if any(p in alias for p in excluded_patterns):
+                    errors.append(f"{slabel}: alias {alias} matches an excluded pattern")
+                if alias in seen_aliases:
+                    errors.append(f"{slabel}: alias {alias} already used in {seen_aliases[alias]}")
+                seen_aliases[alias] = slabel
+                canonical = directions.get(alias)
+                if canonical is not None and canonical != direction:
+                    errors.append(
+                        f"{slabel}: direction {direction} for {alias} conflicts with "
+                        f"score_metrics.yaml ({canonical})"
+                    )
 
 
 def _validate_valuation(valuation: dict[str, Any], errors: list[str]) -> None:
@@ -325,7 +445,7 @@ def validate_decision_config(
 
     tickers = set(repo_cfg["portfolio"]["positions"])
     _validate_schema_versions(cfg, errors)
-    _validate_quality_drift(cfg["quality_drift"], errors)
+    _validate_quality_drift(cfg["quality_drift"], repo_cfg, errors)
     _validate_valuation(cfg["valuation"], errors)
     _validate_decision(cfg["decision"], repo_cfg, errors)
     _validate_risk_scenarios(cfg["risk_scenarios"], errors)

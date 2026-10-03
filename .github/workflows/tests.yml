@@ -27,6 +27,8 @@ jobs:
           python scripts/create_fundamental_snapshot.py --help >/dev/null
           python scripts/update_peer_alignment.py --help >/dev/null
           cockpit-score --help >/dev/null
+          cockpit-drift --help >/dev/null
+          python scripts/list_baseline_metrics.py --help >/dev/null
 
       - name: Rebuild score pipeline in dry-run mode
         run: cockpit-score > /tmp/fundamental_quality.json

@@ -1,6 +1,23 @@
 # Quality Drift — change versus each company's own immutable baseline.
 # Exactly 50.0 at the baseline. Never price-driven.
-# Profiles are filled in step 2 from the real metric paths in data/baselines/**.
+#
+# Profiles were built from the real component.metric paths in
+# data/baselines/** (see scripts/list_baseline_metrics.py).
+#
+# Slot rules:
+# - aliases: first alias present in the baseline is the slot's metric; the
+#   observation must report that same metric (no silent definition swap).
+# - mode: relative ((raw-base)/|base|) for amounts and per-share values,
+#   absolute (raw-base) for percentages and ratios, direct for -1..+1 or
+#   boolean assessments.
+# - full_scale: change that yields a normalized signal of +/-1.
+# - dead_band: changes with |delta| <= dead_band count as 0.
+# - point_in_time: balance/stock values; exempt from the period-basis check.
+# - *_prior_* / prior_year_* baseline fields are never drift inputs.
+#
+# Coverage is measured against what the baseline can measure: a slot or
+# component without a baseline value is not measurable and is reported in
+# profile_coverage (diagnostic) rather than counted as missing.
 schema_version: 1
 formula: "clamp(50 + 50 * sum(component_weight * component_signal), 0, 100)"
 neutral_score: 50.0
@@ -8,4 +25,215 @@ minimum_component_weight_coverage: 0.70
 minimum_slot_weight_coverage: 0.50
 period_rule: like_for_like
 max_observation_age_days: 200
-profiles: {}
+
+valid_period_bases: [FY, H1, Q, TTM, YTD, POINT_IN_TIME]
+
+# Baseline period basis, derived from each baseline's source report title.
+# A metric-name pattern overrides the ticker default (first match wins).
+baseline_period_basis:
+  by_ticker:
+    ASR: H1
+    ADM.L: H1
+    WKL: H1
+    CAP.PA: H1
+    IMCD: H1
+    CRDA.L: H1
+    ROR.L: H1
+    EMN: Q
+    WSM: Q
+    DKS: Q
+    TXRH: Q
+    SNA: Q
+    MSM: Q
+    PLMR: Q
+    MOD: Q
+    FUL: Q
+    POWL: Q
+    ESI: Q
+    ABX: Q
+    ERO: Q
+    TMDX: Q
+    LEU: Q
+    OKLO: Q
+  metric_name_patterns:
+    - {contains: "half_year_", basis: H1}
+    - {contains: "_h1_", basis: H1}
+    - {contains: "year_to_date_", basis: YTD}
+    - {contains: "quarter_", basis: Q}
+
+excluded_metric_patterns: ["_prior_", "_prior", "prior_year_", "guidance"]
+
+profiles:
+  GENERAL_OPERATING_COMPANY:
+    required_components: [profitability_capital_efficiency, growth_stability]
+    components:
+      balance_sheet:
+        weight: 0.25
+        slots:
+          leverage: {weight: 0.35, aliases: [net_debt_to_ebitda, leverage_ratio], direction: lower_is_better, mode: absolute, full_scale: 1.0, dead_band: 0.1, point_in_time: true}
+          net_debt: {weight: 0.25, aliases: [net_debt_eur_m, net_debt_gbp_m, net_debt_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+          cash: {weight: 0.25, aliases: [closing_net_cash_gbp_m, cash_and_cash_equivalents_eur_m, cash_and_cash_equivalents_usd_m, cash_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+          debt: {weight: 0.15, aliases: [total_debt_usd_m, long_term_debt_usd_m, gross_debt_eur_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+      profitability_capital_efficiency:
+        weight: 0.25
+        slots:
+          operating_margin: {weight: 0.40, aliases: [adjusted_operating_margin_pct, non_gaap_operating_margin_pct, operating_margin_before_financial_services_pct, operating_margin_pct, gaap_operating_margin_pct, year_to_date_operating_margin_pct, adjusted_ebitda_margin_pct, net_income_margin_pct], direction: higher_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          gross_margin: {weight: 0.15, aliases: [adjusted_gross_margin_pct, gross_margin_pct], direction: higher_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          returns: {weight: 0.25, aliases: [roic_pct, roce_pct], direction: higher_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          profit: {weight: 0.20, aliases: [adjusted_operating_profit_eur_m, adjusted_operating_profit_gbp_m, operating_ebita_eur_m, operating_profit_eur_m, operating_margin_eur_m, operating_earnings_before_financial_services_usd_m, operating_income_usd_m, quarter_operating_income_usd_m, adjusted_ebit_usd_m, ebit_usd_m, adjusted_ebitda_usd_m, adjusted_ebitda_gbp_m, adjusted_net_income_usd_m, net_earnings_usd_m, net_income_usd_m, gaap_net_income_usd_m, gross_profit_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      cashflow_quality:
+        weight: 0.20
+        slots:
+          free_cash_flow: {weight: 0.45, aliases: [adjusted_free_cash_flow_eur_m, organic_free_cash_flow_eur_m, free_cash_flow_eur_m, free_cash_flow_gbp_m, free_cash_flow_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+          cash_conversion: {weight: 0.30, aliases: [cash_conversion_ratio_pct, cash_conversion_pct], direction: higher_is_better, mode: absolute, full_scale: 15.0, dead_band: 2.0}
+          operating_cash_flow: {weight: 0.25, aliases: [adjusted_operating_cash_flow_eur_m, operating_cash_flow_usd_m, half_year_operating_cash_flow_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+      growth_stability:
+        weight: 0.15
+        slots:
+          growth_rate: {weight: 0.50, aliases: [organic_revenue_growth_pct, organic_sales_growth_pct, organic_constant_currency_revenue_growth_pct, comparable_brand_revenue_growth_pct, dicks_business_comparable_sales_growth_pct, constant_currency_growth_pct, revenue_constant_currency_growth_pct, gross_profit_constant_currency_growth_pct, net_revenue_growth_pct, net_sales_growth_pct, total_revenue_growth_pct, revenue_growth_pct, reported_sales_growth_pct, half_year_revenue_growth_pct, quarter_revenue_growth_pct], direction: higher_is_better, mode: absolute, full_scale: 10.0, dead_band: 1.0}
+          revenue: {weight: 0.25, aliases: [revenue_eur_m, revenue_gbp_m, sales_gbp_m, revenue_usd_m, net_revenue_usd_m, net_sales_usd_m, sales_revenue_usd_m, total_revenue_usd_m, half_year_revenue_usd_m, quarter_revenue_usd_m, gross_profit_eur_m], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.02}
+          orders_backlog: {weight: 0.25, aliases: [backlog_usd_bn, contingent_leu_haleu_backlog_usd_bn, new_orders_usd_m, order_intake_gbp_m, bookings_eur_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      value_per_share:
+        weight: 0.15
+        slots:
+          eps: {weight: 0.50, aliases: [diluted_adjusted_eps_eur, adjusted_diluted_eps_usd, non_gaap_diluted_eps_usd, quarter_non_gaap_diluted_eps_usd, adjusted_eps_usd, adjusted_eps_pence, adjusted_basic_eps_pence, normalized_eps_eur, cash_eps_eur, diluted_eps_usd, gaap_diluted_eps_usd, quarter_diluted_eps_usd, eps_usd, basic_eps_eur, basic_eps_pence], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+          dividend: {weight: 0.20, aliases: [interim_dividend_per_share_eur, interim_dividend_per_share_pence], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.02}
+          share_count_change: {weight: 0.15, aliases: [diluted_share_count_change_pct], direction: lower_is_better, mode: absolute, full_scale: 3.0, dead_band: 0.25}
+          share_count: {weight: 0.15, aliases: [diluted_weighted_average_shares_m, year_to_date_diluted_weighted_average_shares_m, shares_outstanding_m], direction: lower_is_better, mode: relative, full_scale: 0.05, dead_band: 0.005, point_in_time: true}
+
+  INSURER:
+    required_components: [capital_strength, profitability]
+    components:
+      capital_strength:
+        weight: 0.30
+        slots:
+          solvency: {weight: 1.0, aliases: [solvency_ii_ratio_pct, solvency_ratio_pct], direction: higher_is_better, mode: absolute, full_scale: 30.0, dead_band: 3.0, point_in_time: true}
+      underwriting_quality:
+        weight: 0.20
+        slots:
+          combined_ratio: {weight: 0.70, aliases: [combined_ratio_pct, uk_household_combined_ratio_pct], direction: lower_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          secondary_combined_ratio: {weight: 0.30, aliases: [european_insurance_combined_ratio_pct], direction: lower_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+      profitability:
+        weight: 0.25
+        slots:
+          roe: {weight: 0.50, aliases: [operating_roe_pct, return_on_equity_pct], direction: higher_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          earnings: {weight: 0.50, aliases: [operating_result_eur_m, profit_before_tax_gbp_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      growth_stability:
+        weight: 0.10
+        source_components: [growth_stability, capital_generation]
+        slots:
+          level: {weight: 0.60, aliases: [organic_capital_creation_eur_m, group_turnover_gbp_bn, group_risks_m], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.02}
+          growth_rate: {weight: 0.40, aliases: [organic_capital_creation_growth_pct, group_risks_growth_pct], direction: higher_is_better, mode: absolute, full_scale: 10.0, dead_band: 1.0}
+      value_per_share:
+        weight: 0.10
+        source_components: [value_per_share, profitability]
+        slots:
+          eps: {weight: 0.50, aliases: [earnings_per_share_pence], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+          dividend: {weight: 0.50, aliases: [interim_dividend_per_share_eur, interim_dividend_per_share_pence], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.02}
+      capital_allocation:
+        weight: 0.05
+        slots:
+          buyback: {weight: 1.0, aliases: [completed_share_buyback_eur_m, share_buyback_gbp_m], direction: higher_is_better, mode: relative, full_scale: 0.50, dead_band: 0.05}
+
+  INSURER_US_P&C:
+    required_components: [capital_strength, underwriting_quality]
+    components:
+      capital_strength:
+        weight: 0.30
+        slots:
+          equity: {weight: 0.60, aliases: [stockholders_equity_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.02, point_in_time: true}
+          investments: {weight: 0.20, aliases: [total_investments_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.02, point_in_time: true}
+          debt: {weight: 0.20, aliases: [term_loan_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.50, dead_band: 0.05, point_in_time: true}
+      underwriting_quality:
+        weight: 0.25
+        slots:
+          combined_ratio: {weight: 0.60, aliases: [adjusted_combined_ratio_pct, combined_ratio_pct], direction: lower_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          loss_ratio: {weight: 0.40, aliases: [loss_ratio_pct], direction: lower_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+      profitability:
+        weight: 0.20
+        slots:
+          roe: {weight: 0.60, aliases: [annualized_adjusted_roe_pct, annualized_roe_pct], direction: higher_is_better, mode: absolute, full_scale: 5.0, dead_band: 0.5}
+          earnings: {weight: 0.40, aliases: [adjusted_net_income_usd_m, net_income_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      growth_stability:
+        weight: 0.10
+        slots:
+          premium_growth: {weight: 0.50, aliases: [gross_written_premiums_growth_pct], direction: higher_is_better, mode: absolute, full_scale: 15.0, dead_band: 2.0}
+          premiums: {weight: 0.50, aliases: [gross_written_premiums_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      value_per_share:
+        weight: 0.15
+        slots:
+          eps: {weight: 0.70, aliases: [adjusted_diluted_eps_usd, diluted_eps_usd], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+          share_count: {weight: 0.30, aliases: [common_shares_outstanding_m], direction: lower_is_better, mode: relative, full_scale: 0.05, dead_band: 0.005, point_in_time: true}
+
+  CYCLICAL_MINING:
+    required_components: [balance_sheet, cost_position]
+    components:
+      balance_sheet:
+        weight: 0.25
+        slots:
+          net_debt: {weight: 0.50, aliases: [net_debt_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+          liquidity: {weight: 0.30, aliases: [available_liquidity_usd_m, cash_and_short_term_investments_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+          debt: {weight: 0.20, aliases: [total_debt_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+      cost_position:
+        weight: 0.25
+        slots:
+          unit_cost: {weight: 1.0, aliases: [copper_c1_cash_cost_usd_per_lb], direction: lower_is_better, mode: relative, full_scale: 0.20, dead_band: 0.03}
+      normalized_cashflow:
+        weight: 0.20
+        slots:
+          ebitda: {weight: 0.50, aliases: [adjusted_ebitda_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+          operating_cash_flow: {weight: 0.50, aliases: [quarter_operating_cash_flow_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+      execution:
+        weight: 0.15
+        slots:
+          copper_production: {weight: 0.70, aliases: [quarter_copper_production_tonnes], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.03}
+          gold_production: {weight: 0.30, aliases: [quarter_gold_production_ounces], direction: higher_is_better, mode: relative, full_scale: 0.20, dead_band: 0.03}
+      value_per_share:
+        weight: 0.15
+        slots:
+          eps: {weight: 1.0, aliases: [diluted_eps_usd], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.03}
+
+  PRE_REVENUE_DEVELOPMENT:
+    required_components: [liquidity_runway, financing_dilution]
+    components:
+      liquidity_runway:
+        weight: 0.35
+        slots:
+          cash_and_investments: {weight: 1.0, aliases: [cash_and_marketable_securities_usd_m, cash_and_cash_equivalents_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+      financing_dilution:
+        weight: 0.25
+        slots:
+          share_count: {weight: 0.70, aliases: [common_shares_outstanding_m], direction: lower_is_better, mode: relative, full_scale: 0.10, dead_band: 0.01, point_in_time: true}
+          shares_issued: {weight: 0.30, aliases: [atm_shares_issued_h1_m], direction: lower_is_better, mode: relative, full_scale: 0.50, dead_band: 0.05}
+      cash_burn:
+        weight: 0.25
+        slots:
+          operating_cash_used: {weight: 0.60, aliases: [half_year_operating_cash_used_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+          operating_loss: {weight: 0.40, aliases: [half_year_operating_loss_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+      project_execution:
+        weight: 0.15
+        slots:
+          revenue: {weight: 1.0, aliases: [quarter_revenue_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.50, dead_band: 0.05}
+
+  FINANCIAL_SERVICES:
+    required_components: [balance_sheet, profitability]
+    components:
+      balance_sheet:
+        weight: 0.25
+        slots:
+          cash: {weight: 0.30, aliases: [cash_and_cash_equivalents_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+          debt: {weight: 0.40, aliases: [long_term_debt_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+          liabilities: {weight: 0.30, aliases: [total_liabilities_usd_m], direction: lower_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05, point_in_time: true}
+      profitability:
+        weight: 0.30
+        slots:
+          net_income: {weight: 0.50, aliases: [adjusted_net_income_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+          ebitda: {weight: 0.50, aliases: [adjusted_ebitda_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      growth_stability:
+        weight: 0.20
+        slots:
+          revenue: {weight: 1.0, aliases: [total_revenue_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
+      value_per_share:
+        weight: 0.25
+        slots:
+          eps: {weight: 1.0, aliases: [adjusted_eps_usd], direction: higher_is_better, mode: relative, full_scale: 0.25, dead_band: 0.03}
