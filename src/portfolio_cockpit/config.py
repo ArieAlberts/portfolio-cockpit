@@ -41,6 +41,7 @@ def load_config(root: Path) -> dict[str, dict[str, Any]]:
         "scoring": _read_yaml(root / "config/scoring.yaml"),
         "score_metrics": _read_yaml(root / "config/score_metrics.yaml"),
         "peer_universes": _read_yaml(root / "config/peer_universes.yaml"),
+        "absolute_anchors": _read_yaml(root / "config/absolute_anchors.yaml"),
     }
     validate_config(config)
     return config
@@ -73,9 +74,19 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
     scoring = config["scoring"]
     metric_cfg = config["score_metrics"]
     peer_universes = config["peer_universes"]
+    absolute_anchors = config["absolute_anchors"]
 
     if metric_cfg.get("schema_version") != 2:
         errors.append("score_metrics.schema_version must be 2")
+
+    if absolute_anchors.get("schema_version") != 1:
+        errors.append("absolute_anchors.schema_version must be 1")
+    if absolute_anchors.get("affects_fundamental_quality_score") is not False:
+        errors.append("absolute anchors must not affect Fundamental Quality score")
+    if absolute_anchors.get("affects_readiness") is not False:
+        errors.append("absolute anchors must not affect readiness")
+    if absolute_anchors.get("execution_effect") != "NONE":
+        errors.append("absolute anchors execution_effect must remain NONE")
 
     if "component_metric_aliases" in readiness:
         errors.append(
@@ -237,6 +248,56 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
                 errors.append(
                     f"{company_type}:{component}: slot aliases mismatch; "
                     f"missing={missing}, extra={extra}"
+                )
+
+    anchor_profiles = absolute_anchors.get("profiles", {})
+    for anchor_company_type, anchors in anchor_profiles.items():
+        if anchor_company_type not in company_types:
+            errors.append(
+                f"absolute_anchors: unknown company type {anchor_company_type!r}"
+            )
+            continue
+        if not isinstance(anchors, dict) or not anchors:
+            errors.append(
+                f"absolute_anchors:{anchor_company_type}: profile must be non-empty"
+            )
+            continue
+
+        canonical_directions = directions_by_type.get(anchor_company_type, {})
+        for metric_name, anchor in anchors.items():
+            direction = anchor.get("direction")
+            canonical_direction = canonical_directions.get(metric_name)
+            if canonical_direction is None:
+                errors.append(
+                    f"absolute_anchors:{anchor_company_type}:{metric_name}: "
+                    "metric is not registered for this company type"
+                )
+                continue
+            if direction != canonical_direction:
+                errors.append(
+                    f"absolute_anchors:{anchor_company_type}:{metric_name}: "
+                    f"direction {direction!r} differs from canonical "
+                    f"{canonical_direction!r}"
+                )
+            try:
+                strong = float(anchor["strong_threshold"])
+                acceptable = float(anchor["acceptable_threshold"])
+            except (KeyError, TypeError, ValueError):
+                errors.append(
+                    f"absolute_anchors:{anchor_company_type}:{metric_name}: "
+                    "thresholds must be numeric"
+                )
+                continue
+
+            if direction == "higher_is_better" and strong < acceptable:
+                errors.append(
+                    f"absolute_anchors:{anchor_company_type}:{metric_name}: "
+                    "higher-is-better strong threshold must be >= acceptable"
+                )
+            if direction == "lower_is_better" and strong > acceptable:
+                errors.append(
+                    f"absolute_anchors:{anchor_company_type}:{metric_name}: "
+                    "lower-is-better strong threshold must be <= acceptable"
                 )
 
     component_metric_threshold = float(
