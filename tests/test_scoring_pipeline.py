@@ -32,7 +32,9 @@ def test_pipeline_records_provenance_and_used_peer_tickers():
     plmr=payload["blocked"]["PLMR"]
     assert plmr["provenance"]["peer_dataset"]["path"].endswith("PLMR/2026-10-03.json")
     assert len(plmr["provenance"]["peer_dataset"]["sha256"])==64
-    assert plmr["selected_metrics"]["underwriting_quality"]["peer_tickers"]
+    underwriting = plmr["selected_metrics"]["underwriting_quality"]["metrics"]
+    assert underwriting
+    assert all(item["peer_tickers"] for item in underwriting.values())
 
 
 def test_audited_insurers_remain_blocked_by_current_files():
@@ -48,8 +50,10 @@ def test_plmr_peer_set_variation_is_visible():
     plmr=payload["blocked"]["PLMR"]
     assert plmr["peer_set_overlap"]["code"]=="PEER_SET_VARIES_BY_METRIC"
     for component,item in plmr["selected_metrics"].items():
-        assert "peer_tickers" in item
-        assert "peer_values" in item
+        assert item["metrics"]
+        for metric in item["metrics"].values():
+            assert "peer_tickers" in metric
+            assert "peer_values" in metric
 
 
 def test_snapshot_writer_never_overwrites_different_content(tmp_path: Path):
