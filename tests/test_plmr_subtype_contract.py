@@ -24,19 +24,23 @@ def test_plmr_capital_registry_excludes_eu_solvency():
     assert "solvency_ratio_pct" not in aliases
 
 
-def test_plmr_capital_policy_requires_statutory_source_and_ttm_basis():
+def test_plmr_capital_policy_requires_fy2025_statutory_same_period_basis():
     data = json.loads(
         (ROOT / "data/peers/PLMR/2026-10-03.json").read_text(encoding="utf-8")
     )
     policy = data["rules"]["capital_strength_policy"]
+    basis = policy["premium_to_surplus_measurement_basis"]
+
     assert policy["metric_family"] == "US_P&C_STATUTORY_CAPITAL"
-    assert policy["status"] == "PENDING_STATUTORY_SOURCE_VALIDATION"
+    assert policy["status"] == "FY2025_STATUTORY_COLLECTION_IN_PROGRESS"
+    assert policy["preferred_reference_period"] == "FY_2025"
     assert policy["prohibit_eu_or_uk_solvency_substitution"] is True
     assert policy["prohibit_h1_premium_annualization_as_ttm_substitute"] is True
-    assert (
-        policy["premium_to_surplus_measurement_basis"]["numerator"]
-        == "TRAILING_TWELVE_MONTHS_NET_WRITTEN_PREMIUM"
-    )
+
+    assert basis["numerator"] == "FY_NET_WRITTEN_PREMIUM"
+    assert basis["denominator"] == "FY_PERIOD_END_POLICYHOLDERS_SURPLUS"
+    assert basis["accounting_basis"] == "US_STATUTORY_ACCOUNTING"
+    assert basis["period_alignment"] == "SAME_FISCAL_YEAR"
 
 
 def test_plmr_stays_blocked_until_statutory_capital_is_populated():
