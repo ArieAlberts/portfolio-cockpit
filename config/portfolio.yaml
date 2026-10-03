@@ -15,7 +15,7 @@ positions:
   TXRH: {company: "Texas Roadhouse", weight_pct: 3, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
   SNA: {company: "Snap-on", weight_pct: 5, role: "CORE", company_type: "GENERAL_OPERATING_COMPANY"}
   MSM: {company: "MSC Industrial Direct", weight_pct: 0, role: "EXIT", company_type: "GENERAL_OPERATING_COMPANY"}
-  PLMR: {company: "Palomar Holdings", weight_pct: 6, role: "GROWTH", company_type: "INSURER"}
+  PLMR: {company: "Palomar Holdings", weight_pct: 6, role: "GROWTH", company_type: "INSURER_US_P&C"}
   MOD: {company: "Modine Manufacturing", weight_pct: 7, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
   FUL: {company: "H.B. Fuller", weight_pct: 5, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
   POWL: {company: "Powell Industries", weight_pct: 5, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
