@@ -12,12 +12,12 @@
     "HRTG",
     "RLI"
   ],
-  "peer_universe_status": "VALIDATED_FOR_CORE_UNDERWRITING_AND_PROFITABILITY_METRICS",
+  "peer_universe_status": "VALIDATED_NON_CAPITAL_COMPONENTS_CAPITAL_STRENGTH_PENDING",
   "rules": {
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
     "minimum_peer_values_per_metric": 4,
-    "final_score_status": "DISPLAY_READY_WITH_70_PERCENT_COMPONENT_COVERAGE"
+    "final_score_status": "DATA_CHECK_MISSING_REQUIRED_CAPITAL_STRENGTH"
   },
   "companies": {
     "PLMR": {

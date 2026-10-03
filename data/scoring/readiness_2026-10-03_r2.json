@@ -1,0 +1,66 @@
+{
+  "schema_version": 3,
+  "as_of": "2026-10-03",
+  "revision": 2,
+  "methodology": {
+    "peer_method": "clipped_mean_sample_std_zscore",
+    "minimum_peer_values_per_metric": 4,
+    "minimum_weighted_component_coverage": 0.7,
+    "required_components_enforced": true,
+    "sensitivity_gate": "STABLE_REQUIRED",
+    "data_confidence_threshold": 80,
+    "peer_input_confidence_threshold": 80
+  },
+  "summary": {
+    "portfolio_companies": 23,
+    "production_ready": 0,
+    "reason": "ASR and PLMR fail required insurer component gates after the model audit."
+  },
+  "results": {
+    "ASR": {
+      "weighted_component_coverage": 0.35,
+      "peer_component_coverage_pass": false,
+      "required_components_pass": false,
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "hard_blocked": false,
+      "target_data_confidence": 89.5,
+      "peer_input_confidence": null,
+      "stability_flag": null,
+      "production_ready": false
+    },
+    "PLMR": {
+      "weighted_component_coverage": 0.7,
+      "peer_component_coverage_pass": true,
+      "required_components_pass": false,
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "hard_blocked": false,
+      "target_data_confidence": 98,
+      "peer_input_confidence": 94.25,
+      "stability_flag": null,
+      "production_ready": false
+    },
+    "WKL": {
+      "weighted_component_coverage": 0.5,
+      "peer_component_coverage_pass": false,
+      "required_components_pass": false,
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "production_ready": false
+    },
+    "ESI": {
+      "weighted_component_coverage": 0.6,
+      "peer_component_coverage_pass": false,
+      "required_components_pass": false,
+      "missing_required_components": [
+        "balance_sheet"
+      ],
+      "production_ready": false
+    }
+  }
+}

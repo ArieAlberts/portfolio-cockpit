@@ -16,8 +16,8 @@
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
     "prohibit_cross_regime_solvency_equivalence": true,
-    "min_peer_values_per_metric": 3,
-    "final_score_status": "PENDING_STANDARDIZATION_REVIEW"
+    "min_peer_values_per_metric": 4,
+    "final_score_status": "DATA_CHECK_REQUIRED_COMPONENTS_AND_SOLVENCY_REGIME"
   },
   "companies": {
     "ASR": {
@@ -247,9 +247,10 @@
       "metrics": {
         "solvency_ratio_pct": {
           "value": 176,
-          "comparison_class": "SOLVENCY_II_RATIO",
-          "source_definition": "Solvency II shareholder cover ratio",
-          "score_eligible": true
+          "comparison_class": "SOLVENCY_UK_RATIO",
+          "source_definition": "Solvency UK shareholder cover ratio",
+          "score_eligible": false,
+          "notes": "Different regulatory regime from EU Solvency II; excluded under prohibit_cross_regime_solvency_equivalence."
         },
         "operating_earnings_growth_pct": {
           "value": 24,
@@ -338,5 +339,5 @@
       }
     }
   },
-  "peer_universe_status": "VALIDATED_CORE_INSURER_METRICS_WITH_SCOPE_GATES"
+  "peer_universe_status": "PARTIAL_AFTER_SOLVENCY_REGIME_CORRECTION"
 }

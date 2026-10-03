@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "current_fundamental_quality": "data/scoring/fundamental_quality_2026-10-03_r2.json",
+  "current_readiness": "data/scoring/readiness_2026-10-03_r2.json",
+  "previous_score_snapshot": "data/scoring/fundamental_quality_2026-10-03.json",
+  "previous_score_snapshot_status": "SUPERSEDED_RESEARCH_ONLY"
+}

@@ -1,37 +1,34 @@
-# Fundamental Quality results — 2026-10-03
+# Fundamental Quality results — current status
 
-Two companies currently pass every display gate.
+## No DISPLAY_READY scores
 
-## ASR — 62.1 / 100
+The earlier ASR 62.1 and PLMR 40.2 outputs are retained only as historical research snapshots. They are superseded by `data/scoring/fundamental_quality_2026-10-03_r2.json`.
 
-ASR remains display-ready with 75% weighted component coverage.
+### ASR
 
-Covered:
-- capital strength
-- underwriting quality
-- profitability
+Current status: **DATA_CHECK**.
 
-## PLMR — 40.2 / 100
+Why:
+- Aviva is now labelled `SOLVENCY_UK_RATIO`, not EU `SOLVENCY_II_RATIO`;
+- Aviva is therefore excluded from the Solvency II score under the existing cross-regime rule;
+- only three eligible Solvency II peers remain, below the minimum of four;
+- operating earnings growth is now growth/stability, not profitability;
+- ASR's ROE remains blocked until insurer ROE definitions are harmonized.
 
-Palomar now reaches the 70% minimum after replacing mixed adjusted/operating profitability measures with a more comparable GAAP H1 ROE series and adding a GAAP EPS-growth series.
+Current weighted component coverage is 35%: underwriting quality plus growth/stability. Required capital strength is missing.
 
-Covered:
-- underwriting quality: combined ratio
-- profitability: annualized GAAP ROE
-- growth/stability: gross written premium growth
-- value per share: GAAP EPS growth
+### PLMR
 
-Uncovered:
-- capital strength
+Current status: **DATA_CHECK**.
 
-Important model facts:
-- Palomar H1 combined ratio: 83.8%
-- annualized GAAP ROE: 19.9%
-- H1 GWP growth: +34.3%
-- H1 GAAP EPS growth: +8.3%
+Palomar still reaches 70% weighted non-capital component coverage, but insurers now require both:
+- capital strength;
+- underwriting quality.
 
-The GWP growth z-score is clipped at +3 under the standard outlier rule. The low overall score is therefore not caused by the growth signal being allowed to dominate; relative ROE and GAAP EPS growth are weaker than this selected specialty-P&C peer set.
+PLMR has underwriting coverage but no standardized comparable capital-strength metric. Therefore the earlier 40.2 score is no longer display-ready.
 
-The HCI ROE observation is derived from primary H1 net-income and common-equity figures and carries a lower definition-confidence flag. Skyward's GAAP per-share line is explicitly basic EPS rather than silently treated as diluted.
+## Statistical method
 
-All scores are model research outputs. They cannot trigger or route live orders.
+Future scores use sample standard deviation and include leave-one-peer-out sensitivity. A `PEER_SENSITIVE` result cannot be DISPLAY_READY.
+
+All outputs remain research/monitoring data only and have no execution effect.

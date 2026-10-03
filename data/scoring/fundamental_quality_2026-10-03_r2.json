@@ -1,0 +1,71 @@
+{
+  "schema_version": 2,
+  "as_of": "2026-10-03",
+  "revision": 2,
+  "supersedes": "data/scoring/fundamental_quality_2026-10-03.json",
+  "methodology": {
+    "peer_method": "clipped_mean_sample_std_zscore",
+    "score_formula": "clamp(50 + 25 * weighted_z, 0, 100)",
+    "minimum_peer_values_per_metric": 4,
+    "minimum_weighted_component_coverage": 0.7,
+    "required_components_enforced": true,
+    "sensitivity_required_for_display": true,
+    "target_data_confidence_threshold": 80,
+    "peer_input_confidence_threshold": 80
+  },
+  "scores": {},
+  "blocked": {
+    "ASR": {
+      "status": "DATA_CHECK",
+      "weighted_component_coverage": 0.35,
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "reasons": [
+        "AVIVA_SOLVENCY_UK_EXCLUDED_FROM_SOLVENCY_II",
+        "ONLY_THREE_ELIGIBLE_SOLVENCY_II_PEERS_REMAIN",
+        "PROFITABILITY_REQUIRES_HARMONIZED_ROE",
+        "OPERATING_EARNINGS_GROWTH_MOVED_TO_GROWTH_STABILITY"
+      ],
+      "previous_display_score": 62.1,
+      "previous_snapshot_status": "SUPERSEDED_RESEARCH_ONLY",
+      "execution_effect": "NONE"
+    },
+    "PLMR": {
+      "status": "DATA_CHECK",
+      "weighted_component_coverage": 0.7,
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "reasons": [
+        "INSURER_CAPITAL_STRENGTH_IS_REQUIRED",
+        "NO_COMPARABLE_CAPITAL_STRENGTH_METRIC_YET"
+      ],
+      "previous_display_score": 40.2,
+      "previous_snapshot_status": "SUPERSEDED_RESEARCH_ONLY",
+      "execution_effect": "NONE"
+    },
+    "ADM.L": "INSUFFICIENT_DIRECT_PEERS",
+    "WKL": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE_50_PERCENT",
+    "CAP.PA": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "IMCD": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "CRDA.L": "HARD_PEER_UNIVERSE_BLOCK",
+    "ROR.L": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "EMN": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "WSM": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "DKS": "HARD_PEER_UNIVERSE_BLOCK",
+    "TXRH": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "SNA": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "MSM": "HARD_PEER_UNIVERSE_BLOCK",
+    "MOD": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "FUL": "HARD_PEER_UNIVERSE_BLOCK",
+    "POWL": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "ESI": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE_60_PERCENT",
+    "ABX": "HARD_PEER_UNIVERSE_BLOCK",
+    "ERO": "HARD_PEER_UNIVERSE_BLOCK",
+    "TMDX": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "LEU": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "OKLO": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE"
+  },
+  "note": "No current Fundamental Quality score is DISPLAY_READY after enforcing required components and correcting the ASR solvency regime."
+}
