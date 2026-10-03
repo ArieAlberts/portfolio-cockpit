@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.request import Request, urlopen
 
+from .reliability import RetryPolicy, request_with_retry
 from .source_monitor import SourceObservation, observe_source
 
 
@@ -34,29 +35,36 @@ def cik_from_sec_archive_url(url: str) -> str | None:
     return str(int(match.group(1))).zfill(10)
 
 
+def _sec_ticker_get(url: str, *, user_agent: str, timeout: int):
+    request = Request(
+        url,
+        headers={
+            "User-Agent": user_agent,
+            "Accept": "application/json",
+            "Accept-Encoding": "identity",
+        },
+    )
+    with urlopen(request, timeout=timeout) as response:
+        return response.read(5_000_000), {k.lower(): v for k, v in response.headers.items()}
+
+
 def fetch_sec_ticker_map(
     *,
     user_agent: str,
     timeout: int = 20,
-    getter: Callable[..., tuple[bytes, dict[str, str]]] | None = None,
+    retry_attempts: int = 3,
+    retry_base_seconds: float = 1.0,
+    getter: Callable[..., tuple[bytes, dict[str, str]]] = _sec_ticker_get,
 ) -> dict[str, str]:
-    if getter is None:
-        def getter(url: str, *, user_agent: str, timeout: int):
-            request = Request(
-                url,
-                headers={
-                    "User-Agent": user_agent,
-                    "Accept": "application/json",
-                    "Accept-Encoding": "identity",
-                },
-            )
-            with urlopen(request, timeout=timeout) as response:
-                return response.read(5_000_000), {k.lower(): v for k, v in response.headers.items()}
-
-    body, _ = getter(
+    body, _ = request_with_retry(
+        getter,
         "https://www.sec.gov/files/company_tickers.json",
         user_agent=user_agent,
         timeout=timeout,
+        policy=RetryPolicy(
+            attempts=retry_attempts,
+            base_delay_seconds=retry_base_seconds,
+        ),
     )
     data = json.loads(body.decode("utf-8"))
     result: dict[str, str] = {}
@@ -107,7 +115,6 @@ def build_peer_source_specs(
                 continue
             if not company.get("source"):
                 continue
-
             dependencies.setdefault(peer, set()).add(target)
             peer_sources.setdefault(peer, company)
 
@@ -164,9 +171,19 @@ def observe_peer_source(
     *,
     user_agent: str,
     timeout: int,
+    retry_attempts: int,
+    retry_base_seconds: float,
+    html_fingerprint_mode: str = "RELEVANT_LINKS",
+    html_link_patterns: list[str] | None = None,
 ) -> SourceObservation:
+    entry = {"mode": spec.mode, "url": spec.url}
+    if spec.mode == "HTML_PAGE":
+        entry["fingerprint_mode"] = html_fingerprint_mode
+        entry["link_patterns"] = html_link_patterns
     return observe_source(
-        {"mode": spec.mode, "url": spec.url},
+        entry,
         user_agent=user_agent,
         timeout=timeout,
+        retry_attempts=retry_attempts,
+        retry_base_seconds=retry_base_seconds,
     )

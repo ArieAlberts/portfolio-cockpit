@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 import yaml
@@ -11,6 +12,12 @@ from portfolio_cockpit.monitoring.peer_monitor import (
     build_peer_source_specs,
     fetch_sec_ticker_map,
     observe_peer_source,
+)
+from portfolio_cockpit.monitoring.reliability import (
+    deterministic_event_path,
+    source_health_failure,
+    source_health_success,
+    write_event_once,
 )
 from portfolio_cockpit.monitoring.source_monitor import iso_z, utc_now
 
@@ -45,7 +52,9 @@ def main() -> int:
     parser.add_argument("--fail-if-all-error", action="store_true")
     args = parser.parse_args()
 
-    cfg = yaml.safe_load((ROOT / args.config).read_text(encoding="utf-8"))\n    user_agent = os.getenv("COCKPIT_USER_AGENT", "").strip() or cfg["defaults"]["user_agent"]
+    cfg = yaml.safe_load((ROOT / args.config).read_text(encoding="utf-8"))
+    defaults = cfg["defaults"]
+    user_agent = os.getenv("COCKPIT_USER_AGENT", "").strip() or defaults["user_agent"]
     peer_index = json.loads((ROOT / args.peer_index).read_text(encoding="utf-8"))
     state_path = ROOT / args.state
     status_path = ROOT / args.status
@@ -55,14 +64,17 @@ def main() -> int:
     state = load_json(state_path, {"schema_version": 1, "sources": {}})
     status = load_json(status_path, {"schema_version": 1, "peers": {}, "targets": {}})
     target_status = load_json(target_status_path, {"schema_version": 1, "companies": {}})
+    breaker_threshold = int(defaults.get("circuit_breaker_failure_threshold", 3))
 
     sec_map = {}
     sec_map_error = None
-    if cfg["defaults"].get("resolve_sec_tickers", True):
+    if defaults.get("resolve_sec_tickers", True):
         try:
             sec_map = fetch_sec_ticker_map(
                 user_agent=user_agent,
-                timeout=int(cfg["defaults"]["timeout_seconds"]),
+                timeout=int(defaults["timeout_seconds"]),
+                retry_attempts=int(defaults.get("retry_attempts", 3)),
+                retry_base_seconds=float(defaults.get("retry_base_seconds", 1.0)),
             )
         except Exception as exc:
             sec_map_error = f"{type(exc).__name__}: {exc}"
@@ -90,25 +102,46 @@ def main() -> int:
                 "last_source_change_at": None,
                 "last_event_path": None,
                 "warnings": [],
+                "source_health": {},
             },
         )
-        key = spec.peer_ticker
+        peer_status.setdefault("source_health", {})
+        health_key = "primary"
+        prior_health = peer_status["source_health"].get(health_key)
 
         try:
             observation = observe_peer_source(
                 spec,
                 user_agent=user_agent,
-                timeout=int(cfg["defaults"]["timeout_seconds"]),
+                timeout=int(defaults["timeout_seconds"]),
+                retry_attempts=int(defaults.get("retry_attempts", 3)),
+                retry_base_seconds=float(defaults.get("retry_base_seconds", 1.0)),
+                html_fingerprint_mode=defaults.get("html_fingerprint_mode", "RELEVANT_LINKS"),
+                html_link_patterns=defaults.get("html_link_patterns"),
             )
             observations += 1
+            peer_status["source_health"][health_key] = source_health_success(
+                prior_health, observed_at
+            )
         except Exception as exc:
             errors += 1
-            peer_status["warnings"] = [f"{type(exc).__name__}: {exc}"]
-            if peer_status["status"] == "NOT_YET_POLLED":
-                peer_status["status"] = "SOURCE_ERROR"
+            error_text = f"{type(exc).__name__}: {exc}"
+            health = source_health_failure(
+                prior_health,
+                observed_at=observed_at,
+                error=error_text,
+                failure_threshold=breaker_threshold,
+            )
+            peer_status["source_health"][health_key] = health
+            peer_status["warnings"] = [error_text]
+            peer_status["status"] = (
+                "SOURCE_DEGRADED"
+                if health["circuit_state"] == "OPEN"
+                else "SOURCE_ERROR"
+            )
             continue
 
-        previous = state["sources"].get(key)
+        previous = state["sources"].get(spec.peer_ticker)
         current = {
             "peer_ticker": spec.peer_ticker,
             "mode": spec.mode,
@@ -119,18 +152,12 @@ def main() -> int:
             "etag": observation.etag,
             "last_modified": observation.last_modified,
             "summary": observation.summary,
-            "last_observed_change_at": (
-                observed_at
-                if previous is None or previous.get("fingerprint") != observation.fingerprint
-                else previous.get("last_observed_change_at")
-            ),
+            "last_observed_change_at": observed_at if previous is None or previous.get("fingerprint") != observation.fingerprint else previous.get("last_observed_change_at"),
         }
 
         if previous is None:
-            state["sources"][key] = current
+            state["sources"][spec.peer_ticker] = current
             peer_status["status"] = "CURRENT"
-            peer_status["source_quality"] = spec.source_quality
-            peer_status["dependent_targets"] = list(spec.dependent_targets)
             peer_status["warnings"] = (
                 ["DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"]
                 if spec.source_quality == "FALLBACK_STATIC_OR_IR_PAGE"
@@ -140,12 +167,16 @@ def main() -> int:
 
         if previous.get("fingerprint") != observation.fingerprint:
             changes += 1
-            day = now.strftime("%Y-%m-%d")
-            stamp = now.strftime("%H%M%SZ")
-            path = events_root / day / f"{spec.peer_ticker}-{stamp}.json"
+            event_id, path = deterministic_event_path(
+                events_root,
+                entity=spec.peer_ticker,
+                source_id="primary",
+                old_fingerprint=previous.get("fingerprint"),
+                new_fingerprint=observation.fingerprint,
+            )
             event = {
-                "schema_version": 1,
-                "event_id": path.stem,
+                "schema_version": 2,
+                "event_id": event_id,
                 "peer_ticker": spec.peer_ticker,
                 "dependent_targets": list(spec.dependent_targets),
                 "detected_at": observed_at,
@@ -160,8 +191,7 @@ def main() -> int:
                 "score_update_allowed": False,
                 "execution_effect": "NONE",
             }
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps(event, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+            write_event_once(path, event)
 
             peer_status["status"] = "PEER_SOURCE_CHANGED"
             peer_status["last_source_change_at"] = observed_at
@@ -179,14 +209,16 @@ def main() -> int:
                 )
                 t["peer_status"] = "PEER_UPDATE_DETECTED"
                 t["peer_review_required"] = True
-                t["changed_peers"] = sorted(set(t.get("changed_peers", []) + [spec.peer_ticker]))
+                t["changed_peers"] = sorted(
+                    set(t.get("changed_peers", []) + [spec.peer_ticker])
+                )
 
                 target_row = target_status.get("companies", {}).get(target)
                 if target_row is not None:
                     target_row["peer_status"] = "PEER_UPDATE_DETECTED"
                     target_row["peer_review_required"] = True
 
-        state["sources"][key] = current
+        state["sources"][spec.peer_ticker] = current
 
     if sec_map_error:
         status["global_warnings"] = [f"SEC_TICKER_MAP_ERROR: {sec_map_error}"]

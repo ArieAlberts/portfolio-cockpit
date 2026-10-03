@@ -10,6 +10,8 @@ from typing import Any, Callable
 from urllib.parse import urljoin, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
+from .reliability import RetryPolicy, request_with_retry
+
 
 FINANCIAL_FORMS = {"10-K", "10-Q", "8-K", "10-K/A", "10-Q/A", "20-F", "6-K", "40-F"}
 
@@ -138,10 +140,7 @@ def observe_sec_submissions(
         form = columns["form"][i] if i < len(columns["form"]) else None
         if form not in forms:
             continue
-        row = {
-            key: columns[key][i] if i < len(columns[key]) else None
-            for key in keys
-        }
+        row = {key: columns[key][i] if i < len(columns[key]) else None for key in keys}
         selected.append(row)
         if len(selected) >= 25:
             break
@@ -163,9 +162,20 @@ def observe_source(
     *,
     user_agent: str,
     timeout: int = 20,
+    retry_attempts: int = 3,
+    retry_base_seconds: float = 1.0,
     getter: Callable[..., tuple[bytes, dict[str, str]]] = _http_get,
 ) -> SourceObservation:
-    body, headers = getter(entry["url"], user_agent=user_agent, timeout=timeout)
+    body, headers = request_with_retry(
+        getter,
+        entry["url"],
+        user_agent=user_agent,
+        timeout=timeout,
+        policy=RetryPolicy(
+            attempts=retry_attempts,
+            base_delay_seconds=retry_base_seconds,
+        ),
+    )
     mode = entry["mode"]
     if mode == "HTML_PAGE":
         return observe_html_page(

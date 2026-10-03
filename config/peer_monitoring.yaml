@@ -6,6 +6,11 @@ defaults:
   first_observation_creates_event: false
   peer_source_change_changes_score: false
   live_execution_allowed: false
+  retry_attempts: 3
+  retry_base_seconds: 1.0
+  circuit_breaker_failure_threshold: 3
+  html_fingerprint_mode: RELEVANT_LINKS
+  html_link_patterns: ["result", "report", "financial", "press", "release", "interim", "half", "annual", "\\.pdf"]
 
 # Durable official discovery pages for non-US peers where SEC resolution is
 # unavailable or ticker suffixes make issuer discovery less reliable.

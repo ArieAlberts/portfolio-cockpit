@@ -7,11 +7,25 @@ on:
 jobs:
   pytest:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
       - run: python -m pip install --upgrade pip
       - run: pip install -e ".[dev]"
-      - run: pytest -q
+
+      - name: Compile Python sources and operational scripts
+        run: python -m compileall -q src scripts
+
+      - name: Smoke-test operational CLIs
+        run: |
+          python scripts/monitor_sources.py --help >/dev/null
+          python scripts/monitor_peer_sources.py --help >/dev/null
+          python scripts/create_fundamental_snapshot.py --help >/dev/null
+          python scripts/update_peer_alignment.py --help >/dev/null
+
+      - name: Run deterministic offline tests
+        run: pytest -q --tb=short

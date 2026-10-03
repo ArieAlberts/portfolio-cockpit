@@ -4,11 +4,17 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 import yaml
 
+from portfolio_cockpit.monitoring.reliability import (
+    deterministic_event_path,
+    source_health_failure,
+    source_health_success,
+    write_event_once,
+)
 from portfolio_cockpit.monitoring.source_monitor import iso_z, observe_source, utc_now
 
 
@@ -29,12 +35,6 @@ def dump_if_changed(path: Path, payload: dict) -> bool:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
     return True
-
-
-def event_path(events_root: Path, observed_at: datetime, ticker: str, source_id: str) -> Path:
-    day = observed_at.strftime("%Y-%m-%d")
-    stamp = observed_at.strftime("%H%M%SZ")
-    return events_root / day / f"{ticker}-{source_id}-{stamp}.json"
 
 
 def main() -> int:
@@ -59,6 +59,8 @@ def main() -> int:
     observed_at = iso_z(now)
     errors = 0
     observations = 0
+    changes = 0
+    breaker_threshold = int(defaults.get("circuit_breaker_failure_threshold", 3))
 
     for ticker, company in registry["companies"].items():
         ticker_status = status["companies"].setdefault(
@@ -70,9 +72,11 @@ def main() -> int:
                 "last_source_change_at": None,
                 "last_event_path": None,
                 "warnings": [],
+                "source_health": {},
             },
         )
-        ticker_errors = []
+        ticker_status.setdefault("source_health", {})
+
         baseline_age = (now.date() - date.fromisoformat(company["baseline_date"])).days
         is_stale = baseline_age > int(company["stale_after_days"])
         ticker_status["baseline_age_days"] = baseline_age
@@ -86,28 +90,53 @@ def main() -> int:
         ticker_status["warnings"] = warnings
 
         for source in company["sources"]:
+            source_id = source["id"]
             source_entry = dict(source)
             if source_entry["mode"] == "HTML_PAGE":
-                source_entry.setdefault("fingerprint_mode", defaults.get("html_fingerprint_mode", "RELEVANT_LINKS"))
+                source_entry.setdefault(
+                    "fingerprint_mode",
+                    defaults.get("html_fingerprint_mode", "RELEVANT_LINKS"),
+                )
                 source_entry.setdefault("link_patterns", defaults.get("html_link_patterns"))
 
-            key = f"{ticker}:{source['id']}"
+            key = f"{ticker}:{source_id}"
+            prior_health = ticker_status["source_health"].get(source_id)
             try:
                 observation = observe_source(
                     source_entry,
                     user_agent=user_agent,
                     timeout=int(defaults["timeout_seconds"]),
+                    retry_attempts=int(defaults.get("retry_attempts", 3)),
+                    retry_base_seconds=float(defaults.get("retry_base_seconds", 1.0)),
                 )
                 observations += 1
+                ticker_status["source_health"][source_id] = source_health_success(
+                    prior_health, observed_at
+                )
             except Exception as exc:
                 errors += 1
-                ticker_errors.append(f"{source['id']}: {type(exc).__name__}: {exc}")
+                error_text = f"{type(exc).__name__}: {exc}"
+                health = source_health_failure(
+                    prior_health,
+                    observed_at=observed_at,
+                    error=error_text,
+                    failure_threshold=breaker_threshold,
+                )
+                ticker_status["source_health"][source_id] = health
+                ticker_status["warnings"] = sorted(
+                    set(ticker_status.get("warnings", []) + [f"{source_id}: {error_text}"])
+                )
+                if health["circuit_state"] == "OPEN" and ticker_status["fundamental_status"] != "NEW_DATA_DETECTED":
+                    ticker_status["fundamental_status"] = "SOURCE_DEGRADED"
+                    ticker_status["review_required"] = True
+                elif ticker_status["fundamental_status"] == "NOT_YET_POLLED":
+                    ticker_status["fundamental_status"] = "SOURCE_ERROR"
                 continue
 
             previous = state["sources"].get(key)
             current = {
                 "ticker": ticker,
-                "source_id": source["id"],
+                "source_id": source_id,
                 "mode": source["mode"],
                 "url": source["url"],
                 "fingerprint": observation.fingerprint,
@@ -119,18 +148,25 @@ def main() -> int:
 
             if previous is None:
                 state["sources"][key] = current
-                if ticker_status["fundamental_status"] == "NOT_YET_POLLED":
+                if ticker_status["fundamental_status"] in {"NOT_YET_POLLED", "SOURCE_ERROR", "SOURCE_DEGRADED"}:
                     ticker_status["fundamental_status"] = "STALE_DATA" if is_stale else "CURRENT"
                     ticker_status["review_required"] = is_stale
                 continue
 
             if previous.get("fingerprint") != observation.fingerprint:
-                path = event_path(events_root, now, ticker, source["id"])
+                changes += 1
+                event_id, path = deterministic_event_path(
+                    events_root,
+                    entity=ticker,
+                    source_id=source_id,
+                    old_fingerprint=previous.get("fingerprint"),
+                    new_fingerprint=observation.fingerprint,
+                )
                 event = {
-                    "schema_version": 1,
-                    "event_id": path.stem,
+                    "schema_version": 2,
+                    "event_id": event_id,
                     "ticker": ticker,
-                    "source_id": source["id"],
+                    "source_id": source_id,
                     "detected_at": observed_at,
                     "url": source["url"],
                     "old_fingerprint": previous.get("fingerprint"),
@@ -142,20 +178,13 @@ def main() -> int:
                     "score_update_allowed": False,
                     "execution_effect": "NONE",
                 }
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text(json.dumps(event, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+                write_event_once(path, event)
                 ticker_status["fundamental_status"] = "NEW_DATA_DETECTED"
                 ticker_status["review_required"] = True
                 ticker_status["last_source_change_at"] = observed_at
                 ticker_status["last_event_path"] = str(path.relative_to(ROOT))
-                state["sources"][key] = current
-            else:
-                state["sources"][key] = current
 
-        if ticker_errors:
-            ticker_status["warnings"] = sorted(set(ticker_status.get("warnings", []) + ticker_errors))
-            if ticker_status["fundamental_status"] == "NOT_YET_POLLED":
-                ticker_status["fundamental_status"] = "SOURCE_ERROR"
+            state["sources"][key] = current
 
     dump_if_changed(state_path, state)
     dump_if_changed(status_path, status)
@@ -164,6 +193,7 @@ def main() -> int:
         "observed_at": observed_at,
         "successful_source_observations": observations,
         "source_errors": errors,
+        "source_changes": changes,
         "companies": len(registry["companies"]),
     }, indent=2))
 
