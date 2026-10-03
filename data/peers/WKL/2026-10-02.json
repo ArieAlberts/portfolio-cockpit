@@ -17,8 +17,8 @@
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
     "prohibit_forced_margin_equivalence": true,
-    "min_peer_values_per_metric": 3,
-    "final_score_status": "PENDING_STANDARDIZATION_REVIEW"
+    "min_peer_values_per_metric": 4,
+    "final_score_status": "PARTIAL_50_PERCENT_COMPONENT_COVERAGE"
   },
   "companies": {
     "WKL": {
@@ -62,7 +62,7 @@
           "value": -3.717949,
           "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "diluted weighted-average shares, H1 YoY",
-          "calculation": "225.3 / 234.0 - 1",
+          "calculation": "(225.3 / 234.0 - 1) * 100",
           "score_eligible": true
         },
         "cash_conversion_pct": {
@@ -96,13 +96,15 @@
           "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
           "source_definition": "underlying revenue growth",
           "score_eligible": true,
-          "notes": "Company-defined underlying growth; retained as organic-like rather than relabeled organic."
+          "notes": "Company-defined underlying growth; retained as organic-like rather than relabeled organic.",
+          "definition_confidence": 90
         },
         "adjusted_eps_growth_pct": {
           "value": 11,
           "comparison_class": "ADJUSTED_EPS_GROWTH",
           "source_definition": "adjusted EPS growth at constant currency",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "free_cash_flow_margin_pct": {
           "value": null,
@@ -158,14 +160,16 @@
           "value": 11,
           "comparison_class": "ADJUSTED_EPS_GROWTH",
           "source_definition": "adjusted EPS H1 YoY, also 11% at constant currency",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "free_cash_flow_margin_pct": {
           "value": 26.206385,
           "comparison_class": "FREE_CASH_FLOW_MARGIN",
           "source_definition": "free cash flow / revenue",
           "calculation": "1059 / 4041 * 100",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "net_debt_to_ebitda": {
           "value": 0.9,
@@ -211,21 +215,24 @@
           "value": 5.698961,
           "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
           "source_definition": "organic revenues H1 YoY",
-          "calculation": "1576.5 / 1491.5 - 1",
-          "score_eligible": true
+          "calculation": "(1576.5 / 1491.5 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "adjusted_eps_growth_pct": {
           "value": 5,
           "comparison_class": "ADJUSTED_EPS_GROWTH",
           "source_definition": "diluted adjusted EPS H1 YoY",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "free_cash_flow_margin_pct": {
           "value": 39.291334,
           "comparison_class": "FREE_CASH_FLOW_MARGIN",
           "source_definition": "free cash flow / revenue",
           "calculation": "624.3 / 1588.9 * 100",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "net_debt_to_ebitda": {
           "value": null,
@@ -237,7 +244,7 @@
           "value": -5.406014,
           "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "diluted weighted-average shares H1 YoY",
-          "calculation": "133.036554 / 140.639547 - 1",
+          "calculation": "(133.036554 / 140.639547 - 1) * 100",
           "score_eligible": true
         },
         "cash_conversion_pct": {
@@ -330,20 +337,24 @@
           "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
           "source_definition": "pro forma organic constant-currency revenue growth H1",
           "score_eligible": true,
-          "notes": "Post-Mobility-separation pro forma continuing business basis."
+          "notes": "Post-Mobility-separation pro forma continuing business basis.",
+          "definition_confidence": 90
         },
         "adjusted_eps_growth_pct": {
           "value": 19,
           "comparison_class": "ADJUSTED_EPS_GROWTH",
           "source_definition": "pro forma non-GAAP adjusted diluted EPS H1 YoY",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 90
         },
         "free_cash_flow_margin_pct": {
-          "value": null,
+          "value": 27.037749,
           "comparison_class": "FREE_CASH_FLOW_MARGIN",
-          "source_definition": "reported free cash flow exists but denominator would be pro forma revenue",
-          "score_eligible": false,
-          "notes": "Blocked: reported H1 FCF includes Mobility while pro forma H1 revenue excludes Mobility."
+          "source_definition": "as-reported H1 free cash flow / as-reported H1 revenue",
+          "calculation": "2249 / 8318 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "Both numerator and denominator use the same historical H1 basis including Mobility. This fixes the prior basis mismatch; it does not mix historical FCF with post-separation pro forma revenue."
         },
         "net_debt_to_ebitda": {
           "value": null,
@@ -355,7 +366,7 @@
           "value": -3.356142,
           "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "diluted weighted-average shares H1 YoY",
-          "calculation": "296.6 / 306.9 - 1",
+          "calculation": "(296.6 / 306.9 - 1) * 100",
           "score_eligible": true
         },
         "cash_conversion_pct": {
@@ -389,21 +400,24 @@
           "value": 11,
           "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
           "source_definition": "organic constant-currency MCO revenue growth H1",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "adjusted_eps_growth_pct": {
           "value": 21.95122,
           "comparison_class": "ADJUSTED_EPS_GROWTH",
           "source_definition": "adjusted diluted EPS H1 YoY",
-          "calculation": "9.00 / 7.38 - 1",
-          "score_eligible": true
+          "calculation": "(9.00 / 7.38 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "free_cash_flow_margin_pct": {
           "value": 35.928705,
           "comparison_class": "FREE_CASH_FLOW_MARGIN",
           "source_definition": "free cash flow / revenue",
           "calculation": "1532 / 4264 * 100",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 95
         },
         "net_debt_to_ebitda": {
           "value": null,
@@ -415,7 +429,7 @@
           "value": -2.548476,
           "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "diluted weighted-average shares H1 YoY",
-          "calculation": "175.9 / 180.5 - 1",
+          "calculation": "(175.9 / 180.5 - 1) * 100",
           "score_eligible": true
         },
         "cash_conversion_pct": {
@@ -433,5 +447,5 @@
       }
     }
   },
-  "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE"
+  "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE_50_PERCENT"
 }

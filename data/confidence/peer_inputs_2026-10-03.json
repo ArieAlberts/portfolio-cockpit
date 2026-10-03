@@ -83,7 +83,43 @@
       },
       "overall_score": 94.25,
       "status": "OK"
+    },
+    "WKL": {
+      "organic_like_revenue_growth_pct": {
+        "score": 97.5,
+        "peer_count": 5,
+        "peers": [
+          "RELX.L",
+          "TRI.TO",
+          "VRSK",
+          "SPGI",
+          "MCO"
+        ]
+      },
+      "adjusted_eps_growth_pct": {
+        "score": 97.5,
+        "peer_count": 5,
+        "peers": [
+          "RELX.L",
+          "TRI.TO",
+          "VRSK",
+          "SPGI",
+          "MCO"
+        ]
+      },
+      "free_cash_flow_margin_pct": {
+        "score": 97.5,
+        "peer_count": 4,
+        "peers": [
+          "TRI.TO",
+          "VRSK",
+          "SPGI",
+          "MCO"
+        ]
+      },
+      "overall_score": 97.5,
+      "status": "PARTIAL_OK_COMPONENT_COVERAGE_50_PERCENT"
     }
   },
-  "note": "ASR and PLMR now pass peer-input confidence for their display-ready score metrics. Scores use the weakest included peer/definition as the conservative metric confidence."
+  "note": "ASR and PLMR pass peer-input confidence for display-ready scores. WKL now has high-confidence inputs for growth, EPS and FCF, but only 50% weighted component coverage, so no WKL quality score is published."
 }

@@ -1,76 +1,48 @@
 # Fundamental Quality readiness — 2026-10-03
 
-## Result
+## Current production state
 
-All 23 portfolio companies now have peer datasets, but **none is production-ready for a published Fundamental Quality score yet**.
+Two companies currently pass every display gate:
 
-The stricter scoring gate now requires:
-- at least **4 aligned peer observations per metric**;
+- **ASR — 62.1 / 100**
+- **PLMR — 40.2 / 100**
+
+A score requires:
+- at least **4 definition-compatible peer observations per metric**;
 - at least **70% weighted company-type component coverage**;
 - no hard peer-universe block;
-- Data Confidence of at least **80**.
+- target Data Confidence >=80;
+- peer-input confidence >=80.
 
-## Current coverage
+## WKL progress
 
-| Ticker | Weighted component coverage | Peer gate |
-|---|---:|---|
-| ASR | 75% | PASS |
-| ADM.L | 0% | HARD BLOCK |
-| WKL | 30% | DATA CHECK |
-| CAP.PA | 0% | DATA CHECK |
-| IMCD | 0% | DATA CHECK |
-| CRDA.L | 0% | HARD BLOCK |
-| ROR.L | 0% | DATA CHECK |
-| EMN | 15% | DATA CHECK |
-| WSM | 0% | DATA CHECK |
-| DKS | 0% | HARD BLOCK |
-| TXRH | 0% | DATA CHECK |
-| SNA | 15% | DATA CHECK |
-| MSM | 0% | HARD BLOCK |
-| PLMR | 50% | DATA CHECK |
-| MOD | 15% | DATA CHECK |
-| FUL | 0% | HARD BLOCK |
-| POWL | 15% | DATA CHECK |
-| ESI | 25% | DATA CHECK |
-| ABX | 0% | HARD BLOCK |
-| ERO | 0% | HARD BLOCK |
-| TMDX | 0% | DATA CHECK |
-| LEU | 0% | DATA CHECK |
-| OKLO | 0% | DATA CHECK |
+WKL has improved from 30% to **50% weighted component coverage**.
 
-Only **ASR** currently clears the 70% peer/component coverage gate, at 75%.
+Covered components:
+- cash-flow quality — H1 free-cash-flow margin now has four aligned peers;
+- growth/stability — organic-like revenue growth;
+- value per share — adjusted EPS growth.
 
-That does **not** make ASR production-ready, because Data Confidence is still pending.
+Still uncovered:
+- balance sheet;
+- profitability/capital efficiency.
 
-## ASR research candidate
+The S&P Global H1 FCF observation is now usable because both parts of the ratio use the same historical H1 basis:
 
-Using only the three components that currently pass the stricter four-peer rule:
+```
+H1 free cash flow = $2,249m
+H1 as-reported revenue = $8,318m
+FCF margin = 27.04%
+```
 
-- Solvency II ratio — capital strength
-- combined ratio — underwriting quality
-- operating earnings growth — profitability
+The previous version correctly blocked S&P Global because it would have divided historical FCF including Mobility by pro-forma continuing-operations revenue. That mismatch has been removed rather than ignored.
 
-the current clipped mean/std peer z-score model produces a **research-only candidate score of about 62.1**.
+WKL remains **blocked from a Fundamental Quality score** at 50% versus the required 70%.
 
-This value is deliberately **not written into the ASR baseline as Fundamental Quality**.
+## Why no near-period FactSet shortcut yet
 
-Reasons:
-- Data Confidence has not been validated;
-- 25% of the configured insurer component weight is not covered;
-- company-defined operating earnings remain less standardized than regulatory capital and combined ratio.
+FactSet publishes useful adjusted operating-margin data, but its fiscal periods do not exactly match WKL's January-June H1 period. The model will not silently promote a different fiscal period into a strict H1 peer observation merely to cross the 70% threshold.
 
-## Why WKL is not yet score-ready
-
-Under the old three-peer rule, several WKL metrics appeared usable. With the stricter four-peer minimum:
-- organic-like revenue growth remains usable;
-- adjusted EPS growth remains usable;
-- margin, FCF margin and share-count change do not yet have four aligned peer observations;
-- leverage also lacks enough aligned peers.
-
-Weighted coverage therefore falls to 30%.
-
-This is intentional. A smaller number of trustworthy inputs is preferable to a precise-looking score built on a thin reference distribution.
-
-## Next task
-
-Populate Data Confidence deterministically and expand high-priority peer datasets until more companies cross the 70% component-coverage threshold.
+The next WKL work should therefore focus on either:
+- a defensible same-basis balance-sheet/leverage metric across at least four peers; or
+- a formally defined near-period policy with an explicit confidence penalty, tested before use.

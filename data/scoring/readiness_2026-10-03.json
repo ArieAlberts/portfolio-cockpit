@@ -31,7 +31,15 @@
       "target_data_confidence": 98,
       "peer_input_confidence": 94.25,
       "production_ready": true
+    },
+    "WKL": {
+      "weighted_component_coverage": 0.5,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "target_data_confidence": 97,
+      "peer_input_confidence": 97.5,
+      "production_ready": false
     }
   },
-  "note": "ASR and PLMR currently pass every production display gate. Other companies remain blocked by weighted component coverage and/or hard peer-universe gates."
+  "note": "ASR and PLMR currently pass every production display gate. WKL has improved to 50% weighted component coverage after adding a basis-consistent S&P Global H1 FCF margin, but remains below the 70% threshold."
 }
