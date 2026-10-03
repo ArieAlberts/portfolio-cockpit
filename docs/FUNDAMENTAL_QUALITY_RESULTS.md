@@ -1,34 +1,36 @@
-# Fundamental Quality results — current status
+# Fundamental Quality results — current and next validated state
 
-## No DISPLAY_READY scores
+## Immutable current snapshot
 
-The earlier ASR 62.1 and PLMR 40.2 outputs are retained only as historical research snapshots. They are superseded by `data/scoring/fundamental_quality_2026-10-03_r2.json`.
+`data/scoring/current.json` still points to the immutable 2026-10-03 r9 snapshot. That historical snapshot has **0 DISPLAY_READY** scores and is not rewritten when methodology or peer data improve.
 
-### ASR
+## ASR — validated rebuild candidate
 
-Current status: **DATA_CHECK**.
+With the harmonized H1 IFRS common-equity ROE series added, a fresh deterministic rebuild now passes the production gates for ASR:
 
-Why:
-- Aviva is now labelled `SOLVENCY_UK_RATIO`, not EU `SOLVENCY_II_RATIO`;
-- Aviva is therefore excluded from the Solvency II score under the existing cross-regime rule;
-- only three eligible Solvency II peers remain, below the minimum of four;
-- operating earnings growth is now growth/stability, not profitability;
-- ASR's ROE remains blocked until insurer ROE definitions are harmonized.
+- required capital strength: covered with four EU Solvency II peers;
+- underwriting quality: covered;
+- profitability: covered by `annualized_ifrs_common_equity_roe_pct`;
+- weighted component coverage: **75%**;
+- target data confidence: above the 80 threshold;
+- peer-input confidence: above the 80 threshold;
+- leave-one-peer-out sensitivity: **STABLE**;
+- dry-run Fundamental Quality score: **66.1**.
 
-Current weighted component coverage is 35%: underwriting quality plus growth/stability. Required capital strength is missing.
+The score uses only the three covered components. Value-per-share remains partial and growth/stability does not yet meet its metric-slot coverage threshold.
 
-### PLMR
+Company-defined ROE values are not mixed into the harmonized ROE class. Aviva remains excluded from EU Solvency II capital strength and Zurich remains excluded under its SST regime.
 
-Current status: **DATA_CHECK**.
+After this data patch is merged, the next immutable score rebuild may publish ASR as the first `DISPLAY_READY` company if the same gates remain satisfied.
 
-Palomar still reaches 70% weighted non-capital component coverage, but insurers now require both:
-- capital strength;
-- underwriting quality.
+## PLMR
 
-PLMR has underwriting coverage but no standardized comparable capital-strength metric. Therefore the earlier 40.2 score is no longer display-ready.
+Current status remains **DATA_CHECK**.
+
+Palomar has strong non-capital peer coverage, but its required `capital_strength` component still lacks target plus four homogeneous FY2025 U.S. statutory observations. Premium-to-surplus is locked to a same-period statutory basis and RBC remains an exact-ratio fallback.
 
 ## Statistical method
 
-Future scores use sample standard deviation and include leave-one-peer-out sensitivity. A `PEER_SENSITIVE` result cannot be DISPLAY_READY.
+Production scores use sample standard deviation, +/-3 z clipping with unclipped z retained, weighted metric slots and leave-one-peer-out sensitivity. Only `STABLE` results may be `DISPLAY_READY`.
 
-All outputs remain research/monitoring data only and have no execution effect.
+All outputs are research/monitoring data only and have `execution_effect: NONE`.
