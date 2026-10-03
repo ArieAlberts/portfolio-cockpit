@@ -11,6 +11,9 @@ dependencies = [
   "PyYAML>=6.0",
 ]
 
+[project.scripts]
+cockpit-score = "portfolio_cockpit.scoring.pipeline:main"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",

@@ -1,0 +1,86 @@
+schema_version: 1
+
+# Directions are explicit for every metric alias the score pipeline may select.
+# The pipeline refuses to score a selected metric without a declared direction.
+metric_directions:
+  GENERAL_OPERATING_COMPANY:
+    net_debt_to_ebitda: lower_is_better
+    leverage_ratio: lower_is_better
+    net_cash: higher_is_better
+    net_debt: lower_is_better
+    reported_margin_pct: higher_is_better
+    company_adjusted_operating_margin_pct: higher_is_better
+    adjusted_ebita_margin_pct: higher_is_better
+    adjusted_ebitda_margin_pct: higher_is_better
+    adjusted_operating_margin_pct: higher_is_better
+    adjusted_ebit_margin_pct: higher_is_better
+    operating_margin_pct: higher_is_better
+    restaurant_margin_pct: higher_is_better
+    gross_margin_pct: higher_is_better
+    ytd_operating_margin_pct: higher_is_better
+    free_cash_flow_margin_pct: higher_is_better
+    operating_cash_flow_margin_pct: higher_is_better
+    cash_conversion_pct: higher_is_better
+    organic_like_revenue_growth_pct: higher_is_better
+    organic_revenue_growth_pct: higher_is_better
+    reported_revenue_growth_pct: higher_is_better
+    revenue_growth_pct: higher_is_better
+    comparable_sales_growth_pct: higher_is_better
+    constant_currency_revenue_growth_pct: higher_is_better
+    backlog_growth_pct: higher_is_better
+    adjusted_eps_growth_pct: higher_is_better
+    company_adjusted_eps_growth_pct: higher_is_better
+    eps_growth_pct: higher_is_better
+    operating_eps_growth_pct: higher_is_better
+    share_count_change_pct: lower_is_better
+    weighted_average_share_change_pct: lower_is_better
+
+  INSURER:
+    solvency_ratio_pct: higher_is_better
+    combined_ratio_pct: lower_is_better
+    loss_ratio_pct: lower_is_better
+    annualized_roe_pct: higher_is_better
+    operating_roe_pct: higher_is_better
+    reported_roe_pct: higher_is_better
+    operating_earnings_growth_pct: higher_is_better
+    operating_capital_generation_growth_pct: higher_is_better
+    gross_written_premium_growth_pct: higher_is_better
+    premium_growth_pct: higher_is_better
+    gaap_eps_growth_pct: higher_is_better
+    operating_eps_growth_pct: higher_is_better
+    eps_growth_pct: higher_is_better
+    dividend_growth_pct: higher_is_better
+    share_count_change_pct: lower_is_better
+
+  CYCLICAL_MINING:
+    net_debt_to_ebitda: lower_is_better
+    net_debt_usd_m: lower_is_better
+    c1_cash_cost_usd_per_lb: lower_is_better
+    operating_cash_flow_margin_pct: higher_is_better
+    operating_cash_flow_usd_m: higher_is_better
+    copper_production_tonnes: higher_is_better
+    production_growth_pct: higher_is_better
+    eps_growth_pct: higher_is_better
+    diluted_eps_growth_pct: higher_is_better
+
+  PRE_REVENUE_DEVELOPMENT:
+    cash_and_investments_usd_m: higher_is_better
+    cash_runway_months: higher_is_better
+    operating_cash_burn_usd_m: lower_is_better
+    dilution_rate: lower_is_better
+    shares_issued_h1_m: lower_is_better
+    regulatory_progress: higher_is_better
+    project_milestone_progress: higher_is_better
+    contracted_backlog: higher_is_better
+    commercial_contracts: higher_is_better
+
+  FINANCIAL_SERVICES:
+    capital_ratio: higher_is_better
+    net_debt_to_ebitda: lower_is_better
+    roe: higher_is_better
+    roa: higher_is_better
+    adjusted_eps_growth_pct: higher_is_better
+    credit_or_asset_quality: higher_is_better
+    revenue_growth_pct: higher_is_better
+    book_value_per_share_growth: higher_is_better
+    share_count_change_pct: lower_is_better

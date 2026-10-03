@@ -1,0 +1,46 @@
+name: rebuild-fundamental-quality
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-fundamental-quality
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - run: pip install -e ".[dev]"
+      - run: python -m compileall -q src scripts
+      - run: pytest -q --tb=short
+
+      - name: Build immutable score snapshot
+        run: cockpit-score --write
+
+      - name: Commit generated score state
+        shell: bash
+        run: |
+          if git diff --quiet -- data/scoring; then
+            echo "Score snapshot already reproducible; nothing to commit."
+            exit 0
+          fi
+          git config user.name "portfolio-cockpit-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/scoring
+          git commit -m "chore: rebuild fundamental quality snapshot"
+          git pull --rebase origin main
+          git push origin HEAD:main
