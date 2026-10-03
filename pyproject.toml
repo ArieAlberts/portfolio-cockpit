@@ -17,6 +17,7 @@ cockpit-score = "portfolio_cockpit.scoring.pipeline:main"
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
+  "hypothesis>=6.112",
 ]
 
 [tool.setuptools.packages.find]

@@ -43,13 +43,14 @@ def test_esi_weighted_coverage_is_60_percent_and_remains_blocked():
     portfolio=yaml.safe_load((ROOT/"config/portfolio.yaml").read_text(encoding="utf-8"))
     types=yaml.safe_load((ROOT/"config/company_types.yaml").read_text(encoding="utf-8"))
     cfg=yaml.safe_load((ROOT/"config/readiness.yaml").read_text(encoding="utf-8"))
+    metric_cfg=yaml.safe_load((ROOT/"config/score_metrics.yaml").read_text(encoding="utf-8"))
     typ=portfolio["positions"]["ESI"]["company_type"]
     r=evaluate_readiness(
         dataset=load_esi(),
         company_type=typ,
         component_weights=types[typ]["quality_components"],
         required_components=tuple(types[typ]["required_components"]),
-        component_metric_aliases=cfg["component_metric_aliases"][typ],
+        component_metric_aliases=metric_cfg["component_metric_aliases"][typ],
         minimum_peer_values_per_metric=cfg["minimum_peer_values_per_metric"],
         minimum_weighted_component_coverage=cfg["minimum_weighted_component_coverage"],
         hard_block_status_contains=tuple(cfg["hard_block_status_contains"]),

@@ -36,20 +36,32 @@ def evaluate_readiness(
     peer_input_confidence_score: float | None = None,
     peer_input_confidence_threshold: float = 80.0,
     stability_flag: str | None = None,
+    covered_components_override: tuple[str, ...] | None = None,
+    ready_metrics_override: tuple[str, ...] | None = None,
 ) -> ReadinessResult:
     target = dataset["target_ticker"]
     status = str(dataset.get("peer_universe_status", ""))
     hard_blocked = any(token in status for token in hard_block_status_contains)
     covered_components, blocked_components, ready_metrics, warnings = [], [], [], []
 
-    for component in component_weights:
-        component_ready = False
-        for metric_name in component_metric_aliases.get(component, []):
-            result = eligible_metric_set(dataset, metric_name, min_peers=minimum_peer_values_per_metric)
-            if result.status == "READY":
-                component_ready = True
-                ready_metrics.append(metric_name)
-        (covered_components if component_ready else blocked_components).append(component)
+    if covered_components_override is not None:
+        covered_set = set(covered_components_override)
+        covered_components = [c for c in component_weights if c in covered_set]
+        blocked_components = [c for c in component_weights if c not in covered_set]
+        ready_metrics = list(ready_metrics_override or ())
+    else:
+        for component in component_weights:
+            component_ready = False
+            for metric_name in component_metric_aliases.get(component, []):
+                result = eligible_metric_set(
+                    dataset,
+                    metric_name,
+                    min_peers=minimum_peer_values_per_metric,
+                )
+                if result.status == "READY":
+                    component_ready = True
+                    ready_metrics.append(metric_name)
+            (covered_components if component_ready else blocked_components).append(component)
 
     coverage = sum(component_weights[c] for c in covered_components)
     peer_coverage_pass = coverage >= minimum_weighted_component_coverage
@@ -72,8 +84,8 @@ def evaluate_readiness(
         warnings.append("PEER_INPUT_CONFIDENCE_BELOW_THRESHOLD")
     if stability_flag is None:
         warnings.append("SENSITIVITY_PENDING")
-    elif stability_flag == "PEER_SENSITIVE":
-        warnings.append("PEER_SENSITIVE")
+    elif stability_flag in {"PEER_SENSITIVE", "UNSTABLE"}:
+        warnings.append(stability_flag)
 
     production_ready = (
         peer_coverage_pass

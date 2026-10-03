@@ -128,6 +128,8 @@ def _leave_one_out_sensitivity(
     used_metric_names: set[str],
     clip_z: float,
     minimum_sensitivity_peers: int = 3,
+    stable_band_width_points: float = 10.0,
+    unstable_band_width_points: float = 25.0,
 ) -> SensitivityResult | None:
     scenarios: list[tuple[float, str, int, str | None]] = []
 
@@ -181,6 +183,13 @@ def _leave_one_out_sensitivity(
     high = max(score for score, *_ in scenarios)
     influential = max(scenarios, key=lambda row: abs(row[0] - base_score))
     width = high - low
+    if width < stable_band_width_points:
+        stability_flag = "STABLE"
+    elif width < unstable_band_width_points:
+        stability_flag = "PEER_SENSITIVE"
+    else:
+        stability_flag = "UNSTABLE"
+
     return SensitivityResult(
         score_low=low,
         score_high=high,
@@ -188,7 +197,7 @@ def _leave_one_out_sensitivity(
         most_influential_peer=influential[3],
         most_influential_peer_index=influential[2],
         largest_score_shift=influential[0] - base_score,
-        stability_flag="STABLE" if width < 10.0 else "PEER_SENSITIVE",
+        stability_flag=stability_flag,
         scenarios_evaluated=len(scenarios),
     )
 
@@ -203,6 +212,8 @@ def calculate_fundamental_quality(
     clip_z: float = 3.0,
     minimum_peer_values: int = 4,
     peer_labels: dict[str, list[str]] | None = None,
+    stable_band_width_points: float = 10.0,
+    unstable_band_width_points: float = 25.0,
 ) -> FundamentalQualityResult:
     """
     Calculate a peer-normalized Fundamental Quality score.
@@ -287,6 +298,8 @@ def calculate_fundamental_quality(
         metric_weights=metric_weights,
         used_metric_names={m.metric_name for m in used},
         clip_z=clip_z,
+        stable_band_width_points=stable_band_width_points,
+        unstable_band_width_points=unstable_band_width_points,
     )
 
     return FundamentalQualityResult(

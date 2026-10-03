@@ -32,7 +32,9 @@ def test_pipeline_records_provenance_and_used_peer_tickers():
     plmr=payload["blocked"]["PLMR"]
     assert plmr["provenance"]["peer_dataset"]["path"].endswith("PLMR/2026-10-03.json")
     assert len(plmr["provenance"]["peer_dataset"]["sha256"])==64
-    assert plmr["selected_metrics"]["underwriting_quality"]["peer_tickers"]
+    underwriting = plmr["selected_metrics"]["underwriting_quality"]["metrics"]
+    assert underwriting
+    assert all(item["peer_tickers"] for item in underwriting.values())
 
 
 def test_audited_insurers_remain_blocked_by_current_files():
@@ -48,8 +50,10 @@ def test_plmr_peer_set_variation_is_visible():
     plmr=payload["blocked"]["PLMR"]
     assert plmr["peer_set_overlap"]["code"]=="PEER_SET_VARIES_BY_METRIC"
     for component,item in plmr["selected_metrics"].items():
-        assert "peer_tickers" in item
-        assert "peer_values" in item
+        assert item["metrics"]
+        for metric in item["metrics"].values():
+            assert "peer_tickers" in metric
+            assert "peer_values" in metric
 
 
 def test_snapshot_writer_never_overwrites_different_content(tmp_path: Path):
@@ -63,13 +67,15 @@ def test_snapshot_writer_never_overwrites_different_content(tmp_path: Path):
     assert p1.read_text()!=p2.read_text()
 
 
-def test_every_readiness_alias_has_an_explicit_direction():
-    readiness=yaml.safe_load((ROOT/"config/readiness.yaml").read_text(encoding="utf-8"))
-    directions=yaml.safe_load((ROOT/"config/score_metrics.yaml").read_text(encoding="utf-8"))["metric_directions"]
-    for company_type,components in readiness["component_metric_aliases"].items():
+def test_every_registered_alias_has_an_explicit_direction_and_kind():
+    metric_cfg=yaml.safe_load((ROOT/"config/score_metrics.yaml").read_text(encoding="utf-8"))
+    directions=metric_cfg["metric_directions"]
+    kinds=metric_cfg["metric_kinds"]
+    for company_type,components in metric_cfg["component_metric_aliases"].items():
         for aliases in components.values():
             for metric in aliases:
                 assert metric in directions[company_type], f"{company_type}:{metric}"
+                assert metric in kinds, f"missing kind: {metric}"
 
 
 def test_semantically_identical_snapshot_reuses_existing_file(tmp_path: Path):
@@ -128,3 +134,26 @@ def test_noop_rebuild_keeps_current_pointer_byte_stable(tmp_path: Path):
     assert p1==p2
     assert before==after
     assert '"run_git_commit": "FIRST"' in after
+
+
+def test_every_portfolio_company_gets_exactly_one_non_execution_output():
+    payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
+    portfolio=yaml.safe_load((ROOT/"config/portfolio.yaml").read_text(encoding="utf-8"))
+    expected=set(portfolio["positions"])
+    assert set(payload["scores"]).isdisjoint(payload["blocked"])
+    assert set(payload["scores"]) | set(payload["blocked"]) == expected
+    for item in list(payload["scores"].values()) + list(payload["blocked"].values()):
+        assert item["execution_effect"] == "NONE"
+
+
+def test_display_ready_implies_all_methodology_gates():
+    payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
+    m=payload["methodology"]
+    for item in payload["scores"].values():
+        assert item["status"] == "DISPLAY_READY"
+        assert item["dataset_rule_consistent"] is True
+        assert item["missing_required_components"] == []
+        assert item["weighted_component_coverage"] >= m["minimum_weighted_component_coverage"]
+        assert item["target_data_confidence"] >= m["data_confidence_threshold"]
+        assert item["peer_input_confidence"] >= m["peer_input_confidence_threshold"]
+        assert item["diagnostic_candidate"]["sensitivity"]["stability_flag"] == "STABLE"

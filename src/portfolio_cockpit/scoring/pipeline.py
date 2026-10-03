@@ -10,6 +10,13 @@ from typing import Any
 
 import yaml
 
+from portfolio_cockpit.config import (
+    component_metric_aliases,
+    component_metric_slots,
+    load_config,
+    metric_directions,
+)
+
 from .normalization import calculate_fundamental_quality
 from .peer_confidence import peer_metric_confidence
 from .peer_data import EligibleMetricSet, eligible_metric_set
@@ -25,6 +32,7 @@ CONFIG_FILES = (
 )
 
 CODE_FILES = (
+    "src/portfolio_cockpit/config.py",
     "src/portfolio_cockpit/scoring/pipeline.py",
     "src/portfolio_cockpit/scoring/normalization.py",
     "src/portfolio_cockpit/scoring/peer_data.py",
@@ -83,49 +91,91 @@ def _select_component_metrics(
     dataset: dict[str, Any],
     company_type: str,
     component_weights: dict[str, float],
-    aliases: dict[str, list[str]],
+    slots: dict[str, dict[str, dict[str, Any]]],
     directions: dict[str, str],
     minimum_peers: int,
+    minimum_component_metric_weight_coverage: float,
 ) -> tuple[dict[str, dict[str, Any]], list[str]]:
     selected: dict[str, dict[str, Any]] = {}
     warnings: list[str] = []
 
-    for component in component_weights:
-        chosen: tuple[str, EligibleMetricSet] | None = None
-        for metric_name in aliases.get(component, []):
-            metric_set = eligible_metric_set(
-                dataset,
-                metric_name,
-                min_peers=minimum_peers,
+    for component, component_weight in component_weights.items():
+        chosen_metrics: list[dict[str, Any]] = []
+        covered_slot_weight = 0.0
+
+        for slot_name, slot_cfg in slots.get(component, {}).items():
+            slot_weight = float(slot_cfg["weight"])
+            chosen: tuple[str, EligibleMetricSet] | None = None
+
+            for metric_name in slot_cfg.get("aliases", ()):
+                metric_set = eligible_metric_set(
+                    dataset,
+                    metric_name,
+                    min_peers=minimum_peers,
+                )
+                if metric_set.status == "READY":
+                    chosen = (metric_name, metric_set)
+                    break
+
+            if chosen is None:
+                continue
+
+            metric_name, metric_set = chosen
+            direction = directions.get(metric_name)
+            if direction not in {"higher_is_better", "lower_is_better"}:
+                warnings.append(f"MISSING_DIRECTION:{company_type}:{metric_name}")
+                continue
+
+            covered_slot_weight += slot_weight
+            chosen_metrics.append(
+                {
+                    "slot_name": slot_name,
+                    "metric_name": metric_name,
+                    "direction": direction,
+                    "configured_metric_weight": slot_weight,
+                    "comparison_class": metric_set.comparison_class,
+                    "target_value": metric_set.target_value,
+                    "peer_values": list(metric_set.peer_values),
+                    "peer_tickers": list(metric_set.peer_tickers),
+                }
             )
-            if metric_set.status == "READY":
-                chosen = (metric_name, metric_set)
-                break
 
-        if chosen is None:
+        if covered_slot_weight + 1e-12 < minimum_component_metric_weight_coverage:
+            if chosen_metrics:
+                warnings.append(
+                    "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:"
+                    f"{company_type}:{component}:{covered_slot_weight:.6f}"
+                )
             continue
 
-        metric_name, metric_set = chosen
-        direction = directions.get(metric_name)
-        if direction not in {"higher_is_better", "lower_is_better"}:
-            warnings.append(f"MISSING_DIRECTION:{company_type}:{metric_name}")
-            continue
+        for item in chosen_metrics:
+            normalized = float(item["configured_metric_weight"]) / covered_slot_weight
+            item["effective_metric_weight_within_component"] = normalized
+            item["effective_component_weight"] = float(component_weight) * normalized
 
         selected[component] = {
-            "metric_name": metric_name,
-            "direction": direction,
-            "component_weight": float(component_weights[component]),
-            "comparison_class": metric_set.comparison_class,
-            "target_value": metric_set.target_value,
-            "peer_values": list(metric_set.peer_values),
-            "peer_tickers": list(metric_set.peer_tickers),
+            "component_weight": float(component_weight),
+            "metric_weight_coverage": covered_slot_weight,
+            "minimum_metric_weight_coverage": minimum_component_metric_weight_coverage,
+            "metrics": chosen_metrics,
         }
 
     return selected, warnings
 
 
+def _selected_metric_items(
+    selected: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    return [
+        metric
+        for component in selected.values()
+        for metric in component.get("metrics", ())
+    ]
+
+
 def _peer_set_overlap_warning(selected: dict[str, dict[str, Any]]) -> dict[str, Any] | None:
-    peer_sets = [set(v["peer_tickers"]) for v in selected.values() if v["peer_tickers"]]
+    metric_items = _selected_metric_items(selected)
+    peer_sets = [set(v["peer_tickers"]) for v in metric_items if v["peer_tickers"]]
     if len(peer_sets) < 2:
         return None
     union = set().union(*peer_sets)
@@ -148,8 +198,11 @@ def _candidate_score(
     selected: dict[str, dict[str, Any]],
     clip_z: float,
     minimum_peers: int,
+    stable_width: float,
+    unstable_width: float,
 ) -> Any | None:
-    if not selected:
+    metric_items = _selected_metric_items(selected)
+    if not metric_items:
         return None
 
     target_metrics: dict[str, float] = {}
@@ -158,13 +211,13 @@ def _candidate_score(
     directions: dict[str, str] = {}
     weights: dict[str, float] = {}
 
-    for item in selected.values():
+    for item in metric_items:
         metric = item["metric_name"]
         target_metrics[metric] = float(item["target_value"])
         peer_metrics[metric] = list(item["peer_values"])
         peer_labels[metric] = list(item["peer_tickers"])
         directions[metric] = item["direction"]
-        weights[metric] = float(item["component_weight"])
+        weights[metric] = float(item["effective_component_weight"])
 
     return calculate_fundamental_quality(
         target_metrics=target_metrics,
@@ -175,6 +228,8 @@ def _candidate_score(
         min_metric_coverage=0.0,
         clip_z=clip_z,
         minimum_peer_values=minimum_peers,
+        stable_band_width_points=stable_width,
+        unstable_band_width_points=unstable_width,
     )
 
 
@@ -188,24 +243,38 @@ def _metric_output(
         for score in (candidate.metric_scores if candidate is not None else ())
     }
     result: dict[str, Any] = {}
-    for component, item in selected.items():
-        metric = item["metric_name"]
-        score = by_name.get(metric)
-        result[component] = {
-            **item,
-            "peer_input_confidence": peer_confidences.get(metric),
-        }
-        if score is not None:
-            result[component].update(
-                {
-                    "peer_mean": score.peer_mean,
-                    "peer_sample_std": score.peer_std,
-                    "unclipped_z_score": score.unclipped_z_score,
-                    "clipped_z_score": score.z_score,
-                }
-            )
-    return result
 
+    for component, component_item in selected.items():
+        component_output = {
+            "component_weight": component_item["component_weight"],
+            "metric_weight_coverage": component_item["metric_weight_coverage"],
+            "minimum_metric_weight_coverage": component_item[
+                "minimum_metric_weight_coverage"
+            ],
+            "metrics": {},
+        }
+
+        for item in component_item["metrics"]:
+            metric = item["metric_name"]
+            score = by_name.get(metric)
+            metric_output = {
+                **item,
+                "peer_input_confidence": peer_confidences.get(metric),
+            }
+            if score is not None:
+                metric_output.update(
+                    {
+                        "peer_mean": score.peer_mean,
+                        "peer_sample_std": score.peer_std,
+                        "unclipped_z_score": score.unclipped_z_score,
+                        "clipped_z_score": score.z_score,
+                    }
+                )
+            component_output["metrics"][item["slot_name"]] = metric_output
+
+        result[component] = component_output
+
+    return result
 
 def build_score_snapshot(
     *,
@@ -213,11 +282,11 @@ def build_score_snapshot(
     code_version: str | None = None,
     confidence_path: Path | None = None,
 ) -> dict[str, Any]:
-    portfolio = _read_yaml(root / "config/portfolio.yaml")
-    company_types = _read_yaml(root / "config/company_types.yaml")
-    readiness_cfg = _read_yaml(root / "config/readiness.yaml")
-    scoring_cfg = _read_yaml(root / "config/scoring.yaml")
-    metric_cfg = _read_yaml(root / "config/score_metrics.yaml")
+    config = load_config(root)
+    portfolio = config["portfolio"]
+    company_types = config["company_types"]
+    readiness_cfg = config["readiness"]
+    scoring_cfg = config["scoring"]
     peer_index_path = root / "data/peers/index.json"
     peer_index = _read_json(peer_index_path)
 
@@ -228,8 +297,12 @@ def build_score_snapshot(
     confidence_threshold = float(scoring_cfg["data_confidence"]["decision_threshold"])
     minimum_peers = int(fq_cfg["minimum_peer_values_per_metric"])
     minimum_coverage = float(fq_cfg["minimum_metric_coverage"])
+    minimum_component_metric_coverage = float(
+        fq_cfg["minimum_component_metric_weight_coverage"]
+    )
     clip_z = float(fq_cfg["clip_z_score"])
     stable_width = float(fq_cfg["sensitivity"]["stable_band_width_points"])
+    unstable_width = float(fq_cfg["sensitivity"]["unstable_band_width_points"])
     hard_tokens = list(readiness_cfg["hard_block_status_contains"])
 
     config_hash, config_hashes = _bundle_hash(root, CONFIG_FILES)
@@ -260,21 +333,24 @@ def build_score_snapshot(
             k: float(v) for k, v in type_cfg["quality_components"].items()
         }
         required_components = tuple(type_cfg.get("required_components", ()))
-        aliases = readiness_cfg["component_metric_aliases"][company_type]
-        directions = metric_cfg["metric_directions"][company_type]
+        aliases = component_metric_aliases(config, company_type)
+        slots = component_metric_slots(config, company_type)
+        directions = metric_directions(config, company_type)
 
         selected, selection_warnings = _select_component_metrics(
             dataset=dataset,
             company_type=company_type,
             component_weights=component_weights,
-            aliases=aliases,
+            slots=slots,
             directions=directions,
             minimum_peers=minimum_peers,
+            minimum_component_metric_weight_coverage=minimum_component_metric_coverage,
         )
 
         peer_confidences: dict[str, float] = {}
         peer_confidence_warnings: list[str] = []
-        for item in selected.values():
+        selected_metric_items = _selected_metric_items(selected)
+        for item in selected_metric_items:
             metric = item["metric_name"]
             try:
                 c = peer_metric_confidence(
@@ -290,7 +366,8 @@ def build_score_snapshot(
 
         overall_peer_confidence = (
             min(peer_confidences.values())
-            if peer_confidences and len(peer_confidences) == len(selected)
+            if peer_confidences
+            and len(peer_confidences) == len(selected_metric_items)
             else None
         )
 
@@ -298,18 +375,14 @@ def build_score_snapshot(
             selected=selected,
             clip_z=clip_z,
             minimum_peers=minimum_peers,
+            stable_width=stable_width,
+            unstable_width=unstable_width,
         )
         stability_flag = (
             candidate.sensitivity.stability_flag
             if candidate is not None and candidate.sensitivity is not None
             else None
         )
-
-        # Enforce the configured stability threshold in one place even if the
-        # lower-level helper's default is changed later.
-        if candidate is not None and candidate.sensitivity is not None:
-            width = candidate.sensitivity.score_high - candidate.sensitivity.score_low
-            stability_flag = "STABLE" if width < stable_width else "PEER_SENSITIVE"
 
         target_confidence = confidence.get("results", {}).get(ticker, {}).get(
             "data_confidence_score"
@@ -329,6 +402,10 @@ def build_score_snapshot(
             peer_input_confidence_score=overall_peer_confidence,
             peer_input_confidence_threshold=confidence_threshold,
             stability_flag=stability_flag,
+            covered_components_override=tuple(selected),
+            ready_metrics_override=tuple(
+                item["metric_name"] for item in selected_metric_items
+            ),
         )
 
         overlap_warning = _peer_set_overlap_warning(selected)
@@ -424,10 +501,13 @@ def build_score_snapshot(
             "score_formula": fq_cfg["score_formula"],
             "minimum_peer_values_per_metric": minimum_peers,
             "minimum_weighted_component_coverage": minimum_coverage,
+            "minimum_component_metric_weight_coverage": minimum_component_metric_coverage,
+            "metric_slot_weighting": True,
             "required_components_enforced": True,
             "dataset_rule_consistency_required": True,
             "sensitivity_method": fq_cfg["sensitivity"]["method"],
             "stable_band_width_points": stable_width,
+            "unstable_band_width_points": unstable_width,
             "data_confidence_threshold": confidence_threshold,
             "peer_input_confidence_threshold": confidence_threshold,
         },
