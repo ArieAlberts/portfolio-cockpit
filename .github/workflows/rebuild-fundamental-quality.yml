@@ -1,5 +1,6 @@
 name: rebuild-fundamental-quality
 
+# Workflow-only changes must not create a new score revision when scoring inputs are unchanged.
 on:
   workflow_dispatch:
   push:
