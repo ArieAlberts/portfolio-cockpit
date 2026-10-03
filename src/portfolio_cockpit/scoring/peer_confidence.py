@@ -70,7 +70,9 @@ def peer_metric_confidence(
         source_score = _source_score(str(source.get("type", "")))
         period_score = _period_score(str(company.get("period_alignment", "")))
         role_score = _role_score(str(company.get("role", "PEER")))
-        definition_score = 100.0
+        definition_score = float(metric.get("definition_confidence", 100.0))
+        if definition_score < 0 or definition_score > 100:
+            raise ValueError("DEFINITION_CONFIDENCE_OUT_OF_RANGE")
 
         score = (
             0.35 * source_score
@@ -83,7 +85,6 @@ def peer_metric_confidence(
     if len(observations) < minimum_peer_values:
         raise ValueError("INSUFFICIENT_PEER_INPUTS")
 
-    # Conservative: the weakest included peer determines metric confidence.
     return PeerMetricConfidence(
         metric_name=metric_name,
         score=min(score for _, score in observations),

@@ -1,27 +1,37 @@
-# First display-ready Fundamental Quality score
+# Fundamental Quality results — 2026-10-03
 
-ASR is the first company to pass every current display gate.
+Two companies currently pass every display gate.
 
-## ASR
+## ASR — 62.1 / 100
 
-```
-Fundamental Quality = 62.1 / 100
-```
+ASR remains display-ready with 75% weighted component coverage.
 
-Inputs:
-- Solvency II ratio: 222% versus four aligned Solvency II peers
-- combined ratio: 91.6% versus five aligned non-life/P&C peers
-- operating earnings growth: 9.8% versus five aligned insurer peers
+Covered:
+- capital strength
+- underwriting quality
+- profitability
 
-Coverage:
-- capital strength: covered
-- underwriting quality: covered
-- profitability: covered
-- growth/stability: not covered under the four-peer rule
-- value per share: not covered under the four-peer rule
+## PLMR — 40.2 / 100
 
-Weighted component coverage is 75%, above the 70% minimum.
+Palomar now reaches the 70% minimum after replacing mixed adjusted/operating profitability measures with a more comparable GAAP H1 ROE series and adding a GAAP EPS-growth series.
 
-Target baseline Data Confidence is 89.5 and peer-input compatibility confidence is 100.
+Covered:
+- underwriting quality: combined ratio
+- profitability: annualized GAAP ROE
+- growth/stability: gross written premium growth
+- value per share: GAAP EPS growth
 
-The score is a model output, not a buy/sell instruction. It has no execution path and cannot trigger a live order.
+Uncovered:
+- capital strength
+
+Important model facts:
+- Palomar H1 combined ratio: 83.8%
+- annualized GAAP ROE: 19.9%
+- H1 GWP growth: +34.3%
+- H1 GAAP EPS growth: +8.3%
+
+The GWP growth z-score is clipped at +3 under the standard outlier rule. The low overall score is therefore not caused by the growth signal being allowed to dominate; relative ROE and GAAP EPS growth are weaker than this selected specialty-P&C peer set.
+
+The HCI ROE observation is derived from primary H1 net-income and common-equity figures and carries a lower definition-confidence flag. Skyward's GAAP per-share line is explicitly basic EPS rather than silently treated as diluted.
+
+All scores are model research outputs. They cannot trigger or route live orders.

@@ -52,6 +52,7 @@ component_metric_aliases:
       - combined_ratio_pct
       - loss_ratio_pct
     profitability:
+      - annualized_roe_pct
       - operating_roe_pct
       - reported_roe_pct
       - operating_earnings_growth_pct
@@ -60,6 +61,7 @@ component_metric_aliases:
       - gross_written_premium_growth_pct
       - premium_growth_pct
     value_per_share:
+      - gaap_eps_growth_pct
       - operating_eps_growth_pct
       - eps_growth_pct
       - dividend_growth_pct

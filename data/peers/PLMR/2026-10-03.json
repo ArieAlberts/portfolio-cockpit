@@ -12,12 +12,12 @@
     "HRTG",
     "RLI"
   ],
-  "peer_universe_status": "VALIDATED_FOR_CORE_UNDERWRITING_METRICS",
+  "peer_universe_status": "VALIDATED_FOR_CORE_UNDERWRITING_AND_PROFITABILITY_METRICS",
   "rules": {
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
-    "minimum_peer_values_per_metric": 3,
-    "final_score_status": "PENDING_COMPONENT_WEIGHT_REVIEW"
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "DISPLAY_READY_WITH_70_PERCENT_COMPONENT_COVERAGE"
   },
   "companies": {
     "PLMR": {
@@ -54,7 +54,7 @@
           "value": 34.293922,
           "comparison_class": "H1_GWP_GROWTH",
           "source_definition": "Gross written premiums H1 YoY",
-          "calculation": "1260284 / 938452 - 1",
+          "calculation": "(1260284 / 938452 - 1) * 100",
           "score_eligible": true
         },
         "operating_eps_growth_pct": {
@@ -62,6 +62,19 @@
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Diluted adjusted EPS H1 YoY",
           "calculation": "4.66 / 3.62 - 1",
+          "score_eligible": true
+        },
+        "annualized_roe_pct": {
+          "value": 19.9,
+          "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+          "source_definition": "Annualized return on equity: GAAP net income annualized / average beginning and ending stockholders' equity, six months ended June 30",
+          "score_eligible": true
+        },
+        "gaap_eps_growth_pct": {
+          "value": 8.333333,
+          "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+          "source_definition": "Diluted GAAP EPS H1 YoY",
+          "calculation": "(3.51 / 3.24 - 1) * 100",
           "score_eligible": true
         }
       }
@@ -100,7 +113,7 @@
           "value": -2.901624,
           "comparison_class": "H1_GWP_GROWTH",
           "source_definition": "Gross written premiums H1 YoY",
-          "calculation": "1009626 / 1039797 - 1",
+          "calculation": "(1009626 / 1039797 - 1) * 100",
           "score_eligible": true
         },
         "operating_eps_growth_pct": {
@@ -108,6 +121,19 @@
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Diluted operating EPS H1 YoY",
           "calculation": "10.64 / 8.49 - 1",
+          "score_eligible": true
+        },
+        "annualized_roe_pct": {
+          "value": 28.9,
+          "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+          "source_definition": "Annualized return on equity: net income annualized / average beginning and ending stockholders' equity, H1",
+          "score_eligible": true
+        },
+        "gaap_eps_growth_pct": {
+          "value": 31.178311,
+          "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+          "source_definition": "Diluted GAAP EPS H1 YoY",
+          "calculation": "(12.58 / 9.59 - 1) * 100",
           "score_eligible": true
         }
       }
@@ -147,9 +173,10 @@
           "value": 12.802229,
           "comparison_class": "H1_GWP_GROWTH",
           "source_definition": "Adjusted pro forma gross written premiums H1 YoY",
-          "calculation": "1408258 / 1248431 - 1",
+          "calculation": "(1408258 / 1248431 - 1) * 100",
           "score_eligible": true,
-          "notes": "Prior-year GWP is pro forma and adjusted for Apollo participation changes."
+          "notes": "Prior-year GWP is pro forma and adjusted for Apollo participation changes.",
+          "definition_confidence": 90
         },
         "operating_eps_growth_pct": {
           "value": 43.258427,
@@ -157,6 +184,21 @@
           "source_definition": "Diluted operating EPS H1 YoY",
           "calculation": "2.55 / 1.78 - 1",
           "score_eligible": true
+        },
+        "annualized_roe_pct": {
+          "value": 17.3,
+          "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+          "source_definition": "Annualized return on equity: net income annualized / average beginning and ending stockholders' equity, H1",
+          "score_eligible": true
+        },
+        "gaap_eps_growth_pct": {
+          "value": 10.447761,
+          "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+          "source_definition": "Basic GAAP EPS H1 YoY used as per-share GAAP earnings growth proxy",
+          "calculation": "(2.22 / 2.01 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "notes": "Skyward's release labels the per-share line basic EPS; kept explicit rather than silently relabeling diluted."
         }
       }
     },
@@ -195,7 +237,7 @@
           "value": -4.143344,
           "comparison_class": "H1_GWP_GROWTH",
           "source_definition": "Gross written premiums H1 YoY",
-          "calculation": "735187 / 766965 - 1",
+          "calculation": "(735187 / 766965 - 1) * 100",
           "score_eligible": true
         },
         "operating_eps_growth_pct": {
@@ -205,6 +247,19 @@
           "calculation": "3.23 / 2.54 - 1",
           "score_eligible": true,
           "notes": "GAAP EPS rather than adjusted operating EPS."
+        },
+        "annualized_roe_pct": {
+          "value": 36.6,
+          "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+          "source_definition": "Annualized return on average equity: net income annualized / average stockholders' equity, H1",
+          "score_eligible": true
+        },
+        "gaap_eps_growth_pct": {
+          "value": 27.165354,
+          "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+          "source_definition": "Diluted GAAP EPS H1 YoY",
+          "calculation": "(3.23 / 2.54 - 1) * 100",
+          "score_eligible": true
         }
       }
     },
@@ -242,7 +297,7 @@
           "value": 2.862101,
           "comparison_class": "H1_GWP_GROWTH",
           "source_definition": "Gross written premiums H1 YoY",
-          "calculation": "1083536 / 1053387 - 1",
+          "calculation": "(1083536 / 1053387 - 1) * 100",
           "score_eligible": true
         },
         "operating_eps_growth_pct": {
@@ -251,19 +306,26 @@
           "source_definition": "Operating EPS H1 YoY",
           "calculation": "1.67 / 1.71 - 1",
           "score_eligible": true
+        },
+        "gaap_eps_growth_pct": {
+          "value": 19.211823,
+          "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+          "source_definition": "Diluted GAAP EPS H1 YoY",
+          "calculation": "(2.42 / 2.03 - 1) * 100",
+          "score_eligible": true
         }
       }
     },
     "HCI": {
       "company": "HCI Group, Inc.",
-      "role": "CONTEXT_PEER",
+      "role": "BROAD_PEER",
       "period": "H1_2026",
       "period_end": "2026-06-30",
       "period_alignment": "ALIGNED_H1",
       "source": {
-        "type": "SEC_FILING",
-        "title": "HCI Group Q2 2026 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/1400810/000119312526340280/hci-20260630.htm"
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "HCI Group Reports Second Quarter 2026 Results / balance sheet cross-check",
+        "url": "https://www.sec.gov/Archives/edgar/data/1400810/000119312526338133/hci-ex99_1.htm"
       },
       "metrics": {
         "combined_ratio_pct": {
@@ -296,6 +358,15 @@
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": null,
           "score_eligible": false
+        },
+        "annualized_roe_pct": {
+          "value": 27.761428,
+          "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+          "source_definition": "Derived H1 annualized ROE using net income attributable after noncontrolling interests and average common stockholders' equity",
+          "calculation": "(147.204 * 2 / ((1041.077 + 1079.909) / 2)) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "notes": "Derived from the official H1 earnings release/balance sheet because HCI does not publish the identical ratio directly."
         }
       }
     }

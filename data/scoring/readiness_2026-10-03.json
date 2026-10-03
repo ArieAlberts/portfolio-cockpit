@@ -10,10 +10,10 @@
   },
   "summary": {
     "portfolio_companies": 23,
-    "peer_component_coverage_pass": 1,
+    "peer_component_coverage_pass": 2,
     "target_data_confidence_pass": 23,
-    "peer_input_confidence_pass_for_coverage_candidates": 1,
-    "production_ready": 1
+    "peer_input_confidence_pass_for_coverage_candidates": 2,
+    "production_ready": 2
   },
   "results": {
     "ASR": {
@@ -23,7 +23,15 @@
       "target_data_confidence": 89.5,
       "peer_input_confidence": 100,
       "production_ready": true
+    },
+    "PLMR": {
+      "weighted_component_coverage": 0.7,
+      "peer_component_coverage_pass": true,
+      "hard_blocked": false,
+      "target_data_confidence": 98,
+      "peer_input_confidence": 94.25,
+      "production_ready": true
     }
   },
-  "note": "Full per-ticker coverage details remain documented in SCORE_READINESS.md. Only ASR currently passes every production display gate."
+  "note": "ASR and PLMR currently pass every production display gate. Other companies remain blocked by weighted component coverage and/or hard peer-universe gates."
 }

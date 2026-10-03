@@ -67,6 +67,75 @@
         "OPERATING_EARNINGS_IS_COMPANY_DEFINED"
       ],
       "execution_effect": "NONE"
+    },
+    "PLMR": {
+      "fundamental_quality_score": 40.1781,
+      "display_score": 40.2,
+      "status": "DISPLAY_READY",
+      "weighted_component_coverage": 0.7,
+      "target_data_confidence": 98,
+      "peer_input_confidence": 94.25,
+      "weighted_z": -0.392877,
+      "metrics": {
+        "combined_ratio_pct": {
+          "target": 83.8,
+          "peer_values": [
+            76.4,
+            90,
+            72.9,
+            85.8
+          ],
+          "direction": "lower_is_better",
+          "component_weight": 0.25,
+          "z_score": -0.365877
+        },
+        "annualized_roe_pct": {
+          "target": 19.9,
+          "peer_values": [
+            28.9,
+            17.3,
+            36.6,
+            27.761428
+          ],
+          "direction": "higher_is_better",
+          "component_weight": 0.2,
+          "z_score": -1.126654
+        },
+        "gross_written_premium_growth_pct": {
+          "target": 34.293922,
+          "peer_values": [
+            -2.901624,
+            12.802229,
+            -4.143344,
+            2.862101
+          ],
+          "direction": "higher_is_better",
+          "component_weight": 0.1,
+          "z_score": 3
+        },
+        "gaap_eps_growth_pct": {
+          "target": 8.333333,
+          "peer_values": [
+            31.178311,
+            10.447761,
+            27.165354,
+            19.211823
+          ],
+          "direction": "higher_is_better",
+          "component_weight": 0.15,
+          "z_score": -1.721427
+        }
+      },
+      "uncovered_components": [
+        "capital_strength"
+      ],
+      "warnings": [
+        "PARTIAL_COMPONENT_COVERAGE_70_PERCENT",
+        "GWP_GROWTH_Z_SCORE_CLIPPED_AT_PLUS_3",
+        "HCI_ROE_IS_DERIVED_FROM_PRIMARY_FILINGS",
+        "SKYWARD_GAAP_EPS_LINE_IS_BASIC_NOT_DILUTED"
+      ],
+      "execution_effect": "NONE"
     }
   },
   "blocked": {
@@ -82,7 +151,6 @@
     "TXRH": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
     "SNA": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
     "MSM": "HARD_PEER_UNIVERSE_BLOCK",
-    "PLMR": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
     "MOD": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
     "FUL": "HARD_PEER_UNIVERSE_BLOCK",
     "POWL": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",

@@ -39,7 +39,51 @@
       },
       "overall_score": 100,
       "status": "OK"
+    },
+    "PLMR": {
+      "combined_ratio_pct": {
+        "score": 100,
+        "peer_count": 4,
+        "peers": [
+          "KNSL",
+          "SKWD",
+          "HRTG",
+          "RLI"
+        ]
+      },
+      "annualized_roe_pct": {
+        "score": 94.25,
+        "peer_count": 4,
+        "peers": [
+          "KNSL",
+          "SKWD",
+          "HRTG",
+          "HCI"
+        ]
+      },
+      "gross_written_premium_growth_pct": {
+        "score": 97.5,
+        "peer_count": 4,
+        "peers": [
+          "KNSL",
+          "SKWD",
+          "HRTG",
+          "RLI"
+        ]
+      },
+      "gaap_eps_growth_pct": {
+        "score": 98.75,
+        "peer_count": 4,
+        "peers": [
+          "KNSL",
+          "SKWD",
+          "HRTG",
+          "RLI"
+        ]
+      },
+      "overall_score": 94.25,
+      "status": "OK"
     }
   },
-  "note": "Only companies that already pass the 70% peer/component coverage gate need an overall peer-input confidence score. ASR is currently the only such company."
+  "note": "ASR and PLMR now pass peer-input confidence for their display-ready score metrics. Scores use the weakest included peer/definition as the conservative metric confidence."
 }
