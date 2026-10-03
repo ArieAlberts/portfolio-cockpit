@@ -6,6 +6,7 @@ fundamental_quality:
   score_formula: "clamp(50 + 25 * weighted_z, 0, 100)"
   clip_z_score: 3.0
   minimum_metric_coverage: 0.70
+  minimum_component_metric_weight_coverage: 0.50
   minimum_peer_values_per_metric: 4
   sensitivity:
     method: leave_one_peer_out_per_metric
