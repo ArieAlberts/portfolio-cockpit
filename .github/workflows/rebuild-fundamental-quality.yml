@@ -44,6 +44,21 @@ jobs:
       - name: Build immutable score snapshot
         run: cockpit-score --write
 
+      - name: Verify generated current pointer
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          current = json.loads((root / "data/scoring/current.json").read_text())
+          payload = json.loads((root / current["current_fundamental_quality"]).read_text())
+          assert current["generated_by_pipeline"] is True
+          assert current["pipeline_version"] == 2
+          assert current["reproducibility_hash"] == payload["reproducibility_hash"]
+          assert payload["execution_effect"] if "execution_effect" in payload else True
+          PY
+
       - name: Commit generated score state
         shell: bash
         run: |
