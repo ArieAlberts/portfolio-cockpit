@@ -7,6 +7,7 @@ from portfolio_cockpit.scoring.pipeline import (
     CODE_FILES,
     CONFIG_FILES,
     build_score_snapshot,
+    update_current_pointer,
     write_immutable_snapshot,
 )
 
@@ -94,3 +95,36 @@ def test_dataset_peer_minimum_mismatch_is_visible_and_blocks_publication():
     ero=payload["blocked"]["ERO"]
     assert ero["dataset_rule_consistent"] is False
     assert any(w.startswith("DATASET_MIN_PEERS_MISMATCH:3!=4") for w in ero["warnings"])
+
+
+def test_noop_rebuild_keeps_current_pointer_byte_stable(tmp_path: Path):
+    scoring_dir=tmp_path/"data/scoring"
+    first={
+        "as_of":"2026-10-03",
+        "pipeline_version":2,
+        "reproducibility_hash":"b"*64,
+        "provenance":{
+            "run_git_commit":"FIRST",
+            "pipeline_code_hash":"c"*64,
+            "config_hash":"d"*64,
+        },
+    }
+    second={
+        **first,
+        "provenance":{
+            **first["provenance"],
+            "run_git_commit":"SECOND",
+        },
+    }
+    p1=write_immutable_snapshot(root=tmp_path,payload=first,output_dir=scoring_dir)
+    update_current_pointer(root=tmp_path,snapshot_path=p1,payload=first)
+    current_path=scoring_dir/"current.json"
+    before=current_path.read_text()
+
+    p2=write_immutable_snapshot(root=tmp_path,payload=second,output_dir=scoring_dir)
+    update_current_pointer(root=tmp_path,snapshot_path=p2,payload=second)
+    after=current_path.read_text()
+
+    assert p1==p2
+    assert before==after
+    assert '"run_git_commit": "FIRST"' in after

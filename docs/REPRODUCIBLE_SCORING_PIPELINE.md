@@ -115,3 +115,8 @@ A mismatch is recorded as:
 `DATASET_MIN_PEERS_MISMATCH:<dataset>!=<global>`
 
 and blocks `DISPLAY_READY`. This prevents an older peer file from silently weakening the production gate.
+
+
+## No-op rebuilds are byte-stable
+
+When an existing snapshot has the same `reproducibility_hash`, the writer reuses that snapshot and the current pointer is anchored to the immutable snapshot's original provenance. A later workflow HEAD therefore cannot create a meaningless pointer-only commit.

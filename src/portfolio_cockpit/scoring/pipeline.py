@@ -512,16 +512,22 @@ def update_current_pointer(
     snapshot_path: Path,
     payload: dict[str, Any],
 ) -> None:
+    # If write_immutable_snapshot reused an existing semantically identical
+    # snapshot, anchor the pointer metadata to that immutable snapshot rather
+    # than to the current workflow HEAD. This keeps no-op rebuilds byte-stable.
+    snapshot_payload = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    source = snapshot_payload if snapshot_payload.get("reproducibility_hash") else payload
+
     current = {
         "schema_version": 2,
-        "as_of": payload["as_of"],
+        "as_of": source["as_of"],
         "current_fundamental_quality": str(snapshot_path.relative_to(root)),
         "generated_by_pipeline": True,
-        "pipeline_version": payload["pipeline_version"],
-        "run_git_commit": payload["provenance"]["run_git_commit"],
-        "pipeline_code_hash": payload["provenance"]["pipeline_code_hash"],
-        "config_hash": payload["provenance"]["config_hash"],
-        "reproducibility_hash": payload["reproducibility_hash"],
+        "pipeline_version": source["pipeline_version"],
+        "run_git_commit": source["provenance"]["run_git_commit"],
+        "pipeline_code_hash": source["provenance"]["pipeline_code_hash"],
+        "config_hash": source["provenance"]["config_hash"],
+        "reproducibility_hash": source["reproducibility_hash"],
         "execution_effect": "NONE",
     }
     path = root / "data/scoring/current.json"
