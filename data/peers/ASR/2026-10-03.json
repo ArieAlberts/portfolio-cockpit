@@ -18,7 +18,7 @@
     "preserve_company_definition": true,
     "prohibit_cross_regime_solvency_equivalence": true,
     "min_peer_values_per_metric": 4,
-    "final_score_status": "PENDING_PIPELINE_REVALIDATION_AFTER_HARMONIZED_ROE_AND_VALUE_PER_SHARE",
+    "final_score_status": "REBUILD_REQUIRED_AFTER_HARMONIZED_ROE",
     "roe_harmonization_policy": {
       "metric": "annualized_ifrs_common_equity_roe_pct",
       "comparison_class": "H1_ANNUALIZED_IFRS_COMMON_EQUITY_ROE",
@@ -30,11 +30,10 @@
     },
     "share_count_policy": {
       "metric": "share_count_change_pct",
-      "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE_YOY",
-      "numerator": "H1_2026_WEIGHTED_AVERAGE_ORDINARY_SHARES",
-      "denominator": "H1_2025_WEIGHTED_AVERAGE_ORDINARY_SHARES",
-      "formula": "(current / prior - 1) * 100",
-      "same_period_basis_required": true
+      "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+      "formula": "(H1_2026 weighted-average ordinary shares / H1_2025 weighted-average ordinary shares - 1) * 100",
+      "period_alignment": "H1_YOY",
+      "status": "READY_TARGET_PLUS_FOUR_PEERS"
     },
     "harmonized_profitability_policy": {
       "metric": "annualized_roe_pct",
@@ -53,6 +52,16 @@
       "share_count_comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
       "period_alignment": "H1_2026_VS_H1_2025",
       "status": "VALIDATED_FOR_TARGET_PLUS_FOUR_PEERS"
+    },
+    "roe_policy": {
+      "metric": "annualized_roe_pct",
+      "comparison_class": "H1_HARMONIZED_COMMON_EQUITY_ROE",
+      "formula": "annualized H1 profit attributable to ordinary/common shareholders divided by average opening/closing common shareholders' equity",
+      "annualization_factor": 2,
+      "exclude_non_controlling_interests": true,
+      "exclude_separately_reported_equity_hybrid_claims_from_numerator_and_denominator": true,
+      "period_alignment": "ALIGNED_H1",
+      "status": "READY_TARGET_PLUS_FOUR_PEERS"
     }
   },
   "companies": {
@@ -108,8 +117,8 @@
         },
         "share_count_change_pct": {
           "value": -1.695736,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
-          "source_definition": "H1 2026 vs H1 2025 weighted average issued and outstanding shares change",
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+          "source_definition": "Weighted average issued and outstanding shares H1 2026 versus H1 2025",
           "calculation": "(202.9 / 206.4 - 1) * 100",
           "score_eligible": true,
           "definition_confidence": 100
@@ -128,12 +137,11 @@
         },
         "annualized_roe_pct": {
           "value": 17.390315,
-          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
-          "source_definition": "Annualized H1 IFRS profit attributable to ordinary shareholders / average beginning and ending IFRS common shareholders' equity",
+          "comparison_class": "H1_HARMONIZED_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 profit attributable to shareholders of the parent divided by average common shareholders' equity; other equity instruments are excluded from the denominator.",
           "calculation": "(764 * 2 / ((8604 + 8969) / 2)) * 100",
           "score_eligible": true,
-          "definition_confidence": 100,
-          "notes": "Cross-check: a.s.r. reports IFRS-basis ROE of 17.4%; harmonized formula yields 17.39%."
+          "definition_confidence": 100
         },
         "gaap_eps_growth_pct": {
           "value": 693.0397,
@@ -210,16 +218,16 @@
         },
         "share_count_change_pct": {
           "value": -1.838649,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
-          "source_definition": "H1 2026 vs H1 2025 weighted average ordinary shares change",
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+          "source_definition": "Weighted average number of ordinary shares H1 2026 versus H1 2025",
           "calculation": "(261.6 / 266.5 - 1) * 100",
           "score_eligible": true,
           "definition_confidence": 100
         },
         "annualized_roe_pct": {
           "value": 10.716895,
-          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
-          "source_definition": "Annualized H1 IFRS profit available to ordinary shareholders after coupon on undated subordinated notes / average parent shareholders' equity excluding undated subordinated notes",
+          "comparison_class": "H1_HARMONIZED_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 earnings attributable to ordinary shares after coupon on undated subordinated notes, divided by average parent shareholders' equity; undated subordinated notes are separately reported outside shareholders' equity.",
           "calculation": "((1066 - 39) * 2 / ((19078 + 19254) / 2)) * 100",
           "score_eligible": true,
           "definition_confidence": 100
@@ -305,8 +313,8 @@
         },
         "annualized_roe_pct": {
           "value": 17.209113,
-          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
-          "source_definition": "Annualized H1 net result attributable to Ageas shareholders / average beginning and ending shareholders' equity",
+          "comparison_class": "H1_HARMONIZED_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 net result attributable to Ageas shareholders divided by average shareholders' equity.",
           "calculation": "(846 * 2 / ((9441 + 10223) / 2)) * 100",
           "score_eligible": true,
           "definition_confidence": 100
@@ -384,9 +392,9 @@
           "notes": "The EUR 9m Tier 1 distribution charged to retained earnings is deducted from profit available to common shareholders; restricted Tier 1 notes are excluded from opening and closing equity."
         },
         "share_count_change_pct": {
-          "value": -1.374954,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
-          "source_definition": "H1 2026 vs H1 2025 average number of shares change",
+          "value": -1.374953,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+          "source_definition": "Average number of shares H1 2026 versus H1 2025",
           "calculation": "(2654 / 2691 - 1) * 100",
           "score_eligible": true,
           "definition_confidence": 100
@@ -474,17 +482,17 @@
         },
         "share_count_change_pct": {
           "value": 13.701201,
-          "comparison_class": "H1_WEIGHTED_AVERAGE_ORDINARY_SHARE_CHANGE",
-          "source_definition": "H1 2026 vs H1 2025 weighted average ordinary shares change",
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+          "source_definition": "Weighted average ordinary shares H1 2026 versus H1 2025",
           "calculation": "(3029 / 2664 - 1) * 100",
           "score_eligible": true,
           "definition_confidence": 100,
-          "notes": "Increase mainly reflects shares issued to Direct Line shareholders on 1 July 2025; retained because the metric measures actual per-share dilution/accretion context."
+          "notes": "Increase reflects the Direct Line acquisition share issuance in the comparison base."
         },
         "annualized_roe_pct": {
           "value": 7.955278,
-          "comparison_class": "H1_HARMONIZED_IFRS_COMMON_EQUITY_ROE",
-          "source_definition": "Annualized H1 IFRS profit attributable to ordinary shareholders / average IFRS shareholders' equity excluding Tier 1 and non-controlling interests",
+          "comparison_class": "H1_HARMONIZED_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized H1 profit attributable to ordinary shareholders after Tier 1 coupon payments, divided by average IFRS shareholders' equity attributable to ordinary shareholders; IFRS shareholders' equity explicitly excludes Tier 1 notes and NCI.",
           "calculation": "(370 * 2 / ((9694 + 8910) / 2)) * 100",
           "score_eligible": true,
           "definition_confidence": 100
@@ -588,9 +596,25 @@
           "source_definition": null,
           "score_eligible": false,
           "notes": "Blocked until a harmonized H1 ROE definition is implemented across the insurer peer set."
+        },
+        "annualized_roe_pct": {
+          "value": 16.01064,
+          "comparison_class": "H1_HARMONIZED_COMMON_EQUITY_ROE",
+          "source_definition": "Annualized Group result adjusted for interest on subordinated debt classified as equity, divided by average Group shareholders' equity excluding other equity instruments.",
+          "calculation": "(2528 * 2 / (((32064 - 506) + (32101 - 501)) / 2)) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "share_count_change_pct": {
+          "value": -0.913613,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_COUNT_CHANGE",
+          "source_definition": "Weighted average number of ordinary shares outstanding H1 2026 versus H1 2025",
+          "calculation": "(1503684206 / 1517548726 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
         }
       }
     }
   },
-  "peer_universe_status": "EU_SOLVENCY_AND_HARMONIZED_ROE_VALUE_PER_SHARE_READY_PENDING_PIPELINE_VALIDATION"
+  "peer_universe_status": "EU_SOLVENCY_CAPITAL_STRENGTH_AND_HARMONIZED_ROE_READY_VALUE_PER_SHARE_PARTIAL"
 }
