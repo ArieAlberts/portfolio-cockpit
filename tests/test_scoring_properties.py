@@ -107,3 +107,47 @@ def test_fewer_than_four_peers_never_scores():
     assert result.status == "PEER_DATA_CHECK"
     assert result.score is None
     assert result.coverage == 0.0
+
+
+def test_missing_required_component_always_blocks_production():
+    from portfolio_cockpit.scoring.readiness import evaluate_readiness
+
+    result = evaluate_readiness(
+        dataset={"target_ticker": "X", "peer_universe_status": "VALIDATE"},
+        company_type="TEST",
+        component_weights={"required": 0.30, "other": 0.70},
+        component_metric_aliases={"required": [], "other": []},
+        required_components=("required",),
+        minimum_peer_values_per_metric=4,
+        minimum_weighted_component_coverage=0.70,
+        data_confidence_score=100.0,
+        peer_input_confidence_score=100.0,
+        stability_flag="STABLE",
+        covered_components_override=("other",),
+        ready_metrics_override=("m",),
+    )
+    assert result.peer_coverage_pass is True
+    assert result.required_components_pass is False
+    assert result.production_ready is False
+
+
+@pytest.mark.parametrize("flag", ["PEER_SENSITIVE", "UNSTABLE"])
+def test_nonstable_sensitivity_never_publishes(flag):
+    from portfolio_cockpit.scoring.readiness import evaluate_readiness
+
+    result = evaluate_readiness(
+        dataset={"target_ticker": "X", "peer_universe_status": "VALIDATE"},
+        company_type="TEST",
+        component_weights={"a": 1.0},
+        component_metric_aliases={"a": []},
+        required_components=("a",),
+        minimum_peer_values_per_metric=4,
+        minimum_weighted_component_coverage=0.70,
+        data_confidence_score=100.0,
+        peer_input_confidence_score=100.0,
+        stability_flag=flag,
+        covered_components_override=("a",),
+        ready_metrics_override=("m",),
+    )
+    assert result.production_ready is False
+    assert flag in result.warnings

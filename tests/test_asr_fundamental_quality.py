@@ -17,7 +17,9 @@ def test_current_scoring_snapshot_blocks_asr():
     assert current["generated_by_pipeline"] is True
     assert "ASR" not in data["scores"]
     assert data["blocked"]["ASR"]["status"]=="DATA_CHECK"
-    assert "capital_strength" in data["blocked"]["ASR"]["missing_required_components"]
+    assert "capital_strength" in data["blocked"]["ASR"]["covered_components"]
+    assert "capital_strength" not in data["blocked"]["ASR"]["missing_required_components"]
+    assert data["blocked"]["ASR"]["weighted_component_coverage"] == 0.55
 
 
 def test_current_pointer_is_reproducibility_backed():

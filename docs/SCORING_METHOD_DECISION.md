@@ -31,9 +31,11 @@ The result records:
 - score_high;
 - the most influential metric and peer;
 - the largest score shift;
-- STABLE if the band width is below 10 points, otherwise PEER_SENSITIVE.
+- STABLE if the band width is below 10 points;
+- PEER_SENSITIVE from 10 up to 25 points;
+- UNSTABLE at 25 points or wider.
 
-PEER_SENSITIVE blocks DISPLAY_READY.
+Only STABLE can become DISPLAY_READY. PEER_SENSITIVE and UNSTABLE remain diagnostic/research outputs.
 
 ## Required components
 

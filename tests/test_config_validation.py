@@ -56,3 +56,25 @@ def test_validator_requires_unstable_threshold_above_stable():
     sensitivity["unstable_band_width_points"] = sensitivity["stable_band_width_points"]
     with pytest.raises(ConfigValidationError, match="sensitivity thresholds"):
         validate_config(broken)
+
+
+def test_validator_rejects_peer_method_drift():
+    config = load_config(ROOT)
+    broken = deepcopy(config)
+    broken["peer_universes"]["defaults"]["method"] = "other_method"
+    with pytest.raises(ConfigValidationError, match="peer_universes.defaults.method differs"):
+        validate_config(broken)
+
+
+def test_validator_rejects_validate_universe_below_production_minimum():
+    config = load_config(ROOT)
+    broken = deepcopy(config)
+    broken["peer_universes"]["universes"]["WKL"]["peers"] = ["A", "B", "C"]
+    with pytest.raises(ConfigValidationError, match="VALIDATE universe has only 3 peers"):
+        validate_config(broken)
+
+
+def test_limited_universe_may_document_fewer_than_four_peers():
+    config = load_config(ROOT)
+    assert config["peer_universes"]["universes"]["DKS"]["status"] == "LIMITED"
+    assert config["peer_universes"]["universes"]["DKS"]["minimum_peer_count"] == 3
