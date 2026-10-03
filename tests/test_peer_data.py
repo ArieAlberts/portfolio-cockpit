@@ -35,9 +35,12 @@ def test_margin_types_are_not_forced_equal():
     assert metric.comparison_class == "ADJUSTED_OPERATING_MARGIN"
 
 
-def test_spgi_fcf_margin_is_blocked_due_to_basis_mismatch():
+def test_spgi_fcf_margin_uses_same_historical_basis():
     data = load_data()
-    assert data["companies"]["SPGI"]["metrics"]["free_cash_flow_margin_pct"]["score_eligible"] is False
+    metric = data["companies"]["SPGI"]["metrics"]["free_cash_flow_margin_pct"]
+    assert metric["score_eligible"] is True
+    assert metric["calculation"] == "2249 / 8318 * 100"
+    assert "same historical H1 basis" in metric["notes"]
 
 
 def test_organic_growth_has_enough_aligned_peers():
