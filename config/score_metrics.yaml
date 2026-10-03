@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 
 # Directions are explicit for every metric alias the score pipeline may select.
 # The pipeline refuses to score a selected metric without a declared direction.
@@ -84,3 +84,178 @@ metric_directions:
     revenue_growth_pct: higher_is_better
     book_value_per_share_growth: higher_is_better
     share_count_change_pct: lower_is_better
+
+# Canonical component-to-metric registry. Readiness consumes this registry;
+# config/readiness.yaml no longer duplicates metric aliases.
+component_metric_aliases:
+  GENERAL_OPERATING_COMPANY:
+    balance_sheet:
+      - net_debt_to_ebitda
+      - leverage_ratio
+      - net_cash
+      - net_debt
+    profitability_capital_efficiency:
+      - reported_margin_pct
+      - company_adjusted_operating_margin_pct
+      - adjusted_ebita_margin_pct
+      - adjusted_ebitda_margin_pct
+      - adjusted_operating_margin_pct
+      - adjusted_ebit_margin_pct
+      - operating_margin_pct
+      - restaurant_margin_pct
+      - gross_margin_pct
+      - ytd_operating_margin_pct
+    cashflow_quality:
+      - free_cash_flow_margin_pct
+      - operating_cash_flow_margin_pct
+      - cash_conversion_pct
+    growth_stability:
+      - organic_like_revenue_growth_pct
+      - organic_revenue_growth_pct
+      - reported_revenue_growth_pct
+      - revenue_growth_pct
+      - comparable_sales_growth_pct
+      - constant_currency_revenue_growth_pct
+      - backlog_growth_pct
+    value_per_share:
+      - adjusted_eps_growth_pct
+      - company_adjusted_eps_growth_pct
+      - eps_growth_pct
+      - operating_eps_growth_pct
+      - share_count_change_pct
+      - weighted_average_share_change_pct
+
+  INSURER:
+    capital_strength:
+      - solvency_ratio_pct
+    underwriting_quality:
+      - combined_ratio_pct
+      - loss_ratio_pct
+    profitability:
+      - annualized_roe_pct
+      - operating_roe_pct
+      - reported_roe_pct
+    growth_stability:
+      - operating_earnings_growth_pct
+      - operating_capital_generation_growth_pct
+      - gross_written_premium_growth_pct
+      - premium_growth_pct
+    value_per_share:
+      - gaap_eps_growth_pct
+      - operating_eps_growth_pct
+      - eps_growth_pct
+      - dividend_growth_pct
+      - share_count_change_pct
+
+  CYCLICAL_MINING:
+    balance_sheet:
+      - net_debt_to_ebitda
+      - net_debt_usd_m
+    cost_position:
+      - c1_cash_cost_usd_per_lb
+    normalized_cashflow:
+      - operating_cash_flow_margin_pct
+      - operating_cash_flow_usd_m
+    execution:
+      - copper_production_tonnes
+      - production_growth_pct
+    value_per_share:
+      - eps_growth_pct
+      - diluted_eps_growth_pct
+
+  PRE_REVENUE_DEVELOPMENT:
+    liquidity_runway:
+      - cash_and_investments_usd_m
+      - cash_runway_months
+      - operating_cash_burn_usd_m
+    financing_dilution:
+      - dilution_rate
+      - shares_issued_h1_m
+    regulatory_milestones:
+      - regulatory_progress
+    project_execution:
+      - project_milestone_progress
+    commercial_validation:
+      - contracted_backlog
+      - commercial_contracts
+
+  FINANCIAL_SERVICES:
+    balance_sheet:
+      - capital_ratio
+      - net_debt_to_ebitda
+    profitability:
+      - roe
+      - roa
+      - adjusted_eps_growth_pct
+    asset_quality:
+      - credit_or_asset_quality
+    growth_stability:
+      - revenue_growth_pct
+    value_per_share:
+      - book_value_per_share_growth
+      - share_count_change_pct
+
+# Canonical metric data kinds used for validation and downstream presentation.
+metric_kinds:
+  net_debt_to_ebitda: ratio
+  leverage_ratio: ratio
+  net_cash: currency
+  net_debt: currency
+  reported_margin_pct: percentage
+  company_adjusted_operating_margin_pct: percentage
+  adjusted_ebita_margin_pct: percentage
+  adjusted_ebitda_margin_pct: percentage
+  adjusted_operating_margin_pct: percentage
+  adjusted_ebit_margin_pct: percentage
+  operating_margin_pct: percentage
+  restaurant_margin_pct: percentage
+  gross_margin_pct: percentage
+  ytd_operating_margin_pct: percentage
+  free_cash_flow_margin_pct: percentage
+  operating_cash_flow_margin_pct: percentage
+  cash_conversion_pct: percentage
+  organic_like_revenue_growth_pct: percentage
+  organic_revenue_growth_pct: percentage
+  reported_revenue_growth_pct: percentage
+  revenue_growth_pct: percentage
+  comparable_sales_growth_pct: percentage
+  constant_currency_revenue_growth_pct: percentage
+  backlog_growth_pct: percentage
+  adjusted_eps_growth_pct: percentage
+  company_adjusted_eps_growth_pct: percentage
+  eps_growth_pct: percentage
+  operating_eps_growth_pct: percentage
+  share_count_change_pct: percentage
+  weighted_average_share_change_pct: percentage
+  solvency_ratio_pct: percentage
+  combined_ratio_pct: percentage
+  loss_ratio_pct: percentage
+  annualized_roe_pct: percentage
+  operating_roe_pct: percentage
+  reported_roe_pct: percentage
+  operating_earnings_growth_pct: percentage
+  operating_capital_generation_growth_pct: percentage
+  gross_written_premium_growth_pct: percentage
+  premium_growth_pct: percentage
+  gaap_eps_growth_pct: percentage
+  dividend_growth_pct: percentage
+  net_debt_usd_m: currency_millions
+  c1_cash_cost_usd_per_lb: currency_per_unit
+  operating_cash_flow_usd_m: currency_millions
+  copper_production_tonnes: physical_volume
+  production_growth_pct: percentage
+  diluted_eps_growth_pct: percentage
+  cash_and_investments_usd_m: currency_millions
+  cash_runway_months: duration_months
+  operating_cash_burn_usd_m: currency_millions
+  dilution_rate: percentage
+  shares_issued_h1_m: share_count_millions
+  regulatory_progress: score
+  project_milestone_progress: score
+  contracted_backlog: amount
+  commercial_contracts: count
+  capital_ratio: percentage
+  roe: percentage
+  roa: percentage
+  credit_or_asset_quality: score
+  book_value_per_share_growth: percentage
