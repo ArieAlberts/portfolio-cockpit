@@ -56,3 +56,19 @@ def test_validator_requires_unstable_threshold_above_stable():
     sensitivity["unstable_band_width_points"] = sensitivity["stable_band_width_points"]
     with pytest.raises(ConfigValidationError, match="sensitivity thresholds"):
         validate_config(broken)
+
+
+def test_validator_rejects_scoring_effect_from_absolute_anchors():
+    config = load_config(ROOT)
+    broken = deepcopy(config)
+    broken["absolute_anchors"]["score_effect"] = "ADJUST_SCORE"
+    with pytest.raises(ConfigValidationError, match="score_effect must be NONE"):
+        validate_config(broken)
+
+
+def test_validator_rejects_invalid_absolute_anchor_operator():
+    config = load_config(ROOT)
+    broken = deepcopy(config)
+    broken["absolute_anchors"]["anchors"]["combined_ratio_pct"]["operator"] = "approximately"
+    with pytest.raises(ConfigValidationError, match="invalid operator"):
+        validate_config(broken)
