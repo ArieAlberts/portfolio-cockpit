@@ -68,3 +68,11 @@ STOP — no live broker execution in this repo
 ```
 
 A future IBKR adapter may be read-only for positions/account/market data or paper-trading only.
+
+## Automatic source monitoring
+
+The repository includes a daily event-driven source monitor for all 23 portfolio companies. It detects changes in official issuer/SEC sources, records review events, and supports immutable versioned fundamental snapshots.
+
+See `docs/AUTOMATIC_MAINTENANCE.md`.
+
+A detected source change can never directly change a score or place an order.

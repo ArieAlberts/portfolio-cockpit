@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "companies": {
+    "ASR": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "ADM.L": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "WKL": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "CAP.PA": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "IMCD": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "CRDA.L": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "ROR.L": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "EMN": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "WSM": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "DKS": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "TXRH": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "SNA": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "MSM": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "PLMR": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "MOD": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "FUL": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "POWL": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "ESI": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "ABX": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "ERO": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "TMDX": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "LEU": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
+    "OKLO": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []}
+  }
+}

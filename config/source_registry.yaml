@@ -1,0 +1,239 @@
+schema_version: 1
+defaults:
+  timeout_seconds: 20
+  user_agent: "PortfolioCockpit/0.1 (+https://github.com/ArieAlberts/portfolio-cockpit)"
+  financial_forms: [10-K, 10-Q, 8-K, 10-K/A, 10-Q/A, 20-F, 6-K, 40-F]
+  first_observation_creates_event: false
+  source_change_changes_score: false
+  live_execution_allowed: false
+
+companies:
+  ASR:
+    company_name: ASR Nederland N.V.
+    baseline_path: data/baselines/ASR/2026-08-19.json
+    baseline_date: "2026-08-19"
+    stale_after_days: 220
+    sources:
+      - id: official_press_releases
+        mode: HTML_PAGE
+        url: https://asrnl.com/news-and-press/press-releases
+
+  ADM.L:
+    company_name: Admiral Group plc
+    baseline_path: data/baselines/ADM.L/2026-08-06.json
+    baseline_date: "2026-08-06"
+    stale_after_days: 220
+    sources:
+      - id: official_news
+        mode: HTML_PAGE
+        url: https://www.admiralgroup.co.uk/news-releases
+
+  WKL:
+    company_name: Wolters Kluwer N.V.
+    baseline_path: data/baselines/WKL/2026-08-05.json
+    baseline_date: "2026-08-05"
+    stale_after_days: 220
+    sources:
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://www.wolterskluwer.com/en/investors/financials/results
+
+  CAP.PA:
+    company_name: Capgemini SE
+    baseline_path: data/baselines/CAP.PA/2026-07-30.json
+    baseline_date: "2026-07-30"
+    stale_after_days: 220
+    sources:
+      - id: official_publications
+        mode: HTML_PAGE
+        url: https://investors.capgemini.com/all-publications/
+
+  IMCD:
+    company_name: IMCD N.V.
+    baseline_path: data/baselines/IMCD/2026-07-29.json
+    baseline_date: "2026-07-29"
+    stale_after_days: 220
+    sources:
+      - id: investor_news
+        mode: HTML_PAGE
+        url: https://www.imcdgroup.com/investors/investor-news
+
+  CRDA.L:
+    company_name: Croda International Plc
+    baseline_path: data/baselines/CRDA.L/2026-07-28.json
+    baseline_date: "2026-07-28"
+    stale_after_days: 220
+    sources:
+      - id: reports
+        mode: HTML_PAGE
+        url: https://www.croda.com/en-gb/investors/results-presentations-and-reports
+
+  ROR.L:
+    company_name: Rotork plc
+    baseline_path: data/baselines/ROR.L/2026-08-04.json
+    baseline_date: "2026-08-04"
+    stale_after_days: 220
+    sources:
+      - id: reporting_centre
+        mode: HTML_PAGE
+        url: https://www.rotork.com/en/investors/financial-reporting-centre
+
+  EMN:
+    company_name: Eastman Chemical Company
+    baseline_path: data/baselines/EMN/2026-07-30.json
+    baseline_date: "2026-07-30"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0000915389.json
+
+  WSM:
+    company_name: Williams-Sonoma, Inc.
+    baseline_path: data/baselines/WSM/2026-08-26.json
+    baseline_date: "2026-08-26"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0000719955.json
+
+  DKS:
+    company_name: DICK'S Sporting Goods, Inc.
+    baseline_path: data/baselines/DKS/2026-08-25.json
+    baseline_date: "2026-08-25"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001089063.json
+
+  TXRH:
+    company_name: Texas Roadhouse, Inc.
+    baseline_path: data/baselines/TXRH/2026-08-06.json
+    baseline_date: "2026-08-06"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001289460.json
+
+  SNA:
+    company_name: Snap-on Incorporated
+    baseline_path: data/baselines/SNA/2026-07-23.json
+    baseline_date: "2026-07-23"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0000091440.json
+
+  MSM:
+    company_name: MSC Industrial Direct Co., Inc.
+    baseline_path: data/baselines/MSM/2026-07-01.json
+    baseline_date: "2026-07-01"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001003078.json
+
+  PLMR:
+    company_name: Palomar Holdings, Inc.
+    baseline_path: data/baselines/PLMR/2026-08-04.json
+    baseline_date: "2026-08-04"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001761312.json
+
+  MOD:
+    company_name: Modine Manufacturing Company
+    baseline_path: data/baselines/MOD/2026-07-29.json
+    baseline_date: "2026-07-29"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0000067347.json
+
+  FUL:
+    company_name: H.B. Fuller Company
+    baseline_path: data/baselines/FUL/2026-09-23.json
+    baseline_date: "2026-09-23"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0000039368.json
+
+  POWL:
+    company_name: Powell Industries, Inc.
+    baseline_path: data/baselines/POWL/2026-08-03.json
+    baseline_date: "2026-08-03"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0000080420.json
+
+  ESI:
+    company_name: Element Solutions Inc
+    baseline_path: data/baselines/ESI/2026-07-27.json
+    baseline_date: "2026-07-27"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001590714.json
+
+  ABX:
+    company_name: Abacus Global Management, Inc.
+    baseline_path: data/baselines/ABX/2026-08-06.json
+    baseline_date: "2026-08-06"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001814287.json
+
+  ERO:
+    company_name: Ero Copper Corp.
+    baseline_path: data/baselines/ERO/2026-08-05.json
+    baseline_date: "2026-08-05"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001853860.json
+
+  TMDX:
+    company_name: TransMedics Group, Inc.
+    baseline_path: data/baselines/TMDX/2026-08-04.json
+    baseline_date: "2026-08-04"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001756262.json
+
+  LEU:
+    company_name: Centrus Energy Corp.
+    baseline_path: data/baselines/LEU/2026-08-05.json
+    baseline_date: "2026-08-05"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001065059.json
+
+  OKLO:
+    company_name: Oklo Inc.
+    baseline_path: data/baselines/OKLO/2026-08-07.json
+    baseline_date: "2026-08-07"
+    stale_after_days: 135
+    sources:
+      - id: sec_submissions
+        mode: SEC_SUBMISSIONS_JSON
+        url: https://data.sec.gov/submissions/CIK0001849056.json

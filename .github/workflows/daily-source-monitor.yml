@@ -1,0 +1,48 @@
+name: daily-source-monitor
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-source-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: pip install -e ".[dev]"
+
+      - name: Run structural tests
+        run: pytest -q
+
+      - name: Poll official sources
+        run: python scripts/monitor_sources.py --fail-if-all-error
+
+      - name: Commit source-state changes
+        shell: bash
+        run: |
+          if git diff --quiet -- data/monitoring data/source_events; then
+            echo "No source-state changes."
+            exit 0
+          fi
+          git config user.name "portfolio-cockpit-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/monitoring data/source_events
+          git commit -m "chore: update monitored source state"
+          git push origin HEAD:main
