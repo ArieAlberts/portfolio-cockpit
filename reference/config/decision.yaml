@@ -1,0 +1,21 @@
+# DECISION ENGINE — alle drempels hier, niets hardcoded.
+# De engine produceert uitsluitend een decision_state + redenen. Nooit orders.
+data_confidence_min: 80
+
+quality:
+  materially_deteriorated_score: 40     # quality_score <= dit  => REVIEW_REDUCE
+  materially_deteriorated_change: -10   # of quality_change <= dit
+  strong_score: 55                      # >= dit telt als sterk
+  acceptable_score: 45                  # >= dit telt als acceptabel
+
+valuation:
+  attractive_score: 60
+  expensive_score: 45                   # < dit telt als duur
+
+limits:
+  max_position_weight: 0.10             # absolute bovengrens per positie
+  overweight_tolerance: 0.20            # ADD alleen als weight < base_target * (1 + tol)
+  max_sector_weight: 0.30
+  max_single_position_impact_pp: 3.0    # |portfolio impact -30%| in procentpunt
+
+thesis_status_values: [INTACT, WATCH, BROKEN]

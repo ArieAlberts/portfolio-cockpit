@@ -1,0 +1,45 @@
+# VALUATION — volledig onafhankelijk van QUALITY.
+# 50 = ongeveer normaal/fair gewaardeerd t.o.v. de referentie.
+# Hoger = aantrekkelijker (goedkoper), lager = duurder.
+#
+# Per metric:
+#   formula: welke berekening (zie cockpit/valuation.py FORMULAS)
+#   cheaper_when: lower (multiples) | higher (yields)
+#   full_scale: relatieve afwijking t.o.v. referentie die ±50 punten oplevert
+#   reference_weights: hoe eigen historie / sectorgenoten worden gecombineerd
+#   requires_positive_denominator: negatieve/nul noemer => NOT_APPLICABLE
+
+labels:            # ondergrenzen, van hoog naar laag gelezen
+  - {min: 60, label: Attractive}
+  - {min: 45, label: Fair}
+  - {min: 0,  label: Expensive}
+
+reference_weights:
+  own_history: 0.6
+  peers: 0.4
+
+metrics:
+  forward_pe:         {formula: price_over_forward_eps,         cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  ev_ebit:            {formula: ev_over_ebit,                   cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  ev_ebitda:          {formula: ev_over_ebitda,                 cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  fcf_yield:          {formula: fcf_over_market_cap,            cheaper_when: higher, full_scale: 0.40, requires_positive_denominator: false}
+  price_to_book:      {formula: price_over_bvps,                cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  pe:                 {formula: price_over_eps,                 cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  shareholder_yield:  {formula: distributions_over_market_cap,  cheaper_when: higher, full_scale: 0.40, requires_positive_denominator: false}
+  price_to_nav:       {formula: price_over_navps,               cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  ev_normalized_ebitda: {formula: ev_over_normalized_ebitda,    cheaper_when: lower,  full_scale: 0.40, requires_positive_denominator: true}
+  market_cap_to_funded_npv: {formula: market_cap_over_risked_npv, cheaper_when: lower, full_scale: 0.50, requires_positive_denominator: true}
+
+profiles:
+  GENERAL_OPERATING_COMPANY:
+    weights: {forward_pe: 0.30, ev_ebit: 0.30, fcf_yield: 0.40}
+    not_applicable: []
+  INSURER:
+    weights: {price_to_book: 0.35, pe: 0.35, shareholder_yield: 0.30}
+    not_applicable: [ev_ebitda, ev_ebit, fcf_yield]
+  DEVELOPMENT_PRE_REVENUE:
+    weights: {price_to_nav: 0.6, market_cap_to_funded_npv: 0.4}
+    not_applicable: [pe, forward_pe, ev_ebitda, ev_ebit, fcf_yield]
+  CYCLICAL_MINING:
+    weights: {price_to_nav: 0.4, ev_normalized_ebitda: 0.3, fcf_yield: 0.3}
+    not_applicable: [pe, forward_pe]
