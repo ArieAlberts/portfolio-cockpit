@@ -12,18 +12,17 @@ source_quality:
   UNKNOWN: 0
 
 freshness:
-  - max_age_days: 120
-    score: 100
-  - max_age_days: 180
-    score: 80
-  - max_age_days: 365
-    score: 60
-  - max_age_days: 730
-    score: 30
+  - {max_age_days: 120, score: 100}
+  - {max_age_days: 180, score: 80}
+  - {max_age_days: 365, score: 60}
+  - {max_age_days: 730, score: 30}
 
 consistency:
-  regulatory_plus_primary_crosscheck: 100
-  two_primary_documents_crosscheck: 90
+  full_metric_regulatory_crosscheck: 100
+  regulatory_package_financials_mdna_release: 95
+  regulatory_plus_primary_headline: 90
+  auditor_reviewed_interim_primary: 90
+  two_primary_issuer_docs_headline: 85
   internal_crossfoot_only: 70
   single_source_unchecked: null
   material_conflict: 0

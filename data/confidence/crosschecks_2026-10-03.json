@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "scope": "Target-company baseline headline facts and source consistency; peer-input validation is separate.",
+  "entries": {
+    "ASR": {
+      "primary_source": "https://asrnl.com/news-and-press/press-releases/20260819-asr-presenteert-sterke-resultaten-over-eerste-helft-2026",
+      "corroborating_source": "https://asrnl.com/",
+      "category": "TWO_PRIMARY_ISSUER_DOCS_HEADLINE",
+      "consistency_score": 85,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "ADM.L": {
+      "primary_source": "https://www.admiralgroup.co.uk/news-releases/news-release-details/half-year-financial-report",
+      "corroborating_source": "https://www.admiralgroup.co.uk/investor-relations/regulatory-news-feed",
+      "category": "AUDITOR_REVIEWED_INTERIM_PRIMARY",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "WKL": {
+      "primary_source": "https://www.wolterskluwer.com/en/news/wolters-kluwer-2026-half-year-report",
+      "corroborating_source": "https://www.wolterskluwer.com/en/investors",
+      "category": "TWO_PRIMARY_ISSUER_DOCS_HEADLINE",
+      "consistency_score": 85,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "CAP.PA": {
+      "primary_source": "https://investors.capgemini.com/en/publication/2026-h1-results/",
+      "corroborating_source": "https://investors.capgemini.com/all-publications/?fiscal-year=2026",
+      "category": "TWO_PRIMARY_ISSUER_DOCS_HEADLINE",
+      "consistency_score": 85,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "IMCD": {
+      "primary_source": "https://www.imcdgroup.com/investors/investor-news?filters=D9FCFC134FB2409082AE72D02691D099",
+      "corroborating_source": "https://www.imcdgroup.com/investors",
+      "category": "TWO_PRIMARY_ISSUER_DOCS_HEADLINE",
+      "consistency_score": 85,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "CRDA.L": {
+      "primary_source": "https://www.croda.com/en-gb/media-hub/news/general/2026-half-year-results",
+      "corroborating_source": "https://www.croda.com/en-gb/investors/results-presentations-and-reports",
+      "category": "TWO_PRIMARY_ISSUER_DOCS_HEADLINE",
+      "consistency_score": 85,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "ROR.L": {
+      "primary_source": "https://media.rotork.com/api/public/content/pub082-421-halfyearresultspresentation2026-downloadoriginal-fc17eutq6u6csiedwzpw.pdf?v=1f354432",
+      "corroborating_source": "https://www.rotork.com/en/investors/financial-reporting-centre",
+      "category": "TWO_PRIMARY_ISSUER_DOCS_HEADLINE",
+      "consistency_score": 85,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "EMN": {
+      "primary_source": "https://www.eastman.com/en/media-center/news-stories/2026/eastman-announces-second-quarter-2026-financial-results",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/915389/000091538926000141/emn-20260630.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "WSM": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/exhibit991fy2026q2earnings.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000208/wsm-20260802.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "DKS": {
+      "primary_source": "https://investors.dicks.com/news/press-releases/news-details/2026/DICKS-Sporting-Goods-Inc--Reports-Second-Quarter-Results/default.aspx",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000036/dks-20260801.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "TXRH": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926091980/txrh-20260805xex99d1.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1289460/000110465926092408/txrh-20260630x10q.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "SNA": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/91440/000009144026000141/q22026pressreleaseforpress.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/91440/000009144026000144/sna-20260704.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "MSM": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1003078/000100307826000078/pressreleaseq3fy2607012026.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1003078/000100307826000080/msm-20260530.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "PLMR": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1761312/000119312526332846/plmr-ex99_1.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1761312/000119312526335508/plmr-20260630.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "MOD": {
+      "primary_source": "https://investors.modine.com/news/news-details/2026/Modine-Reports-First-Quarter-Fiscal-2027-Results/default.aspx",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/67347/000110465926088569/mod-20260630x10q.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "FUL": {
+      "primary_source": "https://newsroom.hbfuller.com/press-releases/press-release-details/2026/H-B--Fuller-Reports-Third-Quarter-2026-Results/default.aspx",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/39368/000143774926031145/ful20260831c_10q.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "POWL": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000103/ex991-powlq3xfy2026earning.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "ESI": {
+      "primary_source": "https://ir.elementsolutionsinc.com/Investors/news/news-details/2026/Element-Solutions-Inc-Reports-Record-Second-Quarter-2026-Financial-Results/default.aspx",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000065/esi-20260630.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "ABX": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1814287/000162828026055287/abx-20260630.htm",
+      "corroborating_source": "https://ir.abacusgm.com/news-events/press-releases/detail/195/abacus-global-management-inc-reports-second-quarter-2026-results",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "ERO": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026053508/erocopper-pressreleasex202.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026053508/erocopper-fsx2026q2.htm",
+      "category": "REGULATORY_PACKAGE_FINANCIALS_MDNA_RELEASE",
+      "consistency_score": 95,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "TMDX": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1756262/000119312526332767/tmdx-ex99_1.htm",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1756262/000119312526332843/tmdx-20260630.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "LEU": {
+      "primary_source": "https://investors.centrusenergy.com/news-releases/news-release-details/centrus-reports-second-quarter-2026-results",
+      "corroborating_source": "https://www.sec.gov/Archives/edgar/data/1065059/000162828026053863/0001628280-26-053863-index.htm",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    },
+    "OKLO": {
+      "primary_source": "https://www.sec.gov/Archives/edgar/data/1849056/000162828026054571/oklo-20260630.htm",
+      "corroborating_source": "https://oklo.com/newsroom/oklo-publishes-second-quarter-2026-financial-results-and-business-update",
+      "category": "REGULATORY_PLUS_PRIMARY_HEADLINE",
+      "consistency_score": 90,
+      "result": "NO_MATERIAL_HEADLINE_CONFLICT_FOUND",
+      "scope_note": "Headline baseline facts and reporting period checked. This is not a full peer-input audit."
+    }
+  }
+}

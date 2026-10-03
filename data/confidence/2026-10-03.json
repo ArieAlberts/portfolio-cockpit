@@ -2,10 +2,10 @@
   "schema_version": 1,
   "as_of": "2026-10-03",
   "rules": {
-    "completeness": "weighted presence of configured company-type fundamental components in the baseline snapshot",
-    "source_quality": "primary official/regulatory sources score 100",
-    "freshness": "<=120 days scores 100",
-    "consistency": "remains null until an explicit cross-check is recorded",
+    "completeness": "weighted company-type component presence",
+    "source_quality": "primary official/regulatory source",
+    "freshness": "<=120 days",
+    "consistency": "explicit target-company cross-check",
     "threshold": 80
   },
   "results": {
@@ -13,254 +13,214 @@
       "completeness": 75,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 72.5,
-      "minimum_consistency_needed_for_80": 37.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 85,
+      "data_confidence_score": 89.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "ADM.L": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 98,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "WKL": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 85,
+      "data_confidence_score": 97,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "CAP.PA": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 85,
+      "data_confidence_score": 97,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "IMCD": {
       "completeness": 75,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 72.5,
-      "minimum_consistency_needed_for_80": 37.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 85,
+      "data_confidence_score": 89.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "CRDA.L": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 85,
+      "data_confidence_score": 97,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "ROR.L": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 85,
+      "data_confidence_score": 97,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "EMN": {
       "completeness": 75,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 72.5,
-      "minimum_consistency_needed_for_80": 37.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 90.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "WSM": {
       "completeness": 55,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 66.5,
-      "minimum_consistency_needed_for_80": 67.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 84.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "DKS": {
       "completeness": 80,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 74,
-      "minimum_consistency_needed_for_80": 30,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 92,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "TXRH": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 98,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "SNA": {
       "completeness": 55,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 66.5,
-      "minimum_consistency_needed_for_80": 67.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 84.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "MSM": {
       "completeness": 55,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 66.5,
-      "minimum_consistency_needed_for_80": 67.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 84.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "PLMR": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 98,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "MOD": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 98,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "FUL": {
       "completeness": 55,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 66.5,
-      "minimum_consistency_needed_for_80": 67.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 84.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "POWL": {
       "completeness": 55,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 66.5,
-      "minimum_consistency_needed_for_80": 67.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 84.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "ESI": {
       "completeness": 85,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 75.5,
-      "minimum_consistency_needed_for_80": 22.5,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 93.5,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "ABX": {
       "completeness": 80,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 74,
-      "minimum_consistency_needed_for_80": 30,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 92,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "ERO": {
       "completeness": 100,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 80,
-      "minimum_consistency_needed_for_80": 0,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 95,
+      "data_confidence_score": 99,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "TMDX": {
       "completeness": 80,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 74,
-      "minimum_consistency_needed_for_80": 30,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 92,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "LEU": {
       "completeness": 40,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 62,
-      "minimum_consistency_needed_for_80": 90,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 80,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     },
     "OKLO": {
       "completeness": 70,
       "source_quality": 100,
       "freshness": 100,
-      "consistency": null,
-      "known_weighted_contribution": 71,
-      "minimum_consistency_needed_for_80": 45,
-      "data_confidence_score": null,
-      "status": "DATA_CHECK",
-      "reason": "CONSISTENCY_PENDING"
+      "consistency": 90,
+      "data_confidence_score": 89,
+      "status": "OK",
+      "scope": "TARGET_BASELINE_ONLY"
     }
+  },
+  "summary": {
+    "portfolio_companies": 23,
+    "target_baseline_confidence_ok": 23,
+    "target_baseline_confidence_data_check": 0,
+    "peer_input_confidence_status": "PENDING"
   }
 }
