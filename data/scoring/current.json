@@ -1,8 +1,10 @@
 {
-  "schema_version": 1,
   "as_of": "2026-10-03",
-  "current_fundamental_quality": "data/scoring/fundamental_quality_2026-10-03_r2.json",
-  "current_readiness": "data/scoring/readiness_2026-10-03_r2.json",
-  "previous_score_snapshot": "data/scoring/fundamental_quality_2026-10-03.json",
-  "previous_score_snapshot_status": "SUPERSEDED_RESEARCH_ONLY"
+  "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+  "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+  "current_fundamental_quality": "data/scoring/fundamental_quality_2026-10-03_r3.json",
+  "execution_effect": "NONE",
+  "generated_by_pipeline": true,
+  "pipeline_version": 1,
+  "schema_version": 2
 }

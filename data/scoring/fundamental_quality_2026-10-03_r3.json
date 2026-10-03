@@ -1,0 +1,1465 @@
+{
+  "as_of": "2026-10-03",
+  "blocked": {
+    "ABX": {
+      "company_type": "FINANCIAL_SERVICES",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "asset_quality"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_DIRECT_PUBLIC_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/ABX/2026-10-03.json",
+          "sha256": "af6ef496d0b6ab8eeafc155699ca71f605287c610488ceb5a387eda1b94b1545"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 92,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:asset_quality",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ADM.L": {
+      "company_type": "INSURER",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "capital_strength",
+        "underwriting_quality"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_DIRECT_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/ADM.L/2026-10-03.json",
+          "sha256": "acad38239743b24de5d0178698cfd570da09b3356cb44d2076e5f8d8d11c0a7c"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:capital_strength",
+        "MISSING_REQUIRED_COMPONENT:underwriting_quality",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ASR": {
+      "company_type": "INSURER",
+      "covered_components": [
+        "underwriting_quality",
+        "growth_stability"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 46.31647706050273,
+        "sensitivity": {
+          "largest_score_shift": 14.365046390628379,
+          "most_influential_metric": "combined_ratio_pct",
+          "most_influential_peer": "SAMPO.HE",
+          "most_influential_peer_index": 2,
+          "scenarios_evaluated": 10,
+          "score_high": 60.681523451131106,
+          "score_low": 42.140536448696594,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.14734091757989093
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "peer_input_confidence": 100.0,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_AFTER_SOLVENCY_REGIME_CORRECTION",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/ASR/2026-10-02.json",
+          "sha256": "d481d72a84af7cf36f458083a61f91dc107e46654cbc07de548fb1e0e1da9c49"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "clipped_z_score": -0.21534445617125617,
+          "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
+          "component_weight": 0.1,
+          "direction": "higher_is_better",
+          "metric_name": "operating_earnings_growth_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 11.4720032,
+          "peer_sample_std": 7.764319684507278,
+          "peer_tickers": [
+            "NN.AS",
+            "AGS.BR",
+            "SAMPO.HE",
+            "AV.L",
+            "ZURN.SW"
+          ],
+          "peer_values": [
+            4.435204,
+            6.0,
+            9.924812,
+            24.0,
+            13.0
+          ],
+          "target_value": 9.8,
+          "unclipped_z_score": -0.21534445617125617
+        },
+        "underwriting_quality": {
+          "clipped_z_score": -0.12013950214334483,
+          "comparison_class": "NON_LIFE_COMBINED_RATIO",
+          "component_weight": 0.25,
+          "direction": "lower_is_better",
+          "metric_name": "combined_ratio_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 91.06,
+          "peer_sample_std": 4.494774744077842,
+          "peer_tickers": [
+            "NN.AS",
+            "AGS.BR",
+            "SAMPO.HE",
+            "AV.L",
+            "ZURN.SW"
+          ],
+          "peer_values": [
+            90.5,
+            95.2,
+            83.6,
+            93.3,
+            92.7
+          ],
+          "target_value": 91.6,
+          "unclipped_z_score": -0.12013950214334483
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 89.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:capital_strength",
+        "PEER_SENSITIVE"
+      ],
+      "weighted_component_coverage": 0.35
+    },
+    "CAP.PA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_METRIC_COVERAGE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/CAP.PA/2026-10-03.json",
+          "sha256": "433c08fd94f69b732f04a4995025e30dd35510994deed63155bc76664b4cec95"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "CRDA.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_STRICT_ALIGNED_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/CRDA.L/2026-10-03.json",
+          "sha256": "b9c180efdb4d695c636667e06b9c71615bc9aa4e8ff8a5a6a2097717fc75c10d"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "DKS": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_FY2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_DIRECT_ALIGNED_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/DKS/2026-10-03.json",
+          "sha256": "165232e537a267ea4c465fb32d4ba88f3d040e69de34939e009b26e81c126f7b"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 92,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "EMN": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "growth_stability"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 40.74645277941633,
+        "sensitivity": {
+          "largest_score_shift": 12.240218772769559,
+          "most_influential_metric": "reported_revenue_growth_pct",
+          "most_influential_peer": "ALB",
+          "most_influential_peer_index": 4,
+          "scenarios_evaluated": 5,
+          "score_high": 52.98667155218589,
+          "score_low": 34.63759321455004,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.37014188882334664
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 100.0,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_QUARTERLY_CORE_METRICS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/EMN/2026-10-03.json",
+          "sha256": "996721a1bf177177b44b932f7e5ea90e057b74baf2da427e18f2b07104e45158"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "clipped_z_score": -0.37014188882334664,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "reported_revenue_growth_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 13.723570200000001,
+          "peer_sample_std": 10.37643756617083,
+          "peer_tickers": [
+            "CE",
+            "HUN",
+            "WLK",
+            "DD",
+            "ALB"
+          ],
+          "peer_values": [
+            8.688784,
+            14.060357,
+            10.76871,
+            4.0,
+            31.1
+          ],
+          "target_value": 9.882816,
+          "unclipped_z_score": -0.37014188882334664
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 90.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_SENSITIVE"
+      ],
+      "weighted_component_coverage": 0.15
+    },
+    "ERO": {
+      "company_type": "CYCLICAL_MINING",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "cost_position"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "CYCLICAL_MINING_SCOPE_REVIEW_REQUIRED",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/ERO/2026-10-03.json",
+          "sha256": "212bb0bc439902d890f5b969c09a06f83cb524cf5f2b1fbfd7bbb57109e181a1"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 99,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:cost_position",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ESI": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "profitability_capital_efficiency",
+        "cashflow_quality",
+        "value_per_share"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 31.741512285798926,
+        "sensitivity": {
+          "largest_score_shift": -8.115048294756487,
+          "most_influential_metric": "adjusted_eps_growth_pct",
+          "most_influential_peer": "ASH",
+          "most_influential_peer_index": 4,
+          "scenarios_evaluated": 14,
+          "score_high": 36.4914757030497,
+          "score_low": 23.62646399104244,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.730339508568043
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet"
+      ],
+      "peer_input_confidence": 93.75,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_CORE_COVERAGE_60_PERCENT",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/ESI/2026-10-03.json",
+          "sha256": "f998644a29043a06607fdde29a9e3b92ad6114a067a65ec8de37e664a0d36b57"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "cashflow_quality": {
+          "clipped_z_score": -2.9413416002787036,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "component_weight": 0.2,
+          "direction": "higher_is_better",
+          "metric_name": "free_cash_flow_margin_pct",
+          "peer_input_confidence": 93.75,
+          "peer_mean": 16.83284325,
+          "peer_sample_std": 3.1503927490509684,
+          "peer_tickers": [
+            "ENTG",
+            "MKSI",
+            "DD",
+            "ASH"
+          ],
+          "peer_values": [
+            13.620924,
+            15.064103,
+            17.922,
+            20.724346
+          ],
+          "target_value": 7.566462,
+          "unclipped_z_score": -2.9413416002787036
+        },
+        "profitability_capital_efficiency": {
+          "clipped_z_score": 0.7393756167002055,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "component_weight": 0.25,
+          "direction": "higher_is_better",
+          "metric_name": "adjusted_ebitda_margin_pct",
+          "peer_input_confidence": 97.5,
+          "peer_mean": 23.9222974,
+          "peer_sample_std": 5.244563808184509,
+          "peer_tickers": [
+            "ENTG",
+            "MKSI",
+            "KWR",
+            "DD",
+            "ASH"
+          ],
+          "peer_values": [
+            28.4,
+            28.685897,
+            15.994,
+            24.6,
+            21.93159
+          ],
+          "target_value": 27.8,
+          "unclipped_z_score": 0.7393756167002055
+        },
+        "value_per_share": {
+          "clipped_z_score": -0.23186192840090938,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "adjusted_eps_growth_pct",
+          "peer_input_confidence": 96.25,
+          "peer_mean": 31.7131892,
+          "peer_sample_std": 20.211003299762165,
+          "peer_tickers": [
+            "ENTG",
+            "MKSI",
+            "KWR",
+            "DD",
+            "ASH"
+          ],
+          "peer_values": [
+            40.909091,
+            43.478261,
+            28.070175,
+            48.031496,
+            -1.923077
+          ],
+          "target_value": 27.027027,
+          "unclipped_z_score": -0.23186192840090938
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 93.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "PEER_SENSITIVE"
+      ],
+      "weighted_component_coverage": 0.6
+    },
+    "FUL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q3_FY2026_VS_LATEST_PEER_PERIODS",
+      "peer_set_overlap": null,
+      "peer_universe_status": "MIXED_FISCAL_PERIODS_BLOCK_STRICT_SCORE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/FUL/2026-10-03.json",
+          "sha256": "571dddc31fedf736c9eeee1049974030328901b3abe2972419b373740183b485"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "IMCD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_MEDIUM_CONFIDENCE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/IMCD/2026-10-03.json",
+          "sha256": "b333f3825ba16e044c0813c3ece35d90a0a0e47ca031f5642ac665c13ce3cb14"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 89.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "LEU": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_LOW_CONFIDENCE_NUCLEAR_FUEL_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/LEU/2026-10-03.json",
+          "sha256": "83d877ed0c97cdee1e8d3cb724e64fe65603aad85161167dae1b3c24a50a073b"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 80,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "MOD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "growth_stability"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 57.4710864298497,
+        "sensitivity": {
+          "largest_score_shift": 29.812201342422405,
+          "most_influential_metric": "reported_revenue_growth_pct",
+          "most_influential_peer": "NVT",
+          "most_influential_peer_index": 1,
+          "scenarios_evaluated": 4,
+          "score_high": 87.2832877722721,
+          "score_low": 51.01471869808525,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": 0.29884345719398797
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 100.0,
+      "peer_reference_period": "Q2_CALENDAR_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_REVENUE_GROWTH_CORE_METRIC",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/MOD/2026-10-03.json",
+          "sha256": "ddd34c5031d29eec9526acc029e52d6f44f7c430de534588a408834aeac5d122"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "clipped_z_score": 0.29884345719398797,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "reported_revenue_growth_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 21.0,
+          "peer_sample_std": 23.423634787681152,
+          "peer_tickers": [
+            "VRT",
+            "NVT",
+            "LII",
+            "CARR"
+          ],
+          "peer_values": [
+            24.0,
+            53.0,
+            3.0,
+            4.0
+          ],
+          "target_value": 28.0,
+          "unclipped_z_score": 0.29884345719398797
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_SENSITIVE"
+      ],
+      "weighted_component_coverage": 0.15
+    },
+    "MSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "LATEST_QUARTER_AROUND_2026_06",
+      "peer_set_overlap": null,
+      "peer_universe_status": "MIXED_FISCAL_PERIODS_CONTEXT_ONLY",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/MSM/2026-10-03.json",
+          "sha256": "0767911a407585a0f5896f9b2a2e36193e060d2082cf39cfb65628261ed93e73"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "OKLO": {
+      "company_type": "PRE_REVENUE_DEVELOPMENT",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "liquidity_runway",
+        "financing_dilution"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "DEVELOPMENT_STAGE_2026_06_30",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_DEVELOPMENT_STAGE_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/OKLO/2026-10-03.json",
+          "sha256": "aae25c9a0f119adbf51e24660d55f6a72ce8a4115bad1c873dfdebfa9a35a066"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 89,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:financing_dilution",
+        "MISSING_REQUIRED_COMPONENT:liquidity_runway",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "PLMR": {
+      "company_type": "INSURER",
+      "covered_components": [
+        "underwriting_quality",
+        "profitability",
+        "growth_stability",
+        "value_per_share"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [
+          "Z_CLIPPED:gross_written_premium_growth_pct:4.159526"
+        ],
+        "score": 42.92939947024563,
+        "sensitivity": {
+          "largest_score_shift": -9.65014003284854,
+          "most_influential_metric": "annualized_roe_pct",
+          "most_influential_peer": "SKWD",
+          "most_influential_peer_index": 1,
+          "scenarios_evaluated": 16,
+          "score_high": 46.10040552408935,
+          "score_low": 33.27925943739709,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.28282402119017475
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "peer_input_confidence": 94.25,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": {
+        "all_used_peers": [
+          "HCI",
+          "HRTG",
+          "KNSL",
+          "RLI",
+          "SKWD"
+        ],
+        "code": "PEER_SET_VARIES_BY_METRIC",
+        "common_peers": [
+          "HRTG",
+          "KNSL",
+          "SKWD"
+        ],
+        "intersection_over_union": 0.6
+      },
+      "peer_universe_status": "VALIDATED_NON_CAPITAL_COMPONENTS_CAPITAL_STRENGTH_PENDING",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/PLMR/2026-10-03.json",
+          "sha256": "9a037db2f8c050583321a0effe3920308cd3e9797b839415ab0ee935118dac5f"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "clipped_z_score": 3.0,
+          "comparison_class": "H1_GWP_GROWTH",
+          "component_weight": 0.1,
+          "direction": "higher_is_better",
+          "metric_name": "gross_written_premium_growth_pct",
+          "peer_input_confidence": 97.5,
+          "peer_mean": 2.1548405,
+          "peer_sample_std": 7.7266219553047675,
+          "peer_tickers": [
+            "KNSL",
+            "SKWD",
+            "HRTG",
+            "RLI"
+          ],
+          "peer_values": [
+            -2.901624,
+            12.802229,
+            -4.143344,
+            2.862101
+          ],
+          "target_value": 34.293922,
+          "unclipped_z_score": 4.15952555798782
+        },
+        "profitability": {
+          "clipped_z_score": -0.9757108809535691,
+          "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+          "component_weight": 0.2,
+          "direction": "higher_is_better",
+          "metric_name": "annualized_roe_pct",
+          "peer_input_confidence": 94.25,
+          "peer_mean": 27.640357,
+          "peer_sample_std": 7.933043641406662,
+          "peer_tickers": [
+            "KNSL",
+            "SKWD",
+            "HRTG",
+            "HCI"
+          ],
+          "peer_values": [
+            28.9,
+            17.3,
+            36.6,
+            27.761428
+          ],
+          "target_value": 19.9,
+          "unclipped_z_score": -0.9757108809535691
+        },
+        "underwriting_quality": {
+          "clipped_z_score": -0.31685894427536665,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "component_weight": 0.25,
+          "direction": "lower_is_better",
+          "metric_name": "combined_ratio_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 81.275,
+          "peer_sample_std": 7.968845587661988,
+          "peer_tickers": [
+            "KNSL",
+            "SKWD",
+            "HRTG",
+            "RLI"
+          ],
+          "peer_values": [
+            76.4,
+            90.0,
+            72.9,
+            85.8
+          ],
+          "target_value": 83.8,
+          "unclipped_z_score": -0.31685894427536665
+        },
+        "value_per_share": {
+          "clipped_z_score": -1.490799350490446,
+          "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "gaap_eps_growth_pct",
+          "peer_input_confidence": 98.75,
+          "peer_mean": 22.00081225,
+          "peer_sample_std": 9.16788650699616,
+          "peer_tickers": [
+            "KNSL",
+            "SKWD",
+            "HRTG",
+            "RLI"
+          ],
+          "peer_values": [
+            31.178311,
+            10.447761,
+            27.165354,
+            19.211823
+          ],
+          "target_value": 8.333333,
+          "unclipped_z_score": -1.490799350490446
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "MISSING_REQUIRED_COMPONENT:capital_strength",
+        "PEER_SENSITIVE",
+        "PEER_SET_VARIES_BY_METRIC"
+      ],
+      "weighted_component_coverage": 0.7000000000000001
+    },
+    "POWL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "growth_stability"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 36.54486788348256,
+        "sensitivity": {
+          "largest_score_shift": 8.5712692114624,
+          "most_influential_metric": "reported_revenue_growth_pct",
+          "most_influential_peer": "NVT",
+          "most_influential_peer_index": 0,
+          "scenarios_evaluated": 4,
+          "score_high": 45.11613709494496,
+          "score_low": 31.30608747235085,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.5382052846606976
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 100.0,
+      "peer_reference_period": "Q2_CALENDAR_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_REVENUE_AND_GROWTH_CONTEXT",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/POWL/2026-10-03.json",
+          "sha256": "9ab3ec98c44db8a166b38b51c2768095ebb96057c808fc4e3dbfe0268c5345f0"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "clipped_z_score": -0.5382052846606976,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "reported_revenue_growth_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 20.8,
+          "peer_sample_std": 21.924719686539515,
+          "peer_tickers": [
+            "NVT",
+            "HUBB",
+            "RRX",
+            "GNRC"
+          ],
+          "peer_values": [
+            53.0,
+            15.0,
+            4.2,
+            11.0
+          ],
+          "target_value": 9.0,
+          "unclipped_z_score": -0.5382052846606976
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_SENSITIVE"
+      ],
+      "weighted_component_coverage": 0.15
+    },
+    "ROR.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/ROR.L/2026-10-03.json",
+          "sha256": "2d9c838b02a8f190219f054cc75df61ec848ae38231036972a1907d37b000878"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "SNA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "growth_stability"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 33.62416753860236,
+        "sensitivity": {
+          "largest_score_shift": -4.581008645725088,
+          "most_influential_metric": "organic_revenue_growth_pct",
+          "most_influential_peer": "ESAB",
+          "most_influential_peer_index": 3,
+          "scenarios_evaluated": 5,
+          "score_high": 35.487754499555265,
+          "score_low": 29.04315889287727,
+          "stability_flag": "STABLE"
+        },
+        "weighted_z": -0.6550332984559057
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 100.0,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_ORGANIC_GROWTH_METRIC",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/SNA/2026-10-03.json",
+          "sha256": "5c75c518d3daa2fb5736aebb33f22de109b0f6b91e5106e49bbd132e52fa943c"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "clipped_z_score": -0.6550332984559057,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "organic_revenue_growth_pct",
+          "peer_input_confidence": 100.0,
+          "peer_mean": 4.9799999999999995,
+          "peer_sample_std": 3.0227470949452586,
+          "peer_tickers": [
+            "SWK",
+            "LECO",
+            "ITW",
+            "ESAB",
+            "DOV"
+          ],
+          "peer_values": [
+            3.0,
+            10.1,
+            4.5,
+            2.5,
+            4.8
+          ],
+          "target_value": 3.0,
+          "unclipped_z_score": -0.6550332984559057
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency"
+      ],
+      "weighted_component_coverage": 0.15
+    },
+    "TMDX": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LOW_CONFIDENCE_BROAD_MEDTECH_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/TMDX/2026-10-03.json",
+          "sha256": "693f43e1aa5179d8a847bb36578e1b5f64c6056ad83bbc9c1b62bb461cf44bac"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 92,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "TXRH": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_SAME_STORE_SALES_METRIC",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/TXRH/2026-10-03.json",
+          "sha256": "2853ec3f5e05acf7d47a685061254a91f1092985f044bb5cca44b9fd4144f271"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "WKL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "cashflow_quality",
+        "growth_stability",
+        "value_per_share"
+      ],
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 16.496042616014407,
+        "sensitivity": {
+          "largest_score_shift": -4.852253233503127,
+          "most_influential_metric": "organic_like_revenue_growth_pct",
+          "most_influential_peer": "VRSK",
+          "most_influential_peer_index": 2,
+          "scenarios_evaluated": 14,
+          "score_high": 20.75577120372123,
+          "score_low": 11.64378938251128,
+          "stability_flag": "STABLE"
+        },
+        "weighted_z": -1.3401582953594238
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 97.5,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE_50_PERCENT",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/WKL/2026-10-02.json",
+          "sha256": "67abe7c035c03aaabf76abf658f1255914bcf862bce41d2480fda5a5fd9bb475"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "cashflow_quality": {
+          "clipped_z_score": -2.2374742849477314,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "component_weight": 0.2,
+          "direction": "higher_is_better",
+          "metric_name": "free_cash_flow_margin_pct",
+          "peer_input_confidence": 97.5,
+          "peer_mean": 32.116043250000004,
+          "peer_sample_std": 6.499597938547807,
+          "peer_tickers": [
+            "TRI.TO",
+            "VRSK",
+            "SPGI",
+            "MCO"
+          ],
+          "peer_values": [
+            26.206385,
+            39.291334,
+            27.037749,
+            35.928705
+          ],
+          "target_value": 17.57336,
+          "unclipped_z_score": -2.2374742849477314
+        },
+        "growth_stability": {
+          "clipped_z_score": -1.543923132220248,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "organic_like_revenue_growth_pct",
+          "peer_input_confidence": 97.5,
+          "peer_mean": 8.3397922,
+          "peer_sample_std": 2.1631855435686047,
+          "peer_tickers": [
+            "RELX.L",
+            "TRI.TO",
+            "VRSK",
+            "SPGI",
+            "MCO"
+          ],
+          "peer_values": [
+            7.0,
+            8.0,
+            5.698961,
+            10.0,
+            11.0
+          ],
+          "target_value": 5.0,
+          "unclipped_z_score": -1.543923132220248
+        },
+        "value_per_share": {
+          "clipped_z_score": 0.06002786095247671,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "component_weight": 0.15,
+          "direction": "higher_is_better",
+          "metric_name": "adjusted_eps_growth_pct",
+          "peer_input_confidence": 97.5,
+          "peer_mean": 13.590244,
+          "peer_sample_std": 6.826096973943455,
+          "peer_tickers": [
+            "RELX.L",
+            "TRI.TO",
+            "VRSK",
+            "SPGI",
+            "MCO"
+          ],
+          "peer_values": [
+            11.0,
+            11.0,
+            5.0,
+            19.0,
+            21.95122
+          ],
+          "target_value": 14.0,
+          "unclipped_z_score": 0.06002786095247671
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency"
+      ],
+      "weighted_component_coverage": 0.5
+    },
+    "WSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_FY2026_NEAR_CALENDAR_Q2",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_COMPARABLE_RETAIL_METRICS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+        "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+        "peer_dataset": {
+          "path": "data/peers/WSM/2026-10-03.json",
+          "sha256": "51ba4735085487e578940bdd2ac1f52b0b7203b873f87ee56e258f19ac24a90b"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    }
+  },
+  "methodology": {
+    "data_confidence_threshold": 80.0,
+    "minimum_peer_values_per_metric": 4,
+    "minimum_weighted_component_coverage": 0.7,
+    "peer_input_confidence_threshold": 80.0,
+    "peer_method": "clipped_mean_sample_std_zscore",
+    "required_components_enforced": true,
+    "score_formula": "clamp(50 + 25 * weighted_z, 0, 100)",
+    "sensitivity_method": "leave_one_peer_out_per_metric",
+    "stable_band_width_points": 10.0
+  },
+  "note": "Generated deterministically from repository peer datasets and config. No score can trigger live execution.",
+  "pipeline_version": 1,
+  "provenance": {
+    "code_version": "a31f8efa0471e0ca544ffe624887c160cfdbfa8b",
+    "config_files": {
+      "config/company_types.yaml": {
+        "sha256": "291f7223a84b99c3d1926e477b89a0219440171bd69f273e4ce9a1f5a09aede8"
+      },
+      "config/portfolio.yaml": {
+        "sha256": "291f00513da0602102a65278cb418a5022ec88710060f003c5411b7c56ca63b7"
+      },
+      "config/readiness.yaml": {
+        "sha256": "ed1e9f6b221f772126f64f00e1d308b51ea8274d04357f4f43baceaf55f8ff09"
+      },
+      "config/score_metrics.yaml": {
+        "sha256": "d0e2c0eb4e3937af1328973f66c9afeacfd1ff448c585b1e1db645c7820c8dc8"
+      },
+      "config/scoring.yaml": {
+        "sha256": "2428814b80cf26cba03a1a780ae874a49d99ec34149fbc4c7a1d6a6ef18e336f"
+      }
+    },
+    "config_hash": "151bdc32ad516ceecba985689b8080c257370478f94626096ff1fd4d017769bb",
+    "peer_index": {
+      "path": "data/peers/index.json",
+      "sha256": "ad8706b8c248918a1cfef68766c055488c66acf7233d9d3ef23937ead518908f"
+    },
+    "target_confidence": {
+      "path": "data/confidence/2026-10-03.json",
+      "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+    }
+  },
+  "schema_version": 3,
+  "scores": {},
+  "summary": {
+    "data_check": 23,
+    "display_ready": 0,
+    "portfolio_companies": 23
+  }
+}
