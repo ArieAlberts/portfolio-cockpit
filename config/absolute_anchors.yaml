@@ -1,0 +1,55 @@
+schema_version: 1
+
+# Absolute anchors are a parallel diagnostic layer.
+# They NEVER change the relative peer-normalized 0-100 Fundamental Quality score.
+score_effect: NONE
+
+anchors:
+  combined_ratio_pct:
+    anchor_type: accounting_break_even
+    operator: lt
+    threshold: 100.0
+    label_if_met: UNDERWRITING_BELOW_BREAK_EVEN_RATIO
+    label_if_not_met: UNDERWRITING_AT_OR_ABOVE_BREAK_EVEN_RATIO
+    applies_to:
+      - INSURER
+      - INSURER_US_P&C
+    rationale: >
+      Combined ratio is loss ratio plus expense ratio. A value below 100 means
+      underwriting losses and expenses are below earned premium before investment income.
+    source:
+      authority: NAIC
+      title: Glossary of Insurance Terms - Combined Ratio
+      url: https://content.naic.org/glossary-insurance-terms
+
+  solvency_ratio_pct:
+    anchor_type: regulatory_compliance
+    operator: ge
+    threshold: 100.0
+    label_if_met: SCR_COVERED
+    label_if_not_met: SCR_NOT_COVERED
+    applies_to:
+      - INSURER
+    rationale: >
+      Under Solvency II, the SCR ratio is eligible own funds divided by the Solvency
+      Capital Requirement. At 100 percent or higher the SCR is complied with.
+    source:
+      authority: EIOPA
+      title: LTG Report 2016 - definition of SCR ratio
+      url: https://register.eiopa.europa.eu/Publications/Responses/EIOPA-BoS-16-279_LTG_REPORT_2016.pdf
+
+  net_written_premium_to_surplus_ratio:
+    anchor_type: regulatory_guideline
+    operator: le
+    threshold: 3.0
+    label_if_met: WITHIN_NAIC_NPW_SURPLUS_GUIDELINE
+    label_if_not_met: ABOVE_NAIC_NPW_SURPLUS_GUIDELINE
+    applies_to:
+      - INSURER_US_P&C
+    rationale: >
+      NAIC guidance cited in US P&C statutory disclosures generally indicates net
+      written premium to policyholders' surplus should be no greater than 3 to 1.
+    source:
+      authority: NAIC guideline as cited in SEC filing
+      title: Mercury General 2025 Annual Report - Premiums to Surplus Ratio
+      url: https://www.sec.gov/Archives/edgar/data/0000064996/000006499626000012/mercuryar25.pdf
