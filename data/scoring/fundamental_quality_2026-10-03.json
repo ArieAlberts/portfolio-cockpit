@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "methodology": {
+    "peer_method": "clipped_mean_std_zscore",
+    "score_formula": "clamp(50 + 25 * weighted_z, 0, 100)",
+    "minimum_peer_values_per_metric": 4,
+    "minimum_weighted_component_coverage": 0.7,
+    "target_data_confidence_threshold": 80,
+    "peer_input_confidence_threshold": 80
+  },
+  "scores": {
+    "ASR": {
+      "fundamental_quality_score": 62.0917,
+      "display_score": 62.1,
+      "status": "DISPLAY_READY",
+      "weighted_component_coverage": 0.75,
+      "target_data_confidence": 89.5,
+      "peer_input_confidence": 100,
+      "weighted_z": 0.483667,
+      "metrics": {
+        "solvency_ratio_pct": {
+          "target": 222,
+          "peer_values": [
+            224,
+            195,
+            174,
+            176
+          ],
+          "direction": "higher_is_better",
+          "component_weight": 0.3,
+          "z_score": 1.481608
+        },
+        "combined_ratio_pct": {
+          "target": 91.6,
+          "peer_values": [
+            90.5,
+            95.2,
+            83.6,
+            93.3,
+            92.7
+          ],
+          "direction": "lower_is_better",
+          "component_weight": 0.25,
+          "z_score": -0.13432
+        },
+        "operating_earnings_growth_pct": {
+          "target": 9.8,
+          "peer_values": [
+            4.435204,
+            6,
+            9.924812,
+            24,
+            13
+          ],
+          "direction": "higher_is_better",
+          "component_weight": 0.2,
+          "z_score": -0.240762
+        }
+      },
+      "uncovered_components": [
+        "growth_stability",
+        "value_per_share"
+      ],
+      "warnings": [
+        "PARTIAL_COMPONENT_COVERAGE_75_PERCENT",
+        "OPERATING_EARNINGS_IS_COMPANY_DEFINED"
+      ],
+      "execution_effect": "NONE"
+    }
+  },
+  "blocked": {
+    "ADM.L": "INSUFFICIENT_DIRECT_PEERS",
+    "WKL": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "CAP.PA": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "IMCD": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "CRDA.L": "HARD_PEER_UNIVERSE_BLOCK",
+    "ROR.L": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "EMN": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "WSM": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "DKS": "HARD_PEER_UNIVERSE_BLOCK",
+    "TXRH": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "SNA": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "MSM": "HARD_PEER_UNIVERSE_BLOCK",
+    "PLMR": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "MOD": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "FUL": "HARD_PEER_UNIVERSE_BLOCK",
+    "POWL": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "ESI": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "ABX": "HARD_PEER_UNIVERSE_BLOCK",
+    "ERO": "HARD_PEER_UNIVERSE_BLOCK",
+    "TMDX": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "LEU": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+    "OKLO": "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE"
+  }
+}

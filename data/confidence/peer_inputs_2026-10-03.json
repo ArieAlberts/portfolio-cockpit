@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "methodology": "For score-eligible metrics, source quality, period alignment, definition match and peer role are evaluated. The weakest included peer sets the metric confidence.",
+  "threshold": 80,
+  "results": {
+    "ASR": {
+      "solvency_ratio_pct": {
+        "score": 100,
+        "peer_count": 4,
+        "peers": [
+          "NN.AS",
+          "AGS.BR",
+          "SAMPO.HE",
+          "AV.L"
+        ]
+      },
+      "combined_ratio_pct": {
+        "score": 100,
+        "peer_count": 5,
+        "peers": [
+          "NN.AS",
+          "AGS.BR",
+          "SAMPO.HE",
+          "AV.L",
+          "ZURN.SW"
+        ]
+      },
+      "operating_earnings_growth_pct": {
+        "score": 100,
+        "peer_count": 5,
+        "peers": [
+          "NN.AS",
+          "AGS.BR",
+          "SAMPO.HE",
+          "AV.L",
+          "ZURN.SW"
+        ]
+      },
+      "overall_score": 100,
+      "status": "OK"
+    }
+  },
+  "note": "Only companies that already pass the 70% peer/component coverage gate need an overall peer-input confidence score. ASR is currently the only such company."
+}
