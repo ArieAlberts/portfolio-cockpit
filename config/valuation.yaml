@@ -1,0 +1,11 @@
+# Valuation — market-price dependent. 50 ~ fair; higher = more attractive.
+# Metric profiles per company_type are filled in step 3.
+schema_version: 1
+max_price_age_days: 7
+labels:
+  attractive_min: 60
+  fair_min: 45
+reference_weights:
+  own_history: 0.6
+  peers: 0.4
+profiles: {}

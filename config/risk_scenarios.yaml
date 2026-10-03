@@ -1,0 +1,26 @@
+# Portfolio Risk — weights x shocks only. Analytical, never execution.
+schema_version: 1
+standard_shock: -0.30
+standard_label: "PORTFOLIO IMPACT -30%"
+scenarios:
+  market_shock:
+    description: "Broad market -20% (beta-weighted where beta is known)"
+    type: market
+    shock: -0.20
+    use_beta: true
+  sector_shock:
+    description: "One sector -30%"
+    type: sector
+    sector: Financials
+    shock: -0.30
+  single_stock_shock:
+    description: "Largest position -30%"
+    type: single_stock
+    target: largest
+    shock: -0.30
+  combined_scenario:
+    description: "Market -15% plus Materials sector an extra -20%"
+    type: combined
+    components:
+      - {type: market, shock: -0.15, use_beta: true}
+      - {type: sector, sector: Materials, shock: -0.20}

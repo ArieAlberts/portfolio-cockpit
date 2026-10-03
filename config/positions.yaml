@@ -1,0 +1,32 @@
+# CURRENT portfolio weights (owner-supplied). Target weights stay in
+# config/portfolio.yaml and are only read. Empty values are a template:
+# the decision engine refuses to run until every field is filled.
+# weight_pct: current weight in percent; sector: free text; beta: optional.
+schema_version: 1
+as_of: null
+source: manual
+cash_weight_pct: null
+positions:
+  ASR: {weight_pct: null, sector: null, beta: null}
+  ADM.L: {weight_pct: null, sector: null, beta: null}
+  WKL: {weight_pct: null, sector: null, beta: null}
+  CAP.PA: {weight_pct: null, sector: null, beta: null}
+  IMCD: {weight_pct: null, sector: null, beta: null}
+  CRDA.L: {weight_pct: null, sector: null, beta: null}
+  ROR.L: {weight_pct: null, sector: null, beta: null}
+  EMN: {weight_pct: null, sector: null, beta: null}
+  WSM: {weight_pct: null, sector: null, beta: null}
+  DKS: {weight_pct: null, sector: null, beta: null}
+  TXRH: {weight_pct: null, sector: null, beta: null}
+  SNA: {weight_pct: null, sector: null, beta: null}
+  MSM: {weight_pct: null, sector: null, beta: null}
+  PLMR: {weight_pct: null, sector: null, beta: null}
+  MOD: {weight_pct: null, sector: null, beta: null}
+  FUL: {weight_pct: null, sector: null, beta: null}
+  POWL: {weight_pct: null, sector: null, beta: null}
+  ESI: {weight_pct: null, sector: null, beta: null}
+  ABX: {weight_pct: null, sector: null, beta: null}
+  ERO: {weight_pct: null, sector: null, beta: null}
+  TMDX: {weight_pct: null, sector: null, beta: null}
+  LEU: {weight_pct: null, sector: null, beta: null}
+  OKLO: {weight_pct: null, sector: null, beta: null}

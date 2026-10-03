@@ -1,0 +1,11 @@
+# Quality Drift — change versus each company's own immutable baseline.
+# Exactly 50.0 at the baseline. Never price-driven.
+# Profiles are filled in step 2 from the real metric paths in data/baselines/**.
+schema_version: 1
+formula: "clamp(50 + 50 * sum(component_weight * component_signal), 0, 100)"
+neutral_score: 50.0
+minimum_component_weight_coverage: 0.70
+minimum_slot_weight_coverage: 0.50
+period_rule: like_for_like
+max_observation_age_days: 200
+profiles: {}
