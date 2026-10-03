@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-03",
+  "methodology": {
+    "peer_method": "clipped_mean_std_zscore",
+    "minimum_peer_values_per_metric": 4,
+    "minimum_weighted_component_coverage": 0.7,
+    "data_confidence_threshold": 80
+  },
+  "summary": {
+    "portfolio_companies": 23,
+    "peer_component_coverage_pass": 1,
+    "production_ready": 0,
+    "reason_production_ready_zero": "Data Confidence has not yet been populated/validated."
+  },
+  "results": {
+    "ASR": {
+      "weighted_component_coverage": 0.75,
+      "peer_component_coverage_pass": true,
+      "hard_blocked": false,
+      "covered_components": [
+        "capital_strength",
+        "underwriting_quality",
+        "profitability"
+      ],
+      "ready_metrics": [
+        "solvency_ratio_pct:4",
+        "combined_ratio_pct:5",
+        "operating_earnings_growth_pct:5"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "ADM.L": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "WKL": {
+      "weighted_component_coverage": 0.3,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "growth_stability",
+        "value_per_share"
+      ],
+      "ready_metrics": [
+        "organic_like_revenue_growth_pct:5",
+        "adjusted_eps_growth_pct:5"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "CAP.PA": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "IMCD": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "CRDA.L": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "ROR.L": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "EMN": {
+      "weighted_component_coverage": 0.15,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "growth_stability"
+      ],
+      "ready_metrics": [
+        "reported_revenue_growth_pct:5"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "WSM": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "DKS": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "TXRH": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "SNA": {
+      "weighted_component_coverage": 0.15,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "growth_stability"
+      ],
+      "ready_metrics": [
+        "organic_revenue_growth_pct:5"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "MSM": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "PLMR": {
+      "weighted_component_coverage": 0.5,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "underwriting_quality",
+        "growth_stability",
+        "value_per_share"
+      ],
+      "ready_metrics": [
+        "combined_ratio_pct:4",
+        "loss_ratio_pct:4",
+        "gross_written_premium_growth_pct:4",
+        "operating_eps_growth_pct:4"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "MOD": {
+      "weighted_component_coverage": 0.15,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "growth_stability"
+      ],
+      "ready_metrics": [
+        "reported_revenue_growth_pct:4"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "FUL": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "POWL": {
+      "weighted_component_coverage": 0.15,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "growth_stability"
+      ],
+      "ready_metrics": [
+        "reported_revenue_growth_pct:4"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "ESI": {
+      "weighted_component_coverage": 0.25,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [
+        "profitability_capital_efficiency"
+      ],
+      "ready_metrics": [
+        "adjusted_ebitda_margin_pct:5"
+      ],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "ABX": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "ERO": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": true,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "TMDX": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "LEU": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    },
+    "OKLO": {
+      "weighted_component_coverage": 0,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "covered_components": [],
+      "ready_metrics": [],
+      "data_confidence_status": "PENDING",
+      "production_ready": false
+    }
+  },
+  "research_candidates": {
+    "ASR": {
+      "score": 62.1,
+      "score_status": "RESEARCH_ONLY_NOT_PUBLISHED",
+      "weighted_component_coverage": 0.75,
+      "metrics_used": [
+        "solvency_ratio_pct",
+        "combined_ratio_pct",
+        "operating_earnings_growth_pct"
+      ],
+      "reason_not_published": [
+        "DATA_CONFIDENCE_PENDING",
+        "25_PERCENT_COMPONENT_WEIGHT_UNCOVERED"
+      ]
+    }
+  }
+}
