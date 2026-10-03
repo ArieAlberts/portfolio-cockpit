@@ -1,0 +1,68 @@
+schema_version: 1
+
+baseline_score: 50.0
+scale_min: 0.0
+scale_max: 100.0
+signal_min: -1.0
+signal_max: 1.0
+minimum_update_confidence: 80.0
+
+allowed_update_triggers:
+  - official_results
+  - official_trading_update
+  - regulatory_filing
+  - material_guidance_change
+  - confirmed_thesis_event
+
+# Quality Drift is versus each company's own immutable baseline, not versus peers.
+# Component signals are normalized upstream to [-1, +1]. Missing components are
+# neutral (0) rather than reweighted, so partial evidence cannot receive 100%
+# of the drift weight by accident.
+profiles:
+  GENERAL_OPERATING_COMPANY:
+    balance_sheet: 0.25
+    profitability_capital_efficiency: 0.20
+    cashflow_quality: 0.20
+    growth_stability: 0.15
+    value_per_share: 0.10
+    capital_allocation: 0.10
+
+  INSURER:
+    capital_strength: 0.25
+    underwriting_quality: 0.20
+    profitability: 0.20
+    growth: 0.15
+    value_per_share: 0.10
+    capital_allocation: 0.10
+
+  INSURER_US_P&C:
+    capital_strength: 0.25
+    underwriting_quality: 0.20
+    profitability: 0.20
+    growth: 0.15
+    value_per_share: 0.10
+    capital_allocation: 0.10
+
+  CYCLICAL_MINING:
+    normalized_cashflow: 0.20
+    balance_sheet: 0.20
+    cost_position: 0.20
+    execution: 0.15
+    resources: 0.15
+    capital_allocation: 0.10
+
+  PRE_REVENUE_DEVELOPMENT:
+    liquidity_runway: 0.25
+    financing: 0.20
+    dilution: 0.15
+    regulatory_progress: 0.15
+    project_execution: 0.15
+    commercial_validation: 0.10
+
+  FINANCIAL_SERVICES:
+    balance_sheet: 0.25
+    profitability: 0.25
+    asset_quality: 0.20
+    growth: 0.15
+    value_per_share: 0.10
+    capital_allocation: 0.05
