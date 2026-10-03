@@ -12,12 +12,15 @@ def _current_payload():
     return current,json.loads(score_path.read_text(encoding="utf-8"))
 
 
-def test_current_scoring_snapshot_blocks_asr():
+def test_current_scoring_snapshot_blocks_asr_for_remaining_coverage_gap():
     current,data=_current_payload()
     assert current["generated_by_pipeline"] is True
     assert "ASR" not in data["scores"]
-    assert data["blocked"]["ASR"]["status"]=="DATA_CHECK"
-    assert "capital_strength" in data["blocked"]["ASR"]["missing_required_components"]
+    asr=data["blocked"]["ASR"]
+    assert asr["status"]=="DATA_CHECK"
+    assert "capital_strength" not in asr["missing_required_components"]
+    assert asr["weighted_component_coverage"]==0.55
+    assert "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE" in asr["warnings"]
 
 
 def test_current_pointer_is_reproducibility_backed():
