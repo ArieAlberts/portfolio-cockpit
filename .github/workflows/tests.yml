@@ -28,6 +28,8 @@ jobs:
           python scripts/update_peer_alignment.py --help >/dev/null
           cockpit-score --help >/dev/null
           cockpit-drift --help >/dev/null
+          cockpit-valuation --help >/dev/null
+          python scripts/make_input_templates.py --help >/dev/null
           python scripts/list_baseline_metrics.py --help >/dev/null
 
       - name: Rebuild score pipeline in dry-run mode

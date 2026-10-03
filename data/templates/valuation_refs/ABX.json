@@ -1,0 +1,78 @@
+{
+  "metrics": {
+    "forward_pe": {
+      "own_history": {
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "peers": {
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "pe": {
+      "own_history": {
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "peers": {
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "price_to_book": {
+      "own_history": {
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "peers": {
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    }
+  },
+  "schema_version": 1,
+  "ticker": "ABX"
+}

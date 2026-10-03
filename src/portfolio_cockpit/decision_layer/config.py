@@ -15,6 +15,8 @@ import yaml
 
 from portfolio_cockpit.config import load_config
 
+from .formulas import FORMULAS
+
 
 DECISION_CONFIG_FILES = {
     "quality_drift": "config/quality_drift.yaml",
@@ -238,7 +240,11 @@ def _validate_drift_profile(
                     )
 
 
-def _validate_valuation(valuation: dict[str, Any], errors: list[str]) -> None:
+def _validate_valuation(
+    valuation: dict[str, Any],
+    repo_cfg: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> None:
     _check_number(errors, "valuation.max_price_age_days", valuation.get("max_price_age_days"), lo=1)
     labels = valuation.get("labels") or {}
     _check_number(errors, "valuation.labels.attractive_min", labels.get("attractive_min"), lo=0, hi=100)
@@ -254,8 +260,58 @@ def _validate_valuation(valuation: dict[str, Any], errors: list[str]) -> None:
             errors.append("valuation.reference_weights must sum to 1.0")
     else:
         errors.append("valuation.reference_weights values must be numbers")
-    if not isinstance(valuation.get("profiles"), dict):
+    _check_number(
+        errors,
+        "valuation.minimum_metric_weight_coverage",
+        valuation.get("minimum_metric_weight_coverage"),
+        lo=0.0,
+        hi=1.0,
+    )
+
+    metrics = valuation.get("metrics")
+    if not isinstance(metrics, dict) or not metrics:
+        errors.append("valuation.metrics must be a non-empty mapping")
+        metrics = {}
+    for name, metric in metrics.items():
+        label = f"valuation.metrics.{name}"
+        if metric.get("formula") not in FORMULAS:
+            errors.append(f"{label}.formula must be one of the whitelisted FORMULAS")
+        if metric.get("cheaper_when") not in {"lower", "higher"}:
+            errors.append(f"{label}.cheaper_when must be lower or higher")
+        if not _is_number(metric.get("full_scale")) or metric["full_scale"] <= 0:
+            errors.append(f"{label}.full_scale must be > 0")
+        if not isinstance(metric.get("requires_positive_denominator"), bool):
+            errors.append(f"{label}.requires_positive_denominator must be a boolean")
+        if metric.get("cheaper_when") == "lower" and metric.get("requires_positive_denominator") is not True:
+            errors.append(f"{label}: multiples must require a positive denominator")
+
+    profiles = valuation.get("profiles")
+    if not isinstance(profiles, dict):
         errors.append("valuation.profiles must be a mapping")
+        return
+    company_types = set(repo_cfg["company_types"])
+    if set(profiles) != company_types:
+        errors.append(
+            "valuation.profiles must define exactly the company types in company_types.yaml: "
+            f"missing={sorted(company_types - set(profiles))} unknown={sorted(set(profiles) - company_types)}"
+        )
+    for company_type, profile in profiles.items():
+        label = f"valuation.profiles.{company_type}"
+        weights = profile.get("weights") or {}
+        not_applicable = profile.get("not_applicable")
+        if not isinstance(not_applicable, list):
+            errors.append(f"{label}.not_applicable must be a list")
+            not_applicable = []
+        if not weights or not all(_is_number(w) and w > 0 for w in weights.values()):
+            errors.append(f"{label}.weights must be positive numbers")
+        elif abs(sum(weights.values()) - 1.0) > 1e-9:
+            errors.append(f"{label}: weights sum to {sum(weights.values())}, not 1.0")
+        unknown = sorted((set(weights) | set(not_applicable)) - set(metrics))
+        if unknown:
+            errors.append(f"{label}: unknown metrics {unknown}")
+        overlap = sorted(set(weights) & set(not_applicable))
+        if overlap:
+            errors.append(f"{label}: {overlap} both weighted and NOT_APPLICABLE")
 
 
 def _validate_decision(
@@ -446,7 +502,7 @@ def validate_decision_config(
     tickers = set(repo_cfg["portfolio"]["positions"])
     _validate_schema_versions(cfg, errors)
     _validate_quality_drift(cfg["quality_drift"], repo_cfg, errors)
-    _validate_valuation(cfg["valuation"], errors)
+    _validate_valuation(cfg["valuation"], repo_cfg, errors)
     _validate_decision(cfg["decision"], repo_cfg, errors)
     _validate_risk_scenarios(cfg["risk_scenarios"], errors)
     _validate_positions(cfg["positions"], tickers, errors)

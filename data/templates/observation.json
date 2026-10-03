@@ -1,0 +1,25 @@
+{
+  "metrics": {
+    "<component>": {
+      "<metric_name_as_in_baseline>": {
+        "calculation_method": "reported",
+        "currency": null,
+        "period": null,
+        "period_basis": null,
+        "retrieved_at": null,
+        "source": {
+          "publication_date": null,
+          "report_id": null,
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    }
+  },
+  "observation_date": null,
+  "reporting_period_end": null,
+  "schema_version": 1,
+  "ticker": "<TICKER>"
+}
