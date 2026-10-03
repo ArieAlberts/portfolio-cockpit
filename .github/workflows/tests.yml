@@ -27,9 +27,12 @@ jobs:
           python scripts/create_fundamental_snapshot.py --help >/dev/null
           python scripts/update_peer_alignment.py --help >/dev/null
           cockpit-score --help >/dev/null
+          cockpit-anchors --help >/dev/null
 
-      - name: Rebuild score pipeline in dry-run mode
-        run: cockpit-score > /tmp/fundamental_quality.json
+      - name: Rebuild analytical pipelines in dry-run mode
+        run: |
+          cockpit-score > /tmp/fundamental_quality.json
+          cockpit-anchors > /tmp/absolute_anchors.json
 
       - name: Run deterministic offline tests
         run: pytest -q --tb=short
