@@ -4,12 +4,12 @@
   "collected_at": "2026-10-03",
   "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
   "strict_reference_period": "Q2_2026",
-  "peer_universe_status": "READY_FOR_MARGIN_AND_GROWTH_CORE_METRICS",
+  "peer_universe_status": "PARTIAL_CORE_COVERAGE_60_PERCENT",
   "rules": {
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
-    "minimum_peer_values_per_metric": 3,
-    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PARTIAL_60_PERCENT_COMPONENT_COVERAGE",
     "eligible_period_alignments": [
       "ALIGNED_Q2"
     ]
@@ -31,7 +31,8 @@
           "value": 56,
           "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
           "source_definition": "reported sales growth",
-          "score_eligible": true
+          "score_eligible": false,
+          "notes": "Reported growth includes a material acquisition contribution; organic growth is the preferred quality-growth signal."
         },
         "organic_revenue_growth_pct": {
           "value": 15,
@@ -47,10 +48,19 @@
         },
         "free_cash_flow_margin_pct": {
           "value": 7.566462,
-          "comparison_class": "Q2_FREE_CASH_FLOW_MARGIN",
-          "source_definition": "free cash flow / net sales",
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "company-defined free cash flow / net sales",
           "score_eligible": true,
-          "notes": "74 / 978 * 100"
+          "calculation": "74 / 978 * 100",
+          "definition_confidence": 100
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 27.027027,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted EPS Q2 YoY",
+          "calculation": "(0.47 / 0.37 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
         }
       }
     },
@@ -76,13 +86,30 @@
           "value": 28.4,
           "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
           "source_definition": "adjusted EBITDA margin",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 90
         },
         "adjusted_operating_margin_pct": {
           "value": 24.5,
           "comparison_class": "Q2_ADJUSTED_OPERATING_MARGIN",
           "source_definition": "adjusted operating margin",
           "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 13.620924,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "free cash flow / net sales; FCF equals operating cash flow less capital expenditures net of government incentives",
+          "calculation": "120.3 / 883.2 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 40.909091,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Diluted non-GAAP EPS Q2 YoY",
+          "calculation": "(0.93 / 0.66 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
         }
       }
     },
@@ -103,7 +130,24 @@
           "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
           "source_definition": "adjusted EBITDA / revenue",
           "score_eligible": true,
-          "notes": "358 / 1248 * 100"
+          "notes": "358 / 1248 * 100",
+          "definition_confidence": 90
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 15.064103,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "188 / 1248 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 43.478261,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Non-GAAP net earnings per diluted share Q2 YoY",
+          "calculation": "(3.30 / 2.30 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
         }
       }
     },
@@ -130,7 +174,16 @@
           "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
           "source_definition": "adjusted EBITDA / sales",
           "score_eligible": true,
-          "notes": "85.2 / 532.6 * 100"
+          "notes": "85.2 / 532.6 * 100",
+          "definition_confidence": 90
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 28.070175,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Non-GAAP earnings per diluted share Q2 YoY",
+          "calculation": "(2.19 / 1.71 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
         }
       }
     },
@@ -162,7 +215,25 @@
           "value": 24.6,
           "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
           "source_definition": "operating EBITDA margin",
-          "score_eligible": true
+          "score_eligible": true,
+          "definition_confidence": 90
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 17.922,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "transaction-adjusted free cash flow / net sales",
+          "calculation": "326 / 1819 * 100",
+          "score_eligible": true,
+          "definition_confidence": 80,
+          "notes": "DuPont's transaction-adjusted FCF is broader than a plain CFO-minus-capex definition; retained with a definition-confidence penalty."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 48.031496,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted EPS Q2 YoY",
+          "calculation": "(1.88 / 1.27 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
         }
       }
     },
@@ -183,13 +254,31 @@
           "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
           "source_definition": "adjusted EBITDA / sales",
           "score_eligible": true,
-          "notes": "109 / 497 * 100"
+          "notes": "109 / 497 * 100",
+          "definition_confidence": 90
         },
         "leverage_ratio": {
           "value": 2.4,
           "comparison_class": "NET_LEVERAGE",
           "source_definition": "reported leverage",
           "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 20.724346,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "ongoing free cash flow / sales",
+          "calculation": "103 / 497 * 100",
+          "score_eligible": true,
+          "definition_confidence": 75,
+          "notes": "Ashland's ongoing FCF contains company-specific adjustments; retained with a larger definition-confidence penalty."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -1.923077,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted diluted EPS excluding intangibles amortization Q2 YoY",
+          "calculation": "(1.02 / 1.04 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 85
         }
       }
     }

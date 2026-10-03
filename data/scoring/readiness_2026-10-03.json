@@ -39,7 +39,15 @@
       "target_data_confidence": 97,
       "peer_input_confidence": 97.5,
       "production_ready": false
+    },
+    "ESI": {
+      "weighted_component_coverage": 0.6,
+      "peer_component_coverage_pass": false,
+      "hard_blocked": false,
+      "target_data_confidence": 93.5,
+      "peer_input_confidence": 93.75,
+      "production_ready": false
     }
   },
-  "note": "ASR and PLMR currently pass every production display gate. WKL has improved to 50% weighted component coverage after adding a basis-consistent S&P Global H1 FCF margin, but remains below the 70% threshold."
+  "note": "ASR and PLMR currently pass every production display gate. WKL is at 50% weighted component coverage and ESI at 60%; both remain below the 70% threshold."
 }

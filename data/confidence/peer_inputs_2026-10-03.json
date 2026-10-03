@@ -119,7 +119,43 @@
       },
       "overall_score": 97.5,
       "status": "PARTIAL_OK_COMPONENT_COVERAGE_50_PERCENT"
+    },
+    "ESI": {
+      "adjusted_ebitda_margin_pct": {
+        "score": 97.5,
+        "peer_count": 5,
+        "peers": [
+          "ENTG",
+          "MKSI",
+          "KWR",
+          "DD",
+          "ASH"
+        ]
+      },
+      "free_cash_flow_margin_pct": {
+        "score": 93.75,
+        "peer_count": 4,
+        "peers": [
+          "ENTG",
+          "MKSI",
+          "DD",
+          "ASH"
+        ]
+      },
+      "adjusted_eps_growth_pct": {
+        "score": 96.25,
+        "peer_count": 5,
+        "peers": [
+          "ENTG",
+          "MKSI",
+          "KWR",
+          "DD",
+          "ASH"
+        ]
+      },
+      "overall_score": 93.75,
+      "status": "PARTIAL_OK_COMPONENT_COVERAGE_60_PERCENT"
     }
   },
-  "note": "ASR and PLMR pass peer-input confidence for display-ready scores. WKL now has high-confidence inputs for growth, EPS and FCF, but only 50% weighted component coverage, so no WKL quality score is published."
+  "note": "ASR and PLMR pass peer-input confidence for display-ready scores. WKL and ESI have high-confidence partial inputs but remain below the 70% weighted component-coverage gate."
 }
