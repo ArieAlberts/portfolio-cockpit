@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "target_ticker": "FUL",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q3_FY2026_VS_LATEST_PEER_PERIODS",
+  "peer_universe_status": "MIXED_FISCAL_PERIODS_BLOCK_STRICT_SCORE",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "FUL": {
+      "company": "H.B. Fuller Company",
+      "role": "TARGET",
+      "period": "Q3_FY2026",
+      "period_end": "2026-08-29",
+      "period_alignment": "TARGET_FISCAL_Q3",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "H.B. Fuller Reports Third Quarter 2026 Results",
+        "url": "https://newsroom.hbfuller.com/press-releases/press-release-details/2026/H-B--Fuller-Reports-Third-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 4.4,
+          "comparison_class": "LATEST_PERIOD_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 19.9,
+          "comparison_class": "LATEST_PERIOD_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 21,
+          "comparison_class": "LATEST_PERIOD_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "HEN3.DE": {
+      "company": "Henkel AG & Co. KGaA",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Henkel H1 2026 results",
+        "url": "https://www.henkel.com/investors-and-analysts"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 4.5,
+          "comparison_class": "LATEST_PERIOD_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "Adhesive Technologies organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_ebit_margin_pct": {
+          "value": 15.7,
+          "comparison_class": "LATEST_PERIOD_ADJUSTED_EBIT_MARGIN",
+          "source_definition": "Group adjusted EBIT margin",
+          "score_eligible": false
+        }
+      }
+    },
+    "SIKA.SW": {
+      "company": "Sika AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Sika H1 2026 results",
+        "url": "https://www.sika.com/en/investors/reports-publications.html"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 2.9,
+          "comparison_class": "LATEST_PERIOD_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic growth",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 19,
+          "comparison_class": "LATEST_PERIOD_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "EBITDA margin",
+          "score_eligible": false
+        }
+      }
+    },
+    "ARK.PA": {
+      "company": "Arkema S.A.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Arkema H1 2026 results",
+        "url": "https://www.arkema.com/global/en/investor-relations/"
+      },
+      "metrics": {}
+    },
+    "RPM": {
+      "company": "RPM International Inc.",
+      "role": "PEER",
+      "period": "Q1_FY2027",
+      "period_end": "2026-08-31",
+      "period_alignment": "NEAR_TARGET_PERIOD_NOT_IDENTICAL",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "RPM fiscal 2027 first-quarter results",
+        "url": "https://www.rpminc.com/investors/"
+      },
+      "metrics": {}
+    },
+    "WCH.DE": {
+      "company": "Wacker Chemie AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Wacker H1 2026 results",
+        "url": "https://www.wacker.com/cms/en-us/about-wacker/investor-relations/overview.html"
+      },
+      "metrics": {}
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "target_ticker": "SNA",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_2026",
+  "peer_universe_status": "READY_FOR_ORGANIC_GROWTH_METRIC",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "SNA": {
+      "company": "Snap-on Incorporated",
+      "role": "TARGET",
+      "period": "Q2_2026",
+      "period_end": "2026-07-04",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING",
+        "title": "Snap-on Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/91440/000009144026000144/sna-20260704.htm"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 3,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 21.8,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "operating earnings before financial services / net sales",
+          "score_eligible": true
+        },
+        "eps_growth_pct": {
+          "value": 5.084746,
+          "comparison_class": "Q2_DILUTED_EPS_GROWTH",
+          "source_definition": "diluted EPS growth",
+          "score_eligible": true,
+          "notes": "4.96 / 4.72 - 1"
+        }
+      }
+    },
+    "SWK": {
+      "company": "Stanley Black & Decker, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-27",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Stanley Black & Decker Q2 2026 results",
+        "url": "https://ir.stanleyblackanddecker.com/"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 3,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "LECO": {
+      "company": "Lincoln Electric Holdings, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Lincoln Electric Reports Second Quarter 2026 Results",
+        "url": "https://ir.lincolnelectric.com/news/news-details/2026/Lincoln-Electric-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 10.1,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 18.4,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true
+        },
+        "eps_growth_pct": {
+          "value": 12.692308,
+          "comparison_class": "Q2_DILUTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": true,
+          "notes": "2.93 / 2.60 - 1"
+        }
+      }
+    },
+    "ITW": {
+      "company": "Illinois Tool Works Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "ITW Reports Second Quarter 2026 Results",
+        "url": "https://investor.itw.com/news-and-events/news/news-details/2026/ITW-Reports-Second-Quarter-2026-Results-and-Raises-Full-Year-2026-Guidance/default.aspx"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 4.5,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 26.7,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating margin",
+          "score_eligible": true
+        },
+        "eps_growth_pct": {
+          "value": 10.1,
+          "comparison_class": "Q2_DILUTED_EPS_GROWTH",
+          "source_definition": "GAAP EPS growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "ESAB": {
+      "company": "ESAB Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "ESAB Corporation Announces Second Quarter 2026 Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1877322/000187732226000055/q22026earningspressrelease.htm"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 2.5,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "core organic sales growth",
+          "score_eligible": true
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 19.5,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "core adjusted EBITDA margin",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -1,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "core adjusted EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "DOV": {
+      "company": "Dover Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Dover Q2 2026 results",
+        "url": "https://www.sec.gov/Archives/edgar/data/29905/000002990526000026/a202607238-kexhibit991pr.htm"
+      },
+      "metrics": {
+        "organic_revenue_growth_pct": {
+          "value": 4.8,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 12,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS growth",
+          "score_eligible": false
+        }
+      }
+    }
+  }
+}

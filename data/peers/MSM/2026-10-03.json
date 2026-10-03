@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "target_ticker": "MSM",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "LATEST_QUARTER_AROUND_2026_06",
+  "peer_universe_status": "MIXED_FISCAL_PERIODS_CONTEXT_ONLY",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "MSM": {
+      "company": "MSC Industrial Direct Co., Inc.",
+      "role": "TARGET",
+      "period": "Q3_FY2026",
+      "period_end": "2026-05-30",
+      "period_alignment": "TARGET_FISCAL_Q3",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "MSC Industrial Supply Fiscal 2026 Third Quarter Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1003078/000100307826000078/pressreleaseq3fy2607012026.htm"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 7.8,
+          "comparison_class": "LATEST_QUARTER_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": false
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 10.6,
+          "comparison_class": "LATEST_QUARTER_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": false
+        },
+        "adjusted_eps": {
+          "value": 1.43,
+          "comparison_class": "LATEST_QUARTER_ADJUSTED_EPS",
+          "source_definition": "adjusted diluted EPS",
+          "score_eligible": false
+        }
+      }
+    },
+    "GWW": {
+      "company": "W.W. Grainger, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NEARBY_QUARTER_NOT_EXACT",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Grainger Q2 2026 results",
+        "url": "https://invest.grainger.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 10.3,
+          "comparison_class": "LATEST_QUARTER_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": false
+        },
+        "operating_margin_pct": {
+          "value": 16.1,
+          "comparison_class": "LATEST_QUARTER_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": false
+        },
+        "eps_growth_pct": {
+          "value": 20.5,
+          "comparison_class": "LATEST_QUARTER_EPS_GROWTH",
+          "source_definition": "EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "FAST": {
+      "company": "Fastenal Company",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NEARBY_QUARTER_NOT_EXACT",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Fastenal Q2 2026 results",
+        "url": "https://investor.fastenal.com/"
+      },
+      "metrics": {
+        "operating_margin_pct": {
+          "value": 21,
+          "comparison_class": "LATEST_QUARTER_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": false
+        }
+      }
+    },
+    "WCC": {
+      "company": "WESCO International, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NEARBY_QUARTER_NOT_EXACT",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "WESCO Q2 2026 results",
+        "url": "https://investors.wesco.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 13,
+          "comparison_class": "LATEST_QUARTER_REVENUE_GROWTH",
+          "source_definition": "reported sales growth",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 7.3,
+          "comparison_class": "LATEST_QUARTER_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 34.8,
+          "comparison_class": "LATEST_QUARTER_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "AIT": {
+      "company": "Applied Industrial Technologies, Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "FY_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_FULL_YEAR",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Applied Industrial Technologies fiscal 2026 results",
+        "url": "https://ir.applied.com/"
+      },
+      "metrics": {}
+    },
+    "CNM": {
+      "company": "Core & Main, Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-02",
+      "period_alignment": "NON_ALIGNED_LATER_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Core & Main Q2 fiscal 2026 results",
+        "url": "https://ir.coreandmain.com/"
+      },
+      "metrics": {}
+    }
+  }
+}

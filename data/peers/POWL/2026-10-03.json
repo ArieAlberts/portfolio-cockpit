@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "target_ticker": "POWL",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_CALENDAR_2026",
+  "peer_universe_status": "READY_FOR_REVENUE_AND_GROWTH_CONTEXT",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "POWL": {
+      "company": "Powell Industries, Inc.",
+      "role": "TARGET",
+      "period": "Q3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Powell Industries Q3 Fiscal 2026 Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000103/ex991-powlq3xfy2026earning.htm"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 9,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "gross_margin_pct": {
+          "value": 30.6,
+          "comparison_class": "Q2_GROSS_MARGIN",
+          "source_definition": "gross margin",
+          "score_eligible": true
+        },
+        "backlog_growth_pct": {
+          "value": 35,
+          "comparison_class": "BACKLOG_GROWTH",
+          "source_definition": "backlog growth versus March 2026",
+          "score_eligible": false
+        }
+      }
+    },
+    "NVT": {
+      "company": "nVent Electric plc",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "nVent Q2 2026 results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051203/q22026nvtpressrelease.htm"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 53,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 47,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 69,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "HUBB": {
+      "company": "Hubbell Incorporated",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Hubbell Reports Second Quarter 2026 Results",
+        "url": "https://hubbell.gcs-web.com/news-releases/news-release-details/hubbell-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 15,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 10,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 23.9,
+          "comparison_class": "Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 12,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "RRX": {
+      "company": "Regal Rexnord Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Regal Rexnord Q2 2026 results",
+        "url": "https://investors.regalrexnord.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 4.2,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3.3,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 23.5,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false
+        }
+      }
+    },
+    "ETN": {
+      "company": "Eaton Corporation plc",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Eaton Reports Record Second Quarter 2026 Results",
+        "url": "https://www.eaton.com/cr/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html"
+      },
+      "metrics": {
+        "operating_margin_pct": {
+          "value": 19.8,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "total company operating margin",
+          "score_eligible": false
+        },
+        "orders_growth_pct": {
+          "value": 33,
+          "comparison_class": "ROLLING_12M_ORDERS_GROWTH",
+          "source_definition": "Electrical rolling 12-month orders organic growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "GNRC": {
+      "company": "Generac Holdings Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Generac Q2 2026 results",
+        "url": "https://investors.generac.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 11,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 5.376068,
+          "comparison_class": "Q2_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / sales",
+          "score_eligible": false,
+          "notes": "62.9 / 1170 * 100"
+        }
+      }
+    }
+  }
+}
