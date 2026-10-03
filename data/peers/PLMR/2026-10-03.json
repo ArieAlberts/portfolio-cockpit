@@ -82,7 +82,7 @@
           "value": 28.729282,
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Diluted adjusted EPS H1 YoY",
-          "calculation": "4.66 / 3.62 - 1",
+          "calculation": "(4.66 / 3.62 - 1) * 100",
           "score_eligible": true
         },
         "annualized_roe_pct": {
@@ -141,7 +141,7 @@
           "value": 25.32391,
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Diluted operating EPS H1 YoY",
-          "calculation": "10.64 / 8.49 - 1",
+          "calculation": "(10.64 / 8.49 - 1) * 100",
           "score_eligible": true
         },
         "annualized_roe_pct": {
@@ -203,7 +203,7 @@
           "value": 43.258427,
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Diluted operating EPS H1 YoY",
-          "calculation": "2.55 / 1.78 - 1",
+          "calculation": "(2.55 / 1.78 - 1) * 100",
           "score_eligible": true
         },
         "annualized_roe_pct": {
@@ -265,7 +265,7 @@
           "value": 27.165354,
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Diluted EPS H1 YoY",
-          "calculation": "3.23 / 2.54 - 1",
+          "calculation": "(3.23 / 2.54 - 1) * 100",
           "score_eligible": true,
           "notes": "GAAP EPS rather than adjusted operating EPS."
         },
@@ -325,7 +325,7 @@
           "value": -2.339181,
           "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
           "source_definition": "Operating EPS H1 YoY",
-          "calculation": "1.67 / 1.71 - 1",
+          "calculation": "(1.67 / 1.71 - 1) * 100",
           "score_eligible": true
         },
         "gaap_eps_growth_pct": {
