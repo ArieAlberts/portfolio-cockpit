@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "target_ticker": "WSM",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_FY2026_NEAR_CALENDAR_Q2",
+  "peer_universe_status": "LIMITED_COMPARABLE_RETAIL_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_RETAIL_Q2"
+    ]
+  },
+  "companies": {
+    "WSM": {
+      "company": "Williams-Sonoma, Inc.",
+      "role": "TARGET",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-02",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Williams-Sonoma second quarter 2026 results",
+        "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/ex991fy2026q2earnings.htm"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 6.2,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable brand revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 17.3,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "non-GAAP operating margin",
+          "score_eligible": true
+        },
+        "reported_revenue_growth_pct": {
+          "value": 6.7,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "total revenue growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "ARHS": {
+      "company": "Arhaus, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Arhaus Reports Second Quarter 2026 Financial Results",
+        "url": "https://ir.arhaus.com/news-releases/news-release-details/arhaus-reports-second-quarter-2026-financial-results"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 4,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable delivered sales growth",
+          "score_eligible": true
+        },
+        "normalized_adjusted_ebitda_margin_pct": {
+          "value": 14.3,
+          "comparison_class": "RETAIL_Q2_NORMALIZED_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "normalized adjusted EBITDA margin excluding discrete tariff recovery",
+          "score_eligible": false
+        },
+        "reported_revenue_growth_pct": {
+          "value": 7.4,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net revenue growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "RH": {
+      "company": "RH",
+      "role": "PEER",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-01",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "RH Second Quarter Fiscal 2026 results",
+        "url": "https://ir.rh.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 2.6,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "normalized_adjusted_operating_margin_pct": {
+          "value": 13.4,
+          "comparison_class": "RETAIL_Q2_NORMALIZED_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "normalized adjusted operating margin after tariff-benefit adjustment",
+          "score_eligible": false
+        }
+      }
+    },
+    "LZB": {
+      "company": "La-Z-Boy Incorporated",
+      "role": "PEER",
+      "period": "Q1_FY2027",
+      "period_end": "2026-07-25",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "La-Z-Boy Fiscal 2027 First Quarter Results",
+        "url": "https://ir.la-z-boy.com/2026-08-18-La-Z-Boy-Incorporated-Reports-First-Quarter-Results-Retail-Momentum-With-Positive-Written-Same-Store-Sales"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 3,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "Retail written same-store sales growth",
+          "score_eligible": true,
+          "notes": "Different fulfillment basis from WSM comparable brand revenue."
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 3.9,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "consolidated adjusted operating margin",
+          "score_eligible": true
+        },
+        "reported_revenue_growth_pct": {
+          "value": -3,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "consolidated sales growth including divestiture effect",
+          "score_eligible": true
+        }
+      }
+    },
+    "ETD": {
+      "company": "Ethan Allen Interiors Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q4_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_FISCAL_Q4",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Ethan Allen Fiscal 2026 Fourth Quarter Results",
+        "url": "https://ir.ethanallen.com/sec-filings/all-sec-filings/content/0001437749-26-024880/ex_994023.htm"
+      },
+      "metrics": {}
+    },
+    "W": {
+      "company": "Wayfair Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RETAIL_Q2_BROAD_ONLINE",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Wayfair Q2 2026 results",
+        "url": "https://investor.wayfair.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 7.5,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": false,
+          "notes": "Online-only model is broader/different."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ROR.L",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "ROR.L": {
+      "company": "Rotork plc",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "2026 interim results presentation",
+        "url": "https://media.rotork.com/api/public/content/pub082-421-halfyearresultspresentation2026-downloadoriginal-fc17eutq6u6csiedwzpw.pdf?v=1f354432"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 22.4,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 1.3,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic constant-currency revenue growth",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": 79,
+          "comparison_class": "H1_COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "cash conversion",
+          "score_eligible": false
+        },
+        "roce_pct": {
+          "value": 36.5,
+          "comparison_class": "H1_ROCE",
+          "source_definition": "return on capital employed",
+          "score_eligible": false
+        },
+        "net_cash": {
+          "value": 25,
+          "comparison_class": "NET_CASH_ABSOLUTE",
+          "source_definition": "closing net cash GBPm",
+          "score_eligible": false
+        }
+      }
+    },
+    "IMI.L": {
+      "company": "IMI plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "IMI 2026 Half Year Results",
+        "url": "https://www.imiplc.com/investors/results-reports-and-presentations"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 18.7,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 13,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.2,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": false
+        }
+      }
+    },
+    "SPX.L": {
+      "company": "Spirax Group plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Spirax Group 2026 Half Year Results",
+        "url": "https://www.spiraxgroup.com/en/investors/results-reports-and-presentations"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 19.8,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit margin",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 9,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted basic EPS growth",
+          "score_eligible": false
+        },
+        "cash_conversion_pct": {
+          "value": 54,
+          "comparison_class": "H1_COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "adjusted cash conversion",
+          "score_eligible": false
+        }
+      }
+    },
+    "METSO.HE": {
+      "company": "Metso Oyj",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Metso Half-Year Report January-June 2026",
+        "url": "https://www.metso.com/corporate/investors/financials/interim-review/?r=3"
+      },
+      "metrics": {
+        "adjusted_ebita_margin_pct": {
+          "value": 16.4,
+          "comparison_class": "H1_ADJUSTED_EBITA_MARGIN",
+          "source_definition": "adjusted EBITA margin",
+          "score_eligible": false,
+          "notes": "Not forced equal to adjusted operating margin."
+        },
+        "reported_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": false
+        },
+        "eps_growth_pct": {
+          "value": 7.407407,
+          "comparison_class": "H1_EPS_GROWTH",
+          "source_definition": "EPS growth",
+          "score_eligible": false
+        },
+        "roce_pct": {
+          "value": 17.3,
+          "comparison_class": "H1_ROCE",
+          "source_definition": "ROCE before taxes",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.3,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": false
+        }
+      }
+    },
+    "FLS": {
+      "company": "Flowserve Corporation",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Flowserve Q2 2026 results",
+        "url": "https://ir.flowserve.com/"
+      },
+      "metrics": {}
+    },
+    "CR": {
+      "company": "Crane Company",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Crane Q2 2026 results",
+        "url": "https://www.craneco.com/investors"
+      },
+      "metrics": {}
+    }
+  }
+}

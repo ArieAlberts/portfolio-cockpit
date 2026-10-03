@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "target_ticker": "DKS",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_FY2026",
+  "peer_universe_status": "INSUFFICIENT_DIRECT_ALIGNED_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_RETAIL_Q2"
+    ]
+  },
+  "companies": {
+    "DKS": {
+      "company": "DICK'S Sporting Goods, Inc.",
+      "role": "TARGET",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-01",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "DICK'S Sporting Goods Reports Second Quarter Results",
+        "url": "https://investors.dicks.com/news/press-releases/news-details/2026/DICKS-Sporting-Goods-Inc--Reports-Second-Quarter-Results/default.aspx"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 4.9,
+          "comparison_class": "SPORTING_GOODS_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "DICK'S business comparable sales growth",
+          "score_eligible": true
+        },
+        "ytd_operating_margin_pct": {
+          "value": 8.3,
+          "comparison_class": "SPORTING_GOODS_H1_OPERATING_MARGIN",
+          "source_definition": "year-to-date operating margin",
+          "score_eligible": true
+        },
+        "weighted_average_share_change_pct": {
+          "value": 11.111111,
+          "comparison_class": "SPORTING_GOODS_H1_DILUTED_SHARE_CHANGE",
+          "source_definition": "YTD diluted weighted-average shares growth",
+          "score_eligible": true,
+          "notes": "90 / 81 - 1; acquisition-related dilution makes interpretation important"
+        }
+      }
+    },
+    "ASO": {
+      "company": "Academy Sports + Outdoors, Inc.",
+      "role": "DIRECT_PEER",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-01",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Academy Sports + Outdoors Reports Second Quarter Fiscal 2026 Results",
+        "url": "https://investors.academy.com/news-releases/news-release-details/academy-sports-outdoors-reports-second-quarter-fiscal-2026"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": -0.4,
+          "comparison_class": "SPORTING_GOODS_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable sales growth",
+          "score_eligible": true
+        },
+        "q2_operating_margin_pct": {
+          "value": 15,
+          "comparison_class": "SPORTING_GOODS_Q2_OPERATING_MARGIN",
+          "source_definition": "operating income / sales",
+          "score_eligible": false
+        },
+        "ytd_adjusted_eps_growth_pct": {
+          "value": 18.959108,
+          "comparison_class": "SPORTING_GOODS_H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "YTD adjusted EPS growth",
+          "score_eligible": false,
+          "notes": "3.20 / 2.69 - 1"
+        }
+      }
+    },
+    "JD.L": {
+      "company": "JD Sports Fashion plc",
+      "role": "PEER",
+      "period": "H1_FY2027",
+      "period_end": null,
+      "period_alignment": "DATA_PENDING",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "JD Sports investor results",
+        "url": "https://www.jdplc.com/investors/results-reports-and-presentations"
+      },
+      "metrics": {}
+    },
+    "BGFV": {
+      "company": "Big 5 Sporting Goods Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": null,
+      "period_alignment": "DATA_PENDING",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Big 5 investor relations",
+        "url": "https://www.big5sportinggoods.com/store/company/investorRelations"
+      },
+      "metrics": {}
+    }
+  }
+}

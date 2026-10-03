@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "target_ticker": "CRDA.L",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "INSUFFICIENT_STRICT_ALIGNED_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "CRDA.L": {
+      "company": "Croda International Plc",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Half Year Results Announcement 2026",
+        "url": "https://www.croda.com/en-gb/media-hub/news/general/2026-half-year-results"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 23.6,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4.6,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 4.349801,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / sales",
+          "score_eligible": true,
+          "notes": "38.3 / 880.5 * 100"
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 17.7,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true
+        },
+        "net_debt": {
+          "value": 577.9,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net debt GBPm",
+          "score_eligible": false
+        }
+      }
+    },
+    "CLN.SW": {
+      "company": "Clariant AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Clariant H1 2026 results",
+        "url": "https://www.clariant.com/en/Corporate/News/2026/07/Clariant-reports-H1-2026-results"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 17.8,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "EBITDA margin before exceptional items",
+          "score_eligible": true
+        },
+        "free_cash_flow_conversion_pct": {
+          "value": 52,
+          "comparison_class": "LTM_FREE_CASH_FLOW_CONVERSION",
+          "source_definition": "last-twelve-month free cash flow conversion",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.2,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": false
+        }
+      }
+    },
+    "SY1.DE": {
+      "company": "Symrise AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Symrise H1 2026 results",
+        "url": "https://www.symrise.com/newsroom/article/symrise-continues-profitable-growth-in-first-half-of-2026/"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 21.8,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 2,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true
+        },
+        "business_free_cash_flow_margin_pct": {
+          "value": 13.7,
+          "comparison_class": "H1_BUSINESS_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "business free cash flow margin",
+          "score_eligible": false,
+          "notes": "Definition differs from Croda free cash flow."
+        }
+      }
+    },
+    "EVK.DE": {
+      "company": "Evonik Industries AG",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Evonik Q2 2026 results",
+        "url": "https://corporate.evonik.com/en/investor-relations"
+      },
+      "metrics": {}
+    },
+    "ASH": {
+      "company": "Ashland Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_FISCAL_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Ashland quarter ended June 30 2026",
+        "url": "https://investor.ashland.com/"
+      },
+      "metrics": {}
+    },
+    "IFF": {
+      "company": "International Flavors & Fragrances Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "IFF Q2 2026 results",
+        "url": "https://ir.iff.com/"
+      },
+      "metrics": {}
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "target_ticker": "EMN",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_2026",
+  "peer_universe_status": "READY_FOR_QUARTERLY_CORE_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "EMN": {
+      "company": "Eastman Chemical Company",
+      "role": "TARGET",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Eastman Announces Second-Quarter 2026 Financial Results",
+        "url": "https://www.eastman.com/en/media-center/news-stories/2026/eastman-announces-second-quarter-2026-financial-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 9.882816,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales revenue growth",
+          "score_eligible": true,
+          "notes": "2513 / 2287 - 1"
+        },
+        "adjusted_ebit_margin_pct": {
+          "value": 12.733784,
+          "comparison_class": "Q2_ADJUSTED_EBIT_MARGIN",
+          "source_definition": "adjusted EBIT / sales",
+          "score_eligible": true,
+          "notes": "320 / 2513 * 100"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 23.125,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS growth",
+          "score_eligible": true,
+          "notes": "1.97 / 1.60 - 1"
+        },
+        "operating_cash_flow_margin_pct": {
+          "value": 8.91365,
+          "comparison_class": "Q2_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "operating cash flow / sales",
+          "score_eligible": true,
+          "notes": "224 / 2513 * 100"
+        }
+      }
+    },
+    "CE": {
+      "company": "Celanese Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Celanese Q2 2026 results",
+        "url": "https://www.celanese.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 8.688784,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": true,
+          "notes": "2752 / 2532 - 1"
+        },
+        "adjusted_ebit_margin_pct": {
+          "value": 17.078488,
+          "comparison_class": "Q2_ADJUSTED_EBIT_MARGIN",
+          "source_definition": "adjusted EBIT / sales",
+          "score_eligible": true,
+          "notes": "470 / 2752 * 100"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 71.328671,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": true,
+          "notes": "2.45 / 1.43 - 1"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 5.087209,
+          "comparison_class": "Q2_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / sales",
+          "score_eligible": false,
+          "notes": "140 / 2752 * 100"
+        }
+      }
+    },
+    "HUN": {
+      "company": "Huntsman Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Huntsman Announces Second Quarter 2026 Earnings",
+        "url": "https://www.huntsman.com/investors/newsroom/news-releases/detail/629/huntsman-announces-second-quarter-2026-earnings"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 10.866667,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true,
+          "notes": "1663 / 1500 - 1; prior revenue rounded by company overview"
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 7.215875,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / revenue",
+          "score_eligible": false,
+          "notes": "120 / 1663 * 100"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": null,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS moved from loss to zero",
+          "score_eligible": false
+        }
+      }
+    },
+    "WLK": {
+      "company": "Westlake Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Westlake Corporation Reports Second Quarter 2026 Results",
+        "url": "https://investors.westlake.com/news-releases/news-release-details/westlake-corporation-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 10.76871,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net external sales growth",
+          "score_eligible": true,
+          "notes": "3271 / 2953 - 1"
+        },
+        "ebitda_margin_pct": {
+          "value": 20.758178,
+          "comparison_class": "Q2_EBITDA_MARGIN",
+          "source_definition": "EBITDA / net external sales",
+          "score_eligible": false,
+          "notes": "679 / 3271 * 100"
+        },
+        "operating_margin_pct": {
+          "value": 11,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": false
+        }
+      }
+    },
+    "DD": {
+      "company": "DuPont de Nemours, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "DuPont Reports Second Quarter 2026 Results",
+        "url": "https://www.investors.dupont.com/news-and-media/press-release-details/2026/DuPont-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 24.6,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "operating EBITDA margin",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 48.031496,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": true,
+          "notes": "1.88 / 1.27 - 1"
+        }
+      }
+    },
+    "ALB": {
+      "company": "Albemarle Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Albemarle Reports Second Quarter 2026 Results",
+        "url": "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 31.1,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": true
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 49.22335,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / sales",
+          "score_eligible": false,
+          "notes": "858.097 / 1743.313 * 100"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": null,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS comparison not meaningful due prior near-zero base",
+          "score_eligible": false
+        }
+      }
+    }
+  }
+}

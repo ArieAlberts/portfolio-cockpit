@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "target_ticker": "TXRH",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "READY_FOR_SAME_STORE_SALES_METRIC",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_RESTAURANT_H1"
+    ]
+  },
+  "companies": {
+    "TXRH": {
+      "company": "Texas Roadhouse, Inc.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RESTAURANT_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Texas Roadhouse Second Quarter 2026 Results",
+        "url": "https://investor.texasroadhouse.com/news/news-details/2026/Texas-Roadhouse-Inc--Announces-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 6.7,
+          "comparison_class": "RESTAURANT_H1_COMPARABLE_SALES_GROWTH",
+          "source_definition": "company restaurant comparable sales growth H1",
+          "score_eligible": true
+        },
+        "restaurant_margin_pct": {
+          "value": 16.4,
+          "comparison_class": "RESTAURANT_H1_RESTAURANT_MARGIN",
+          "source_definition": "restaurant margin",
+          "score_eligible": true
+        },
+        "revenue_growth_pct": {
+          "value": 11.9,
+          "comparison_class": "RESTAURANT_H1_REVENUE_GROWTH",
+          "source_definition": "H1 revenue growth",
+          "score_eligible": true
+        },
+        "eps_growth_pct": {
+          "value": 4.2,
+          "comparison_class": "RESTAURANT_H1_EPS_GROWTH",
+          "source_definition": "H1 diluted EPS growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "BJRI": {
+      "company": "BJ's Restaurants, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RESTAURANT_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "BJ's Restaurants Q2 2026 results",
+        "url": "https://investors.bjsrestaurants.com/"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 4.5,
+          "comparison_class": "RESTAURANT_H1_COMPARABLE_SALES_GROWTH",
+          "source_definition": "H1 comparable restaurant sales growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "CAKE": {
+      "company": "The Cheesecake Factory Incorporated",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RESTAURANT_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Cheesecake Factory Q2 2026 results",
+        "url": "https://investors.thecheesecakefactory.com/"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 3.7,
+          "comparison_class": "RESTAURANT_H1_COMPARABLE_SALES_GROWTH",
+          "source_definition": "H1 Cheesecake Factory comparable sales growth",
+          "score_eligible": true
+        }
+      }
+    },
+    "BLMN": {
+      "company": "Bloomin' Brands, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-28",
+      "period_alignment": "ALIGNED_RESTAURANT_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Bloomin’ Brands 2026 Q2 Financial Results",
+        "url": "https://bloominbrands.gcs-web.com/news-releases/news-release-details/bloomin-brands-announces-2026-q2-financial-results"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 3.4,
+          "comparison_class": "RESTAURANT_H1_COMPARABLE_SALES_GROWTH",
+          "source_definition": "Combined U.S. H1 comparable restaurant sales growth",
+          "score_eligible": true
+        },
+        "revenue_growth_pct": {
+          "value": 1.146325,
+          "comparison_class": "RESTAURANT_H1_REVENUE_GROWTH",
+          "source_definition": "H1 total revenue growth",
+          "score_eligible": true,
+          "notes": "2075.482 / 2051.960 - 1"
+        }
+      }
+    },
+    "DRI": {
+      "company": "Darden Restaurants, Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q1_FY2027",
+      "period_end": "2026-08-30",
+      "period_alignment": "NON_ALIGNED_NEXT_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Darden Fiscal 2027 First Quarter Results",
+        "url": "https://investor.darden.com/news/news-details/2026/Darden-Restaurants-Reports-Fiscal-2027-First-Quarter-Results-Declares-Quarterly-Dividend-and-Reaffirms-Fiscal-2027-Outlook/default.aspx"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 3.2,
+          "comparison_class": "RESTAURANT_Q1_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable-calendar same-restaurant sales",
+          "score_eligible": false
+        }
+      }
+    },
+    "EAT": {
+      "company": "Brinker International, Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q4_FY2026",
+      "period_end": "2026-06-24",
+      "period_alignment": "NON_ALIGNED_FISCAL_Q4",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Brinker fiscal 2026 results",
+        "url": "https://investors.brinker.com/"
+      },
+      "metrics": {}
+    }
+  }
+}
