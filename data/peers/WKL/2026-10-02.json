@@ -432,5 +432,6 @@
         }
       }
     }
-  }
+  },
+  "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE"
 }

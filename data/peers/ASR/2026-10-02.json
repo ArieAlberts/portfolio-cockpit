@@ -337,5 +337,6 @@
         }
       }
     }
-  }
+  },
+  "peer_universe_status": "VALIDATED_CORE_INSURER_METRICS_WITH_SCOPE_GATES"
 }
