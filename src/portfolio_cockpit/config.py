@@ -40,6 +40,7 @@ def load_config(root: Path) -> dict[str, dict[str, Any]]:
         "readiness": _read_yaml(root / "config/readiness.yaml"),
         "scoring": _read_yaml(root / "config/scoring.yaml"),
         "score_metrics": _read_yaml(root / "config/score_metrics.yaml"),
+        "absolute_anchors": _read_yaml(root / "config/absolute_anchors.yaml"),
     }
     validate_config(config)
     return config
@@ -71,9 +72,14 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
     readiness = config["readiness"]
     scoring = config["scoring"]
     metric_cfg = config["score_metrics"]
+    anchor_cfg = config["absolute_anchors"]
 
     if metric_cfg.get("schema_version") != 2:
         errors.append("score_metrics.schema_version must be 2")
+    if anchor_cfg.get("schema_version") != 1:
+        errors.append("absolute_anchors.schema_version must be 1")
+    if anchor_cfg.get("score_effect") != "NONE":
+        errors.append("absolute_anchors.score_effect must be NONE")
 
     if "component_metric_aliases" in readiness:
         errors.append(
@@ -239,6 +245,49 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
             "fundamental_quality.minimum_component_metric_weight_coverage "
             "must be in (0, 1]"
         )
+
+    registered_metrics = set(kinds)
+    valid_anchor_operators = {"lt", "le", "gt", "ge"}
+    for metric_name, anchor in anchor_cfg.get("anchors", {}).items():
+        if metric_name not in registered_metrics:
+            errors.append(f"absolute anchor references unknown metric {metric_name!r}")
+        operator = anchor.get("operator")
+        if operator not in valid_anchor_operators:
+            errors.append(
+                f"absolute anchor {metric_name}: invalid operator {operator!r}"
+            )
+        threshold = anchor.get("threshold")
+        if not isinstance(threshold, (int, float)):
+            errors.append(
+                f"absolute anchor {metric_name}: threshold must be numeric"
+            )
+        if not str(anchor.get("anchor_type", "")).strip():
+            errors.append(f"absolute anchor {metric_name}: missing anchor_type")
+        if not str(anchor.get("label_if_met", "")).strip():
+            errors.append(f"absolute anchor {metric_name}: missing label_if_met")
+        if not str(anchor.get("label_if_not_met", "")).strip():
+            errors.append(f"absolute anchor {metric_name}: missing label_if_not_met")
+        source = anchor.get("source")
+        if not isinstance(source, dict) or not source.get("authority") or not source.get("url"):
+            errors.append(
+                f"absolute anchor {metric_name}: source authority and url are required"
+            )
+        for company_type in anchor.get("applies_to", ()):
+            if company_type not in company_types:
+                errors.append(
+                    f"absolute anchor {metric_name}: unknown company type {company_type!r}"
+                )
+                continue
+            registered_for_type = {
+                metric
+                for aliases in aliases_by_type.get(company_type, {}).values()
+                for metric in aliases
+            }
+            if metric_name not in registered_for_type:
+                errors.append(
+                    f"absolute anchor {metric_name}: metric is not registered for "
+                    f"{company_type}"
+                )
 
     positions = portfolio.get("positions", {})
     if not positions:
