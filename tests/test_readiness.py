@@ -34,7 +34,7 @@ def run(ticker):
     )
 
 
-def test_asr_passes_peer_component_coverage_but_not_production_gate():
+def test_asr_passes_peer_component_coverage_but_not_production_gate_without_confidence():
     r = run("ASR")
     assert r.peer_coverage_pass is True
     assert r.weighted_component_coverage >= 0.70
@@ -48,10 +48,12 @@ def test_wkl_no_longer_passes_with_four_peer_minimum():
     assert r.weighted_component_coverage < 0.70
 
 
-def test_plmr_is_below_seventy_percent_after_four_peer_rule():
+def test_plmr_now_reaches_seventy_percent_peer_component_coverage():
     r = run("PLMR")
-    assert r.peer_coverage_pass is False
-    assert r.weighted_component_coverage < 0.70
+    assert r.peer_coverage_pass is True
+    assert r.weighted_component_coverage >= 0.70
+    assert r.production_ready is False
+    assert "DATA_CONFIDENCE_PENDING" in r.warnings
 
 
 def test_abx_is_hard_blocked():
