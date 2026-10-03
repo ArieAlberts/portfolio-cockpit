@@ -40,6 +40,7 @@ def load_config(root: Path) -> dict[str, dict[str, Any]]:
         "readiness": _read_yaml(root / "config/readiness.yaml"),
         "scoring": _read_yaml(root / "config/scoring.yaml"),
         "score_metrics": _read_yaml(root / "config/score_metrics.yaml"),
+        "peer_universes": _read_yaml(root / "config/peer_universes.yaml"),
     }
     validate_config(config)
     return config
@@ -71,6 +72,7 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
     readiness = config["readiness"]
     scoring = config["scoring"]
     metric_cfg = config["score_metrics"]
+    peer_universes = config["peer_universes"]
 
     if metric_cfg.get("schema_version") != 2:
         errors.append("score_metrics.schema_version must be 2")
@@ -84,6 +86,12 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
     fq = scoring.get("fundamental_quality", {})
     if fq.get("peer_method") != "clipped_mean_sample_std_zscore":
         errors.append("fundamental_quality.peer_method is unsupported")
+
+    peer_defaults = peer_universes.get("defaults", {})
+    if peer_defaults.get("method") != fq.get("peer_method"):
+        errors.append("peer_universes.defaults.method differs from scoring method")
+    if abs(float(peer_defaults.get("clip_z", 0)) - float(fq.get("clip_z_score", 0))) > 1e-12:
+        errors.append("peer_universes.defaults.clip_z differs from scoring clip_z")
 
     scoring_min_peers = int(fq.get("minimum_peer_values_per_metric", 0))
     readiness_min_peers = int(readiness.get("minimum_peer_values_per_metric", 0))
@@ -243,12 +251,35 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
     positions = portfolio.get("positions", {})
     if not positions:
         errors.append("portfolio.positions is empty")
+
+    universes = peer_universes.get("universes", {})
+    global_peer_minimum = int(peer_defaults.get("minimum_peer_count", scoring_min_peers))
+    if global_peer_minimum != scoring_min_peers:
+        errors.append("peer_universes default minimum differs from scoring minimum")
+
     for ticker, position in positions.items():
         company_type = position.get("company_type")
         if company_type not in company_types:
             errors.append(f"{ticker}: unknown company_type {company_type!r}")
         if company_type not in aliases_by_type:
             errors.append(f"{ticker}: no metric registry for {company_type!r}")
+        if ticker not in universes:
+            errors.append(f"{ticker}: missing peer universe")
+
+    for ticker, universe in universes.items():
+        status = str(universe.get("status", ""))
+        peers = list(universe.get("peers", ()))
+        declared_minimum = int(universe.get("minimum_peer_count", global_peer_minimum))
+        if declared_minimum < scoring_min_peers and status not in {"LIMITED", "INSUFFICIENT"}:
+            errors.append(
+                f"{ticker}: minimum_peer_count {declared_minimum} below production minimum "
+                f"{scoring_min_peers} without LIMITED/INSUFFICIENT status"
+            )
+        if status == "VALIDATE" and len(peers) < scoring_min_peers:
+            errors.append(
+                f"{ticker}: VALIDATE universe has only {len(peers)} peers; "
+                f"minimum is {scoring_min_peers}"
+            )
 
     if errors:
         raise ConfigValidationError(

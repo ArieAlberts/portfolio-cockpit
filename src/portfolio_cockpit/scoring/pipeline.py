@@ -29,6 +29,7 @@ CONFIG_FILES = (
     "config/readiness.yaml",
     "config/scoring.yaml",
     "config/score_metrics.yaml",
+    "config/peer_universes.yaml",
 )
 
 CODE_FILES = (
