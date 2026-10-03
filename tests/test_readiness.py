@@ -20,13 +20,14 @@ def run(ticker):
     portfolio=load_yaml("config/portfolio.yaml")
     types=load_yaml("config/company_types.yaml")
     cfg=load_yaml("config/readiness.yaml")
+    metric_cfg=load_yaml("config/score_metrics.yaml")
     company_type=portfolio["positions"][ticker]["company_type"]
     return evaluate_readiness(
         dataset=load_dataset(ticker),
         company_type=company_type,
         component_weights=types[company_type]["quality_components"],
         required_components=tuple(types[company_type]["required_components"]),
-        component_metric_aliases=cfg["component_metric_aliases"][company_type],
+        component_metric_aliases=metric_cfg["component_metric_aliases"][company_type],
         minimum_peer_values_per_metric=cfg["minimum_peer_values_per_metric"],
         minimum_weighted_component_coverage=cfg["minimum_weighted_component_coverage"],
         hard_block_status_contains=tuple(cfg["hard_block_status_contains"]),
