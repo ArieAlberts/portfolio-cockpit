@@ -11,6 +11,7 @@ fundamental_quality:
     method: leave_one_peer_out_per_metric
     diagnostic_minimum_peer_values: 3
     stable_band_width_points: 10.0
+    unstable_band_width_points: 25.0
     peer_sensitive_blocks_display_ready: true
     robust_method_reconsider_at_peer_count: 8
 
