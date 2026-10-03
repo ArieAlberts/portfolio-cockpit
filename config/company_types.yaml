@@ -40,6 +40,27 @@ INSURER:
     - premium_growth
     - share_count_change
 
+INSURER_US_P&C:
+  description: US property-and-casualty insurer; regulatory capital must use US statutory measures, not EU/UK solvency ratios.
+  quality_components:
+    capital_strength: 0.30
+    underwriting_quality: 0.25
+    profitability: 0.20
+    growth_stability: 0.10
+    value_per_share: 0.15
+  required_components:
+    - capital_strength
+    - underwriting_quality
+  preferred_metrics:
+    - rbc_ratio_pct
+    - net_written_premium_to_surplus_ratio
+    - combined_ratio
+    - loss_ratio
+    - annualized_roe
+    - gross_written_premium_growth
+    - earnings_per_share_growth
+    - share_count_change
+
 CYCLICAL_MINING:
   description: Commodity/cyclical producer.
   quality_components:
