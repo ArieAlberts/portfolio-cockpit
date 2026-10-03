@@ -112,11 +112,11 @@
       },
       "metrics": {
         "reported_revenue_growth_pct": {
-          "value": 10.866667,
+          "value": 14.060357,
           "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
           "source_definition": "revenue growth",
           "score_eligible": true,
-          "notes": "1663 / 1500 - 1; prior revenue rounded by company overview"
+          "notes": "1663 / 1458 - 1 = 14.060357%; prior-year Q2 2025 revenue is $1,458m in the official release."
         },
         "adjusted_ebitda_margin_pct": {
           "value": 7.215875,

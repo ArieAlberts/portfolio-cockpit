@@ -125,10 +125,11 @@
       },
       "metrics": {
         "combined_ratio_pct": {
-          "value": 89.5,
+          "value": 90,
           "comparison_class": "H1_COMBINED_RATIO",
-          "source_definition": "Combined ratio",
-          "score_eligible": true
+          "source_definition": "H1 total combined ratio",
+          "score_eligible": true,
+          "notes": "Official release headline 89.5% is the Q2 total combined ratio; H1 2026 total combined ratio is 90.0%."
         },
         "loss_ratio_pct": {
           "value": 61.9,
