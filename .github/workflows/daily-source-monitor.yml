@@ -15,7 +15,7 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,18 +31,21 @@ jobs:
       - name: Run structural tests
         run: pytest -q
 
-      - name: Poll official sources
+      - name: Poll target-company official sources
         run: python scripts/monitor_sources.py --fail-if-all-error
 
-      - name: Commit source-state changes
+      - name: Poll peer-company official sources
+        run: python scripts/monitor_peer_sources.py --fail-if-all-error
+
+      - name: Commit monitoring state and review events
         shell: bash
         run: |
-          if git diff --quiet -- data/monitoring data/source_events; then
-            echo "No source-state changes."
+          if git diff --quiet -- data/monitoring data/source_events data/peer_source_events; then
+            echo "No monitoring-state changes."
             exit 0
           fi
           git config user.name "portfolio-cockpit-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/monitoring data/source_events
-          git commit -m "chore: update monitored source state"
+          git add data/monitoring data/source_events data/peer_source_events
+          git commit -m "chore: update target and peer source state"
           git push origin HEAD:main

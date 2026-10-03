@@ -1,0 +1,36 @@
+schema_version: 1
+defaults:
+  timeout_seconds: 20
+  user_agent: "PortfolioCockpit/0.1 (+https://github.com/ArieAlberts/portfolio-cockpit)"
+  resolve_sec_tickers: true
+  first_observation_creates_event: false
+  peer_source_change_changes_score: false
+  live_execution_allowed: false
+
+# Overrides are only needed when SEC ticker resolution is unavailable and the
+# source stored in the peer dataset is not a durable discovery page.
+discovery_overrides:
+  RELX.L:
+    mode: HTML_PAGE
+    url: https://www.relx.com/investors/results
+    source_quality: HIGH
+  NN.AS:
+    mode: HTML_PAGE
+    url: https://www.nn-group.com/investors/financial-reports/
+    source_quality: HIGH
+  AGS.BR:
+    mode: HTML_PAGE
+    url: https://www.ageas.com/investors/results
+    source_quality: HIGH
+  SAMPO.HE:
+    mode: HTML_PAGE
+    url: https://www.sampo.com/investors/reports-and-presentations/
+    source_quality: HIGH
+  AV.L:
+    mode: HTML_PAGE
+    url: https://www.aviva.com/investors/results-reports-and-events/
+    source_quality: HIGH
+  ZURN.SW:
+    mode: HTML_PAGE
+    url: https://www.zurich.com/investor-relations/results-and-reports
+    source_quality: HIGH
