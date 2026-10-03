@@ -15,6 +15,7 @@ dependencies = [
 cockpit-score = "portfolio_cockpit.scoring.pipeline:main"
 cockpit-drift = "portfolio_cockpit.decision_layer.drift:main"
 cockpit-valuation = "portfolio_cockpit.decision_layer.valuation:main"
+cockpit-check-inputs = "portfolio_cockpit.decision_layer.inputs:main"
 
 [project.optional-dependencies]
 dev = [

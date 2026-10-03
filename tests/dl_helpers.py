@@ -119,3 +119,33 @@ def write_refs(root: Path, ticker: str, metrics: dict[str, Any]) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps({"schema_version": 1, "ticker": ticker, "metrics": metrics}, indent=2), encoding="utf-8")
     return path
+
+
+SECTORS = {
+    "ASR": "Financials", "ADM.L": "Financials", "PLMR": "Financials", "ABX": "Financials",
+    "ERO": "Materials", "CRDA.L": "Materials", "EMN": "Materials", "FUL": "Materials",
+    "IMCD": "Materials", "ESI": "Materials", "LEU": "Energy", "OKLO": "Utilities",
+    "TMDX": "Health Care", "WSM": "Consumer", "DKS": "Consumer", "TXRH": "Consumer",
+}
+
+
+def filled_owner_config(cfg: dict[str, Any], repo_cfg: dict[str, Any]) -> dict[str, Any]:
+    """Test-only filled copy of the owner templates: current weight = target weight."""
+    from copy import deepcopy
+
+    filled = deepcopy(cfg)
+    filled["positions"]["as_of"] = AS_OF
+    filled["positions"]["cash_weight_pct"] = float(repo_cfg["portfolio"]["cash_weight_pct"])
+    for ticker, item in filled["positions"]["positions"].items():
+        item["weight_pct"] = float(repo_cfg["portfolio"]["positions"][ticker]["weight_pct"])
+        item["sector"] = SECTORS.get(ticker, "Industrials")
+    for item in filled["thesis_status"]["positions"].values():
+        item.update(status="INTACT", as_of=AS_OF, note="test")
+    return filled
+
+
+def write_owner_config(root: Path, filled: dict[str, Any]) -> None:
+    import yaml
+
+    for name in ("positions", "thesis_status"):
+        (root / f"config/{name}.yaml").write_text(yaml.safe_dump(filled[name], sort_keys=False), encoding="utf-8")

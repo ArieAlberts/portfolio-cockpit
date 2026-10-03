@@ -29,6 +29,7 @@ jobs:
           cockpit-score --help >/dev/null
           cockpit-drift --help >/dev/null
           cockpit-valuation --help >/dev/null
+          cockpit-check-inputs --help >/dev/null
           python scripts/make_input_templates.py --help >/dev/null
           python scripts/list_baseline_metrics.py --help >/dev/null
 
