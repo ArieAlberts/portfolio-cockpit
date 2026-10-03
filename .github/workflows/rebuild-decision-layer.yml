@@ -1,0 +1,101 @@
+name: rebuild-decision-layer
+
+# Writes immutable Quality Drift, Valuation and Decision revisions when their
+# inputs change. Analytical only: nothing here can place, modify or cancel an order.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/rebuild-decision-layer.yml"
+      - "data/observations/**"
+      - "data/market/**"
+      - "data/valuation_refs/**"
+      - "config/quality_drift.yaml"
+      - "config/valuation.yaml"
+      - "config/decision.yaml"
+      - "config/risk_scenarios.yaml"
+      - "config/positions.yaml"
+      - "config/thesis_status.yaml"
+      - "src/portfolio_cockpit/decision_layer/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild-decision-layer
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - run: pip install -e ".[dev]"
+      - run: python -m compileall -q src scripts
+      - run: pytest -q --tb=short
+
+      - name: Report owner inputs
+        run: cockpit-check-inputs
+
+      - name: Build Quality Drift and Valuation revisions
+        run: |
+          cockpit-drift --write
+          cockpit-valuation --write
+
+      - name: Build decisions when owner inputs are complete
+        shell: bash
+        run: |
+          if python - <<'PY'
+          import sys
+          from pathlib import Path
+          from portfolio_cockpit.decision_layer.config import load_decision_config, missing_owner_inputs
+          missing = missing_owner_inputs(load_decision_config(Path(".")))
+          sys.exit(1 if missing["positions"] or missing["thesis_status"] else 0)
+          PY
+          then
+            cockpit-decide --write
+          else
+            echo "positions.yaml or thesis_status.yaml incomplete; decisions not built."
+          fi
+
+      - name: Verify generated pointers
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for rel, key in (("data/drift", "current_quality_drift"), ("data/valuation", "current_valuation"),
+                           ("data/decisions", "current_decisions")):
+              pointer = Path(rel) / "current.json"
+              if not pointer.is_file():
+                  continue
+              current = json.loads(pointer.read_text())
+              payload = json.loads(Path(current[key]).read_text())
+              assert current["reproducibility_hash"] == payload["reproducibility_hash"]
+              assert current["execution_effect"] == "NONE" and payload["execution_effect"] == "NONE"
+          PY
+
+      - name: Commit generated decision-layer state
+        if: github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          paths="data/drift data/valuation data/decisions data/signal_log"
+          if [ -z "$(git status --porcelain -- $paths)" ]; then
+            echo "Decision-layer state already reproducible; nothing to commit."
+            exit 0
+          fi
+          git config user.name "portfolio-cockpit-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add $paths
+          git commit -m "chore: rebuild decision-layer snapshots"
+          git pull --rebase origin main
+          git push origin HEAD:main
