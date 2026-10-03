@@ -24,6 +24,15 @@ CONFIG_FILES = (
     "config/score_metrics.yaml",
 )
 
+CODE_FILES = (
+    "src/portfolio_cockpit/scoring/pipeline.py",
+    "src/portfolio_cockpit/scoring/normalization.py",
+    "src/portfolio_cockpit/scoring/peer_data.py",
+    "src/portfolio_cockpit/scoring/peer_confidence.py",
+    "src/portfolio_cockpit/scoring/readiness.py",
+    "src/portfolio_cockpit/scoring/quality.py",
+)
+
 
 def _read_yaml(path: Path) -> dict[str, Any]:
     return yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -224,15 +233,27 @@ def build_score_snapshot(
     hard_tokens = list(readiness_cfg["hard_block_status_contains"])
 
     config_hash, config_hashes = _bundle_hash(root, CONFIG_FILES)
+    code_hash, code_hashes = _bundle_hash(root, CODE_FILES)
     code_version = code_version or _git_head(root)
 
     scores: dict[str, Any] = {}
     blocked: dict[str, Any] = {}
+    peer_dataset_hashes: dict[str, str] = {}
 
     for ticker, position in portfolio["positions"].items():
         dataset_relative = peer_index["datasets"][ticker]
         dataset_path = root / dataset_relative
         dataset = _read_json(dataset_path)
+        dataset_hash = _sha256(dataset_path)
+        peer_dataset_hashes[ticker] = dataset_hash
+        dataset_rules = dataset.get("rules", {})
+        dataset_min_peers = dataset_rules.get(
+            "minimum_peer_values_per_metric",
+            dataset_rules.get("min_peer_values_per_metric"),
+        )
+        dataset_rule_consistent = (
+            dataset_min_peers is None or int(dataset_min_peers) == minimum_peers
+        )
         company_type = position["company_type"]
         type_cfg = company_types[company_type]
         component_weights = {
@@ -314,11 +335,15 @@ def build_score_snapshot(
         warnings = list(readiness.warnings) + selection_warnings + peer_confidence_warnings
         if overlap_warning:
             warnings.append(overlap_warning["code"])
+        if not dataset_rule_consistent:
+            warnings.append(
+                f"DATASET_MIN_PEERS_MISMATCH:{dataset_min_peers}!={minimum_peers}"
+            )
 
         provenance = {
             "peer_dataset": {
                 "path": dataset_relative,
-                "sha256": _sha256(dataset_path),
+                "sha256": dataset_hash,
             },
             "target_confidence": {
                 "path": str(confidence_path.relative_to(root)),
@@ -332,6 +357,8 @@ def build_score_snapshot(
             "company_type": company_type,
             "peer_reference_period": dataset.get("strict_reference_period"),
             "peer_universe_status": dataset.get("peer_universe_status"),
+            "dataset_minimum_peer_values": dataset_min_peers,
+            "dataset_rule_consistent": dataset_rule_consistent,
             "weighted_component_coverage": readiness.weighted_component_coverage,
             "covered_components": list(readiness.covered_components),
             "missing_required_components": list(readiness.missing_required_components),
@@ -356,7 +383,7 @@ def build_score_snapshot(
                 "normalization_warnings": list(candidate.warnings),
             }
 
-        if readiness.production_ready and candidate is not None:
+        if readiness.production_ready and dataset_rule_consistent and candidate is not None:
             scores[ticker] = {
                 **base,
                 "status": "DISPLAY_READY",
@@ -370,36 +397,61 @@ def build_score_snapshot(
                 "production_ready": False,
             }
 
+    peer_index_hash = _sha256(peer_index_path)
+    confidence_hash = _sha256(confidence_path)
+    reproducibility_material = {
+        "pipeline_code_hash": code_hash,
+        "config_hash": config_hash,
+        "peer_index_hash": peer_index_hash,
+        "target_confidence_hash": confidence_hash,
+        "peer_dataset_hashes": peer_dataset_hashes,
+    }
+    reproducibility_hash = hashlib.sha256(
+        json.dumps(
+            reproducibility_material,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+    ).hexdigest()
+
     return {
-        "schema_version": 3,
-        "pipeline_version": 1,
+        "schema_version": 4,
+        "pipeline_version": 2,
         "as_of": confidence["as_of"],
+        "reproducibility_hash": reproducibility_hash,
         "methodology": {
             "peer_method": fq_cfg["peer_method"],
             "score_formula": fq_cfg["score_formula"],
             "minimum_peer_values_per_metric": minimum_peers,
             "minimum_weighted_component_coverage": minimum_coverage,
             "required_components_enforced": True,
+            "dataset_rule_consistency_required": True,
             "sensitivity_method": fq_cfg["sensitivity"]["method"],
             "stable_band_width_points": stable_width,
             "data_confidence_threshold": confidence_threshold,
             "peer_input_confidence_threshold": confidence_threshold,
         },
         "provenance": {
-            "code_version": code_version,
+            "run_git_commit": code_version,
+            "pipeline_code_hash": code_hash,
             "config_hash": config_hash,
+            "code_files": {
+                path: {"sha256": sha}
+                for path, sha in code_hashes.items()
+            },
             "config_files": {
                 path: {"sha256": sha}
                 for path, sha in config_hashes.items()
             },
             "peer_index": {
                 "path": "data/peers/index.json",
-                "sha256": _sha256(peer_index_path),
+                "sha256": peer_index_hash,
             },
             "target_confidence": {
                 "path": str(confidence_path.relative_to(root)),
-                "sha256": _sha256(confidence_path),
+                "sha256": confidence_hash,
             },
+            "peer_dataset_hashes": peer_dataset_hashes,
         },
         "summary": {
             "portfolio_companies": len(portfolio["positions"]),
@@ -430,6 +482,16 @@ def write_immutable_snapshot(
     as_of = payload["as_of"]
     body = _canonical_json(payload)
 
+    reproducibility_hash = payload.get("reproducibility_hash")
+    if reproducibility_hash:
+        for existing in sorted(output_dir.glob(f"fundamental_quality_{as_of}*.json")):
+            try:
+                existing_payload = json.loads(existing.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                continue
+            if existing_payload.get("reproducibility_hash") == reproducibility_hash:
+                return existing
+
     base = output_dir / f"fundamental_quality_{as_of}.json"
     candidates = [base]
     revision = 2
@@ -456,8 +518,10 @@ def update_current_pointer(
         "current_fundamental_quality": str(snapshot_path.relative_to(root)),
         "generated_by_pipeline": True,
         "pipeline_version": payload["pipeline_version"],
-        "code_version": payload["provenance"]["code_version"],
+        "run_git_commit": payload["provenance"]["run_git_commit"],
+        "pipeline_code_hash": payload["provenance"]["pipeline_code_hash"],
         "config_hash": payload["provenance"]["config_hash"],
+        "reproducibility_hash": payload["reproducibility_hash"],
         "execution_effect": "NONE",
     }
     path = root / "data/scoring/current.json"

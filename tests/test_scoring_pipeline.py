@@ -4,6 +4,7 @@ from pathlib import Path
 import yaml
 
 from portfolio_cockpit.scoring.pipeline import (
+    CODE_FILES,
     CONFIG_FILES,
     build_score_snapshot,
     write_immutable_snapshot,
@@ -20,9 +21,12 @@ def test_pipeline_is_deterministic_for_same_inputs():
 
 def test_pipeline_records_provenance_and_used_peer_tickers():
     payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
-    assert payload["provenance"]["code_version"]=="TEST-COMMIT"
+    assert payload["provenance"]["run_git_commit"]=="TEST-COMMIT"
+    assert len(payload["provenance"]["pipeline_code_hash"])==64
     assert len(payload["provenance"]["config_hash"])==64
+    assert len(payload["reproducibility_hash"])==64
     assert set(payload["provenance"]["config_files"])==set(CONFIG_FILES)
+    assert set(payload["provenance"]["code_files"])==set(CODE_FILES)
 
     plmr=payload["blocked"]["PLMR"]
     assert plmr["provenance"]["peer_dataset"]["path"].endswith("PLMR/2026-10-03.json")
@@ -65,3 +69,28 @@ def test_every_readiness_alias_has_an_explicit_direction():
         for aliases in components.values():
             for metric in aliases:
                 assert metric in directions[company_type], f"{company_type}:{metric}"
+
+
+def test_semantically_identical_snapshot_reuses_existing_file(tmp_path: Path):
+    first={
+        "as_of":"2026-10-03",
+        "reproducibility_hash":"a"*64,
+        "provenance":{"run_git_commit":"FIRST"},
+    }
+    second={
+        "as_of":"2026-10-03",
+        "reproducibility_hash":"a"*64,
+        "provenance":{"run_git_commit":"SECOND"},
+    }
+    p1=write_immutable_snapshot(root=ROOT,payload=first,output_dir=tmp_path)
+    p2=write_immutable_snapshot(root=ROOT,payload=second,output_dir=tmp_path)
+    assert p1==p2
+    assert "FIRST" in p1.read_text()
+    assert "SECOND" not in p1.read_text()
+
+
+def test_dataset_peer_minimum_mismatch_is_visible_and_blocks_publication():
+    payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
+    ero=payload["blocked"]["ERO"]
+    assert ero["dataset_rule_consistent"] is False
+    assert any(w.startswith("DATASET_MIN_PEERS_MISMATCH:3!=4") for w in ero["warnings"])

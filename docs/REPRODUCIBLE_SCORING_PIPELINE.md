@@ -92,3 +92,26 @@ The score pipeline has no brokerage adapter and every result contains:
 `execution_effect: NONE`
 
 Fundamental Quality remains analytical information only.
+
+
+## Semantic reproducibility hash
+
+Pipeline version 2 adds a `reproducibility_hash` based only on scoring-relevant inputs:
+
+- scoring source-code hashes;
+- config hashes;
+- peer-index hash;
+- target-confidence hash;
+- every portfolio peer-dataset hash.
+
+The runtime git commit is still recorded as provenance, but a bot-generated score commit does not create a new score revision merely because HEAD changed. If the reproducibility hash is unchanged, the existing immutable score snapshot is reused.
+
+## Dataset-rule consistency
+
+A peer dataset may still contain a historical local `minimum_peer_values_per_metric` setting. The pipeline compares that value with the canonical global production minimum.
+
+A mismatch is recorded as:
+
+`DATASET_MIN_PEERS_MISMATCH:<dataset>!=<global>`
+
+and blocks `DISPLAY_READY`. This prevents an older peer file from silently weakening the production gate.
