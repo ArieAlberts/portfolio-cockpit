@@ -13,6 +13,8 @@ dependencies = [
 
 [project.scripts]
 cockpit-score = "portfolio_cockpit.scoring.pipeline:main"
+cockpit-drift = "portfolio_cockpit.scoring.drift_pipeline:main"
+cockpit-decision = "portfolio_cockpit.scoring.decision_pipeline:main"
 
 [project.optional-dependencies]
 dev = [
