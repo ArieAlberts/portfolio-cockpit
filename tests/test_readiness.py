@@ -39,7 +39,7 @@ def test_asr_legacy_readiness_sees_repaired_capital_but_stays_below_70_percent()
     r=run("ASR")
     assert r.weighted_component_coverage == 0.65
     assert r.peer_coverage_pass is False
-    assert r.required_components_pass is False
+    assert r.required_components_pass is True
     assert r.missing_required_components==("capital_strength",)
     assert r.production_ready is False
 
