@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ADM.L",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized UK personal-lines insurer peer review. Dataset intentionally blocks Fundamental Quality scoring because the direct listed peer set is too small.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "ADM.L",
+    "SBRE.L",
+    "AV.L",
+    "SAGA.L"
+  ],
+  "peer_universe_status": "INSUFFICIENT_DIRECT_PEERS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_direct_peers": 3,
+    "final_score_status": "PEER_DATA_CHECK"
+  },
+  "companies": {
+    "ADM.L": {
+      "company": "Admiral Group plc",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Admiral Group 2026 Half-Year Financial Report",
+        "url": "https://www.admiralgroup.co.uk/news-releases/news-release-details/half-year-financial-report"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 190,
+          "comparison_class": "SOLVENCY_RATIO_POST_DISTRIBUTION",
+          "source_definition": "Group solvency ratio post-dividend and share buyback",
+          "score_eligible": true
+        },
+        "combined_ratio_pct": {
+          "value": 78.8,
+          "comparison_class": "UK_MOTOR_CORE_COMBINED_RATIO",
+          "source_definition": "Core UK Motor combined ratio",
+          "score_eligible": true
+        },
+        "roe_pct": {
+          "value": 45,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": "Group return on equity",
+          "score_eligible": false,
+          "notes": "Only one sufficiently comparable peer ROE is available."
+        },
+        "eps_growth_pct": {
+          "value": -17.735849,
+          "comparison_class": "DILUTED_EPS_GROWTH",
+          "source_definition": "EPS from continuing operations H1 YoY",
+          "calculation": "109.0 / 132.5 - 1",
+          "score_eligible": true
+        },
+        "premium_growth_pct": {
+          "value": -5,
+          "comparison_class": "PERSONAL_LINES_PREMIUM_GROWTH",
+          "source_definition": "UK Motor turnover growth",
+          "score_eligible": false,
+          "notes": "Turnover is not directly equivalent to GWP at all peers."
+        }
+      }
+    },
+    "SBRE.L": {
+      "company": "Sabre Insurance Group plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Sabre Insurance Group 2026 Half-Year Results",
+        "url": "https://sabreplc.co.uk/media/5fpdn1ew/sabre_insurance_hy_results_2026.pdf"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 161.4,
+          "comparison_class": "SOLVENCY_RATIO_POST_DISTRIBUTION",
+          "source_definition": "Post-dividend solvency coverage ratio",
+          "score_eligible": true
+        },
+        "combined_ratio_pct": {
+          "value": 85.6,
+          "comparison_class": "UK_MOTOR_CORE_COMBINED_RATIO",
+          "source_definition": "Undiscounted combined operating ratio",
+          "score_eligible": true,
+          "notes": "Closest listed underwriting comparator, though Sabre's product mix is narrower."
+        },
+        "roe_pct": {
+          "value": null,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "eps_growth_pct": {
+          "value": -4.370861,
+          "comparison_class": "DILUTED_EPS_GROWTH",
+          "source_definition": "Diluted EPS H1 YoY",
+          "calculation": "7.22 / 7.55 - 1",
+          "score_eligible": true
+        },
+        "premium_growth_pct": {
+          "value": 15.7,
+          "comparison_class": "PERSONAL_LINES_PREMIUM_GROWTH",
+          "source_definition": "Gross written premium growth",
+          "score_eligible": false
+        }
+      }
+    },
+    "AV.L": {
+      "company": "Aviva plc",
+      "role": "BROAD_PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Aviva Half Year Results 2026",
+        "url": "https://www.aviva.com/newsroom/news-and-research-overview/news-releases/2026/08/half-year-2026-results-announcement/"
+      },
+      "metrics": {
+        "solvency_ratio_pct": {
+          "value": 176,
+          "comparison_class": "SOLVENCY_RATIO_POST_DISTRIBUTION",
+          "source_definition": "Solvency II shareholder cover ratio",
+          "score_eligible": true,
+          "notes": "Broad diversified-insurer comparator rather than a direct Admiral peer."
+        },
+        "combined_ratio_pct": {
+          "value": 93.3,
+          "comparison_class": "UK_MOTOR_CORE_COMBINED_RATIO",
+          "source_definition": "Group General Insurance undiscounted COR",
+          "score_eligible": false,
+          "notes": "Scope is materially broader than UK motor; stored but blocked for strict metric scoring."
+        },
+        "roe_pct": {
+          "value": 20.3,
+          "comparison_class": "COMPANY_DEFINED_ROE",
+          "source_definition": "IFRS return on equity",
+          "score_eligible": false
+        },
+        "eps_growth_pct": {
+          "value": 10,
+          "comparison_class": "DILUTED_EPS_GROWTH",
+          "source_definition": "Operating EPS growth",
+          "score_eligible": false,
+          "notes": "Operating EPS is not directly equivalent to Admiral continuing-operations EPS."
+        },
+        "premium_growth_pct": {
+          "value": 29,
+          "comparison_class": "PERSONAL_LINES_PREMIUM_GROWTH",
+          "source_definition": "General Insurance GWP growth",
+          "score_eligible": false,
+          "notes": "Includes Direct Line acquisition and broader GI business."
+        }
+      }
+    },
+    "SAGA.L": {
+      "company": "Saga plc",
+      "role": "CONTEXT_ONLY",
+      "period": "H1_2026_27",
+      "period_end": "2026-07-31",
+      "period_alignment": "BUSINESS_MODEL_CHANGED",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Saga interim results for the six months ended 31 July 2026",
+        "url": "https://www.corporate.saga.co.uk/investors/results-reports-presentations/"
+      },
+      "metrics": {},
+      "score_eligible": false,
+      "exclusion_reason": "Saga sold its in-house underwriter AICL to Ageas on 1 July 2025; its current insurance model is not a directly comparable listed underwriting peer for Admiral."
+    }
+  }
+}

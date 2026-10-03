@@ -18,12 +18,13 @@ universes:
 
   ADM.L:
     label: UK personal-lines insurers
-    status: LIMITED
-    confidence: MEDIUM
-    peers: [SBRE.L, SAGA.L, AV.L]
+    status: INSUFFICIENT
+    confidence: LOW
+    peers: [SBRE.L, AV.L]
+    context_only: [SAGA.L]
     minimum_peer_count: 3
     comparable_metrics: [solvency_ratio, combined_ratio, roe, earnings_per_share_growth, dividend_per_share_growth]
-    note: Direct listed peers are scarce; use only the metric subset that is genuinely comparable.
+    note: Only Sabre is a close listed UK motor-underwriting peer. Aviva is a broad comparator after Direct Line integration. Saga sold its underwriting business and is context-only. Do not calculate a peer-normalized Fundamental Quality score yet.
 
   WKL:
     label: Professional information and analytics services

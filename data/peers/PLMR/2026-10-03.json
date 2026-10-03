@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "target_ticker": "PLMR",
+  "collected_at": "2026-10-03",
+  "purpose": "Standardized H1 2026 specialty P&C peer financial observations for Palomar Holdings.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "PLMR",
+    "KNSL",
+    "SKWD",
+    "HCI",
+    "HRTG",
+    "RLI"
+  ],
+  "peer_universe_status": "VALIDATED_FOR_CORE_UNDERWRITING_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 3,
+    "final_score_status": "PENDING_COMPONENT_WEIGHT_REVIEW"
+  },
+  "companies": {
+    "PLMR": {
+      "company": "Palomar Holdings, Inc.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Palomar Holdings Q2 2026 results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1761312/000119312526332846/plmr-ex99_1.htm"
+      },
+      "metrics": {
+        "combined_ratio_pct": {
+          "value": 83.8,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "source_definition": "Combined ratio",
+          "score_eligible": true
+        },
+        "loss_ratio_pct": {
+          "value": 33.9,
+          "comparison_class": "H1_LOSS_RATIO",
+          "source_definition": "Loss ratio",
+          "score_eligible": true
+        },
+        "operating_roe_pct": {
+          "value": 26.4,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_ROE",
+          "source_definition": "Annualized adjusted return on equity",
+          "score_eligible": true
+        },
+        "gross_written_premium_growth_pct": {
+          "value": 34.293922,
+          "comparison_class": "H1_GWP_GROWTH",
+          "source_definition": "Gross written premiums H1 YoY",
+          "calculation": "1260284 / 938452 - 1",
+          "score_eligible": true
+        },
+        "operating_eps_growth_pct": {
+          "value": 28.729282,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Diluted adjusted EPS H1 YoY",
+          "calculation": "4.66 / 3.62 - 1",
+          "score_eligible": true
+        }
+      }
+    },
+    "KNSL": {
+      "company": "Kinsale Capital Group, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Kinsale Capital Group Reports Second Quarter 2026 Results",
+        "url": "https://ir.kinsalecapitalgroup.com/news/news-details/2026/Kinsale-Capital-Group-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "combined_ratio_pct": {
+          "value": 76.4,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "source_definition": "Combined ratio",
+          "score_eligible": true
+        },
+        "loss_ratio_pct": {
+          "value": 55,
+          "comparison_class": "H1_LOSS_RATIO",
+          "source_definition": "Loss ratio",
+          "score_eligible": true
+        },
+        "operating_roe_pct": {
+          "value": 24.4,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_ROE",
+          "source_definition": "Annualized operating return on equity",
+          "score_eligible": true
+        },
+        "gross_written_premium_growth_pct": {
+          "value": -2.901624,
+          "comparison_class": "H1_GWP_GROWTH",
+          "source_definition": "Gross written premiums H1 YoY",
+          "calculation": "1009626 / 1039797 - 1",
+          "score_eligible": true
+        },
+        "operating_eps_growth_pct": {
+          "value": 25.32391,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Diluted operating EPS H1 YoY",
+          "calculation": "10.64 / 8.49 - 1",
+          "score_eligible": true
+        }
+      }
+    },
+    "SKWD": {
+      "company": "Skyward Specialty Insurance Group, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Skyward Group Reports Second Quarter 2026 Results",
+        "url": "https://investors.skywardinsurance.com/news-releases/news-release-details/skyward-group-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "combined_ratio_pct": {
+          "value": 89.5,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "source_definition": "Combined ratio",
+          "score_eligible": true
+        },
+        "loss_ratio_pct": {
+          "value": 61.9,
+          "comparison_class": "H1_LOSS_RATIO",
+          "source_definition": "Loss ratio",
+          "score_eligible": true
+        },
+        "operating_roe_pct": {
+          "value": 20.4,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_ROE",
+          "source_definition": "Annualized operating return on equity",
+          "score_eligible": true
+        },
+        "gross_written_premium_growth_pct": {
+          "value": 12.802229,
+          "comparison_class": "H1_GWP_GROWTH",
+          "source_definition": "Adjusted pro forma gross written premiums H1 YoY",
+          "calculation": "1408258 / 1248431 - 1",
+          "score_eligible": true,
+          "notes": "Prior-year GWP is pro forma and adjusted for Apollo participation changes."
+        },
+        "operating_eps_growth_pct": {
+          "value": 43.258427,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Diluted operating EPS H1 YoY",
+          "calculation": "2.55 / 1.78 - 1",
+          "score_eligible": true
+        }
+      }
+    },
+    "HRTG": {
+      "company": "Heritage Insurance Holdings, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Heritage Reports Second Quarter 2026 Results",
+        "url": "https://investors.heritagepci.com/2026-08-05-Heritage-Reports-Second-Quarter-2026-Results"
+      },
+      "metrics": {
+        "combined_ratio_pct": {
+          "value": 72.9,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "source_definition": "Net combined ratio",
+          "score_eligible": true
+        },
+        "loss_ratio_pct": {
+          "value": 38.1,
+          "comparison_class": "H1_LOSS_RATIO",
+          "source_definition": "Net loss ratio",
+          "score_eligible": true
+        },
+        "operating_roe_pct": {
+          "value": 36.6,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_ROE",
+          "source_definition": "Annualized return on average equity",
+          "score_eligible": true,
+          "notes": "GAAP ROE rather than adjusted operating ROE; retained with visible definition."
+        },
+        "gross_written_premium_growth_pct": {
+          "value": -4.143344,
+          "comparison_class": "H1_GWP_GROWTH",
+          "source_definition": "Gross written premiums H1 YoY",
+          "calculation": "735187 / 766965 - 1",
+          "score_eligible": true
+        },
+        "operating_eps_growth_pct": {
+          "value": 27.165354,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Diluted EPS H1 YoY",
+          "calculation": "3.23 / 2.54 - 1",
+          "score_eligible": true,
+          "notes": "GAAP EPS rather than adjusted operating EPS."
+        }
+      }
+    },
+    "RLI": {
+      "company": "RLI Corp.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "RLI Reports Second Quarter 2026 Results",
+        "url": "https://investors.rlicorp.com/news/news-details/2026/RLI-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "combined_ratio_pct": {
+          "value": 85.8,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "source_definition": "Combined ratio",
+          "score_eligible": true
+        },
+        "loss_ratio_pct": {
+          "value": 46.2,
+          "comparison_class": "H1_LOSS_RATIO",
+          "source_definition": "Loss and settlement expense ratio",
+          "score_eligible": true
+        },
+        "operating_roe_pct": {
+          "value": null,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_ROE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "gross_written_premium_growth_pct": {
+          "value": 2.862101,
+          "comparison_class": "H1_GWP_GROWTH",
+          "source_definition": "Gross written premiums H1 YoY",
+          "calculation": "1083536 / 1053387 - 1",
+          "score_eligible": true
+        },
+        "operating_eps_growth_pct": {
+          "value": -2.339181,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Operating EPS H1 YoY",
+          "calculation": "1.67 / 1.71 - 1",
+          "score_eligible": true
+        }
+      }
+    },
+    "HCI": {
+      "company": "HCI Group, Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING",
+        "title": "HCI Group Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1400810/000119312526340280/hci-20260630.htm"
+      },
+      "metrics": {
+        "combined_ratio_pct": {
+          "value": null,
+          "comparison_class": "H1_COMBINED_RATIO",
+          "source_definition": "Net combined ratio exists in filing but no normalized H1 value stored in this pass",
+          "score_eligible": false
+        },
+        "loss_ratio_pct": {
+          "value": 21.1,
+          "comparison_class": "GROSS_LOSS_RATIO",
+          "source_definition": "Gross loss ratio H1",
+          "score_eligible": false,
+          "notes": "Gross basis is not interchangeable with the target's net/underwriting loss ratio."
+        },
+        "operating_roe_pct": {
+          "value": null,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_ROE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "gross_written_premium_growth_pct": {
+          "value": null,
+          "comparison_class": "H1_GWP_GROWTH",
+          "source_definition": "Only gross premiums earned growth was standardized in this pass",
+          "score_eligible": false
+        },
+        "operating_eps_growth_pct": {
+          "value": null,
+          "comparison_class": "H1_OPERATING_OR_ADJUSTED_EPS_GROWTH",
+          "source_definition": null,
+          "score_eligible": false
+        }
+      }
+    }
+  }
+}
