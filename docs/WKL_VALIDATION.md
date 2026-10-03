@@ -70,3 +70,11 @@ This prevents the system from inventing an apparently precise 0–100 quality sc
 6. Preserve Quality Drift at 50 until a later validated WKL fundamental update is available.
 
 Market-price movement alone must never change Quality Drift.
+
+## Absolute-anchor context
+
+WKL is also the pilot case for the separate absolute-anchor layer.
+
+All seven configured baseline guardrails are currently met: leverage, ROIC, adjusted operating margin, cash conversion, organic revenue growth, recurring-revenue share and diluted share-count change.
+
+This result is explanatory context only. It does not change WKL's peer-relative Fundamental Quality diagnostic, its component-coverage gate or its `DATA_CHECK` status.
