@@ -1,90 +1,88 @@
 # ASR insurer peer data review
 
-This dataset standardizes H1 2026 observations for ASR and its diversified-insurer peer group.
+This dataset standardizes H1 2026 financial observations for ASR and its diversified-insurer peer group.
 
 File:
 
 `data/peers/ASR/2026-10-03.json`
 
-## Score-eligible comparison classes
+## Current scoring result
 
-### EU Solvency II capital strength
+A fresh pipeline rebuild on this dataset makes ASR `DISPLAY_READY` without relaxing any production gate.
 
-Target: ASR.
+- Fundamental Quality: **66.1 / 100**
+- weighted component coverage: **75%**
+- covered components: capital strength, underwriting quality, profitability
+- target data confidence: above the production threshold
+- peer-input confidence: above the production threshold
+- leave-one-out sensitivity: **STABLE**
+- sensitivity band: approximately **63.7–71.9**
+- execution effect: **NONE**
 
-Eligible peers:
+The immutable historical `current.json` pointer still references r9, where ASR was DATA_CHECK at 55% coverage. That historical snapshot is intentionally not overwritten; a new immutable scoring revision should be generated after this patch is merged.
+
+## Strictly score-eligible comparison classes
+
+### EU Solvency II ratio
+
+Target and eligible peers:
+- ASR
 - NN Group
 - Ageas
 - Sampo
 - Generali
 
-Aviva is deliberately excluded because its 176% ratio is a **Solvency UK** shareholder-cover ratio. Zurich is excluded because its 266% ratio is a **Swiss Solvency Test** ratio. Neither is silently substituted for EU Solvency II.
+Aviva is excluded from this metric because its ratio is Solvency UK. Zurich is excluded because its ratio is Swiss Solvency Test (SST). Neither is silently normalized as EU Solvency II.
 
 ### Non-life combined ratio
 
 Eligible with visible scope differences:
 - ASR: Non-life excluding Health
-- NN: Netherlands Non-life
+- NN Group: Netherlands Non-life
 - Ageas: group Non-Life
 - Sampo: group P&C
 - Aviva: Group General Insurance
 - Zurich: P&C
 - Generali: P&C
 
-This remains an economically related but not perfectly scope-identical class.
+The ratio is economically related across the cohort, but the business scope differs. The peer provenance remains visible.
 
 ### Harmonized IFRS common-equity ROE
 
-The company-defined ROE labels remain stored but blocked. Production scoring instead uses one explicit formula:
+The old company-defined ROEs remain stored but blocked. Profitability now uses one explicit formula:
 
 ```text
 annualized H1 IFRS profit available to ordinary shareholders
 ----------------------------------------------------------------
-average opening and closing common shareholders' equity
+average opening and closing IFRS common shareholders' equity
 ```
 
-Equity-instrument coupons and non-controlling interests are excluded where separately reported.
+Claims of non-controlling interests and separately reported equity-hybrid holders are excluded where applicable.
 
-Target:
-- ASR: 17.390315%
+Target and eligible peers:
+- ASR: 17.39%
+- NN Group: 10.72%
+- Ageas: 17.21%
+- Sampo: 11.08%
+- Aviva: 7.96%
+- Generali: 16.01%
 
-Eligible peers:
-- NN Group: 10.716895%
-- Ageas: 17.209113%
-- Sampo: 11.076337%
-- Aviva: 7.955278%
-- Generali: 16.010640%
+This five-peer set is sufficient for production scoring and reduces the leave-one-out score band below the 10-point STABLE threshold.
 
-The canonical metric is `annualized_ifrs_common_equity_roe_pct`. It is deliberately distinct from `reported_roe_pct` and other company-defined ROE aliases.
+## Growth stability
 
-### Weighted-average share-count change
+Company-defined operating earnings growth is available across a broad peer set, but the metric slots deliberately require enough independent signal weight within the component. The available growth slots do not yet satisfy that component-level metric-coverage rule, so growth stability does not contribute to the current ASR score.
 
-Target:
-- ASR: -1.695736%
+This is intentional: one convenient growth metric is not allowed to carry the whole component automatically.
 
-Eligible peers:
-- NN Group: -1.838649%
-- Sampo: -1.374953%
-- Aviva: +13.701201%
-- Generali: -0.913613%
+## Value per share
 
-Ageas is excluded from this series because the prior-period weighted-average share basis was not sufficiently aligned in the source pass.
+Weighted-average ordinary share-count change is now available for the target plus at least four peers. The derived IFRS EPS-growth series remains diagnostic only while the exact per-share basis is being revalidated across the cohort.
 
-Share count alone represents only 25% of the value-per-share component slot weight, so it does **not** make that component scoreable by itself.
+Because the value-per-share component does not yet reach its internal metric-weight threshold, it is excluded from the production score rather than partially forced in.
 
-## Deliberately blocked
+## Data-quality principle
 
-Derived H1 IFRS EPS-growth observations are retained as audit/research data but are not score-eligible yet. Their source alignment is not sufficiently homogeneous across target plus four peers.
+A score is published only from comparison classes that are definitionally aligned, sufficiently populated and stable under leave-one-out sensitivity. Regulatory ratios from different regimes and company-defined ROEs are not treated as interchangeable.
 
-Company-defined ROE values also remain blocked; the pipeline uses only the harmonized metric above.
-
-## Rebuild consequence
-
-The immutable current r9 snapshot is not rewritten. A fresh pipeline rebuild on this dataset covers:
-- capital strength: 30%
-- underwriting quality: 25%
-- profitability: 20%
-
-Total weighted component coverage is therefore **75%**. The leave-one-peer-out result is **STABLE** and the dry-run Fundamental Quality score is approximately **66.1**.
-
-The value-per-share and growth/stability components remain outside the production score until their own metric-slot coverage gates are met.
+No score has an execution effect.
