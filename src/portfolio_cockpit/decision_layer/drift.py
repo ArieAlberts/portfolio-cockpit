@@ -92,12 +92,107 @@ def normalize(
     return delta, signal + 0.0
 
 
-def baseline_period_basis(drift_cfg: dict[str, Any], ticker: str, metric: str) -> str:
+def baseline_period_basis(
+    drift_cfg: dict[str, Any],
+    ticker: str,
+    metric: str,
+    baseline: dict[str, Any] | None = None,
+) -> str:
     period_cfg = drift_cfg["baseline_period_basis"]
     for pattern in period_cfg.get("metric_name_patterns") or []:
         if pattern["contains"] in metric:
             return pattern["basis"]
+    # A re-baseline may declare its own period basis (e.g. FY results).
+    if baseline is not None and baseline.get("period_basis"):
+        return str(baseline["period_basis"])
     return period_cfg["by_ticker"][ticker]
+
+
+# ---------------------------------------------------------------- baselines
+
+
+class BaselineError(ValueError):
+    """Raised when a re-baseline file violates the append-only baseline contract."""
+
+
+REBASELINE_FIELDS = ("rebaseline_of", "rebaseline_reason", "base_target_weight_pct", "baseline_date", "metrics")
+
+
+def _validate_rebaseline(payload: dict[str, Any], parent: dict[str, Any], ticker: str, rel: str) -> None:
+    errors = [f"{key} is required" for key in REBASELINE_FIELDS if payload.get(key) in (None, "", {})]
+    if payload.get("ticker") != ticker:
+        errors.append(f"ticker must be {ticker}")
+    if payload.get("quality_drift_score") != 50:
+        errors.append("quality_drift_score must be 50 at a new baseline")
+    try:
+        if date.fromisoformat(str(payload.get("baseline_date"))) <= date.fromisoformat(str(parent["baseline_date"])):
+            errors.append("baseline_date must be after the baseline it replaces")
+    except ValueError:
+        errors.append("baseline_date must be an ISO date")
+    base = payload.get("base_target_weight_pct")
+    if base is not None and (not isinstance(base, (int, float)) or isinstance(base, bool) or not 0 <= base <= 100):
+        errors.append("base_target_weight_pct must be a number in [0, 100]")
+    if not isinstance(payload.get("metrics"), dict):
+        errors.append("metrics must be a mapping of component -> metric")
+    if errors:
+        raise BaselineError(f"{rel}: " + "; ".join(errors))
+
+
+def resolve_baseline(
+    root: Path,
+    ticker: str,
+    index_rel: str,
+    as_of: str,
+) -> tuple[str, dict[str, Any], list[str]]:
+    """Active baseline for ``ticker`` and the chain that leads to it.
+
+    The engine scans data/baselines/<ticker>/ itself; index.json only names
+    the original baseline. Baseline files are never edited: a deliberate
+    change of the base target adds a NEW file with ``rebaseline_of``
+    pointing to the baseline it replaces. Every re-baseline must be valid
+    and chain back to the index entry (fail-fast). Among the re-baselines
+    in force on ``as_of`` the newest is used, deterministically: latest
+    baseline_date, then file path. A re-baseline dated after ``as_of`` (and
+    anything built on it) is not in force yet.
+    """
+    root_payload = json.loads((root / index_rel).read_text(encoding="utf-8"))
+    nodes: dict[str, dict[str, Any]] = {index_rel: root_payload}
+    children: dict[str, list[str]] = {}
+    for path in sorted((root / "data/baselines" / ticker).glob("*.json")):
+        rel = path.relative_to(root).as_posix()
+        if rel == index_rel:
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if "rebaseline_of" not in payload:
+            continue
+        nodes[rel] = payload
+        children.setdefault(str(payload["rebaseline_of"]), []).append(rel)
+
+    parents: dict[str, str] = {}
+    in_force: list[str] = []
+    stack = [(index_rel, True)]
+    while stack:
+        parent, parent_in_force = stack.pop()
+        for rel in children.get(parent, []):
+            _validate_rebaseline(nodes[rel], nodes[parent], ticker, rel)
+            parents[rel] = parent
+            rel_in_force = parent_in_force and str(nodes[rel]["baseline_date"]) <= as_of
+            if rel_in_force:
+                in_force.append(rel)
+            stack.append((rel, rel_in_force))
+
+    orphans = sorted(rel for rel in nodes if rel != index_rel and rel not in parents)
+    if orphans:
+        raise BaselineError(f"{ticker}: {orphans} do not chain back to the index baseline {index_rel}")
+
+    if not in_force:
+        return index_rel, root_payload, [index_rel]
+    active = max(in_force, key=lambda rel: (str(nodes[rel]["baseline_date"]), rel))
+    chain = [active]
+    while chain[-1] != index_rel:
+        chain.append(parents[chain[-1]])
+    chain.reverse()
+    return active, nodes[active], chain
 
 
 def _find_metric(
@@ -276,7 +371,7 @@ def evaluate(
                 "baseline_period_basis": (
                     "POINT_IN_TIME"
                     if slot.get("point_in_time")
-                    else baseline_period_basis(drift_cfg, ticker, metric)
+                    else baseline_period_basis(drift_cfg, ticker, metric, baseline)
                 ),
                 "baseline_source": {**baseline.get("source", {}), "path": baseline_rel},
                 "previous_value": base_value,
@@ -417,6 +512,7 @@ def build_ticker_drift(
     observations: list[tuple[str, dict[str, Any]]],
     as_of: str,
     rejected: list[str] | None = None,
+    baseline_chain: list[str] | None = None,
 ) -> dict[str, Any]:
     profile = drift_cfg["profiles"][company_type]
 
@@ -462,6 +558,8 @@ def build_ticker_drift(
             "path": baseline_rel,
             "baseline_date": baseline["baseline_date"],
             "reporting_period_end": baseline.get("reporting_period_end"),
+            "chain": list(baseline_chain or [baseline_rel]),
+            "rebaseline_reason": baseline.get("rebaseline_reason"),
         },
         "latest_observation": observations[-1][0] if observations else None,
         "observation_count": len(observations),
@@ -487,15 +585,16 @@ def build_drift_snapshot(*, root: Path, as_of: str | None = None, code_version: 
     observation_hashes: dict[str, str] = {}
 
     for ticker, position in repo_cfg["portfolio"]["positions"].items():
-        baseline_rel = index["baselines"][ticker]
-        baseline_path = root / baseline_rel
-        baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
-        baseline_hashes[baseline_rel] = sha256_file(baseline_path)
+        baseline_rel, baseline, chain = resolve_baseline(root, ticker, index["baselines"][ticker], as_of)
+        for rel in chain:
+            baseline_hashes[rel] = sha256_file(root / rel)
         observations = []
         rejected: list[str] = []
         for path, payload in load_observations(root, ticker):
             if str(payload["observation_date"]) < str(baseline["baseline_date"]):
-                raise ObservationError(f"{path}: observation_date precedes the baseline")
+                if len(chain) == 1:
+                    raise ObservationError(f"{path}: observation_date precedes the baseline")
+                continue  # belongs to an earlier, replaced baseline
             if str(payload["observation_date"]) > as_of:
                 continue
             rel = path.relative_to(root).as_posix()
@@ -514,6 +613,7 @@ def build_drift_snapshot(*, root: Path, as_of: str | None = None, code_version: 
             observations=observations,
             as_of=as_of,
             rejected=rejected,
+            baseline_chain=chain,
         )
 
     config_hash, config_hashes = bundle_hash(root, CONFIG_FILES)

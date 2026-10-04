@@ -1,4 +1,5 @@
 import ast
+from copy import deepcopy
 import shutil
 import hashlib
 import json
@@ -28,77 +29,112 @@ from dl_helpers import (
 REPO_CFG = load_config(ROOT)
 CFG = load_decision_config(ROOT)
 DECISION_CFG = CFG["decision"]
+TARGET_CFG = CFG["target_adjustment"]
 
 BASE = DecisionInputs(
     ticker="X", drift_score=50.0, drift_change_recent=0.0, drift_status="OK",
     valuation_score=50.0, valuation_status="OK", data_confidence=90.0, thesis_status="INTACT",
-    portfolio_weight_pct=3.0, base_target_weight_pct=4.0, sector_weight_pct=10.0,
-    portfolio_impact_pp=-0.9, fq_status="DATA_CHECK", fq_score=None,
+    current_weight_pct=4.0, base_target_weight_pct=4.0, score_adjusted_target_pct=4.0,
+    sector_weight_pct=10.0, portfolio_impact_pp=-1.2, role="CORE", valuation_label="Fair",
+    quality_multiplier_applied=1.0, fq_status="DATA_CHECK", fq_score=None,
 )
+
+
+def _decide(**changes):
+    return decide(replace(BASE, **changes), DECISION_CFG, TARGET_CFG)
 
 
 @pytest.mark.parametrize(
-    ("changes", "state"),
+    ("changes", "state", "reason"),
     [
-        ({"data_confidence": 70.0}, "DATA_CHECK"),
-        ({"drift_status": "DRIFT_DATA_CHECK", "drift_score": None}, "DATA_CHECK"),
-        ({"valuation_status": "NO_MARKET_DATA", "valuation_score": None}, "DATA_CHECK"),
-        ({"thesis_status": "BROKEN"}, "THESIS_REVIEW"),
-        ({"drift_score": 40.0}, "REVIEW_REDUCE"),
-        ({"drift_score": 52.0, "drift_change_recent": -10.0}, "REVIEW_REDUCE"),
-        ({"drift_score": 55.0, "valuation_score": 60.0}, "ADD_CANDIDATE"),
-        ({"drift_score": 45.0, "valuation_score": 44.9}, "NO_ADD"),
-        ({"drift_score": 50.0, "valuation_score": 50.0}, "HOLD"),
-        ({"drift_score": 44.0, "valuation_score": 30.0}, "HOLD"),
-        ({"thesis_status": "WATCH", "drift_score": 60.0, "valuation_score": 70.0}, "ADD_CANDIDATE"),
+        ({"data_confidence": 70.0}, "DATA_CHECK", "DATA_CONFIDENCE_BELOW_80"),
+        ({"drift_status": "DRIFT_DATA_CHECK", "drift_score": None}, "DATA_CHECK", "DRIFT_DRIFT_DATA_CHECK"),
+        ({"valuation_status": "NO_MARKET_DATA", "valuation_score": None}, "DATA_CHECK", "VALUATION_NO_MARKET_DATA"),
+        ({"thesis_status": "BROKEN"}, "THESIS_REVIEW", "THESIS_BROKEN"),
+        ({"role": "EXIT", "score_adjusted_target_pct": 0.0, "current_weight_pct": 1.0}, "EXIT_REVIEW", None),
+        ({"role": "EXIT", "score_adjusted_target_pct": 0.0, "current_weight_pct": 0.0}, "HOLD", "WITHIN_BAND"),
+        ({"drift_score": 40.0}, "REVIEW_REDUCE", None),
+        ({"drift_score": 52.0, "drift_change_recent": -10.0}, "REVIEW_REDUCE", None),
+        ({"current_weight_pct": 5.0}, "TRIM_CANDIDATE", "PRICE_ONLY"),
+        ({"current_weight_pct": 6.0, "score_adjusted_target_pct": 4.4, "quality_multiplier_applied": 1.1},
+         "TRIM_CANDIDATE", "ABOVE_SUPPORTED_WEIGHT"),
+        ({"current_weight_pct": 3.0}, "ADD_CANDIDATE", None),
+        ({"current_weight_pct": 3.0, "valuation_label": "Expensive"}, "NO_ADD", "VALUATION_EXPENSIVE"),
+        ({"valuation_label": "Expensive"}, "NO_ADD", "WITHIN_BAND"),
+        ({}, "HOLD", "WITHIN_BAND"),
+        ({"current_weight_pct": 4.79}, "HOLD", "WITHIN_BAND"),
+        ({"current_weight_pct": 3.21}, "HOLD", "WITHIN_BAND"),
+        ({"thesis_status": "WATCH", "current_weight_pct": 3.0}, "ADD_CANDIDATE", None),
     ],
 )
-def test_every_branch_of_the_decision_tree(changes, state):
-    result = decide(replace(BASE, **changes), DECISION_CFG)
+def test_every_branch_of_the_decision_matrix(changes, state, reason):
+    result = _decide(**changes)
     assert result.decision_state == state
     assert result.reasons
+    if reason:
+        assert any(r.startswith(reason) for r in result.reasons), result.reasons
 
 
 def test_data_check_precedes_everything():
-    worst = replace(BASE, data_confidence=50.0, thesis_status="BROKEN", drift_score=10.0)
-    result = decide(worst, DECISION_CFG)
+    result = _decide(data_confidence=50.0, thesis_status="BROKEN", drift_score=10.0, role="EXIT")
     assert result.decision_state == "DATA_CHECK"
     assert "DATA_CONFIDENCE_BELOW_80" in result.reasons
+
+
+def test_trim_with_neutral_multiplier_is_price_only():
+    result = _decide(current_weight_pct=5.0, score_adjusted_target_pct=4.0, quality_multiplier_applied=1.0)
+    assert result.decision_state == "TRIM_CANDIDATE"
+    assert "PRICE_ONLY" in result.reasons
+    assert "TARGET_REDUCED_BY_DRIFT" not in result.reasons
+    assert "ABOVE_SUPPORTED_WEIGHT" not in result.reasons
+
+
+def test_trim_with_reduced_multiplier_is_only_target_reduced_by_drift():
+    result = _decide(current_weight_pct=5.0, score_adjusted_target_pct=3.6, quality_multiplier_applied=0.9)
+    assert result.decision_state == "TRIM_CANDIDATE"
+    assert "TARGET_REDUCED_BY_DRIFT" in result.reasons
+    assert "PRICE_ONLY" not in result.reasons
+    assert "ABOVE_SUPPORTED_WEIGHT" not in result.reasons
+
+
+def test_trim_with_raised_multiplier_is_above_supported_weight():
+    result = _decide(current_weight_pct=6.0, score_adjusted_target_pct=4.4, quality_multiplier_applied=1.1)
+    assert result.decision_state == "TRIM_CANDIDATE"
+    assert "ABOVE_SUPPORTED_WEIGHT" in result.reasons
+    assert "PRICE_ONLY" not in result.reasons and "TARGET_REDUCED_BY_DRIFT" not in result.reasons
 
 
 @pytest.mark.parametrize(
     ("changes", "flag"),
     [
-        ({"portfolio_weight_pct": 10.0, "base_target_weight_pct": 10.0}, "POSITION_LIMIT"),
-        ({"portfolio_weight_pct": 4.8, "base_target_weight_pct": 4.0}, "ABOVE_TARGET_BAND"),
+        ({"current_weight_pct": 10.0, "score_adjusted_target_pct": 13.0}, "POSITION_LIMIT"),
         ({"sector_weight_pct": 30.0}, "SECTOR_LIMIT"),
-        ({"portfolio_impact_pp": -3.3, "portfolio_weight_pct": 5.0, "base_target_weight_pct": 7.0}, "IMPACT_LIMIT"),
-        ({"base_target_weight_pct": 0.0, "portfolio_weight_pct": 1.0}, "ABOVE_TARGET_BAND"),
+        ({"portfolio_impact_pp": -3.3}, "IMPACT_LIMIT"),
     ],
 )
 def test_limits_block_add(changes, flag):
-    result = decide(replace(BASE, drift_score=60.0, valuation_score=70.0, **changes), DECISION_CFG)
+    result = _decide(**{"current_weight_pct": 3.0, **changes})
     assert result.decision_state == "HOLD"
     assert "ADD_BLOCKED_BY_LIMIT" in result.reasons
     assert any(f.startswith(flag) for f in result.limit_flags)
 
 
 def test_fq_floor_only_applies_when_display_ready():
-    add = replace(BASE, drift_score=60.0, valuation_score=70.0)
-    not_ready = decide(replace(add, fq_status="DATA_CHECK", fq_score=None), DECISION_CFG)
+    below = {"current_weight_pct": 3.0}
+    not_ready = _decide(**below, fq_status="DATA_CHECK", fq_score=None)
     assert not_ready.decision_state == "ADD_CANDIDATE"
     assert "FQ_NOT_DISPLAY_READY" in not_ready.reasons
-    low = decide(replace(add, fq_status="DISPLAY_READY", fq_score=20.0), DECISION_CFG)
+    low = _decide(**below, fq_status="DISPLAY_READY", fq_score=20.0)
     assert low.decision_state == "HOLD"
     assert any(r.startswith("FQ_BELOW_FLOOR") for r in low.reasons)
-    ok = decide(replace(add, fq_status="DISPLAY_READY", fq_score=50.0), DECISION_CFG)
+    ok = _decide(**below, fq_status="DISPLAY_READY", fq_score=50.0)
     assert ok.decision_state == "ADD_CANDIDATE"
     assert "FQ_NOT_DISPLAY_READY" not in ok.reasons
 
 
 def test_unknown_thesis_status_is_refused():
     with pytest.raises(DecisionInputError):
-        decide(replace(BASE, thesis_status="GREAT"), DECISION_CFG)
+        _decide(thesis_status="GREAT")
 
 
 def test_template_owner_inputs_refuse_to_run():
@@ -127,8 +163,17 @@ def test_end_to_end_decisions_for_all_23(tmp_path):
     asr = payload["results"]["ASR"]
     assert asr["inputs"]["drift_score"] > 55
     assert asr["inputs"]["valuation_label"] == "Attractive"
-    # ASR is 7% target and 7% current: within band but -2.1pp impact; Financials sector weight 21%.
-    assert asr["decision_state"] == "ADD_CANDIDATE", asr
+    # One improving observation is not enough to raise the target (needs 2),
+    # so the adjusted target stays at base and 7% current is within the band.
+    assert asr["decision_state"] == "HOLD", asr
+    assert asr["score_adjusted_target_pct"] == 7.0
+    assert asr["quality_multiplier_raw"] > 1.0 and asr["quality_multiplier_applied"] == 1.0
+    assert "AWAITING_CONFIRMATION" in asr["target_gates"]
+    for key in ("base_target_weight_pct", "quality_multiplier_raw", "quality_multiplier_applied",
+                "score_adjusted_target_pct", "current_weight_pct", "gap_pct", "binding_constraint", "reasons"):
+        assert key in asr
+    msm = payload["results"]["MSM"]
+    assert msm["score_adjusted_target_pct"] == 0.0 and msm["binding_constraint"] == "EXIT_ROLE"
     assert payload["results"]["WKL"]["decision_state"] == "DATA_CHECK"
     assert "VALUATION_NO_MARKET_DATA" in payload["results"]["WKL"]["reasons"]
     assert payload["portfolio_risk"]["label"] == "PORTFOLIO IMPACT -30%"
@@ -187,7 +232,8 @@ def test_historical_decisions_are_preserved(tmp_path):
     second = write_decision_snapshot(root, build_decision_snapshot(root=root, as_of=AS_OF, code_version="c"))
     assert second.name == f"decisions_{AS_OF}_r2.json"
     assert first.read_bytes() == body
-    assert json.loads(second.read_text())["results"]["ASR"]["decision_state"] != "ADD_CANDIDATE"
+    assert json.loads(first.read_text())["results"]["ASR"]["decision_state"] == "HOLD"
+    assert json.loads(second.read_text())["results"]["ASR"]["decision_state"] == "NO_ADD"
 
 
 def test_missing_drift_snapshot_gives_clear_error(tmp_path):
@@ -211,3 +257,23 @@ def test_decide_cli_write_logs_signals(tmp_path, capsys):
     assert log.read_text().splitlines() == lines
     asr = next(json.loads(line) for line in lines if json.loads(line)["ticker"] == "ASR")
     assert asr["price"] == 45.0
+
+
+def test_review_reduce_thresholds_live_in_decision_yaml_and_are_used():
+    import yaml
+
+    raw = yaml.safe_load((ROOT / "config/decision.yaml").read_text())
+    assert raw["drift"] == {"deteriorated_score_max": 40, "deteriorated_recent_change_max": -10}
+    # Boundaries come straight from the repo config.
+    assert _decide(drift_score=40.0).decision_state == "REVIEW_REDUCE"
+    assert _decide(drift_score=40.01).decision_state == "HOLD"
+    assert _decide(drift_change_recent=-10.0).decision_state == "REVIEW_REDUCE"
+    assert _decide(drift_change_recent=-9.99).decision_state == "HOLD"
+    # Changing the config changes the decision: the code holds no literal.
+    stricter = deepcopy(DECISION_CFG)
+    stricter["drift"]["deteriorated_score_max"] = 30
+    stricter["drift"]["deteriorated_recent_change_max"] = -20
+    for changes in ({"drift_score": 35.0}, {"drift_change_recent": -15.0}):
+        assert _decide(**changes).decision_state == "REVIEW_REDUCE"
+        relaxed = decide(replace(BASE, **changes), stricter, TARGET_CFG)
+        assert relaxed.decision_state != "REVIEW_REDUCE"

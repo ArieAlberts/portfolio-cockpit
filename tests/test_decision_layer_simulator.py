@@ -21,7 +21,8 @@ from dl_helpers import AS_OF, ROOT, market_entry, repo_copy, write_market
 def _item(state, current, target, sector, price=None):
     return {
         "decision_state": state,
-        "inputs": {"portfolio_weight_pct": current, "base_target_weight_pct": target, "sector": sector,
+        "inputs": {"current_weight_pct": current, "base_target_weight_pct": target,
+                   "score_adjusted_target_pct": target, "sector": sector,
                    "price": price, "currency": "EUR", "price_as_of": AS_OF, "drift_score": 50.0,
                    "drift_change_recent": 0.0, "valuation_score": 50.0, "data_confidence": 90.0,
                    "thesis_status": "INTACT"},
@@ -154,3 +155,21 @@ def test_simulator_and_decision_modules_have_no_order_surface():
     for module in (decision_module,):
         names = {n.lower() for n in dir(module)}
         assert not {n for n in names if "place_order" in n or "submit" in n or "execute" in n}
+
+
+def test_trim_and_exit_review_move_towards_adjusted_target():
+    decisions = {
+        "as_of": AS_OF, "reproducibility_hash": "h", "portfolio_risk": {"cash_weight_pct": 5.0},
+        "results": {
+            "T": {**_item("TRIM_CANDIDATE", 9.0, 7.0, "Industrials"),
+                  "inputs": {**_item("TRIM_CANDIDATE", 9.0, 7.0, "Industrials")["inputs"],
+                             "score_adjusted_target_pct": 7.5}},
+            "M": _item("EXIT_REVIEW", 1.0, 0.0, "Industrials"),
+        },
+    }
+    rows = _rows(DryRunSimulator().simulate(decisions))
+    assert rows["T"]["suggested_review_direction"] == "REVIEW_DOWN_TO_TARGET"
+    assert rows["T"]["simulated_weight_pct"] == pytest.approx(7.5)
+    assert rows["T"]["base_target_weight_pct"] == 7.0
+    assert rows["M"]["suggested_review_direction"] == "REVIEW_EXIT"
+    assert rows["M"]["simulated_weight_pct"] == 0.0

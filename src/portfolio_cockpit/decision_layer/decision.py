@@ -1,8 +1,10 @@
 """Decision Engine — produces only a decision_state with reasons.
 
-No broker coupling, no order types, no order fields. Driven by Quality
-Drift; Fundamental Quality is context only, and only when DISPLAY_READY.
-base_target_weight is read from config/portfolio.yaml and never changed.
+No broker coupling, no order types, no order fields. Decisions compare the
+current weight with the score-adjusted target (decision_layer/targets.py),
+which is driven by Quality Drift; Fundamental Quality is context only, and
+only when DISPLAY_READY. base_target_weight is read from
+config/portfolio.yaml and never changed.
 """
 from __future__ import annotations
 
@@ -27,6 +29,7 @@ from .io import (
     write_immutable_snapshot,
 )
 from .risk import build_risk_report
+from .targets import TargetInput, compute_targets
 from .warnings import contract_warnings, data_state, load_target_confidence
 
 
@@ -38,15 +41,27 @@ POINTER_KEY = "current_decisions"
 ADD_CANDIDATE = "ADD_CANDIDATE"
 HOLD = "HOLD"
 NO_ADD = "NO_ADD"
+TRIM_CANDIDATE = "TRIM_CANDIDATE"
 REVIEW_REDUCE = "REVIEW_REDUCE"
+EXIT_REVIEW = "EXIT_REVIEW"
 THESIS_REVIEW = "THESIS_REVIEW"
 DATA_CHECK = "DATA_CHECK"
-DECISION_STATES = (ADD_CANDIDATE, HOLD, NO_ADD, REVIEW_REDUCE, THESIS_REVIEW, DATA_CHECK)
+DECISION_STATES = (
+    ADD_CANDIDATE,
+    HOLD,
+    NO_ADD,
+    TRIM_CANDIDATE,
+    REVIEW_REDUCE,
+    EXIT_REVIEW,
+    THESIS_REVIEW,
+    DATA_CHECK,
+)
 
 FORBIDDEN_OUTPUT_KEYS = frozenset({"side", "quantity", "limit_price", "order_id"})
 
 CONFIG_FILES = (
     "config/decision.yaml",
+    "config/target_adjustment.yaml",
     "config/risk_scenarios.yaml",
     "config/positions.yaml",
     "config/thesis_status.yaml",
@@ -54,6 +69,7 @@ CONFIG_FILES = (
 )
 CODE_FILES = (
     "src/portfolio_cockpit/decision_layer/decision.py",
+    "src/portfolio_cockpit/decision_layer/targets.py",
     "src/portfolio_cockpit/decision_layer/risk.py",
     "src/portfolio_cockpit/decision_layer/warnings.py",
     "src/portfolio_cockpit/decision_layer/config.py",
@@ -75,10 +91,14 @@ class DecisionInputs:
     valuation_status: str | None
     data_confidence: float | None
     thesis_status: str
-    portfolio_weight_pct: float
+    current_weight_pct: float
     base_target_weight_pct: float
+    score_adjusted_target_pct: float
     sector_weight_pct: float
     portfolio_impact_pp: float
+    role: str = "CORE"
+    valuation_label: str | None = None
+    quality_multiplier_applied: float = 1.0
     fq_status: str | None = None
     fq_score: float | None = None
 
@@ -93,12 +113,10 @@ class DecisionResult:
 
 
 def limit_flags(i: DecisionInputs, limits: dict[str, Any]) -> list[str]:
+    """Hard limits on the CURRENT weight that block an ADD."""
     flags = []
-    if i.portfolio_weight_pct >= float(limits["max_position_weight_pct"]):
-        flags.append(f"POSITION_LIMIT:{i.portfolio_weight_pct:g}%>={limits['max_position_weight_pct']:g}%")
-    band = i.base_target_weight_pct * (1.0 + float(limits["overweight_tolerance"]))
-    if i.portfolio_weight_pct >= band:
-        flags.append(f"ABOVE_TARGET_BAND:{i.portfolio_weight_pct:g}%>={band:g}%")
+    if i.current_weight_pct >= float(limits["max_position_weight_pct"]):
+        flags.append(f"POSITION_LIMIT:{i.current_weight_pct:g}%>={limits['max_position_weight_pct']:g}%")
     if i.sector_weight_pct >= float(limits["max_sector_weight_pct"]):
         flags.append(f"SECTOR_LIMIT:{i.sector_weight_pct:g}%>={limits['max_sector_weight_pct']:g}%")
     if abs(i.portfolio_impact_pp) > float(limits["max_single_position_impact_pp"]):
@@ -108,9 +126,13 @@ def limit_flags(i: DecisionInputs, limits: dict[str, Any]) -> list[str]:
     return flags
 
 
-def decide(i: DecisionInputs, cfg: dict[str, Any]) -> DecisionResult:
-    """Decision tree from docs/HANDOFF_DECISION_LAYER.md step 6; thresholds from config."""
-    drift_cfg, val_cfg = cfg["drift"], cfg["valuation"]
+def decide(i: DecisionInputs, cfg: dict[str, Any], target_cfg: dict[str, Any]) -> DecisionResult:
+    """Decision matrix: current weight versus the score-adjusted target.
+
+    DATA_CHECK > THESIS_REVIEW > EXIT_REVIEW > REVIEW_REDUCE > TRIM_CANDIDATE
+    > ADD_CANDIDATE > NO_ADD > HOLD. All thresholds come from config.
+    """
+    drift_cfg = cfg["drift"]
     if i.thesis_status not in cfg["thesis_status_values"]:
         raise DecisionInputError(f"{i.ticker}: unknown thesis_status {i.thesis_status!r}")
 
@@ -131,7 +153,10 @@ def decide(i: DecisionInputs, cfg: dict[str, Any]) -> DecisionResult:
     if i.thesis_status == "BROKEN":
         return DecisionResult(i.ticker, THESIS_REVIEW, ["THESIS_BROKEN"] + fq_reasons)
 
-    assert i.drift_score is not None and i.valuation_score is not None
+    if i.role == "EXIT" and i.current_weight_pct > 0:
+        return DecisionResult(i.ticker, EXIT_REVIEW, [f"EXIT_ROLE_WITH_WEIGHT:{i.current_weight_pct:g}%"] + fq_reasons)
+
+    assert i.drift_score is not None
     deteriorated = []
     if i.drift_score <= float(drift_cfg["deteriorated_score_max"]):
         deteriorated.append(f"DRIFT_DETERIORATED:{i.drift_score:g}<={drift_cfg['deteriorated_score_max']:g}")
@@ -144,27 +169,36 @@ def decide(i: DecisionInputs, cfg: dict[str, Any]) -> DecisionResult:
     if deteriorated:
         return DecisionResult(i.ticker, REVIEW_REDUCE, deteriorated + fq_reasons)
 
-    flags = limit_flags(i, cfg["limits"])
-    if i.drift_score >= float(drift_cfg["strong_score_min"]) and i.valuation_score >= float(
-        val_cfg["attractive_score_min"]
-    ):
-        reasons = [f"DRIFT_STRONG:{i.drift_score:g}", f"VALUATION_ATTRACTIVE:{i.valuation_score:g}"] + fq_reasons
+    band = float(target_cfg["rebalance_band_pct"]) / 100.0
+    target = i.score_adjusted_target_pct
+    upper, lower = target * (1.0 + band), target * (1.0 - band)
+    expensive = i.valuation_label == "Expensive"
+
+    if i.current_weight_pct > upper + 1e-12:
+        reasons = [f"ABOVE_BAND:{i.current_weight_pct:g}%>{upper:.4g}%"]
+        if i.quality_multiplier_applied > 1.0:
+            reasons.append("ABOVE_SUPPORTED_WEIGHT")
+        elif i.quality_multiplier_applied < 1.0:
+            reasons.append("TARGET_REDUCED_BY_DRIFT")
+        else:
+            reasons.append("PRICE_ONLY")
+        return DecisionResult(i.ticker, TRIM_CANDIDATE, reasons + fq_reasons)
+
+    if i.current_weight_pct < lower - 1e-12:
+        below = f"BELOW_BAND:{i.current_weight_pct:g}%<{lower:.4g}%"
+        if expensive:
+            return DecisionResult(i.ticker, NO_ADD, [below, "VALUATION_EXPENSIVE"] + fq_reasons)
+        flags = limit_flags(i, cfg["limits"])
         floor = float(cfg["fundamental_quality"]["fq_add_floor"])
         if fq_ready and i.fq_score < floor:
-            return DecisionResult(i.ticker, HOLD, reasons + [f"FQ_BELOW_FLOOR:{i.fq_score:g}<{floor:g}"], flags)
+            return DecisionResult(i.ticker, HOLD, [below, f"FQ_BELOW_FLOOR:{i.fq_score:g}<{floor:g}"], flags)
         if flags:
-            return DecisionResult(i.ticker, HOLD, reasons + ["ADD_BLOCKED_BY_LIMIT"], flags)
-        return DecisionResult(i.ticker, ADD_CANDIDATE, reasons, flags)
-    if i.drift_score >= float(drift_cfg["acceptable_score_min"]) and i.valuation_score < float(
-        val_cfg["expensive_score_below"]
-    ):
-        return DecisionResult(
-            i.ticker,
-            NO_ADD,
-            [f"DRIFT_ACCEPTABLE:{i.drift_score:g}", f"VALUATION_EXPENSIVE:{i.valuation_score:g}"] + fq_reasons,
-            flags,
-        )
-    return DecisionResult(i.ticker, HOLD, ["NO_OTHER_TRIGGER"] + fq_reasons, flags)
+            return DecisionResult(i.ticker, HOLD, [below, "ADD_BLOCKED_BY_LIMIT"] + fq_reasons, flags)
+        return DecisionResult(i.ticker, ADD_CANDIDATE, [below] + fq_reasons)
+
+    if expensive:
+        return DecisionResult(i.ticker, NO_ADD, ["WITHIN_BAND", "VALUATION_EXPENSIVE"] + fq_reasons)
+    return DecisionResult(i.ticker, HOLD, ["WITHIN_BAND"] + fq_reasons)
 
 
 # ---------------------------------------------------------------- pipeline
@@ -242,16 +276,47 @@ def build_decision_snapshot(
     fq_path, fq_snapshot = _fundamental_quality(root)
     confidence_path, confidence = load_target_confidence(root)
 
-    targets = {t: float(p["weight_pct"]) for t, p in repo_cfg["portfolio"]["positions"].items()}
+    portfolio = repo_cfg["portfolio"]["positions"]
+    targets = {t: float(p["weight_pct"]) for t, p in portfolio.items()}
     risk = build_risk_report(cfg, targets)
     thesis = cfg["thesis_status"]["positions"]
+    target_cfg = cfg["target_adjustment"]
+
+    target_inputs = []
+    for ticker, position in portfolio.items():
+        d = drift["results"].get(ticker) or {}
+        v = valuation["results"].get(ticker) or {}
+        target_inputs.append(
+            TargetInput(
+                ticker=ticker,
+                base_target_weight_pct=targets[ticker],
+                role=position["role"],
+                sector=risk["positions"][ticker]["sector"],
+                drift_score=d.get("drift_score"),
+                drift_status=d.get("status"),
+                drift_change_recent=d.get("drift_change_recent"),
+                observation_count=int(d.get("observation_count") or 0),
+                data_confidence=(confidence.get(ticker) or {}).get("data_confidence"),
+                thesis_status=thesis[ticker]["status"],
+                valuation_label=v.get("label"),
+                valuation_status=v.get("status"),
+            )
+        )
+    adjusted, target_warnings = compute_targets(
+        target_inputs,
+        target_cfg=target_cfg,
+        limits=decision_cfg["limits"],
+        data_confidence_min=float(decision_cfg["data_confidence_min"]),
+        standard_shock=float(cfg["risk_scenarios"]["standard_shock"]),
+    )
 
     results: dict[str, Any] = {}
-    for ticker in repo_cfg["portfolio"]["positions"]:
+    for ticker, position in portfolio.items():
         d = drift["results"].get(ticker) or {}
         v = valuation["results"].get(ticker) or {}
         c = confidence.get(ticker) or {}
         r = risk["positions"][ticker]
+        t = adjusted[ticker]
         fq = _fq_for(fq_snapshot, ticker)
         inputs = DecisionInputs(
             ticker=ticker,
@@ -262,14 +327,18 @@ def build_decision_snapshot(
             valuation_status=v.get("status"),
             data_confidence=c.get("data_confidence"),
             thesis_status=thesis[ticker]["status"],
-            portfolio_weight_pct=r["portfolio_weight_pct"],
+            current_weight_pct=r["portfolio_weight_pct"],
             base_target_weight_pct=r["base_target_weight_pct"],
+            score_adjusted_target_pct=t.score_adjusted_target_pct,
             sector_weight_pct=r["sector_weight_pct"],
             portfolio_impact_pp=r["portfolio_impact_pp"],
+            role=position["role"],
+            valuation_label=v.get("label"),
+            quality_multiplier_applied=t.quality_multiplier_applied,
             fq_status=fq["status"],
             fq_score=fq["score"],
         )
-        result = decide(inputs, decision_cfg)
+        result = decide(inputs, decision_cfg, target_cfg)
         warnings = (
             contract_warnings("drift", d.get("warnings", []))
             + contract_warnings("valuation", v.get("warnings", []))
@@ -279,11 +348,21 @@ def build_decision_snapshot(
             "decision_state": result.decision_state,
             "reasons": result.reasons,
             "limit_flags": result.limit_flags,
+            "base_target_weight_pct": t.base_target_weight_pct,
+            "quality_multiplier_raw": t.quality_multiplier_raw,
+            "quality_multiplier_applied": t.quality_multiplier_applied,
+            "score_adjusted_target_pct": t.score_adjusted_target_pct,
+            "current_weight_pct": inputs.current_weight_pct,
+            "gap_pct": round(t.score_adjusted_target_pct - inputs.current_weight_pct, 6),
+            "binding_constraint": t.binding_constraint,
+            "target_gates": t.gates,
+            "target_constraints": t.constraints,
             "inputs": {
                 "drift_score": inputs.drift_score,
                 "drift_change_since_baseline": d.get("drift_change_since_baseline"),
                 "drift_change_recent": inputs.drift_change_recent,
                 "drift_status": inputs.drift_status,
+                "observation_count": d.get("observation_count"),
                 "last_fundamental_update": d.get("last_fundamental_update"),
                 "valuation_score": inputs.valuation_score,
                 "valuation_label": v.get("label"),
@@ -295,8 +374,10 @@ def build_decision_snapshot(
                 "thesis_status": inputs.thesis_status,
                 "thesis_as_of": str(thesis[ticker].get("as_of")),
                 "thesis_note": thesis[ticker].get("note"),
-                "portfolio_weight_pct": inputs.portfolio_weight_pct,
+                "role": position["role"],
+                "current_weight_pct": inputs.current_weight_pct,
                 "base_target_weight_pct": inputs.base_target_weight_pct,
+                "score_adjusted_target_pct": inputs.score_adjusted_target_pct,
                 "sector": r["sector"],
                 "sector_weight_pct": inputs.sector_weight_pct,
                 "portfolio_impact_pp": inputs.portfolio_impact_pp,
@@ -332,6 +413,9 @@ def build_decision_snapshot(
         "reproducibility_hash": reproducibility_hash,
         "methodology": {
             "driver": "QUALITY_DRIFT",
+            "comparison": "current_weight_pct versus score_adjusted_target_pct",
+            "gap_definition": "score_adjusted_target_pct - current_weight_pct",
+            "target_adjustment": target_cfg,
             "fundamental_quality_role": "context only; floor applies only when DISPLAY_READY",
             "decision_states": list(DECISION_STATES),
             "thresholds": decision_cfg,
@@ -346,6 +430,8 @@ def build_decision_snapshot(
         },
         "summary": {"portfolio_companies": len(results), **{s: states.count(s) for s in DECISION_STATES}},
         "portfolio_risk": risk,
+        "target_warnings": target_warnings,
+        "adjusted_target_total_pct": round(sum(r.score_adjusted_target_pct for r in adjusted.values()), 6),
         "results": results,
         "execution_effect": "NONE",
     }

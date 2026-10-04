@@ -61,9 +61,11 @@ def test_dashboard_with_full_inputs(tmp_path):
     assert "Owner inputs incomplete" not in text
     for column in ("Quality Drift", "Fundamental Quality (peer)", "Valuation", "Data confidence",
                    "Thesis status", "Decision state", "Last fundamental update", "Last valuation update",
-                   "Warnings", "Base target weight", "Portfolio weight", "Price"):
+                   "Warnings", "Base target", "Adjusted target", "Current", "Gap", "Price"):
         assert column in text
     assert re.search(r"<b>\d+</b> / (Attractive|Fair|Expensive)", text)
+    assert "7.00%</span>" in text  # ASR adjusted target, with multiplier tooltip
+    assert "binding: AWAITING_CONFIRMATION" in text
     assert "since baseline" in text
     # Drill-down: drift metrics old vs new, valuation metric status, history.
     assert 'id="t-ASR"' in text

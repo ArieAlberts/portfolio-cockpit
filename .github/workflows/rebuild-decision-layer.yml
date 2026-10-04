@@ -16,6 +16,8 @@ on:
       - "config/risk_scenarios.yaml"
       - "config/positions.yaml"
       - "config/thesis_status.yaml"
+      - "config/target_adjustment.yaml"
+      - "data/baselines/**"
       - "src/portfolio_cockpit/decision_layer/**"
 
 permissions:

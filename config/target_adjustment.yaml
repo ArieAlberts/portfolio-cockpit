@@ -1,0 +1,37 @@
+# Score-adjusted target weight. Three weights per position:
+#   base_target_weight_pct    config/portfolio.yaml — only the owner changes it
+#   score_adjusted_target_pct computed here from base x quality multiplier,
+#                             then gates, limits and the portfolio budget
+#   current_weight_pct        config/positions.yaml — broker data only
+# The multiplier comes from Quality Drift only: never from Fundamental
+# Quality and never from price.
+schema_version: 1
+
+quality_multiplier:
+  # Piecewise linear in drift; clamped outside the first and last point.
+  # Flat at 1.00 between 45 and 55, so the line is continuous: no jump at
+  # the dead-band edges.
+  points:
+    - {drift: 25, multiplier: 0.50}
+    - {drift: 45, multiplier: 1.00}
+    - {drift: 55, multiplier: 1.00}
+    - {drift: 75, multiplier: 1.50}
+  # Drift inside [low, high] gives exactly 1.00, so noise does not move the target.
+  dead_band: {low: 45, high: 55}
+
+gates:
+  # An increase needs a drift improvement in this many consecutive
+  # observations (supported: 1 or 2); a decrease applies immediately.
+  min_consecutive_improvements: 2
+
+budget:
+  # Sum of score-adjusted targets may not exceed 100 - min_cash_pct; only
+  # increases are scaled down pro rata. Proposal: 5 (uses at most 2 pp of
+  # the planned 7% cash reserve for supported increases).
+  min_cash_pct: 5
+
+# TRIM / ADD only outside +/- this relative band around the adjusted target.
+rebalance_band_pct: 20
+
+# Optional absolute caps per ticker (percent), e.g. {OKLO: 3.0}.
+max_weight_pct: {}

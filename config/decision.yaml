@@ -1,21 +1,16 @@
 # Decision Engine — every threshold lives here. Output is a decision_state
 # plus reasons only. Never orders; every output carries execution_effect: NONE.
+# Decisions compare the CURRENT weight with the score-adjusted target
+# (config/target_adjustment.yaml), not with the base target.
 schema_version: 1
 data_confidence_min: 80          # must equal scoring.yaml data_confidence.decision_threshold
 
 drift:
   deteriorated_score_max: 40     # drift <= this            -> REVIEW_REDUCE
   deteriorated_recent_change_max: -10  # drift_change_recent <= this -> REVIEW_REDUCE
-  strong_score_min: 55           # drift >= this counts as strong (ADD path)
-  acceptable_score_min: 45       # drift >= this counts as acceptable (NO_ADD path)
 
-valuation:
-  attractive_score_min: 60
-  expensive_score_below: 45
-
-limits:
+limits:                          # also cap the score-adjusted target
   max_position_weight_pct: 10.0
-  overweight_tolerance: 0.20     # ADD only while weight < base_target * (1 + tol)
   max_sector_weight_pct: 30.0
   max_single_position_impact_pp: 3.0
 

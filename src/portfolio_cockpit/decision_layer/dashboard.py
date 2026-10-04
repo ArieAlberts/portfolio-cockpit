@@ -111,7 +111,7 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
                 "ticker": ticker,
                 "company": position.get("company"),
                 "company_type": position["company_type"],
-                "portfolio_weight_pct": weight,
+                "current_weight_pct": weight,
                 "base_target_weight_pct": position["weight_pct"],
                 "portfolio_impact_pp": impact_pp(float(weight), shock) if weight is not None else None,
                 "drift": d,
@@ -146,6 +146,8 @@ STATE_CLASS = {
     "HOLD": "s-hold",
     "NO_ADD": "s-noadd",
     "REVIEW_REDUCE": "s-reduce",
+    "TRIM_CANDIDATE": "s-reduce",
+    "EXIT_REVIEW": "s-reduce",
     "THESIS_REVIEW": "s-thesis",
     "DATA_CHECK": "s-check",
 }
@@ -192,6 +194,23 @@ def _warning_cell(warnings: list[dict[str, str]]) -> str:
     return f'<span title="{title}">{chips}</span>'
 
 
+def _gap_cell(decision: dict[str, Any] | None) -> str:
+    if not decision or decision.get("gap_pct") is None:
+        return "—"
+    return f"{decision['gap_pct']:+.2f} pp"
+
+
+def _adjusted_cell(decision: dict[str, Any] | None) -> str:
+    if not decision or decision.get("score_adjusted_target_pct") is None:
+        return "—"
+    tip = (
+        f"multiplier {decision.get('quality_multiplier_applied'):.2f}"
+        f" (raw {_fmt(decision.get('quality_multiplier_raw'), 2)})"
+        f"; binding: {decision.get('binding_constraint') or 'none'}"
+    )
+    return f'<span title="{_esc(tip)}">{decision["score_adjusted_target_pct"]:.2f}%</span>'
+
+
 def _row(r: dict[str, Any]) -> str:
     d, v, c, decision = r["drift"], r["valuation"], r["confidence"], r["decision"]
     state = decision["decision_state"] if decision else "NOT_RUN"
@@ -200,8 +219,10 @@ def _row(r: dict[str, Any]) -> str:
         "<tr>"
         f'<td><a href="#t-{_esc(r["ticker"])}"><b>{_esc(r["ticker"])}</b></a>'
         f'<div class=small>{_esc(r["company"])}</div></td>'
-        f"<td class=num>{_fmt(r['portfolio_weight_pct'], 1, '%')}</td>"
         f"<td class=num>{_fmt(r['base_target_weight_pct'], 1, '%')}</td>"
+        f"<td class=num>{_adjusted_cell(decision)}</td>"
+        f"<td class=num>{_fmt(r['current_weight_pct'], 1, '%')}</td>"
+        f"<td class=num>{_gap_cell(decision)}</td>"
         f"<td class=num>{_fmt(price, 2)} {_esc(v.get('currency') or '')}</td>"
         f"<td class=q>{_drift_cell(d)}</td>"
         f"<td class=f>{_fq_cell(r['fundamental_quality'])}</td>"
@@ -309,6 +330,20 @@ def _history_detail(history: dict[str, list[dict[str, Any]]]) -> str:
     )
 
 
+def _target_detail(decision: dict[str, Any]) -> str:
+    if decision.get("score_adjusted_target_pct") is None:
+        return ""
+    gates = ", ".join(_esc(g) for g in decision.get("target_gates", [])) or "none"
+    limits = ", ".join(_esc(c) for c in decision.get("target_constraints", [])) or "none"
+    return (
+        f"<p><b>Target:</b> base {_fmt(decision.get('base_target_weight_pct'), 2, '%')} × multiplier "
+        f"{_fmt(decision.get('quality_multiplier_applied'), 2)} (raw {_fmt(decision.get('quality_multiplier_raw'), 2)})"
+        f" → adjusted {_fmt(decision.get('score_adjusted_target_pct'), 2, '%')}; current "
+        f"{_fmt(decision.get('current_weight_pct'), 2, '%')}; gap {_signed(decision.get('gap_pct'), 2)} pp. "
+        f"Gates: {gates}. Limits: {limits}. Binding: {_esc(decision.get('binding_constraint') or 'none')}.</p>"
+    )
+
+
 def _detail(r: dict[str, Any]) -> str:
     decision = r["decision"] or {}
     reasons = ", ".join(_esc(x) for x in decision.get("reasons", [])) or "—"
@@ -319,6 +354,7 @@ def _detail(r: dict[str, Any]) -> str:
         f'{_esc(r["company"])} <span class=small>({_esc(r["company_type"])})</span></summary>'
         f"<p><b>Decision:</b> {_esc(decision.get('decision_state', 'NOT_RUN'))}. Reasons: {reasons}. "
         f"Limit flags: {flags}. Thesis: {_esc(r['thesis'].get('status') or '—')} {note}</p>"
+        f"{_target_detail(decision)}"
         f"<h3 class=hq>Quality Drift</h3>{_drift_detail(r['drift'])}"
         f"<h3 class=hv>Valuation</h3>{_valuation_detail(r['valuation'])}"
         f"<h3>Data confidence</h3>{_confidence_detail(r['confidence'])}"
@@ -396,7 +432,7 @@ summary{cursor:pointer}table.inner td,table.inner th{font-size:12px}
 
 def render(data: dict[str, Any], title: str = "Portfolio Cockpit") -> str:
     head = (
-        "<tr><th>Ticker</th><th>Portfolio weight</th><th>Base target weight</th><th>Price</th>"
+        "<tr><th>Ticker</th><th>Base target</th><th>Adjusted target</th><th>Current</th><th>Gap</th><th>Price</th>"
         "<th class=q>Quality Drift</th><th class=f>Fundamental Quality (peer)</th><th class=v>Valuation</th>"
         f"<th>Data confidence</th><th>{_esc(data['impact_label'])}</th><th>Thesis status</th>"
         "<th>Decision state</th><th>Last fundamental update</th><th>Last valuation update</th><th>Warnings</th></tr>"
