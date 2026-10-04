@@ -257,13 +257,13 @@
     "CRDA.L": {
       "currency": "GBp",
       "price": {
-        "value": 3163.0,
-        "as_of_date": "2026-09-18",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 3277.0,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-04",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com — statistics page",
-          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+          "source_type": "MANUAL_ENTRY",
+          "title": "Owner-supplied closing prices 2 Oct 2026 (IBKR price list; GBP converted to GBp)",
+          "url": null
         }
       },
       "shares_outstanding": {
@@ -320,13 +320,13 @@
     "ROR.L": {
       "currency": "GBp",
       "price": {
-        "value": 484.2,
-        "as_of_date": "2026-09-11",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 488.6,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-04",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com — statistics page",
-          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+          "source_type": "MANUAL_ENTRY",
+          "title": "Owner-supplied closing prices 2 Oct 2026 (IBKR price list; GBP converted to GBp)",
+          "url": null
         }
       },
       "shares_outstanding": {
@@ -887,13 +887,13 @@
     "ESI": {
       "currency": "USD",
       "price": {
-        "value": 35.71,
-        "as_of_date": "2026-09-25",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 37.93,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-04",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com — statistics page",
-          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+          "source_type": "MANUAL_ENTRY",
+          "title": "Owner-supplied closing prices 2 Oct 2026 (IBKR price list; GBP converted to GBp)",
+          "url": null
         }
       },
       "shares_outstanding": {
@@ -1066,13 +1066,13 @@
     "ASR": {
       "currency": "EUR",
       "price": {
-        "value": 73.94,
-        "as_of_date": "2026-09-25",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 71.48,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-04",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com — statistics page",
-          "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+          "source_type": "MANUAL_ENTRY",
+          "title": "Owner-supplied closing prices 2 Oct 2026 (IBKR price list; GBP converted to GBp)",
+          "url": null
         }
       },
       "shares_outstanding": {
@@ -1119,13 +1119,13 @@
     "ADM.L": {
       "currency": "GBp",
       "price": {
-        "value": 3618.0,
-        "as_of_date": "2026-09-25",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 3588.0,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-04",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com — statistics page",
-          "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+          "source_type": "MANUAL_ENTRY",
+          "title": "Owner-supplied closing prices 2 Oct 2026 (IBKR price list; GBP converted to GBp)",
+          "url": null
         }
       },
       "shares_outstanding": {
@@ -1225,13 +1225,13 @@
     "ABX": {
       "currency": "USD",
       "price": {
-        "value": 8.29,
-        "as_of_date": "2026-09-25",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 8.27,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-04",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com — statistics page",
-          "url": "https://stockanalysis.com/stocks/abx/statistics/"
+          "source_type": "MANUAL_ENTRY",
+          "title": "Owner-supplied closing prices 2 Oct 2026 (IBKR price list; GBP converted to GBp)",
+          "url": null
         }
       },
       "forward_eps": {
