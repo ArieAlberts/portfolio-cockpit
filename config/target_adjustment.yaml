@@ -9,9 +9,12 @@ schema_version: 1
 
 quality_multiplier:
   # Piecewise linear in drift; clamped outside the first and last point.
+  # Flat at 1.00 between 45 and 55, so the line is continuous: no jump at
+  # the dead-band edges.
   points:
     - {drift: 25, multiplier: 0.50}
-    - {drift: 50, multiplier: 1.00}
+    - {drift: 45, multiplier: 1.00}
+    - {drift: 55, multiplier: 1.00}
     - {drift: 75, multiplier: 1.50}
   # Drift inside [low, high] gives exactly 1.00, so noise does not move the target.
   dead_band: {low: 45, high: 55}

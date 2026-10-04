@@ -122,7 +122,7 @@ Every position has three weights:
 
 Decisions compare **current with the score-adjusted target**, not with base. All numbers are in `config/target_adjustment.yaml`; limits come from `config/decision.yaml`.
 
-**1. Quality multiplier.** Piecewise linear in Quality Drift: 25 → 0.50, 50 → 1.00, 75 → 1.50, clamped outside. Drift in the dead band 45–55 gives exactly 1.00, so noise does not move a target; just outside the band the line resumes (55.01 → 1.10). Fundamental Quality and price never feed the multiplier.
+**1. Quality multiplier.** Piecewise linear in Quality Drift through the points 25 → 0.50, 45 → 1.00, 55 → 1.00 and 75 → 1.50, clamped outside. Drift in the dead band 45–55 gives exactly 1.00, so noise does not move a target. The line is continuous, so there is no jump at the band edges: at most 0.0025 per 0.1 drift. Fundamental Quality and price never feed the multiplier.
 
 **2. Gates.**
 

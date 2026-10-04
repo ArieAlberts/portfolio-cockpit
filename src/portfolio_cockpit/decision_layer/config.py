@@ -391,7 +391,12 @@ def _validate_target_adjustment(
             errors.append("target_adjustment.quality_multiplier.points multiplier must be non-decreasing")
         if any(m <= 0 for m in mults):
             errors.append("target_adjustment.quality_multiplier.points multiplier must be positive")
-        if not any(d == 50 and m == 1.0 for d, m in zip(drifts, mults)):
+        at_50 = None
+        for (x0, y0), (x1, y1) in zip(zip(drifts, mults), zip(drifts[1:], mults[1:])):
+            if x0 <= 50 <= x1:
+                at_50 = y0 + (y1 - y0) * (50 - x0) / (x1 - x0)
+                break
+        if at_50 is None or abs(at_50 - 1.0) > 1e-12:
             errors.append("target_adjustment.quality_multiplier.points must map drift 50 to multiplier 1.00")
     band = qm.get("dead_band") or {}
     if not (_is_number(band.get("low")) and _is_number(band.get("high"))):

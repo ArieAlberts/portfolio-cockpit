@@ -47,8 +47,10 @@ def test_multiplier_points_and_dead_band():
     assert quality_multiplier(10, TARGET_CFG) == 0.5
     assert quality_multiplier(75, TARGET_CFG) == 1.5
     assert quality_multiplier(90, TARGET_CFG) == 1.5
-    assert quality_multiplier(37.5, TARGET_CFG) == pytest.approx(0.75)
-    assert quality_multiplier(62.5, TARGET_CFG) == pytest.approx(1.25)
+    assert quality_multiplier(35, TARGET_CFG) == pytest.approx(0.75)
+    assert quality_multiplier(65, TARGET_CFG) == pytest.approx(1.25)
+    assert quality_multiplier(45, TARGET_CFG) == 1.0
+    assert quality_multiplier(55, TARGET_CFG) == 1.0
 
 
 @pytest.mark.parametrize("drift", [45.0, 48.0, 50.0, 53.0, 55.0])
@@ -92,7 +94,7 @@ def test_expensive_blocks_increase_but_not_decrease():
     assert up.score_adjusted_target_pct == 4.0
     assert "VALUATION_EXPENSIVE_CAP" in up.gates
     down = _one(drift_score=30.0, valuation_label="Expensive")
-    assert down.score_adjusted_target_pct == pytest.approx(4.0 * 0.6)
+    assert down.score_adjusted_target_pct == pytest.approx(4.0 * 0.625)
 
 
 def test_missing_valuation_also_blocks_increase():
@@ -108,11 +110,11 @@ def test_increase_needs_two_consecutive_improvements_decrease_is_direct():
     previous_neutral = _one(drift_score=70.0, drift_change_recent=20.0, observation_count=2)
     assert previous_neutral.score_adjusted_target_pct == 4.0
     confirmed = _one(drift_score=70.0, drift_change_recent=5.0, observation_count=2)
-    # min(f(70)=1.4, f(65)=1.3)
-    assert confirmed.quality_multiplier_applied == pytest.approx(1.3)
-    assert confirmed.score_adjusted_target_pct == pytest.approx(5.2)
+    # min(f(70)=1.375, f(65)=1.25)
+    assert confirmed.quality_multiplier_applied == pytest.approx(1.25)
+    assert confirmed.score_adjusted_target_pct == pytest.approx(5.0)
     decrease = _one(drift_score=30.0, drift_change_recent=-20.0, observation_count=1)
-    assert decrease.score_adjusted_target_pct == pytest.approx(2.4)
+    assert decrease.score_adjusted_target_pct == pytest.approx(2.5)
 
 
 def test_exit_role_targets_zero_and_broken_thesis_keeps_base():
@@ -140,14 +142,14 @@ def test_sector_cap_scales_only_increases():
     items = [
         replace(ITEM, ticker="A", base_target_weight_pct=10.0, drift_score=80.0),
         replace(ITEM, ticker="B", base_target_weight_pct=10.0, drift_score=50.0),
-        replace(ITEM, ticker="C", base_target_weight_pct=8.0, drift_score=30.0),
+        replace(ITEM, ticker="C", base_target_weight_pct=8.0, drift_score=30.0),  # x0.625 -> 5.0
         replace(ITEM, ticker="D", base_target_weight_pct=4.0, drift_score=80.0),
     ]
     results, _ = _targets(items)
     total = sum(r.score_adjusted_target_pct for r in results.values())
     assert total <= 30.0 + 1e-9
     assert results["B"].score_adjusted_target_pct == 10.0
-    assert results["C"].score_adjusted_target_pct == pytest.approx(4.8)
+    assert results["C"].score_adjusted_target_pct == pytest.approx(5.0)
     assert results["A"].score_adjusted_target_pct >= 10.0
     assert "SECTOR_CAP" in results["D"].constraints
 
@@ -173,15 +175,15 @@ def test_budget_room_from_a_decrease_funds_increases_without_touching_decreases(
     items[0] = replace(items[0], base_target_weight_pct=6.0, drift_score=80.0)
     items[1] = replace(items[1], base_target_weight_pct=6.0, drift_score=80.0)
     items[2] = replace(items[2], base_target_weight_pct=9.0, drift_score=30.0)
-    # bases: 6+6+9+7*9.5 = 87.5; decrease frees 3.6; increases want 2*3 = 6 -> room 95-(87.5-3.6) = 11.1
+    # bases: 6+6+9+7*9.5 = 87.5; decrease frees 3.375; increases want 2*3 = 6 -> room 95-(87.5-3.375)
     results, _ = _targets(items)
-    assert results["T2"].score_adjusted_target_pct == pytest.approx(9.0 * 0.6)
+    assert results["T2"].score_adjusted_target_pct == pytest.approx(9.0 * 0.625)
     assert results["T0"].score_adjusted_target_pct == pytest.approx(9.0)
     total = sum(r.score_adjusted_target_pct for r in results.values())
     assert total <= 95.0 + 1e-9
     # Tighter: four increases compete for the room and are scaled pro rata.
-    # 11 x 8.5 = 93.5; T10 drops to 5.1 (frees 3.4); four increases want +1.5 each (cap 10)
-    # = 6.0 but only 95 - 90.1 = 4.9 is left -> each gets 8.5 + 1.5 * 4.9/6.
+    # 11 x 8.5 = 93.5; T10 drops to 8.5 x 0.625 = 5.3125 (frees 3.1875); four increases
+    # want +1.5 each (cap 10) = 6.0 but only 95 - 90.3125 = 4.6875 is left.
     items = [replace(ITEM, ticker=f"T{i}", sector=f"S{i}", base_target_weight_pct=8.5) for i in range(11)]
     for i in range(4):
         items[i] = replace(items[i], drift_score=80.0)
@@ -189,9 +191,9 @@ def test_budget_room_from_a_decrease_funds_increases_without_touching_decreases(
     results, _ = _targets(items)
     total = sum(r.score_adjusted_target_pct for r in results.values())
     assert total == pytest.approx(95.0)
-    assert results["T10"].score_adjusted_target_pct == pytest.approx(5.1)
+    assert results["T10"].score_adjusted_target_pct == pytest.approx(5.3125)
     assert results["T0"].binding_constraint == "PORTFOLIO_BUDGET"
-    assert results["T0"].score_adjusted_target_pct == pytest.approx(8.5 + 1.5 * 4.9 / 6.0)
+    assert results["T0"].score_adjusted_target_pct == pytest.approx(8.5 + 1.5 * 4.6875 / 6.0)
 
 
 def _decision(current, target_result, base=7.0):
@@ -218,7 +220,7 @@ def test_price_rise_without_drift_improvement_is_price_only_trim():
 
 def test_price_rise_with_supported_improvement_within_band_is_hold():
     target = _one(base_target_weight_pct=7.0, drift_score=65.0, drift_change_recent=2.0, observation_count=2)
-    assert target.score_adjusted_target_pct == pytest.approx(7.0 * min(1.3, 1.26))
+    assert target.score_adjusted_target_pct == pytest.approx(7.0 * min(1.25, 1.2))
     result = _decision(9.0, target)
     assert result.decision_state == "HOLD"
     assert "WITHIN_BAND" in result.reasons
@@ -255,11 +257,17 @@ def test_portfolio_and_baselines_are_byte_identical_after_run(tmp_path):
     assert payload["adjusted_target_total_pct"] <= 100 - TARGET_CFG["budget"]["min_cash_pct"] + 1e-9
 
 
+def _set_flat_segment(target_cfg, multiplier):
+    for point in target_cfg["quality_multiplier"]["points"]:
+        if 45 <= point["drift"] <= 55:
+            point["multiplier"] = multiplier
+
+
 @pytest.mark.parametrize(
     ("mutate", "match"),
     [
         (lambda t: t["quality_multiplier"]["points"].reverse(), "strictly increasing"),
-        (lambda t: t["quality_multiplier"]["points"][1].update(multiplier=1.1), "drift 50 to multiplier 1.00"),
+        (lambda t: _set_flat_segment(t, 0.9), "drift 50 to multiplier 1.00"),
         (lambda t: t["quality_multiplier"]["dead_band"].update(low=51), "must contain 50"),
         (lambda t: t["gates"].update(min_consecutive_improvements=3), "must be 1 or 2"),
         (lambda t: t["budget"].update(min_cash_pct=10), "base targets already sum"),
@@ -272,3 +280,15 @@ def test_target_adjustment_validator_rejects(mutate, match):
     mutate(broken["target_adjustment"])
     with pytest.raises(DecisionConfigError, match=match):
         validate_decision_config(broken, REPO_CFG)
+
+
+def test_multiplier_sweep_is_continuous_monotonic_and_flat_in_dead_band():
+    steps = [round(i * 0.1, 1) for i in range(0, 1001)]
+    values = [quality_multiplier(d, TARGET_CFG) for d in steps]
+    jumps = [b - a for a, b in zip(values, values[1:])]
+    assert max(abs(j) for j in jumps) <= 0.01
+    assert all(j >= -1e-12 for j in jumps)
+    for d, v in zip(steps, values):
+        if 45.0 <= d <= 55.0:
+            assert v == 1.0, d
+    assert values[0] == 0.5 and values[-1] == 1.5
