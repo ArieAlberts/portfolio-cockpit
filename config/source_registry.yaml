@@ -194,14 +194,14 @@ companies:
         url: https://data.sec.gov/submissions/CIK0001590714.json
 
   ABX:
-    company_name: Abacus Global Management, Inc.
-    baseline_path: data/baselines/ABX/2026-08-06.json
-    baseline_date: "2026-08-06"
+    company_name: Barrick Mining Corporation
+    baseline_path: data/baselines/ABX/2026-08-10.json
+    baseline_date: "2026-08-10"
     stale_after_days: 135
     sources:
       - id: sec_submissions
         mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001814287.json
+        url: https://data.sec.gov/submissions/CIK0000756894.json
 
   ERO:
     company_name: Ero Copper Corp.
