@@ -1,0 +1,439 @@
+{
+  "as_of": "2026-10-04",
+  "axis": "VALUATION",
+  "execution_effect": "NONE",
+  "methodology": {
+    "labels": {
+      "attractive_min": 60,
+      "fair_min": 45
+    },
+    "max_price_age_days": 7,
+    "minimum_metric_weight_coverage": 0.5,
+    "negative_denominator_rule": "NOT_APPLICABLE; never read as cheap",
+    "reference_weights": {
+      "own_history": 0.6,
+      "peers": 0.4
+    },
+    "score_scale": "50 ~ fair versus reference; higher = more attractive"
+  },
+  "pipeline_version": 1,
+  "provenance": {
+    "code_files": {
+      "src/portfolio_cockpit/decision_layer/config.py": "d06c37a5399650d128c167943faeb02bfb3ebda10057a9fb4f0c06ada8694f96",
+      "src/portfolio_cockpit/decision_layer/formulas.py": "7d55d2daa1d9eafb6c50f375cb36ab14a2669430ee882056d9129fff3493d818",
+      "src/portfolio_cockpit/decision_layer/io.py": "b81ac7fbc22022bdf7a9655b7dd09d5e5119e8795f3925794eedbf5de2e5b713",
+      "src/portfolio_cockpit/decision_layer/valuation.py": "b273d7ea0514238da48b6d3eb6e3d1904efd23e4d049d759a228f89e18fe2b6f"
+    },
+    "code_hash": "af1e09aa5a10f8810d3569b9976099b6d4d45a118e080eb6d296e1f41994912a",
+    "config_files": {
+      "config/company_types.yaml": "c514ba9e9e4d3953d10fc59ece0ecfd632c2c2520f6960fc24a485350e4eac48",
+      "config/portfolio.yaml": "28d232a8f1dca1df10eaf66eba12d1a6efd19ed26bd17d77619f90ae4be786ba",
+      "config/valuation.yaml": "17ea71973be5b18526e19b0264ad6b78c12bf5849cf2f4e52c0c3334bb7f94b4"
+    },
+    "config_hash": "3315345a3ed8b20c746a93633f17ee313c533455473fb85fd2638070c1750bcd",
+    "market_file": null,
+    "reference_hashes": {},
+    "run_git_commit": "2c34e25c0bd3fbcc4ddec6ad974b407f23421853"
+  },
+  "reproducibility_hash": "5b2464ddb7153af4008b0a5c49159d1386e24258ed3db35a445d7cff07f1bc7b",
+  "results": {
+    "ABX": {
+      "company_type": "FINANCIAL_SERVICES",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:ABX"
+      ]
+    },
+    "ADM.L": {
+      "company_type": "INSURER",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:ADM.L"
+      ]
+    },
+    "ASR": {
+      "company_type": "INSURER",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:ASR"
+      ]
+    },
+    "CAP.PA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:CAP.PA"
+      ]
+    },
+    "CRDA.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:CRDA.L"
+      ]
+    },
+    "DKS": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:DKS"
+      ]
+    },
+    "EMN": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:EMN"
+      ]
+    },
+    "ERO": {
+      "company_type": "CYCLICAL_MINING",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:ERO"
+      ]
+    },
+    "ESI": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:ESI"
+      ]
+    },
+    "FUL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:FUL"
+      ]
+    },
+    "IMCD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:IMCD"
+      ]
+    },
+    "LEU": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:LEU"
+      ]
+    },
+    "MOD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:MOD"
+      ]
+    },
+    "MSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:MSM"
+      ]
+    },
+    "OKLO": {
+      "company_type": "PRE_REVENUE_DEVELOPMENT",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:OKLO"
+      ]
+    },
+    "PLMR": {
+      "company_type": "INSURER_US_P&C",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:PLMR"
+      ]
+    },
+    "POWL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:POWL"
+      ]
+    },
+    "ROR.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:ROR.L"
+      ]
+    },
+    "SNA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:SNA"
+      ]
+    },
+    "TMDX": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:TMDX"
+      ]
+    },
+    "TXRH": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:TXRH"
+      ]
+    },
+    "WKL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:WKL"
+      ]
+    },
+    "WSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": null,
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [],
+      "price": null,
+      "price_age_days": null,
+      "price_as_of": null,
+      "status": "NO_MARKET_DATA",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:market:WSM"
+      ]
+    }
+  },
+  "schema_version": 1,
+  "summary": {
+    "NO_MARKET_DATA": 23,
+    "OK": 0,
+    "VALUATION_DATA_CHECK": 0,
+    "portfolio_companies": 23
+  }
+}
