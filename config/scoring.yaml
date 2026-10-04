@@ -46,3 +46,9 @@ data_confidence:
 
 portfolio_risk:
   default_single_stock_shock: -0.30
+
+calculation_validation:
+  enabled: true
+  absolute_tolerance: 0.001
+  relative_tolerance: 0.00001
+  block_score_eligible_mismatch: true

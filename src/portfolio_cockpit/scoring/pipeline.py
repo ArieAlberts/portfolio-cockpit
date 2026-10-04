@@ -18,6 +18,7 @@ from portfolio_cockpit.config import (
 )
 
 from .absolute_anchors import evaluate_absolute_anchors
+from .calculation_validation import validate_dataset_calculations
 from .normalization import calculate_fundamental_quality
 from .peer_confidence import peer_metric_confidence
 from .peer_data import EligibleMetricSet, eligible_metric_set
@@ -44,6 +45,7 @@ CODE_FILES = (
     "src/portfolio_cockpit/scoring/readiness.py",
     "src/portfolio_cockpit/scoring/quality.py",
     "src/portfolio_cockpit/scoring/absolute_anchors.py",
+    "src/portfolio_cockpit/scoring/calculation_validation.py",
 )
 
 
@@ -310,6 +312,9 @@ def build_score_snapshot(
     stable_width = float(fq_cfg["sensitivity"]["stable_band_width_points"])
     unstable_width = float(fq_cfg["sensitivity"]["unstable_band_width_points"])
     hard_tokens = list(readiness_cfg["hard_block_status_contains"])
+    calculation_cfg = scoring_cfg["calculation_validation"]
+    calculation_abs_tolerance = float(calculation_cfg["absolute_tolerance"])
+    calculation_rel_tolerance = float(calculation_cfg["relative_tolerance"])
 
     config_hash, config_hashes = _bundle_hash(root, CONFIG_FILES)
     code_hash, code_hashes = _bundle_hash(root, CODE_FILES)
@@ -325,6 +330,12 @@ def build_score_snapshot(
         dataset = _read_json(dataset_path)
         dataset_hash = _sha256(dataset_path)
         peer_dataset_hashes[ticker] = dataset_hash
+        calculation_validation = validate_dataset_calculations(
+            dataset=dataset,
+            absolute_tolerance=calculation_abs_tolerance,
+            relative_tolerance=calculation_rel_tolerance,
+        )
+        calculation_integrity_pass = bool(calculation_validation["integrity_pass"])
         dataset_rules = dataset.get("rules", {})
         dataset_min_peers = dataset_rules.get(
             "minimum_peer_values_per_metric",
@@ -427,6 +438,16 @@ def build_score_snapshot(
             warnings.append(
                 f"DATASET_MIN_PEERS_MISMATCH:{dataset_min_peers}!={minimum_peers}"
             )
+        for issue in calculation_validation["blocking_issues"]:
+            warnings.append(
+                "CALCULATION_MISMATCH:"
+                f"{issue['ticker']}:{issue['metric_name']}"
+            )
+        for issue in calculation_validation["nonblocking_issues"]:
+            warnings.append(
+                "CALCULATION_DIAGNOSTIC_MISMATCH:"
+                f"{issue['ticker']}:{issue['metric_name']}"
+            )
 
         provenance = {
             "peer_dataset": {
@@ -447,6 +468,8 @@ def build_score_snapshot(
             "peer_universe_status": dataset.get("peer_universe_status"),
             "dataset_minimum_peer_values": dataset_min_peers,
             "dataset_rule_consistent": dataset_rule_consistent,
+            "calculation_integrity_pass": calculation_integrity_pass,
+            "calculation_validation": calculation_validation,
             "weighted_component_coverage": readiness.weighted_component_coverage,
             "covered_components": list(readiness.covered_components),
             "missing_required_components": list(readiness.missing_required_components),
@@ -472,7 +495,12 @@ def build_score_snapshot(
                 "normalization_warnings": list(candidate.warnings),
             }
 
-        if readiness.production_ready and dataset_rule_consistent and candidate is not None:
+        if (
+            readiness.production_ready
+            and dataset_rule_consistent
+            and calculation_integrity_pass
+            and candidate is not None
+        ):
             scores[ticker] = {
                 **base,
                 "status": "DISPLAY_READY",
@@ -526,6 +554,12 @@ def build_score_snapshot(
             "absolute_anchors_affect_score": False,
             "absolute_anchors_affect_readiness": False,
             "absolute_anchors_affect_decision_engine": False,
+            "calculation_validation_enabled": bool(calculation_cfg["enabled"]),
+            "calculation_absolute_tolerance": calculation_abs_tolerance,
+            "calculation_relative_tolerance": calculation_rel_tolerance,
+            "calculation_mismatch_blocks_publication": bool(
+                calculation_cfg["block_score_eligible_mismatch"]
+            ),
         },
         "provenance": {
             "run_git_commit": code_version,

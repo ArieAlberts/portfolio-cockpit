@@ -54,7 +54,7 @@
           "value": 8.163265,
           "comparison_class": "H1_CASH_EPS_GROWTH",
           "source_definition": "cash EPS H1 YoY",
-          "calculation": "3.18 / 2.94 - 1",
+          "calculation": "(3.18 / 2.94 - 1) * 100",
           "score_eligible": true
         },
         "free_cash_flow_margin_pct": {
@@ -158,7 +158,7 @@
           "value": -0.201486,
           "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
           "source_definition": "derived from official Q1+Q2 sales",
-          "calculation": "(3662+4263)/(4072+3869)-1",
+          "calculation": "((3662 + 4263) / (4072 + 3869) - 1) * 100",
           "score_eligible": false
         },
         "organic_revenue_growth_pct": {
@@ -179,7 +179,7 @@
           "value": 55.284553,
           "comparison_class": "H1_CASH_EPS_GROWTH",
           "source_definition": "reported EPS growth derived from Q1+Q2",
-          "calculation": "(0.68+1.23)/(0.93+0.30)-1",
+          "calculation": "(((0.68 + 1.23) / (0.93 + 0.30)) - 1) * 100",
           "score_eligible": false,
           "notes": "Regular EPS is not the same measure as IMCD/Azelis cash EPS."
         },

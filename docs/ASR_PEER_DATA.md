@@ -4,65 +4,85 @@ This dataset standardizes H1 2026 financial observations for ASR and its diversi
 
 File:
 
-`data/peers/ASR/2026-10-02.json`
+`data/peers/ASR/2026-10-03.json`
+
+## Current scoring result
+
+A fresh pipeline rebuild on this dataset makes ASR `DISPLAY_READY` without relaxing any production gate.
+
+- Fundamental Quality: **66.1 / 100**
+- weighted component coverage: **75%**
+- covered components: capital strength, underwriting quality, profitability
+- target data confidence: above the production threshold
+- peer-input confidence: above the production threshold
+- leave-one-out sensitivity: **STABLE**
+- sensitivity band: approximately **63.7–71.9**
+- execution effect: **NONE**
+
+The immutable historical `current.json` pointer still references r9, where ASR was DATA_CHECK at 55% coverage. That historical snapshot is intentionally not overwritten; a new immutable scoring revision should be generated after this patch is merged.
 
 ## Strictly score-eligible comparison classes
 
-### Solvency II ratio
+### EU Solvency II ratio
 
-Eligible:
+Target and eligible peers:
 - ASR
 - NN Group
 - Ageas
 - Sampo
-- Aviva
+- Generali
 
-Zurich is deliberately excluded because its 266% capital ratio is a Swiss Solvency Test (SST) ratio rather than a Solvency II ratio.
-
-### Company-defined operating earnings growth
-
-Eligible:
-- ASR
-- NN Group
-- Ageas
-- Sampo
-- Aviva
-- Zurich
-
-This class is intentionally labeled "company-defined". Operating result, net operating result and business operating profit are not identical accounting measures. The class may be used only as a broad earnings-momentum signal and should receive a lower model weight than capital strength.
-
-### Operating capital generation growth
-
-Eligible:
-- ASR
-- NN Group
-- Ageas
-- Aviva
-
-The original company terminology is preserved:
-- ASR: organic capital creation
-- NN: operating capital generation
-- Ageas: operational capital generation
-- Aviva: Solvency II operating capital generation
+Aviva is excluded from this metric because its ratio is Solvency UK. Zurich is excluded because its ratio is Swiss Solvency Test (SST). Neither is silently normalized as EU Solvency II.
 
 ### Non-life combined ratio
 
-Eligible with scope warnings:
+Eligible with visible scope differences:
 - ASR: Non-life excluding Health
-- NN: Netherlands Non-life
+- NN Group: Netherlands Non-life
 - Ageas: group Non-Life
 - Sampo: group P&C
 - Aviva: Group General Insurance
 - Zurich: P&C
+- Generali: P&C
 
-The ratio is economically related across the cohort, but the business scope differs. It therefore needs a visible comparability warning.
+The ratio is economically related across the cohort, but the business scope differs. The peer provenance remains visible.
 
-## Stored but currently blocked
+### Harmonized IFRS common-equity ROE
 
-ROE values are stored for ASR, Ageas, Aviva and Zurich, but are not score-eligible yet because the definitions differ (operating ROE, shareholder ROE, IFRS ROE and Core ROE).
+The old company-defined ROEs remain stored but blocked. Profitability now uses one explicit formula:
 
-Dividend growth is stored where available but is not yet sufficiently complete for strict peer normalization.
+```text
+annualized H1 IFRS profit available to ordinary shareholders
+----------------------------------------------------------------
+average opening and closing IFRS common shareholders' equity
+```
+
+Claims of non-controlling interests and separately reported equity-hybrid holders are excluded where applicable.
+
+Target and eligible peers:
+- ASR: 17.39%
+- NN Group: 10.72%
+- Ageas: 17.21%
+- Sampo: 11.08%
+- Aviva: 7.96%
+- Generali: 16.01%
+
+This five-peer set is sufficient for production scoring and reduces the leave-one-out score band below the 10-point STABLE threshold.
+
+## Growth stability
+
+Company-defined operating earnings growth is available across a broad peer set, but the metric slots deliberately require enough independent signal weight within the component. The available growth slots do not yet satisfy that component-level metric-coverage rule, so growth stability does not contribute to the current ASR score.
+
+This is intentional: one convenient growth metric is not allowed to carry the whole component automatically.
+
+## Value per share
+
+Weighted-average ordinary share-count change is now available for the target plus at least four peers. The derived IFRS EPS-growth series remains diagnostic only while the exact per-share basis is being revalidated across the cohort.
+
+Because the value-per-share component does not yet reach its internal metric-weight threshold, it is excluded from the production score rather than partially forced in.
 
 ## Data-quality principle
 
-A regulatory capital ratio from a different regime is not silently treated as equivalent. The same rule applies to ROE and other company-defined metrics.
+A score is published only from comparison classes that are definitionally aligned, sufficiently populated and stable under leave-one-out sensitivity. Regulatory ratios from different regimes and company-defined ROEs are not treated as interchangeable.
+
+No score has an execution effect.

@@ -37,6 +37,7 @@ metric_directions:
 
   INSURER:
     solvency_ratio_pct: higher_is_better
+    annualized_ifrs_common_equity_roe_pct: higher_is_better
     combined_ratio_pct: lower_is_better
     loss_ratio_pct: lower_is_better
     annualized_roe_pct: higher_is_better
@@ -148,6 +149,7 @@ component_metric_aliases:
       - combined_ratio_pct
       - loss_ratio_pct
     profitability:
+      - annualized_ifrs_common_equity_roe_pct
       - annualized_roe_pct
       - operating_roe_pct
       - reported_roe_pct
@@ -269,6 +271,7 @@ metric_kinds:
   net_written_premium_to_surplus_ratio: ratio
   combined_ratio_pct: percentage
   loss_ratio_pct: percentage
+  annualized_ifrs_common_equity_roe_pct: percentage
   annualized_roe_pct: percentage
   operating_roe_pct: percentage
   reported_roe_pct: percentage
@@ -372,7 +375,7 @@ component_metric_slots:
     profitability:
       roe:
         weight: 1.00
-        aliases: [annualized_roe_pct, operating_roe_pct, reported_roe_pct]
+        aliases: [annualized_ifrs_common_equity_roe_pct, annualized_roe_pct, operating_roe_pct, reported_roe_pct]
     growth_stability:
       operating_earnings:
         weight: 0.35

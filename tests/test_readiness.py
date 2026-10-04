@@ -35,13 +35,18 @@ def run(ticker):
     )
 
 
-def test_asr_legacy_readiness_sees_repaired_capital_but_stays_below_70_percent():
+def test_asr_legacy_readiness_sees_all_alias_components_but_cannot_publish_without_gates():
     r=run("ASR")
-    assert r.weighted_component_coverage == 0.65
-    assert r.peer_coverage_pass is False
+    # Legacy readiness treats any READY alias as component coverage. The production
+    # pipeline applies metric-slot coverage and therefore reports 0.75 instead.
+    assert r.weighted_component_coverage == 1.0
+    assert r.peer_coverage_pass is True
     assert r.required_components_pass is True
     assert r.missing_required_components==()
     assert r.production_ready is False
+    assert "DATA_CONFIDENCE_PENDING" in r.warnings
+    assert "PEER_INPUT_CONFIDENCE_PENDING" in r.warnings
+    assert "SENSITIVITY_PENDING" in r.warnings
 
 
 def test_plmr_70_percent_is_not_enough_without_required_capital_strength():

@@ -46,5 +46,32 @@ def test_capital_generation_does_not_meet_four_peer_minimum():
     assert metric.status=="INSUFFICIENT_ALIGNED_PEERS"
 
 
-def test_asr_roe_remains_blocked_until_harmonized():
-    assert load_data()["companies"]["ASR"]["metrics"]["reported_roe_pct"]["score_eligible"] is False
+def test_harmonized_ifrs_common_equity_roe_is_ready_with_five_peers():
+    metric=eligible_metric_set(
+        load_data(),"annualized_ifrs_common_equity_roe_pct",min_peers=4
+    )
+    assert metric.status=="READY"
+    assert set(metric.peer_tickers)=={
+        "NN.AS","AGS.BR","SAMPO.HE","AV.L","G.MI"
+    }
+
+
+def test_company_defined_roe_remains_blocked():
+    data=load_data()
+    assert data["companies"]["ASR"]["metrics"]["reported_roe_pct"]["score_eligible"] is False
+    assert data["companies"]["AV.L"]["metrics"]["reported_roe_pct"]["score_eligible"] is False
+
+
+def test_share_count_series_is_ready_without_ageas():
+    metric=eligible_metric_set(load_data(),"share_count_change_pct",min_peers=4)
+    assert metric.status=="READY"
+    assert set(metric.peer_tickers)=={"NN.AS","SAMPO.HE","AV.L","G.MI"}
+    ageas=load_data()["companies"]["AGS.BR"]["metrics"]["share_count_change_pct"]
+    assert ageas["value"] is None
+    assert ageas["score_eligible"] is False
+
+
+def test_derived_ifrs_eps_growth_is_diagnostic_only():
+    data=load_data()
+    assert data["companies"]["ASR"]["metrics"]["gaap_eps_growth_pct"]["score_eligible"] is False
+    assert eligible_metric_set(data,"gaap_eps_growth_pct",min_peers=4).status=="TARGET_DATA_CHECK"

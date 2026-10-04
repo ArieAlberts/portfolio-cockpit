@@ -128,6 +128,22 @@ def validate_config(config: dict[str, dict[str, Any]]) -> None:
     if clip_z <= 0:
         errors.append("fundamental_quality.clip_z_score must be positive")
 
+    calculation_cfg = scoring.get("calculation_validation", {})
+    if calculation_cfg.get("enabled") is not True:
+        errors.append("calculation_validation.enabled must be true")
+    try:
+        calc_abs_tol = float(calculation_cfg.get("absolute_tolerance", -1))
+        calc_rel_tol = float(calculation_cfg.get("relative_tolerance", -1))
+    except (TypeError, ValueError):
+        errors.append("calculation validation tolerances must be numeric")
+    else:
+        if calc_abs_tol < 0 or calc_rel_tol < 0:
+            errors.append("calculation validation tolerances must be non-negative")
+    if calculation_cfg.get("block_score_eligible_mismatch") is not True:
+        errors.append(
+            "calculation_validation.block_score_eligible_mismatch must remain true"
+        )
+
     sensitivity = fq.get("sensitivity", {})
     stable = float(sensitivity.get("stable_band_width_points", 0))
     unstable = float(sensitivity.get("unstable_band_width_points", 0))

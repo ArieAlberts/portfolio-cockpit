@@ -75,7 +75,7 @@
           "value": -0.9504,
           "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "average number of shares outstanding H1 YoY",
-          "calculation": "168337662 / 169952974 - 1",
+          "calculation": "(168337662 / 169952974 - 1) * 100",
           "score_eligible": false
         }
       }
@@ -108,7 +108,7 @@
           "value": 8.235294,
           "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
           "source_definition": "adjusted diluted EPS H1 YoY",
-          "calculation": "2.76 / 2.55 - 1",
+          "calculation": "(2.76 / 2.55 - 1) * 100",
           "score_eligible": true
         },
         "free_cash_flow_margin_pct": {
@@ -128,7 +128,7 @@
           "value": -4.259635,
           "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "diluted weighted-average shares H1 YoY",
-          "calculation": "472 / 493 - 1",
+          "calculation": "(472 / 493 - 1) * 100",
           "score_eligible": false
         }
       }
@@ -218,7 +218,7 @@
           "value": 20.46332,
           "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
           "source_definition": "non-GAAP diluted EPS H1 YoY",
-          "calculation": "6.24 / 5.18 - 1",
+          "calculation": "(6.24 / 5.18 - 1) * 100",
           "score_eligible": true
         },
         "free_cash_flow_margin_pct": {
@@ -245,7 +245,7 @@
           "value": -6.464199,
           "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
           "source_definition": "diluted weighted-average shares H1 YoY",
-          "calculation": "53.220 / 56.898 - 1",
+          "calculation": "(53.220 / 56.898 - 1) * 100",
           "score_eligible": false
         }
       }
