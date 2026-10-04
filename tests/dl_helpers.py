@@ -10,11 +10,20 @@ ROOT = Path(__file__).resolve().parents[1]
 AS_OF = "2026-10-03"
 
 
+GENERATED_OUTPUT_DIRS = ("data/drift", "data/valuation", "data/decisions", "data/signal_log")
+
+
 def repo_copy(tmp_path: Path) -> Path:
-    """Copy the inputs a decision-layer run needs into an isolated root."""
+    """Copy the inputs a decision-layer run needs into an isolated root.
+
+    Generated decision-layer output (written to main by the rebuild
+    workflow) is left out, so every test starts without prior revisions.
+    """
     root = tmp_path / "repo"
     for rel in ("config", "data", "src"):
         shutil.copytree(ROOT / rel, root / rel, ignore=shutil.ignore_patterns("__pycache__"))
+    for rel in GENERATED_OUTPUT_DIRS:
+        shutil.rmtree(root / rel, ignore_errors=True)
     return root
 
 
