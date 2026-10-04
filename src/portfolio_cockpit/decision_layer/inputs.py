@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from portfolio_cockpit.config import load_config
+from portfolio_cockpit.config import ConfigValidationError, load_config
 
 from .config import DecisionConfigError, load_decision_config, missing_owner_inputs
 from .drift import ObservationError, evidence_gate, load_observations
@@ -21,14 +21,22 @@ from .valuation import MarketDataError, latest_market_file, load_references, val
 
 def check_inputs(root: Path, as_of: str | None = None) -> dict[str, Any]:
     as_of = as_of or datetime.now(timezone.utc).date().isoformat()
-    report: dict[str, Any] = {"as_of": as_of, "errors": [], "blocking": [], "missing": {}, "info": []}
+    report: dict[str, Any] = {
+        "as_of": as_of,
+        "errors": [],
+        "blocking": [],
+        "missing": {},
+        "info": [],
+        "ready_for_decisions": False,
+    }
     try:
         cfg = load_decision_config(root)
-    except DecisionConfigError as exc:
-        report["errors"].append(str(exc))
+        repo_cfg = load_config(root)
+    except (DecisionConfigError, ConfigValidationError) as exc:
+        # One line per validation error, so the owner sees exactly what to fix.
+        report["errors"].extend(part.strip() for part in str(exc).split("; ") if part.strip())
         report["blocking"].append("config is invalid")
         return report
-    repo_cfg = load_config(root)
     positions = repo_cfg["portfolio"]["positions"]
     valuation = cfg["valuation"]
 

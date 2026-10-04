@@ -107,3 +107,21 @@ def test_input_check_passes_owner_files_and_lists_market_gaps(tmp_path):
     assert "ASR.bvps" in report["missing"]["data/market"]
     assert "WKL.price" in report["missing"]["data/market"]
     assert report["ready_for_decisions"]
+
+
+def test_input_check_reports_invalid_config_without_crashing(tmp_path, capsys):
+    from portfolio_cockpit.decision_layer.inputs import main
+
+    root = repo_copy(tmp_path)
+    path = root / "config/positions.yaml"
+    text = path.read_text()
+    path.write_text(text.replace("source: manual", "source: ibkr", 1))
+    report = check_inputs(root, AS_OF)
+    assert report["ready_for_decisions"] is False
+    assert "config is invalid" in report["blocking"]
+    assert "positions.source must be 'manual'" in report["errors"]
+    assert main(["--root", str(root), "--as-of", AS_OF]) == 0
+    out = capsys.readouterr().out
+    assert "ERROR  positions.source must be 'manual'" in out
+    assert "BLOCKED config is invalid" in out
+    assert main(["--root", str(root), "--as-of", AS_OF, "--strict"]) == 1
