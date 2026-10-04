@@ -1,0 +1,196 @@
+import ast
+import hashlib
+import json
+from dataclasses import replace
+from pathlib import Path
+
+import pytest
+
+from portfolio_cockpit.config import load_config
+from portfolio_cockpit.decision_layer.config import load_decision_config
+from portfolio_cockpit.decision_layer.decision import (
+    DecisionInputError,
+    DecisionInputs,
+    FORBIDDEN_OUTPUT_KEYS,
+    build_decision_snapshot,
+    decide,
+    write_decision_snapshot,
+)
+from portfolio_cockpit.decision_layer.drift import build_drift_snapshot, write_drift_snapshot
+from portfolio_cockpit.decision_layer.valuation import build_valuation_snapshot, write_valuation_snapshot
+
+from dl_helpers import (
+    AS_OF, ROOT, filled_owner_config, market_entry, observation_from_baseline, reference, repo_copy,
+    write_market, write_observation, write_owner_config, write_refs,
+)
+
+REPO_CFG = load_config(ROOT)
+CFG = load_decision_config(ROOT)
+DECISION_CFG = CFG["decision"]
+
+BASE = DecisionInputs(
+    ticker="X", drift_score=50.0, drift_change_recent=0.0, drift_status="OK",
+    valuation_score=50.0, valuation_status="OK", data_confidence=90.0, thesis_status="INTACT",
+    portfolio_weight_pct=3.0, base_target_weight_pct=4.0, sector_weight_pct=10.0,
+    portfolio_impact_pp=-0.9, fq_status="DATA_CHECK", fq_score=None,
+)
+
+
+@pytest.mark.parametrize(
+    ("changes", "state"),
+    [
+        ({"data_confidence": 70.0}, "DATA_CHECK"),
+        ({"drift_status": "DRIFT_DATA_CHECK", "drift_score": None}, "DATA_CHECK"),
+        ({"valuation_status": "NO_MARKET_DATA", "valuation_score": None}, "DATA_CHECK"),
+        ({"thesis_status": "BROKEN"}, "THESIS_REVIEW"),
+        ({"drift_score": 40.0}, "REVIEW_REDUCE"),
+        ({"drift_score": 52.0, "drift_change_recent": -10.0}, "REVIEW_REDUCE"),
+        ({"drift_score": 55.0, "valuation_score": 60.0}, "ADD_CANDIDATE"),
+        ({"drift_score": 45.0, "valuation_score": 44.9}, "NO_ADD"),
+        ({"drift_score": 50.0, "valuation_score": 50.0}, "HOLD"),
+        ({"drift_score": 44.0, "valuation_score": 30.0}, "HOLD"),
+        ({"thesis_status": "WATCH", "drift_score": 60.0, "valuation_score": 70.0}, "ADD_CANDIDATE"),
+    ],
+)
+def test_every_branch_of_the_decision_tree(changes, state):
+    result = decide(replace(BASE, **changes), DECISION_CFG)
+    assert result.decision_state == state
+    assert result.reasons
+
+
+def test_data_check_precedes_everything():
+    worst = replace(BASE, data_confidence=50.0, thesis_status="BROKEN", drift_score=10.0)
+    result = decide(worst, DECISION_CFG)
+    assert result.decision_state == "DATA_CHECK"
+    assert "DATA_CONFIDENCE_BELOW_80" in result.reasons
+
+
+@pytest.mark.parametrize(
+    ("changes", "flag"),
+    [
+        ({"portfolio_weight_pct": 10.0, "base_target_weight_pct": 10.0}, "POSITION_LIMIT"),
+        ({"portfolio_weight_pct": 4.8, "base_target_weight_pct": 4.0}, "ABOVE_TARGET_BAND"),
+        ({"sector_weight_pct": 30.0}, "SECTOR_LIMIT"),
+        ({"portfolio_impact_pp": -3.3, "portfolio_weight_pct": 5.0, "base_target_weight_pct": 7.0}, "IMPACT_LIMIT"),
+        ({"base_target_weight_pct": 0.0, "portfolio_weight_pct": 1.0}, "ABOVE_TARGET_BAND"),
+    ],
+)
+def test_limits_block_add(changes, flag):
+    result = decide(replace(BASE, drift_score=60.0, valuation_score=70.0, **changes), DECISION_CFG)
+    assert result.decision_state == "HOLD"
+    assert "ADD_BLOCKED_BY_LIMIT" in result.reasons
+    assert any(f.startswith(flag) for f in result.limit_flags)
+
+
+def test_fq_floor_only_applies_when_display_ready():
+    add = replace(BASE, drift_score=60.0, valuation_score=70.0)
+    not_ready = decide(replace(add, fq_status="DATA_CHECK", fq_score=None), DECISION_CFG)
+    assert not_ready.decision_state == "ADD_CANDIDATE"
+    assert "FQ_NOT_DISPLAY_READY" in not_ready.reasons
+    low = decide(replace(add, fq_status="DISPLAY_READY", fq_score=20.0), DECISION_CFG)
+    assert low.decision_state == "HOLD"
+    assert any(r.startswith("FQ_BELOW_FLOOR") for r in low.reasons)
+    ok = decide(replace(add, fq_status="DISPLAY_READY", fq_score=50.0), DECISION_CFG)
+    assert ok.decision_state == "ADD_CANDIDATE"
+    assert "FQ_NOT_DISPLAY_READY" not in ok.reasons
+
+
+def test_unknown_thesis_status_is_refused():
+    with pytest.raises(DecisionInputError):
+        decide(replace(BASE, thesis_status="GREAT"), DECISION_CFG)
+
+
+def test_template_owner_inputs_refuse_to_run():
+    with pytest.raises(DecisionInputError, match="cockpit-check-inputs"):
+        build_decision_snapshot(root=ROOT, as_of=AS_OF)
+
+
+def _end_to_end_root(tmp_path):
+    root = repo_copy(tmp_path)
+    write_owner_config(root, filled_owner_config(CFG, REPO_CFG))
+    drift_cfg = CFG["quality_drift"]
+    write_observation(root, observation_from_baseline("ASR", drift_cfg, overrides={"solvency_ii_ratio_pct": 260}))
+    write_refs(root, "ASR", {"pe": reference(10.0, 11.0), "price_to_book": reference(1.4, 1.6),
+                             "shareholder_yield": reference(0.08, 0.07)})
+    write_market(root, {"ASR": market_entry(price=45.0, shares_outstanding=210.0, eps_ttm=6.0, bvps=40.0,
+                                            distributions_ttm=1100.0)})
+    write_drift_snapshot(root, build_drift_snapshot(root=root, as_of=AS_OF, code_version="t"))
+    write_valuation_snapshot(root, build_valuation_snapshot(root=root, as_of=AS_OF, code_version="t"))
+    return root
+
+
+def test_end_to_end_decisions_for_all_23(tmp_path):
+    root = _end_to_end_root(tmp_path)
+    payload = build_decision_snapshot(root=root, as_of=AS_OF, code_version="t")
+    assert len(payload["results"]) == 23
+    asr = payload["results"]["ASR"]
+    assert asr["inputs"]["drift_score"] > 55
+    assert asr["inputs"]["valuation_label"] == "Attractive"
+    # ASR is 7% target and 7% current: within band but -2.1pp impact; Financials sector weight 21%.
+    assert asr["decision_state"] == "ADD_CANDIDATE", asr
+    assert payload["results"]["WKL"]["decision_state"] == "DATA_CHECK"
+    assert "VALUATION_NO_MARKET_DATA" in payload["results"]["WKL"]["reasons"]
+    assert payload["portfolio_risk"]["label"] == "PORTFOLIO IMPACT -30%"
+    for item in payload["results"].values():
+        assert item["execution_effect"] == "NONE"
+        assert {w["code"] for w in item["warnings"]} <= {
+            "STALE_DATA", "SOURCE_CONFLICT", "UNSUITABLE_METRIC", "MISSING_DATA",
+            "CALCULATION_ANOMALY", "PERIOD_MISMATCH",
+        }
+    assert payload["provenance"]["sources"]["drift"]["sha256"]
+
+
+def _keys(value):
+    if isinstance(value, dict):
+        for k, v in value.items():
+            yield k
+            yield from _keys(v)
+    elif isinstance(value, list):
+        for v in value:
+            yield from _keys(v)
+
+
+def test_output_never_contains_order_fields(tmp_path):
+    root = _end_to_end_root(tmp_path)
+    payload = build_decision_snapshot(root=root, as_of=AS_OF, code_version="t")
+    assert not set(_keys(payload)) & FORBIDDEN_OUTPUT_KEYS
+    assert payload["execution_effect"] == "NONE"
+
+
+def test_decision_layer_imports_no_broker_sdk():
+    forbidden = ("ib_insync", "ibapi", "ib_async", "alpaca", "ccxt", "degiro", "saxo", "order_manager", "requests")
+    for path in sorted((ROOT / "src/portfolio_cockpit/decision_layer").glob("*.py")):
+        tree = ast.parse(path.read_text())
+        modules = [a.name for n in ast.walk(tree) if isinstance(n, ast.Import) for a in n.names]
+        modules += [n.module or "" for n in ast.walk(tree) if isinstance(n, ast.ImportFrom)]
+        assert not [m for m in modules if any(f in m for f in forbidden)], path.name
+
+
+def test_base_target_weight_unchanged_after_run(tmp_path):
+    root = _end_to_end_root(tmp_path)
+    before = hashlib.sha256((root / "config/portfolio.yaml").read_bytes()).hexdigest()
+    write_decision_snapshot(root, build_decision_snapshot(root=root, as_of=AS_OF, code_version="t"))
+    assert hashlib.sha256((root / "config/portfolio.yaml").read_bytes()).hexdigest() == before
+    assert before == hashlib.sha256((ROOT / "config/portfolio.yaml").read_bytes()).hexdigest()
+
+
+def test_historical_decisions_are_preserved(tmp_path):
+    root = _end_to_end_root(tmp_path)
+    first = write_decision_snapshot(root, build_decision_snapshot(root=root, as_of=AS_OF, code_version="a"))
+    body = first.read_bytes()
+    again = write_decision_snapshot(root, build_decision_snapshot(root=root, as_of=AS_OF, code_version="b"))
+    assert again == first
+    write_market(root, {"ASR": market_entry(price=90.0, shares_outstanding=210.0, eps_ttm=6.0, bvps=40.0,
+                                            distributions_ttm=1100.0)})
+    write_valuation_snapshot(root, build_valuation_snapshot(root=root, as_of=AS_OF, code_version="c"))
+    second = write_decision_snapshot(root, build_decision_snapshot(root=root, as_of=AS_OF, code_version="c"))
+    assert second.name == f"decisions_{AS_OF}_r2.json"
+    assert first.read_bytes() == body
+    assert json.loads(second.read_text())["results"]["ASR"]["decision_state"] != "ADD_CANDIDATE"
+
+
+def test_missing_drift_snapshot_gives_clear_error(tmp_path):
+    root = repo_copy(tmp_path)
+    write_owner_config(root, filled_owner_config(CFG, REPO_CFG))
+    with pytest.raises(DecisionInputError, match="cockpit-drift --write"):
+        build_decision_snapshot(root=root, as_of=AS_OF)

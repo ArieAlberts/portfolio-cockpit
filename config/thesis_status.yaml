@@ -1,0 +1,27 @@
+# Investment thesis status per ticker (owner-supplied).
+# status: INTACT | WATCH | BROKEN. note: short explanation. All 23 required.
+schema_version: 1
+positions:
+  ASR: {status: null, as_of: null, note: null}
+  ADM.L: {status: null, as_of: null, note: null}
+  WKL: {status: null, as_of: null, note: null}
+  CAP.PA: {status: null, as_of: null, note: null}
+  IMCD: {status: null, as_of: null, note: null}
+  CRDA.L: {status: null, as_of: null, note: null}
+  ROR.L: {status: null, as_of: null, note: null}
+  EMN: {status: null, as_of: null, note: null}
+  WSM: {status: null, as_of: null, note: null}
+  DKS: {status: null, as_of: null, note: null}
+  TXRH: {status: null, as_of: null, note: null}
+  SNA: {status: null, as_of: null, note: null}
+  MSM: {status: null, as_of: null, note: null}
+  PLMR: {status: null, as_of: null, note: null}
+  MOD: {status: null, as_of: null, note: null}
+  FUL: {status: null, as_of: null, note: null}
+  POWL: {status: null, as_of: null, note: null}
+  ESI: {status: null, as_of: null, note: null}
+  ABX: {status: null, as_of: null, note: null}
+  ERO: {status: null, as_of: null, note: null}
+  TMDX: {status: null, as_of: null, note: null}
+  LEU: {status: null, as_of: null, note: null}
+  OKLO: {status: null, as_of: null, note: null}

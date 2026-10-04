@@ -1,0 +1,1385 @@
+{
+  "as_of": null,
+  "schema_version": 1,
+  "tickers": {
+    "ABX": {
+      "bvps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "currency": null,
+      "eps_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "ADM.L": {
+      "bvps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "currency": null,
+      "distributions_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "eps_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "ASR": {
+      "bvps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "currency": null,
+      "distributions_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "eps_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "CAP.PA": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "CRDA.L": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "DKS": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "EMN": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "ERO": {
+      "currency": null,
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "navps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "normalized_ebitda": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "ESI": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "FUL": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "IMCD": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "LEU": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "MOD": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "MSM": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "OKLO": {
+      "currency": null,
+      "navps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "risked_npv": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "PLMR": {
+      "bvps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "currency": null,
+      "distributions_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "eps_ttm": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "POWL": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "ROR.L": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "SNA": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "TMDX": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "TXRH": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "WKL": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    },
+    "WSM": {
+      "currency": null,
+      "ebit": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "fcf": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "forward_eps": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "net_debt": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "price": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      },
+      "shares_outstanding": {
+        "as_of_date": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        },
+        "value": null
+      }
+    }
+  }
+}
