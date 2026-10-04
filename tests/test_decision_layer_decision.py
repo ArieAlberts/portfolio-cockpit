@@ -1,4 +1,5 @@
 import ast
+from copy import deepcopy
 import shutil
 import hashlib
 import json
@@ -256,3 +257,23 @@ def test_decide_cli_write_logs_signals(tmp_path, capsys):
     assert log.read_text().splitlines() == lines
     asr = next(json.loads(line) for line in lines if json.loads(line)["ticker"] == "ASR")
     assert asr["price"] == 45.0
+
+
+def test_review_reduce_thresholds_live_in_decision_yaml_and_are_used():
+    import yaml
+
+    raw = yaml.safe_load((ROOT / "config/decision.yaml").read_text())
+    assert raw["drift"] == {"deteriorated_score_max": 40, "deteriorated_recent_change_max": -10}
+    # Boundaries come straight from the repo config.
+    assert _decide(drift_score=40.0).decision_state == "REVIEW_REDUCE"
+    assert _decide(drift_score=40.01).decision_state == "HOLD"
+    assert _decide(drift_change_recent=-10.0).decision_state == "REVIEW_REDUCE"
+    assert _decide(drift_change_recent=-9.99).decision_state == "HOLD"
+    # Changing the config changes the decision: the code holds no literal.
+    stricter = deepcopy(DECISION_CFG)
+    stricter["drift"]["deteriorated_score_max"] = 30
+    stricter["drift"]["deteriorated_recent_change_max"] = -20
+    for changes in ({"drift_score": 35.0}, {"drift_change_recent": -15.0}):
+        assert _decide(**changes).decision_state == "REVIEW_REDUCE"
+        relaxed = decide(replace(BASE, **changes), stricter, TARGET_CFG)
+        assert relaxed.decision_state != "REVIEW_REDUCE"
