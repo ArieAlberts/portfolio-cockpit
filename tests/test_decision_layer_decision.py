@@ -1,4 +1,5 @@
 import ast
+import shutil
 import hashlib
 import json
 from dataclasses import replace
@@ -191,6 +192,8 @@ def test_historical_decisions_are_preserved(tmp_path):
 
 def test_missing_drift_snapshot_gives_clear_error(tmp_path):
     root = repo_copy(tmp_path)
+    # main now carries generated drift revisions; remove them to test the error.
+    shutil.rmtree(root / "data/drift", ignore_errors=True)
     write_owner_config(root, filled_owner_config(CFG, REPO_CFG))
     with pytest.raises(DecisionInputError, match="cockpit-drift --write"):
         build_decision_snapshot(root=root, as_of=AS_OF)
