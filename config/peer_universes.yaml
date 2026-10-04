@@ -142,12 +142,12 @@ universes:
     comparable_metrics: [net_debt_to_ebitda, adjusted_ebitda_margin, fcf_conversion, organic_revenue_growth, eps_growth]
 
   ABX:
-    label: Life-settlement and alternative asset management
+    label: Diversified gold and copper producer
     status: INSUFFICIENT
     confidence: LOW
     peers: []
-    comparable_metrics: []
-    note: No sufficiently close listed direct peer set has been validated. Do not calculate a peer-normalized Fundamental Quality score yet.
+    comparable_metrics: [net_debt_to_ebitda, c1_cash_cost, operating_cash_flow_margin, production_growth, reserve_growth, eps_growth]
+    note: Internal monitor ticker ABX maps to Barrick Mining (NYSE:B; TSX:ABX). The former Abacus peer set is invalid; a mining-specific peer dataset must be validated before peer-normalized Fundamental Quality is published.
 
   ERO:
     label: Copper producers

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-04",
+  "source": "Interactive Brokers read-only account snapshot",
+  "base_currency": "EUR",
+  "net_liquidation_value": 209975.48,
+  "cash_base": 201897.89,
+  "cash_weight_pct": 96.15,
+  "gross_position_value": 573768.44,
+  "gross_position_value_pct_of_nlv": 273.25,
+  "leverage": 2.73,
+  "note": "CFD market values are notional exposure and are not added to capital weights. This snapshot is informational and cannot execute orders.",
+  "positions": [
+    {
+      "symbol": "NOAH",
+      "asset_class": "STK",
+      "currency": "USD",
+      "quantity": 1000,
+      "market_value_local": 7790,
+      "market_value_base": 6922.27,
+      "capital_weight_pct": 3.3,
+      "notional_exposure_pct": 3.3,
+      "monitor_ticker": null
+    },
+    {
+      "symbol": "SAN1",
+      "asset_class": "STK",
+      "currency": "EUR",
+      "quantity": 200,
+      "market_value_local": 14180,
+      "market_value_base": 14180,
+      "capital_weight_pct": 6.75,
+      "notional_exposure_pct": 6.75,
+      "monitor_ticker": null
+    },
+    {
+      "symbol": "NOVO.B",
+      "asset_class": "CFD",
+      "currency": "DKK",
+      "quantity": 100,
+      "market_value_local": 24860,
+      "market_value_base": 3325.2,
+      "capital_weight_pct": null,
+      "notional_exposure_pct": 1.58,
+      "monitor_ticker": null
+    },
+    {
+      "symbol": "WKL",
+      "asset_class": "CFD",
+      "currency": "EUR",
+      "quantity": 8100,
+      "market_value_local": 549342,
+      "market_value_base": 549342,
+      "capital_weight_pct": null,
+      "notional_exposure_pct": 261.62,
+      "monitor_ticker": "WKL"
+    }
+  ]
+}

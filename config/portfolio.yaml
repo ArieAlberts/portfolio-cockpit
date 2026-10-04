@@ -20,7 +20,7 @@ positions:
   FUL: {company: "H.B. Fuller", weight_pct: 5, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
   POWL: {company: "Powell Industries", weight_pct: 5, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
   ESI: {company: "Element Solutions", weight_pct: 4, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
-  ABX: {company: "Abacus Global Management", weight_pct: 4, role: "GROWTH", company_type: "FINANCIAL_SERVICES"}
+  ABX: {company: "Barrick Mining", weight_pct: 4, role: "GROWTH", company_type: "CYCLICAL_MINING"}
   ERO: {company: "Ero Copper", weight_pct: 4, role: "GROWTH", company_type: "CYCLICAL_MINING"}
   TMDX: {company: "TransMedics", weight_pct: 3, role: "GROWTH", company_type: "GENERAL_OPERATING_COMPANY"}
   LEU: {company: "Centrus Energy", weight_pct: 3, role: "ASYMMETRIC", company_type: "GENERAL_OPERATING_COMPANY"}

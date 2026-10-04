@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ABX",
+  "collected_at": "2026-10-04",
+  "purpose": "Barrick Mining peer-normalization input. Internal ticker ABX maps to NYSE:B / TSX:ABX. No live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "PEER_REFRESH_REQUIRED",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY"
+  },
+  "companies": {
+    "ABX": {
+      "company": "Barrick Mining Corporation",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "COMPANY_RESULTS",
+        "title": "Barrick Reports Second Quarter 2026 Results",
+        "url": "https://www.barrick.com/English/news/news-details/2026/q2-2026-results/default.aspx"
+      },
+      "metrics": {
+        "net_debt_usd_m": {
+          "value": -1245,
+          "comparison_class": "BALANCE_SHEET_NET_DEBT",
+          "source_definition": "debt net of cash at 2026-06-30",
+          "score_eligible": false
+        },
+        "c1_cash_cost_usd_per_lb": {
+          "value": 2.52,
+          "comparison_class": "H1_COPPER_C1_COST",
+          "source_definition": "H1 2026 copper C1 cash costs",
+          "score_eligible": false
+        },
+        "operating_cash_flow_usd_m": {
+          "value": 4258,
+          "comparison_class": "H1_OPERATING_CASH_FLOW",
+          "source_definition": "H1 2026 net cash provided by operating activities",
+          "score_eligible": false
+        },
+        "copper_production_tonnes": {
+          "value": 105000,
+          "comparison_class": "H1_COPPER_PRODUCTION",
+          "source_definition": "H1 2026 attributable copper production",
+          "score_eligible": false
+        },
+        "diluted_eps_growth_pct": {
+          "value": 125,
+          "comparison_class": "H1_DILUTED_EPS_GROWTH",
+          "source_definition": "H1 2026 diluted EPS growth versus H1 2025",
+          "score_eligible": false
+        }
+      }
+    },
+    "PEER_GATE": {
+      "company": "Mining peers pending refreshed comparable H1 2026 dataset",
+      "role": "GATE",
+      "period": "N/A",
+      "period_end": null,
+      "period_alignment": "NOT_APPLICABLE",
+      "source": {
+        "type": "MODEL_GOVERNANCE",
+        "title": "Barrick remap gate",
+        "url": "https://github.com/ArieAlberts/portfolio-cockpit/blob/main/config/peer_universes.yaml"
+      },
+      "metrics": {},
+      "score_eligible": false,
+      "exclusion_reason": "Former Abacus peer data invalidated. New Barrick peer universe is configured, but peer metrics are not yet refreshed."
+    }
+  }
+}
