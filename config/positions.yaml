@@ -10,35 +10,35 @@
 #   US listings against the S&P 500 -> not fully comparable; indicative only.
 #   ABX and OKLO: history largely from the SPAC period -> beta unreliable (see comments).
 schema_version: 1
-as_of: null            # e.g. 2026-10-04
-source: manual
-cash_weight_pct: null
+as_of: 2026-10-04
+source: manual   # no positions opened yet - 100% cash before build-up (2026-10-04)
+cash_weight_pct: 100
 positions:
   # Financials (target 21%)
-  ASR:    {weight_pct: null, sector: Financials, beta: 0.51}
-  ADM.L:  {weight_pct: null, sector: Financials, beta: 0.20}
-  PLMR:   {weight_pct: null, sector: Financials, beta: 0.35}
-  ABX:    {weight_pct: null, sector: Financials, beta: null}   # source shows 0.05 (SPAC history) -> not usable; null = treated as 1.0
+  ASR:    {weight_pct: 0, sector: Financials, beta: 0.51}
+  ADM.L:  {weight_pct: 0, sector: Financials, beta: 0.20}
+  PLMR:   {weight_pct: 0, sector: Financials, beta: 0.35}
+  ABX:    {weight_pct: 0, sector: Financials, beta: null}   # source shows 0.05 (SPAC history) -> not usable; null = treated as 1.0
   # Materials (target 23%)
-  IMCD:   {weight_pct: null, sector: Materials, beta: 0.97}    # chemicals distribution; some classifications use Industrials
-  CRDA.L: {weight_pct: null, sector: Materials, beta: 0.93}
-  EMN:    {weight_pct: null, sector: Materials, beta: 1.09}
-  FUL:    {weight_pct: null, sector: Materials, beta: 0.97}
-  ESI:    {weight_pct: null, sector: Materials, beta: 1.26}
-  ERO:    {weight_pct: null, sector: Materials, beta: 1.67}
+  IMCD:   {weight_pct: 0, sector: Materials, beta: 0.97}    # chemicals distribution; some classifications use Industrials
+  CRDA.L: {weight_pct: 0, sector: Materials, beta: 0.93}
+  EMN:    {weight_pct: 0, sector: Materials, beta: 1.09}
+  FUL:    {weight_pct: 0, sector: Materials, beta: 0.97}
+  ESI:    {weight_pct: 0, sector: Materials, beta: 1.26}
+  ERO:    {weight_pct: 0, sector: Materials, beta: 1.67}
   # Industrials (target 26% incl. MOD)
-  WKL:    {weight_pct: null, sector: Industrials, beta: 0.19}
-  ROR.L:  {weight_pct: null, sector: Industrials, beta: 1.05}
-  SNA:    {weight_pct: null, sector: Industrials, beta: 0.70}
-  MSM:    {weight_pct: null, sector: Industrials, beta: 0.82}
-  POWL:   {weight_pct: null, sector: Industrials, beta: 1.17}
-  MOD:    {weight_pct: null, sector: Industrials, beta: 1.71}  # official class: Consumer Discretionary (auto parts); economically data center/HVAC
+  WKL:    {weight_pct: 0, sector: Industrials, beta: 0.19}
+  ROR.L:  {weight_pct: 0, sector: Industrials, beta: 1.05}
+  SNA:    {weight_pct: 0, sector: Industrials, beta: 0.70}
+  MSM:    {weight_pct: 0, sector: Industrials, beta: 0.82}
+  POWL:   {weight_pct: 0, sector: Industrials, beta: 1.17}
+  MOD:    {weight_pct: 0, sector: Industrials, beta: 1.71}  # official class: Consumer Discretionary (auto parts); economically data center/HVAC
   # Consumer Discretionary (target 10%)
-  WSM:    {weight_pct: null, sector: Consumer Discretionary, beta: 1.47}
-  DKS:    {weight_pct: null, sector: Consumer Discretionary, beta: 1.10}
-  TXRH:   {weight_pct: null, sector: Consumer Discretionary, beta: 0.79}
+  WSM:    {weight_pct: 0, sector: Consumer Discretionary, beta: 1.47}
+  DKS:    {weight_pct: 0, sector: Consumer Discretionary, beta: 1.10}
+  TXRH:   {weight_pct: 0, sector: Consumer Discretionary, beta: 0.79}
   # Other
-  CAP.PA: {weight_pct: null, sector: Information Technology, beta: 0.66}
-  TMDX:   {weight_pct: null, sector: Health Care, beta: 1.92}
-  LEU:    {weight_pct: null, sector: Energy, beta: 1.54}
-  OKLO:   {weight_pct: null, sector: Utilities, beta: null}    # source shows 1.20 incl. SPAC period (AltC) -> not usable; null = treated as 1.0
+  CAP.PA: {weight_pct: 0, sector: Information Technology, beta: 0.66}
+  TMDX:   {weight_pct: 0, sector: Health Care, beta: 1.92}
+  LEU:    {weight_pct: 0, sector: Energy, beta: 1.54}
+  OKLO:   {weight_pct: 0, sector: Utilities, beta: null}    # source shows 1.20 incl. SPAC period (AltC) -> not usable; null = treated as 1.0

@@ -2,26 +2,26 @@
 # status: INTACT | WATCH | BROKEN. note: short explanation. All 23 required.
 schema_version: 1
 positions:
-  ASR: {status: null, as_of: null, note: null}
-  ADM.L: {status: null, as_of: null, note: null}
-  WKL: {status: null, as_of: null, note: null}
-  CAP.PA: {status: null, as_of: null, note: null}
-  IMCD: {status: null, as_of: null, note: null}
-  CRDA.L: {status: null, as_of: null, note: null}
-  ROR.L: {status: null, as_of: null, note: null}
-  EMN: {status: null, as_of: null, note: null}
-  WSM: {status: null, as_of: null, note: null}
-  DKS: {status: null, as_of: null, note: null}
-  TXRH: {status: null, as_of: null, note: null}
-  SNA: {status: null, as_of: null, note: null}
-  MSM: {status: null, as_of: null, note: null}
-  PLMR: {status: null, as_of: null, note: null}
-  MOD: {status: null, as_of: null, note: null}
-  FUL: {status: null, as_of: null, note: null}
-  POWL: {status: null, as_of: null, note: null}
-  ESI: {status: null, as_of: null, note: null}
-  ABX: {status: null, as_of: null, note: null}
-  ERO: {status: null, as_of: null, note: null}
-  TMDX: {status: null, as_of: null, note: null}
-  LEU: {status: null, as_of: null, note: null}
-  OKLO: {status: null, as_of: null, note: null}
+  ASR: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  ADM.L: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  WKL: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  CAP.PA: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  IMCD: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  CRDA.L: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  ROR.L: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  EMN: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  WSM: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  DKS: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  TXRH: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  SNA: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  MSM: {status: WATCH, as_of: 2026-10-04, note: "EXIT role in allocation plan; not to be opened"}
+  PLMR: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  MOD: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  FUL: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  POWL: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  ESI: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  ABX: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  ERO: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  TMDX: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  LEU: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
+  OKLO: {status: INTACT, as_of: 2026-10-04, note: "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built"}
