@@ -65,7 +65,7 @@ def test_dashboard_with_full_inputs(tmp_path):
                    "Thesis status", "Decision state", "Last fundamental update", "Last valuation update",
                    "Warnings", "Base target", "Adjusted target", "Current", "Gap", "Price"):
         assert column in text
-    assert re.search(r"<b>\d+</b> / (Attractive|Fair|Expensive)", text)
+    assert re.search(r"<b>\d+\.\d</b> / (Attractive|Fair|Expensive)", text)
     assert "7.00%</span>" in text  # ASR adjusted target, with multiplier tooltip
     assert "binding: AWAITING_CONFIRMATION" in text
     assert "since baseline" in text
@@ -88,3 +88,25 @@ def test_dashboard_escapes_owner_text(tmp_path):
     text = build_dashboard(root, tmp_path / "d.html", AS_OF).read_text()
     assert "<script>" not in text
     assert "&lt;script&gt;" in text
+
+
+def test_valuation_score_has_one_decimal_and_zero_impact_has_no_minus():
+    from portfolio_cockpit.decision_layer.dashboard import _fmt, _valuation_cell
+    from portfolio_cockpit.decision_layer.risk import impact_pp
+
+    assert _valuation_cell({"valuation_score": 44.8, "label": "Expensive"}) == "<b>44.8</b> / Expensive"
+    assert _valuation_cell({"valuation_score": 45.0, "label": "Fair"}) == "<b>45.0</b> / Fair"
+    assert _fmt(-0.0, 2, " pp") == "0.00 pp"
+    assert _fmt(-0.001, 2, " pp") == "0.00 pp"
+    assert _fmt(-2.1, 2, " pp") == "-2.10 pp"
+    assert str(impact_pp(0.0, -0.30)) == "0.0"
+
+
+def test_dashboard_never_shows_negative_zero(tmp_path):
+    root = repo_copy(tmp_path)
+    filled = filled_owner_config(CFG, REPO_CFG)
+    for item in filled["positions"]["positions"].values():
+        item["weight_pct"] = 0.0
+    write_owner_config(root, filled)
+    text = build_dashboard(root, tmp_path / "d.html", AS_OF).read_text()
+    assert "-0.00" not in text

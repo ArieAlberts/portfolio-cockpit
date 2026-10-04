@@ -37,7 +37,10 @@ def _fmt(value: Any, digits: int = 1, suffix: str = "") -> str:
     if value is None:
         return "—"
     if isinstance(value, (int, float)) and not isinstance(value, bool):
-        return f"{value:.{digits}f}{suffix}"
+        text = f"{value:.{digits}f}"
+        if text.startswith("-") and float(text) == 0:
+            text = text[1:]  # never show "-0.00"
+        return f"{text}{suffix}"
     return str(value)
 
 
@@ -180,7 +183,8 @@ def _fq_cell(fq: dict[str, Any]) -> str:
 def _valuation_cell(v: dict[str, Any]) -> str:
     if v.get("valuation_score") is None:
         return f"<span>{_esc(v.get('status', '—'))}</span>"
-    return f"<b>{v['valuation_score']:.0f}</b> / {_esc(v.get('label'))}"
+    # One decimal, so 44.8 (Expensive, below 45) never shows as "45 / Expensive".
+    return f"<b>{v['valuation_score']:.1f}</b> / {_esc(v.get('label'))}"
 
 
 def _warning_cell(warnings: list[dict[str, str]]) -> str:
