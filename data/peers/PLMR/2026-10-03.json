@@ -12,7 +12,7 @@
     "HRTG",
     "RLI"
   ],
-  "peer_universe_status": "VALIDATED_NON_CAPITAL_COMPONENTS_CAPITAL_STRENGTH_PENDING",
+  "peer_universe_status": "VALIDATED_NON_CAPITAL_COMPONENTS_FY2025_STATUTORY_CAPITAL_COLLECTION_IN_PROGRESS",
   "rules": {
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
@@ -26,17 +26,21 @@
       ],
       "rbc_measurement_basis": "POINT_IN_TIME_PERIOD_END",
       "premium_to_surplus_measurement_basis": {
-        "numerator": "TRAILING_TWELVE_MONTHS_NET_WRITTEN_PREMIUM",
-        "denominator": "PERIOD_END_POLICYHOLDERS_SURPLUS"
+        "numerator": "FY_NET_WRITTEN_PREMIUM",
+        "denominator": "FY_PERIOD_END_POLICYHOLDERS_SURPLUS",
+        "accounting_basis": "US_STATUTORY_ACCOUNTING",
+        "period_alignment": "SAME_FISCAL_YEAR"
       },
       "prohibit_eu_or_uk_solvency_substitution": true,
       "prohibit_h1_premium_annualization_as_ttm_substitute": true,
-      "status": "PENDING_STATUTORY_SOURCE_VALIDATION"
+      "status": "FY2025_STATUTORY_COLLECTION_IN_PROGRESS",
+      "preferred_reference_period": "FY_2025",
+      "minimum_homogeneous_peer_values": 4
     },
     "period_basis_policy": {
       "underwriting_and_growth": "ALIGNED_H1_YTD",
       "profitability_roe": "H1_ANNUALIZED_WHERE_EXPLICITLY_DEFINED",
-      "regulatory_capital": "POINT_IN_TIME_OR_TTM_AS_DEFINED_BY_CAPITAL_STRENGTH_POLICY",
+      "regulatory_capital": "FY_2025_STATUTORY_FOR_PREMIUM_TO_SURPLUS_OR_PERIOD_END_AS_DEFINED_FOR_RBC",
       "do_not_mix_fy_ttm_h1_silently": true
     }
   },
@@ -97,6 +101,13 @@
           "source_definition": "Diluted GAAP EPS H1 YoY",
           "calculation": "(3.51 / 3.24 - 1) * 100",
           "score_eligible": true
+        },
+        "net_written_premium_to_surplus_ratio": {
+          "value": null,
+          "comparison_class": "FY_2025_STATUTORY_NET_PREMIUM_TO_SURPLUS",
+          "source_definition": "Target statutory FY2025 numerator and year-end surplus must be sourced on one homogeneous legal-entity/group basis before scoring.",
+          "period": "FY_2025",
+          "score_eligible": false
         }
       }
     },
@@ -156,6 +167,19 @@
           "source_definition": "Diluted GAAP EPS H1 YoY",
           "calculation": "(12.58 / 9.59 - 1) * 100",
           "score_eligible": true
+        },
+        "net_written_premium_to_surplus_ratio": {
+          "value": 83.615406,
+          "comparison_class": "FY_2025_STATUTORY_NET_PREMIUM_TO_SURPLUS",
+          "source_definition": "IRIS #2 Net Premium to Surplus Ratio; FY2025 statutory net premium divided by FY2025 year-end capital & surplus",
+          "period": "FY_2025",
+          "period_end": "2025-12-31",
+          "source_type": "SURPLUS_LINES_STATUTORY_FINANCIAL_SUMMARY",
+          "source_title": "Kinsale Insurance Company Insurer Financial Report 2025 | Annual",
+          "source_url": "https://www.fslso.com/docs/default-source/uploadedfiles/reports/insurer-financial-reports/2025---insurer-financials/4q25-annual-insurer-financials/kinsale-insurance-company_38920_annual_2025.pdf?sfvrsn=bd8277da_1",
+          "calculation": "1613698222 / 1929905376 * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
         }
       }
     },
@@ -220,6 +244,14 @@
           "score_eligible": true,
           "definition_confidence": 95,
           "notes": "Skyward's release labels the per-share line basic EPS; kept explicit rather than silently relabeling diluted."
+        },
+        "net_written_premium_to_surplus_ratio": {
+          "value": null,
+          "comparison_class": "FY_2025_STATUTORY_NET_PREMIUM_TO_SURPLUS",
+          "source_definition": "Exact FY2025 homogeneous ratio not yet stored",
+          "period": "FY_2025",
+          "score_eligible": false,
+          "notes": "Houston Specialty Insurance Company disclosed 121% at 2025-09-30, but that interim legal-entity observation is not substituted for an FY2025 Skyward-group/lead-carrier value."
         }
       }
     },
@@ -281,6 +313,14 @@
           "source_definition": "Diluted GAAP EPS H1 YoY",
           "calculation": "(3.23 / 2.54 - 1) * 100",
           "score_eligible": true
+        },
+        "rbc_ratio_pct": {
+          "value": null,
+          "comparison_class": "FY_2025_STATUTORY_RBC_RATIO",
+          "source_definition": "NAIC total adjusted capital / authorized control level RBC",
+          "period": "FY_2025",
+          "score_eligible": false,
+          "notes": "2025 annual report states each insurance subsidiary maintained RBC above 300%, but does not disclose an exact comparable ratio; lower-bound disclosure is not scored."
         }
       }
     },
@@ -334,6 +374,20 @@
           "source_definition": "Diluted GAAP EPS H1 YoY",
           "calculation": "(2.42 / 2.03 - 1) * 100",
           "score_eligible": true
+        },
+        "net_written_premium_to_surplus_ratio": {
+          "value": 88,
+          "comparison_class": "FY_2025_STATUTORY_NET_PREMIUM_TO_SURPLUS",
+          "source_definition": "RLI insurance subsidiaries' statutory net premiums written to policyholders' surplus ratio",
+          "period": "FY_2025",
+          "period_end": "2025-12-31",
+          "source_type": "SEC_10_K",
+          "source_title": "RLI Corp. 2025 Form 10-K",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/84246/000110465926018013/rli-20251231x10k.htm",
+          "calculation": "0.88 * 100",
+          "score_eligible": true,
+          "definition_confidence": 100,
+          "notes": "RLI reports the statutory ratio directly as 0.88 to 1; stored as 88.0 percent to match the metric unit. The underlying amounts 1622129 / 1846615 give 0.878; the reported rounded ratio is used, so the calculation records 0.88 * 100."
         }
       }
     },
