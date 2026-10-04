@@ -4,7 +4,7 @@
   "collected_at": "2026-10-04",
   "purpose": "Barrick Mining peer-normalization input. Internal ticker ABX maps to NYSE:B / TSX:ABX. No live execution.",
   "strict_reference_period": "H1_2026",
-  "peer_universe_status": "PEER_REFRESH_REQUIRED",
+  "peer_universe_status": "INSUFFICIENT_DIRECT_PUBLIC_PEERS",
   "rules": {
     "missing_is_never_zero": true,
     "preserve_company_definition": true,
