@@ -1,3 +1,4 @@
+import json
 import re
 
 from portfolio_cockpit.config import load_config
@@ -44,7 +45,10 @@ def test_dashboard_from_current_repo(tmp_path):
     out = build_dashboard(ROOT, tmp_path / "dashboard.html", AS_OF)
     text = out.read_text()
     _check_static_html(text)
-    assert text.count("n.v.t. (DATA_CHECK)") == 23
+    current = json.loads((ROOT / "data/scoring/current.json").read_text())
+    fq = json.loads((ROOT / current["current_fundamental_quality"]).read_text())
+    assert text.count("n.v.t. (DATA_CHECK)") == len(fq["blocked"])
+    assert text.count("/ peer mean 50") == len(fq["scores"])
     assert "Owner inputs incomplete" in text
     assert "50</b> (+0 since baseline)" in text
 
