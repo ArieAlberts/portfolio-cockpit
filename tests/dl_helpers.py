@@ -27,10 +27,23 @@ def repo_copy(tmp_path: Path) -> Path:
     return root
 
 
-def load_baseline(ticker: str, root: Path = ROOT) -> tuple[str, dict[str, Any]]:
+def load_baseline(
+    ticker: str,
+    root: Path = ROOT,
+    *,
+    as_of: str | None = None,
+) -> tuple[str, dict[str, Any]]:
     index = json.loads((root / "data/baselines/index.json").read_text(encoding="utf-8"))
     rel = index["baselines"][ticker]
-    return rel, json.loads((root / rel).read_text(encoding="utf-8"))
+    if as_of is None:
+        return rel, json.loads((root / rel).read_text(encoding="utf-8"))
+    # Mirror production behavior when a test asks for the baseline in force
+    # on a date. The immutable index remains the historical root; newer
+    # re-baselines are discovered from data/baselines/<ticker>/.
+    from portfolio_cockpit.decision_layer.drift import resolve_baseline
+
+    active_rel, payload, _ = resolve_baseline(root, ticker, rel, as_of)
+    return active_rel, payload
 
 
 def observation_from_baseline(
@@ -49,7 +62,7 @@ def observation_from_baseline(
     """
     from portfolio_cockpit.decision_layer.drift import baseline_period_basis
 
-    _, baseline = load_baseline(ticker, root)
+    _, baseline = load_baseline(ticker, root, as_of=observation_date)
     overrides = overrides or {}
     period_basis = period_basis or {}
     metrics: dict[str, dict[str, Any]] = {}
