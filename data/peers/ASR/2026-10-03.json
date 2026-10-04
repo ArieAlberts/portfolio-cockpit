@@ -147,7 +147,7 @@
           "value": 4.435204,
           "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
           "source_definition": "operating result growth",
-          "calculation": "1507 / 1443 - 1",
+          "calculation": "(1507 / 1443 - 1) * 100",
           "score_eligible": true
         },
         "operating_capital_generation_growth_pct": {
@@ -234,7 +234,7 @@
           "value": -3.887884,
           "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
           "source_definition": "operational capital generation H1 YoY",
-          "calculation": "1063 / 1106 - 1",
+          "calculation": "(1063 / 1106 - 1) * 100",
           "score_eligible": true
         },
         "combined_ratio_pct": {
@@ -307,7 +307,7 @@
           "value": 9.924812,
           "comparison_class": "COMPANY_DEFINED_OPERATING_EARNINGS_GROWTH",
           "source_definition": "operating result growth",
-          "calculation": "731 / 665 - 1",
+          "calculation": "(731 / 665 - 1) * 100",
           "score_eligible": true
         },
         "operating_capital_generation_growth_pct": {
@@ -394,7 +394,7 @@
           "value": -4.806688,
           "comparison_class": "OPERATING_CAPITAL_GENERATION_GROWTH",
           "source_definition": "Solvency II operating capital generation growth",
-          "calculation": "911 / 957 - 1",
+          "calculation": "(911 / 957 - 1) * 100",
           "score_eligible": true
         },
         "combined_ratio_pct": {

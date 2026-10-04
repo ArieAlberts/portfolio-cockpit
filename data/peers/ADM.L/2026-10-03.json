@@ -53,7 +53,7 @@
           "value": -17.735849,
           "comparison_class": "DILUTED_EPS_GROWTH",
           "source_definition": "EPS from continuing operations H1 YoY",
-          "calculation": "109.0 / 132.5 - 1",
+          "calculation": "(109.0 / 132.5 - 1) * 100",
           "score_eligible": true
         },
         "premium_growth_pct": {
@@ -100,7 +100,7 @@
           "value": -4.370861,
           "comparison_class": "DILUTED_EPS_GROWTH",
           "source_definition": "Diluted EPS H1 YoY",
-          "calculation": "7.22 / 7.55 - 1",
+          "calculation": "(7.22 / 7.55 - 1) * 100",
           "score_eligible": true
         },
         "premium_growth_pct": {
