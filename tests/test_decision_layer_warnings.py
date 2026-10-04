@@ -119,3 +119,19 @@ def test_missing_data_leads_to_data_check(confidence, drift, valuation, state):
 
 def test_rejected_observation_maps_to_missing_data():
     assert classify("OBSERVATION_REJECTED:data/observations/ASR/x.json:source_confidence:60<80").value == "MISSING_DATA"
+
+
+@pytest.mark.parametrize(
+    ("drift", "valuation", "expected"),
+    [
+        ("OK", "VALUATION_DATA_CHECK", ["VALUATION_DATA_CHECK"]),
+        ("OK", "NO_MARKET_DATA", ["VALUATION_NO_MARKET_DATA"]),
+        ("OK", None, ["VALUATION_MISSING"]),
+        ("DRIFT_DATA_CHECK", "OK", ["DRIFT_DATA_CHECK"]),
+        (None, "OK", ["DRIFT_MISSING"]),
+    ],
+)
+def test_data_state_reasons_are_not_double_prefixed(drift, valuation, expected):
+    _, reasons = data_state(data_confidence=90, threshold=80, drift_status=drift, valuation_status=valuation)
+    assert reasons == expected
+    assert not any(r.startswith(("VALUATION_VALUATION_", "DRIFT_DRIFT_")) for r in reasons)

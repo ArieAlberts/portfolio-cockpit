@@ -15,14 +15,14 @@
         }
       },
       "peers": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 16.59,
+        "as_of_date": "2026-10-04",
+        "method": "median of current values HEN3.DE, SIKA.SW, AKE.PA (Arkema), RPM, WCH.DE (data dates 2026-08-23..10-04)",
+        "retrieved_at": "2026-10-04T17:00:00Z",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics pages of peers",
+          "url": "https://stockanalysis.com"
         }
       }
     },
@@ -39,14 +39,14 @@
         }
       },
       "peers": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 19.4,
+        "as_of_date": "2026-10-04",
+        "method": "median of current values HEN3.DE, SIKA.SW, AKE.PA (Arkema), RPM, WCH.DE (data dates 2026-08-23..10-04)",
+        "retrieved_at": "2026-10-04T17:00:00Z",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics pages of peers",
+          "url": "https://stockanalysis.com"
         }
       }
     },
@@ -63,14 +63,14 @@
         }
       },
       "peers": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 0.0697,
+        "as_of_date": "2026-10-04",
+        "method": "median of current values HEN3.DE, SIKA.SW, AKE.PA (Arkema), RPM, WCH.DE (data dates 2026-08-23..10-04)",
+        "retrieved_at": "2026-10-04T17:00:00Z",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics pages of peers",
+          "url": "https://stockanalysis.com"
         }
       }
     }

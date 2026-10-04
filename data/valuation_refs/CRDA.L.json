@@ -15,14 +15,14 @@
         }
       },
       "peers": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 16.85,
+        "as_of_date": "2026-10-04",
+        "method": "median of current values ASH, CLN.SW, EVK.DE, SY1.DE, IFF (data dates 2026-09-06..10-04)",
+        "retrieved_at": "2026-10-04T17:00:00Z",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics pages of peers",
+          "url": "https://stockanalysis.com"
         }
       }
     },
@@ -39,14 +39,14 @@
         }
       },
       "peers": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 23.46,
+        "as_of_date": "2026-10-04",
+        "method": "median of current values ASH, CLN.SW, EVK.DE, SY1.DE, IFF (data dates 2026-09-06..10-04)",
+        "retrieved_at": "2026-10-04T17:00:00Z",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics pages of peers",
+          "url": "https://stockanalysis.com"
         }
       }
     },
@@ -63,14 +63,14 @@
         }
       },
       "peers": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 0.0651,
+        "as_of_date": "2026-10-04",
+        "method": "median of current values ASH, CLN.SW, EVK.DE, SY1.DE, IFF (data dates 2026-09-06..10-04)",
+        "retrieved_at": "2026-10-04T17:00:00Z",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics pages of peers",
+          "url": "https://stockanalysis.com"
         }
       }
     }

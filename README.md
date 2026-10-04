@@ -71,7 +71,9 @@ A future IBKR adapter may be read-only for positions/account/market data or pape
 
 ## Decision layer
 
-Quality Drift, Valuation, the Data Confidence warning contract, Portfolio Risk, the Decision Engine, a static dashboard and a dry-run simulator live in `src/portfolio_cockpit/decision_layer/`. See `docs/DECISION_LAYER.md` for commands, formulas and statuses. Start with `cockpit-check-inputs` to see which owner inputs are still missing.
+Quality Drift, Valuation, the Data Confidence warning contract, Portfolio Risk, the Decision Engine, a static dashboard and a dry-run simulator live in `src/portfolio_cockpit/decision_layer/`. See `docs/DECISION_LAYER.md` for commands, formulas and statuses.
+
+**Dashboard:** <https://ariealberts.github.io/portfolio-cockpit/>. It is rebuilt and published by `.github/workflows/pages.yml` on every push to `main` and after every `rebuild-decision-layer` run. Only the static dashboard HTML is published. Start with `cockpit-check-inputs` to see which owner inputs are still missing.
 
 ## Automatic source monitoring
 

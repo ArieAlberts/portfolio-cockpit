@@ -48,7 +48,7 @@ def _decide(**changes):
     ("changes", "state", "reason"),
     [
         ({"data_confidence": 70.0}, "DATA_CHECK", "DATA_CONFIDENCE_BELOW_80"),
-        ({"drift_status": "DRIFT_DATA_CHECK", "drift_score": None}, "DATA_CHECK", "DRIFT_DRIFT_DATA_CHECK"),
+        ({"drift_status": "DRIFT_DATA_CHECK", "drift_score": None}, "DATA_CHECK", "DRIFT_DATA_CHECK"),
         ({"valuation_status": "NO_MARKET_DATA", "valuation_score": None}, "DATA_CHECK", "VALUATION_NO_MARKET_DATA"),
         ({"thesis_status": "BROKEN"}, "THESIS_REVIEW", "THESIS_BROKEN"),
         ({"role": "EXIT", "score_adjusted_target_pct": 0.0, "current_weight_pct": 1.0}, "EXIT_REVIEW", None),

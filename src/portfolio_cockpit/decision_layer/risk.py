@@ -31,7 +31,7 @@ class Position:
 
 def impact_pp(weight_pct: float, shock: float) -> float:
     """Impact on the total portfolio in percentage points."""
-    return round(portfolio_impact(weight_pct / 100.0, shock) * 100.0, 6)
+    return round(portfolio_impact(weight_pct / 100.0, shock) * 100.0, 6) + 0.0  # no -0.0
 
 
 def load_positions(cfg: dict[str, dict[str, Any]]) -> tuple[list[Position], float]:
