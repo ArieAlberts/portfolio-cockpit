@@ -110,35 +110,95 @@ The impact of a −30% move on one position is shown as `PORTFOLIO IMPACT -30%`:
 
 `config/risk_scenarios.yaml` defines the market (beta-aware), sector, single-stock and combined scenarios. Current weights, sector and beta come from `config/positions.yaml`; target weights are only read from `config/portfolio.yaml`.
 
+## Score-adjusted target
+
+Every position has three weights:
+
+| Field | Source | Changes how |
+|---|---|---|
+| `base_target_weight_pct` | `config/portfolio.yaml` | Only by the owner, by hand. Never by code. |
+| `score_adjusted_target_pct` | Computed (`decision_layer/targets.py`) | Base × quality multiplier, then gates, limits and budget. |
+| `current_weight_pct` | `config/positions.yaml` | Only by the owner or a read-only broker import. Target weights are never used as current weights. |
+
+Decisions compare **current with the score-adjusted target**, not with base. All numbers are in `config/target_adjustment.yaml`; limits come from `config/decision.yaml`.
+
+**1. Quality multiplier.** Piecewise linear in Quality Drift: 25 → 0.50, 50 → 1.00, 75 → 1.50, clamped outside. Drift in the dead band 45–55 gives exactly 1.00, so noise does not move a target; just outside the band the line resumes (55.01 → 1.10). Fundamental Quality and price never feed the multiplier.
+
+**2. Gates.**
+
+| Gate | Effect |
+|---|---|
+| `DATA_GATE` | `data_confidence < 80` or drift status not `OK` → multiplier 1.00. Missing data never moves a target. |
+| `THESIS_BROKEN` | Target = base; the decision is `THESIS_REVIEW`. |
+| `EXIT_ROLE` | `role: EXIT` in `portfolio.yaml` (MSM) → target 0. |
+| `VALUATION_EXPENSIVE_CAP` | Valuation `Expensive` → an increase is capped at 1.00; a decrease still applies. |
+| `VALUATION_UNAVAILABLE_CAP` | No published valuation → the same cap. This follows from "missing data never raises a target". |
+| `AWAITING_CONFIRMATION` | An increase needs `min_consecutive_improvements` (2) observations: the latest and the previous drift must both lie above the dead band, and the smaller of the two multipliers is used. A decrease applies immediately. |
+
+**3. Limits.** After the multiplier, the target is capped in this order:
+
+- `max_position_weight_pct` (10%);
+- the weight at which `max_single_position_impact_pp` is reached (3.0 pp / 30% = 10%);
+- an optional `max_weight_pct` per ticker;
+- `max_sector_weight_pct` (30%). If a sector's targets sum above 30%, only the increases in that sector are scaled down pro rata.
+
+**4. Portfolio budget.** The sum of all targets may not exceed `100 − min_cash_pct` (proposal 5%). Only increases are scaled down pro rata; decreases and base parts stay. The validator refuses a `min_cash_pct` that the base targets alone would break.
+
+Per ticker the decision output stores:
+
+- `base_target_weight_pct`, `quality_multiplier_raw`, `quality_multiplier_applied`;
+- `score_adjusted_target_pct`, `current_weight_pct`;
+- `gap_pct` (adjusted − current);
+- `binding_constraint`, `target_gates`, `target_constraints`, `reasons`.
+
 ## Decision Engine
 
-All thresholds are in `config/decision.yaml`. The tree is checked top to bottom:
+The band is `rebalance_band_pct` (20%, relative) around the score-adjusted target. Rules are checked top to bottom:
 
 ```
-data_confidence < 80, or drift / valuation cannot publish  → DATA_CHECK
-thesis_status == BROKEN                                    → THESIS_REVIEW
-drift ≤ 40  or  drift_change_recent ≤ −10                  → REVIEW_REDUCE
-drift ≥ 55  and valuation ≥ 60                             → ADD_CANDIDATE   (→ HOLD + limit_flags when a limit is hit)
-drift ≥ 45  and valuation < 45                             → NO_ADD
-otherwise                                                  → HOLD
+data_confidence < 80, or drift / valuation cannot publish   → DATA_CHECK
+thesis_status == BROKEN                                     → THESIS_REVIEW
+role EXIT and current > 0                                   → EXIT_REVIEW
+drift ≤ 40  or  drift_change_recent ≤ −10                   → REVIEW_REDUCE
+current > adjusted × 1.2                                    → TRIM_CANDIDATE
+current < adjusted × 0.8, valuation not Expensive           → ADD_CANDIDATE   (→ HOLD when a limit or the FQ floor blocks it)
+current < adjusted × 0.8, valuation Expensive               → NO_ADD
+within the band, valuation Expensive                        → NO_ADD
+otherwise                                                   → HOLD
 ```
 
-**Limits** (any hit turns `ADD_CANDIDATE` into `HOLD` with `ADD_BLOCKED_BY_LIMIT`):
+**TRIM reasons.** When the applied multiplier is ≤ 1.00, the reason is `PRICE_ONLY`; when it is below 1.00, `TARGET_REDUCED_BY_DRIFT` is added. When the target is supported by a multiplier above 1.00, the reason is `ABOVE_SUPPORTED_WEIGHT`.
+
+**Below the band but Expensive.** This gives `NO_ADD` rather than `HOLD`: the position is underweight, but valuation blocks adding.
+
+**Limits on the current weight** (any hit turns `ADD_CANDIDATE` into `HOLD` with `ADD_BLOCKED_BY_LIMIT`):
 
 | Flag | Condition |
 |---|---|
-| `POSITION_LIMIT` | weight ≥ 10% |
-| `ABOVE_TARGET_BAND` | weight ≥ target × 1.20 (an EXIT position with target 0 never becomes ADD) |
-| `SECTOR_LIMIT` | sector weight ≥ 30% |
+| `POSITION_LIMIT` | current ≥ 10% |
+| `SECTOR_LIMIT` | current sector weight ≥ 30% |
 | `IMPACT_LIMIT` | \|impact\| > 3 pp |
 
 **Fundamental Quality** is context only. When it is DISPLAY_READY and below `fq_add_floor` (35), ADD becomes HOLD with `FQ_BELOW_FLOOR`. Otherwise the reason list notes `FQ_NOT_DISPLAY_READY` and FQ has no influence.
 
 **Missing owner inputs.** `cockpit-decide` refuses to run while `positions.yaml` or `thesis_status.yaml` has empty fields, and names each missing field.
 
+## New baseline after a base-target change
+
+When the owner deliberately changes a `base_target` in `portfolio.yaml`, they may record a new baseline. It is a **new file** in `data/baselines/<T>/<date>.json`, containing:
+
+- the baseline fields;
+- `rebaseline_of`: the path of the baseline it replaces;
+- `rebaseline_reason`;
+- `base_target_weight_pct`;
+- `quality_drift_score: 50`;
+- optionally `period_basis`.
+
+No existing file is edited: the original file and `index.json` stay byte-identical. The reference to the new baseline lives in the new file, which keeps `data/baselines/**` append-only. The drift engine follows the chain from the index entry. A re-baseline dated after `as_of` is not active yet; two re-baselines of the same parent are refused. Observations from before the active baseline belong to the old period and are ignored. The output records the full `baseline.chain`.
+
 ## Dashboard
 
-`out/dashboard.html` is one static file with no scripts and no external hosts. Quality Drift (for example "62 (+12 since baseline)"), Fundamental Quality (peer) and Valuation (for example "43 / Expensive") are separate colour blocks. Fundamental Quality is shown only when DISPLAY_READY; otherwise it reads "n.v.t. (DATA_CHECK)" with the diagnostic band as a tooltip. The table also has the `PORTFOLIO IMPACT -30%` column.
+`out/dashboard.html` is one static file with no scripts and no external hosts. Quality Drift (for example "62 (+12 since baseline)"), Fundamental Quality (peer) and Valuation (for example "43 / Expensive") are separate colour blocks. Fundamental Quality is shown only when DISPLAY_READY; otherwise it reads "n.v.t. (DATA_CHECK)" with the diagnostic band as a tooltip. The table also has the `PORTFOLIO IMPACT -30%` column and four weight columns: Base target, Adjusted target (tooltip: multiplier and binding limit), Current and Gap (adjusted − current, in pp). The drill-down shows base × multiplier → adjusted with every gate and limit.
 
 Each ticker has a drill-down with:
 
@@ -151,12 +211,14 @@ No score is ever called a percentile.
 
 ## Simulator and signal log
 
-`DryRunSimulator` refuses `dry_run=False`. It suggests a review direction per ticker:
+`DryRunSimulator` refuses `dry_run=False` and moves towards the **score-adjusted target**. TRIM_CANDIDATE gives `REVIEW_DOWN_TO_TARGET`; EXIT_REVIEW gives `REVIEW_EXIT`, which moves to 0. It suggests a review direction per ticker:
 
 | Direction | When |
 |---|---|
-| `REVIEW_UP_TO_TARGET` | ADD_CANDIDATE and below target |
+| `REVIEW_UP_TO_TARGET` | ADD_CANDIDATE and below the adjusted target |
 | `REVIEW_DOWN` | REVIEW_REDUCE |
+| `REVIEW_DOWN_TO_TARGET` | TRIM_CANDIDATE and above the adjusted target |
+| `REVIEW_EXIT` | EXIT_REVIEW (moves to 0) |
 | `REVIEW_THESIS` | THESIS_REVIEW |
 | `NONE (DATA_CHECK)` | DATA_CHECK |
 | `NONE` | otherwise |

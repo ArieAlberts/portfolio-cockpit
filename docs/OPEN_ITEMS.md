@@ -106,6 +106,8 @@ Phase 1 is complete only when **all** of the following hold (status 2026-10-04 i
 
 - **Repository visibility:** the repository stays public by owner decision (2026-10-03). This is not an open item.
 - **Decision driver:** the Decision Engine is driven by Quality Drift. Fundamental Quality only acts as a floor/context when DISPLAY_READY.
+- **Current weights:** `config/positions.yaml` holds only actual current positions and cash from a broker export (owner decision 2026-10-04). Target weights are never used as current weights; until the export exists the Decision Engine refuses to run.
+- **Score-adjusted target:** decisions compare current weight with `score_adjusted_target_pct` (base × Quality Drift multiplier, gated and capped; `config/target_adjustment.yaml`), not with base. Base targets change only by the owner; a deliberate base change may add a new baseline file (`rebaseline_of`), never an edit.
 - **Storage:** Git with immutable JSON revisions; no runtime database for now.
 - **Tests:** keep the hybrid approach (unit fixtures + real-dataset contract tests + offline integration tests); do not move to mock-only tests.
 
