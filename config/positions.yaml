@@ -2,31 +2,43 @@
 # config/portfolio.yaml and are only read. Empty values are a template:
 # the decision engine refuses to run until every field is filled.
 # weight_pct: current weight in percent; sector: free text; beta: optional.
+#
+# Sector: GICS-style labels; must match the names in config/risk_scenarios.yaml
+#   (Financials, Materials, ...).
+# Beta: Beta (5Y) from stockanalysis.com, retrieved 2026-10-04.
+#   NOTE: European listings are measured against their LOCAL index (AEX/CAC/FTSE),
+#   US listings against the S&P 500 -> not fully comparable; indicative only.
+#   ABX and OKLO: history largely from the SPAC period -> beta unreliable (see comments).
 schema_version: 1
-as_of: null
+as_of: null            # e.g. 2026-10-04
 source: manual
 cash_weight_pct: null
 positions:
-  ASR: {weight_pct: null, sector: null, beta: null}
-  ADM.L: {weight_pct: null, sector: null, beta: null}
-  WKL: {weight_pct: null, sector: null, beta: null}
-  CAP.PA: {weight_pct: null, sector: null, beta: null}
-  IMCD: {weight_pct: null, sector: null, beta: null}
-  CRDA.L: {weight_pct: null, sector: null, beta: null}
-  ROR.L: {weight_pct: null, sector: null, beta: null}
-  EMN: {weight_pct: null, sector: null, beta: null}
-  WSM: {weight_pct: null, sector: null, beta: null}
-  DKS: {weight_pct: null, sector: null, beta: null}
-  TXRH: {weight_pct: null, sector: null, beta: null}
-  SNA: {weight_pct: null, sector: null, beta: null}
-  MSM: {weight_pct: null, sector: null, beta: null}
-  PLMR: {weight_pct: null, sector: null, beta: null}
-  MOD: {weight_pct: null, sector: null, beta: null}
-  FUL: {weight_pct: null, sector: null, beta: null}
-  POWL: {weight_pct: null, sector: null, beta: null}
-  ESI: {weight_pct: null, sector: null, beta: null}
-  ABX: {weight_pct: null, sector: null, beta: null}
-  ERO: {weight_pct: null, sector: null, beta: null}
-  TMDX: {weight_pct: null, sector: null, beta: null}
-  LEU: {weight_pct: null, sector: null, beta: null}
-  OKLO: {weight_pct: null, sector: null, beta: null}
+  # Financials (target 21%)
+  ASR:    {weight_pct: null, sector: Financials, beta: 0.51}
+  ADM.L:  {weight_pct: null, sector: Financials, beta: 0.20}
+  PLMR:   {weight_pct: null, sector: Financials, beta: 0.35}
+  ABX:    {weight_pct: null, sector: Financials, beta: null}   # source shows 0.05 (SPAC history) -> not usable; null = treated as 1.0
+  # Materials (target 23%)
+  IMCD:   {weight_pct: null, sector: Materials, beta: 0.97}    # chemicals distribution; some classifications use Industrials
+  CRDA.L: {weight_pct: null, sector: Materials, beta: 0.93}
+  EMN:    {weight_pct: null, sector: Materials, beta: 1.09}
+  FUL:    {weight_pct: null, sector: Materials, beta: 0.97}
+  ESI:    {weight_pct: null, sector: Materials, beta: 1.26}
+  ERO:    {weight_pct: null, sector: Materials, beta: 1.67}
+  # Industrials (target 26% incl. MOD)
+  WKL:    {weight_pct: null, sector: Industrials, beta: 0.19}
+  ROR.L:  {weight_pct: null, sector: Industrials, beta: 1.05}
+  SNA:    {weight_pct: null, sector: Industrials, beta: 0.70}
+  MSM:    {weight_pct: null, sector: Industrials, beta: 0.82}
+  POWL:   {weight_pct: null, sector: Industrials, beta: 1.17}
+  MOD:    {weight_pct: null, sector: Industrials, beta: 1.71}  # official class: Consumer Discretionary (auto parts); economically data center/HVAC
+  # Consumer Discretionary (target 10%)
+  WSM:    {weight_pct: null, sector: Consumer Discretionary, beta: 1.47}
+  DKS:    {weight_pct: null, sector: Consumer Discretionary, beta: 1.10}
+  TXRH:   {weight_pct: null, sector: Consumer Discretionary, beta: 0.79}
+  # Other
+  CAP.PA: {weight_pct: null, sector: Information Technology, beta: 0.66}
+  TMDX:   {weight_pct: null, sector: Health Care, beta: 1.92}
+  LEU:    {weight_pct: null, sector: Energy, beta: 1.54}
+  OKLO:   {weight_pct: null, sector: Utilities, beta: null}    # source shows 1.20 incl. SPAC period (AltC) -> not usable; null = treated as 1.0
