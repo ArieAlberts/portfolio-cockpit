@@ -1,0 +1,3282 @@
+{
+  "as_of": "2026-10-03",
+  "blocked": {
+    "ABX": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 0,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {}
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "CYCLICAL_MINING",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "cost_position"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_DIRECT_PUBLIC_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/ABX/2026-10-03.json",
+          "sha256": "af6ef496d0b6ab8eeafc155699ca71f605287c610488ceb5a387eda1b94b1545"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 92,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:cost_position",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ADM.L": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 0,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {}
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 2,
+        "integrity_pass": true,
+        "matched": 2,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "INSURER",
+      "covered_components": [],
+      "dataset_minimum_peer_values": null,
+      "dataset_rule_consistent": true,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "capital_strength",
+        "underwriting_quality"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_DIRECT_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/ADM.L/2026-10-03.json",
+          "sha256": "080aad62db47ced94b5bf7dcd65b45e192994a718ed9e17e4738fcfc5491463e"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:capital_strength",
+        "MISSING_REQUIRED_COMPONENT:underwriting_quality",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "CAP.PA": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 1,
+          "MISSING": 6,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 1,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "BELOW_ANCHOR",
+            "strong_threshold": 15.0,
+            "value": 0.30624
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 9,
+        "integrity_pass": true,
+        "matched": 9,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_METRIC_COVERAGE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/CAP.PA/2026-10-03.json",
+          "sha256": "cb90fa302019eee7bf610970706b60ea9db14eba3fe10f2d5e547a2a74af730c"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "CRDA.L": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 1,
+          "MISSING": 6,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 1,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "BELOW_ANCHOR",
+            "strong_threshold": 15.0,
+            "value": 4.349801
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_STRICT_ALIGNED_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/CRDA.L/2026-10-03.json",
+          "sha256": "b9c180efdb4d695c636667e06b9c71615bc9aa4e8ff8a5a6a2097717fc75c10d"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "DKS": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_FY2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "INSUFFICIENT_DIRECT_ALIGNED_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/DKS/2026-10-03.json",
+          "sha256": "165232e537a267ea4c465fb32d4ba88f3d040e69de34939e009b26e81c126f7b"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 92,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "EMN": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 6,
+          "STRONG": 1
+        },
+        "evaluated_metrics": 1,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "STRONG",
+            "strong_threshold": 8.0,
+            "value": 23.125
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_QUARTERLY_CORE_METRICS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/EMN/2026-10-03.json",
+          "sha256": "996721a1bf177177b44b932f7e5ea90e057b74baf2da427e18f2b07104e45158"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 90.5,
+      "warnings": [
+        "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ERO": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 0,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {}
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "CYCLICAL_MINING",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "cost_position"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "CYCLICAL_MINING_SCOPE_REVIEW_REQUIRED",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/ERO/2026-10-03.json",
+          "sha256": "212bb0bc439902d890f5b969c09a06f83cb524cf5f2b1fbfd7bbb57109e181a1"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 99,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:cost_position",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ESI": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 1,
+          "MISSING": 5,
+          "STRONG": 1
+        },
+        "evaluated_metrics": 2,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "STRONG",
+            "strong_threshold": 8.0,
+            "value": 27.027027
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "BELOW_ANCHOR",
+            "strong_threshold": 15.0,
+            "value": 7.566462
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 11,
+        "integrity_pass": true,
+        "matched": 11,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "profitability_capital_efficiency",
+        "cashflow_quality",
+        "value_per_share"
+      ],
+      "dataset_minimum_peer_values": 4,
+      "dataset_rule_consistent": true,
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 31.741512285798926,
+        "sensitivity": {
+          "largest_score_shift": -8.115048294756487,
+          "most_influential_metric": "adjusted_eps_growth_pct",
+          "most_influential_peer": "ASH",
+          "most_influential_peer_index": 4,
+          "scenarios_evaluated": 14,
+          "score_high": 36.4914757030497,
+          "score_low": 23.62646399104244,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.730339508568043
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet"
+      ],
+      "peer_input_confidence": 93.75,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_CORE_COVERAGE_60_PERCENT",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/ESI/2026-10-03.json",
+          "sha256": "f998644a29043a06607fdde29a9e3b92ad6114a067a65ec8de37e664a0d36b57"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "cashflow_quality": {
+          "component_weight": 0.2,
+          "metric_weight_coverage": 0.65,
+          "metrics": {
+            "cashflow_margin": {
+              "clipped_z_score": -2.9413416002787036,
+              "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+              "configured_metric_weight": 0.65,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.2,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "free_cash_flow_margin_pct",
+              "peer_input_confidence": 93.75,
+              "peer_mean": 16.83284325,
+              "peer_sample_std": 3.1503927490509684,
+              "peer_tickers": [
+                "ENTG",
+                "MKSI",
+                "DD",
+                "ASH"
+              ],
+              "peer_values": [
+                13.620924,
+                15.064103,
+                17.922,
+                20.724346
+              ],
+              "slot_name": "cashflow_margin",
+              "target_value": 7.566462,
+              "unclipped_z_score": -2.9413416002787036
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "profitability_capital_efficiency": {
+          "component_weight": 0.25,
+          "metric_weight_coverage": 1.0,
+          "metrics": {
+            "operating_margin": {
+              "clipped_z_score": 0.7393756167002055,
+              "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+              "configured_metric_weight": 1.0,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.25,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "adjusted_ebitda_margin_pct",
+              "peer_input_confidence": 97.5,
+              "peer_mean": 23.9222974,
+              "peer_sample_std": 5.244563808184509,
+              "peer_tickers": [
+                "ENTG",
+                "MKSI",
+                "KWR",
+                "DD",
+                "ASH"
+              ],
+              "peer_values": [
+                28.4,
+                28.685897,
+                15.994,
+                24.6,
+                21.93159
+              ],
+              "slot_name": "operating_margin",
+              "target_value": 27.8,
+              "unclipped_z_score": 0.7393756167002055
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "value_per_share": {
+          "component_weight": 0.15,
+          "metric_weight_coverage": 0.7,
+          "metrics": {
+            "earnings_growth": {
+              "clipped_z_score": -0.23186192840090938,
+              "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+              "configured_metric_weight": 0.7,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.15,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "adjusted_eps_growth_pct",
+              "peer_input_confidence": 96.25,
+              "peer_mean": 31.7131892,
+              "peer_sample_std": 20.211003299762165,
+              "peer_tickers": [
+                "ENTG",
+                "MKSI",
+                "KWR",
+                "DD",
+                "ASH"
+              ],
+              "peer_values": [
+                40.909091,
+                43.478261,
+                28.070175,
+                48.031496,
+                -1.923077
+              ],
+              "slot_name": "earnings_growth",
+              "target_value": 27.027027,
+              "unclipped_z_score": -0.23186192840090938
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 93.5,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "PEER_SENSITIVE"
+      ],
+      "weighted_component_coverage": 0.6
+    },
+    "FUL": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 6,
+          "STRONG": 1
+        },
+        "evaluated_metrics": 1,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "STRONG",
+            "strong_threshold": 8.0,
+            "value": 21.0
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q3_FY2026_VS_LATEST_PEER_PERIODS",
+      "peer_set_overlap": null,
+      "peer_universe_status": "MIXED_FISCAL_PERIODS_BLOCK_STRICT_SCORE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/FUL/2026-10-03.json",
+          "sha256": "571dddc31fedf736c9eeee1049974030328901b3abe2972419b373740183b485"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "IMCD": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 2,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 5,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 2,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "ACCEPTABLE",
+            "strong_threshold": 80.0,
+            "value": 76.2
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "ACCEPTABLE",
+            "strong_threshold": 15.0,
+            "value": 8.415466
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 9,
+        "integrity_pass": true,
+        "matched": 9,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_MEDIUM_CONFIDENCE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/IMCD/2026-10-03.json",
+          "sha256": "d220cab9a738d8298015bd3e27af1e3989db45e38ff1adfc464102ffe96a30f1"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 89.5,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "LEU": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_LOW_CONFIDENCE_NUCLEAR_FUEL_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/LEU/2026-10-03.json",
+          "sha256": "83d877ed0c97cdee1e8d3cb724e64fe65603aad85161167dae1b3c24a50a073b"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 80,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "MOD": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 6,
+          "STRONG": 1
+        },
+        "evaluated_metrics": 1,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "STRONG",
+            "strong_threshold": 8.0,
+            "value": 44.339623
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_CALENDAR_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_REVENUE_GROWTH_CORE_METRIC",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/MOD/2026-10-03.json",
+          "sha256": "ddd34c5031d29eec9526acc029e52d6f44f7c430de534588a408834aeac5d122"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "MSM": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "LATEST_QUARTER_AROUND_2026_06",
+      "peer_set_overlap": null,
+      "peer_universe_status": "MIXED_FISCAL_PERIODS_CONTEXT_ONLY",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/MSM/2026-10-03.json",
+          "sha256": "0767911a407585a0f5896f9b2a2e36193e060d2082cf39cfb65628261ed93e73"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "HARD_PEER_UNIVERSE_BLOCK",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "OKLO": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 0,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {}
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "PRE_REVENUE_DEVELOPMENT",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "liquidity_runway",
+        "financing_dilution"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "DEVELOPMENT_STAGE_2026_06_30",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_DEVELOPMENT_STAGE_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/OKLO/2026-10-03.json",
+          "sha256": "aae25c9a0f119adbf51e24660d55f6a72ce8a4115bad1c873dfdebfa9a35a066"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 89,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:financing_dilution",
+        "MISSING_REQUIRED_COMPONENT:liquidity_runway",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "PLMR": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 0,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {}
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 18,
+        "integrity_pass": true,
+        "matched": 18,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "INSURER_US_P&C",
+      "covered_components": [
+        "underwriting_quality",
+        "profitability",
+        "growth_stability",
+        "value_per_share"
+      ],
+      "dataset_minimum_peer_values": 4,
+      "dataset_rule_consistent": true,
+      "diagnostic_candidate": {
+        "normalization_warnings": [
+          "Z_CLIPPED:gross_written_premium_growth_pct:4.159526"
+        ],
+        "score": 48.01629079976763,
+        "sensitivity": {
+          "largest_score_shift": -9.650140032848554,
+          "most_influential_metric": "annualized_roe_pct",
+          "most_influential_peer": "SKWD",
+          "most_influential_peer_index": 1,
+          "scenarios_evaluated": 20,
+          "score_high": 50.74476583792354,
+          "score_low": 38.36615076691908,
+          "stability_flag": "PEER_SENSITIVE"
+        },
+        "weighted_z": -0.07934836800929482
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "capital_strength"
+      ],
+      "peer_input_confidence": 94.25,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": {
+        "all_used_peers": [
+          "HCI",
+          "HRTG",
+          "KNSL",
+          "RLI",
+          "SKWD"
+        ],
+        "code": "PEER_SET_VARIES_BY_METRIC",
+        "common_peers": [
+          "HRTG",
+          "KNSL",
+          "SKWD"
+        ],
+        "intersection_over_union": 0.6
+      },
+      "peer_universe_status": "VALIDATED_NON_CAPITAL_COMPONENTS_FY2025_STATUTORY_CAPITAL_COLLECTION_IN_PROGRESS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/PLMR/2026-10-03.json",
+          "sha256": "709267f0314b75ca2e1efe8ad30f5b30907a150077a638b8f4fa666a2efe2d67"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "component_weight": 0.1,
+          "metric_weight_coverage": 1.0,
+          "metrics": {
+            "premium_growth": {
+              "clipped_z_score": 3.0,
+              "comparison_class": "H1_GWP_GROWTH",
+              "configured_metric_weight": 1.0,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.1,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "gross_written_premium_growth_pct",
+              "peer_input_confidence": 97.5,
+              "peer_mean": 2.1548405,
+              "peer_sample_std": 7.7266219553047675,
+              "peer_tickers": [
+                "KNSL",
+                "SKWD",
+                "HRTG",
+                "RLI"
+              ],
+              "peer_values": [
+                -2.901624,
+                12.802229,
+                -4.143344,
+                2.862101
+              ],
+              "slot_name": "premium_growth",
+              "target_value": 34.293922,
+              "unclipped_z_score": 4.15952555798782
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "profitability": {
+          "component_weight": 0.2,
+          "metric_weight_coverage": 1.0,
+          "metrics": {
+            "roe": {
+              "clipped_z_score": -0.9757108809535691,
+              "comparison_class": "H1_GAAP_ANNUALIZED_ROE",
+              "configured_metric_weight": 1.0,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.2,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "annualized_roe_pct",
+              "peer_input_confidence": 94.25,
+              "peer_mean": 27.640357,
+              "peer_sample_std": 7.933043641406662,
+              "peer_tickers": [
+                "KNSL",
+                "SKWD",
+                "HRTG",
+                "HCI"
+              ],
+              "peer_values": [
+                28.9,
+                17.3,
+                36.6,
+                27.761428
+              ],
+              "slot_name": "roe",
+              "target_value": 19.9,
+              "unclipped_z_score": -0.9757108809535691
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "underwriting_quality": {
+          "component_weight": 0.25,
+          "metric_weight_coverage": 1.0,
+          "metrics": {
+            "combined_ratio": {
+              "clipped_z_score": -0.31685894427536665,
+              "comparison_class": "H1_COMBINED_RATIO",
+              "configured_metric_weight": 0.7,
+              "direction": "lower_is_better",
+              "effective_component_weight": 0.175,
+              "effective_metric_weight_within_component": 0.7,
+              "metric_name": "combined_ratio_pct",
+              "peer_input_confidence": 100.0,
+              "peer_mean": 81.275,
+              "peer_sample_std": 7.968845587661988,
+              "peer_tickers": [
+                "KNSL",
+                "SKWD",
+                "HRTG",
+                "RLI"
+              ],
+              "peer_values": [
+                76.4,
+                90.0,
+                72.9,
+                85.8
+              ],
+              "slot_name": "combined_ratio",
+              "target_value": 83.8,
+              "unclipped_z_score": -0.31685894427536665
+            },
+            "loss_ratio": {
+              "clipped_z_score": 1.582247152079513,
+              "comparison_class": "H1_LOSS_RATIO",
+              "configured_metric_weight": 0.3,
+              "direction": "lower_is_better",
+              "effective_component_weight": 0.075,
+              "effective_metric_weight_within_component": 0.3,
+              "metric_name": "loss_ratio_pct",
+              "peer_input_confidence": 100.0,
+              "peer_mean": 50.3,
+              "peer_sample_std": 10.365005225919248,
+              "peer_tickers": [
+                "KNSL",
+                "SKWD",
+                "HRTG",
+                "RLI"
+              ],
+              "peer_values": [
+                55.0,
+                61.9,
+                38.1,
+                46.2
+              ],
+              "slot_name": "loss_ratio",
+              "target_value": 33.9,
+              "unclipped_z_score": 1.582247152079513
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "value_per_share": {
+          "component_weight": 0.15,
+          "metric_weight_coverage": 0.6,
+          "metrics": {
+            "earnings_per_share": {
+              "clipped_z_score": -1.490799350490446,
+              "comparison_class": "H1_GAAP_DILUTED_EPS_GROWTH",
+              "configured_metric_weight": 0.6,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.15,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "gaap_eps_growth_pct",
+              "peer_input_confidence": 98.75,
+              "peer_mean": 22.00081225,
+              "peer_sample_std": 9.16788650699616,
+              "peer_tickers": [
+                "KNSL",
+                "SKWD",
+                "HRTG",
+                "RLI"
+              ],
+              "peer_values": [
+                31.178311,
+                10.447761,
+                27.165354,
+                19.211823
+              ],
+              "slot_name": "earnings_per_share",
+              "target_value": 8.333333,
+              "unclipped_z_score": -1.490799350490446
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "MISSING_REQUIRED_COMPONENT:capital_strength",
+        "PEER_SENSITIVE",
+        "PEER_SET_VARIES_BY_METRIC"
+      ],
+      "weighted_component_coverage": 0.7000000000000001
+    },
+    "POWL": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_CALENDAR_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_REVENUE_AND_GROWTH_CONTEXT",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/POWL/2026-10-03.json",
+          "sha256": "9ab3ec98c44db8a166b38b51c2768095ebb96057c808fc4e3dbfe0268c5345f0"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "ROR.L": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 1,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 6,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 1,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "ACCEPTABLE",
+            "strong_threshold": 80.0,
+            "value": 79.0
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/ROR.L/2026-10-03.json",
+          "sha256": "2d9c838b02a8f190219f054cc75df61ec848ae38231036972a1907d37b000878"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "SNA": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "growth_stability"
+      ],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 33.62416753860236,
+        "sensitivity": {
+          "largest_score_shift": -4.581008645725088,
+          "most_influential_metric": "organic_revenue_growth_pct",
+          "most_influential_peer": "ESAB",
+          "most_influential_peer_index": 3,
+          "scenarios_evaluated": 5,
+          "score_high": 35.487754499555265,
+          "score_low": 29.04315889287727,
+          "stability_flag": "STABLE"
+        },
+        "weighted_z": -0.6550332984559057
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 100.0,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_ORGANIC_GROWTH_METRIC",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/SNA/2026-10-03.json",
+          "sha256": "5c75c518d3daa2fb5736aebb33f22de109b0f6b91e5106e49bbd132e52fa943c"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "growth_stability": {
+          "component_weight": 0.15,
+          "metric_weight_coverage": 0.5,
+          "metrics": {
+            "organic_or_comparable_growth": {
+              "clipped_z_score": -0.6550332984559057,
+              "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+              "configured_metric_weight": 0.5,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.15,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "organic_revenue_growth_pct",
+              "peer_input_confidence": 100.0,
+              "peer_mean": 4.9799999999999995,
+              "peer_sample_std": 3.0227470949452586,
+              "peer_tickers": [
+                "SWK",
+                "LECO",
+                "ITW",
+                "ESAB",
+                "DOV"
+              ],
+              "peer_values": [
+                3.0,
+                10.1,
+                4.5,
+                2.5,
+                4.8
+              ],
+              "slot_name": "organic_or_comparable_growth",
+              "target_value": 3.0,
+              "unclipped_z_score": -0.6550332984559057
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency"
+      ],
+      "weighted_component_coverage": 0.15
+    },
+    "TMDX": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LOW_CONFIDENCE_BROAD_MEDTECH_PEERS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/TMDX/2026-10-03.json",
+          "sha256": "693f43e1aa5179d8a847bb36578e1b5f64c6056ad83bbc9c1b62bb461cf44bac"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 92,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "TXRH": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "READY_FOR_SAME_STORE_SALES_METRIC",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/TXRH/2026-10-03.json",
+          "sha256": "2853ec3f5e05acf7d47a685061254a91f1092985f044bb5cca44b9fd4144f271"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 98,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    },
+    "WKL": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 7
+        },
+        "evaluated_metrics": 7,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "STRONG",
+            "strong_threshold": 8.0,
+            "value": 14.0
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "STRONG",
+            "strong_threshold": 80.0,
+            "value": 91.0
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "STRONG",
+            "strong_threshold": 15.0,
+            "value": 17.57336
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "STRONG",
+            "strong_threshold": 2.5,
+            "value": 2.0
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "STRONG",
+            "strong_threshold": 5.0,
+            "value": 5.0
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "STRONG",
+            "strong_threshold": 20.0,
+            "value": 29.4
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "STRONG",
+            "strong_threshold": 0.0,
+            "value": -3.717949
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 12,
+        "integrity_pass": true,
+        "matched": 12,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [
+        "cashflow_quality",
+        "growth_stability",
+        "value_per_share"
+      ],
+      "dataset_minimum_peer_values": 4,
+      "dataset_rule_consistent": true,
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 16.496042616014407,
+        "sensitivity": {
+          "largest_score_shift": -4.852253233503127,
+          "most_influential_metric": "organic_like_revenue_growth_pct",
+          "most_influential_peer": "VRSK",
+          "most_influential_peer_index": 2,
+          "scenarios_evaluated": 14,
+          "score_high": 20.75577120372123,
+          "score_low": 11.64378938251128,
+          "stability_flag": "STABLE"
+        },
+        "weighted_z": -1.3401582953594238
+      },
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": 97.5,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": null,
+      "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE_50_PERCENT",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/WKL/2026-10-02.json",
+          "sha256": "67abe7c035c03aaabf76abf658f1255914bcf862bce41d2480fda5a5fd9bb475"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "cashflow_quality": {
+          "component_weight": 0.2,
+          "metric_weight_coverage": 0.65,
+          "metrics": {
+            "cashflow_margin": {
+              "clipped_z_score": -2.2374742849477314,
+              "comparison_class": "FREE_CASH_FLOW_MARGIN",
+              "configured_metric_weight": 0.65,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.2,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "free_cash_flow_margin_pct",
+              "peer_input_confidence": 97.5,
+              "peer_mean": 32.116043250000004,
+              "peer_sample_std": 6.499597938547807,
+              "peer_tickers": [
+                "TRI.TO",
+                "VRSK",
+                "SPGI",
+                "MCO"
+              ],
+              "peer_values": [
+                26.206385,
+                39.291334,
+                27.037749,
+                35.928705
+              ],
+              "slot_name": "cashflow_margin",
+              "target_value": 17.57336,
+              "unclipped_z_score": -2.2374742849477314
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "growth_stability": {
+          "component_weight": 0.15,
+          "metric_weight_coverage": 0.5,
+          "metrics": {
+            "organic_or_comparable_growth": {
+              "clipped_z_score": -1.543923132220248,
+              "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+              "configured_metric_weight": 0.5,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.15,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "organic_like_revenue_growth_pct",
+              "peer_input_confidence": 97.5,
+              "peer_mean": 8.3397922,
+              "peer_sample_std": 2.1631855435686047,
+              "peer_tickers": [
+                "RELX.L",
+                "TRI.TO",
+                "VRSK",
+                "SPGI",
+                "MCO"
+              ],
+              "peer_values": [
+                7.0,
+                8.0,
+                5.698961,
+                10.0,
+                11.0
+              ],
+              "slot_name": "organic_or_comparable_growth",
+              "target_value": 5.0,
+              "unclipped_z_score": -1.543923132220248
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "value_per_share": {
+          "component_weight": 0.15,
+          "metric_weight_coverage": 0.7,
+          "metrics": {
+            "earnings_growth": {
+              "clipped_z_score": 0.06002786095247671,
+              "comparison_class": "ADJUSTED_EPS_GROWTH",
+              "configured_metric_weight": 0.7,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.15,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "adjusted_eps_growth_pct",
+              "peer_input_confidence": 97.5,
+              "peer_mean": 13.590244,
+              "peer_sample_std": 6.826096973943455,
+              "peer_tickers": [
+                "RELX.L",
+                "TRI.TO",
+                "VRSK",
+                "SPGI",
+                "MCO"
+              ],
+              "peer_values": [
+                11.0,
+                11.0,
+                5.0,
+                19.0,
+                21.95122
+              ],
+              "slot_name": "earnings_growth",
+              "target_value": 14.0,
+              "unclipped_z_score": 0.06002786095247671
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        }
+      },
+      "status": "DATA_CHECK",
+      "target_data_confidence": 97,
+      "warnings": [
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency"
+      ],
+      "weighted_component_coverage": 0.5
+    },
+    "WSM": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 7,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 7,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {
+          "adjusted_eps_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Per-share earnings growth context.",
+            "status": "MISSING",
+            "strong_threshold": 8.0,
+            "value": null
+          },
+          "cash_conversion_pct": {
+            "acceptable_threshold": 60.0,
+            "direction": "higher_is_better",
+            "rationale": "Conversion of operating profit into operating cash flow.",
+            "status": "MISSING",
+            "strong_threshold": 80.0,
+            "value": null
+          },
+          "free_cash_flow_margin_pct": {
+            "acceptable_threshold": 8.0,
+            "direction": "higher_is_better",
+            "rationale": "Cash-generation context independent of peer ranking.",
+            "status": "MISSING",
+            "strong_threshold": 15.0,
+            "value": null
+          },
+          "net_debt_to_ebitda": {
+            "acceptable_threshold": 3.5,
+            "direction": "lower_is_better",
+            "rationale": "Balance-sheet leverage context; lower is better.",
+            "status": "MISSING",
+            "strong_threshold": 2.5,
+            "value": null
+          },
+          "organic_like_revenue_growth_pct": {
+            "acceptable_threshold": 0.0,
+            "direction": "higher_is_better",
+            "rationale": "Underlying top-line growth context.",
+            "status": "MISSING",
+            "strong_threshold": 5.0,
+            "value": null
+          },
+          "reported_margin_pct": {
+            "acceptable_threshold": 10.0,
+            "direction": "higher_is_better",
+            "rationale": "Operating-margin context for mature operating companies.",
+            "status": "MISSING",
+            "strong_threshold": 20.0,
+            "value": null
+          },
+          "share_count_change_pct": {
+            "acceptable_threshold": 2.0,
+            "direction": "lower_is_better",
+            "rationale": "No dilution is preferred; a falling share count is favorable.",
+            "status": "MISSING",
+            "strong_threshold": 0.0,
+            "value": null
+          }
+        }
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 0,
+        "integrity_pass": true,
+        "matched": 0,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "covered_components": [],
+      "dataset_minimum_peer_values": 3,
+      "dataset_rule_consistent": false,
+      "execution_effect": "NONE",
+      "missing_required_components": [
+        "balance_sheet",
+        "profitability_capital_efficiency"
+      ],
+      "peer_input_confidence": null,
+      "peer_reference_period": "Q2_FY2026_NEAR_CALENDAR_Q2",
+      "peer_set_overlap": null,
+      "peer_universe_status": "LIMITED_COMPARABLE_RETAIL_METRICS",
+      "production_ready": false,
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/WSM/2026-10-03.json",
+          "sha256": "51ba4735085487e578940bdd2ac1f52b0b7203b873f87ee56e258f19ac24a90b"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {},
+      "status": "DATA_CHECK",
+      "target_data_confidence": 84.5,
+      "warnings": [
+        "DATASET_MIN_PEERS_MISMATCH:3!=4",
+        "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+        "MISSING_REQUIRED_COMPONENT:balance_sheet",
+        "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+        "PEER_INPUT_CONFIDENCE_PENDING",
+        "SENSITIVITY_PENDING"
+      ],
+      "weighted_component_coverage": 0
+    }
+  },
+  "methodology": {
+    "absolute_anchors_affect_decision_engine": false,
+    "absolute_anchors_affect_readiness": false,
+    "absolute_anchors_affect_score": false,
+    "absolute_anchors_context_only": true,
+    "calculation_absolute_tolerance": 0.001,
+    "calculation_mismatch_blocks_publication": true,
+    "calculation_relative_tolerance": 1e-05,
+    "calculation_validation_enabled": true,
+    "data_confidence_threshold": 80.0,
+    "dataset_rule_consistency_required": true,
+    "metric_slot_weighting": true,
+    "minimum_component_metric_weight_coverage": 0.5,
+    "minimum_peer_values_per_metric": 4,
+    "minimum_weighted_component_coverage": 0.7,
+    "peer_input_confidence_threshold": 80.0,
+    "peer_method": "clipped_mean_sample_std_zscore",
+    "required_components_enforced": true,
+    "score_formula": "clamp(50 + 25 * weighted_z, 0, 100)",
+    "sensitivity_method": "leave_one_peer_out_per_metric",
+    "stable_band_width_points": 10.0,
+    "unstable_band_width_points": 25.0
+  },
+  "note": "Generated deterministically from repository peer datasets and config. No score can trigger live execution.",
+  "pipeline_version": 2,
+  "provenance": {
+    "code_files": {
+      "src/portfolio_cockpit/config.py": {
+        "sha256": "6a94a008366d6ce2b9e3b3dcd96f4ad0adb71a8ea2ea8a18df6835dfd8a9e583"
+      },
+      "src/portfolio_cockpit/scoring/absolute_anchors.py": {
+        "sha256": "fc90154528e21383955054b740d43f5a5ae750d7d41714ede2dd8c00776be80d"
+      },
+      "src/portfolio_cockpit/scoring/calculation_validation.py": {
+        "sha256": "c927438f86f1e0cf25658b478d6622a2befe2e707d5110d188e11b57a2d02764"
+      },
+      "src/portfolio_cockpit/scoring/normalization.py": {
+        "sha256": "fb37b12d2c51fc71f6430d36bd2f8272090878404ceb28d64ad70fc68760b8c2"
+      },
+      "src/portfolio_cockpit/scoring/peer_confidence.py": {
+        "sha256": "8c8f33fec677a81c7fc62a093134a1e6ce97b9c86f36b2b64667ddef7e6fb316"
+      },
+      "src/portfolio_cockpit/scoring/peer_data.py": {
+        "sha256": "05f1cffd565b9889092234d41b1466f8d0f5687f4d45a10af8fdbbd492312f29"
+      },
+      "src/portfolio_cockpit/scoring/pipeline.py": {
+        "sha256": "22e160a0def8b85bebb0c4ac9a579b28332a6c4aa697a64d17d43cb81aadfb66"
+      },
+      "src/portfolio_cockpit/scoring/quality.py": {
+        "sha256": "979b74a036b5439dd3a7055c555a18e043d017649528f6397222912e7cbb8547"
+      },
+      "src/portfolio_cockpit/scoring/readiness.py": {
+        "sha256": "10afa5ba132a76e26aff19148db78ea458370e5acb6e52390bfcb1dc1989bca3"
+      }
+    },
+    "config_files": {
+      "config/absolute_anchors.yaml": {
+        "sha256": "110c64af9bf8eacbe2720978a0e4bc4520d554aa2bcf98d032166ca32170a5b2"
+      },
+      "config/company_types.yaml": {
+        "sha256": "c514ba9e9e4d3953d10fc59ece0ecfd632c2c2520f6960fc24a485350e4eac48"
+      },
+      "config/peer_universes.yaml": {
+        "sha256": "cadf44a38b5dd878cc7d3bee6fbca1e9da2adedbc4ad72f9f90cb4fb8516aa3d"
+      },
+      "config/portfolio.yaml": {
+        "sha256": "5d0c56de0663f996336117031bb39280d937349f7646862c73f617e091f08619"
+      },
+      "config/readiness.yaml": {
+        "sha256": "88f97561e75aca89eb35ff14faad82177bff038ee4a813e2e8d04fcd5527c5ac"
+      },
+      "config/score_metrics.yaml": {
+        "sha256": "a9ff7af4180034616a90556d4b759e31d3d0c9bd14c15ecdefd983a38ecd216f"
+      },
+      "config/scoring.yaml": {
+        "sha256": "2809cd298e72caa31103b3aa03d47c919772512360116d0e5db6d97268b16f93"
+      }
+    },
+    "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+    "peer_dataset_hashes": {
+      "ABX": "af6ef496d0b6ab8eeafc155699ca71f605287c610488ceb5a387eda1b94b1545",
+      "ADM.L": "080aad62db47ced94b5bf7dcd65b45e192994a718ed9e17e4738fcfc5491463e",
+      "ASR": "03524a4a5fb113eaa0f38bf418ac487e56899b75200bf63793d9093b73b6946c",
+      "CAP.PA": "cb90fa302019eee7bf610970706b60ea9db14eba3fe10f2d5e547a2a74af730c",
+      "CRDA.L": "b9c180efdb4d695c636667e06b9c71615bc9aa4e8ff8a5a6a2097717fc75c10d",
+      "DKS": "165232e537a267ea4c465fb32d4ba88f3d040e69de34939e009b26e81c126f7b",
+      "EMN": "996721a1bf177177b44b932f7e5ea90e057b74baf2da427e18f2b07104e45158",
+      "ERO": "212bb0bc439902d890f5b969c09a06f83cb524cf5f2b1fbfd7bbb57109e181a1",
+      "ESI": "f998644a29043a06607fdde29a9e3b92ad6114a067a65ec8de37e664a0d36b57",
+      "FUL": "571dddc31fedf736c9eeee1049974030328901b3abe2972419b373740183b485",
+      "IMCD": "d220cab9a738d8298015bd3e27af1e3989db45e38ff1adfc464102ffe96a30f1",
+      "LEU": "83d877ed0c97cdee1e8d3cb724e64fe65603aad85161167dae1b3c24a50a073b",
+      "MOD": "ddd34c5031d29eec9526acc029e52d6f44f7c430de534588a408834aeac5d122",
+      "MSM": "0767911a407585a0f5896f9b2a2e36193e060d2082cf39cfb65628261ed93e73",
+      "OKLO": "aae25c9a0f119adbf51e24660d55f6a72ce8a4115bad1c873dfdebfa9a35a066",
+      "PLMR": "709267f0314b75ca2e1efe8ad30f5b30907a150077a638b8f4fa666a2efe2d67",
+      "POWL": "9ab3ec98c44db8a166b38b51c2768095ebb96057c808fc4e3dbfe0268c5345f0",
+      "ROR.L": "2d9c838b02a8f190219f054cc75df61ec848ae38231036972a1907d37b000878",
+      "SNA": "5c75c518d3daa2fb5736aebb33f22de109b0f6b91e5106e49bbd132e52fa943c",
+      "TMDX": "693f43e1aa5179d8a847bb36578e1b5f64c6056ad83bbc9c1b62bb461cf44bac",
+      "TXRH": "2853ec3f5e05acf7d47a685061254a91f1092985f044bb5cca44b9fd4144f271",
+      "WKL": "67abe7c035c03aaabf76abf658f1255914bcf862bce41d2480fda5a5fd9bb475",
+      "WSM": "51ba4735085487e578940bdd2ac1f52b0b7203b873f87ee56e258f19ac24a90b"
+    },
+    "peer_index": {
+      "path": "data/peers/index.json",
+      "sha256": "25b2c42038df5dfbb3d987a55a3812ffac60320a10616c704cc087b93d3dacb9"
+    },
+    "pipeline_code_hash": "fc8f92487dd475016909507c056bdfe70a185b13c7b073fe3ef7eeffb1994e44",
+    "run_git_commit": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+    "target_confidence": {
+      "path": "data/confidence/2026-10-03.json",
+      "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+    }
+  },
+  "reproducibility_hash": "b023811969ef6d9523bcdfe10f88faf067836d2373d32346289cc8df52b29bf1",
+  "schema_version": 4,
+  "scores": {
+    "ASR": {
+      "absolute_anchors": {
+        "affects_decision_engine": false,
+        "affects_fundamental_quality_score": false,
+        "affects_readiness": false,
+        "calibration_status": "PILOT",
+        "configured_metrics": 0,
+        "context_only": true,
+        "counts": {
+          "ACCEPTABLE": 0,
+          "BELOW_ANCHOR": 0,
+          "MISSING": 0,
+          "STRONG": 0
+        },
+        "evaluated_metrics": 0,
+        "execution_effect": "NONE",
+        "metrics": {}
+      },
+      "calculation_integrity_pass": true,
+      "calculation_validation": {
+        "blocking_issue_count": 0,
+        "blocking_issues": [],
+        "checks_evaluated": 20,
+        "integrity_pass": true,
+        "matched": 20,
+        "nonblocking_issue_count": 0,
+        "nonblocking_issues": []
+      },
+      "company_type": "INSURER",
+      "covered_components": [
+        "capital_strength",
+        "underwriting_quality",
+        "profitability"
+      ],
+      "dataset_minimum_peer_values": 4,
+      "dataset_rule_consistent": true,
+      "diagnostic_candidate": {
+        "normalization_warnings": [],
+        "score": 66.06368312954334,
+        "sensitivity": {
+          "largest_score_shift": 5.797606426136937,
+          "most_influential_metric": "combined_ratio_pct",
+          "most_influential_peer": "SAMPO.HE",
+          "most_influential_peer_index": 2,
+          "scenarios_evaluated": 15,
+          "score_high": 71.86128955568027,
+          "score_low": 63.72229396516393,
+          "stability_flag": "STABLE"
+        },
+        "weighted_z": 0.6425473251817332
+      },
+      "display_score": 66.1,
+      "execution_effect": "NONE",
+      "fundamental_quality_score": 66.06368312954334,
+      "missing_required_components": [],
+      "peer_input_confidence": 98.75,
+      "peer_reference_period": "H1_2026",
+      "peer_set_overlap": {
+        "all_used_peers": [
+          "AGS.BR",
+          "AV.L",
+          "G.MI",
+          "NN.AS",
+          "SAMPO.HE",
+          "ZURN.SW"
+        ],
+        "code": "PEER_SET_VARIES_BY_METRIC",
+        "common_peers": [
+          "AGS.BR",
+          "G.MI",
+          "NN.AS",
+          "SAMPO.HE"
+        ],
+        "intersection_over_union": 0.666667
+      },
+      "peer_universe_status": "EU_SOLVENCY_AND_HARMONIZED_IFRS_COMMON_ROE_READY_VALUE_PER_SHARE_PARTIAL",
+      "provenance": {
+        "code_version": "9746c1ef4bd5a224b15bf3e5a013d72f49f0314a",
+        "config_hash": "2c779d4caf8207819f4aeff185b56dfb542fb4c9f1b902a42a0efd40f52ab265",
+        "peer_dataset": {
+          "path": "data/peers/ASR/2026-10-03.json",
+          "sha256": "03524a4a5fb113eaa0f38bf418ac487e56899b75200bf63793d9093b73b6946c"
+        },
+        "target_confidence": {
+          "path": "data/confidence/2026-10-03.json",
+          "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+        }
+      },
+      "selected_metrics": {
+        "capital_strength": {
+          "component_weight": 0.3,
+          "metric_weight_coverage": 1.0,
+          "metrics": {
+            "solvency": {
+              "clipped_z_score": 0.8795168142082121,
+              "comparison_class": "SOLVENCY_II_RATIO",
+              "configured_metric_weight": 1.0,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.3,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "solvency_ratio_pct",
+              "peer_input_confidence": 100.0,
+              "peer_mean": 202.25,
+              "peer_sample_std": 22.45551157288562,
+              "peer_tickers": [
+                "NN.AS",
+                "AGS.BR",
+                "SAMPO.HE",
+                "G.MI"
+              ],
+              "peer_values": [
+                224.0,
+                195.0,
+                174.0,
+                216.0
+              ],
+              "slot_name": "solvency",
+              "target_value": 222.0,
+              "unclipped_z_score": 0.8795168142082121
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "profitability": {
+          "component_weight": 0.2,
+          "metric_weight_coverage": 1.0,
+          "metrics": {
+            "roe": {
+              "clipped_z_score": 1.2352314427311166,
+              "comparison_class": "H1_ANNUALIZED_IFRS_COMMON_EQUITY_ROE",
+              "configured_metric_weight": 1.0,
+              "direction": "higher_is_better",
+              "effective_component_weight": 0.2,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "annualized_ifrs_common_equity_roe_pct",
+              "peer_input_confidence": 98.75,
+              "peer_mean": 12.593652599999999,
+              "peer_sample_std": 3.8832094408109503,
+              "peer_tickers": [
+                "NN.AS",
+                "AGS.BR",
+                "SAMPO.HE",
+                "AV.L",
+                "G.MI"
+              ],
+              "peer_values": [
+                10.716895,
+                17.209113,
+                11.076337,
+                7.955278,
+                16.01064
+              ],
+              "slot_name": "roe",
+              "target_value": 17.390315,
+              "unclipped_z_score": 1.2352314427311166
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        },
+        "underwriting_quality": {
+          "component_weight": 0.25,
+          "metric_weight_coverage": 0.7,
+          "metrics": {
+            "combined_ratio": {
+              "clipped_z_score": -0.11596335568954835,
+              "comparison_class": "NON_LIFE_COMBINED_RATIO",
+              "configured_metric_weight": 0.7,
+              "direction": "lower_is_better",
+              "effective_component_weight": 0.25,
+              "effective_metric_weight_within_component": 1.0,
+              "metric_name": "combined_ratio_pct",
+              "peer_input_confidence": 100.0,
+              "peer_mean": 91.13333333333333,
+              "peer_sample_std": 4.024259766300715,
+              "peer_tickers": [
+                "NN.AS",
+                "AGS.BR",
+                "SAMPO.HE",
+                "AV.L",
+                "ZURN.SW",
+                "G.MI"
+              ],
+              "peer_values": [
+                90.5,
+                95.2,
+                83.6,
+                93.3,
+                92.7,
+                91.5
+              ],
+              "slot_name": "combined_ratio",
+              "target_value": 91.6,
+              "unclipped_z_score": -0.11596335568954835
+            }
+          },
+          "minimum_metric_weight_coverage": 0.5
+        }
+      },
+      "status": "DISPLAY_READY",
+      "target_data_confidence": 89.5,
+      "warnings": [
+        "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:growth_stability:0.350000",
+        "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:value_per_share:0.250000",
+        "PEER_SET_VARIES_BY_METRIC"
+      ],
+      "weighted_component_coverage": 0.75
+    }
+  },
+  "summary": {
+    "data_check": 22,
+    "display_ready": 1,
+    "portfolio_companies": 23
+  }
+}
