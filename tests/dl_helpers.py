@@ -151,3 +151,17 @@ def write_owner_config(root: Path, filled: dict[str, Any]) -> None:
 
     for name in ("positions", "thesis_status"):
         (root / f"config/{name}.yaml").write_text(yaml.safe_dump(filled[name], sort_keys=False), encoding="utf-8")
+
+
+def blank_owner_config(cfg: dict[str, Any]) -> dict[str, Any]:
+    """Empty owner templates (as generated before any owner input)."""
+    from copy import deepcopy
+
+    blank = deepcopy(cfg)
+    blank["positions"]["as_of"] = None
+    blank["positions"]["cash_weight_pct"] = None
+    for item in blank["positions"]["positions"].values():
+        item.update(weight_pct=None, sector=None, beta=None)
+    for item in blank["thesis_status"]["positions"].values():
+        item.update(status=None, as_of=None, note=None)
+    return blank

@@ -22,7 +22,7 @@ from portfolio_cockpit.decision_layer.drift import build_drift_snapshot, write_d
 from portfolio_cockpit.decision_layer.valuation import build_valuation_snapshot, write_valuation_snapshot
 
 from dl_helpers import (
-    AS_OF, ROOT, filled_owner_config, market_entry, observation_from_baseline, reference, repo_copy,
+    AS_OF, ROOT, blank_owner_config, filled_owner_config, market_entry, observation_from_baseline, reference, repo_copy,
     write_market, write_observation, write_owner_config, write_refs,
 )
 
@@ -137,9 +137,11 @@ def test_unknown_thesis_status_is_refused():
         _decide(thesis_status="GREAT")
 
 
-def test_template_owner_inputs_refuse_to_run():
+def test_template_owner_inputs_refuse_to_run(tmp_path):
+    root = repo_copy(tmp_path)
+    write_owner_config(root, blank_owner_config(CFG))
     with pytest.raises(DecisionInputError, match="cockpit-check-inputs"):
-        build_decision_snapshot(root=ROOT, as_of=AS_OF)
+        build_decision_snapshot(root=root, as_of=AS_OF)
 
 
 def _end_to_end_root(tmp_path):

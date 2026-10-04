@@ -9,7 +9,7 @@ from portfolio_cockpit.decision_layer.drift import build_drift_snapshot, write_d
 from portfolio_cockpit.decision_layer.valuation import build_valuation_snapshot, write_valuation_snapshot
 
 from dl_helpers import (
-    AS_OF, ROOT, filled_owner_config, market_entry, observation_from_baseline, reference, repo_copy,
+    AS_OF, ROOT, blank_owner_config, filled_owner_config, market_entry, observation_from_baseline, reference, repo_copy,
     write_market, write_observation, write_owner_config, write_refs,
 )
 
@@ -41,8 +41,10 @@ def _check_static_html(text):
     assert not re.search(r"<(link|img|iframe)[^>]*(href|src)\s*=\s*[\"']?https?:", text, re.I)
 
 
-def test_dashboard_from_current_repo(tmp_path):
-    out = build_dashboard(ROOT, tmp_path / "dashboard.html", AS_OF)
+def test_dashboard_with_blank_owner_templates(tmp_path):
+    root = repo_copy(tmp_path)
+    write_owner_config(root, blank_owner_config(CFG))
+    out = build_dashboard(root, tmp_path / "dashboard.html", AS_OF)
     text = out.read_text()
     _check_static_html(text)
     current = json.loads((ROOT / "data/scoring/current.json").read_text())

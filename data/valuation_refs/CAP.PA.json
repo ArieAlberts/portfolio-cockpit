@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ticker": "CAP.PA",
+  "metrics": {
+    "forward_pe": {
+      "own_history": {
+        "value": 13.36,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/epa/CAP/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    },
+    "ev_ebit": {
+      "own_history": {
+        "value": 13.91,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/epa/CAP/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    },
+    "fcf_yield": {
+      "own_history": {
+        "value": 0.0821,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/epa/CAP/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    }
+  }
+}

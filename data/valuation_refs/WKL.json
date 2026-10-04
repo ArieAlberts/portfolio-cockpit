@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ticker": "WKL",
+  "metrics": {
+    "forward_pe": {
+      "own_history": {
+        "value": 26.71,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/ams/WKL/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": 20.25,
+        "as_of_date": "2026-10-03",
+        "method": "median of current values RELX.L, TRI, VRSK, FDS, SPGI, MCO",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com"
+        }
+      }
+    },
+    "ev_ebit": {
+      "own_history": {
+        "value": 27.7,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/ams/WKL/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": 18.055,
+        "as_of_date": "2026-10-03",
+        "method": "median of current values RELX.L, TRI, VRSK, FDS, SPGI, MCO",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com"
+        }
+      }
+    },
+    "fcf_yield": {
+      "own_history": {
+        "value": 0.0394,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/ams/WKL/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": 0.05535,
+        "as_of_date": "2026-10-03",
+        "method": "median of current values RELX.L, TRI, VRSK, FDS, SPGI, MCO",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com"
+        }
+      }
+    }
+  }
+}

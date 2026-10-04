@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ticker": "ASR",
+  "metrics": {
+    "price_to_book": {
+      "own_history": {
+        "value": 0.98,
+        "as_of_date": "2026-10-03",
+        "method": "median FY2023-FY2025 (post IFRS 17 / Aegon NL)",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    },
+    "pe": {
+      "own_history": {
+        "value": 10.79,
+        "as_of_date": "2026-10-03",
+        "method": "median FY2023-FY2025 (post IFRS 17 / Aegon NL)",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": 14.5,
+        "as_of_date": "2026-09-29",
+        "method": "median of current trailing PE NN.AS, AGS.BR, SAMPO.HE, AV.L, ZURN.SW (data dates 2026-08-29..09-29)",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com"
+        }
+      }
+    },
+    "shareholder_yield": {
+      "own_history": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    }
+  }
+}

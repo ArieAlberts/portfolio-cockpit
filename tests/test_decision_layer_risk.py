@@ -1,3 +1,5 @@
+import shutil
+
 import pytest
 
 from portfolio_cockpit.config import load_config
@@ -14,7 +16,7 @@ from portfolio_cockpit.decision_layer.risk import (
 )
 
 from dl_helpers import (
-    AS_OF, ROOT, filled_owner_config, market_entry, repo_copy, write_market, write_owner_config,
+    AS_OF, ROOT, blank_owner_config, filled_owner_config, market_entry, repo_copy, write_market, write_owner_config,
 )
 
 REPO_CFG = load_config(ROOT)
@@ -80,11 +82,14 @@ def test_all_configured_scenarios_run():
 
 def test_template_positions_refuse_with_clear_error():
     with pytest.raises(PositionsIncompleteError, match="ASR.weight_pct"):
-        load_positions(CFG)
+        load_positions(blank_owner_config(CFG))
 
 
-def test_input_check_reports_missing_owner_data():
-    report = check_inputs(ROOT, AS_OF)
+def test_input_check_reports_missing_owner_data(tmp_path):
+    root = repo_copy(tmp_path)
+    write_owner_config(root, blank_owner_config(CFG))
+    shutil.rmtree(root / "data/market", ignore_errors=True)
+    report = check_inputs(root, AS_OF)
     assert not report["ready_for_decisions"]
     assert "ASR.weight_pct" in report["missing"]["config/positions.yaml"]
     assert "OKLO.status" in report["missing"]["config/thesis_status.yaml"]
