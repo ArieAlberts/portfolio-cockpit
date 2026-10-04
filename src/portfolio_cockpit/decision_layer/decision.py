@@ -176,12 +176,12 @@ def decide(i: DecisionInputs, cfg: dict[str, Any], target_cfg: dict[str, Any]) -
 
     if i.current_weight_pct > upper + 1e-12:
         reasons = [f"ABOVE_BAND:{i.current_weight_pct:g}%>{upper:.4g}%"]
-        if i.quality_multiplier_applied <= 1.0:
-            reasons.append("PRICE_ONLY")
-            if i.quality_multiplier_applied < 1.0:
-                reasons.append("TARGET_REDUCED_BY_DRIFT")
-        else:
+        if i.quality_multiplier_applied > 1.0:
             reasons.append("ABOVE_SUPPORTED_WEIGHT")
+        elif i.quality_multiplier_applied < 1.0:
+            reasons.append("TARGET_REDUCED_BY_DRIFT")
+        else:
+            reasons.append("PRICE_ONLY")
         return DecisionResult(i.ticker, TRIM_CANDIDATE, reasons + fq_reasons)
 
     if i.current_weight_pct < lower - 1e-12:

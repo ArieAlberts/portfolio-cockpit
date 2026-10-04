@@ -167,7 +167,13 @@ within the band, valuation Expensive                        → NO_ADD
 otherwise                                                   → HOLD
 ```
 
-**TRIM reasons.** When the applied multiplier is ≤ 1.00, the reason is `PRICE_ONLY`; when it is below 1.00, `TARGET_REDUCED_BY_DRIFT` is added. When the target is supported by a multiplier above 1.00, the reason is `ABOVE_SUPPORTED_WEIGHT`.
+**TRIM reasons.** There is exactly one, depending on the applied multiplier:
+
+| Multiplier | Reason |
+|---|---|
+| exactly 1.00 | `PRICE_ONLY` |
+| below 1.00 | `TARGET_REDUCED_BY_DRIFT` |
+| above 1.00 | `ABOVE_SUPPORTED_WEIGHT` |
 
 **Below the band but Expensive.** This gives `NO_ADD` rather than `HOLD`: the position is underweight, but valuation blocks adding.
 

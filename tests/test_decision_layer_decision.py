@@ -80,10 +80,27 @@ def test_data_check_precedes_everything():
     assert "DATA_CONFIDENCE_BELOW_80" in result.reasons
 
 
-def test_trim_below_neutral_multiplier_is_price_only_and_flags_reduced_target():
+def test_trim_with_neutral_multiplier_is_price_only():
+    result = _decide(current_weight_pct=5.0, score_adjusted_target_pct=4.0, quality_multiplier_applied=1.0)
+    assert result.decision_state == "TRIM_CANDIDATE"
+    assert "PRICE_ONLY" in result.reasons
+    assert "TARGET_REDUCED_BY_DRIFT" not in result.reasons
+    assert "ABOVE_SUPPORTED_WEIGHT" not in result.reasons
+
+
+def test_trim_with_reduced_multiplier_is_only_target_reduced_by_drift():
     result = _decide(current_weight_pct=5.0, score_adjusted_target_pct=3.6, quality_multiplier_applied=0.9)
     assert result.decision_state == "TRIM_CANDIDATE"
-    assert "PRICE_ONLY" in result.reasons and "TARGET_REDUCED_BY_DRIFT" in result.reasons
+    assert "TARGET_REDUCED_BY_DRIFT" in result.reasons
+    assert "PRICE_ONLY" not in result.reasons
+    assert "ABOVE_SUPPORTED_WEIGHT" not in result.reasons
+
+
+def test_trim_with_raised_multiplier_is_above_supported_weight():
+    result = _decide(current_weight_pct=6.0, score_adjusted_target_pct=4.4, quality_multiplier_applied=1.1)
+    assert result.decision_state == "TRIM_CANDIDATE"
+    assert "ABOVE_SUPPORTED_WEIGHT" in result.reasons
+    assert "PRICE_ONLY" not in result.reasons and "TARGET_REDUCED_BY_DRIFT" not in result.reasons
 
 
 @pytest.mark.parametrize(
