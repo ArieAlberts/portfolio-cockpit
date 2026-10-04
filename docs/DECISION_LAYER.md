@@ -200,7 +200,15 @@ When the owner deliberately changes a `base_target` in `portfolio.yaml`, they ma
 - `quality_drift_score: 50`;
 - optionally `period_basis`.
 
-No existing file is edited: the original file and `index.json` stay byte-identical. The reference to the new baseline lives in the new file, which keeps `data/baselines/**` append-only. The drift engine follows the chain from the index entry. A re-baseline dated after `as_of` is not active yet; two re-baselines of the same parent are refused. Observations from before the active baseline belong to the old period and are ignored. The output records the full `baseline.chain`.
+No existing file is edited: the original file and `index.json` stay byte-identical. The reference to the new baseline lives in the new file, which keeps `data/baselines/**` append-only.
+
+The drift engine scans `data/baselines/<ticker>/` itself; `index.json` only names the original baseline.
+
+- Every re-baseline must be valid and chain back to the index entry, otherwise the run stops (fail-fast).
+- Among the re-baselines in force on `as_of`, the **newest** is used, deterministically: latest `baseline_date`, then file path.
+- A re-baseline dated after `as_of`, and anything built on it, is not in force yet.
+- Observations from before the active baseline belong to the old period and are ignored.
+- The output records the full `baseline.chain`.
 
 ## Dashboard
 

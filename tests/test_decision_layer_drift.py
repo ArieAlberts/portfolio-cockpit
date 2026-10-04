@@ -345,13 +345,46 @@ def test_future_rebaseline_is_not_active_yet(tmp_path):
     assert result["baseline"]["path"] == old_rel
 
 
-def test_two_rebaselines_of_one_baseline_are_refused(tmp_path):
+def _sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def test_engine_scans_baseline_dir_and_keeps_old_files_byte_identical(tmp_path):
+    root = repo_copy(tmp_path)
+    old_rel, _ = load_baseline("ASR", root)
+    index = root / "data/baselines/index.json"
+    before = {"old": _sha256(root / old_rel), "index": _sha256(index)}
+    new_rel, _ = _write_rebaseline(root, date_str="2026-09-15")
+    assert new_rel not in index.read_text()  # not referenced by index.json
+    result = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")["results"]["ASR"]
+    assert result["baseline"]["path"] == new_rel
+    assert {"old": _sha256(root / old_rel), "index": _sha256(index)} == before
+
+
+def test_multiple_rebaselines_use_the_newest_in_force_deterministically(tmp_path):
+    root = repo_copy(tmp_path)
+    old_rel, _ = load_baseline("ASR", root)
+    a_rel, _ = _write_rebaseline(root, date_str="2026-09-10")
+    b_rel, _ = _write_rebaseline(root, date_str="2026-09-20")                 # sibling of a, newer
+    c_rel, _ = _write_rebaseline(root, date_str="2026-09-25", parent=a_rel)    # chains via a, newest
+    _write_rebaseline(root, date_str="2026-12-01", parent=b_rel)              # future: not in force
+    snapshot = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")
+    baseline = snapshot["results"]["ASR"]["baseline"]
+    assert baseline["path"] == c_rel
+    assert baseline["chain"] == [old_rel, a_rel, c_rel]
+    again = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")
+    assert again["results"]["ASR"]["baseline"] == baseline
+    # On an earlier date only a and b are in force: b is the newest.
+    earlier = build_drift_snapshot(root=root, as_of="2026-09-22", code_version="t")
+    assert earlier["results"]["ASR"]["baseline"]["path"] == b_rel
+
+
+def test_rebaseline_that_does_not_chain_back_is_refused(tmp_path):
     from portfolio_cockpit.decision_layer.drift import BaselineError
 
     root = repo_copy(tmp_path)
-    _write_rebaseline(root, date_str="2026-09-15")
-    _write_rebaseline(root, date_str="2026-09-20")
-    with pytest.raises(BaselineError, match="keep one chain"):
+    _write_rebaseline(root, date_str="2026-09-15", parent="data/baselines/ASR/missing.json")
+    with pytest.raises(BaselineError, match="do not chain back"):
         build_drift_snapshot(root=root, as_of=AS_OF)
 
 

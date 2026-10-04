@@ -144,38 +144,55 @@ def resolve_baseline(
     index_rel: str,
     as_of: str,
 ) -> tuple[str, dict[str, Any], list[str]]:
-    """Active baseline for ``ticker``: the index entry, followed by any re-baselines.
+    """Active baseline for ``ticker`` and the chain that leads to it.
 
-    Baseline files are never edited. A deliberate change of the base target
-    adds a NEW file in data/baselines/<T>/ with ``rebaseline_of`` pointing to
-    the baseline it replaces; the old file stays. Each baseline may be
-    replaced by at most one re-baseline, and a re-baseline dated after
-    ``as_of`` is not active yet.
+    The engine scans data/baselines/<ticker>/ itself; index.json only names
+    the original baseline. Baseline files are never edited: a deliberate
+    change of the base target adds a NEW file with ``rebaseline_of``
+    pointing to the baseline it replaces. Every re-baseline must be valid
+    and chain back to the index entry (fail-fast). Among the re-baselines
+    in force on ``as_of`` the newest is used, deterministically: latest
+    baseline_date, then file path. A re-baseline dated after ``as_of`` (and
+    anything built on it) is not in force yet.
     """
-    current_rel = index_rel
-    current = json.loads((root / index_rel).read_text(encoding="utf-8"))
-    children: dict[str, list[tuple[str, dict[str, Any]]]] = {}
+    root_payload = json.loads((root / index_rel).read_text(encoding="utf-8"))
+    nodes: dict[str, dict[str, Any]] = {index_rel: root_payload}
+    children: dict[str, list[str]] = {}
     for path in sorted((root / "data/baselines" / ticker).glob("*.json")):
         rel = path.relative_to(root).as_posix()
         if rel == index_rel:
             continue
         payload = json.loads(path.read_text(encoding="utf-8"))
-        if "rebaseline_of" in payload:
-            children.setdefault(str(payload["rebaseline_of"]), []).append((rel, payload))
-    chain = [index_rel]
-    while current_rel in children:
-        candidates = children[current_rel]
-        if len(candidates) > 1:
-            raise BaselineError(
-                f"{ticker}: {[c[0] for c in candidates]} all re-baseline {current_rel}; keep one chain"
-            )
-        rel, payload = candidates[0]
-        _validate_rebaseline(payload, current, ticker, rel)
-        if str(payload["baseline_date"]) > as_of:
-            break
-        chain.append(rel)
-        current_rel, current = rel, payload
-    return current_rel, current, chain
+        if "rebaseline_of" not in payload:
+            continue
+        nodes[rel] = payload
+        children.setdefault(str(payload["rebaseline_of"]), []).append(rel)
+
+    parents: dict[str, str] = {}
+    in_force: list[str] = []
+    stack = [(index_rel, True)]
+    while stack:
+        parent, parent_in_force = stack.pop()
+        for rel in children.get(parent, []):
+            _validate_rebaseline(nodes[rel], nodes[parent], ticker, rel)
+            parents[rel] = parent
+            rel_in_force = parent_in_force and str(nodes[rel]["baseline_date"]) <= as_of
+            if rel_in_force:
+                in_force.append(rel)
+            stack.append((rel, rel_in_force))
+
+    orphans = sorted(rel for rel in nodes if rel != index_rel and rel not in parents)
+    if orphans:
+        raise BaselineError(f"{ticker}: {orphans} do not chain back to the index baseline {index_rel}")
+
+    if not in_force:
+        return index_rel, root_payload, [index_rel]
+    active = max(in_force, key=lambda rel: (str(nodes[rel]["baseline_date"]), rel))
+    chain = [active]
+    while chain[-1] != index_rel:
+        chain.append(parents[chain[-1]])
+    chain.reverse()
+    return active, nodes[active], chain
 
 
 def _find_metric(
