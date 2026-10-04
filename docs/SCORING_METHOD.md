@@ -95,3 +95,12 @@ A new company report:
 - may change Fundamental Quality;
 - may change Quality Drift;
 - may change Valuation if earnings/cash-flow inputs change.
+
+
+## Absolute quality anchors
+
+Peer-relative quality can look weak even when the underlying economics clear sensible absolute guardrails, especially in unusually strong peer groups.
+
+Portfolio Cockpit therefore supports a separate absolute-anchor context. It classifies configured target metrics as `STRONG`, `ACCEPTABLE` or `BELOW_ANCHOR`, but it does **not** feed those classifications back into the Fundamental Quality score or its readiness gates.
+
+Anchor directions are validated against the canonical metric registry, and the v1 thresholds are explicitly marked as pilot house thresholds. See `docs/ABSOLUTE_ANCHORS.md`.

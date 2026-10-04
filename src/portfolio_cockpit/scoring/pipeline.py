@@ -17,6 +17,7 @@ from portfolio_cockpit.config import (
     metric_directions,
 )
 
+from .absolute_anchors import evaluate_absolute_anchors
 from .calculation_validation import validate_dataset_calculations
 from .normalization import calculate_fundamental_quality
 from .peer_confidence import peer_metric_confidence
@@ -32,6 +33,7 @@ CONFIG_FILES = (
     "config/scoring.yaml",
     "config/score_metrics.yaml",
     "config/peer_universes.yaml",
+    "config/absolute_anchors.yaml",
 )
 
 CODE_FILES = (
@@ -42,6 +44,7 @@ CODE_FILES = (
     "src/portfolio_cockpit/scoring/peer_confidence.py",
     "src/portfolio_cockpit/scoring/readiness.py",
     "src/portfolio_cockpit/scoring/quality.py",
+    "src/portfolio_cockpit/scoring/absolute_anchors.py",
     "src/portfolio_cockpit/scoring/calculation_validation.py",
 )
 
@@ -291,6 +294,7 @@ def build_score_snapshot(
     company_types = config["company_types"]
     readiness_cfg = config["readiness"]
     scoring_cfg = config["scoring"]
+    absolute_anchor_cfg = config["absolute_anchors"]
     peer_index_path = root / "data/peers/index.json"
     peer_index = _read_json(peer_index_path)
 
@@ -342,6 +346,11 @@ def build_score_snapshot(
         )
         company_type = position["company_type"]
         type_cfg = company_types[company_type]
+        absolute_anchor_context = evaluate_absolute_anchors(
+            dataset=dataset,
+            company_type=company_type,
+            config=absolute_anchor_cfg,
+        )
         component_weights = {
             k: float(v) for k, v in type_cfg["quality_components"].items()
         }
@@ -468,6 +477,7 @@ def build_score_snapshot(
             "peer_input_confidence": overall_peer_confidence,
             "selected_metrics": _metric_output(selected, candidate, peer_confidences),
             "peer_set_overlap": overlap_warning,
+            "absolute_anchors": absolute_anchor_context,
             "warnings": sorted(set(warnings)),
             "provenance": provenance,
             "execution_effect": "NONE",
@@ -540,6 +550,10 @@ def build_score_snapshot(
             "unstable_band_width_points": unstable_width,
             "data_confidence_threshold": confidence_threshold,
             "peer_input_confidence_threshold": confidence_threshold,
+            "absolute_anchors_context_only": True,
+            "absolute_anchors_affect_score": False,
+            "absolute_anchors_affect_readiness": False,
+            "absolute_anchors_affect_decision_engine": False,
             "calculation_validation_enabled": bool(calculation_cfg["enabled"]),
             "calculation_absolute_tolerance": calculation_abs_tolerance,
             "calculation_relative_tolerance": calculation_rel_tolerance,
