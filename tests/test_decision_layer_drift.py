@@ -31,7 +31,7 @@ TICKERS = list(REPO_CFG["portfolio"]["positions"])
 
 
 def _drift(ticker, observations=(), drift_cfg=DRIFT_CFG, as_of=AS_OF):
-    rel, baseline = load_baseline(ticker)
+    rel, baseline = load_baseline(ticker, as_of=as_of)
     return build_ticker_drift(
         ticker=ticker,
         company_type=REPO_CFG["portfolio"]["positions"][ticker]["company_type"],
