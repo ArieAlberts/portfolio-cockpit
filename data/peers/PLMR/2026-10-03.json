@@ -169,7 +169,7 @@
           "score_eligible": true
         },
         "net_written_premium_to_surplus_ratio": {
-          "value": 83.6,
+          "value": 83.615406,
           "comparison_class": "FY_2025_STATUTORY_NET_PREMIUM_TO_SURPLUS",
           "source_definition": "IRIS #2 Net Premium to Surplus Ratio; FY2025 statutory net premium divided by FY2025 year-end capital & surplus",
           "period": "FY_2025",
@@ -384,10 +384,10 @@
           "source_type": "SEC_10_K",
           "source_title": "RLI Corp. 2025 Form 10-K",
           "source_url": "https://www.sec.gov/Archives/edgar/data/84246/000110465926018013/rli-20251231x10k.htm",
-          "calculation": "1622129 / 1846615",
+          "calculation": "0.88 * 100",
           "score_eligible": true,
           "definition_confidence": 100,
-          "notes": "RLI reports the statutory ratio directly as 0.88 to 1; stored as 88.0 percent to match the metric unit."
+          "notes": "RLI reports the statutory ratio directly as 0.88 to 1; stored as 88.0 percent to match the metric unit. The underlying amounts 1622129 / 1846615 give 0.878; the reported rounded ratio is used, so the calculation records 0.88 * 100."
         }
       }
     },

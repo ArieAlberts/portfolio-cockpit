@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from portfolio_cockpit.scoring.peer_data import eligible_metric_set
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -43,7 +45,7 @@ def test_two_verified_fy2025_capital_peers_are_stored_but_target_remains_blocked
     data=load_plmr_peer_data()
     knsl=data["companies"]["KNSL"]["metrics"]["net_written_premium_to_surplus_ratio"]
     rli=data["companies"]["RLI"]["metrics"]["net_written_premium_to_surplus_ratio"]
-    assert knsl["value"]==83.6
+    assert knsl["value"]==pytest.approx(83.615406)
     assert rli["value"]==88.0
     assert knsl["score_eligible"] is True
     assert rli["score_eligible"] is True
