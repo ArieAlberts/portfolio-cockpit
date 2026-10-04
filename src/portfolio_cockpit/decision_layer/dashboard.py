@@ -67,6 +67,17 @@ def _history(root: Path, rel_dir: str, prefix: str, extract) -> dict[str, list[d
     return out
 
 
+def _latest_account_snapshot(root: Path) -> dict[str, Any] | None:
+    """Latest read-only broker/account snapshot for display only."""
+    directory = root / "data/account"
+    if not directory.is_dir():
+        return None
+    files = sorted(directory.glob("????-??-??.json"))
+    if not files:
+        return None
+    return json.loads(files[-1].read_text(encoding="utf-8"))
+
+
 def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
     """Gather everything the dashboard shows; computes drift/valuation in memory if not written."""
     repo_cfg = load_config(root)
@@ -87,6 +98,14 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
     positions = cfg["positions"]["positions"]
     thesis = cfg["thesis_status"]["positions"]
     shock = float(cfg["risk_scenarios"]["standard_shock"])
+    account_snapshot = _latest_account_snapshot(root)
+    notional_by_ticker: dict[str, float] = {}
+    if account_snapshot:
+        for item in account_snapshot.get("positions", []):
+            mapped = item.get("monitor_ticker")
+            exposure = item.get("notional_exposure_pct")
+            if mapped and isinstance(exposure, (int, float)) and not isinstance(exposure, bool):
+                notional_by_ticker[mapped] = notional_by_ticker.get(mapped, 0.0) + float(exposure)
 
     history = {
         "drift": _history(root, "data/drift", "quality_drift",
@@ -115,6 +134,7 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
                 "company": position.get("company"),
                 "company_type": position["company_type"],
                 "current_weight_pct": weight,
+                "notional_exposure_pct": notional_by_ticker.get(ticker),
                 "base_target_weight_pct": position["weight_pct"],
                 "portfolio_impact_pp": impact_pp(float(weight), shock) if weight is not None else None,
                 "drift": d,
@@ -137,6 +157,7 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
         "owner_missing": owner_missing,
         "impact_label": cfg["risk_scenarios"]["standard_label"],
         "portfolio_risk": (decisions or {}).get("portfolio_risk"),
+        "account_snapshot": account_snapshot,
         "rows": rows,
     }
 
@@ -226,6 +247,7 @@ def _row(r: dict[str, Any]) -> str:
         f"<td class=num>{_fmt(r['base_target_weight_pct'], 1, '%')}</td>"
         f"<td class=num>{_adjusted_cell(decision)}</td>"
         f"<td class=num>{_fmt(r['current_weight_pct'], 1, '%')}</td>"
+        f"<td class=num>{_fmt(r.get('notional_exposure_pct'), 2, '%')}</td>"
         f"<td class=num>{_gap_cell(decision)}</td>"
         f"<td class=num>{_fmt(price, 2)} {_esc(v.get('currency') or '')}</td>"
         f"<td class=q>{_drift_cell(d)}</td>"
@@ -367,6 +389,39 @@ def _detail(r: dict[str, Any]) -> str:
     )
 
 
+def _account_summary(data: dict[str, Any]) -> str:
+    account = data.get("account_snapshot")
+    if not account:
+        return ""
+    rows = "".join(
+        "<tr>"
+        f"<td>{_esc(p.get('symbol'))}</td>"
+        f"<td>{_esc(p.get('asset_class'))}</td>"
+        f"<td class=num>{_fmt(p.get('quantity'), 0)}</td>"
+        f"<td class=num>{_fmt(p.get('market_value_base'), 2, ' EUR')}</td>"
+        f"<td class=num>{_fmt(p.get('capital_weight_pct'), 2, '%')}</td>"
+        f"<td class=num>{_fmt(p.get('notional_exposure_pct'), 2, '%')}</td>"
+        f"<td>{_esc(p.get('monitor_ticker') or 'outside monitor')}</td>"
+        "</tr>"
+        for p in account.get("positions", [])
+    )
+    summary = (
+        f"NLV {_fmt(account.get('net_liquidation_value'), 2, ' EUR')} · "
+        f"cash {_fmt(account.get('cash_base'), 2, ' EUR')} "
+        f"({_fmt(account.get('cash_weight_pct'), 2, '%')}) · "
+        f"gross position value {_fmt(account.get('gross_position_value'), 2, ' EUR')} · "
+        f"leverage {_fmt(account.get('leverage'), 2)}×"
+    )
+    return (
+        "<h2>IBKR account snapshot</h2>"
+        f"<p class=small>{_esc(account.get('as_of'))} · {_esc(account.get('source'))} · {summary}. "
+        "CFD values below are notional exposure, not capital weights.</p>"
+        "<div class=wrap><table class=inner><tr><th>Symbol</th><th>Type</th><th>Qty</th>"
+        "<th>Value base</th><th>Capital weight</th><th>Notional exposure</th><th>Monitor mapping</th></tr>"
+        f"{rows}</table></div>"
+    )
+
+
 def _banner(data: dict[str, Any]) -> str:
     notes = []
     missing = data["owner_missing"]
@@ -436,7 +491,7 @@ summary{cursor:pointer}table.inner td,table.inner th{font-size:12px}
 
 def render(data: dict[str, Any], title: str = "Portfolio Cockpit") -> str:
     head = (
-        "<tr><th>Ticker</th><th>Base target</th><th>Adjusted target</th><th>Current</th><th>Gap</th><th>Price</th>"
+        "<tr><th>Ticker</th><th>Base target</th><th>Adjusted target</th><th>Current capital</th><th>Notional exposure</th><th>Gap</th><th>Price</th>"
         "<th class=q>Quality Drift</th><th class=f>Fundamental Quality (peer)</th><th class=v>Valuation</th>"
         f"<th>Data confidence</th><th>{_esc(data['impact_label'])}</th><th>Thesis status</th>"
         "<th>Decision state</th><th>Last fundamental update</th><th>Last valuation update</th><th>Warnings</th></tr>"
@@ -454,6 +509,7 @@ def render(data: dict[str, Any], title: str = "Portfolio Cockpit") -> str:
         "<span class='chip cf'>Fundamental Quality: peer-relative, 50 = peer mean</span>"
         "<span class='chip cv'>Valuation: vs own history + peers (50 ≈ fair)</span></div>"
         f"{_banner(data)}"
+        f"{_account_summary(data)}"
         f"<div class=wrap><table class=main>{head}{body}</table></div>"
         f"{_scenarios(data)}"
         f"<h2>Drill-down per ticker</h2>{details}"
