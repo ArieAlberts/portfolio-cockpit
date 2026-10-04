@@ -1,6 +1,6 @@
 # Portfolio Cockpit — feedback status and open items
 
-Updated: 2026-10-03 (score snapshot r9: 23 companies, 0 DISPLAY_READY, 23 DATA_CHECK; decision layer steps 1–9 built on `feature/decision-layer`)
+Updated: 2026-10-04 (score snapshot r12: 23 companies, 1 DISPLAY_READY (ASR), 22 DATA_CHECK; decision layer steps 1–9 merged in #6/#7)
 
 ## Incorporated
 
@@ -14,6 +14,9 @@ Updated: 2026-10-03 (score snapshot r9: 23 companies, 0 DISPLAY_READY, 23 DATA_C
 - Compile/smoke CI plus a local pytest compile guard.
 - Target/peer monitoring, retries, degraded-source state, idempotent events, PENDING_PEERS and the permanent no-live-execution boundary.
 - ASR EU Solvency-II capital strength plus harmonized IFRS common-equity ROE; company-defined ROE remains blocked.
+- Calculation validation (#10): stored `calculation` strings are recomputed with a safe AST evaluator; a score-eligible `CALCULATION_MISMATCH` blocks publication.
+- Context-only absolute anchors (#8) beside the peer score for general operating companies.
+- PLMR capital strength locked to the FY2025 US statutory basis (#4).
 
 ## Implementation status per axis
 
@@ -21,7 +24,7 @@ The five axes are separated **conceptually** (README, ARCHITECTURE). Their **imp
 
 | Axis | Status |
 |---|---|
-| Fundamental Quality (peer-relative) | Implemented. Full pipeline, gates, provenance and immutable revisions. |
+| Fundamental Quality (peer-relative) | Implemented. Full pipeline, gates, provenance, calculation validation and immutable revisions. First DISPLAY_READY: ASR 66.1 (STABLE, 75% coverage) in r12. |
 | Quality Drift (vs own baseline, 50 at inclusion) | **Implemented** (`cockpit-drift`). Profiles for all six company types, like-for-like periods, immutable revisions. Exactly 50.0 for all 23 until the first observation arrives. |
 | Valuation | **Implemented** (`cockpit-valuation`). Profiles, NOT_APPLICABLE rules, formula registry, own-history/peer references. All 23 are `NO_MARKET_DATA` until market data is supplied. |
 | Data Confidence | Implemented for targets and peer inputs (threshold 80 gives DATA_CHECK). Warning codes are now a fixed contract (`decision_layer/warnings.py`). |
@@ -47,14 +50,11 @@ Owner review:
 - Confirm each baseline's period basis (H1 or Q) in `config/quality_drift.yaml`.
 
 ### ASR
-- Harmonized H1 IFRS common-equity ROE is now implemented for ASR plus five peers.
-- A fresh rebuild reaches 75% weighted component coverage, STABLE sensitivity and a 66.1 DISPLAY_READY candidate.
-- The immutable r9 snapshot remains unchanged until the next score rebuild.
+- **DISPLAY_READY** in r12: Fundamental Quality 66.1, STABLE, 75% weighted component coverage (harmonized H1 IFRS common-equity ROE for ASR plus five peers).
 - Value-per-share remains partial; share-count coverage is usable but insufficient by itself to carry the component.
 
 ### PLMR
-- Add a comparable US statutory capital metric across at least four specialty-P&C peers. Start with net-written-premium-to-surplus (broader disclosure) and add RBC as a second alias where available.
-- Fix the period basis (FY/TTM) before collecting data; statutory capital data is mainly annual.
+- Period basis fixed: capital strength uses FY2025 statutory data (#4). Net-written-premium-to-surplus is collected, but `capital_strength` still lacks four comparable peers, so PLMR stays DATA_CHECK (`MISSING_REQUIRED_COMPONENT:capital_strength`). Add peers, and RBC as a second alias where available.
 - Prefer TTM/full-year underwriting and profitability evidence where H1 seasonality materially distorts comparison.
 
 ### WKL and ESI required components
@@ -67,13 +67,15 @@ Owner review:
 - Add preferred reporting period and seasonal-exposure metadata by company type.
 
 ### Calculation provenance
-- Standardize machine-readable calculation formulas (whitelisted formula registry, no `eval`).
-- Recalculate stored values from formulas and block CALCULATION_MISMATCH above tolerance.
+- Done for peer datasets (#10) and for valuation formulas (whitelisted registry in `decision_layer/formulas.py`). Keep new peer data in recomputable `calculation` form; a value taken directly from a report records that value (e.g. `0.88 * 100`) and keeps the underlying amounts in `notes`.
 
 ## Open — medium priority
 
 ### Absolute anchors
-Add absolute company-type quality thresholds beside relative peer scores, e.g. insurer combined ratio/ROE and operating-company ROIC/leverage. WKL (diagnostic FQ ≈16.5 and STABLE against an elite information-services peer set) is the first test case: a low relative score must not be read as "weak company" without absolute context.
+Implemented for GENERAL_OPERATING_COMPANY as context only (#8, `config/absolute_anchors.yaml`, PILOT thresholds). WKL meets all seven anchors (STRONG) while its relative diagnostic FQ is ≈16.5. Open:
+- Most other GOCs still show MISSING for most anchor metrics; fill the canonical metrics in their peer datasets.
+- Add economically appropriate profiles for insurers, miners, financial services and pre-revenue companies; do not copy GOC thresholds.
+- Show anchors in the decision-layer dashboard next to the FQ block.
 
 ### Presentation
 Generate score class, sensitivity band, peer count, component coverage, confidence and deterministic display text from the pipeline.
@@ -90,15 +92,15 @@ Detected filings should eventually create a draft normalized snapshot, but valid
 
 ## Phase 1 — definition of done
 
-Phase 1 is complete only when **all** of the following hold:
+Phase 1 is complete only when **all** of the following hold (status 2026-10-04 in brackets):
 
-- The monitor has completed a first target and peer poll, and fingerprints are persisted.
-- At least one company earns DISPLAY_READY Fundamental Quality under current gates without manual exceptions: required components, at least 4 peers per metric, slot coverage, Data Confidence ≥80, peer-input confidence ≥80, STABLE.
-- Every DISPLAY_READY score is reproducible via `cockpit-score` with full provenance and hashes.
-- Absolute anchors are shown beside the relative peer score.
-- Quality Drift, Valuation and the Decision Engine produce an output for **all 23 positions** with full provenance. DATA_CHECK is a valid output.
-- The dashboard shows Drift, Fundamental Quality and Valuation as separate blocks, plus `PORTFOLIO IMPACT -30%` and the decision state.
-- No monitoring, scoring or decision route can trigger live execution.
+- The monitor has completed a first target and peer poll, and fingerprints are persisted. [open: still NOT_YET_POLLED]
+- At least one company earns DISPLAY_READY Fundamental Quality under current gates without manual exceptions: required components, at least 4 peers per metric, slot coverage, Data Confidence ≥80, peer-input confidence ≥80, STABLE. [done: ASR]
+- Every DISPLAY_READY score is reproducible via `cockpit-score` with full provenance and hashes. [done]
+- Absolute anchors are shown beside the relative peer score. [done in the FQ snapshot for GOCs; not yet on the dashboard]
+- Quality Drift, Valuation and the Decision Engine produce an output for **all 23 positions** with full provenance. DATA_CHECK is a valid output. [drift and valuation yes; decisions wait for `positions.yaml` and `thesis_status.yaml`]
+- The dashboard shows Drift, Fundamental Quality and Valuation as separate blocks, plus `PORTFOLIO IMPACT -30%` and the decision state. [done; impact and state fill in once owner inputs exist]
+- No monitoring, scoring or decision route can trigger live execution. [done; enforced by tests]
 
 ## Decisions recorded
 
