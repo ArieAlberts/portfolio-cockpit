@@ -14,7 +14,7 @@ from typing import Any
 from portfolio_cockpit.config import load_config
 
 from .config import DecisionConfigError, load_decision_config, missing_owner_inputs
-from .drift import ObservationError, load_observations
+from .drift import ObservationError, evidence_gate, load_observations
 from .formulas import FORMULAS
 from .valuation import MarketDataError, latest_market_file, load_references, validate_market_file
 
@@ -68,8 +68,13 @@ def check_inputs(root: Path, as_of: str | None = None) -> dict[str, Any]:
     refs_missing: list[str] = []
     for ticker, position in positions.items():
         try:
-            if not load_observations(root, ticker):
+            observations = load_observations(root, ticker)
+            if not observations:
                 report["info"].append(f"{ticker}: no observation after baseline yet (drift stays 50.0)")
+            for path, payload in observations:
+                reason = evidence_gate(payload, cfg["quality_drift"], path.relative_to(root))
+                if reason is not None:
+                    report["info"].append(f"{path.relative_to(root)}: not used for drift ({reason})")
         except ObservationError as exc:
             report["errors"].append(str(exc))
 

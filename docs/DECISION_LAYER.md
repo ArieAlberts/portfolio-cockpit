@@ -68,6 +68,8 @@ Profiles live in `config/quality_drift.yaml`, one per company type. They were bu
 
 **Observations** go in `data/observations/<T>/<date>.json` (template: `data/templates/observation.json`). They are validated: every metric needs `value`, `period`, `period_basis`, `source.{source_type,title,publication_date}` and `retrieved_at`. Corrections are new files, never edits.
 
+**Evidence gate.** Every observation states an `update_trigger` and a `source_confidence` (0–100). The trigger must be in `evidence_gate.allowed_update_triggers` (official results, official trading update, regulatory filing, material guidance change, confirmed thesis event); an unknown trigger is invalid and fails the run. Price, market or technical triggers cannot be configured. An observation with `source_confidence` below `minimum_source_confidence` (80) is not used and is reported as `OBSERVATION_REJECTED` (contract code `MISSING_DATA`).
+
 ## Valuation
 
 Depends on market price; 50 ≈ fair versus reference, higher = more attractive. The metric scores are combined as a weighted mean over the metrics with status `OK`.

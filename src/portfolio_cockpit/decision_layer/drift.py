@@ -126,6 +126,11 @@ def validate_observation(payload: dict[str, Any], *, ticker: str, path: Path) ->
             date.fromisoformat(str(payload.get(key)))
         except ValueError:
             errors.append(f"{key} must be an ISO date")
+    if not isinstance(payload.get("update_trigger"), str) or not payload["update_trigger"]:
+        errors.append("update_trigger is required")
+    confidence = payload.get("source_confidence")
+    if not isinstance(confidence, (int, float)) or isinstance(confidence, bool) or not 0 <= confidence <= 100:
+        errors.append("source_confidence must be a number in [0, 100]")
     metrics = payload.get("metrics")
     if not isinstance(metrics, dict) or not metrics:
         errors.append("metrics must be a non-empty mapping of component -> metric")
@@ -164,6 +169,25 @@ def load_observations(root: Path, ticker: str) -> list[tuple[Path, dict[str, Any
         loaded.append((path, payload))
     loaded.sort(key=lambda item: (str(item[1]["observation_date"]), item[0].name))
     return loaded
+
+
+def evidence_gate(payload: dict[str, Any], drift_cfg: dict[str, Any], path: Path | str) -> str | None:
+    """Return a rejection reason, or None when the observation may update drift.
+
+    An update_trigger outside the configured whitelist is invalid data and
+    raises; a source_confidence below the minimum is valid but not enough
+    evidence, so the observation is skipped and reported.
+    """
+    gate = drift_cfg["evidence_gate"]
+    trigger = payload["update_trigger"]
+    if trigger not in gate["allowed_update_triggers"]:
+        raise ObservationError(
+            f"{path}: update_trigger {trigger!r} is not allowed; use one of {gate['allowed_update_triggers']}"
+        )
+    minimum = float(gate["minimum_source_confidence"])
+    if float(payload["source_confidence"]) < minimum:
+        return f"source_confidence:{payload['source_confidence']:g}<{minimum:g}"
+    return None
 
 
 # ---------------------------------------------------------------- evaluation
@@ -392,6 +416,7 @@ def build_ticker_drift(
     baseline_rel: str,
     observations: list[tuple[str, dict[str, Any]]],
     as_of: str,
+    rejected: list[str] | None = None,
 ) -> dict[str, Any]:
     profile = drift_cfg["profiles"][company_type]
 
@@ -413,7 +438,7 @@ def build_ticker_drift(
     previous = run(len(observations) - 2) if observations else latest
     neutral = float(drift_cfg["neutral_score"])
 
-    warnings = list(latest.warnings)
+    warnings = list(latest.warnings) + [f"OBSERVATION_REJECTED:{r}" for r in rejected or []]
     last_fundamental_date = (
         str(observations[-1][1]["observation_date"]) if observations else str(baseline["baseline_date"])
     )
@@ -467,6 +492,7 @@ def build_drift_snapshot(*, root: Path, as_of: str | None = None, code_version: 
         baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
         baseline_hashes[baseline_rel] = sha256_file(baseline_path)
         observations = []
+        rejected: list[str] = []
         for path, payload in load_observations(root, ticker):
             if str(payload["observation_date"]) < str(baseline["baseline_date"]):
                 raise ObservationError(f"{path}: observation_date precedes the baseline")
@@ -474,6 +500,10 @@ def build_drift_snapshot(*, root: Path, as_of: str | None = None, code_version: 
                 continue
             rel = path.relative_to(root).as_posix()
             observation_hashes[rel] = sha256_file(path)
+            reason = evidence_gate(payload, drift_cfg, path)
+            if reason is not None:
+                rejected.append(f"{rel}:{reason}")
+                continue
             observations.append((rel, payload))
         results[ticker] = build_ticker_drift(
             ticker=ticker,
@@ -483,6 +513,7 @@ def build_drift_snapshot(*, root: Path, as_of: str | None = None, code_version: 
             baseline_rel=baseline_rel,
             observations=observations,
             as_of=as_of,
+            rejected=rejected,
         )
 
     config_hash, config_hashes = bundle_hash(root, CONFIG_FILES)

@@ -72,6 +72,8 @@ def build(root: Path) -> list[Path]:
     observation = {
         "schema_version": 1,
         "ticker": "<TICKER>",
+        "update_trigger": "<one of quality_drift.yaml evidence_gate.allowed_update_triggers>",
+        "source_confidence": None,
         "observation_date": None,
         "reporting_period_end": None,
         "metrics": {

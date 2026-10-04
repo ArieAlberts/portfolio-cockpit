@@ -253,3 +253,43 @@ def test_drift_config_validator_rejects(mutate, match):
     mutate(broken["quality_drift"])
     with pytest.raises(DecisionConfigError, match=match):
         validate_decision_config(broken, REPO_CFG)
+
+
+def test_low_confidence_observation_is_rejected_and_reported(tmp_path):
+    root = repo_copy(tmp_path)
+    obs = observation_from_baseline("ASR", DRIFT_CFG, overrides={"solvency_ii_ratio_pct": 260})
+    obs["source_confidence"] = 60
+    write_observation(root, obs)
+    result = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")["results"]["ASR"]
+    assert result["drift_score"] == 50.0
+    assert result["status"] == "NO_NEW_FUNDAMENTALS"
+    assert any(w.startswith("OBSERVATION_REJECTED:") and "source_confidence:60<80" in w for w in result["warnings"])
+
+
+def test_unknown_or_price_trigger_fails_fast(tmp_path):
+    root = repo_copy(tmp_path)
+    obs = observation_from_baseline("ASR", DRIFT_CFG)
+    obs["update_trigger"] = "share_price_move"
+    write_observation(root, obs)
+    with pytest.raises(ObservationError, match="update_trigger 'share_price_move' is not allowed"):
+        build_drift_snapshot(root=root, as_of=AS_OF)
+
+
+def test_observation_requires_trigger_and_confidence(tmp_path):
+    root = repo_copy(tmp_path)
+    obs = observation_from_baseline("ASR", DRIFT_CFG)
+    del obs["update_trigger"]
+    obs["source_confidence"] = 120
+    write_observation(root, obs)
+    with pytest.raises(ObservationError) as exc:
+        build_drift_snapshot(root=root, as_of=AS_OF)
+    assert "update_trigger is required" in str(exc.value)
+    assert "source_confidence must be a number in [0, 100]" in str(exc.value)
+
+
+@pytest.mark.parametrize("trigger", ["market_price", "technical_signal", "price_breakout"])
+def test_config_forbids_price_triggers(trigger):
+    broken = deepcopy(CFG)
+    broken["quality_drift"]["evidence_gate"]["allowed_update_triggers"].append(trigger)
+    with pytest.raises(DecisionConfigError, match="price, market or technical triggers are forbidden"):
+        validate_decision_config(broken, REPO_CFG)

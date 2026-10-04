@@ -30,6 +30,7 @@ DECISION_CONFIG_FILES = {
 VALID_PERIOD_RULES = {"like_for_like"}
 VALID_DRIFT_MODES = {"relative", "absolute", "direct"}
 VALID_DIRECTIONS = {"higher_is_better", "lower_is_better"}
+FORBIDDEN_TRIGGER_TOKENS = ("price", "market", "technical")
 VALID_SCENARIO_TYPES = {"market", "sector", "single_stock", "combined"}
 REQUIRED_SCENARIOS = (
     "market_shock",
@@ -122,6 +123,20 @@ def _validate_quality_drift(
     )
     if drift.get("period_rule") not in VALID_PERIOD_RULES:
         errors.append(f"quality_drift.period_rule must be one of {sorted(VALID_PERIOD_RULES)}")
+
+    gate = drift.get("evidence_gate") or {}
+    triggers = gate.get("allowed_update_triggers")
+    if not isinstance(triggers, list) or not triggers or not all(isinstance(t, str) for t in triggers):
+        errors.append("quality_drift.evidence_gate.allowed_update_triggers must be a non-empty list")
+    elif any(token in t.lower() for t in triggers for token in FORBIDDEN_TRIGGER_TOKENS):
+        errors.append("quality_drift.evidence_gate: price, market or technical triggers are forbidden")
+    _check_number(
+        errors,
+        "quality_drift.evidence_gate.minimum_source_confidence",
+        gate.get("minimum_source_confidence"),
+        lo=0,
+        hi=100,
+    )
 
     bases = drift.get("valid_period_bases")
     if not isinstance(bases, list) or "POINT_IN_TIME" not in bases:
