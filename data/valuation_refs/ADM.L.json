@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "ticker": "ADM.L",
+  "metrics": {
+    "price_to_book": {
+      "own_history": {
+        "value": 6.67,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/lon/ADM/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    },
+    "pe": {
+      "own_history": {
+        "value": 12.96,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/lon/ADM/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    },
+    "shareholder_yield": {
+      "own_history": {
+        "value": 0.0436,
+        "as_of_date": "2026-10-03",
+        "method": "median of fiscal-year-end values, last 5 completed fiscal years (dividend + buyback yield)",
+        "retrieved_at": "2026-10-04T14:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com",
+          "url": "https://stockanalysis.com/quote/lon/ADM/financials/ratios/"
+        }
+      },
+      "peers": {
+        "value": null,
+        "as_of_date": null,
+        "method": null,
+        "retrieved_at": null,
+        "source": {
+          "source_type": null,
+          "title": null,
+          "url": null
+        }
+      }
+    }
+  }
+}
