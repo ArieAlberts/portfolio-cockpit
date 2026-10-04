@@ -37,13 +37,13 @@ def test_pipeline_records_provenance_and_used_peer_tickers():
     assert all(item["peer_tickers"] for item in underwriting.values())
 
 
-def test_audited_insurers_remain_blocked_for_current_data_gaps():
+def test_asr_can_publish_after_harmonized_roe_while_plmr_remains_blocked():
     payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
-    assert "ASR" in payload["blocked"]
+    assert "ASR" in payload["scores"]
+    assert payload["scores"]["ASR"]["status"]=="DISPLAY_READY"
+    assert payload["scores"]["ASR"]["weighted_component_coverage"] == 0.75
+    assert payload["scores"]["ASR"]["diagnostic_candidate"]["sensitivity"]["stability_flag"]=="STABLE"
     assert "PLMR" in payload["blocked"]
-    assert "capital_strength" not in payload["blocked"]["ASR"]["missing_required_components"]
-    assert payload["blocked"]["ASR"]["weighted_component_coverage"] == 0.55
-    assert "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE" in payload["blocked"]["ASR"]["warnings"]
     assert "capital_strength" in payload["blocked"]["PLMR"]["missing_required_components"]
 
 

@@ -13,13 +13,15 @@ Updated: 2026-10-03
 - Hypothesis properties for mean=50, monotonicity, clipping and minimum peer count.
 - Compile/smoke CI plus a local pytest compile guard.
 - Target/peer monitoring, retries, degraded-source state, idempotent events, PENDING_PEERS and the permanent no-live-execution boundary.
+- ASR EU Solvency-II capital strength plus harmonized IFRS common-equity ROE; company-defined ROE remains blocked.
 
 ## Open — high priority
 
 ### ASR
-- Capital strength now has four EU Solvency-II peers, but total weighted component coverage is still only 55%.
-- Harmonize insurer ROE definitions so profitability can become scoreable.
-- Expand value-per-share evidence where definitions are sufficiently consistent.
+- Harmonized H1 IFRS common-equity ROE is now implemented for ASR plus five peers.
+- A fresh rebuild reaches 75% weighted component coverage, STABLE sensitivity and a 66.1 DISPLAY_READY candidate.
+- The immutable r9 snapshot remains unchanged until the next score rebuild.
+- Value-per-share remains partial; share-count coverage is usable but insufficient by itself to carry the component.
 
 ### PLMR
 - Add a comparable US statutory capital metric across at least four specialty-P&C peers: RBC or net-written-premium-to-surplus.
