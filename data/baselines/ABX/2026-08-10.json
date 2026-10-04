@@ -1,0 +1,51 @@
+{
+  "baseline_version": 1,
+  "ticker": "ABX",
+  "company_name": "Barrick Mining Corporation",
+  "portfolio_weight_pct": 4,
+  "portfolio_role": "GROWTH",
+  "company_type": "CYCLICAL_MINING",
+  "baseline_date": "2026-08-10",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_SNAPSHOT",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "COMPANY_RESULTS",
+    "title": "Barrick Reports Second Quarter 2026 Results",
+    "publication_date": "2026-08-10",
+    "url": "https://www.barrick.com/English/news/news-details/2026/q2-2026-results/default.aspx"
+  },
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_short_term_investments_usd_m": 5927,
+      "total_debt_usd_m": 4682,
+      "net_debt_usd_m": -1245
+    },
+    "cost_position": {
+      "copper_c1_cash_cost_usd_per_lb": 2.47
+    },
+    "normalized_cashflow": {
+      "quarter_operating_cash_flow_usd_m": 1704,
+      "adjusted_ebitda_usd_m": 2550
+    },
+    "execution": {
+      "quarter_copper_production_tonnes": 56000,
+      "quarter_gold_production_ounces": 796000
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 0.73
+    }
+  },
+  "notes": [
+    "Internal monitor ticker ABX maps to Barrick Mining Corporation; the US IBKR listing is B @ NYSE and the Canadian listing is ABX @ TSX.",
+    "This baseline replaces the former Abacus Global Management dataset because that was the wrong company mapping.",
+    "Quality Drift starts at exactly 50.0 on this first Barrick baseline.",
+    "No peer-normalized Fundamental Quality score is published until mining-specific peer data is refreshed."
+  ]
+}
