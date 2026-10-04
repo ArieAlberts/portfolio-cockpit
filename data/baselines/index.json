@@ -1,5 +1,5 @@
 {
-  "generated_on": "2026-10-04",
+  "generated_on": "2026-10-02",
   "rule": "All company baselines start Quality Drift at 50.0; absolute Fundamental Quality stays null until peer normalization is validated.",
   "baselines": {
     "ASR": "data/baselines/ASR/2026-08-19.json",
@@ -20,7 +20,7 @@
     "FUL": "data/baselines/FUL/2026-09-23.json",
     "POWL": "data/baselines/POWL/2026-08-03.json",
     "ESI": "data/baselines/ESI/2026-07-27.json",
-    "ABX": "data/baselines/ABX/2026-08-10.json",
+    "ABX": "data/baselines/ABX/2026-08-06.json",
     "ERO": "data/baselines/ERO/2026-08-05.json",
     "TMDX": "data/baselines/TMDX/2026-08-04.json",
     "LEU": "data/baselines/LEU/2026-08-05.json",
