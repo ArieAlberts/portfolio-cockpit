@@ -47,5 +47,8 @@
     "This baseline replaces the former Abacus Global Management dataset because that was the wrong company mapping.",
     "Quality Drift starts at exactly 50.0 on this first Barrick baseline.",
     "No peer-normalized Fundamental Quality score is published until mining-specific peer data is refreshed."
-  ]
+  ],
+  "rebaseline_of": "data/baselines/ABX/2026-08-06.json",
+  "rebaseline_reason": "Company mapping correction: internal ABX monitor slot changed from Abacus Global Management to Barrick Mining Corporation.",
+  "base_target_weight_pct": 4
 }
