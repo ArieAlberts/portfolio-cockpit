@@ -194,3 +194,17 @@ def test_missing_drift_snapshot_gives_clear_error(tmp_path):
     write_owner_config(root, filled_owner_config(CFG, REPO_CFG))
     with pytest.raises(DecisionInputError, match="cockpit-drift --write"):
         build_decision_snapshot(root=root, as_of=AS_OF)
+
+
+def test_decide_cli_write_logs_signals(tmp_path, capsys):
+    from portfolio_cockpit.decision_layer.decision import main
+
+    root = _end_to_end_root(tmp_path)
+    assert main(["--root", str(root), "--as-of", AS_OF, "--write", "--code-version", "t"]) == 0
+    log = root / f"data/signal_log/{AS_OF}.jsonl"
+    lines = log.read_text().splitlines()
+    assert len(lines) == 23
+    assert main(["--root", str(root), "--as-of", AS_OF, "--write", "--code-version", "u"]) == 0
+    assert log.read_text().splitlines() == lines
+    asr = next(json.loads(line) for line in lines if json.loads(line)["ticker"] == "ASR")
+    assert asr["price"] == 45.0

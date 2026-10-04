@@ -17,6 +17,8 @@ cockpit-drift = "portfolio_cockpit.decision_layer.drift:main"
 cockpit-valuation = "portfolio_cockpit.decision_layer.valuation:main"
 cockpit-check-inputs = "portfolio_cockpit.decision_layer.inputs:main"
 cockpit-decide = "portfolio_cockpit.decision_layer.decision:main"
+cockpit-simulate = "portfolio_cockpit.decision_layer.simulator:simulate_main"
+cockpit-evaluate-signals = "portfolio_cockpit.decision_layer.simulator:evaluate_main"
 
 [project.optional-dependencies]
 dev = [

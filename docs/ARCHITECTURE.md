@@ -38,7 +38,7 @@ A live broker execution service must not exist in this codebase.
 
 ### Fundamental Quality
 - Peer/company-type normalized.
-- 50 = relevant peer median.
+- 50 = relevant peer mean (sample std, clipped at ±3 z).
 - Must not change from market price alone.
 
 ### Quality Drift
@@ -74,3 +74,7 @@ Forbidden:
 - live order cancellation
 - automatic live execution
 - automatic transition from paper to live
+
+## Decision layer
+
+Quality Drift, Valuation, Portfolio Risk, the Decision Engine, the dashboard and the dry-run simulator are implemented in `src/portfolio_cockpit/decision_layer/`, outside the Fundamental Quality hash scope. See `docs/DECISION_LAYER.md`.

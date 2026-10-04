@@ -21,5 +21,7 @@
   "observation_date": null,
   "reporting_period_end": null,
   "schema_version": 1,
-  "ticker": "<TICKER>"
+  "source_confidence": null,
+  "ticker": "<TICKER>",
+  "update_trigger": "<one of quality_drift.yaml evidence_gate.allowed_update_triggers>"
 }

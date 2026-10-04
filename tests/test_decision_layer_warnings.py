@@ -115,3 +115,7 @@ def test_missing_data_leads_to_data_check(confidence, drift, valuation, state):
                                  valuation_status=valuation)
     assert result == state
     assert bool(reasons) == (state == "DATA_CHECK")
+
+
+def test_rejected_observation_maps_to_missing_data():
+    assert classify("OBSERVATION_REJECTED:data/observations/ASR/x.json:source_confidence:60<80").value == "MISSING_DATA"

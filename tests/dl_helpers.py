@@ -68,6 +68,8 @@ def observation_from_baseline(
     return {
         "schema_version": 1,
         "ticker": ticker,
+        "update_trigger": "official_results",
+        "source_confidence": 95,
         "observation_date": observation_date,
         "reporting_period_end": observation_date,
         "metrics": metrics,

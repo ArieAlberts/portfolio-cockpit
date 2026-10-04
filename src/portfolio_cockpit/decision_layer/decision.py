@@ -376,7 +376,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--root", type=Path, default=_repo_root_from_module())
     parser.add_argument("--as-of", help="ISO date; default is today (UTC)")
     parser.add_argument("--code-version")
-    parser.add_argument("--write", action="store_true", help="write an immutable revision to data/decisions/")
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="write an immutable revision to data/decisions/ and append data/signal_log/<as_of>.jsonl",
+    )
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
@@ -386,7 +390,11 @@ def main(argv: list[str] | None = None) -> int:
     if not args.write:
         print(canonical_json(payload), end="")
         return 0
-    print(write_decision_snapshot(root, payload))
+    from .simulator import append_signal_log
+
+    path = write_decision_snapshot(root, payload)
+    print(path)
+    print(append_signal_log(root, json.loads(path.read_text(encoding="utf-8")), path))
     return 0
 
 

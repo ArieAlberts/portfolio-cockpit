@@ -1,6 +1,6 @@
 # Portfolio Cockpit — feedback status and open items
 
-Updated: 2026-10-03 (main @ `19c3605`, score snapshot r9: 23 companies, 0 DISPLAY_READY, 23 DATA_CHECK)
+Updated: 2026-10-03 (score snapshot r9: 23 companies, 0 DISPLAY_READY, 23 DATA_CHECK; decision layer steps 1–9 built on `feature/decision-layer`)
 
 ## Incorporated
 
@@ -22,35 +22,29 @@ The five axes are separated **conceptually** (README, ARCHITECTURE). Their **imp
 | Axis | Status |
 |---|---|
 | Fundamental Quality (peer-relative) | Implemented. Full pipeline, gates, provenance and immutable revisions. |
-| Quality Drift (vs own baseline, 50 at inclusion) | **Stub.** Only `drift_from_weighted_signals()`. Baselines exist for all 23 companies; there are no observations, no drift profiles and no output history. |
-| Valuation | **Stub.** Only `valuation_score_from_weighted_z()`. There are no market inputs, metric profiles, NOT_APPLICABLE rules or output. |
-| Data Confidence | Implemented for targets and peer inputs (threshold 80 gives DATA_CHECK). Warning codes are not yet a fixed contract. |
-| Portfolio Risk | **Stub.** Only `portfolio_impact()`. There are no scenarios, sector weights or current position weights. |
-| Decision Engine | **Missing.** |
-| Dashboard | **Missing.** |
-| Dry-run rebalance simulator and signal log | **Missing** (only `ProposedOrderTicketBuilder` and the execution boundary exist). |
+| Quality Drift (vs own baseline, 50 at inclusion) | **Implemented** (`cockpit-drift`). Profiles for all six company types, like-for-like periods, immutable revisions. Exactly 50.0 for all 23 until the first observation arrives. |
+| Valuation | **Implemented** (`cockpit-valuation`). Profiles, NOT_APPLICABLE rules, formula registry, own-history/peer references. All 23 are `NO_MARKET_DATA` until market data is supplied. |
+| Data Confidence | Implemented for targets and peer inputs (threshold 80 gives DATA_CHECK). Warning codes are now a fixed contract (`decision_layer/warnings.py`). |
+| Portfolio Risk | **Implemented.** `PORTFOLIO IMPACT -30%`, sector weights, market/sector/single-stock/combined scenarios. Needs `config/positions.yaml`. |
+| Decision Engine | **Implemented** (`cockpit-decide`). Refuses to run until positions and thesis status are filled in. |
+| Dashboard | **Implemented** (`scripts/build_dashboard.py` → `out/dashboard.html`). |
+| Dry-run rebalance simulator and signal log | **Implemented** (`cockpit-simulate`, `cockpit-evaluate-signals`). |
 
 ## Open — high priority
 
-### Decision layer (parallel track; independent of peer data)
-Build according to `docs/HANDOFF_DECISION_LAYER.md`, steps 1–9, in package `src/portfolio_cockpit/decision_layer/` without touching FQ-hashed files:
+### Decision layer — owner inputs and review
+The decision layer (steps 1–9 of `docs/HANDOFF_DECISION_LAYER.md`) is built; see `docs/DECISION_LAYER.md`. Run `cockpit-check-inputs` to see what is still missing. Owner inputs required (templates in `data/templates/`; no invented numbers):
 
-1. Package skeleton, config loader and immutable-revision writer.
-2. Quality Drift engine (baselines + `data/observations/`, drift profiles per company type, like-for-like periods).
-3. Valuation engine (`data/market/`, `data/valuation_refs/`, NOT_APPLICABLE rules; negative P/E or EV/EBITDA never counts as cheap).
-4. Data Confidence warning contract (STALE_DATA, SOURCE_CONFLICT, UNSUITABLE_METRIC, MISSING_DATA, CALCULATION_ANOMALY, PERIOD_MISMATCH).
-5. Portfolio Risk: `PORTFOLIO IMPACT -30%`, sector weights, market/sector/single-stock/combined scenarios.
-6. Decision Engine: ADD_CANDIDATE / HOLD / NO_ADD / REVIEW_REDUCE / THESIS_REVIEW / DATA_CHECK. Driven by Quality Drift; Fundamental Quality is context only when DISPLAY_READY.
-7. Static dashboard with separate Drift, Fundamental Quality and Valuation blocks, plus drill-down.
-8. Dry-run simulator and append-only signal log with forward-return evaluation.
-9. CI smoke tests and documentation.
-
-Owner inputs required (templates and validators are generated first; no invented numbers):
-
-- `config/positions.yaml`: current weights, sector, optional beta.
+- `config/positions.yaml`: current weights, sector, optional beta. Sector names must match `config/risk_scenarios.yaml` (`Financials`, `Materials`) or the scenarios should be adjusted.
 - `config/thesis_status.yaml`: INTACT / WATCH / BROKEN per ticker.
 - `data/market/<date>.json` and `data/valuation_refs/<ticker>.json`.
 - `data/observations/<ticker>/<date>.json`: first fundamental update after each baseline.
+
+Owner review:
+
+- Confirm the FINANCIAL_SERVICES (ABX) valuation profile: forward P/E 0.4, P/E 0.3, P/B 0.3.
+- Confirm decision limits (10% position, 20% overweight band, 30% sector, 3 pp impact, FQ floor 35) and drift full_scale/dead_band values.
+- Confirm each baseline's period basis (H1 or Q) in `config/quality_drift.yaml`.
 
 ### ASR
 - Harmonized H1 IFRS common-equity ROE is now implemented for ASR plus five peers.
@@ -91,9 +85,8 @@ Configure SEC-compliant COCKPIT_USER_AGENT and optional COCKPIT_HEARTBEAT_URL, t
 Detected filings should eventually create a draft normalized snapshot, but validation must remain mandatory before scoring. These drafts can also feed `data/observations/` for Quality Drift after validation.
 
 ### Documentation hygiene
-- `docs/ARCHITECTURE.md` says "50 = relevant peer median"; the implementation uses the peer **mean**. Correct the text.
 - Add `CHANGELOG.md` for method decisions and material score changes.
-- Move `docs/IMPLEMENTATION_PROMPT.md` to `docs/process/` once the build phase ends; remove `reference/` after decision-layer step 9.
+- Move `docs/IMPLEMENTATION_PROMPT.md` to `docs/process/` once the build phase ends; `reference/` was removed after decision-layer step 9.
 
 ## Phase 1 — definition of done
 

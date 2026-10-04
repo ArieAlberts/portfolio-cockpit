@@ -26,6 +26,17 @@ minimum_slot_weight_coverage: 0.50
 period_rule: like_for_like
 max_observation_age_days: 200
 
+# Only validated fundamental evidence may move Quality Drift. Price, market
+# or technical triggers are forbidden (the validator rejects them).
+evidence_gate:
+  allowed_update_triggers:
+    - official_results
+    - official_trading_update
+    - regulatory_filing
+    - material_guidance_change
+    - confirmed_thesis_event
+  minimum_source_confidence: 80
+
 valid_period_bases: [FY, H1, Q, TTM, YTD, POINT_IN_TIME]
 
 # Baseline period basis, derived from each baseline's source report title.
