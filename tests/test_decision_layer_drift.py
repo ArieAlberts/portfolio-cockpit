@@ -293,3 +293,81 @@ def test_config_forbids_price_triggers(trigger):
     broken["quality_drift"]["evidence_gate"]["allowed_update_triggers"].append(trigger)
     with pytest.raises(DecisionConfigError, match="price, market or technical triggers are forbidden"):
         validate_decision_config(broken, REPO_CFG)
+
+
+def _write_rebaseline(root, ticker="ASR", date_str="2026-09-15", parent=None, name=None, **overrides):
+    rel, baseline = load_baseline(ticker, root)
+    payload = deepcopy(baseline)
+    payload.update(
+        baseline_date=date_str,
+        rebaseline_of=parent or rel,
+        rebaseline_reason="Owner changed base target from 7% to 6%",
+        base_target_weight_pct=6.0,
+        quality_drift_score=50,
+    )
+    payload.update(overrides)
+    path = root / "data/baselines" / ticker / (name or f"{date_str}.json")
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return path.relative_to(root).as_posix(), payload
+
+
+def test_rebaseline_adds_a_file_and_never_edits_the_old_one(tmp_path):
+    root = repo_copy(tmp_path)
+    old_rel, _ = load_baseline("ASR", root)
+    old_bytes = (root / old_rel).read_bytes()
+    index_bytes = (root / "data/baselines/index.json").read_bytes()
+    new_rel, _ = _write_rebaseline(root)
+    # An observation from before the new baseline belongs to the old period and is ignored.
+    write_observation(root, observation_from_baseline("ASR", DRIFT_CFG, observation_date="2026-09-01",
+                                                      overrides={"solvency_ii_ratio_pct": 300}, root=root))
+    result = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")["results"]["ASR"]
+    assert result["baseline"]["path"] == new_rel
+    assert result["baseline"]["chain"] == [old_rel, new_rel]
+    assert result["drift_score"] == 50.0 and result["status"] == "NO_NEW_FUNDAMENTALS"
+    assert (root / old_rel).read_bytes() == old_bytes
+    assert (root / "data/baselines/index.json").read_bytes() == index_bytes
+
+
+def test_rebaseline_measures_drift_from_the_new_baseline(tmp_path):
+    root = repo_copy(tmp_path)
+    _write_rebaseline(root)
+    obs = observation_from_baseline("ASR", DRIFT_CFG, observation_date="2026-09-30", root=root)
+    write_observation(root, obs)
+    result = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")["results"]["ASR"]
+    assert result["status"] == "OK" and result["drift_score"] == 50.0
+
+
+def test_future_rebaseline_is_not_active_yet(tmp_path):
+    root = repo_copy(tmp_path)
+    old_rel, _ = load_baseline("ASR", root)
+    _write_rebaseline(root, date_str="2026-12-01")
+    result = build_drift_snapshot(root=root, as_of=AS_OF, code_version="t")["results"]["ASR"]
+    assert result["baseline"]["path"] == old_rel
+
+
+def test_two_rebaselines_of_one_baseline_are_refused(tmp_path):
+    from portfolio_cockpit.decision_layer.drift import BaselineError
+
+    root = repo_copy(tmp_path)
+    _write_rebaseline(root, date_str="2026-09-15")
+    _write_rebaseline(root, date_str="2026-09-20")
+    with pytest.raises(BaselineError, match="keep one chain"):
+        build_drift_snapshot(root=root, as_of=AS_OF)
+
+
+@pytest.mark.parametrize(
+    ("overrides", "match"),
+    [
+        ({"quality_drift_score": 60}, "quality_drift_score must be 50"),
+        ({"baseline_date": "2026-08-01"}, "must be after the baseline it replaces"),
+        ({"rebaseline_reason": ""}, "rebaseline_reason is required"),
+        ({"base_target_weight_pct": 140}, "base_target_weight_pct must be a number"),
+    ],
+)
+def test_invalid_rebaseline_fails_fast(tmp_path, overrides, match):
+    from portfolio_cockpit.decision_layer.drift import BaselineError
+
+    root = repo_copy(tmp_path)
+    _write_rebaseline(root, name="2026-09-15.json", **overrides)
+    with pytest.raises(BaselineError, match=match):
+        build_drift_snapshot(root=root, as_of=AS_OF)
