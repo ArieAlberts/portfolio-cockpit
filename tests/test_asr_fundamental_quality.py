@@ -14,9 +14,10 @@ def _current_payload():
     return current,json.loads(score_path.read_text(encoding="utf-8"))
 
 
-def test_historical_current_snapshot_remains_immutable_r9_state():
-    current,data=_current_payload()
-    assert current["generated_by_pipeline"] is True
+def test_historical_r9_snapshot_remains_immutable():
+    # Read r9 directly: after the rebuild, current.json points to a newer
+    # revision in which ASR is DISPLAY_READY, while r9 must stay unchanged.
+    data=json.loads((ROOT/"data/scoring/fundamental_quality_2026-10-03_r9.json").read_text(encoding="utf-8"))
     assert "ASR" not in data["scores"]
     assert data["blocked"]["ASR"]["status"]=="DATA_CHECK"
     assert "capital_strength" in data["blocked"]["ASR"]["covered_components"]
