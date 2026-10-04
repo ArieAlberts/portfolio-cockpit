@@ -11,14 +11,14 @@
 #   ABX and OKLO: history largely from the SPAC period -> beta unreliable (see comments).
 schema_version: 1
 as_of: 2026-10-04
-source: manual   # no positions opened yet - 100% cash before build-up (2026-10-04)
-cash_weight_pct: 100
+source: manual   # read-only IBKR snapshot imported manually; derivatives shown separately in dashboard
+cash_weight_pct: 96.15
 positions:
   # Financials (target 21%)
   ASR:    {weight_pct: 0, sector: Financials, beta: 0.51}
   ADM.L:  {weight_pct: 0, sector: Financials, beta: 0.20}
   PLMR:   {weight_pct: 0, sector: Financials, beta: 0.35}
-  ABX:    {weight_pct: 0, sector: Financials, beta: null}   # source shows 0.05 (SPAC history) -> not usable; null = treated as 1.0
+  ABX:    {weight_pct: 0, sector: Materials, beta: null}   # Barrick Mining; beta left null until a clean post-remap series is validated
   # Materials (target 23%)
   IMCD:   {weight_pct: 0, sector: Materials, beta: 0.97}    # chemicals distribution; some classifications use Industrials
   CRDA.L: {weight_pct: 0, sector: Materials, beta: 0.93}
