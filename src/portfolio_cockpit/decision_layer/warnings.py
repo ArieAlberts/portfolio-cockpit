@@ -133,7 +133,13 @@ def data_state(
     elif data_confidence < threshold:
         reasons.append(f"DATA_CONFIDENCE_BELOW_{threshold:g}")
     if drift_status is None or drift_status == "DRIFT_DATA_CHECK":
-        reasons.append(f"DRIFT_{drift_status or 'MISSING'}")
+        reasons.append(_prefixed("DRIFT_", drift_status))
     if valuation_status != "OK":
-        reasons.append(f"VALUATION_{valuation_status or 'MISSING'}")
+        reasons.append(_prefixed("VALUATION_", valuation_status))
     return ("DATA_CHECK" if reasons else "OK"), reasons
+
+
+def _prefixed(prefix: str, status: str | None) -> str:
+    """'VALUATION_' + 'NO_MARKET_DATA', but never 'VALUATION_VALUATION_DATA_CHECK'."""
+    status = status or "MISSING"
+    return status if status.startswith(prefix) else f"{prefix}{status}"
