@@ -1,0 +1,1828 @@
+{
+  "adjusted_target_total_pct": 93.0,
+  "as_of": "2026-10-04",
+  "axis": "DECISION",
+  "execution_effect": "NONE",
+  "methodology": {
+    "comparison": "current_weight_pct versus score_adjusted_target_pct",
+    "decision_states": [
+      "ADD_CANDIDATE",
+      "HOLD",
+      "NO_ADD",
+      "TRIM_CANDIDATE",
+      "REVIEW_REDUCE",
+      "EXIT_REVIEW",
+      "THESIS_REVIEW",
+      "DATA_CHECK"
+    ],
+    "driver": "QUALITY_DRIFT",
+    "fundamental_quality_role": "context only; floor applies only when DISPLAY_READY",
+    "gap_definition": "score_adjusted_target_pct - current_weight_pct",
+    "target_adjustment": {
+      "budget": {
+        "min_cash_pct": 5
+      },
+      "gates": {
+        "min_consecutive_improvements": 2
+      },
+      "max_weight_pct": {},
+      "quality_multiplier": {
+        "dead_band": {
+          "high": 55,
+          "low": 45
+        },
+        "points": [
+          {
+            "drift": 25,
+            "multiplier": 0.5
+          },
+          {
+            "drift": 45,
+            "multiplier": 1.0
+          },
+          {
+            "drift": 55,
+            "multiplier": 1.0
+          },
+          {
+            "drift": 75,
+            "multiplier": 1.5
+          }
+        ]
+      },
+      "rebalance_band_pct": 20,
+      "schema_version": 1
+    },
+    "thresholds": {
+      "data_confidence_min": 80,
+      "drift": {
+        "deteriorated_recent_change_max": -10,
+        "deteriorated_score_max": 40
+      },
+      "fundamental_quality": {
+        "fq_add_floor": 35
+      },
+      "limits": {
+        "max_position_weight_pct": 10.0,
+        "max_sector_weight_pct": 30.0,
+        "max_single_position_impact_pp": 3.0
+      },
+      "schema_version": 1,
+      "thesis_status_values": [
+        "INTACT",
+        "WATCH",
+        "BROKEN"
+      ]
+    }
+  },
+  "pipeline_version": 1,
+  "portfolio_risk": {
+    "as_of": "2026-10-04",
+    "cash_weight_pct": 100.0,
+    "execution_effect": "NONE",
+    "invested_weight_pct": 0.0,
+    "label": "PORTFOLIO IMPACT -30%",
+    "positions": {
+      "ABX": {
+        "base_target_weight_pct": 4.0,
+        "beta": null,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0
+      },
+      "ADM.L": {
+        "base_target_weight_pct": 4.0,
+        "beta": 0.2,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0
+      },
+      "ASR": {
+        "base_target_weight_pct": 7.0,
+        "beta": 0.51,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0
+      },
+      "CAP.PA": {
+        "base_target_weight_pct": 5.0,
+        "beta": 0.66,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Information Technology",
+        "sector_weight_pct": 0.0
+      },
+      "CRDA.L": {
+        "base_target_weight_pct": 3.0,
+        "beta": 0.93,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0
+      },
+      "DKS": {
+        "base_target_weight_pct": 3.0,
+        "beta": 1.1,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Consumer Discretionary",
+        "sector_weight_pct": 0.0
+      },
+      "EMN": {
+        "base_target_weight_pct": 3.0,
+        "beta": 1.09,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0
+      },
+      "ERO": {
+        "base_target_weight_pct": 4.0,
+        "beta": 1.67,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0
+      },
+      "ESI": {
+        "base_target_weight_pct": 4.0,
+        "beta": 1.26,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0
+      },
+      "FUL": {
+        "base_target_weight_pct": 5.0,
+        "beta": 0.97,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0
+      },
+      "IMCD": {
+        "base_target_weight_pct": 4.0,
+        "beta": 0.97,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0
+      },
+      "LEU": {
+        "base_target_weight_pct": 3.0,
+        "beta": 1.54,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Energy",
+        "sector_weight_pct": 0.0
+      },
+      "MOD": {
+        "base_target_weight_pct": 7.0,
+        "beta": 1.71,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0
+      },
+      "MSM": {
+        "base_target_weight_pct": 0.0,
+        "beta": 0.82,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0
+      },
+      "OKLO": {
+        "base_target_weight_pct": 2.0,
+        "beta": null,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Utilities",
+        "sector_weight_pct": 0.0
+      },
+      "PLMR": {
+        "base_target_weight_pct": 6.0,
+        "beta": 0.35,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0
+      },
+      "POWL": {
+        "base_target_weight_pct": 5.0,
+        "beta": 1.17,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0
+      },
+      "ROR.L": {
+        "base_target_weight_pct": 4.0,
+        "beta": 1.05,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0
+      },
+      "SNA": {
+        "base_target_weight_pct": 5.0,
+        "beta": 0.7,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0
+      },
+      "TMDX": {
+        "base_target_weight_pct": 3.0,
+        "beta": 1.92,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Health Care",
+        "sector_weight_pct": 0.0
+      },
+      "TXRH": {
+        "base_target_weight_pct": 3.0,
+        "beta": 0.79,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Consumer Discretionary",
+        "sector_weight_pct": 0.0
+      },
+      "WKL": {
+        "base_target_weight_pct": 5.0,
+        "beta": 0.19,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0
+      },
+      "WSM": {
+        "base_target_weight_pct": 4.0,
+        "beta": 1.47,
+        "portfolio_impact_pp": -0.0,
+        "portfolio_weight_pct": 0.0,
+        "sector": "Consumer Discretionary",
+        "sector_weight_pct": 0.0
+      }
+    },
+    "scenarios": {
+      "combined_scenario": {
+        "description": "Market -15% plus Materials sector an extra -20%",
+        "per_ticker_pp": {
+          "ABX": 0.0,
+          "ADM.L": 0.0,
+          "ASR": 0.0,
+          "CAP.PA": 0.0,
+          "CRDA.L": 0.0,
+          "DKS": 0.0,
+          "EMN": 0.0,
+          "ERO": 0.0,
+          "ESI": 0.0,
+          "FUL": 0.0,
+          "IMCD": 0.0,
+          "LEU": 0.0,
+          "MOD": 0.0,
+          "MSM": 0.0,
+          "OKLO": 0.0,
+          "PLMR": 0.0,
+          "POWL": 0.0,
+          "ROR.L": 0.0,
+          "SNA": 0.0,
+          "TMDX": 0.0,
+          "TXRH": 0.0,
+          "WKL": 0.0,
+          "WSM": 0.0
+        },
+        "total_pp": 0.0,
+        "type": "combined"
+      },
+      "market_shock": {
+        "description": "Broad market -20% (beta-weighted where beta is known)",
+        "per_ticker_pp": {
+          "ABX": 0.0,
+          "ADM.L": 0.0,
+          "ASR": 0.0,
+          "CAP.PA": 0.0,
+          "CRDA.L": 0.0,
+          "DKS": 0.0,
+          "EMN": 0.0,
+          "ERO": 0.0,
+          "ESI": 0.0,
+          "FUL": 0.0,
+          "IMCD": 0.0,
+          "LEU": 0.0,
+          "MOD": 0.0,
+          "MSM": 0.0,
+          "OKLO": 0.0,
+          "PLMR": 0.0,
+          "POWL": 0.0,
+          "ROR.L": 0.0,
+          "SNA": 0.0,
+          "TMDX": 0.0,
+          "TXRH": 0.0,
+          "WKL": 0.0,
+          "WSM": 0.0
+        },
+        "total_pp": 0.0,
+        "type": "market"
+      },
+      "sector_shock": {
+        "description": "One sector -30%",
+        "per_ticker_pp": {
+          "ABX": 0.0,
+          "ADM.L": 0.0,
+          "ASR": 0.0,
+          "PLMR": 0.0
+        },
+        "total_pp": 0.0,
+        "type": "sector"
+      },
+      "single_stock_shock": {
+        "description": "Largest position -30%",
+        "per_ticker_pp": {
+          "WSM": 0.0
+        },
+        "total_pp": 0.0,
+        "type": "single_stock"
+      }
+    },
+    "sector_weights_pct": {
+      "Consumer Discretionary": 0.0,
+      "Energy": 0.0,
+      "Financials": 0.0,
+      "Health Care": 0.0,
+      "Industrials": 0.0,
+      "Information Technology": 0.0,
+      "Materials": 0.0,
+      "Utilities": 0.0
+    },
+    "standard_shock": -0.3
+  },
+  "provenance": {
+    "code_files": {
+      "src/portfolio_cockpit/decision_layer/config.py": "4fa6fc2b26a4aea49cc8208ad9ecd6ad303002cd8112eeabb27d9b2193b01ddf",
+      "src/portfolio_cockpit/decision_layer/decision.py": "83951809f4cd34ace4a6dee479bee636b4ab671aa76ab68a11244031812726bd",
+      "src/portfolio_cockpit/decision_layer/io.py": "b81ac7fbc22022bdf7a9655b7dd09d5e5119e8795f3925794eedbf5de2e5b713",
+      "src/portfolio_cockpit/decision_layer/risk.py": "fe75836547bd778fb4cc484fc7d1d64b448bfa34b950be363a3d236df3f49e58",
+      "src/portfolio_cockpit/decision_layer/targets.py": "82b7fe1f3feb588d4dcb060066142f28c3960dc02f2bc192fe84ba72392ebcda",
+      "src/portfolio_cockpit/decision_layer/warnings.py": "0576c252da6021bc4912cbf621da14381e5ebf2a6ccdc6a8310c8152f8f669fd"
+    },
+    "code_hash": "26646b93bf468a59d738a959e4e9ac4d8bb76b0fda02f9ac96bb1e4081b00954",
+    "config_files": {
+      "config/decision.yaml": "c62cecdb9032e3234e65e0662886d7dce28dab29de82c9fd6ed35b325e235cac",
+      "config/portfolio.yaml": "28d232a8f1dca1df10eaf66eba12d1a6efd19ed26bd17d77619f90ae4be786ba",
+      "config/positions.yaml": "e8a0a4153b2d269891436d3172daed1d73d9fc61cac60ada522903ed288412f3",
+      "config/risk_scenarios.yaml": "ebe3f9d6903e603904da6680a57b3e6cf2cb2be9625af0d3d32978a504bf221c",
+      "config/target_adjustment.yaml": "96a81b79635067358527f072500249762d01b00a6261be4c76ddb4e7f8632402",
+      "config/thesis_status.yaml": "9382638597ac3ade6730451b522547b4b8e59f9740f13a7d7d7f584d3190d16a"
+    },
+    "config_hash": "49d44b515000ac1f5bc7caa8ff5952c2d45e076c3bd2e3827766503c5af83bad",
+    "run_git_commit": "35ce701007d9f7e533465e6e044aa2f6fe7c82d8",
+    "sources": {
+      "drift": {
+        "path": "data/drift/quality_drift_2026-10-04_r2.json",
+        "sha256": "ddefea04aa512f20deb8db4f242c098c1818b545d7e09e33b28cacca29bbcaa6"
+      },
+      "fundamental_quality": {
+        "path": "data/scoring/fundamental_quality_2026-10-03_r12.json",
+        "sha256": "1ec952cae61651fa08648e5218bda307466b10f23b2b1087eb951cc287a05f2e"
+      },
+      "target_confidence": {
+        "path": "data/confidence/2026-10-03.json",
+        "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+      },
+      "valuation": {
+        "path": "data/valuation/valuation_2026-10-04_r3.json",
+        "sha256": "0285e472e78e447871f4125e25bed169e6f3bee7c8b2b34aca84a6278530ae2a"
+      }
+    }
+  },
+  "reproducibility_hash": "61fd1deeb1cb877aa8e9d09c83d2cc9e50f479ea19e0eb08cc2f3a17055adb97",
+  "results": {
+    "ABX": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 92,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-06",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 8.29,
+        "price_as_of": "2026-09-25",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:forward_pe"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:pe"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:price_to_book"
+        },
+        {
+          "axis": "valuation",
+          "code": "STALE_DATA",
+          "detail": "STALE_DATA:price:9d"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:80"
+        }
+      ]
+    },
+    "ADM.L": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "GBp",
+        "current_weight_pct": 0.0,
+        "data_confidence": 98,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-06",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 3618.0,
+        "price_as_of": "2026-09-25",
+        "role": "CORE",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "STALE_DATA",
+          "detail": "STALE_DATA:price:9d"
+        }
+      ]
+    },
+    "ASR": {
+      "base_target_weight_pct": 7.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 7.0,
+      "inputs": {
+        "base_target_weight_pct": 7.0,
+        "currency": "EUR",
+        "current_weight_pct": 0.0,
+        "data_confidence": 89.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_score": null,
+          "score": 66.06368312954334,
+          "status": "DISPLAY_READY"
+        },
+        "last_fundamental_update": "2026-08-19",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 73.94,
+        "price_as_of": "2026-09-25",
+        "role": "CORE",
+        "score_adjusted_target_pct": 7.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK"
+      ],
+      "score_adjusted_target_pct": 7.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:shareholder_yield"
+        },
+        {
+          "axis": "valuation",
+          "code": "STALE_DATA",
+          "detail": "STALE_DATA:price:9d"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:75"
+        }
+      ]
+    },
+    "CAP.PA": {
+      "base_target_weight_pct": 5.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 5.0,
+      "inputs": {
+        "base_target_weight_pct": 5.0,
+        "currency": "EUR",
+        "current_weight_pct": 0.0,
+        "data_confidence": 97,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-30",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 108.9,
+        "price_as_of": "2026-10-02",
+        "role": "CORE",
+        "score_adjusted_target_pct": 5.0,
+        "sector": "Information Technology",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 94.731,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<4%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 5.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": []
+    },
+    "CRDA.L": {
+      "base_target_weight_pct": 3.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 3.0,
+      "inputs": {
+        "base_target_weight_pct": 3.0,
+        "currency": "GBp",
+        "current_weight_pct": 0.0,
+        "data_confidence": 97,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-28",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 3163.0,
+        "price_as_of": "2026-09-18",
+        "role": "CORE",
+        "score_adjusted_target_pct": 3.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 3.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "STALE_DATA",
+          "detail": "STALE_DATA:price:16d"
+        }
+      ]
+    },
+    "DKS": {
+      "base_target_weight_pct": 3.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "NO_ADD",
+      "execution_effect": "NONE",
+      "gap_pct": 3.0,
+      "inputs": {
+        "base_target_weight_pct": 3.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 92,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-25",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 136.08,
+        "price_as_of": "2026-10-02",
+        "role": "CORE",
+        "score_adjusted_target_pct": 3.0,
+        "sector": "Consumer Discretionary",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Expensive",
+        "valuation_score": 27.6237,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<2.4%",
+        "VALUATION_EXPENSIVE",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 3.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:80"
+        }
+      ]
+    },
+    "EMN": {
+      "base_target_weight_pct": 3.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 3.0,
+      "inputs": {
+        "base_target_weight_pct": 3.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 90.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-30",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 64.86,
+        "price_as_of": "2026-09-30",
+        "role": "CORE",
+        "score_adjusted_target_pct": 3.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 61.4184,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<2.4%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 3.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:75"
+        }
+      ]
+    },
+    "ERO": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 99,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-05",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 37.91,
+        "price_as_of": "2026-10-02",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:fcf_yield"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:valuation:ev_normalized_ebitda"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:valuation:price_to_nav"
+        }
+      ]
+    },
+    "ESI": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 93.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": [
+            23.62646399104244,
+            36.4914757030497
+          ],
+          "diagnostic_score": 31.741512285798926,
+          "score": null,
+          "stability_flag": "PEER_SENSITIVE",
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-27",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 35.71,
+        "price_as_of": "2026-09-25",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "STALE_DATA",
+          "detail": "STALE_DATA:price:9d"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:85"
+        }
+      ]
+    },
+    "FUL": {
+      "base_target_weight_pct": 5.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 5.0,
+      "inputs": {
+        "base_target_weight_pct": 5.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 84.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-09-23",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 50.23,
+        "price_as_of": "2026-10-01",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 5.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 74.634,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<4%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 5.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "drift",
+          "code": "MISSING_DATA",
+          "detail": "BASELINE_PROFILE_COVERAGE_LOW:0.550"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:55"
+        }
+      ]
+    },
+    "IMCD": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "EUR",
+        "current_weight_pct": 0.0,
+        "data_confidence": 89.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-29",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 95.22,
+        "price_as_of": "2026-10-02",
+        "role": "CORE",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Materials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 90.027,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<3.2%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:75"
+        }
+      ]
+    },
+    "LEU": {
+      "base_target_weight_pct": 3.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "NO_ADD",
+      "execution_effect": "NONE",
+      "gap_pct": 3.0,
+      "inputs": {
+        "base_target_weight_pct": 3.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 80,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-05",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 139.27,
+        "price_as_of": "2026-10-02",
+        "role": "ASYMMETRIC",
+        "score_adjusted_target_pct": 3.0,
+        "sector": "Energy",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Expensive",
+        "valuation_score": 0.0,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<2.4%",
+        "VALUATION_EXPENSIVE",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 3.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "drift",
+          "code": "MISSING_DATA",
+          "detail": "BASELINE_PROFILE_COVERAGE_LOW:0.400"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:valuation:ev_ebit"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:40"
+        }
+      ]
+    },
+    "MOD": {
+      "base_target_weight_pct": 7.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "NO_ADD",
+      "execution_effect": "NONE",
+      "gap_pct": 7.0,
+      "inputs": {
+        "base_target_weight_pct": 7.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 98,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-29",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 178.2,
+        "price_as_of": "2026-10-02",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 7.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Expensive",
+        "valuation_score": 4.6839,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<5.6%",
+        "VALUATION_EXPENSIVE",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 7.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": []
+    },
+    "MSM": {
+      "base_target_weight_pct": 0.0,
+      "binding_constraint": "EXIT_ROLE",
+      "current_weight_pct": 0.0,
+      "decision_state": "NO_ADD",
+      "execution_effect": "NONE",
+      "gap_pct": 0.0,
+      "inputs": {
+        "base_target_weight_pct": 0.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 84.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-01",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 130.12,
+        "price_as_of": "2026-10-02",
+        "role": "EXIT",
+        "score_adjusted_target_pct": 0.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "EXIT role in allocation plan; not to be opened",
+        "thesis_status": "WATCH",
+        "valuation_label": "Expensive",
+        "valuation_score": 1.5902,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 0.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "WITHIN_BAND",
+        "VALUATION_EXPENSIVE",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 0.0,
+      "target_constraints": [],
+      "target_gates": [
+        "EXIT_ROLE"
+      ],
+      "warnings": [
+        {
+          "axis": "drift",
+          "code": "MISSING_DATA",
+          "detail": "BASELINE_PROFILE_COVERAGE_LOW:0.550"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:55"
+        }
+      ]
+    },
+    "OKLO": {
+      "base_target_weight_pct": 2.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 2.0,
+      "inputs": {
+        "base_target_weight_pct": 2.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 89,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-07",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 35.87,
+        "price_as_of": "2026-10-02",
+        "role": "ASYMMETRIC",
+        "score_adjusted_target_pct": 2.0,
+        "sector": "Utilities",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 2.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:valuation:market_cap_to_risked_npv"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:valuation:price_to_nav"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:70"
+        }
+      ]
+    },
+    "PLMR": {
+      "base_target_weight_pct": 6.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 6.0,
+      "inputs": {
+        "base_target_weight_pct": 6.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 98,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": [
+            38.36615076691908,
+            50.74476583792354
+          ],
+          "diagnostic_score": 48.01629079976763,
+          "score": null,
+          "stability_flag": "PEER_SENSITIVE",
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-04",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 126.49,
+        "price_as_of": "2026-10-02",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 6.0,
+        "sector": "Financials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 70.663,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<4.8%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 6.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:shareholder_yield"
+        }
+      ]
+    },
+    "POWL": {
+      "base_target_weight_pct": 5.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "NO_ADD",
+      "execution_effect": "NONE",
+      "gap_pct": 5.0,
+      "inputs": {
+        "base_target_weight_pct": 5.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 84.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-03",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 196.1,
+        "price_as_of": "2026-10-02",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 5.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Expensive",
+        "valuation_score": 18.3353,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<4%",
+        "VALUATION_EXPENSIVE",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 5.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "drift",
+          "code": "MISSING_DATA",
+          "detail": "BASELINE_PROFILE_COVERAGE_LOW:0.550"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:55"
+        }
+      ]
+    },
+    "ROR.L": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "GBp",
+        "current_weight_pct": 0.0,
+        "data_confidence": 97,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-04",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 484.2,
+        "price_as_of": "2026-09-11",
+        "role": "CORE",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "STALE_DATA",
+          "detail": "STALE_DATA:price:23d"
+        }
+      ]
+    },
+    "SNA": {
+      "base_target_weight_pct": 5.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 5.0,
+      "inputs": {
+        "base_target_weight_pct": 5.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 84.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": [
+            29.04315889287727,
+            35.487754499555265
+          ],
+          "diagnostic_score": 33.62416753860236,
+          "score": null,
+          "stability_flag": "STABLE",
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-07-23",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 368.9,
+        "price_as_of": "2026-10-02",
+        "role": "CORE",
+        "score_adjusted_target_pct": 5.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Fair",
+        "valuation_score": 47.1506,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<4%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 5.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "drift",
+          "code": "MISSING_DATA",
+          "detail": "BASELINE_PROFILE_COVERAGE_LOW:0.550"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:55"
+        }
+      ]
+    },
+    "TMDX": {
+      "base_target_weight_pct": 3.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "DATA_CHECK",
+      "execution_effect": "NONE",
+      "gap_pct": 3.0,
+      "inputs": {
+        "base_target_weight_pct": 3.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 92,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-04",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 79.8,
+        "price_as_of": "2026-10-02",
+        "role": "GROWTH",
+        "score_adjusted_target_pct": 3.0,
+        "sector": "Health Care",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": null,
+        "valuation_score": null,
+        "valuation_status": "VALUATION_DATA_CHECK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "VALUATION_VALUATION_DATA_CHECK",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 3.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:ev_ebit"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:fcf_yield"
+        },
+        {
+          "axis": "valuation",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:reference:forward_pe"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:80"
+        }
+      ]
+    },
+    "TXRH": {
+      "base_target_weight_pct": 3.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 3.0,
+      "inputs": {
+        "base_target_weight_pct": 3.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 98,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-06",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 156.14,
+        "price_as_of": "2026-10-02",
+        "role": "CORE",
+        "score_adjusted_target_pct": 3.0,
+        "sector": "Consumer Discretionary",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 67.0555,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<2.4%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 3.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": []
+    },
+    "WKL": {
+      "base_target_weight_pct": 5.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "ADD_CANDIDATE",
+      "execution_effect": "NONE",
+      "gap_pct": 5.0,
+      "inputs": {
+        "base_target_weight_pct": 5.0,
+        "currency": "EUR",
+        "current_weight_pct": 0.0,
+        "data_confidence": 97,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": [
+            11.64378938251128,
+            20.75577120372123
+          ],
+          "diagnostic_score": 16.496042616014407,
+          "score": null,
+          "stability_flag": "STABLE",
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-05",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 67.82,
+        "price_as_of": "2026-10-02",
+        "role": "CORE",
+        "score_adjusted_target_pct": 5.0,
+        "sector": "Industrials",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Attractive",
+        "valuation_score": 100.0,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<4%",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 5.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": []
+    },
+    "WSM": {
+      "base_target_weight_pct": 4.0,
+      "binding_constraint": null,
+      "current_weight_pct": 0.0,
+      "decision_state": "NO_ADD",
+      "execution_effect": "NONE",
+      "gap_pct": 4.0,
+      "inputs": {
+        "base_target_weight_pct": 4.0,
+        "currency": "USD",
+        "current_weight_pct": 0.0,
+        "data_confidence": 84.5,
+        "drift_change_recent": 0.0,
+        "drift_change_since_baseline": 0.0,
+        "drift_score": 50.0,
+        "drift_status": "NO_NEW_FUNDAMENTALS",
+        "fundamental_quality": {
+          "diagnostic_band": null,
+          "diagnostic_score": null,
+          "score": null,
+          "stability_flag": null,
+          "status": "DATA_CHECK"
+        },
+        "last_fundamental_update": "2026-08-26",
+        "observation_count": 0,
+        "portfolio_impact_pp": -0.0,
+        "price": 233.39,
+        "price_as_of": "2026-10-01",
+        "role": "CORE",
+        "score_adjusted_target_pct": 4.0,
+        "sector": "Consumer Discretionary",
+        "sector_weight_pct": 0.0,
+        "thesis_as_of": "2026-10-04",
+        "thesis_note": "PROPOSAL - confirm: thesis per Aug 2026 allocation plan, position to be built",
+        "thesis_status": "INTACT",
+        "valuation_label": "Expensive",
+        "valuation_score": 0.0,
+        "valuation_status": "OK"
+      },
+      "limit_flags": [],
+      "quality_multiplier_applied": 1.0,
+      "quality_multiplier_raw": 1.0,
+      "reasons": [
+        "BELOW_BAND:0%<3.2%",
+        "VALUATION_EXPENSIVE",
+        "FQ_NOT_DISPLAY_READY"
+      ],
+      "score_adjusted_target_pct": 4.0,
+      "target_constraints": [],
+      "target_gates": [],
+      "warnings": [
+        {
+          "axis": "drift",
+          "code": "MISSING_DATA",
+          "detail": "BASELINE_PROFILE_COVERAGE_LOW:0.550"
+        },
+        {
+          "axis": "confidence",
+          "code": "MISSING_DATA",
+          "detail": "MISSING_DATA:confidence_completeness:55"
+        }
+      ]
+    }
+  },
+  "schema_version": 1,
+  "summary": {
+    "ADD_CANDIDATE": 8,
+    "DATA_CHECK": 9,
+    "EXIT_REVIEW": 0,
+    "HOLD": 0,
+    "NO_ADD": 6,
+    "REVIEW_REDUCE": 0,
+    "THESIS_REVIEW": 0,
+    "TRIM_CANDIDATE": 0,
+    "portfolio_companies": 23
+  },
+  "target_warnings": []
+}
