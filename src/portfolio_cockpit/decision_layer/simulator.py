@@ -2,7 +2,8 @@
 
 * Always a dry run: the simulator refuses ``dry_run=False``. There is no
   broker interface and no order output anywhere in this package.
-* base_target_weight is the strategic anchor and is never changed.
+* base_target_weight is the strategic anchor and is never changed; the
+  simulation moves towards the score-adjusted target.
 * Every decision signal is logged to data/signal_log/<as_of>.jsonl so the
   forward return per decision_state can later be evaluated.
 """
@@ -17,7 +18,7 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Any
 
-from .decision import ADD_CANDIDATE, DATA_CHECK, REVIEW_REDUCE, THESIS_REVIEW
+from .decision import ADD_CANDIDATE, DATA_CHECK, EXIT_REVIEW, REVIEW_REDUCE, THESIS_REVIEW, TRIM_CANDIDATE
 from .risk import impact_pp
 
 
@@ -30,8 +31,9 @@ class SimulationRow:
     decision_state: str
     current_weight_pct: float
     base_target_weight_pct: float
+    score_adjusted_target_pct: float
     suggested_review_direction: str
-    difference_pct: float  # base_target - current, percentage points
+    difference_pct: float  # score_adjusted_target - current, percentage points
     simulated_weight_pct: float
     portfolio_impact_now_pp: float
     portfolio_impact_at_target_pp: float
@@ -49,8 +51,12 @@ def review_direction(state: str, difference_pct: float) -> str:
         return "NONE (DATA_CHECK)"
     if state == THESIS_REVIEW:
         return "REVIEW_THESIS"
+    if state == EXIT_REVIEW:
+        return "REVIEW_EXIT"
     if state == REVIEW_REDUCE:
         return "REVIEW_DOWN"
+    if state == TRIM_CANDIDATE and difference_pct < 0:
+        return "REVIEW_DOWN_TO_TARGET"
     if state == ADD_CANDIDATE and difference_pct > 0:
         return "REVIEW_UP_TO_TARGET"
     return "NONE"
@@ -70,20 +76,23 @@ class DryRunSimulator:
         results = decisions["results"]
         sector_now: dict[str, float] = defaultdict(float)
         for item in results.values():
-            sector_now[item["inputs"]["sector"]] += float(item["inputs"]["portfolio_weight_pct"])
+            sector_now[item["inputs"]["sector"]] += float(item["inputs"]["current_weight_pct"])
 
         moves: dict[str, float] = {}
         rows: list[SimulationRow] = []
         for ticker, item in results.items():
             inputs = item["inputs"]
-            current = float(inputs["portfolio_weight_pct"])
-            target = float(inputs["base_target_weight_pct"])
+            current = float(inputs["current_weight_pct"])
+            base = float(inputs["base_target_weight_pct"])
+            target = float(inputs.get("score_adjusted_target_pct", base))
             difference = round(target - current, 6)
             direction = review_direction(item["decision_state"], difference)
-            if direction == "REVIEW_UP_TO_TARGET":
+            if direction in ("REVIEW_UP_TO_TARGET", "REVIEW_DOWN_TO_TARGET"):
                 moved = difference
             elif direction == "REVIEW_DOWN":
                 moved = min(0.0, difference)
+            elif direction == "REVIEW_EXIT":
+                moved = -current
             else:
                 moved = 0.0
             moves[ticker] = moved
@@ -92,7 +101,8 @@ class DryRunSimulator:
                     ticker=ticker,
                     decision_state=item["decision_state"],
                     current_weight_pct=current,
-                    base_target_weight_pct=target,
+                    base_target_weight_pct=base,
+                    score_adjusted_target_pct=target,
                     suggested_review_direction=direction,
                     difference_pct=difference,
                     simulated_weight_pct=round(current + moved, 6),
@@ -155,8 +165,9 @@ def signal_records(decisions: dict[str, Any], snapshot_rel: str) -> list[dict[st
                         "valuation_score",
                         "data_confidence",
                         "thesis_status",
-                        "portfolio_weight_pct",
+                        "current_weight_pct",
                         "base_target_weight_pct",
+                        "score_adjusted_target_pct",
                     )
                 },
                 "decision_snapshot": snapshot_rel,

@@ -106,7 +106,7 @@ def test_branch_does_not_modify_fq_hashed_files():
         ("valuation", ("reference_weights", "peers"), 0.5, "sum to 1.0"),
         ("valuation", ("labels", "fair_min"), 70, "fair_min must be below"),
         ("decision", ("data_confidence_min",), 70, "data_confidence_min must equal"),
-        ("decision", ("drift", "deteriorated_score_max"), 50, "deteriorated_score_max <"),
+        ("decision", ("drift", "deteriorated_score_max"), 50, "deteriorated_score_max must be below the neutral 50"),
         ("decision", ("drift", "deteriorated_recent_change_max"), 5, "deteriorated_recent_change_max"),
         ("decision", ("thesis_status_values",), ["INTACT"], "thesis_status_values"),
         ("risk_scenarios", ("standard_shock",), -0.2, "standard_shock must be -0.30"),

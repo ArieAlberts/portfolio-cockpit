@@ -25,6 +25,7 @@ DECISION_CONFIG_FILES = {
     "risk_scenarios": "config/risk_scenarios.yaml",
     "positions": "config/positions.yaml",
     "thesis_status": "config/thesis_status.yaml",
+    "target_adjustment": "config/target_adjustment.yaml",
 }
 
 VALID_PERIOD_RULES = {"like_for_like"}
@@ -343,31 +344,20 @@ def _validate_decision(
         )
 
     drift = decision.get("drift") or {}
-    for key in ("deteriorated_score_max", "strong_score_min", "acceptable_score_min"):
-        _check_number(errors, f"decision.drift.{key}", drift.get(key), lo=0, hi=100)
+    _check_number(
+        errors, "decision.drift.deteriorated_score_max", drift.get("deteriorated_score_max"), lo=0, hi=50
+    )
+    if _is_number(drift.get("deteriorated_score_max")) and drift["deteriorated_score_max"] >= 50:
+        errors.append("decision.drift.deteriorated_score_max must be below the neutral 50")
     _check_number(
         errors,
         "decision.drift.deteriorated_recent_change_max",
         drift.get("deteriorated_recent_change_max"),
         hi=0,
     )
-    if all(_is_number(drift.get(k)) for k in ("deteriorated_score_max", "acceptable_score_min", "strong_score_min")):
-        if not drift["deteriorated_score_max"] < drift["acceptable_score_min"] <= drift["strong_score_min"]:
-            errors.append(
-                "decision.drift thresholds must satisfy "
-                "deteriorated_score_max < acceptable_score_min <= strong_score_min"
-            )
-
-    valuation = decision.get("valuation") or {}
-    _check_number(errors, "decision.valuation.attractive_score_min", valuation.get("attractive_score_min"), lo=0, hi=100)
-    _check_number(errors, "decision.valuation.expensive_score_below", valuation.get("expensive_score_below"), lo=0, hi=100)
-    if _is_number(valuation.get("attractive_score_min")) and _is_number(valuation.get("expensive_score_below")):
-        if valuation["expensive_score_below"] > valuation["attractive_score_min"]:
-            errors.append("decision.valuation.expensive_score_below must not exceed attractive_score_min")
 
     limits = decision.get("limits") or {}
     _check_number(errors, "decision.limits.max_position_weight_pct", limits.get("max_position_weight_pct"), lo=0, hi=100)
-    _check_number(errors, "decision.limits.overweight_tolerance", limits.get("overweight_tolerance"), lo=0)
     _check_number(errors, "decision.limits.max_sector_weight_pct", limits.get("max_sector_weight_pct"), lo=0, hi=100)
     _check_number(
         errors, "decision.limits.max_single_position_impact_pp", limits.get("max_single_position_impact_pp"), lo=0
@@ -378,6 +368,64 @@ def _validate_decision(
 
     if decision.get("thesis_status_values") != ["INTACT", "WATCH", "BROKEN"]:
         errors.append("decision.thesis_status_values must be [INTACT, WATCH, BROKEN]")
+
+
+def _validate_target_adjustment(
+    ta: dict[str, Any],
+    repo_cfg: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> None:
+    qm = ta.get("quality_multiplier") or {}
+    points = qm.get("points")
+    if not isinstance(points, list) or len(points) < 2:
+        errors.append("target_adjustment.quality_multiplier.points needs at least two points")
+        points = []
+    drifts = [p.get("drift") for p in points]
+    mults = [p.get("multiplier") for p in points]
+    if points and not all(_is_number(x) for x in drifts + mults):
+        errors.append("target_adjustment.quality_multiplier.points must be numbers")
+    elif points:
+        if any(b <= a for a, b in zip(drifts, drifts[1:])):
+            errors.append("target_adjustment.quality_multiplier.points drift must be strictly increasing")
+        if any(b < a for a, b in zip(mults, mults[1:])):
+            errors.append("target_adjustment.quality_multiplier.points multiplier must be non-decreasing")
+        if any(m <= 0 for m in mults):
+            errors.append("target_adjustment.quality_multiplier.points multiplier must be positive")
+        if not any(d == 50 and m == 1.0 for d, m in zip(drifts, mults)):
+            errors.append("target_adjustment.quality_multiplier.points must map drift 50 to multiplier 1.00")
+    band = qm.get("dead_band") or {}
+    if not (_is_number(band.get("low")) and _is_number(band.get("high"))):
+        errors.append("target_adjustment.quality_multiplier.dead_band needs numeric low and high")
+    elif not band["low"] <= 50 <= band["high"]:
+        errors.append("target_adjustment.quality_multiplier.dead_band must contain 50")
+
+    gates = ta.get("gates") or {}
+    if gates.get("min_consecutive_improvements") not in (1, 2):
+        errors.append("target_adjustment.gates.min_consecutive_improvements must be 1 or 2")
+
+    budget = ta.get("budget") or {}
+    _check_number(errors, "target_adjustment.budget.min_cash_pct", budget.get("min_cash_pct"), lo=0, hi=100)
+    if _is_number(budget.get("min_cash_pct")):
+        base_total = sum(float(p["weight_pct"]) for p in repo_cfg["portfolio"]["positions"].values())
+        if base_total > 100.0 - budget["min_cash_pct"] + 1e-9:
+            errors.append(
+                f"target_adjustment.budget.min_cash_pct leaves {100 - budget['min_cash_pct']:g}% "
+                f"but base targets already sum to {base_total:g}%"
+            )
+
+    _check_number(errors, "target_adjustment.rebalance_band_pct", ta.get("rebalance_band_pct"), lo=0, hi=100)
+    if _is_number(ta.get("rebalance_band_pct")) and ta["rebalance_band_pct"] <= 0:
+        errors.append("target_adjustment.rebalance_band_pct must be > 0")
+
+    caps = ta.get("max_weight_pct")
+    if not isinstance(caps, dict):
+        errors.append("target_adjustment.max_weight_pct must be a mapping (may be empty)")
+        caps = {}
+    unknown = sorted(set(caps) - set(repo_cfg["portfolio"]["positions"]))
+    if unknown:
+        errors.append(f"target_adjustment.max_weight_pct has tickers not in portfolio.yaml: {unknown}")
+    for ticker, cap in caps.items():
+        _check_number(errors, f"target_adjustment.max_weight_pct.{ticker}", cap, lo=0, hi=100)
 
 
 def _validate_risk_scenarios(risk: dict[str, Any], errors: list[str]) -> None:
@@ -520,6 +568,7 @@ def validate_decision_config(
     _validate_valuation(cfg["valuation"], repo_cfg, errors)
     _validate_decision(cfg["decision"], repo_cfg, errors)
     _validate_risk_scenarios(cfg["risk_scenarios"], errors)
+    _validate_target_adjustment(cfg["target_adjustment"], repo_cfg, errors)
     _validate_positions(cfg["positions"], tickers, errors)
     _validate_thesis_status(
         cfg["thesis_status"],
