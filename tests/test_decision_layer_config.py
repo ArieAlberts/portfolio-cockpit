@@ -74,7 +74,9 @@ def test_missing_owner_inputs_reports_empty_template_fields(cfg):
 
 
 def test_decision_layer_is_outside_fq_hash_scope():
-    assert set(CONFIG_FILES) | set(CODE_FILES) == FQ_HASHED_FILES
+    # The FQ scope may grow on main (e.g. calculation validation); it must never
+    # shrink silently, and it must never include decision-layer files.
+    assert FQ_HASHED_FILES <= set(CONFIG_FILES) | set(CODE_FILES)
     assert not any("decision_layer" in path for path in CODE_FILES)
     for name in ("quality_drift", "valuation", "decision", "risk_scenarios", "positions", "thesis_status"):
         assert f"config/{name}.yaml" not in CONFIG_FILES
@@ -92,7 +94,7 @@ def test_branch_does_not_modify_fq_hashed_files():
         ).split()
     except (subprocess.CalledProcessError, FileNotFoundError):
         pytest.skip("origin/main is not available in this checkout")
-    assert not set(changed) & FQ_HASHED_FILES
+    assert not set(changed) & (FQ_HASHED_FILES | set(CONFIG_FILES) | set(CODE_FILES))
 
 
 @pytest.mark.parametrize(
