@@ -20,7 +20,7 @@ Fundamental Quality ──────── context only ──┘        └�
 | `cockpit-decide [--write] [--as-of D]` | `data/decisions/decisions_<D>[_rN].json` + `current.json`, and appends `data/signal_log/<D>.jsonl` |
 | `cockpit-simulate [--portfolio-value V]` | Dry-run simulation from the current decisions (stdout). |
 | `cockpit-evaluate-signals --horizon 90d` | Forward return per decision state versus the portfolio mean (stdout). |
-| `python scripts/build_dashboard.py` | `out/dashboard.html` (git-ignored). |
+| `python scripts/build_dashboard.py` | `out/dashboard.html` (git-ignored). Published at <https://ariealberts.github.io/portfolio-cockpit/> after every push to `main` and every `rebuild-decision-layer` run. |
 | `python scripts/list_baseline_metrics.py` | All `component.metric` paths per company type in `data/baselines/**`. |
 | `python scripts/make_input_templates.py` | Empty owner-input templates in `data/templates/`. |
 

@@ -1,7 +1,15 @@
 name: Deploy Portfolio Cockpit to GitHub Pages
 
+# Publishes only the static dashboard HTML (index.html + .nojekyll).
+# rebuild-decision-layer commits its snapshots with GITHUB_TOKEN, and such
+# pushes do not start workflows; workflow_run makes sure every rebuild is
+# followed by a fresh deploy built from the latest main.
 on:
   push:
+    branches: [main]
+  workflow_run:
+    workflows: [rebuild-decision-layer]
+    types: [completed]
     branches: [main]
   workflow_dispatch:
 
@@ -16,10 +24,13 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
