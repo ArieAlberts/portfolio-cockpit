@@ -1,0 +1,249 @@
+{
+  "patch_metadata": {
+    "as_of_date": "2026-10-05",
+    "description": "Portfolio Cockpit missing data inputs and baseline coverage patch",
+    "target_branch": "data/fill-missing-valuation-inputs",
+    "applied_on_branch": "data/apply-owner-patch-2026-10-05",
+    "author": "Arie Alberts",
+    "provenance": "USER_SUPPLIED_PATCH"
+  },
+  "valuation_inputs": {
+    "OKLO": {
+      "ticker": "OKLO",
+      "company_name": "Oklo Inc.",
+      "category": "PRE_REVENUE_DEVELOPMENT",
+      "missing_inputs": {
+        "navps": 3.15,
+        "risked_npv": 4250,
+        "unit": "USD"
+      },
+      "derived_valuation": {
+        "shares_outstanding_m": 185.09,
+        "price_usd": 35.87,
+        "market_cap_usd_m": 6639.18,
+        "price_to_nav": 11.39,
+        "market_cap_to_risked_npv": 1.56,
+        "status": "OK"
+      },
+      "notes": "navps derived from Q2 2026 adjusted equity & liquidity reserves; risked_npv derived from consensus Aurora commercial pipeline deployment model (FY27-FY32)"
+    },
+    "LEU": {
+      "ticker": "LEU",
+      "company_name": "Centrus Energy",
+      "category": "GENERAL_OPERATING_COMPANY",
+      "missing_inputs": {
+        "ebit": 71.4,
+        "ebit_ttm_usd_m": 71.4,
+        "ebitda_ttm_usd_m": 89.2
+      },
+      "derived_valuation": {
+        "price_usd": 139.27,
+        "ev_ebit": 28.45,
+        "forward_pe": 56.93,
+        "fcf_yield": -0.06,
+        "status": "OK"
+      },
+      "notes": "EBIT input derived from LTM operating income ($71.4M) following Q2 2026 revenue of $176.1M and operating margin stabilization"
+    }
+  },
+  "baseline_coverage_expansion": {
+    "LEU": {
+      "historical_ebit_margins": {
+        "FY2021": 0.209,
+        "FY2022": 0.233,
+        "FY2023": 0.271,
+        "FY2024": 0.248,
+        "FY2025": 0.212
+      },
+      "historical_ev_ebit_median": 14.8,
+      "coverage_target": 0.85
+    },
+    "WSM": {
+      "historical_roic": [
+        0.482,
+        0.465,
+        0.412,
+        0.441,
+        0.438
+      ],
+      "historical_operating_margin": [
+        0.176,
+        0.173,
+        0.161,
+        0.17,
+        0.173
+      ],
+      "historical_fcf_conversion": [
+        1.02,
+        1.08,
+        1.15,
+        0.98,
+        1.04
+      ],
+      "median_operating_margin": 0.173,
+      "coverage_target": 0.85
+    },
+    "SNA": {
+      "historical_roic": [
+        0.189,
+        0.194,
+        0.201,
+        0.205,
+        0.202
+      ],
+      "historical_operating_margin": [
+        0.208,
+        0.213,
+        0.219,
+        0.221,
+        0.218
+      ],
+      "historical_fcf_conversion": [
+        0.91,
+        0.94,
+        0.96,
+        0.89,
+        0.92
+      ],
+      "median_operating_margin": 0.218,
+      "coverage_target": 0.85
+    },
+    "MSM": {
+      "historical_roic": [
+        0.142,
+        0.156,
+        0.148,
+        0.125,
+        0.118
+      ],
+      "historical_operating_margin": [
+        0.118,
+        0.124,
+        0.121,
+        0.11,
+        0.106
+      ],
+      "historical_fcf_conversion": [
+        0.95,
+        0.98,
+        1.02,
+        0.91,
+        0.96
+      ],
+      "median_operating_margin": 0.118,
+      "coverage_target": 0.85
+    },
+    "FUL": {
+      "historical_roic": [
+        0.085,
+        0.091,
+        0.098,
+        0.104,
+        0.108
+      ],
+      "historical_ebitda_margin": [
+        0.142,
+        0.148,
+        0.156,
+        0.162,
+        0.199
+      ],
+      "historical_fcf_conversion": [
+        0.85,
+        0.87,
+        0.92,
+        0.86,
+        0.88
+      ],
+      "median_ebitda_margin": 0.156,
+      "coverage_target": 0.85
+    },
+    "POWL": {
+      "historical_roic": [
+        0.062,
+        0.084,
+        0.182,
+        0.245,
+        0.268
+      ],
+      "historical_gross_margin": [
+        0.185,
+        0.202,
+        0.251,
+        0.284,
+        0.306
+      ],
+      "historical_fcf_conversion": [
+        1.05,
+        1.1,
+        1.18,
+        1.08,
+        1.12
+      ],
+      "median_gross_margin": 0.251,
+      "coverage_target": 0.85
+    }
+  },
+  "confidence_completeness_additions": {
+    "ASR": {
+      "reference_shareholder_yield": 0.068,
+      "dividend_yield": 0.051,
+      "buyback_yield": 0.017,
+      "harmonized_roe_pct": 13.2,
+      "diluted_shares_m": 204.2,
+      "target_confidence": 98
+    },
+    "IMCD": {
+      "shares_outstanding_m": 56.9,
+      "net_debt_eur_m": 1240,
+      "roce_pct": 14.8,
+      "target_confidence": 97
+    },
+    "EMN": {
+      "shares_outstanding_m": 116.8,
+      "net_debt_usd_m": 4680,
+      "roic_pct": 9.2,
+      "target_confidence": 97
+    },
+    "DKS": {
+      "roic_pct": 24.5,
+      "fcf_net_income_ratio": 0.89,
+      "target_confidence": 98
+    },
+    "ESI": {
+      "roic_pct": 11.4,
+      "fcf_conversion_ratio": 0.74,
+      "target_confidence": 98
+    }
+  },
+  "peer_index_matrix_patch": {
+    "note": "Resolves Fundamental Quality n.v.t. (DATA_CHECK) across 101 peer cohort",
+    "materials_mining_index": {
+      "ABX_navps_anchor": 45.72,
+      "ABX_ev_ebitda_anchor": 5.75,
+      "ERO_navps_anchor": 48.6,
+      "ERO_ev_ebitda_anchor": 8.56
+    },
+    "insurance_us_pc_index": {
+      "PLMR_capital_foundation_combined_ratio": 0.732,
+      "PLMR_operating_roe": 0.214,
+      "PLMR_tangible_bvps": 38.4
+    }
+  },
+  "application_notes": {
+    "runtime_applied": [
+      "OKLO.navps",
+      "OKLO.risked_npv",
+      "LEU.ebit",
+      "LEU.ebitda",
+      "LEU.ev_ebit own-history reference",
+      "ASR shareholder_yield own-history reference"
+    ],
+    "preserved_but_not_runtime_applied": [
+      "OKLO derived shares_outstanding_m and derived status",
+      "historical baseline arrays outside current runtime schema",
+      "confidence target scores and conflicting live market fields",
+      "peer_index_matrix_patch values that do not satisfy Fundamental Quality peer-component rules"
+    ]
+  }
+}
