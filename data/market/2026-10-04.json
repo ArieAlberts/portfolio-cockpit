@@ -1061,6 +1061,26 @@
           "title": "stockanalysis.com — statistics page",
           "url": "https://stockanalysis.com/stocks/leu/statistics/"
         }
+      },
+      "ebit": {
+        "value": 71.4,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
+      },
+      "ebitda": {
+        "value": 89.2,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
       }
     },
     "ASR": {
@@ -1368,6 +1388,26 @@
           "source_type": "SECONDARY_AGGREGATOR",
           "title": "stockanalysis.com — statistics page",
           "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+        }
+      },
+      "navps": {
+        "value": 3.15,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
+      },
+      "risked_npv": {
+        "value": 4250,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
         }
       }
     }
