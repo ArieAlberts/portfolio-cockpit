@@ -52,14 +52,14 @@
     },
     "shareholder_yield": {
       "own_history": {
-        "value": null,
-        "as_of_date": null,
-        "method": null,
-        "retrieved_at": null,
+        "value": 0.078,
+        "as_of_date": "2025-12-31",
+        "method": "FY2025 realized shareholder yield: 5.93% dividend yield + 1.87% buyback yield; post-Aegon integration anchor",
+        "retrieved_at": "2026-10-05",
         "source": {
-          "source_type": null,
-          "title": null,
-          "url": null
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — ASR Nederland financial ratios; underlying S&P Global Market Intelligence",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/financials/ratios/"
         }
       },
       "peers": {
