@@ -1,0 +1,58 @@
+{
+  "baseline_version": 1,
+  "ticker": "FUL",
+  "company_name": "H.B. Fuller Company",
+  "portfolio_weight_pct": 5,
+  "portfolio_role": "GROWTH",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-10-05",
+  "reporting_period_end": "2026-08-29",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_COVERAGE_EXPANSION",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "OFFICIAL_COMPANY_REPORT",
+    "title": "H.B. Fuller Reports Third Quarter 2026 Results",
+    "publication_date": "2026-09-23",
+    "url": "https://newsroom.hbfuller.com/press-releases/press-release-details/2026/H-B--Fuller-Reports-Third-Quarter-2026-Results/default.aspx"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "net_income_usd_m": 79,
+      "adjusted_ebitda_usd_m": 187,
+      "adjusted_ebitda_margin_pct": 19.9,
+      "gross_margin_pct": 33.2,
+      "adjusted_gross_margin_pct": 33.5
+    },
+    "growth_stability": {
+      "net_revenue_usd_m": 938,
+      "net_revenue_growth_pct": 5.2,
+      "organic_revenue_growth_pct": 4.4
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 1.44,
+      "adjusted_diluted_eps_usd": 1.52
+    },
+    "balance_sheet": {
+      "net_debt_usd_m": 1957
+    },
+    "cashflow_quality": {
+      "year_to_date_operating_cash_flow_usd_m": 183
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift.",
+    "Added $1,957m net debt and $183m YTD operating cash flow from the fiscal Q3 2026 company release.",
+    "Coverage expansion only: strategic base target is unchanged; existing baseline metrics are preserved."
+  ],
+  "rebaseline_of": "data/baselines/FUL/2026-09-23.json",
+  "rebaseline_reason": "Expand active baseline profile coverage with primary-source balance-sheet and cash-flow metrics; no strategic target change.",
+  "base_target_weight_pct": 5
+}
