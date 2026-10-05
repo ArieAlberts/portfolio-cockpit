@@ -28,14 +28,14 @@
     },
     "ev_ebit": {
       "own_history": {
-        "value": 11.24,
-        "as_of_date": "2026-10-03",
-        "method": "median of fiscal-year-end values, last 5 completed fiscal years",
-        "retrieved_at": "2026-10-04T14:00:00Z",
+        "value": 14.8,
+        "as_of_date": "2026-10-05",
+        "method": "owner-supplied median historical EV/EBIT anchor from FY2021–FY2025 EBIT-margin research",
+        "retrieved_at": "2026-10-05",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "stockanalysis.com",
-          "url": "https://stockanalysis.com/stocks/leu/financials/ratios/"
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
         }
       },
       "peers": {
