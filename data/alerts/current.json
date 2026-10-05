@@ -2,11 +2,11 @@
   "as_of": "2026-10-05",
   "code_hash": "9667fd852403b06b0648b7016eb0926292985ff535e72c60995e322bac313e78",
   "config_hash": "9c886cb70dcf898cbcde343124d160cddf5f3bb9a978cb1d5f725cb2fa5a4961",
-  "current_peer_alternatives": "data/alerts/peer_alternatives_2026-10-05_r3.json",
+  "current_peer_alternatives": "data/alerts/peer_alternatives_2026-10-05_r4.json",
   "execution_effect": "NONE",
   "generated_by_pipeline": true,
   "pipeline_version": 1,
-  "reproducibility_hash": "b6495203a249d56a8fb8f508a22582051ffa47c0179f1643022b5f94586850ff",
-  "run_git_commit": "b084a42697a9efab476f29ebecb4d49a2fe2a159",
+  "reproducibility_hash": "1abf9bffd5e3e2e04d264f46111a9ec46c912c50927bbbeb322dd2844d7215ab",
+  "run_git_commit": "9e472c284572de17d68a7fef1303ea8e83156a2f",
   "schema_version": 1
 }
