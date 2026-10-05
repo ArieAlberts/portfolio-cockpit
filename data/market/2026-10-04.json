@@ -1233,6 +1233,56 @@
           "title": "Interactive Brokers historical daily close — 2 Oct 2026",
           "url": null
         }
+      },
+      "shares_outstanding": {
+        "value": 1647.63,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — market capitalization / close-derived share count; underlying S&P Global Market Intelligence",
+          "url": "https://stockanalysis.com/stocks/b/financials/ratios/"
+        }
+      },
+      "net_debt": {
+        "value": -1245,
+        "as_of_date": "2026-06-30",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "COMPANY_RESULTS",
+          "title": "Barrick Q2 2026 results — debt net of cash",
+          "url": "https://www.barrick.com/English/news/news-details/2026/q2-2026-results/default.aspx"
+        }
+      },
+      "normalized_ebitda": {
+        "value": 11312,
+        "as_of_date": "2025-12-31",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "Barrick FY2025 adjusted EBITDA / current EV-EBITDA history; normalized full-year proxy",
+          "url": "https://stockanalysis.com/stocks/b/financials/ratios/"
+        }
+      },
+      "fcf": {
+        "value": 5188,
+        "as_of_date": "2026-06-30",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Barrick TTM free cash flow; underlying S&P Global Market Intelligence",
+          "url": "https://stockanalysis.com/stocks/b/financials/cash-flow-statement/"
+        }
+      },
+      "navps": {
+        "value": 45.715909,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_RESEARCH_NOTE",
+          "title": "Ik wil de data die ik mis aangevuld hebben — P/NAV 0.88x; NAV/share derived from 2026-10-02 close",
+          "url": null
+        }
       }
     },
     "ERO": {
@@ -1275,6 +1325,26 @@
           "source_type": "SECONDARY_AGGREGATOR",
           "title": "stockanalysis.com — statistics page",
           "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        }
+      },
+      "normalized_ebitda": {
+        "value": 517.03,
+        "as_of_date": "2026-06-30",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Ero Copper TTM EBITDA used as normalized-EBITDA proxy pending explicit mid-cycle series",
+          "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        }
+      },
+      "navps": {
+        "value": 48.602564,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_RESEARCH_NOTE",
+          "title": "Ik wil de data die ik mis aangevuld hebben — P/NAV 0.78x; NAV/share derived from 2026-10-02 close",
+          "url": null
         }
       }
     },
