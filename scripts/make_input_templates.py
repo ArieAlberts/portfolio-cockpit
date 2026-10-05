@@ -69,6 +69,20 @@ def build(root: Path) -> list[Path]:
     _dump(path, market)
     written.append(path)
 
+    # Peer-alternatives: per peer the multiples of the position's valuation
+    # profile (or the raw inputs, like market.json). Units as in market.json;
+    # yields as fractions (0.05 = 5%).
+    market_peers: dict = {"schema_version": 1, "as_of": None, "tickers": {}}
+    for ticker, universe in sorted(repo_cfg["peer_universes"]["universes"].items()):
+        profile = valuation["profiles"][repo_cfg["portfolio"]["positions"][ticker]["company_type"]]
+        for peer in universe.get("peers") or []:
+            entry = market_peers["tickers"].setdefault(peer, {"currency": None, "multiples": {}})
+            for metric in profile["weights"]:
+                entry["multiples"][metric] = _reference()
+    path = out / "market_peers.json"
+    _dump(path, market_peers)
+    written.append(path)
+
     observation = {
         "schema_version": 1,
         "ticker": "<TICKER>",
