@@ -1,0 +1,3223 @@
+{
+  "alerts": [],
+  "as_of": "2026-10-05",
+  "axis": "PEER_ALTERNATIVES",
+  "evaluations": {
+    "ABX": {
+      "company_type": "CYCLICAL_MINING",
+      "peers": {},
+      "position_data_confidence": 92,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "ADM.L": {
+      "company_type": "INSURER",
+      "peers": {
+        "AV.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 95.5,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "MISSING_REQUIRED_COMPONENT:underwriting_quality",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "BROAD_PEER"
+        },
+        "SBRE.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "MISSING_REQUIRED_COMPONENT:underwriting_quality",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 98,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "ASR": {
+      "company_type": "INSURER",
+      "peers": {
+        "AGS.BR": {
+          "basis": "QUALITY_AND_VALUATION",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 40.81579333638077,
+            "score": null,
+            "stability_flag": "UNSTABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:growth_stability:0.350000",
+              "UNSTABLE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_FUNDAMENTAL_QUALITY_INSUFFICIENT"
+          ],
+          "role": "PEER"
+        },
+        "AV.L": {
+          "basis": "QUALITY_AND_VALUATION",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 19.413739492560143,
+            "score": null,
+            "stability_flag": "STABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:growth_stability:0.350000",
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:value_per_share:0.250000",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:capital_strength"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_FUNDAMENTAL_QUALITY_INSUFFICIENT"
+          ],
+          "role": "PEER"
+        },
+        "NN.AS": {
+          "basis": "QUALITY_AND_VALUATION",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 56.805332013835844,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:growth_stability:0.350000",
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:value_per_share:0.250000",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_FUNDAMENTAL_QUALITY_INSUFFICIENT"
+          ],
+          "role": "PEER"
+        },
+        "SAMPO.HE": {
+          "basis": "QUALITY_AND_VALUATION",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 98.75,
+            "diagnostic_score": 40.66297805416594,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:growth_stability:0.350000",
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:value_per_share:0.250000",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_FUNDAMENTAL_QUALITY_INSUFFICIENT"
+          ],
+          "role": "PEER"
+        },
+        "ZURN.SW": {
+          "basis": "QUALITY_AND_VALUATION",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 38.960956734354504,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:INSURER:growth_stability:0.350000",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_FUNDAMENTAL_QUALITY_INSUFFICIENT"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 89.5,
+      "position_fundamental_quality": 66.06368312954334,
+      "position_fundamental_quality_status": "DISPLAY_READY",
+      "position_market_age_days": 3
+    },
+    "CAP.PA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ACN": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 80.0,
+          "fundamentals_period_end": "2026-05-31",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM",
+            "STALE_DATA:peer_fundamentals:2026-05-31"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "CTSH": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "EPAM": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "GIB.A.TO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "INFY": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "SOP.PA": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 97,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "CRDA.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ASH": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "CLN.SW": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "EVK.DE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "IFF": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "SY1.DE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 97,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "DKS": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ASO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-08-01",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "DIRECT_PEER"
+        },
+        "BGFV": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": null,
+          "fundamentals_period_end": null,
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM",
+            "STALE_DATA:peer_fundamentals:None"
+          ],
+          "role": "PEER"
+        },
+        "JD.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": null,
+          "fundamentals_period_end": null,
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM",
+            "STALE_DATA:peer_fundamentals:None"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 92,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "EMN": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ALB": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "CE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "DD": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "HUN": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "WLK": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 90.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "ERO": {
+      "company_type": "CYCLICAL_MINING",
+      "peers": {
+        "CS.TO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:cost_position",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "FM.TO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:cost_position",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 60.0,
+          "fundamentals_period_end": "2026-03-31",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM",
+            "STALE_DATA:peer_fundamentals:2026-03-31"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "HBM": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:cost_position",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "IVN.TO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:cost_position",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "LUN.TO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:cost_position",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 99,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "ESI": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ASH": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 93.75,
+            "diagnostic_score": 38.78401292989025,
+            "score": null,
+            "stability_flag": "UNSTABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "UNSTABLE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "DD": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 95.0,
+            "diagnostic_score": 62.8515875817506,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "ENTG": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 97.5,
+            "diagnostic_score": 60.67326895477241,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "KWR": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 97.5,
+            "diagnostic_score": 1.5360527878366028,
+            "score": null,
+            "stability_flag": "STABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "MKSI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 97.5,
+            "diagnostic_score": 65.25468401135352,
+            "score": null,
+            "stability_flag": "STABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 93.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "FUL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ARK.PA": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "HEN3.DE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "RPM": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-08-31",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "SIKA.SW": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "WCH.DE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 84.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "IMCD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "AZE.BR": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "DIRECT_PEER"
+        },
+        "BNR.DE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 89.25,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "DIRECT_PEER"
+        },
+        "DKSH.SW": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "BROAD_PEER"
+        }
+      },
+      "position_data_confidence": 89.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "LEU": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "BWXT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "BROAD_PEER"
+        },
+        "CCJ": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "BROAD_PEER"
+        },
+        "KAP.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "UUUU": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "BROAD_PEER"
+        }
+      },
+      "position_data_confidence": 80,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "MOD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "CARR": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "LII": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "NVT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "TT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "VRT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 98,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "MSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "AIT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "CNM": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-08-02",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "FAST": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "GWW": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "WCC": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "HARD_PEER_UNIVERSE_BLOCK",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 84.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "OKLO": {
+      "company_type": "PRE_REVENUE_DEVELOPMENT",
+      "peers": {
+        "LTBR": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:financing_dilution",
+              "MISSING_REQUIRED_COMPONENT:liquidity_runway",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "NNE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 90.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:financing_dilution",
+              "MISSING_REQUIRED_COMPONENT:liquidity_runway",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "SMR": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:financing_dilution",
+              "MISSING_REQUIRED_COMPONENT:liquidity_runway",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 89,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "PLMR": {
+      "company_type": "INSURER_US_P&C",
+      "peers": {
+        "HCI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 94.25,
+            "diagnostic_score": 55.91555558595505,
+            "score": null,
+            "stability_flag": "UNSTABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "MISSING_REQUIRED_COMPONENT:underwriting_quality",
+              "UNSTABLE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "BROAD_PEER"
+        },
+        "HRTG": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 82.64471449843936,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "KNSL": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 62.648183282280456,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "RLI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 42.49828106804509,
+            "score": null,
+            "stability_flag": "STABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:capital_strength"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "SKWD": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 97.5,
+            "diagnostic_score": 17.794564226848607,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "MISSING_REQUIRED_COMPONENT:capital_strength",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 98,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "POWL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ETN": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "GNRC": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "HUBB": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "NVT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "RRX": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "COMPONENT_METRIC_COVERAGE_BELOW_THRESHOLD:GENERAL_OPERATING_COMPANY:growth_stability:0.250000",
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 84.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "ROR.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "CR": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "FLS": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "IMI.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "METSO.HE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "SPX.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 97,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "SNA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "DOV": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 51.42681101948796,
+            "score": null,
+            "stability_flag": "UNSTABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "UNSTABLE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "ESAB": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 27.96336231960966,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "ITW": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 48.57318898051204,
+            "score": null,
+            "stability_flag": "UNSTABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "UNSTABLE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "LECO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 100.0,
+            "score": null,
+            "stability_flag": "STABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "SWK": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": 33.62416753860236,
+            "score": null,
+            "stability_flag": "STABLE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-27",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 84.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "TMDX": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "DXCM": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 95.5,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "BROAD_PEER"
+        },
+        "INSP": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 95.5,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "BROAD_PEER"
+        },
+        "MASI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "PODD": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 95.5,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "BROAD_PEER"
+        }
+      },
+      "position_data_confidence": 92,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    },
+    "TXRH": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "BJRI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "BLMN": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-28",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "CAKE": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "DRI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-08-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "EAT": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-24",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        }
+      },
+      "position_data_confidence": 98,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "WKL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "FDS": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-08-31",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "PEER"
+        },
+        "MCO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 98.75,
+            "diagnostic_score": 88.70329256464959,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "RELX.L": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 97.5,
+            "diagnostic_score": 39.52412617282706,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "SPGI": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 97.5,
+            "diagnostic_score": 63.517980876319974,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "TRI.TO": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 98.75,
+            "diagnostic_score": 43.30072216348259,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "VRSK": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 98.75,
+            "diagnostic_score": 43.08532345975909,
+            "score": null,
+            "stability_flag": "PEER_SENSITIVE",
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_SENSITIVE"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        }
+      },
+      "position_data_confidence": 97,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": 3
+    },
+    "WSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "peers": {
+        "ARHS": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "ETD": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        },
+        "LZB": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-07-25",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "RH": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": 100.0,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-08-01",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON"
+          ],
+          "role": "PEER"
+        },
+        "W": {
+          "basis": "VALUATION_ONLY",
+          "comparison_valuation": null,
+          "fundamental_quality": {
+            "data_confidence": null,
+            "diagnostic_score": null,
+            "score": null,
+            "stability_flag": null,
+            "status": "INSUFFICIENT",
+            "warnings": [
+              "DATASET_MIN_PEERS_MISMATCH:3!=4",
+              "DATA_CONFIDENCE_PENDING",
+              "INSUFFICIENT_WEIGHTED_COMPONENT_COVERAGE",
+              "MISSING_REQUIRED_COMPONENT:balance_sheet",
+              "MISSING_REQUIRED_COMPONENT:profitability_capital_efficiency",
+              "PEER_INPUT_CONFIDENCE_PENDING",
+              "SENSITIVITY_PENDING"
+            ]
+          },
+          "fundamentals_freshness_score": 100.0,
+          "fundamentals_period_end": "2026-06-30",
+          "market_age_days": null,
+          "outcome": "BLOCKED",
+          "reasons": [
+            "NO_PEER_MARKET_DATA",
+            "NO_VALUATION_COMPARISON",
+            "PEER_DATA_CONFIDENCE_BELOW_MINIMUM"
+          ],
+          "role": "CONTEXT_PEER"
+        }
+      },
+      "position_data_confidence": 84.5,
+      "position_fundamental_quality": null,
+      "position_fundamental_quality_status": "DATA_CHECK",
+      "position_market_age_days": null
+    }
+  },
+  "execution_effect": "NONE",
+  "methodology": {
+    "fundamental_quality": "peer as target of the position's peer dataset; same gates as scoring/pipeline.py",
+    "max_price_age_days": 7,
+    "minimum_data_confidence": 80.0,
+    "persistence": {
+      "required_consecutive_runs": 2,
+      "run_period": "iso_week"
+    },
+    "rules": {
+      "CHEAPER_PEER": {
+        "max_fq_disadvantage": 5,
+        "min_valuation_advantage": 15
+      },
+      "STRONGER_PEER": {
+        "max_valuation_disadvantage": 10,
+        "min_fq_advantage": 10
+      }
+    },
+    "valuation": "position and peer scored against the same peer median, on common metrics only",
+    "valuation_only": {
+      "enabled": true,
+      "require_peer_fundamental_quality": false
+    }
+  },
+  "pipeline_version": 1,
+  "provenance": {
+    "code_files": {
+      "src/portfolio_cockpit/config.py": "6a94a008366d6ce2b9e3b3dcd96f4ad0adb71a8ea2ea8a18df6835dfd8a9e583",
+      "src/portfolio_cockpit/decision_layer/formulas.py": "7d55d2daa1d9eafb6c50f375cb36ab14a2669430ee882056d9129fff3493d818",
+      "src/portfolio_cockpit/decision_layer/io.py": "b81ac7fbc22022bdf7a9655b7dd09d5e5119e8795f3925794eedbf5de2e5b713",
+      "src/portfolio_cockpit/decision_layer/peer_alternatives.py": "0eed498183f991a84d3a3516a3b83bbce669327ce48fd3302661e66ad66fed30",
+      "src/portfolio_cockpit/decision_layer/peer_quality.py": "bc8c905ed911544ebc6d158a510ca0b4b210b971da7241db4ceffaa7b80d704a",
+      "src/portfolio_cockpit/decision_layer/valuation.py": "b273d7ea0514238da48b6d3eb6e3d1904efd23e4d049d759a228f89e18fe2b6f",
+      "src/portfolio_cockpit/scoring/absolute_anchors.py": "fc90154528e21383955054b740d43f5a5ae750d7d41714ede2dd8c00776be80d",
+      "src/portfolio_cockpit/scoring/calculation_validation.py": "c927438f86f1e0cf25658b478d6622a2befe2e707d5110d188e11b57a2d02764",
+      "src/portfolio_cockpit/scoring/normalization.py": "fb37b12d2c51fc71f6430d36bd2f8272090878404ceb28d64ad70fc68760b8c2",
+      "src/portfolio_cockpit/scoring/peer_confidence.py": "8c8f33fec677a81c7fc62a093134a1e6ce97b9c86f36b2b64667ddef7e6fb316",
+      "src/portfolio_cockpit/scoring/peer_data.py": "05f1cffd565b9889092234d41b1466f8d0f5687f4d45a10af8fdbbd492312f29",
+      "src/portfolio_cockpit/scoring/pipeline.py": "22e160a0def8b85bebb0c4ac9a579b28332a6c4aa697a64d17d43cb81aadfb66",
+      "src/portfolio_cockpit/scoring/quality.py": "979b74a036b5439dd3a7055c555a18e043d017649528f6397222912e7cbb8547",
+      "src/portfolio_cockpit/scoring/readiness.py": "10afa5ba132a76e26aff19148db78ea458370e5acb6e52390bfcb1dc1989bca3"
+    },
+    "code_hash": "9667fd852403b06b0648b7016eb0926292985ff535e72c60995e322bac313e78",
+    "config_files": {
+      "config/company_types.yaml": "c514ba9e9e4d3953d10fc59ece0ecfd632c2c2520f6960fc24a485350e4eac48",
+      "config/confidence.yaml": "bb9b6e4b45b9ed01687e552c0a327b5147410e1c9242a7b207b39e6fd0a43fe5",
+      "config/peer_alternatives.yaml": "f67fea25dd6c945320326e868f733ee436d4282400ddc4ba6e4decad332339af",
+      "config/peer_universes.yaml": "cadf44a38b5dd878cc7d3bee6fbca1e9da2adedbc4ad72f9f90cb4fb8516aa3d",
+      "config/portfolio.yaml": "5d0c56de0663f996336117031bb39280d937349f7646862c73f617e091f08619",
+      "config/readiness.yaml": "88f97561e75aca89eb35ff14faad82177bff038ee4a813e2e8d04fcd5527c5ac",
+      "config/score_metrics.yaml": "a9ff7af4180034616a90556d4b759e31d3d0c9bd14c15ecdefd983a38ecd216f",
+      "config/scoring.yaml": "2809cd298e72caa31103b3aa03d47c919772512360116d0e5db6d97268b16f93",
+      "config/valuation.yaml": "17ea71973be5b18526e19b0264ad6b78c12bf5849cf2f4e52c0c3334bb7f94b4"
+    },
+    "config_hash": "9c886cb70dcf898cbcde343124d160cddf5f3bb9a978cb1d5f725cb2fa5a4961",
+    "files": {
+      "fundamental_quality": {
+        "path": "data/scoring/fundamental_quality_2026-10-03_r14.json",
+        "sha256": "953c12f17da792597e2a4a15f456ba4392e377c65b305a43a211ec90decce44e"
+      },
+      "market": {
+        "path": "data/market/2026-10-04.json",
+        "sha256": "d5994f2128c074a0e1305e46260b876dad6e2a6a11dc758a3b759b82907a0b25"
+      },
+      "market_peers": null,
+      "previous_run": null,
+      "target_confidence": {
+        "path": "data/confidence/2026-10-03.json",
+        "sha256": "0ee45501b30053e3f8caa07e7849eee34b079c4c47b76d2bc34f3e1a1608df11"
+      }
+    },
+    "inputs": {
+      "data/peers/ABX/2026-10-04.json": "e8360eebc9609a96f12632eb00b8051ca17a05e2ea8fe05dd6750af9548e4f3e",
+      "data/peers/ADM.L/2026-10-03.json": "080aad62db47ced94b5bf7dcd65b45e192994a718ed9e17e4738fcfc5491463e",
+      "data/peers/ASR/2026-10-03.json": "03524a4a5fb113eaa0f38bf418ac487e56899b75200bf63793d9093b73b6946c",
+      "data/peers/CAP.PA/2026-10-03.json": "cb90fa302019eee7bf610970706b60ea9db14eba3fe10f2d5e547a2a74af730c",
+      "data/peers/CRDA.L/2026-10-03.json": "b9c180efdb4d695c636667e06b9c71615bc9aa4e8ff8a5a6a2097717fc75c10d",
+      "data/peers/DKS/2026-10-03.json": "165232e537a267ea4c465fb32d4ba88f3d040e69de34939e009b26e81c126f7b",
+      "data/peers/EMN/2026-10-03.json": "996721a1bf177177b44b932f7e5ea90e057b74baf2da427e18f2b07104e45158",
+      "data/peers/ERO/2026-10-03.json": "212bb0bc439902d890f5b969c09a06f83cb524cf5f2b1fbfd7bbb57109e181a1",
+      "data/peers/ESI/2026-10-03.json": "f998644a29043a06607fdde29a9e3b92ad6114a067a65ec8de37e664a0d36b57",
+      "data/peers/FUL/2026-10-03.json": "571dddc31fedf736c9eeee1049974030328901b3abe2972419b373740183b485",
+      "data/peers/IMCD/2026-10-03.json": "d220cab9a738d8298015bd3e27af1e3989db45e38ff1adfc464102ffe96a30f1",
+      "data/peers/LEU/2026-10-03.json": "83d877ed0c97cdee1e8d3cb724e64fe65603aad85161167dae1b3c24a50a073b",
+      "data/peers/MOD/2026-10-03.json": "ddd34c5031d29eec9526acc029e52d6f44f7c430de534588a408834aeac5d122",
+      "data/peers/MSM/2026-10-03.json": "0767911a407585a0f5896f9b2a2e36193e060d2082cf39cfb65628261ed93e73",
+      "data/peers/OKLO/2026-10-03.json": "aae25c9a0f119adbf51e24660d55f6a72ce8a4115bad1c873dfdebfa9a35a066",
+      "data/peers/PLMR/2026-10-03.json": "709267f0314b75ca2e1efe8ad30f5b30907a150077a638b8f4fa666a2efe2d67",
+      "data/peers/POWL/2026-10-03.json": "9ab3ec98c44db8a166b38b51c2768095ebb96057c808fc4e3dbfe0268c5345f0",
+      "data/peers/ROR.L/2026-10-03.json": "2d9c838b02a8f190219f054cc75df61ec848ae38231036972a1907d37b000878",
+      "data/peers/SNA/2026-10-03.json": "5c75c518d3daa2fb5736aebb33f22de109b0f6b91e5106e49bbd132e52fa943c",
+      "data/peers/TMDX/2026-10-03.json": "693f43e1aa5179d8a847bb36578e1b5f64c6056ad83bbc9c1b62bb461cf44bac",
+      "data/peers/TXRH/2026-10-03.json": "2853ec3f5e05acf7d47a685061254a91f1092985f044bb5cca44b9fd4144f271",
+      "data/peers/WKL/2026-10-02.json": "67abe7c035c03aaabf76abf658f1255914bcf862bce41d2480fda5a5fd9bb475",
+      "data/peers/WSM/2026-10-03.json": "51ba4735085487e578940bdd2ac1f52b0b7203b873f87ee56e258f19ac24a90b",
+      "data/valuation_refs/ADM.L.json": "87a051730f79cd66bd4e9aa2857ee8ce1102822cacea875a03a8e8243f19a164",
+      "data/valuation_refs/ASR.json": "da3524a8fa4cd8b7e4d7682f987cf0cbf93bca2b76177dd04cda3b4a95b4480f",
+      "data/valuation_refs/CAP.PA.json": "bf7a082c5b64df6c6438db414d8fd551a9daf1c73667f461573fb86504971f08",
+      "data/valuation_refs/CRDA.L.json": "ba0bd05b431fc61d2ea9bf828ebebb977be6bedebf2dd5d3d8fc11ad714a6e31",
+      "data/valuation_refs/DKS.json": "9d6cb812b6a365deefb0107ef54e19d47ba54f5833debcc4cfbb6742473425cb",
+      "data/valuation_refs/EMN.json": "07bb2c67e83c875dbe5860653bb968ea58ae8db2c6494f6eb526fccf9d9389e2",
+      "data/valuation_refs/ESI.json": "f3298d9e0c0f8e09428ab0bb0686a24404b164899256a92ecabd7ef04371a21d",
+      "data/valuation_refs/FUL.json": "2dbe66528bbecaa11fe115651b29f6fb459bc6debf5faf15dbd51017ed290e80",
+      "data/valuation_refs/IMCD.json": "a2e9ddac8edb4d20e8f6e499e795a00a09503398448cce6bc95a74fa08280fe4",
+      "data/valuation_refs/LEU.json": "032ccbae27bd12b200e6bf732a9dcaba8b32cb50d9e5055476ae17c02ea217ca",
+      "data/valuation_refs/MOD.json": "c43a34e78859c6dce4c62e59f5b006bccb597cca1c1a98119863c0a65ecc2e91",
+      "data/valuation_refs/MSM.json": "0467498852a0b4e968667474ced6bca751343485b62b92f58341055aa0882d92",
+      "data/valuation_refs/PLMR.json": "bb0cc53b25c11faed4e06b6feb53f323b5d121c0a3393ae754f351b6403a88ea",
+      "data/valuation_refs/POWL.json": "491bb50617534675418a17668b05ee1eaf0125516419e6794d94e0b273c5d202",
+      "data/valuation_refs/ROR.L.json": "9ef045ab84e83178825b0fd5cb428076da9f29de54cbb863c629f103a6fa2e55",
+      "data/valuation_refs/SNA.json": "3552889196bfd9016ee802cc3f46918fe9b570a6053e071587dcc8232f95dc0b",
+      "data/valuation_refs/TXRH.json": "b2ed7907a62347065d88939c9a46f4d21ccb3c712555947d96ea55d62c162318",
+      "data/valuation_refs/WKL.json": "9dec4bbb6b5564d45f374db4f70efee3cd97ce00730c8bcf7d625d8189a132d0",
+      "data/valuation_refs/WSM.json": "c91367a123c2becc6d83e4ada0a04a1a2c61b2b302a611e08d659677789dd20e"
+    },
+    "run_git_commit": "6708fb7857d2d444c64a16c3539b3840d51f30d8"
+  },
+  "reproducibility_hash": "b3b5c30ddd8faac47e9104e80488170466dc6f06891e4bee0a2a38e3f96ea2ca",
+  "schema_version": 1,
+  "summary": {
+    "ACTIVE": 0,
+    "CANDIDATE": 0,
+    "alerts": 0,
+    "peers_evaluated": 101,
+    "peers_with_fundamental_quality": 0,
+    "peers_with_market_data": 0
+  }
+}

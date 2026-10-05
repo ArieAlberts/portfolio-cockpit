@@ -20,6 +20,7 @@ Fundamental Quality ──────── context only ──┘        └�
 | `cockpit-decide [--write] [--as-of D]` | `data/decisions/decisions_<D>[_rN].json` + `current.json`, and appends `data/signal_log/<D>.jsonl` |
 | `cockpit-simulate [--portfolio-value V]` | Dry-run simulation from the current decisions (stdout). |
 | `cockpit-evaluate-signals --horizon 90d` | Forward return per decision state versus the portfolio mean (stdout). |
+| `cockpit-peer-alternatives [--write]` | Peer-alternatives signal → `data/alerts/peer_alternatives_<as_of>[_rN].json` + `current.json`. |
 | `python scripts/build_dashboard.py` | `out/dashboard.html` (git-ignored). Published at <https://ariealberts.github.io/portfolio-cockpit/> after every push to `main` and every `rebuild-decision-layer` run. |
 | `python scripts/list_baseline_metrics.py` | All `component.metric` paths per company type in `data/baselines/**`. |
 | `python scripts/make_input_templates.py` | Empty owner-input templates in `data/templates/`. |
@@ -222,6 +223,18 @@ Each ticker has a drill-down with:
 - the full revision history.
 
 No score is ever called a percentile.
+
+## Peer alternatives
+
+`cockpit-peer-alternatives` (`decision_layer/peer_alternatives.py`, config `config/peer_alternatives.yaml`) flags, per position, a peer from `config/peer_universes.yaml` that is fundamentally stronger and/or cheaper. Analysis only: it never edits `portfolio.yaml` or `positions.yaml` and every output carries `execution_effect: NONE`.
+
+- **Fundamental Quality of a peer** (`decision_layer/peer_quality.py`): the peer becomes the target of the position's existing peer dataset; every other company, the position included, is the reference group. Selection, slots/aliases, normalization, ≥ 4 reference values per metric, required components, peer-input confidence, sensitivity (only STABLE) and calculation validation are the pipeline's own functions, imported and unchanged. The position takes the peer's role in the swapped dataset. A peer's target data confidence is the minimum peer-input confidence of its own score-eligible datapoints. A test shows this scorer reproduces the published pipeline for every position. A peer that cannot be scored is `INSUFFICIENT` and never alerts on quality. The position's own Fundamental Quality is read from `data/scoring/current.json` and never recomputed.
+- **Valuation**: position and peer are both scored against the same peer median (`data/valuation_refs/<T>.json` → `metrics.<m>.peers`), on the metrics both can be scored on (≥ 50 % of the profile weight). Peer inputs come from `data/market_peers/<date>.json`: per peer either the profile's `multiples` or the raw inputs, in the `data/market` datapoint format (template: `data/templates/market_peers.json`). This comparison score is not the published Valuation score.
+- **Types**: `STRONGER_PEER` (peer FQ ≥ position FQ + 10 and peer valuation ≥ position valuation − 10), `CHEAPER_PEER` (peer valuation ≥ position valuation + 15 and peer FQ ≥ position FQ − 5), `BETTER_PEER` (both). Without a position FQ (DATA_CHECK): only `CHEAPER_PEER`, labelled `VALUATION_ONLY`; the peer then needs no FQ (`valuation_only.require_peer_fundamental_quality`).
+- **Gates**: data confidence of both ≥ 80 and no `STALE_DATA` (position: target-confidence freshness or market data older than 7 days; peer: dataset period end with a confidence.yaml freshness score below 100, or market data older than 7 days).
+- **Persistence**: an alert is `CANDIDATE` until it appears in 2 consecutive runs, then `ACTIVE`. Runs count per ISO week; a re-run in the same week never advances an alert. `first_seen` carries over.
+- **Output per alert**: position, peer, type, basis, both FQ and comparison-valuation scores, both data confidences, the three largest metric differences (FQ: 25 × z difference; valuation: metric-score difference), sources, `first_seen`, `consecutive_runs`. `evaluations` lists every evaluated peer with its outcome and reasons.
+- **Dashboard**: section "Peer-alternatieven" above the drill-down (ACTIVE bold, CANDIDATE grey) and a badge per position.
 
 ## Simulator and signal log
 

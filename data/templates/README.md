@@ -8,6 +8,7 @@ fill it in, then run `cockpit-check-inputs` to see exactly what is missing.
 |---|---|---|
 | `market.json` | `data/market/<YYYY-MM-DD>.json` | Set `as_of`. Fill `price` and `currency` at least. Amounts in millions of the trading currency; shares in millions; per-share values in the trading-currency unit (GBp for London lines, consistently). A price older than 7 days gives `STALE_DATA`. |
 | `valuation_refs/<T>.json` | `data/valuation_refs/<T>.json` | Own-history (e.g. 5-year median) and peer (median) multiples, each with `method` and source. Without a reference a metric is `NO_REFERENCE`. |
+| `market_peers.json` | `data/market_peers/<YYYY-MM-DD>.json` | Peer-alternatives only. Per peer either the `multiples` of the position's valuation profile (each with `method` and source; yields as fractions) or the raw inputs as in `market.json`. Remove peers you do not fill. Peers are scored against the position's peer median in `data/valuation_refs/<T>.json`. A datapoint older than 7 days gives `STALE_DATA`. |
 | `observation.json` | `data/observations/<T>/<YYYY-MM-DD>.json` | Set `update_trigger` (see `evidence_gate` in `config/quality_drift.yaml`) and `source_confidence` (0–100; below 80 the observation is not used). Use the exact `component` and metric names from the ticker's baseline. `period_basis` must match the baseline (see `config/quality_drift.yaml`) unless the slot is point-in-time. Never overwrite: a correction is a new file (e.g. `<date>_r2.json`). |
 
 `config/positions.yaml` and `config/thesis_status.yaml` are templates in place.

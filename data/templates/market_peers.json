@@ -1,0 +1,3659 @@
+{
+  "as_of": null,
+  "schema_version": 1,
+  "tickers": {
+    "ACN": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "AGS.BR": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "AIT": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ALB": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ARHS": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ARK.PA": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ASH": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ASO": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "AV.L": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "AZE.BR": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "BGFV": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "BJRI": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "BLMN": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "BNR.DE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "BWXT": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CAKE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CARR": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CCJ": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CLN.SW": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CNM": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CR": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CS.TO": {
+      "currency": null,
+      "multiples": {
+        "ev_normalized_ebitda": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "CTSH": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "DD": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "DKSH.SW": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "DOV": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "DRI": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "DXCM": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "EAT": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ENTG": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "EPAM": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ESAB": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ETD": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ETN": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "EVK.DE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "FAST": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "FDS": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "FLS": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "FM.TO": {
+      "currency": null,
+      "multiples": {
+        "ev_normalized_ebitda": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "GIB.A.TO": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "GNRC": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "GWW": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "HBM": {
+      "currency": null,
+      "multiples": {
+        "ev_normalized_ebitda": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "HCI": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "HEN3.DE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "HRTG": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "HUBB": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "HUN": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "IFF": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "IMI.L": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "INFY": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "INSP": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ITW": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "IVN.TO": {
+      "currency": null,
+      "multiples": {
+        "ev_normalized_ebitda": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "JD.L": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "KAP.L": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "KNSL": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "KWR": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "LECO": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "LII": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "LTBR": {
+      "currency": null,
+      "multiples": {
+        "market_cap_to_risked_npv": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "LUN.TO": {
+      "currency": null,
+      "multiples": {
+        "ev_normalized_ebitda": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "LZB": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "MASI": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "MCO": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "METSO.HE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "MKSI": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "NN.AS": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "NNE": {
+      "currency": null,
+      "multiples": {
+        "market_cap_to_risked_npv": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "NVT": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "PODD": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "RELX.L": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "RH": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "RLI": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "RPM": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "RRX": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SAMPO.HE": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SBRE.L": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SIKA.SW": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SKWD": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SMR": {
+      "currency": null,
+      "multiples": {
+        "market_cap_to_risked_npv": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_nav": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SOP.PA": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SPGI": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SPX.L": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SWK": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "SY1.DE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "TRI.TO": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "TT": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "UUUU": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "VRSK": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "VRT": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "W": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "WCC": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "WCH.DE": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "WLK": {
+      "currency": null,
+      "multiples": {
+        "ev_ebit": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "fcf_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "forward_pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    },
+    "ZURN.SW": {
+      "currency": null,
+      "multiples": {
+        "pe": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "price_to_book": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        },
+        "shareholder_yield": {
+          "as_of_date": null,
+          "method": null,
+          "retrieved_at": null,
+          "source": {
+            "source_type": null,
+            "title": null,
+            "url": null
+          },
+          "value": null
+        }
+      }
+    }
+  }
+}

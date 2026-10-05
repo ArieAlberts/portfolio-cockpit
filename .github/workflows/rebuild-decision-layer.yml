@@ -1,7 +1,8 @@
 name: rebuild-decision-layer
 
-# Writes immutable Quality Drift, Valuation and Decision revisions when their
-# inputs change. Analytical only: nothing here can place, modify or cancel an order.
+# Writes immutable Quality Drift, Valuation, Decision and Peer-alternatives
+# revisions when their inputs change. pages.yml redeploys the dashboard after
+# every successful run (workflow_run). Analytical only: nothing here can place, modify or cancel an order.
 on:
   workflow_dispatch:
   push:
@@ -17,6 +18,11 @@ on:
       - "config/positions.yaml"
       - "config/thesis_status.yaml"
       - "config/target_adjustment.yaml"
+      - "config/peer_alternatives.yaml"
+      - "config/peer_universes.yaml"
+      - "data/market_peers/**"
+      - "data/peers/**"
+      - "data/scoring/**"
       - "data/baselines/**"
       - "src/portfolio_cockpit/decision_layer/**"
 
@@ -69,6 +75,9 @@ jobs:
             echo "positions.yaml or thesis_status.yaml incomplete; decisions not built."
           fi
 
+      - name: Build peer-alternatives signal (analysis only)
+        run: cockpit-peer-alternatives --write
+
       - name: Verify generated pointers
         run: |
           python - <<'PY'
@@ -76,7 +85,8 @@ jobs:
           from pathlib import Path
 
           for rel, key in (("data/drift", "current_quality_drift"), ("data/valuation", "current_valuation"),
-                           ("data/decisions", "current_decisions")):
+                           ("data/decisions", "current_decisions"),
+                           ("data/alerts", "current_peer_alternatives")):
               pointer = Path(rel) / "current.json"
               if not pointer.is_file():
                   continue
@@ -90,7 +100,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         shell: bash
         run: |
-          paths="data/drift data/valuation data/decisions data/signal_log"
+          paths="data/drift data/valuation data/decisions data/signal_log data/alerts"
           if [ -z "$(git status --porcelain -- $paths)" ]; then
             echo "Decision-layer state already reproducible; nothing to commit."
             exit 0
