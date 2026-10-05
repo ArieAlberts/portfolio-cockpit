@@ -1,0 +1,5260 @@
+{
+  "as_of": "2026-10-05",
+  "axis": "VALUATION",
+  "execution_effect": "NONE",
+  "methodology": {
+    "labels": {
+      "attractive_min": 60,
+      "fair_min": 45
+    },
+    "max_price_age_days": 7,
+    "minimum_metric_weight_coverage": 0.5,
+    "negative_denominator_rule": "NOT_APPLICABLE; never read as cheap",
+    "reference_weights": {
+      "own_history": 0.6,
+      "peers": 0.4
+    },
+    "score_scale": "50 ~ fair versus reference; higher = more attractive"
+  },
+  "pipeline_version": 1,
+  "provenance": {
+    "code_files": {
+      "src/portfolio_cockpit/decision_layer/config.py": "4fa6fc2b26a4aea49cc8208ad9ecd6ad303002cd8112eeabb27d9b2193b01ddf",
+      "src/portfolio_cockpit/decision_layer/formulas.py": "7d55d2daa1d9eafb6c50f375cb36ab14a2669430ee882056d9129fff3493d818",
+      "src/portfolio_cockpit/decision_layer/io.py": "b81ac7fbc22022bdf7a9655b7dd09d5e5119e8795f3925794eedbf5de2e5b713",
+      "src/portfolio_cockpit/decision_layer/valuation.py": "b273d7ea0514238da48b6d3eb6e3d1904efd23e4d049d759a228f89e18fe2b6f"
+    },
+    "code_hash": "93d14ab6326c015a86327e573aa9ed539870b43cfe29af93767c31a9d97f2a6b",
+    "config_files": {
+      "config/company_types.yaml": "c514ba9e9e4d3953d10fc59ece0ecfd632c2c2520f6960fc24a485350e4eac48",
+      "config/portfolio.yaml": "5d0c56de0663f996336117031bb39280d937349f7646862c73f617e091f08619",
+      "config/valuation.yaml": "17ea71973be5b18526e19b0264ad6b78c12bf5849cf2f4e52c0c3334bb7f94b4"
+    },
+    "config_hash": "6b948484e4cc81005b7edc0c6f161a7742d7ef50d38638bd3f22b9aa45db06ad",
+    "market_file": {
+      "path": "data/market/2026-10-04.json",
+      "sha256": "d5994f2128c074a0e1305e46260b876dad6e2a6a11dc758a3b759b82907a0b25"
+    },
+    "reference_hashes": {
+      "data/valuation_refs/ADM.L.json": "87a051730f79cd66bd4e9aa2857ee8ce1102822cacea875a03a8e8243f19a164",
+      "data/valuation_refs/ASR.json": "da3524a8fa4cd8b7e4d7682f987cf0cbf93bca2b76177dd04cda3b4a95b4480f",
+      "data/valuation_refs/CAP.PA.json": "bf7a082c5b64df6c6438db414d8fd551a9daf1c73667f461573fb86504971f08",
+      "data/valuation_refs/CRDA.L.json": "ba0bd05b431fc61d2ea9bf828ebebb977be6bedebf2dd5d3d8fc11ad714a6e31",
+      "data/valuation_refs/DKS.json": "9d6cb812b6a365deefb0107ef54e19d47ba54f5833debcc4cfbb6742473425cb",
+      "data/valuation_refs/EMN.json": "07bb2c67e83c875dbe5860653bb968ea58ae8db2c6494f6eb526fccf9d9389e2",
+      "data/valuation_refs/ESI.json": "f3298d9e0c0f8e09428ab0bb0686a24404b164899256a92ecabd7ef04371a21d",
+      "data/valuation_refs/FUL.json": "2dbe66528bbecaa11fe115651b29f6fb459bc6debf5faf15dbd51017ed290e80",
+      "data/valuation_refs/IMCD.json": "a2e9ddac8edb4d20e8f6e499e795a00a09503398448cce6bc95a74fa08280fe4",
+      "data/valuation_refs/LEU.json": "032ccbae27bd12b200e6bf732a9dcaba8b32cb50d9e5055476ae17c02ea217ca",
+      "data/valuation_refs/MOD.json": "c43a34e78859c6dce4c62e59f5b006bccb597cca1c1a98119863c0a65ecc2e91",
+      "data/valuation_refs/MSM.json": "0467498852a0b4e968667474ced6bca751343485b62b92f58341055aa0882d92",
+      "data/valuation_refs/PLMR.json": "bb0cc53b25c11faed4e06b6feb53f323b5d121c0a3393ae754f351b6403a88ea",
+      "data/valuation_refs/POWL.json": "491bb50617534675418a17668b05ee1eaf0125516419e6794d94e0b273c5d202",
+      "data/valuation_refs/ROR.L.json": "9ef045ab84e83178825b0fd5cb428076da9f29de54cbb863c629f103a6fa2e55",
+      "data/valuation_refs/SNA.json": "3552889196bfd9016ee802cc3f46918fe9b570a6053e071587dcc8232f95dc0b",
+      "data/valuation_refs/TXRH.json": "b2ed7907a62347065d88939c9a46f4d21ccb3c712555947d96ea55d62c162318",
+      "data/valuation_refs/WKL.json": "9dec4bbb6b5564d45f374db4f70efee3cd97ce00730c8bcf7d625d8189a132d0",
+      "data/valuation_refs/WSM.json": "c91367a123c2becc6d83e4ada0a04a1a2c61b2b302a611e08d659677789dd20e"
+    },
+    "run_git_commit": "e2b2568c58a5e2431500b90c10348d8488d19992"
+  },
+  "reproducibility_hash": "9db0acf9382a29e8622710026ef590447f378c85f55ff230a742f6a4bb178ba5",
+  "results": {
+    "ABX": {
+      "company_type": "CYCLICAL_MINING",
+      "currency": "USD",
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / NAV per share",
+          "metric": "price_to_nav",
+          "note": "missing input: navps",
+          "raw_inputs": {
+            "navps": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 40.23
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.4
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "EV / mid-cycle (normalized) EBITDA",
+          "metric": "ev_normalized_ebitda",
+          "note": "missing input: shares_outstanding, net_debt, normalized_ebitda",
+          "raw_inputs": {
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "normalized_ebitda": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 40.23
+            },
+            "shares_outstanding": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "missing input: shares_outstanding, fcf",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 40.23
+            },
+            "shares_outstanding": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / EPS (trailing 12 months)",
+          "metric": "pe",
+          "note": "not economically meaningful for CYCLICAL_MINING",
+          "raw_inputs": {
+            "eps_ttm": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 40.23
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "not economically meaningful for CYCLICAL_MINING",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 40.23
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        }
+      ],
+      "price": 40.23,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "VALUATION_DATA_CHECK",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:valuation:ev_normalized_ebitda",
+        "MISSING_DATA:valuation:fcf_yield",
+        "MISSING_DATA:valuation:price_to_nav"
+      ]
+    },
+    "ADM.L": {
+      "company_type": "INSURER",
+      "currency": "GBp",
+      "diagnostic_valuation_score": 44.8617,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / book value per share",
+          "metric": "price_to_book",
+          "note": "",
+          "raw_inputs": {
+            "bvps": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 496
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3588
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/ADM/financials/ratios/"
+              },
+              "value": 6.67,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 6.67,
+          "score": 39.4327,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 7.233871,
+          "weight": 0.35
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / EPS (trailing 12 months)",
+          "metric": "pe",
+          "note": "",
+          "raw_inputs": {
+            "eps_ttm": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 219
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3588
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/ADM/financials/ratios/"
+              },
+              "value": 12.96,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 12.96,
+          "score": 16.9795,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 16.383562,
+          "weight": 0.35
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(dividends + buybacks, ttm) / market cap",
+          "metric": "shareholder_yield",
+          "note": "",
+          "raw_inputs": {
+            "distributions_ttm": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 60610
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3588
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 305.12
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years (dividend + buyback yield)",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/ADM/financials/ratios/"
+              },
+              "value": 0.0436,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0436,
+          "score": 83.7248,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.055363,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBITDA",
+          "metric": "ev_ebitda",
+          "note": "not economically meaningful for INSURER",
+          "raw_inputs": {
+            "ebitda": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3588
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 305.12
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "not economically meaningful for INSURER",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3588
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 305.12
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "not economically meaningful for INSURER",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3588
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+              },
+              "value": 305.12
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        }
+      ],
+      "price": 3588,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 44.8617,
+      "warnings": []
+    },
+    "ASR": {
+      "company_type": "INSURER",
+      "currency": "EUR",
+      "diagnostic_valuation_score": 14.4115,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 0.7,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / book value per share",
+          "metric": "price_to_book",
+          "note": "",
+          "raw_inputs": {
+            "bvps": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 51.98
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 71.48
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median FY2023-FY2025 (post IFRS 17 / Aegon NL)",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/financials/ratios/"
+              },
+              "value": 0.98,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.98,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 1.375144,
+          "weight": 0.35
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / EPS (trailing 12 months)",
+          "metric": "pe",
+          "note": "",
+          "raw_inputs": {
+            "eps_ttm": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 4.98
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 71.48
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median FY2023-FY2025 (post IFRS 17 / Aegon NL)",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/financials/ratios/"
+              },
+              "value": 10.79,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-09-29",
+              "method": "median of current trailing PE NN.AS, AGS.BR, SAMPO.HE, AV.L, ZURN.SW (data dates 2026-08-29..09-29)",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 14.5,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 12.274,
+          "score": 28.823,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 14.353414,
+          "weight": 0.35
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(dividends + buybacks, ttm) / market cap",
+          "metric": "shareholder_yield",
+          "note": "no own-history or peer reference",
+          "raw_inputs": {
+            "distributions_ttm": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 721
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 71.48
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 201.55
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NO_REFERENCE",
+          "value": 0.050046,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBITDA",
+          "metric": "ev_ebitda",
+          "note": "not economically meaningful for INSURER",
+          "raw_inputs": {
+            "ebitda": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 71.48
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 201.55
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "not economically meaningful for INSURER",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 71.48
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 201.55
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "not economically meaningful for INSURER",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 71.48
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+              },
+              "value": 201.55
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        }
+      ],
+      "price": 71.48,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 14.4115,
+      "warnings": [
+        "MISSING_DATA:reference:shareholder_yield"
+      ]
+    },
+    "CAP.PA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "EUR",
+      "diagnostic_valuation_score": 83.5472,
+      "execution_effect": "NONE",
+      "label": "Attractive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+              },
+              "value": 13.1681
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 109.58
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/epa/CAP/financials/ratios/"
+              },
+              "value": 13.36,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values ACN, GIB, CTSH, SOP.PA, EPAM, INFY (data dates 2026-09-17..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 10.055,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 12.038,
+          "score": 88.59,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 8.321626,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+              },
+              "value": 2630
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+              },
+              "value": 7910
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 109.58
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+              },
+              "value": 169.74
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/epa/CAP/financials/ratios/"
+              },
+              "value": 13.91,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values ACN, GIB, CTSH, SOP.PA, EPAM, INFY (data dates 2026-09-17..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 8.675,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 11.816,
+          "score": 68.3661,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 10.079889,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+              },
+              "value": 2190
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 109.58
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+              },
+              "value": 169.74
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/epa/CAP/financials/ratios/"
+              },
+              "value": 0.0821,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values ACN, GIB, CTSH, SOP.PA, EPAM, INFY (data dates 2026-09-17..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0983,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.08858,
+          "score": 91.151,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.117741,
+          "weight": 0.4
+        }
+      ],
+      "price": 109.58,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 83.5472,
+      "warnings": []
+    },
+    "CRDA.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "GBp",
+      "diagnostic_valuation_score": 41.2189,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-09-18",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+              },
+              "value": 168.1552
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3277
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/financials/ratios/"
+              },
+              "value": 26.57,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values ASH, CLN.SW, EVK.DE, SY1.DE, IFF (data dates 2026-09-06..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 16.85,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 22.682,
+          "score": 67.6023,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 19.487949,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-09-18",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+              },
+              "value": 12560
+            },
+            "net_debt": {
+              "as_of_date": "2026-09-18",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+              },
+              "value": 57790
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3277
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-18",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+              },
+              "value": 139.92
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/financials/ratios/"
+              },
+              "value": 29.1,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values ASH, CLN.SW, EVK.DE, SY1.DE, IFF (data dates 2026-09-06..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 23.46,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 26.844,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 41.107312,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-09-18",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+              },
+              "value": 18470
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 3277
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-18",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+              },
+              "value": 139.92
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/CRDA/financials/ratios/"
+              },
+              "value": 0.0225,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values ASH, CLN.SW, EVK.DE, SY1.DE, IFF (data dates 2026-09-06..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0651,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.03954,
+          "score": 52.3456,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.040282,
+          "weight": 0.4
+        }
+      ],
+      "price": 3277,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 41.2189,
+      "warnings": []
+    },
+    "DKS": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 27.6237,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/dks/statistics/"
+              },
+              "value": 11.9368
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 136.08
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/dks/financials/ratios/"
+              },
+              "value": 12.22,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 12.22,
+          "score": 58.3875,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 11.40004,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/dks/statistics/"
+              },
+              "value": 1490
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/dks/statistics/"
+              },
+              "value": 7050
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 136.08
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/dks/statistics/"
+              },
+              "value": 88.93
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/dks/financials/ratios/"
+              },
+              "value": 11.37,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 11.37,
+          "score": 33.6915,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 12.853419,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/dks/statistics/"
+              },
+              "value": 239.41
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 136.08
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/dks/statistics/"
+              },
+              "value": 88.93
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/dks/financials/ratios/"
+              },
+              "value": 0.053,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.053,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.019783,
+          "weight": 0.4
+        }
+      ],
+      "price": 136.08,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 27.6237,
+      "warnings": []
+    },
+    "EMN": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 64.5274,
+      "execution_effect": "NONE",
+      "label": "Attractive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-09-30",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/emn/statistics/"
+              },
+              "value": 6.6728
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 64.87
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/emn/financials/ratios/"
+              },
+              "value": 11.69,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values CE, WLK, DD, ALB; HUN excluded (losses: forward PE 873, EV/EBIT and FCF n/a); trough-cycle earnings distort peers (data dates 2026-09-30..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 14.09,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 12.65,
+          "score": 78.9372,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 9.721556,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-09-30",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/emn/statistics/"
+              },
+              "value": 870
+            },
+            "net_debt": {
+              "as_of_date": "2026-09-30",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/emn/statistics/"
+              },
+              "value": 4770
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 64.87
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-30",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/emn/statistics/"
+              },
+              "value": 114.33
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/emn/financials/ratios/"
+              },
+              "value": 11.74,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values CE, WLK, DD, ALB; HUN excluded (losses: forward PE 873, EV/EBIT and FCF n/a); trough-cycle earnings distort peers (data dates 2026-09-30..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 18.57,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 14.472,
+          "score": 54.0114,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 14.007571,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-09-30",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/emn/statistics/"
+              },
+              "value": 539
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 64.87
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-30",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/emn/statistics/"
+              },
+              "value": 114.33
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/emn/financials/ratios/"
+              },
+              "value": 0.0583,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values CE, WLK, DD, ALB; HUN excluded (losses: forward PE 873, EV/EBIT and FCF n/a); trough-cycle earnings distort peers (data dates 2026-09-30..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0788,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.0665,
+          "score": 61.607,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.072675,
+          "weight": 0.4
+        }
+      ],
+      "price": 64.87,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 64.5274,
+      "warnings": []
+    },
+    "ERO": {
+      "company_type": "CYCLICAL_MINING",
+      "currency": "USD",
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / NAV per share",
+          "metric": "price_to_nav",
+          "note": "missing input: navps",
+          "raw_inputs": {
+            "navps": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.91
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.4
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "EV / mid-cycle (normalized) EBITDA",
+          "metric": "ev_normalized_ebitda",
+          "note": "missing input: normalized_ebitda",
+          "raw_inputs": {
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ero/statistics/"
+              },
+              "value": 471.61
+            },
+            "normalized_ebitda": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.91
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ero/statistics/"
+              },
+              "value": 104.3
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "no own-history or peer reference",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ero/statistics/"
+              },
+              "value": 171.59
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.91
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ero/statistics/"
+              },
+              "value": 104.3
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NO_REFERENCE",
+          "value": 0.043396,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / EPS (trailing 12 months)",
+          "metric": "pe",
+          "note": "not economically meaningful for CYCLICAL_MINING",
+          "raw_inputs": {
+            "eps_ttm": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.91
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "not economically meaningful for CYCLICAL_MINING",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.91
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        }
+      ],
+      "price": 37.91,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "VALUATION_DATA_CHECK",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:reference:fcf_yield",
+        "MISSING_DATA:valuation:ev_normalized_ebitda",
+        "MISSING_DATA:valuation:price_to_nav"
+      ]
+    },
+    "ESI": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 11.7115,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/esi/statistics/"
+              },
+              "value": 1.9376
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.93
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/esi/financials/ratios/"
+              },
+              "value": 15.86,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 15.86,
+          "score": 20.7143,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 19.575764,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/esi/statistics/"
+              },
+              "value": 401
+            },
+            "net_debt": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/esi/statistics/"
+              },
+              "value": 1930
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.93
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/esi/statistics/"
+              },
+              "value": 243.69
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/esi/financials/ratios/"
+              },
+              "value": 22.23,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 22.23,
+          "score": 18.3241,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 27.863246,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/esi/statistics/"
+              },
+              "value": 137.7
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 37.93
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-25",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/esi/statistics/"
+              },
+              "value": 243.69
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/esi/financials/ratios/"
+              },
+              "value": 0.0479,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0479,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.014897,
+          "weight": 0.4
+        }
+      ],
+      "price": 37.93,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 11.7115,
+      "warnings": []
+    },
+    "FUL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 64.7331,
+      "execution_effect": "NONE",
+      "label": "Attractive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ful/statistics/"
+              },
+              "value": 5.1677
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 50.2
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/ful/financials/ratios/"
+              },
+              "value": 17.43,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values HEN3.DE, SIKA.SW, AKE.PA (Arkema), RPM, WCH.DE (data dates 2026-08-23..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 16.59,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 17.094,
+          "score": 100.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 9.714186,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ful/statistics/"
+              },
+              "value": 426.47
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ful/statistics/"
+              },
+              "value": 2090
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 50.2
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ful/statistics/"
+              },
+              "value": 53.83
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/ful/financials/ratios/"
+              },
+              "value": 16.19,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values HEN3.DE, SIKA.SW, AKE.PA (Arkema), RPM, WCH.DE (data dates 2026-08-23..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 19.4,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 17.474,
+          "score": 94.6159,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 11.237053,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ful/statistics/"
+              },
+              "value": 100.03
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 50.2
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/ful/statistics/"
+              },
+              "value": 53.83
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/ful/financials/ratios/"
+              },
+              "value": 0.0384,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values HEN3.DE, SIKA.SW, AKE.PA (Arkema), RPM, WCH.DE (data dates 2026-08-23..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0697,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.05092,
+          "score": 15.8707,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.037017,
+          "weight": 0.4
+        }
+      ],
+      "price": 50.2,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 64.7331,
+      "warnings": []
+    },
+    "IMCD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "EUR",
+      "diagnostic_valuation_score": 74.7304,
+      "execution_effect": "NONE",
+      "label": "Attractive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+              },
+              "value": 6.2893
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 95.22
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/financials/ratios/"
+              },
+              "value": 21.89,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values BNR.DE, AZE.BR, DKSH.SW (only 3 peers; universe LIMITED; data dates 2026-09-12..09-26)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 15.11,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 19.178,
+          "score": 76.3192,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 15.14,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+              },
+              "value": 401
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+              },
+              "value": 1560
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 95.22
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+              },
+              "value": 59.04
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/financials/ratios/"
+              },
+              "value": 23.13,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values BNR.DE, AZE.BR, DKSH.SW (only 3 peers; universe LIMITED; data dates 2026-09-12..09-26)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 14.03,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 19.49,
+          "score": 60.1353,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 17.909698,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+              },
+              "value": 370.4
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 95.22
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+              },
+              "value": 59.04
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/IMCD/financials/ratios/"
+              },
+              "value": 0.038,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values BNR.DE, AZE.BR, DKSH.SW (only 3 peers; universe LIMITED; data dates 2026-09-12..09-26)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0721,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.05164,
+          "score": 84.4851,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.065887,
+          "weight": 0.4
+        }
+      ],
+      "price": 95.22,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 74.7304,
+      "warnings": []
+    },
+    "LEU": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 0.0,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 0.7,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/leu/statistics/"
+              },
+              "value": 2.4463
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 139.27
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/leu/financials/ratios/"
+              },
+              "value": 21.52,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 21.52,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 56.930875,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "missing input: ebit",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/leu/statistics/"
+              },
+              "value": -691
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 139.27
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/leu/statistics/"
+              },
+              "value": 20.45
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/leu/statistics/"
+              },
+              "value": -163.8
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 139.27
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/leu/statistics/"
+              },
+              "value": 20.45
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/leu/financials/ratios/"
+              },
+              "value": 0.0301,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0301,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": -0.057513,
+          "weight": 0.4
+        }
+      ],
+      "price": 139.27,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 0.0,
+      "warnings": [
+        "MISSING_DATA:valuation:ev_ebit"
+      ]
+    },
+    "MOD": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 4.6839,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/mod/statistics/"
+              },
+              "value": 8.1111
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 178.2
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/mod/financials/ratios/"
+              },
+              "value": 17.23,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 17.23,
+          "score": 15.6131,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 21.969893,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/mod/statistics/"
+              },
+              "value": 368.3
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/mod/statistics/"
+              },
+              "value": 576.1
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 178.2
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/mod/statistics/"
+              },
+              "value": 53.11
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/mod/financials/ratios/"
+              },
+              "value": 14.42,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 14.42,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 27.261206,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/mod/statistics/"
+              },
+              "value": 100.2
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 178.2
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/mod/statistics/"
+              },
+              "value": 53.11
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/mod/financials/ratios/"
+              },
+              "value": 0.0255,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0255,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.010587,
+          "weight": 0.4
+        }
+      ],
+      "price": 178.2,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 4.6839,
+      "warnings": []
+    },
+    "MSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 1.5902,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/msm/statistics/"
+              },
+              "value": 5.2851
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 130.12
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/msm/financials/ratios/"
+              },
+              "value": 16.2,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 16.2,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 24.620159,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/msm/statistics/"
+              },
+              "value": 345.14
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/msm/statistics/"
+              },
+              "value": 481.33
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 130.12
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/msm/statistics/"
+              },
+              "value": 55.85
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/msm/financials/ratios/"
+              },
+              "value": 12.77,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 12.77,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 22.450403,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/msm/statistics/"
+              },
+              "value": 219.93
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 130.12
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/msm/statistics/"
+              },
+              "value": 55.85
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/msm/financials/ratios/"
+              },
+              "value": 0.0479,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0479,
+          "score": 3.9754,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.030263,
+          "weight": 0.4
+        }
+      ],
+      "price": 130.12,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 1.5902,
+      "warnings": []
+    },
+    "OKLO": {
+      "company_type": "PRE_REVENUE_DEVELOPMENT",
+      "currency": "USD",
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / NAV per share",
+          "metric": "price_to_nav",
+          "note": "missing input: navps",
+          "raw_inputs": {
+            "navps": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.6
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "market cap / risk-adjusted project NPV",
+          "metric": "market_cap_to_risked_npv",
+          "note": "missing input: risked_npv",
+          "raw_inputs": {
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            },
+            "risked_npv": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+              },
+              "value": 186.02
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "MISSING_INPUT",
+          "value": null,
+          "weight": 0.4
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / EPS (trailing 12 months)",
+          "metric": "pe",
+          "note": "not economically meaningful for PRE_REVENUE_DEVELOPMENT",
+          "raw_inputs": {
+            "eps_ttm": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "not economically meaningful for PRE_REVENUE_DEVELOPMENT",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBITDA",
+          "metric": "ev_ebitda",
+          "note": "not economically meaningful for PRE_REVENUE_DEVELOPMENT",
+          "raw_inputs": {
+            "ebitda": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+              },
+              "value": 186.02
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "not economically meaningful for PRE_REVENUE_DEVELOPMENT",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+              },
+              "value": 186.02
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "not economically meaningful for PRE_REVENUE_DEVELOPMENT",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 35.87
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+              },
+              "value": 186.02
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        }
+      ],
+      "price": 35.87,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "VALUATION_DATA_CHECK",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:valuation:market_cap_to_risked_npv",
+        "MISSING_DATA:valuation:price_to_nav"
+      ]
+    },
+    "PLMR": {
+      "company_type": "INSURER_US_P&C",
+      "currency": "USD",
+      "diagnostic_valuation_score": 62.7272,
+      "execution_effect": "NONE",
+      "label": "Attractive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / book value per share",
+          "metric": "price_to_book",
+          "note": "",
+          "raw_inputs": {
+            "bvps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 37.46
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 126.49
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/plmr/financials/ratios/"
+              },
+              "value": 3.79,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values KNSL, SKWD, HCI, HRTG, RLI (data dates 2026-09-27..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 2.01,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 3.078,
+          "score": 37.8708,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 3.376668,
+          "weight": 0.35
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / EPS (trailing 12 months)",
+          "metric": "pe",
+          "note": "",
+          "raw_inputs": {
+            "eps_ttm": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 7.44
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 126.49
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/plmr/financials/ratios/"
+              },
+              "value": 21.84,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values KNSL, SKWD, HCI, HRTG, RLI (data dates 2026-09-27..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 11.75,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 17.804,
+          "score": 55.6354,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 17.001344,
+          "weight": 0.35
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(dividends + buybacks, ttm) / market cap",
+          "metric": "shareholder_yield",
+          "note": "",
+          "raw_inputs": {
+            "distributions_ttm": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 38.3
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 126.49
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 26.32
+            }
+          },
+          "reference": {
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values KNSL, SKWD, HCI, HRTG, RLI (data dates 2026-09-27..10-04)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.004,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.004,
+          "score": 100.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.011504,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBITDA",
+          "metric": "ev_ebitda",
+          "note": "not economically meaningful for INSURER_US_P&C",
+          "raw_inputs": {
+            "ebitda": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 126.49
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 26.32
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "not economically meaningful for INSURER_US_P&C",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "net_debt": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 126.49
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 26.32
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "not economically meaningful for INSURER_US_P&C",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": null,
+              "source": null,
+              "value": null
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 126.49
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+              },
+              "value": 26.32
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NOT_APPLICABLE",
+          "value": null,
+          "weight": 0.0
+        }
+      ],
+      "price": 126.49,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 62.7272,
+      "warnings": []
+    },
+    "POWL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 18.3353,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/powl/statistics/"
+              },
+              "value": 6.4549
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 196.1
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/powl/financials/ratios/"
+              },
+              "value": 22.25,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 22.25,
+          "score": 4.3257,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 30.380021,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/powl/statistics/"
+              },
+              "value": 227.67
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/powl/statistics/"
+              },
+              "value": -631.04
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 196.1
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/powl/statistics/"
+              },
+              "value": 36.43
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/powl/financials/ratios/"
+              },
+              "value": 14.9,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 14.9,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 28.606681,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/powl/statistics/"
+              },
+              "value": 243.96
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 196.1
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/powl/statistics/"
+              },
+              "value": 36.43
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/powl/financials/ratios/"
+              },
+              "value": 0.0363,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0363,
+          "score": 42.594,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.034149,
+          "weight": 0.4
+        }
+      ],
+      "price": 196.1,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 18.3353,
+      "warnings": []
+    },
+    "ROR.L": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "GBp",
+      "diagnostic_valuation_score": 17.1662,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-09-11",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+              },
+              "value": 18.2167
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 488.6
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/ROR/financials/ratios/"
+              },
+              "value": 20.85,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 20.85,
+          "score": 14.1994,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 26.821543,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-09-11",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+              },
+              "value": 18730
+            },
+            "net_debt": {
+              "as_of_date": "2026-09-11",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+              },
+              "value": -2530
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 488.6
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-11",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+              },
+              "value": 813.49
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/ROR/financials/ratios/"
+              },
+              "value": 18.56,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 18.56,
+          "score": 32.9875,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 21.086023,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-09-11",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+              },
+              "value": 11100
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 488.6
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-09-11",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+              },
+              "value": 813.49
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/lon/ROR/financials/ratios/"
+              },
+              "value": 0.0423,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0423,
+          "score": 7.5253,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.027927,
+          "weight": 0.4
+        }
+      ],
+      "price": 488.6,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 17.1662,
+      "warnings": []
+    },
+    "SNA": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 47.1506,
+      "execution_effect": "NONE",
+      "label": "Fair",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/sna/statistics/"
+              },
+              "value": 20.6783
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 368.9
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/sna/financials/ratios/"
+              },
+              "value": 15.04,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-03",
+              "method": "median of current values SWK, LECO, ITW, ESAB, DOV",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 16.91,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 15.788,
+          "score": 33.7538,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 17.839958,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/sna/statistics/"
+              },
+              "value": 1330
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/sna/statistics/"
+              },
+              "value": -334.2
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 368.9
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/sna/statistics/"
+              },
+              "value": 51.73
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/sna/financials/ratios/"
+              },
+              "value": 11.56,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-03",
+              "method": "median of current values SWK, LECO, ITW, ESAB, DOV",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 17.83,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 14.068,
+          "score": 49.7424,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 14.09699,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/sna/statistics/"
+              },
+              "value": 1110
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 368.9
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/sna/statistics/"
+              },
+              "value": 51.73
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/sna/financials/ratios/"
+              },
+              "value": 0.0629,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-03",
+              "method": "median of current values SWK, LECO, ITW, ESAB, DOV",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0452,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.05582,
+          "score": 55.2543,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.058166,
+          "weight": 0.4
+        }
+      ],
+      "price": 368.9,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 47.1506,
+      "warnings": []
+    },
+    "TMDX": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": null,
+      "execution_effect": "NONE",
+      "label": null,
+      "metric_weight_coverage": 0.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "no own-history or peer reference",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+              },
+              "value": 1.7977
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 79.8
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NO_REFERENCE",
+          "value": 44.390054,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "no own-history or peer reference",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+              },
+              "value": 81.61
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+              },
+              "value": 395.05
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 79.8
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+              },
+              "value": 34.68
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NO_REFERENCE",
+          "value": 38.75155,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "no own-history or peer reference",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+              },
+              "value": 79.04
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 79.8
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+              },
+              "value": 34.68
+            }
+          },
+          "reference": {},
+          "reference_value": null,
+          "score": null,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "NO_REFERENCE",
+          "value": 0.02856,
+          "weight": 0.4
+        }
+      ],
+      "price": 79.8,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "VALUATION_DATA_CHECK",
+      "valuation_score": null,
+      "warnings": [
+        "MISSING_DATA:reference:ev_ebit",
+        "MISSING_DATA:reference:fcf_yield",
+        "MISSING_DATA:reference:forward_pe"
+      ]
+    },
+    "TXRH": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 51.3103,
+      "execution_effect": "NONE",
+      "label": "Fair",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+              },
+              "value": 7.1789
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 156.14
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/txrh/financials/ratios/"
+              },
+              "value": 25.16,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values DRI, EAT, CAKE, BJRI, BLMN (data dates 2026-09-28..10-03)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 17.45,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 22.076,
+          "score": 51.8467,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 21.74985,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+              },
+              "value": 483.16
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+              },
+              "value": 885.13
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 156.14
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+              },
+              "value": 65.64
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/txrh/financials/ratios/"
+              },
+              "value": 24.52,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values DRI, EAT, CAKE, BJRI, BLMN (data dates 2026-09-28..10-03)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 19.52,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 22.52,
+          "score": 47.0889,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 23.044456,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+              },
+              "value": 406.39
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 156.14
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+              },
+              "value": 65.64
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/txrh/financials/ratios/"
+              },
+              "value": 0.0332,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-04",
+              "method": "median of current values DRI, EAT, CAKE, BJRI, BLMN (data dates 2026-09-28..10-03)",
+              "retrieved_at": "2026-10-04T17:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics pages of peers",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.0462,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.0384,
+          "score": 54.0741,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.039652,
+          "weight": 0.4
+        }
+      ],
+      "price": 156.14,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 51.3103,
+      "warnings": []
+    },
+    "WKL": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "EUR",
+      "diagnostic_valuation_score": 100.0,
+      "execution_effect": "NONE",
+      "label": "Attractive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+              },
+              "value": 5.8215
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 67.82
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/WKL/financials/ratios/"
+              },
+              "value": 26.71,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-03",
+              "method": "median of current values RELX.L, TRI, VRSK, FDS, SPGI, MCO",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 20.25,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 24.126,
+          "score": 100.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 11.649918,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+              },
+              "value": 1560
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+              },
+              "value": 4050
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 67.82
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+              },
+              "value": 222.9
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/WKL/financials/ratios/"
+              },
+              "value": 27.7,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-03",
+              "method": "median of current values RELX.L, TRI, VRSK, FDS, SPGI, MCO",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 18.055,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 23.842,
+          "score": 100.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 12.286588,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+              },
+              "value": 1390
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 67.82
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+              },
+              "value": 222.9
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/quote/ams/WKL/financials/ratios/"
+              },
+              "value": 0.0394,
+              "weight": 0.6
+            },
+            "peers": {
+              "as_of_date": "2026-10-03",
+              "method": "median of current values RELX.L, TRI, VRSK, FDS, SPGI, MCO",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com"
+              },
+              "value": 0.05535,
+              "weight": 0.4
+            }
+          },
+          "reference_value": 0.04578,
+          "score": 100.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.091949,
+          "weight": 0.4
+        }
+      ],
+      "price": 67.82,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 100.0,
+      "warnings": []
+    },
+    "WSM": {
+      "company_type": "GENERAL_OPERATING_COMPANY",
+      "currency": "USD",
+      "diagnostic_valuation_score": 0.0,
+      "execution_effect": "NONE",
+      "label": "Expensive",
+      "metric_weight_coverage": 1.0,
+      "metrics": [
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "price / forward EPS (consensus, next 12 months)",
+          "metric": "forward_pe",
+          "note": "",
+          "raw_inputs": {
+            "forward_eps": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+              },
+              "value": 9.9188
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 232.3
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/wsm/financials/ratios/"
+              },
+              "value": 14.39,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 14.39,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 23.420172,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "(price * shares + net debt + minorities) / EBIT",
+          "metric": "ev_ebit",
+          "note": "",
+          "raw_inputs": {
+            "ebit": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+              },
+              "value": 1430
+            },
+            "net_debt": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+              },
+              "value": 499.01
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 232.3
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+              },
+              "value": 117.78
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/wsm/financials/ratios/"
+              },
+              "value": 11.18,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 11.18,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 19.482031,
+          "weight": 0.3
+        },
+        {
+          "as_of_date": "2026-10-02",
+          "calculation_method": "free cash flow (ttm) / market cap",
+          "metric": "fcf_yield",
+          "note": "",
+          "raw_inputs": {
+            "fcf": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+              },
+              "value": 1340
+            },
+            "price": {
+              "as_of_date": "2026-10-02",
+              "source": {
+                "source_type": "BROKER_MARKET_DATA",
+                "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+                "url": null
+              },
+              "value": 232.3
+            },
+            "shares_outstanding": {
+              "as_of_date": "2026-10-01",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com \u2014 statistics page",
+                "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+              },
+              "value": 117.78
+            }
+          },
+          "reference": {
+            "own_history": {
+              "as_of_date": "2026-10-03",
+              "method": "median of fiscal-year-end values, last 5 completed fiscal years",
+              "retrieved_at": "2026-10-04T14:00:00Z",
+              "source": {
+                "source_type": "SECONDARY_AGGREGATOR",
+                "title": "stockanalysis.com",
+                "url": "https://stockanalysis.com/stocks/wsm/financials/ratios/"
+              },
+              "value": 0.0829,
+              "weight": 0.6
+            }
+          },
+          "reference_value": 0.0829,
+          "score": 0.0,
+          "source": {
+            "source_type": "BROKER_MARKET_DATA",
+            "title": "Interactive Brokers historical daily close \u2014 2 Oct 2026",
+            "url": null
+          },
+          "status": "OK",
+          "value": 0.048976,
+          "weight": 0.4
+        }
+      ],
+      "price": 232.3,
+      "price_age_days": 3,
+      "price_as_of": "2026-10-02",
+      "status": "OK",
+      "valuation_score": 0.0,
+      "warnings": []
+    }
+  },
+  "schema_version": 1,
+  "summary": {
+    "NO_MARKET_DATA": 0,
+    "OK": 19,
+    "VALUATION_DATA_CHECK": 4,
+    "portfolio_companies": 23
+  }
+}
