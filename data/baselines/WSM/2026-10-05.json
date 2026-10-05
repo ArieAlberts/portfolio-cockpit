@@ -1,0 +1,54 @@
+{
+  "baseline_version": 1,
+  "ticker": "WSM",
+  "company_name": "Williams-Sonoma, Inc.",
+  "portfolio_weight_pct": 4,
+  "portfolio_role": "CORE",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-10-05",
+  "reporting_period_end": "2026-08-02",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_COVERAGE_EXPANSION",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_FILING_EXHIBIT",
+    "title": "Williams-Sonoma Q2 2026 results including balance sheet and 26-week cash flow",
+    "publication_date": "2026-08-26",
+    "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/ex991fy2026q2earnings.htm"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "gaap_operating_margin_pct": 22.9,
+      "non_gaap_operating_margin_pct": 17.3
+    },
+    "growth_stability": {
+      "comparable_brand_revenue_growth_pct": 6.2,
+      "total_revenue_growth_pct": 6.7
+    },
+    "value_per_share": {
+      "gaap_diluted_eps_usd": 2.84,
+      "non_gaap_diluted_eps_usd": 2.1
+    },
+    "balance_sheet": {
+      "cash_usd_m": 1000
+    },
+    "cashflow_quality": {
+      "half_year_operating_cash_flow_usd_m": 696
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift.",
+    "Added $1.0bn cash and $696m 26-week operating cash flow from the Q2 2026 release to complete balance-sheet and cash-flow profile coverage.",
+    "Coverage expansion only: strategic base target is unchanged; existing baseline metrics are preserved."
+  ],
+  "rebaseline_of": "data/baselines/WSM/2026-08-26.json",
+  "rebaseline_reason": "Expand active baseline profile coverage with primary-source balance-sheet and cash-flow metrics; no strategic target change.",
+  "base_target_weight_pct": 4
+}
