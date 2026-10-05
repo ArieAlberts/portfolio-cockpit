@@ -21,7 +21,10 @@ def test_all_23_portfolio_companies_have_peer_dataset():
 
 
 def test_abx_remains_blocked_without_fake_peers():
-    data=json.loads((ROOT/"data/peers/ABX/2026-10-03.json").read_text(encoding="utf-8"))
+    index=json.loads((ROOT/"data/peers/index.json").read_text(encoding="utf-8"))
+    data=json.loads((ROOT/index["datasets"]["ABX"]).read_text(encoding="utf-8"))
+    assert data["target_ticker"]=="ABX"
+    assert data["companies"]["ABX"]["company"]=="Barrick Mining Corporation"
     assert data["peer_universe_status"]=="INSUFFICIENT_DIRECT_PUBLIC_PEERS"
 
 
