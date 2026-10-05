@@ -1,0 +1,60 @@
+# Peer-alternatives signal — analysis only (execution_effect NONE).
+# Flags a peer from config/peer_universes.yaml that is fundamentally stronger
+# and/or cheaper than the current position. Never edits portfolio.yaml or
+# positions.yaml and never proposes an order.
+#
+# Scores compared:
+#   Fundamental Quality: position = published DISPLAY_READY score
+#     (data/scoring/current.json); peer = the same pipeline with the peer as
+#     target and the rest of the dataset (position included) as reference group.
+#     A peer that cannot be scored is INSUFFICIENT and never alerts on quality.
+#   Valuation: position and peer are both scored against the same peer median
+#     (data/valuation_refs/<position>.json -> metrics.<m>.peers), on the metrics
+#     both can be scored on. This comparison score is not the published
+#     Valuation score, which also weighs the position's own history.
+schema_version: 1
+
+# Both position and peer need data confidence >= this, and no STALE_DATA.
+minimum_data_confidence: 80
+
+rules:
+  # peer_FQ >= position_FQ + min_fq_advantage
+  # and peer_valuation >= position_valuation - max_valuation_disadvantage
+  STRONGER_PEER:
+    min_fq_advantage: 10
+    max_valuation_disadvantage: 10
+  # peer_valuation >= position_valuation + min_valuation_advantage
+  # and peer_FQ >= position_FQ - max_fq_disadvantage
+  CHEAPER_PEER:
+    min_valuation_advantage: 15
+    max_fq_disadvantage: 5
+  # STRONGER_PEER and CHEAPER_PEER at the same time are reported as BETTER_PEER.
+
+# Position without Fundamental Quality (DATA_CHECK): only CHEAPER_PEER on
+# valuation, labelled VALUATION_ONLY. With require_peer_fundamental_quality
+# false the peer does not need a Fundamental Quality score either (the
+# position has none to compare with); data confidence and staleness still apply.
+valuation_only:
+  enabled: true
+  require_peer_fundamental_quality: false
+
+persistence:
+  # An alert is CANDIDATE until it was present in this many consecutive runs,
+  # then ACTIVE. Runs are counted per ISO week, so re-runs in the same week
+  # never advance an alert.
+  required_consecutive_runs: 2
+  run_period: iso_week
+
+valuation_comparison:
+  # Coverage of the profile weights on the metrics both companies can be
+  # scored on; below this there is no valuation comparison for the pair.
+  minimum_common_metric_weight_coverage: 0.50
+
+staleness:
+  # Peer fundamentals: STALE_DATA when the confidence.yaml freshness score of
+  # the dataset period end is below this (positions use the same rule through
+  # data/confidence). Market data: valuation.yaml max_price_age_days.
+  minimum_fundamental_freshness_score: 100
+
+output:
+  top_metric_differences: 3

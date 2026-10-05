@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AS_OF = "2026-10-03"
 
 
-GENERATED_OUTPUT_DIRS = ("data/drift", "data/valuation", "data/decisions", "data/signal_log")
+GENERATED_OUTPUT_DIRS = ("data/drift", "data/valuation", "data/decisions", "data/signal_log", "data/alerts")
 
 
 def repo_copy(tmp_path: Path) -> Path:

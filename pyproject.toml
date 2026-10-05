@@ -19,6 +19,7 @@ cockpit-check-inputs = "portfolio_cockpit.decision_layer.inputs:main"
 cockpit-decide = "portfolio_cockpit.decision_layer.decision:main"
 cockpit-simulate = "portfolio_cockpit.decision_layer.simulator:simulate_main"
 cockpit-evaluate-signals = "portfolio_cockpit.decision_layer.simulator:evaluate_main"
+cockpit-peer-alternatives = "portfolio_cockpit.decision_layer.peer_alternatives:main"
 
 [project.optional-dependencies]
 dev = [
