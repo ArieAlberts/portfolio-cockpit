@@ -1259,9 +1259,9 @@
         "as_of_date": "2025-12-31",
         "retrieved_at": "2026-10-05",
         "source": {
-          "source_type": "SECONDARY_AGGREGATOR",
-          "title": "Barrick FY2025 adjusted EBITDA / current EV-EBITDA history; normalized full-year proxy",
-          "url": "https://stockanalysis.com/stocks/b/financials/ratios/"
+          "source_type": "COMPANY_RESULTS",
+          "title": "Barrick FY2025 results — adjusted EBITDA $11.312bn used as normalized full-year proxy",
+          "url": "https://www.barrick.com/English/news/news-details/2026/q4-2025-results/default.aspx"
         }
       },
       "fcf": {
