@@ -97,7 +97,7 @@ profiles:
         slots:
           free_cash_flow: {weight: 0.45, aliases: [adjusted_free_cash_flow_eur_m, organic_free_cash_flow_eur_m, free_cash_flow_eur_m, free_cash_flow_gbp_m, free_cash_flow_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
           cash_conversion: {weight: 0.30, aliases: [cash_conversion_ratio_pct, cash_conversion_pct], direction: higher_is_better, mode: absolute, full_scale: 15.0, dead_band: 2.0}
-          operating_cash_flow: {weight: 0.25, aliases: [adjusted_operating_cash_flow_eur_m, operating_cash_flow_usd_m, half_year_operating_cash_flow_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
+          operating_cash_flow: {weight: 0.25, aliases: [adjusted_operating_cash_flow_eur_m, operating_cash_flow_usd_m, half_year_operating_cash_flow_usd_m, year_to_date_operating_cash_flow_usd_m], direction: higher_is_better, mode: relative, full_scale: 0.30, dead_band: 0.05}
       growth_stability:
         weight: 0.15
         slots:
