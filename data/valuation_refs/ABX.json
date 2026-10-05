@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "ticker": "ABX",
+  "metrics": {
+    "price_to_nav": {
+      "peers": {
+        "value": 0.9,
+        "as_of_date": "2026-10-02",
+        "method": "midpoint of 0.85x–0.95x consensus mining peer range in supplied research note",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_RESEARCH_NOTE",
+          "title": "Ik wil de data die ik mis aangevuld hebben — consensus mining P/NAV range",
+          "url": null
+        }
+      }
+    },
+    "ev_normalized_ebitda": {
+      "own_history": {
+        "value": 7.58,
+        "as_of_date": "2026-10-02",
+        "method": "median FY2021–FY2025 EV/EBITDA (8.30, 5.91, 7.86, 7.58, 6.59)",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Barrick financial ratios",
+          "url": "https://stockanalysis.com/stocks/b/financials/ratios/"
+        }
+      }
+    },
+    "fcf_yield": {
+      "own_history": {
+        "value": 0.0486,
+        "as_of_date": "2026-10-02",
+        "method": "median FY2021–FY2025 FCF yield (5.26%, 4.86%, 2.03%, 1.43%, 5.75%)",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Barrick financial ratios",
+          "url": "https://stockanalysis.com/stocks/b/financials/ratios/"
+        }
+      }
+    }
+  }
+}

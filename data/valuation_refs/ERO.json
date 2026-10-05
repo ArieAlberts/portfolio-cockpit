@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "ticker": "ERO",
+  "metrics": {
+    "price_to_nav": {
+      "peers": {
+        "value": 0.8,
+        "as_of_date": "2026-10-02",
+        "method": "midpoint of 0.75x–0.85x copper-producer peer range in supplied research note",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_RESEARCH_NOTE",
+          "title": "Ik wil de data die ik mis aangevuld hebben — copper peer P/NAV range",
+          "url": null
+        }
+      }
+    },
+    "ev_normalized_ebitda": {
+      "own_history": {
+        "value": 9.13,
+        "as_of_date": "2026-10-02",
+        "method": "FY2025 EV/EBITDA; older cycle years retained as context but not blended into current Tucumã-era anchor",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Ero Copper financial ratios",
+          "url": "https://stockanalysis.com/quote/tsx/ERO/financials/ratios/"
+        }
+      }
+    },
+    "fcf_yield": {
+      "own_history": {
+        "value": 0.0383,
+        "as_of_date": "2026-10-02",
+        "method": "FY2025 FCF yield derived as inverse of FY2025 P/FCF 26.11; earlier negative-FCF years excluded",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Ero Copper financial ratios",
+          "url": "https://stockanalysis.com/quote/tsx/ERO/financials/ratios/"
+        }
+      }
+    }
+  }
+}

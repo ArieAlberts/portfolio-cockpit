@@ -1,0 +1,57 @@
+{
+  "baseline_version": 1,
+  "ticker": "POWL",
+  "company_name": "Powell Industries, Inc.",
+  "portfolio_weight_pct": 5,
+  "portfolio_role": "GROWTH",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-10-05",
+  "reporting_period_end": "2026-06-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_COVERAGE_EXPANSION",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_10_Q",
+    "title": "Powell Industries fiscal Q3 2026 Form 10-Q",
+    "publication_date": "2026-08-04",
+    "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "gross_profit_usd_m": 95,
+      "gross_margin_pct": 30.6,
+      "net_income_usd_m": 52.2
+    },
+    "growth_stability": {
+      "revenue_usd_m": 312,
+      "revenue_growth_pct": 9,
+      "new_orders_usd_m": 934,
+      "backlog_usd_bn": 2.4,
+      "backlog_growth_vs_march_pct": 35
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 1.42
+    },
+    "balance_sheet": {
+      "cash_usd_m": 633.561
+    },
+    "cashflow_quality": {
+      "year_to_date_operating_cash_flow_usd_m": 195.038
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift.",
+    "Added $633.561m cash and $195.038m nine-month YTD operating cash flow from the fiscal Q3 2026 10-Q.",
+    "Coverage expansion only: strategic base target is unchanged; existing baseline metrics are preserved."
+  ],
+  "rebaseline_of": "data/baselines/POWL/2026-08-03.json",
+  "rebaseline_reason": "Expand active baseline profile coverage with primary-source balance-sheet and cash-flow metrics; no strategic target change.",
+  "base_target_weight_pct": 5
+}

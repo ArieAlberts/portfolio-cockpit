@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "ticker": "TMDX",
+  "metrics": {
+    "forward_pe": {
+      "own_history": {
+        "value": 52.05,
+        "as_of_date": "2026-10-02",
+        "method": "median of positive FY2024–FY2025 forward P/E (56.70, 47.40)",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — TransMedics financial ratios",
+          "url": "https://stockanalysis.com/stocks/tmdx/financials/ratios/"
+        }
+      }
+    },
+    "ev_ebit": {
+      "own_history": {
+        "value": 49.8,
+        "as_of_date": "2026-10-02",
+        "method": "median of positive FY2024–FY2025 EV/EBIT (60.82, 38.78)",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — TransMedics financial ratios",
+          "url": "https://stockanalysis.com/stocks/tmdx/financials/ratios/"
+        }
+      }
+    },
+    "fcf_yield": {
+      "own_history": {
+        "value": 0.032134,
+        "as_of_date": "2026-10-02",
+        "method": "FY2025 FCF yield derived as inverse of P/FCF 31.12; earlier years with negative/absent FCF excluded",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — TransMedics financial ratios",
+          "url": "https://stockanalysis.com/stocks/tmdx/financials/ratios/"
+        }
+      }
+    }
+  }
+}
