@@ -404,5 +404,9 @@ def test_dashboard_section_and_badges():
 def test_dashboard_without_alerts_says_so():
     from portfolio_cockpit.decision_layer import dashboard
 
-    html = dashboard.render(dashboard.collect(ROOT))
+    data = dashboard.collect(ROOT)
+    data["peer_alternatives"] = {**data["peer_alternatives"], "alerts": []}
+    for row in data["rows"]:
+        row["peer_alerts"] = []
+    html = dashboard.render(data)
     assert "Peer-alternatieven" in html and "No peer alternatives flagged." in html
