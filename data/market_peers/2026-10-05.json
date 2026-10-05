@@ -1,0 +1,755 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-05",
+  "tickers": {
+    "LECO": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 22.97,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/leco/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 20.33,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/leco/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.03627131,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/leco/statistics/"
+          }
+        }
+      }
+    },
+    "MCO": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 24.81,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/mco/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 21.9,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/mco/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.03881988,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/mco/statistics/"
+          }
+        }
+      }
+    },
+    "SPGI": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 20.45,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/spgi/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 18.09,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/spgi/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.04894763,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/spgi/statistics/"
+          }
+        }
+      }
+    },
+    "RELX.L": {
+      "currency": "GBP",
+      "multiples": {
+        "forward_pe": {
+          "value": 16.88,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/lon/REL/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 16.86,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/lon/REL/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.06501951,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/lon/REL/statistics/"
+          }
+        }
+      }
+    },
+    "TRI.TO": {
+      "currency": "CAD",
+      "multiples": {
+        "forward_pe": {
+          "value": 20.58,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/tsx/TRI/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 21.27,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/tsx/TRI/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.05252101,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/tsx/TRI/statistics/"
+          }
+        }
+      }
+    },
+    "VRSK": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 20.05,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/vrsk/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 18.02,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/vrsk/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.05797101,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/vrsk/statistics/"
+          }
+        }
+      }
+    },
+    "FDS": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 13.55,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/fds/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 15.34,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/fds/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.07479432,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/fds/statistics/"
+          }
+        }
+      }
+    },
+    "MKSI": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 17.75,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/mksi/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 31.44,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/mksi/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.024108,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/mksi/statistics/"
+          }
+        }
+      }
+    },
+    "DD": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 17.16,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/dd/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 19.93,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/dd/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.0487567,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/dd/statistics/"
+          }
+        }
+      }
+    },
+    "ENTG": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 37.05,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/entg/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 51.39,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/entg/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.0226142,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/entg/statistics/"
+          }
+        }
+      }
+    },
+    "DOV": {
+      "currency": "USD",
+      "multiples": {
+        "ev_ebit": {
+          "value": 17.83,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/dov/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.04587156,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/dov/statistics/"
+          }
+        }
+      }
+    },
+    "ITW": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 22.35,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/itw/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 19,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/itw/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.03901678,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/itw/statistics/"
+          }
+        }
+      }
+    },
+    "ESAB": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 11.8,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/esab/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 15.16,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/esab/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.04524887,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/esab/statistics/"
+          }
+        }
+      }
+    },
+    "SWK": {
+      "currency": "USD",
+      "multiples": {
+        "forward_pe": {
+          "value": 15.67,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_forward_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/swk/statistics/"
+          }
+        },
+        "ev_ebit": {
+          "value": 14.22,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_ev_ebit",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/swk/statistics/"
+          }
+        },
+        "fcf_yield": {
+          "value": 0.09345794,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "inverse_of_reported_p_fcf",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/swk/statistics/"
+          }
+        }
+      }
+    },
+    "HRTG": {
+      "currency": "USD",
+      "multiples": {
+        "pe": {
+          "value": 4.85,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/hrtg/statistics/"
+          }
+        },
+        "price_to_book": {
+          "value": 1.73,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_price_to_book",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/hrtg/statistics/"
+          }
+        },
+        "shareholder_yield": {
+          "value": 0.004,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_shareholder_yield",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/hrtg/statistics/"
+          }
+        }
+      }
+    },
+    "KNSL": {
+      "currency": "USD",
+      "multiples": {
+        "pe": {
+          "value": 13.38,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/knsl/statistics/"
+          }
+        },
+        "price_to_book": {
+          "value": 3.69,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_price_to_book",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/knsl/statistics/"
+          }
+        },
+        "shareholder_yield": {
+          "value": 0.0136,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_shareholder_yield",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/knsl/statistics/"
+          }
+        }
+      }
+    },
+    "HCI": {
+      "currency": "USD",
+      "multiples": {
+        "pe": {
+          "value": 7.94,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/hci/statistics/"
+          }
+        },
+        "price_to_book": {
+          "value": 2.13,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_price_to_book",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/hci/statistics/"
+          }
+        },
+        "shareholder_yield": {
+          "value": -0.041,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_shareholder_yield",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/hci/statistics/"
+          }
+        }
+      }
+    },
+    "RLI": {
+      "currency": "USD",
+      "multiples": {
+        "pe": {
+          "value": 11.75,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/rli/statistics/"
+          }
+        },
+        "price_to_book": {
+          "value": 2.93,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_price_to_book",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/rli/statistics/"
+          }
+        },
+        "shareholder_yield": {
+          "value": 0.0874,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_shareholder_yield",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/stocks/rli/statistics/"
+          }
+        }
+      }
+    },
+    "NN.AS": {
+      "currency": "EUR",
+      "multiples": {
+        "pe": {
+          "value": 11.29,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/ams/NN/statistics/"
+          }
+        },
+        "price_to_book": {
+          "value": 0.94,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_price_to_book",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/ams/NN/statistics/"
+          }
+        },
+        "shareholder_yield": {
+          "value": 0.0717,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_shareholder_yield",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/ams/NN/statistics/"
+          }
+        }
+      }
+    },
+    "AGS.BR": {
+      "currency": "EUR",
+      "multiples": {
+        "pe": {
+          "value": 7.58,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_pe",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/ebr/AGS/statistics/"
+          }
+        },
+        "price_to_book": {
+          "value": 1.33,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_price_to_book",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/ebr/AGS/statistics/"
+          }
+        },
+        "shareholder_yield": {
+          "value": -0.0025,
+          "as_of_date": "2026-10-02",
+          "retrieved_at": "2026-10-05",
+          "method": "reported_shareholder_yield",
+          "source": {
+            "source_type": "SECONDARY_AGGREGATOR",
+            "title": "StockAnalysis.com statistics; underlying data: S&P Global Market Intelligence",
+            "url": "https://stockanalysis.com/quote/ebr/AGS/statistics/"
+          }
+        }
+      }
+    }
+  }
+}
