@@ -1,0 +1,59 @@
+{
+  "baseline_version": 1,
+  "ticker": "MSM",
+  "company_name": "MSC Industrial Direct Co., Inc.",
+  "portfolio_weight_pct": 0,
+  "portfolio_role": "EXIT",
+  "company_type": "GENERAL_OPERATING_COMPANY",
+  "baseline_date": "2026-10-05",
+  "reporting_period_end": "2026-05-30",
+  "baseline_status": "VALIDATED_PRIMARY_SOURCE_COVERAGE_EXPANSION",
+  "quality_drift_score": 50,
+  "fundamental_quality_score": null,
+  "fundamental_quality_status": "PENDING_PEER_NORMALIZATION",
+  "valuation_score": null,
+  "valuation_status": "SEPARATE_MARKET_PRICE_MODEL",
+  "data_confidence_score": null,
+  "data_confidence_status": "PENDING_CONFIDENCE_ENGINE",
+  "source": {
+    "source_type": "SEC_10_Q",
+    "title": "MSC Industrial Direct fiscal Q3 2026 Form 10-Q",
+    "publication_date": "2026-07-01",
+    "url": "https://www.sec.gov/Archives/edgar/data/1003078/000100307826000080/msm-20260530.htm"
+  },
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "operating_income_usd_m": 106.7,
+      "operating_margin_pct": 10.2,
+      "adjusted_operating_margin_pct": 10.6,
+      "gross_margin_pct": 41.1
+    },
+    "growth_stability": {
+      "net_sales_usd_m": 1047.1,
+      "net_sales_growth_pct": 7.8
+    },
+    "value_per_share": {
+      "diluted_eps_usd": 1.44,
+      "adjusted_diluted_eps_usd": 1.43
+    },
+    "guidance": {
+      "full_year_free_cash_flow_conversion_pct": 95
+    },
+    "balance_sheet": {
+      "cash_usd_m": 74.094
+    },
+    "cashflow_quality": {
+      "year_to_date_operating_cash_flow_usd_m": 225.535
+    }
+  },
+  "notes": [
+    "Quality Drift starts at exactly 50.0 on this first validated fundamental snapshot.",
+    "No absolute Fundamental Quality score is assigned until the relevant peer universe and normalization are validated.",
+    "Daily market-price movement must not change this baseline or Quality Drift.",
+    "Added $74.094m cash and $225.535m 39-week YTD operating cash flow from the fiscal Q3 2026 10-Q.",
+    "Coverage expansion only: strategic base target is unchanged; existing baseline metrics are preserved."
+  ],
+  "rebaseline_of": "data/baselines/MSM/2026-07-01.json",
+  "rebaseline_reason": "Expand active baseline profile coverage with primary-source balance-sheet and cash-flow metrics; no strategic target change.",
+  "base_target_weight_pct": 0
+}
