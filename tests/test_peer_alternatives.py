@@ -376,3 +376,33 @@ def test_repo_run_is_analysis_only():
     payload = pa.build_peer_alternatives_snapshot(root=ROOT, as_of="2026-10-05")
     assert payload["execution_effect"] == "NONE"
     assert payload["summary"]["peers_evaluated"] > 0
+
+
+# ---------------------------------------------------------------- dashboard
+
+
+def test_dashboard_section_and_badges():
+    from portfolio_cockpit.decision_layer import dashboard
+
+    data = dashboard.collect(ROOT)
+    base = {"top_metric_differences": [{"axis": "valuation", "metric": "pe", "difference_points": 25.0}],
+            "position_fundamental_quality": 66.1, "peer_fundamental_quality": 80.0,
+            "position_comparison_valuation": 50.0, "peer_comparison_valuation": 75.0,
+            "basis": pa.BASIS_FULL, "first_seen": AS_OF, "execution_effect": "NONE"}
+    alerts = [{**base, "position": "ASR", "peer": "NN.AS", "type": pa.BETTER, "status": pa.ACTIVE},
+              {**base, "position": "EMN", "peer": "CE", "type": pa.CHEAPER, "status": pa.CANDIDATE}]
+    data["peer_alternatives"] = {**data["peer_alternatives"], "alerts": alerts}
+    for row in data["rows"]:
+        row["peer_alerts"] = [a for a in alerts if a["position"] == row["ticker"]]
+    html = dashboard.render(data)
+    assert html.index("Peer-alternatieven") < html.index("Drill-down per ticker")
+    assert '<tr class=pa-active><td>ACTIVE</td>' in html
+    assert '<tr class=pa-cand><td>CANDIDATE</td>' in html
+    assert 'class="badge pa-active"' in html and 'class="badge pa-cand"' in html
+
+
+def test_dashboard_without_alerts_says_so():
+    from portfolio_cockpit.decision_layer import dashboard
+
+    html = dashboard.render(dashboard.collect(ROOT))
+    assert "Peer-alternatieven" in html and "No peer alternatives flagged." in html

@@ -21,6 +21,7 @@ from .config import load_decision_config, missing_owner_inputs
 from .decision import _fq_for, _fundamental_quality
 from .drift import build_drift_snapshot
 from .io import read_current
+from .peer_alternatives import ACTIVE, build_peer_alternatives_snapshot, read_current_alerts
 from .risk import impact_pp
 from .valuation import build_valuation_snapshot
 from .warnings import contract_warnings, load_target_confidence
@@ -93,6 +94,10 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
     decisions = found[1] if found else None
     _, fq_snapshot = _fundamental_quality(root)
     _, confidence = load_target_confidence(root)
+    peer_alternatives = read_current_alerts(root)
+    peer_alternatives_written = peer_alternatives is not None
+    if peer_alternatives is None:
+        peer_alternatives = build_peer_alternatives_snapshot(root=root, as_of=as_of)
 
     owner_missing = missing_owner_inputs(cfg)
     positions = cfg["positions"]["positions"]
@@ -143,6 +148,7 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
                 "confidence": c,
                 "thesis": thesis[ticker],
                 "decision": decision,
+                "peer_alerts": [a for a in peer_alternatives["alerts"] if a["position"] == ticker],
                 "warnings": warnings,
                 "history": {k: h.get(ticker, []) for k, h in history.items()},
             }
@@ -158,6 +164,8 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
         "impact_label": cfg["risk_scenarios"]["standard_label"],
         "portfolio_risk": (decisions or {}).get("portfolio_risk"),
         "account_snapshot": account_snapshot,
+        "peer_alternatives": peer_alternatives,
+        "peer_alternatives_written": peer_alternatives_written,
         "rows": rows,
     }
 
@@ -243,7 +251,7 @@ def _row(r: dict[str, Any]) -> str:
     return (
         "<tr>"
         f'<td><a href="#t-{_esc(r["ticker"])}"><b>{_esc(r["ticker"])}</b></a>'
-        f'<div class=small>{_esc(r["company"])}</div></td>'
+        f'<div class=small>{_esc(r["company"])}</div>{_peer_badge(r.get("peer_alerts") or [])}</td>'
         f"<td class=num>{_fmt(r['base_target_weight_pct'], 1, '%')}</td>"
         f"<td class=num>{_adjusted_cell(decision)}</td>"
         f"<td class=num>{_fmt(r['current_weight_pct'], 1, '%')}</td>"
@@ -261,6 +269,55 @@ def _row(r: dict[str, Any]) -> str:
         f"<td>{_esc(v.get('price_as_of') or '—')}</td>"
         f"<td>{_warning_cell(r['warnings'])}</td>"
         "</tr>"
+    )
+
+
+def _peer_badge(alerts: list[dict[str, Any]]) -> str:
+    if not alerts:
+        return ""
+    active = any(a["status"] == ACTIVE for a in alerts)
+    tip = _esc("; ".join(f"{a['peer']}: {a['type']} ({a['status']})" for a in alerts))
+    cls = "pa-active" if active else "pa-cand"
+    return f'<a href="#peer-alternatives" class="badge {cls}" title="{tip}">peer-alt ×{len(alerts)}</a>'
+
+
+def _peer_alternatives(data: dict[str, Any]) -> str:
+    snap = data.get("peer_alternatives") or {}
+    alerts = snap.get("alerts") or []
+    summary = snap.get("summary") or {}
+    note = (
+        f"As of {_esc(snap.get('as_of'))}"
+        + ("" if data.get("peer_alternatives_written") else " (computed in memory, not written)")
+        + f" · peers evaluated {summary.get('peers_evaluated', 0)}"
+        + f" · with Fundamental Quality {summary.get('peers_with_fundamental_quality', 0)}"
+        + f" · with market data {summary.get('peers_with_market_data', 0)}"
+        + " · ACTIVE after 2 consecutive weekly runs, otherwise CANDIDATE · analysis only, execution effect NONE"
+    )
+    head = f'<h2 id="peer-alternatives">Peer-alternatieven</h2><p class=small>{note}</p>'
+    if not alerts:
+        return head + "<p class=small>No peer alternatives flagged.</p>"
+    rows = []
+    for a in alerts:
+        cls = "pa-active" if a["status"] == ACTIVE else "pa-cand"
+        diffs = "<br>".join(
+            f"{_esc(d['axis'])} {_esc(d['metric'])}: {_signed(d['difference_points'], 1)}"
+            for d in a["top_metric_differences"]
+        )
+        rows.append(
+            f"<tr class={cls}><td>{_esc(a['status'])}</td>"
+            f'<td><a href="#t-{_esc(a["position"])}">{_esc(a["position"])}</a></td><td>{_esc(a["peer"])}</td>'
+            f"<td>{_esc(a['type'])}<div class=small>{_esc(a['basis'])}</div></td>"
+            f"<td class=num>{_fmt(a['position_fundamental_quality'], 1)} → {_fmt(a['peer_fundamental_quality'], 1)}</td>"
+            f"<td class=num>{_fmt(a['position_comparison_valuation'], 1)} → {_fmt(a['peer_comparison_valuation'], 1)}</td>"
+            f"<td class=small>{diffs}</td><td>{_esc(a['first_seen'])}</td></tr>"
+        )
+    return (
+        head
+        + "<div class=wrap><table class=inner><tr><th>Status</th><th>Position</th><th>Peer</th><th>Type</th>"
+        "<th>Fundamental Quality (position → peer)</th><th>Valuation vs peer median (position → peer)</th>"
+        "<th>Largest metric differences (points)</th><th>First seen</th></tr>"
+        + "".join(rows)
+        + "</table></div>"
     )
 
 
@@ -485,7 +542,9 @@ h3.hq{color:var(--q)}h3.hv{color:var(--v)}
 .state{font-weight:700;font-size:12px;padding:2px 6px;border-radius:4px;border:1px solid var(--line)}
 .s-add{color:var(--pos)}.s-reduce,.s-thesis{color:var(--neg)}.s-check{color:var(--warn)}
 details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:6px 0}
-summary{cursor:pointer}table.inner td,table.inner th{font-size:12px}
+summary{cursor:pointer}
+.badge{display:inline-block;margin-top:2px;font-size:11px;padding:0 5px;border-radius:4px;border:1px solid var(--line);text-decoration:none}
+tr.pa-active td,.badge.pa-active{font-weight:700}tr.pa-cand td,.badge.pa-cand{color:var(--muted)}table.inner td,table.inner th{font-size:12px}
 """
 
 
@@ -512,6 +571,7 @@ def render(data: dict[str, Any], title: str = "Portfolio Cockpit") -> str:
         f"{_account_summary(data)}"
         f"<div class=wrap><table class=main>{head}{body}</table></div>"
         f"{_scenarios(data)}"
+        f"{_peer_alternatives(data)}"
         f"<h2>Drill-down per ticker</h2>{details}"
         "</main></body></html>\n"
     )
