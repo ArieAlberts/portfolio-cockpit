@@ -39,9 +39,9 @@ companies:
     baseline_date: "2026-08-05"
     stale_after_days: 220
     sources:
-      - id: official_investors
+      - id: regulated_news
         mode: HTML_PAGE
-        url: https://www.wolterskluwer.com/en/investors
+        url: https://live.euronext.com/en/product/equities/NL0000395903-XAMS
 
   CAP.PA:
     company_name: Capgemini SE
