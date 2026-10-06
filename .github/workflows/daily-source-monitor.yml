@@ -6,6 +6,8 @@ on:
       - ".github/workflows/daily-source-monitor.yml"
       - "config/source_registry.yaml"
       - "config/peer_monitoring.yaml"
+      - "scripts/monitor_sources.py"
+      - "scripts/monitor_peer_sources.py"
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
