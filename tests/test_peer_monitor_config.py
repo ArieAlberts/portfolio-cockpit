@@ -13,6 +13,9 @@ def test_peer_universe_method_matches_scoring_method():
 
 def test_verified_non_us_discovery_overrides_exist():
     cfg=yaml.safe_load((ROOT/"config/peer_monitoring.yaml").read_text(encoding="utf-8"))
-    required={"AGS.BR","ARK.PA","AZE.BR","BNR.DE","CS.TO","GIB.A.TO","HEN3.DE","IMI.L","IVN.TO","JD.L","KAP.L","LUN.TO","METSO.HE","SBRE.L","SIKA.SW","SOP.PA"}
+    required_high={"AGS.BR","ARK.PA","AZE.BR","BNR.DE","CS.TO","GIB.A.TO","HEN3.DE","IVN.TO","JD.L","KAP.L","LUN.TO","METSO.HE","SBRE.L","SIKA.SW","SOP.PA"}
+    required_fallback={"IMI.L"}
+    required=required_high | required_fallback
     assert required <= set(cfg["discovery_overrides"])
-    assert all(cfg["discovery_overrides"][ticker]["source_quality"]=="HIGH" for ticker in required)
+    assert all(cfg["discovery_overrides"][ticker]["source_quality"]=="HIGH" for ticker in required_high)
+    assert all(cfg["discovery_overrides"][ticker]["source_quality"]=="FALLBACK_STATIC_OR_IR_PAGE" for ticker in required_fallback)
