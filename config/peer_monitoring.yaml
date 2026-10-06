@@ -37,7 +37,7 @@ discovery_overrides:
     source_quality: HIGH
   ETN:
     mode: HTML_PAGE
-    url: https://www.eaton.com/us/en-us/company/investor-relations.html
+    url: https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026.html
     source_quality: HIGH
   FM.TO:
     mode: HTML_PAGE
@@ -49,7 +49,7 @@ discovery_overrides:
     source_quality: HIGH
   INFY:
     mode: HTML_PAGE
-    url: https://www.infosys.com/investors/reports-filings/
+    url: https://www.nseindia.com/companies-listing/corporate-filings-financial-results?symbol=INFY&tabIndex=equity
     source_quality: HIGH
   INSP:
     mode: HTML_PAGE
@@ -85,7 +85,7 @@ discovery_overrides:
     source_quality: HIGH
   AGS.BR:
     mode: HTML_PAGE
-    url: https://www.ageas.com/investors/financial-results
+    url: https://live.euronext.com/en/product/equities/BE0974264930-XBRU
     source_quality: HIGH
   SAMPO.HE:
     mode: HTML_PAGE
@@ -125,7 +125,7 @@ discovery_overrides:
     source_quality: HIGH
   IMI.L:
     mode: HTML_PAGE
-    url: https://www.imiplc.com/investors/
+    url: https://www.londonstockexchange.com/stock/IMI/imi-plc/analysis
     source_quality: HIGH
   IVN.TO:
     mode: HTML_PAGE
