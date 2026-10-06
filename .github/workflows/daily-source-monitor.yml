@@ -53,12 +53,20 @@ jobs:
       - name: Commit monitoring state and review events
         shell: bash
         run: |
-          if git diff --quiet -- data/monitoring data/source_events data/peer_source_events; then
+          paths=(data/monitoring)
+          for path in data/source_events data/peer_source_events; do
+            if [ -e "$path" ]; then
+              paths+=("$path")
+            fi
+          done
+
+          git add -A -- "${paths[@]}"
+
+          if git diff --cached --quiet; then
             echo "No monitoring-state changes."
           else
             git config user.name "portfolio-cockpit-bot"
             git config user.email "actions@users.noreply.github.com"
-            git add data/monitoring data/source_events data/peer_source_events
             git commit -m "chore: update target and peer source state"
             git pull --rebase origin main
             git push origin HEAD:main
