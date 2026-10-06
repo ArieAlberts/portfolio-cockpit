@@ -387,7 +387,7 @@
       "dependent_targets": [
         "ROR.L"
       ],
-      "etag": "\"653c43c3c9eb8408d85b50a6720c4ab2\"",
+      "etag": "\"9e24801c6b0c349a464d9e6173bb03c4\"",
       "fingerprint": "2d87c3f10d908f82423a30a87d63fd7dce2400b4cd240d8a1a079c10f9a511df",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:51:04Z",
@@ -398,7 +398,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 36,
         "selected_link_count": 4,
-        "visible_text_chars": 1984
+        "visible_text_chars": 2120
       },
       "url": "https://investors.craneco.com/news/default.aspx"
     },
@@ -865,7 +865,7 @@
       ],
       "etag": null,
       "fingerprint": "4f1923145334b0d0e286a29fff355e583e57e7f5fcef97e36c3e085d606a4312",
-      "last_modified": "Tue, 06 Oct 2026 10:56:04 GMT",
+      "last_modified": "Tue, 06 Oct 2026 11:58:25 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "HRTG",
@@ -1130,9 +1130,9 @@
         "ERO"
       ],
       "etag": null,
-      "fingerprint": "6ad721f3a19661efd051d512d09f772f22e343c1969e9a0b12668616e3d1f048",
+      "fingerprint": "2100ff771e8e29824aa325693153fb1c39953a2bb732923dd47a21093d5e93d6",
       "last_modified": null,
-      "last_observed_change_at": "2026-10-06T11:39:04Z",
+      "last_observed_change_at": "2026-10-06T12:00:36Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LUN.TO",
       "source_quality": "HIGH",
@@ -1262,9 +1262,9 @@
       "dependent_targets": [
         "OKLO"
       ],
-      "etag": "\"1791102049\"",
+      "etag": "\"1791093196\"",
       "fingerprint": "6aa3084a95cfceb962bc172f6f71eaa3923af31eb6ec10dfe828d54b081c6a49",
-      "last_modified": "Sun, 04 Oct 2026 08:20:49 GMT",
+      "last_modified": "Sun, 04 Oct 2026 05:53:16 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "NNE",
@@ -1455,7 +1455,7 @@
       ],
       "etag": null,
       "fingerprint": "c7ac41541520a56903fa2975fc227753e2342f2d90bbad56708ad0d84881823d",
-      "last_modified": "Tue, 06 Oct 2026 11:48:53 GMT",
+      "last_modified": "Tue, 06 Oct 2026 11:57:37 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SIKA.SW",
@@ -1757,9 +1757,9 @@
       "dependent_targets": [
         "EMN"
       ],
-      "etag": "\"1791115969\"",
+      "etag": "\"1791092337\"",
       "fingerprint": "2b4120ceee082ada0d24b3b6f9195c2dbd116fdf560da09cc6aa2a009d4bf981",
-      "last_modified": "Sun, 04 Oct 2026 12:12:49 GMT",
+      "last_modified": "Sun, 04 Oct 2026 05:38:57 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "WLK",

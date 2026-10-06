@@ -13,7 +13,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -47,7 +47,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": [
@@ -67,7 +67,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": []
@@ -85,7 +85,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": []
@@ -103,7 +103,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": []
@@ -121,7 +121,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -148,7 +148,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -168,6 +168,8 @@
       "fundamental_status": "CURRENT",
       "last_event_path": null,
       "last_source_change_at": null,
+      "peer_review_required": true,
+      "peer_status": "PEER_UPDATE_DETECTED",
       "review_required": false,
       "source_health": {
         "official_results": {
@@ -175,7 +177,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -202,7 +204,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -229,7 +231,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -256,7 +258,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": []
@@ -274,7 +276,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -301,7 +303,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -318,17 +320,17 @@
     "MSM": {
       "baseline_age_days": 97,
       "data_age_status": "CURRENT",
-      "fundamental_status": "CURRENT",
-      "last_event_path": null,
-      "last_source_change_at": null,
-      "review_required": false,
+      "fundamental_status": "NEW_DATA_DETECTED",
+      "last_event_path": "data/source_events/MSM/official_results/49f278f6c9495a6369e8.json",
+      "last_source_change_at": "2026-10-06T12:00:22Z",
+      "review_required": true,
       "source_health": {
         "official_results": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -355,7 +357,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -382,7 +384,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -409,7 +411,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -436,7 +438,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": []
@@ -454,7 +456,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -481,7 +483,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -508,7 +510,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -525,7 +527,7 @@
     "WKL": {
       "baseline_age_days": 62,
       "data_age_status": "CURRENT",
-      "fundamental_status": "SOURCE_ERROR",
+      "fundamental_status": "CURRENT",
       "last_event_path": null,
       "last_source_change_at": null,
       "review_required": false,
@@ -543,6 +545,13 @@
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
           "last_error_at": "2026-10-06T11:38:58Z",
           "last_success_at": null
+        },
+        "regulated_news": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T12:00:22Z"
         }
       },
       "warnings": [
@@ -563,7 +572,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-06T11:50:46Z"
+          "last_success_at": "2026-10-06T12:00:22Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",

@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-10-06T12:00:22Z",
+  "event_id": "49f278f6c9495a6369e8",
+  "execution_effect": "NONE",
+  "new_fingerprint": "b8947db60db0d97114ceee1efc6b52cb93ddbe35182a464cbd33a2742c33940d",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 56,
+    "selected_link_count": 5,
+    "visible_text_chars": 1687
+  },
+  "old_fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 0,
+    "selected_link_count": 0,
+    "visible_text_chars": 17853
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "MSM",
+  "url": "https://investor.mscdirect.com/quarterly-results"
+}
