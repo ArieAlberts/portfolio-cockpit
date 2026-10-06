@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - ".github/workflows/daily-source-monitor.yml"
+      - "config/source_registry.yaml"
+      - "config/peer_monitoring.yaml"
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
