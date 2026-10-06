@@ -15,17 +15,77 @@ defaults:
 # Durable official discovery pages for non-US peers where SEC resolution is
 # unavailable or ticker suffixes make issuer discovery less reliable.
 discovery_overrides:
+  CLN.SW:
+    mode: HTML_PAGE
+    url: https://www.clariant.com/en/Investors/Results-Reports-and-Publications
+    source_quality: HIGH
+  CR:
+    mode: HTML_PAGE
+    url: https://investors.craneco.com/news/default.aspx
+    source_quality: HIGH
+  DOV:
+    mode: HTML_PAGE
+    url: https://investors.dovercorporation.com/quarterly-and-other-reports/
+    source_quality: HIGH
+  DXCM:
+    mode: HTML_PAGE
+    url: https://investors.dexcom.com/overview/
+    source_quality: HIGH
+  ESAB:
+    mode: HTML_PAGE
+    url: https://investors.esabcorporation.com/overview/default.aspx
+    source_quality: HIGH
+  ETN:
+    mode: HTML_PAGE
+    url: https://www.eaton.com/us/en-us/company/investor-relations.html
+    source_quality: HIGH
+  FM.TO:
+    mode: HTML_PAGE
+    url: https://www.first-quantum.com/investors/results-and-reports/
+    source_quality: HIGH
+  HCI:
+    mode: HTML_PAGE
+    url: https://investors.hcigroup.com/
+    source_quality: HIGH
+  INFY:
+    mode: HTML_PAGE
+    url: https://www.infosys.com/investors/reports-filings/
+    source_quality: HIGH
+  INSP:
+    mode: HTML_PAGE
+    url: https://investors.inspiresleep.com/overview/
+    source_quality: HIGH
+  MCO:
+    mode: HTML_PAGE
+    url: https://ir.moodys.com/investor-relations/
+    source_quality: HIGH
+  NVT:
+    mode: HTML_PAGE
+    url: https://investors.nvent.com/investor-relations/default.aspx
+    source_quality: HIGH
+  SPGI:
+    mode: HTML_PAGE
+    url: https://investor.spglobal.com/quarterly-earnings/
+    source_quality: HIGH
+  SY1.DE:
+    mode: HTML_PAGE
+    url: https://www.symrise.com/investors/financial-results/
+    source_quality: HIGH
+  WCH.DE:
+    mode: HTML_PAGE
+    url: https://reports.wacker.com/
+    source_quality: FALLBACK_STATIC_OR_IR_PAGE
   RELX.L:
     mode: HTML_PAGE
     url: https://www.relx.com/investors/results
     source_quality: HIGH
   NN.AS:
     mode: HTML_PAGE
-    url: https://www.nn-group.com/investors/financial-reports/
+    url: https://www.nn-group.com/investors/financial-results
     source_quality: HIGH
   AGS.BR:
     mode: HTML_PAGE
-    url: https://www.ageas.com/en/investors/financial-results
+    url: https://www.ageas.com/investors/financial-results
     source_quality: HIGH
   SAMPO.HE:
     mode: HTML_PAGE
@@ -33,7 +93,7 @@ discovery_overrides:
     source_quality: HIGH
   AV.L:
     mode: HTML_PAGE
-    url: https://www.aviva.com/investors/results-reports-and-events/
+    url: https://www.aviva.com/investors/strategy-and-performance-overview/results-presentations-reports/
     source_quality: HIGH
   ZURN.SW:
     mode: HTML_PAGE
@@ -65,7 +125,7 @@ discovery_overrides:
     source_quality: HIGH
   IMI.L:
     mode: HTML_PAGE
-    url: https://www.imiplc.com/en/investors/results-reports-presentations/
+    url: https://www.imiplc.com/investors/
     source_quality: HIGH
   IVN.TO:
     mode: HTML_PAGE
