@@ -76,6 +76,22 @@ def main() -> int:
             },
         )
         ticker_status.setdefault("source_health", {})
+        active_source_ids = {source["id"] for source in company["sources"]}
+        # Drop health entries and warnings for source IDs no longer configured.
+        ticker_status["source_health"] = {
+            source_id: health
+            for source_id, health in ticker_status["source_health"].items()
+            if source_id in active_source_ids
+        }
+        ticker_status["warnings"] = [
+            warning
+            for warning in ticker_status.get("warnings", [])
+            if not (
+                ": " in warning
+                and warning.split(": ", 1)[0] not in active_source_ids
+                and warning != "BASELINE_OLDER_THAN_STALE_THRESHOLD"
+            )
+        ]
 
         baseline_age = (now.date() - date.fromisoformat(company["baseline_date"])).days
         is_stale = baseline_age > int(company["stale_after_days"])
@@ -113,6 +129,12 @@ def main() -> int:
                 ticker_status["source_health"][source_id] = source_health_success(
                     prior_health, observed_at
                 )
+                warning_prefix = f"{source_id}: "
+                ticker_status["warnings"] = [
+                    warning
+                    for warning in ticker_status.get("warnings", [])
+                    if not warning.startswith(warning_prefix)
+                ]
             except Exception as exc:
                 errors += 1
                 error_text = f"{type(exc).__name__}: {exc}"
@@ -185,6 +207,18 @@ def main() -> int:
                 ticker_status["last_event_path"] = str(path.relative_to(ROOT))
 
             state["sources"][key] = current
+
+        active_errors = any(
+            health.get("last_error")
+            for source_id, health in ticker_status["source_health"].items()
+            if source_id in active_source_ids
+        )
+        if (
+            not active_errors
+            and ticker_status["fundamental_status"] in {"SOURCE_ERROR", "SOURCE_DEGRADED"}
+        ):
+            ticker_status["fundamental_status"] = "STALE_DATA" if is_stale else "CURRENT"
+            ticker_status["review_required"] = is_stale
 
     dump_if_changed(state_path, state)
     dump_if_changed(status_path, status)
