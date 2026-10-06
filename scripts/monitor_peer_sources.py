@@ -91,6 +91,7 @@ def main() -> int:
     observations = 0
     errors = 0
     changes = 0
+    failed_sources: list[dict[str, str]] = []
 
     for spec in specs:
         peer_status = status["peers"].setdefault(
@@ -133,6 +134,11 @@ def main() -> int:
         except Exception as exc:
             errors += 1
             error_text = f"{type(exc).__name__}: {exc}"
+            failed_sources.append({
+                "peer_ticker": spec.peer_ticker,
+                "url": spec.url,
+                "error": error_text,
+            })
             health = source_health_failure(
                 prior_health,
                 observed_at=observed_at,
@@ -251,6 +257,7 @@ def main() -> int:
         "peer_sources": len(specs),
         "successful_source_observations": observations,
         "source_errors": errors,
+        "failed_sources": failed_sources,
         "peer_source_changes": changes,
     }, indent=2))
 
