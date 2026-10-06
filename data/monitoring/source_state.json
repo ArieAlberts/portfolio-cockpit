@@ -1,6 +1,38 @@
 {
   "schema_version": 1,
   "sources": {
+    "ABX:official_results": {
+      "etag": "\"38848ace860e76f3b6b64f3e388ed2bc\"",
+      "fingerprint": "3f8bfbf931a72b44d384dd240b2bebdd827f614422a8713a70813f0ec85a1863",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 45,
+        "selected_link_count": 4,
+        "visible_text_chars": 2982
+      },
+      "ticker": "ABX",
+      "url": "https://www.barrick.com/English/investors/presentations/default.aspx"
+    },
+    "ADM.L:official_results": {
+      "etag": "\"1791208313\"",
+      "fingerprint": "35a5fce5ae9de5ac8c38c714b30fdc62caf8fb3d6cc9d4c0fa3a10e3ac9d3546",
+      "last_modified": "Mon, 05 Oct 2026 13:51:53 GMT",
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 254,
+        "selected_link_count": 5,
+        "visible_text_chars": 10708
+      },
+      "ticker": "ADM.L",
+      "url": "https://admiralgroup.co.uk/investor-relations/results-reports-and-presentations"
+    },
     "ASR:official_press_releases": {
       "etag": null,
       "fingerprint": "0babf07b8c7d5742560e1028ea1ccbb748979e5f669aad647363e059b6af895c",
@@ -49,6 +81,86 @@
       "ticker": "CRDA.L",
       "url": "https://www.croda.com/en-gb/investors/results-presentations-and-reports"
     },
+    "DKS:official_results": {
+      "etag": "\"afcac75696b57aa8c7700151a3f49d70\"",
+      "fingerprint": "d374d5319175b2a12be95df152ab1bd1d184f92524d2759bfb2f01f9635b378d",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 41,
+        "selected_link_count": 11,
+        "visible_text_chars": 1793
+      },
+      "ticker": "DKS",
+      "url": "https://investors.dicks.com/overview/"
+    },
+    "EMN:official_results": {
+      "etag": "\"b52b84543df85b62049f61fc69e20a4e\"",
+      "fingerprint": "45f13b59bf461345b0dfb0de05c5437f90985db985222d3f9e9d12b21cea3e61",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 53,
+        "selected_link_count": 15,
+        "visible_text_chars": 4377
+      },
+      "ticker": "EMN",
+      "url": "https://investors.eastman.com/overview/"
+    },
+    "ERO:official_results": {
+      "etag": null,
+      "fingerprint": "0d2e9405ce95b05bbef5c6921e717eab70f6e77ff15221ad2c5e9b50d42eefa8",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 27,
+        "selected_link_count": 3,
+        "visible_text_chars": 1465
+      },
+      "ticker": "ERO",
+      "url": "https://www.ero.com/investors/reports-and-filings/"
+    },
+    "ESI:official_results": {
+      "etag": "\"3eb4746a0fb6e35201963c65538f9a87\"",
+      "fingerprint": "8bc26f33d86b6734994c823ce48f7312e6911997dc0c383995d57336290a018b",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 61,
+        "selected_link_count": 6,
+        "visible_text_chars": 3618
+      },
+      "ticker": "ESI",
+      "url": "https://ir.elementsolutionsinc.com/Investors/Overview/"
+    },
+    "FUL:official_results": {
+      "etag": "\"74815c5b016d861f755acbef5362a36c\"",
+      "fingerprint": "efb107c117ecac3d55592c9fce6955d5e5ca72a50b5bd8b35d0636f97c2467f8",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 72,
+        "selected_link_count": 5,
+        "visible_text_chars": 4122
+      },
+      "ticker": "FUL",
+      "url": "https://investors.hbfuller.com/"
+    },
     "IMCD:investor_news": {
       "etag": "W/\"3869620EFD3915DD8635AAFE04A63837--gzip\"",
       "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
@@ -65,6 +177,102 @@
       "ticker": "IMCD",
       "url": "https://www.imcdgroup.com/investors/investor-news"
     },
+    "LEU:official_results": {
+      "etag": "\"1791090899\"",
+      "fingerprint": "3524802e895dded17f8cb513d015546ebcf097704de4367a5e09d00584da9eb4",
+      "last_modified": "Sun, 04 Oct 2026 05:14:59 GMT",
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 81,
+        "selected_link_count": 18,
+        "visible_text_chars": 2623
+      },
+      "ticker": "LEU",
+      "url": "https://investors.centrusenergy.com/financial-information/quarterly-results"
+    },
+    "MOD:official_results": {
+      "etag": "\"ea3f6b264beaedcf48ff55db4e9e1886\"",
+      "fingerprint": "cc5f49389cb5ec4ffec9c83e0b62559d8337ed63cd71f35a9f58845893ba9a50",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 20,
+        "selected_link_count": 4,
+        "visible_text_chars": 1264
+      },
+      "ticker": "MOD",
+      "url": "https://investors.modine.com/financials/quarterly-results/default.aspx"
+    },
+    "MSM:official_results": {
+      "etag": "W/\"902934311\"",
+      "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 0,
+        "selected_link_count": 0,
+        "visible_text_chars": 17853
+      },
+      "ticker": "MSM",
+      "url": "https://investor.mscdirect.com/quarterly-results"
+    },
+    "OKLO:official_results": {
+      "etag": "\"7d6863e9acee8c8e9da144ccc58399c8\"",
+      "fingerprint": "cf6b32994fa3a3b5a614e6cafb3f0fc97ad00e16983e4f0c696294c625655272",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 32,
+        "selected_link_count": 2,
+        "visible_text_chars": 3822
+      },
+      "ticker": "OKLO",
+      "url": "https://investor.oklo.com/overview/default.aspx"
+    },
+    "PLMR:official_results": {
+      "etag": "\"1791287459\"",
+      "fingerprint": "7f4a8798965e88f9d5cac1da0b20f4ceebaf61da1ee0c9c6389662dcd7511f47",
+      "last_modified": "Tue, 06 Oct 2026 11:50:59 GMT",
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 150,
+        "selected_link_count": 34,
+        "visible_text_chars": 2663
+      },
+      "ticker": "PLMR",
+      "url": "https://palomarholdingsinc.gcs-web.com/financials/quarterly-results"
+    },
+    "POWL:official_results": {
+      "etag": null,
+      "fingerprint": "223512b033707e18a0450c720815cc9b9dfc913ca94a0ceca29cd0402a253408",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 67,
+        "selected_link_count": 5,
+        "visible_text_chars": 5896
+      },
+      "ticker": "POWL",
+      "url": "https://powellindustriesinc.gcs-web.com/"
+    },
     "ROR.L:reporting_centre": {
       "etag": "W/\"zduvgmzk1x62fg\"",
       "fingerprint": "fe6ff9eaea367e0599965012981fcd677e887f9819c96f30252f7bee7a37cf32",
@@ -80,6 +288,70 @@
       },
       "ticker": "ROR.L",
       "url": "https://www.rotork.com/en/investors/financial-reporting-centre"
+    },
+    "SNA:official_results": {
+      "etag": null,
+      "fingerprint": "534919bb2a887db804619c91b06c0880ffa95865dfd77e643788707f34cfd37d",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 200,
+        "selected_link_count": 129,
+        "visible_text_chars": 6965
+      },
+      "ticker": "SNA",
+      "url": "https://www.snapon.com/EN/Investors/Financial-Information/Quarterly-Earnings"
+    },
+    "TMDX:official_results": {
+      "etag": "\"1791199638\"",
+      "fingerprint": "063394714c719d2bb67b7d6cf48932c670307c47aeaece51938ad6a8f49608cf",
+      "last_modified": "Mon, 05 Oct 2026 11:27:18 GMT",
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 45,
+        "selected_link_count": 14,
+        "visible_text_chars": 1775
+      },
+      "ticker": "TMDX",
+      "url": "https://investors.transmedics.com/news-releases/"
+    },
+    "TXRH:official_results": {
+      "etag": null,
+      "fingerprint": "b1c70e85ef76889531b85bfaa1ee9b6c46a22cb481b11fe66f0e46aed88b2211",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 30,
+        "selected_link_count": 5,
+        "visible_text_chars": 1458
+      },
+      "ticker": "TXRH",
+      "url": "https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx"
+    },
+    "WSM:official_results": {
+      "etag": null,
+      "fingerprint": "04ef56538b2f651e8e307744b291defae9b558a13ea0c8ffc563b0e441ffbf32",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:50:46Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_results",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 29,
+        "selected_link_count": 6,
+        "visible_text_chars": 971
+      },
+      "ticker": "WSM",
+      "url": "https://ir.williams-sonomainc.com/investor-information/news-releases/"
     }
   }
 }
