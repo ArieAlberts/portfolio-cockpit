@@ -1,4 +1,85 @@
 {
   "schema_version": 1,
-  "sources": {}
+  "sources": {
+    "ASR:official_press_releases": {
+      "etag": null,
+      "fingerprint": "0babf07b8c7d5742560e1028ea1ccbb748979e5f669aad647363e059b6af895c",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:38:58Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_press_releases",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 43,
+        "selected_link_count": 5,
+        "visible_text_chars": 2146
+      },
+      "ticker": "ASR",
+      "url": "https://asrnl.com/news-and-press/press-releases"
+    },
+    "CAP.PA:official_publications": {
+      "etag": null,
+      "fingerprint": "3de97a2df4a561d7fb6f8467e2e70a89228617e3bc9f90bed170cc3eb1bb91d8",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:38:58Z",
+      "mode": "HTML_PAGE",
+      "source_id": "official_publications",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 165,
+        "selected_link_count": 9,
+        "visible_text_chars": 13277
+      },
+      "ticker": "CAP.PA",
+      "url": "https://investors.capgemini.com/all-publications/"
+    },
+    "CRDA.L:reports": {
+      "etag": null,
+      "fingerprint": "616904905ed0cd2d108000d45f663940932a219842f8c855ad9001cae88944fb",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:38:58Z",
+      "mode": "HTML_PAGE",
+      "source_id": "reports",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 239,
+        "selected_link_count": 148,
+        "visible_text_chars": 22253
+      },
+      "ticker": "CRDA.L",
+      "url": "https://www.croda.com/en-gb/investors/results-presentations-and-reports"
+    },
+    "IMCD:investor_news": {
+      "etag": "W/\"3869620EFD3915DD8635AAFE04A63837--gzip\"",
+      "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:38:58Z",
+      "mode": "HTML_PAGE",
+      "source_id": "investor_news",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 0,
+        "selected_link_count": 0,
+        "visible_text_chars": 17
+      },
+      "ticker": "IMCD",
+      "url": "https://www.imcdgroup.com/investors/investor-news"
+    },
+    "ROR.L:reporting_centre": {
+      "etag": "W/\"zduvgmzk1x62fg\"",
+      "fingerprint": "fe6ff9eaea367e0599965012981fcd677e887f9819c96f30252f7bee7a37cf32",
+      "last_modified": null,
+      "last_observed_change_at": "2026-10-06T11:38:58Z",
+      "mode": "HTML_PAGE",
+      "source_id": "reporting_centre",
+      "summary": {
+        "fingerprint_mode": "RELEVANT_LINKS",
+        "link_count": 204,
+        "selected_link_count": 104,
+        "visible_text_chars": 13494
+      },
+      "ticker": "ROR.L",
+      "url": "https://www.rotork.com/en/investors/financial-reporting-centre"
+    }
+  }
 }

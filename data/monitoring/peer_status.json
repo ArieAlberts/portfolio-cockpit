@@ -1,5 +1,2153 @@
 {
+  "global_warnings": [
+    "SEC_TICKER_MAP_ERROR: HTTPError: HTTP Error 403: Forbidden"
+  ],
+  "peers": {
+    "ACN": {
+      "dependent_targets": [
+        "CAP.PA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "AGS.BR": {
+      "dependent_targets": [
+        "ASR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AIT": {
+      "dependent_targets": [
+        "MSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ALB": {
+      "dependent_targets": [
+        "EMN"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ARHS": {
+      "dependent_targets": [
+        "WSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ARK.PA": {
+      "dependent_targets": [
+        "FUL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "ASH": {
+      "dependent_targets": [
+        "CRDA.L",
+        "ESI"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ASO": {
+      "dependent_targets": [
+        "DKS"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "AV.L": {
+      "dependent_targets": [
+        "ADM.L",
+        "ASR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "AZE.BR": {
+      "dependent_targets": [
+        "IMCD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "BGFV": {
+      "dependent_targets": [
+        "DKS"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "BJRI": {
+      "dependent_targets": [
+        "TXRH"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "BLMN": {
+      "dependent_targets": [
+        "TXRH"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "BNR.DE": {
+      "dependent_targets": [
+        "IMCD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "BWXT": {
+      "dependent_targets": [
+        "LEU"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "CAKE": {
+      "dependent_targets": [
+        "TXRH"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "CARR": {
+      "dependent_targets": [
+        "MOD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "CCJ": {
+      "dependent_targets": [
+        "LEU"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "CE": {
+      "dependent_targets": [
+        "EMN"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "CLN.SW": {
+      "dependent_targets": [
+        "CRDA.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "CNM": {
+      "dependent_targets": [
+        "MSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "CR": {
+      "dependent_targets": [
+        "ROR.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "CS.TO": {
+      "dependent_targets": [
+        "ERO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "CTSH": {
+      "dependent_targets": [
+        "CAP.PA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "DD": {
+      "dependent_targets": [
+        "EMN",
+        "ESI"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "DKSH.SW": {
+      "dependent_targets": [
+        "IMCD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "DOV": {
+      "dependent_targets": [
+        "SNA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "DRI": {
+      "dependent_targets": [
+        "TXRH"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "DXCM": {
+      "dependent_targets": [
+        "TMDX"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "EAT": {
+      "dependent_targets": [
+        "TXRH"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ENTG": {
+      "dependent_targets": [
+        "ESI"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "EPAM": {
+      "dependent_targets": [
+        "CAP.PA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ESAB": {
+      "dependent_targets": [
+        "SNA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ETD": {
+      "dependent_targets": [
+        "WSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ETN": {
+      "dependent_targets": [
+        "POWL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "TimeoutError: The read operation timed out",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "TimeoutError: The read operation timed out"
+      ]
+    },
+    "EVK.DE": {
+      "dependent_targets": [
+        "CRDA.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "FAST": {
+      "dependent_targets": [
+        "MSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "FDS": {
+      "dependent_targets": [
+        "WKL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "FLS": {
+      "dependent_targets": [
+        "ROR.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "FM.TO": {
+      "dependent_targets": [
+        "ERO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "G.MI": {
+      "dependent_targets": [
+        "ASR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "GIB.A.TO": {
+      "dependent_targets": [
+        "CAP.PA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "GNRC": {
+      "dependent_targets": [
+        "POWL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "GWW": {
+      "dependent_targets": [
+        "MSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "HBM": {
+      "dependent_targets": [
+        "ERO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "HCI": {
+      "dependent_targets": [
+        "PLMR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "HEN3.DE": {
+      "dependent_targets": [
+        "FUL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "HRTG": {
+      "dependent_targets": [
+        "PLMR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "HUBB": {
+      "dependent_targets": [
+        "POWL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "HUN": {
+      "dependent_targets": [
+        "EMN"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "IFF": {
+      "dependent_targets": [
+        "CRDA.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "IMI.L": {
+      "dependent_targets": [
+        "ROR.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "INFY": {
+      "dependent_targets": [
+        "CAP.PA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "INSP": {
+      "dependent_targets": [
+        "TMDX"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ITW": {
+      "dependent_targets": [
+        "SNA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "IVN.TO": {
+      "dependent_targets": [
+        "ERO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "JD.L": {
+      "dependent_targets": [
+        "DKS"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "KAP.L": {
+      "dependent_targets": [
+        "LEU"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "KNSL": {
+      "dependent_targets": [
+        "PLMR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "KWR": {
+      "dependent_targets": [
+        "ESI"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "LECO": {
+      "dependent_targets": [
+        "SNA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "LII": {
+      "dependent_targets": [
+        "MOD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "LTBR": {
+      "dependent_targets": [
+        "OKLO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "LUN.TO": {
+      "dependent_targets": [
+        "ERO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "LZB": {
+      "dependent_targets": [
+        "WSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "MASI": {
+      "dependent_targets": [
+        "TMDX"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "MCO": {
+      "dependent_targets": [
+        "WKL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "METSO.HE": {
+      "dependent_targets": [
+        "ROR.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "MKSI": {
+      "dependent_targets": [
+        "ESI"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "NN.AS": {
+      "dependent_targets": [
+        "ASR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "NNE": {
+      "dependent_targets": [
+        "OKLO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "NVT": {
+      "dependent_targets": [
+        "MOD",
+        "POWL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "PODD": {
+      "dependent_targets": [
+        "TMDX"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "RELX.L": {
+      "dependent_targets": [
+        "WKL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "RH": {
+      "dependent_targets": [
+        "WSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "RLI": {
+      "dependent_targets": [
+        "PLMR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "RPM": {
+      "dependent_targets": [
+        "FUL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "RRX": {
+      "dependent_targets": [
+        "POWL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "SAMPO.HE": {
+      "dependent_targets": [
+        "ASR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "SBRE.L": {
+      "dependent_targets": [
+        "ADM.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "SIKA.SW": {
+      "dependent_targets": [
+        "FUL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "SKWD": {
+      "dependent_targets": [
+        "PLMR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "SMR": {
+      "dependent_targets": [
+        "OKLO"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "SOP.PA": {
+      "dependent_targets": [
+        "CAP.PA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    },
+    "SPGI": {
+      "dependent_targets": [
+        "WKL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "SPX.L": {
+      "dependent_targets": [
+        "ROR.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "SWK": {
+      "dependent_targets": [
+        "SNA"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "SY1.DE": {
+      "dependent_targets": [
+        "CRDA.L"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "TRI.TO": {
+      "dependent_targets": [
+        "WKL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "TT": {
+      "dependent_targets": [
+        "MOD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "UUUU": {
+      "dependent_targets": [
+        "LEU"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "VRSK": {
+      "dependent_targets": [
+        "WKL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "VRT": {
+      "dependent_targets": [
+        "MOD"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "W": {
+      "dependent_targets": [
+        "WSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "WCC": {
+      "dependent_targets": [
+        "MSM"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "WCH.DE": {
+      "dependent_targets": [
+        "FUL"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:39:04Z",
+          "last_success_at": null
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "SOURCE_ERROR",
+      "warnings": [
+        "HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "WLK": {
+      "dependent_targets": [
+        "EMN"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+      "status": "CURRENT",
+      "warnings": [
+        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
+      ]
+    },
+    "ZURN.SW": {
+      "dependent_targets": [
+        "ASR"
+      ],
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "source_health": {
+        "primary": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:39:04Z"
+        }
+      },
+      "source_quality": "HIGH",
+      "status": "CURRENT",
+      "warnings": []
+    }
+  },
   "schema_version": 1,
-  "peers": {},
-  "targets": {}
+  "targets": {
+    "ABX": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "ADM.L": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "ASR": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "CAP.PA": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "CRDA.L": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "DKS": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "EMN": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "ERO": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "ESI": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "FUL": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "IMCD": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "LEU": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "MOD": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "MSM": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "OKLO": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "PLMR": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "POWL": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "ROR.L": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "SNA": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "TMDX": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "TXRH": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "WKL": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    },
+    "WSM": {
+      "changed_peers": [],
+      "peer_review_required": false,
+      "peer_status": "CURRENT_BASELINE_PEERS"
+    }
+  }
 }

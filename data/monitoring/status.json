@@ -1,28 +1,455 @@
 {
-  "schema_version": 1,
   "companies": {
-    "ASR": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "ADM.L": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "WKL": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "CAP.PA": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "IMCD": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "CRDA.L": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "ROR.L": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "EMN": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "WSM": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "DKS": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "TXRH": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "SNA": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "MSM": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "PLMR": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "MOD": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "FUL": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "POWL": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "ESI": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "ABX": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "ERO": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "TMDX": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "LEU": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []},
-    "OKLO": {"fundamental_status": "NOT_YET_POLLED", "review_required": false, "last_source_change_at": null, "last_event_path": null, "warnings": []}
-  }
+    "ABX": {
+      "baseline_age_days": 57,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ADM.L": {
+      "baseline_age_days": 61,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "official_news": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 404: Not Found",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "official_news: HTTPError: HTTP Error 404: Not Found"
+      ]
+    },
+    "ASR": {
+      "baseline_age_days": 48,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "CURRENT",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "official_press_releases": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:38:58Z"
+        }
+      },
+      "warnings": []
+    },
+    "CAP.PA": {
+      "baseline_age_days": 68,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "CURRENT",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "official_publications": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:38:58Z"
+        }
+      },
+      "warnings": []
+    },
+    "CRDA.L": {
+      "baseline_age_days": 70,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "CURRENT",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "reports": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:38:58Z"
+        }
+      },
+      "warnings": []
+    },
+    "DKS": {
+      "baseline_age_days": 42,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "EMN": {
+      "baseline_age_days": 68,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ERO": {
+      "baseline_age_days": 62,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ESI": {
+      "baseline_age_days": 71,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "FUL": {
+      "baseline_age_days": 13,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "IMCD": {
+      "baseline_age_days": 69,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "CURRENT",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "investor_news": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:38:58Z"
+        }
+      },
+      "warnings": []
+    },
+    "LEU": {
+      "baseline_age_days": 62,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "MOD": {
+      "baseline_age_days": 69,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "MSM": {
+      "baseline_age_days": 97,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "OKLO": {
+      "baseline_age_days": 60,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "PLMR": {
+      "baseline_age_days": 63,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "POWL": {
+      "baseline_age_days": 64,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ROR.L": {
+      "baseline_age_days": 63,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "CURRENT",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "reporting_centre": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 0,
+          "last_error": null,
+          "last_error_at": null,
+          "last_success_at": "2026-10-06T11:38:58Z"
+        }
+      },
+      "warnings": []
+    },
+    "SNA": {
+      "baseline_age_days": 75,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "TMDX": {
+      "baseline_age_days": 63,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "TXRH": {
+      "baseline_age_days": 61,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "WKL": {
+      "baseline_age_days": 62,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "official_results": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "official_results: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    },
+    "WSM": {
+      "baseline_age_days": 41,
+      "data_age_status": "CURRENT",
+      "fundamental_status": "SOURCE_ERROR",
+      "last_event_path": null,
+      "last_source_change_at": null,
+      "review_required": false,
+      "source_health": {
+        "sec_submissions": {
+          "circuit_state": "CLOSED",
+          "consecutive_failures": 1,
+          "last_error": "HTTPError: HTTP Error 403: Forbidden",
+          "last_error_at": "2026-10-06T11:38:58Z",
+          "last_success_at": null
+        }
+      },
+      "warnings": [
+        "sec_submissions: HTTPError: HTTP Error 403: Forbidden"
+      ]
+    }
+  },
+  "schema_version": 1
 }
