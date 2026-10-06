@@ -1,6 +1,9 @@
 name: daily-source-monitor
 
 on:
+  push:
+    paths:
+      - ".github/workflows/daily-source-monitor.yml"
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
