@@ -123,6 +123,13 @@ def main() -> int:
             peer_status["source_health"][health_key] = source_health_success(
                 prior_health, observed_at
             )
+            peer_status["warnings"] = (
+                ["DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"]
+                if spec.source_quality == "FALLBACK_STATIC_OR_IR_PAGE"
+                else []
+            )
+            if peer_status["status"] in {"SOURCE_ERROR", "SOURCE_DEGRADED"}:
+                peer_status["status"] = "CURRENT"
         except Exception as exc:
             errors += 1
             error_text = f"{type(exc).__name__}: {exc}"
