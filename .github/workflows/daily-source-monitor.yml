@@ -8,6 +8,7 @@ on:
       - "config/peer_monitoring.yaml"
       - "scripts/monitor_sources.py"
       - "scripts/monitor_peer_sources.py"
+      - "tests/test_peer_monitor_config.py"
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
