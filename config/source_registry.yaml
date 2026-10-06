@@ -29,9 +29,9 @@ companies:
     baseline_date: "2026-08-06"
     stale_after_days: 220
     sources:
-      - id: official_news
+      - id: official_results
         mode: HTML_PAGE
-        url: https://www.admiralgroup.co.uk/news-releases
+        url: https://admiralgroup.co.uk/investor-relations/results-reports-and-presentations
 
   WKL:
     company_name: Wolters Kluwer N.V.
@@ -39,9 +39,9 @@ companies:
     baseline_date: "2026-08-05"
     stale_after_days: 220
     sources:
-      - id: official_results
+      - id: official_investors
         mode: HTML_PAGE
-        url: https://www.wolterskluwer.com/en/investors/financials/results
+        url: https://www.wolterskluwer.com/en/investors
 
   CAP.PA:
     company_name: Capgemini SE
@@ -89,9 +89,9 @@ companies:
     baseline_date: "2026-07-30"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000915389.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investors.eastman.com/overview/
 
   WSM:
     company_name: Williams-Sonoma, Inc.
@@ -99,9 +99,9 @@ companies:
     baseline_date: "2026-08-26"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000719955.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://ir.williams-sonomainc.com/investor-information/news-releases/
 
   DKS:
     company_name: DICK'S Sporting Goods, Inc.
@@ -109,9 +109,9 @@ companies:
     baseline_date: "2026-08-25"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001089063.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investors.dicks.com/overview/
 
   TXRH:
     company_name: Texas Roadhouse, Inc.
@@ -119,9 +119,9 @@ companies:
     baseline_date: "2026-08-06"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001289460.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx
 
   SNA:
     company_name: Snap-on Incorporated
@@ -129,9 +129,9 @@ companies:
     baseline_date: "2026-07-23"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000091440.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://www.snapon.com/EN/Investors/Financial-Information/Quarterly-Earnings
 
   MSM:
     company_name: MSC Industrial Direct Co., Inc.
@@ -139,9 +139,9 @@ companies:
     baseline_date: "2026-07-01"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001003078.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investor.mscdirect.com/quarterly-results
 
   PLMR:
     company_name: Palomar Holdings, Inc.
@@ -149,9 +149,9 @@ companies:
     baseline_date: "2026-08-04"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001761312.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://palomarholdingsinc.gcs-web.com/financials/quarterly-results
 
   MOD:
     company_name: Modine Manufacturing Company
@@ -159,9 +159,9 @@ companies:
     baseline_date: "2026-07-29"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000067347.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investors.modine.com/financials/quarterly-results/default.aspx
 
   FUL:
     company_name: H.B. Fuller Company
@@ -169,9 +169,9 @@ companies:
     baseline_date: "2026-09-23"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000039368.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investors.hbfuller.com/
 
   POWL:
     company_name: Powell Industries, Inc.
@@ -179,9 +179,9 @@ companies:
     baseline_date: "2026-08-03"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000080420.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://powellindustriesinc.gcs-web.com/
 
   ESI:
     company_name: Element Solutions Inc
@@ -189,9 +189,9 @@ companies:
     baseline_date: "2026-07-27"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001590714.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://ir.elementsolutionsinc.com/Investors/Overview/
 
   ABX:
     company_name: Barrick Mining Corporation
@@ -199,9 +199,9 @@ companies:
     baseline_date: "2026-08-10"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0000756894.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://www.barrick.com/English/investors/presentations/default.aspx
 
   ERO:
     company_name: Ero Copper Corp.
@@ -209,9 +209,9 @@ companies:
     baseline_date: "2026-08-05"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001853860.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://www.ero.com/investors/reports-and-filings/
 
   TMDX:
     company_name: TransMedics Group, Inc.
@@ -219,9 +219,9 @@ companies:
     baseline_date: "2026-08-04"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001756262.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investors.transmedics.com/news-releases/
 
   LEU:
     company_name: Centrus Energy Corp.
@@ -229,9 +229,9 @@ companies:
     baseline_date: "2026-08-05"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001065059.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investors.centrusenergy.com/financial-information/quarterly-results
 
   OKLO:
     company_name: Oklo Inc.
@@ -239,6 +239,6 @@ companies:
     baseline_date: "2026-08-07"
     stale_after_days: 135
     sources:
-      - id: sec_submissions
-        mode: SEC_SUBMISSIONS_JSON
-        url: https://data.sec.gov/submissions/CIK0001849056.json
+      - id: official_results
+        mode: HTML_PAGE
+        url: https://investor.oklo.com/overview/default.aspx
