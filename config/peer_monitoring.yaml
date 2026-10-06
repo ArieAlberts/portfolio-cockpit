@@ -49,7 +49,7 @@ discovery_overrides:
     source_quality: HIGH
   INFY:
     mode: HTML_PAGE
-    url: https://www.nseindia.com/companies-listing/corporate-filings-financial-results?symbol=INFY&tabIndex=equity
+    url: https://www.infosys.com/newsroom/press-releases/
     source_quality: HIGH
   INSP:
     mode: HTML_PAGE
@@ -125,8 +125,8 @@ discovery_overrides:
     source_quality: HIGH
   IMI.L:
     mode: HTML_PAGE
-    url: https://www.londonstockexchange.com/stock/IMI/imi-plc/analysis
-    source_quality: HIGH
+    url: https://www.lse.co.uk/rns/IMI/
+    source_quality: FALLBACK_STATIC_OR_IR_PAGE
   IVN.TO:
     mode: HTML_PAGE
     url: https://www.ivanhoemines.com/investors/document-library/
