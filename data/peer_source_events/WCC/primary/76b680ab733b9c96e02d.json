@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "MSM"
+  ],
+  "detected_at": "2026-10-08T11:25:08Z",
+  "event_id": "76b680ab733b9c96e02d",
+  "execution_effect": "NONE",
+  "new_fingerprint": "63b9948a170a1d4a8d57aff8db2714688d58a78c54ac38e2d9bab3e509fe4b6b",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 95,
+    "selected_link_count": 7,
+    "visible_text_chars": 3559
+  },
+  "old_fingerprint": "f371119de7f60e1fe03fce62cd55edc34685b8b1e02546905418cb5219403296",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 96,
+    "selected_link_count": 7,
+    "visible_text_chars": 3532
+  },
+  "peer_ticker": "WCC",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.wesco.com/"
+}

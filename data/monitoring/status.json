@@ -1,7 +1,7 @@
 {
   "companies": {
     "ABX": {
-      "baseline_age_days": 58,
+      "baseline_age_days": 59,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -13,7 +13,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -28,7 +28,7 @@
       ]
     },
     "ADM.L": {
-      "baseline_age_days": 62,
+      "baseline_age_days": 63,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -47,7 +47,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": [
@@ -55,7 +55,7 @@
       ]
     },
     "ASR": {
-      "baseline_age_days": 49,
+      "baseline_age_days": 50,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -67,13 +67,13 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": []
     },
     "CAP.PA": {
-      "baseline_age_days": 69,
+      "baseline_age_days": 70,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -85,13 +85,13 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": []
     },
     "CRDA.L": {
-      "baseline_age_days": 71,
+      "baseline_age_days": 72,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -105,13 +105,13 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": []
     },
     "DKS": {
-      "baseline_age_days": 43,
+      "baseline_age_days": 44,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -123,7 +123,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -138,7 +138,7 @@
       ]
     },
     "EMN": {
-      "baseline_age_days": 69,
+      "baseline_age_days": 70,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -152,7 +152,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -167,7 +167,7 @@
       ]
     },
     "ERO": {
-      "baseline_age_days": 63,
+      "baseline_age_days": 64,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -181,7 +181,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -196,7 +196,7 @@
       ]
     },
     "ESI": {
-      "baseline_age_days": 72,
+      "baseline_age_days": 73,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -208,7 +208,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -223,11 +223,13 @@
       ]
     },
     "FUL": {
-      "baseline_age_days": 14,
+      "baseline_age_days": 15,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
       "last_source_change_at": null,
+      "peer_review_required": true,
+      "peer_status": "PEER_UPDATE_DETECTED",
       "review_required": false,
       "source_health": {
         "official_results": {
@@ -235,7 +237,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -250,7 +252,7 @@
       ]
     },
     "IMCD": {
-      "baseline_age_days": 70,
+      "baseline_age_days": 71,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -262,13 +264,13 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": []
     },
     "LEU": {
-      "baseline_age_days": 63,
+      "baseline_age_days": 64,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -280,7 +282,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -295,7 +297,7 @@
       ]
     },
     "MOD": {
-      "baseline_age_days": 70,
+      "baseline_age_days": 71,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -307,7 +309,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -322,11 +324,13 @@
       ]
     },
     "MSM": {
-      "baseline_age_days": 98,
+      "baseline_age_days": 99,
       "data_age_status": "CURRENT",
       "fundamental_status": "NEW_DATA_DETECTED",
       "last_event_path": "data/source_events/MSM/official_results/33482fe99ea5b4969a7d.json",
       "last_source_change_at": "2026-10-07T11:07:09Z",
+      "peer_review_required": true,
+      "peer_status": "PEER_UPDATE_DETECTED",
       "review_required": true,
       "source_health": {
         "official_results": {
@@ -334,7 +338,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -349,7 +353,7 @@
       ]
     },
     "OKLO": {
-      "baseline_age_days": 61,
+      "baseline_age_days": 62,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -361,7 +365,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -376,7 +380,7 @@
       ]
     },
     "PLMR": {
-      "baseline_age_days": 64,
+      "baseline_age_days": 65,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -388,7 +392,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -403,7 +407,7 @@
       ]
     },
     "POWL": {
-      "baseline_age_days": 65,
+      "baseline_age_days": 66,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -415,7 +419,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -430,7 +434,7 @@
       ]
     },
     "ROR.L": {
-      "baseline_age_days": 64,
+      "baseline_age_days": 65,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -442,13 +446,13 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": []
     },
     "SNA": {
-      "baseline_age_days": 76,
+      "baseline_age_days": 77,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -460,7 +464,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -475,7 +479,7 @@
       ]
     },
     "TMDX": {
-      "baseline_age_days": 64,
+      "baseline_age_days": 65,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -487,7 +491,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -502,7 +506,7 @@
       ]
     },
     "TXRH": {
-      "baseline_age_days": 62,
+      "baseline_age_days": 63,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -514,7 +518,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
@@ -529,7 +533,7 @@
       ]
     },
     "WKL": {
-      "baseline_age_days": 63,
+      "baseline_age_days": 64,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -555,7 +559,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         }
       },
       "warnings": [
@@ -564,7 +568,7 @@
       ]
     },
     "WSM": {
-      "baseline_age_days": 42,
+      "baseline_age_days": 43,
       "data_age_status": "CURRENT",
       "fundamental_status": "CURRENT",
       "last_event_path": null,
@@ -576,7 +580,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-07T11:07:09Z"
+          "last_success_at": "2026-10-08T11:24:46Z"
         },
         "sec_submissions": {
           "circuit_state": "CLOSED",
