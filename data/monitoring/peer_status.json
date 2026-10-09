@@ -15,7 +15,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -33,9 +33,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 5,
+          "consecutive_failures": 6,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-08T11:25:08Z",
+          "last_error_at": "2026-10-09T11:22:30Z",
           "last_success_at": null
         }
       },
@@ -57,7 +57,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -78,7 +78,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -99,7 +99,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -120,7 +120,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -132,22 +132,20 @@
         "CRDA.L",
         "ESI"
       ],
-      "last_event_path": null,
-      "last_source_change_at": null,
+      "last_event_path": "data/peer_source_events/ASH/primary/f98db24f486748d544f4.json",
+      "last_source_change_at": "2026-10-09T11:22:30Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
-      "status": "CURRENT",
-      "warnings": [
-        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
-      ]
+      "status": "PEER_SOURCE_CHANGED",
+      "warnings": []
     },
     "ASO": {
       "dependent_targets": [
@@ -161,7 +159,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -183,7 +181,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -202,7 +200,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -221,7 +219,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -242,7 +240,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -263,7 +261,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -284,7 +282,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -303,7 +301,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -324,7 +322,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -345,7 +343,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -366,7 +364,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -387,7 +385,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -408,7 +406,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -427,7 +425,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -448,7 +446,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -467,7 +465,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -486,7 +484,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -508,7 +506,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -529,7 +527,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -550,7 +548,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -569,7 +567,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -590,7 +588,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -609,7 +607,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -630,7 +628,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -651,7 +649,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -672,7 +670,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -691,7 +689,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -709,9 +707,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 5,
+          "consecutive_failures": 6,
           "last_error": "TimeoutError: The read operation timed out",
-          "last_error_at": "2026-10-08T11:25:08Z",
+          "last_error_at": "2026-10-09T11:22:30Z",
           "last_success_at": null
         }
       },
@@ -733,7 +731,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -754,7 +752,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -775,7 +773,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -796,7 +794,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -817,7 +815,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -836,7 +834,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -857,7 +855,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -876,7 +874,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -897,7 +895,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -918,7 +916,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -939,7 +937,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -958,7 +956,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -977,7 +975,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -998,7 +996,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1011,15 +1009,15 @@
       "dependent_targets": [
         "EMN"
       ],
-      "last_event_path": "data/peer_source_events/HUN/primary/f9cd0b4cae944916657c.json",
-      "last_source_change_at": "2026-10-08T11:25:08Z",
+      "last_event_path": "data/peer_source_events/HUN/primary/4058a465bb8e1febb13e.json",
+      "last_source_change_at": "2026-10-09T11:22:30Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1038,7 +1036,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1056,9 +1054,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 5,
+          "consecutive_failures": 6,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-08T11:25:08Z",
+          "last_error_at": "2026-10-09T11:22:30Z",
           "last_success_at": null
         }
       },
@@ -1077,9 +1075,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 5,
+          "consecutive_failures": 6,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-08T11:25:08Z",
+          "last_error_at": "2026-10-09T11:22:30Z",
           "last_success_at": null
         }
       },
@@ -1101,7 +1099,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1120,7 +1118,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1141,7 +1139,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1160,7 +1158,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1179,7 +1177,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1198,7 +1196,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1219,7 +1217,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1240,7 +1238,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1253,22 +1251,20 @@
       "dependent_targets": [
         "MOD"
       ],
-      "last_event_path": null,
-      "last_source_change_at": null,
+      "last_event_path": "data/peer_source_events/LII/primary/36ffdb806cbdeab1562d.json",
+      "last_source_change_at": "2026-10-09T11:22:30Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
-      "status": "CURRENT",
-      "warnings": [
-        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
-      ]
+      "status": "PEER_SOURCE_CHANGED",
+      "warnings": []
     },
     "LTBR": {
       "dependent_targets": [
@@ -1282,7 +1278,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1295,15 +1291,15 @@
       "dependent_targets": [
         "ERO"
       ],
-      "last_event_path": "data/peer_source_events/LUN.TO/primary/3411113f254a3bb0e74e.json",
-      "last_source_change_at": "2026-10-08T11:25:08Z",
+      "last_event_path": "data/peer_source_events/LUN.TO/primary/23fe4c52ade82e46a114.json",
+      "last_source_change_at": "2026-10-09T11:22:30Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1322,7 +1318,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1343,7 +1339,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1364,7 +1360,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1383,7 +1379,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1402,7 +1398,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1423,7 +1419,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1442,7 +1438,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1464,7 +1460,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1483,7 +1479,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1504,7 +1500,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1523,7 +1519,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1544,7 +1540,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1565,7 +1561,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1586,7 +1582,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1607,7 +1603,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1626,7 +1622,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1645,7 +1641,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1664,7 +1660,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1685,7 +1681,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1706,7 +1702,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1725,7 +1721,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -1744,7 +1740,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1765,7 +1761,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1778,15 +1774,15 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "last_event_path": "data/peer_source_events/SY1.DE/primary/9ab0af84828cbb75abaf.json",
-      "last_source_change_at": "2026-10-08T11:25:08Z",
+      "last_event_path": "data/peer_source_events/SY1.DE/primary/b733afe682dd9ddcea09.json",
+      "last_source_change_at": "2026-10-09T11:22:30Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1805,7 +1801,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1826,7 +1822,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1847,7 +1843,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1868,7 +1864,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1889,7 +1885,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1910,7 +1906,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1931,7 +1927,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1950,7 +1946,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1971,7 +1967,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1992,7 +1988,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-08T11:25:08Z"
+          "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
       "source_quality": "HIGH",
@@ -2024,6 +2020,7 @@
     },
     "CRDA.L": {
       "changed_peers": [
+        "ASH",
         "SY1.DE"
       ],
       "peer_review_required": true,
@@ -2049,9 +2046,11 @@
       "peer_status": "PEER_UPDATE_DETECTED"
     },
     "ESI": {
-      "changed_peers": [],
-      "peer_review_required": false,
-      "peer_status": "CURRENT_BASELINE_PEERS"
+      "changed_peers": [
+        "ASH"
+      ],
+      "peer_review_required": true,
+      "peer_status": "PEER_UPDATE_DETECTED"
     },
     "FUL": {
       "changed_peers": [
@@ -2071,9 +2070,11 @@
       "peer_status": "CURRENT_BASELINE_PEERS"
     },
     "MOD": {
-      "changed_peers": [],
-      "peer_review_required": false,
-      "peer_status": "CURRENT_BASELINE_PEERS"
+      "changed_peers": [
+        "LII"
+      ],
+      "peer_review_required": true,
+      "peer_status": "PEER_UPDATE_DETECTED"
     },
     "MSM": {
       "changed_peers": [

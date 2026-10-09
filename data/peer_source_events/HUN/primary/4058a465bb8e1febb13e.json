@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "EMN"
+  ],
+  "detected_at": "2026-10-09T11:22:30Z",
+  "event_id": "4058a465bb8e1febb13e",
+  "execution_effect": "NONE",
+  "new_fingerprint": "8ff713baddf16997f2e097ad9d795299c7042295bae1428ab61bdb5c829528a1",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 122,
+    "selected_link_count": 14,
+    "visible_text_chars": 33187
+  },
+  "old_fingerprint": "b1aeca168081ff6194999adb20840ba764efcfc32488ebbe0b57178aca2e0504",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 122,
+    "selected_link_count": 14,
+    "visible_text_chars": 33187
+  },
+  "peer_ticker": "HUN",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.huntsman.com/investors/newsroom/news-releases/detail/629/huntsman-announces-second-quarter-2026-earnings"
+}

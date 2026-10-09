@@ -1,0 +1,30 @@
+{
+  "dependent_targets": [
+    "CRDA.L",
+    "ESI"
+  ],
+  "detected_at": "2026-10-09T11:22:30Z",
+  "event_id": "f98db24f486748d544f4",
+  "execution_effect": "NONE",
+  "new_fingerprint": "168ca6b87b870c345f7778bb56b0059200d5342da37f5b540cbcca6200029181",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 54,
+    "selected_link_count": 7,
+    "visible_text_chars": 2207
+  },
+  "old_fingerprint": "2e3afa52d036ac6c040ad3a39134a242fcd6132099c37c627cf54750caf149b5",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 54,
+    "selected_link_count": 7,
+    "visible_text_chars": 2188
+  },
+  "peer_ticker": "ASH",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investor.ashland.com/"
+}
