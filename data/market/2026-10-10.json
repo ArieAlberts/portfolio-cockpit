@@ -1,0 +1,1476 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-10",
+  "tickers": {
+    "SNA": {
+      "currency": "USD",
+      "price": {
+        "value": 360.37,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/sna/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 51.73,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/sna/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": -334.2,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/sna/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 1330,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/sna/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 1110,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/sna/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 20.6871,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/sna/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "WKL": {
+      "currency": "EUR",
+      "price": {
+        "value": 75.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 222.9,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 4050,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 1560,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 1390,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 5.8962,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/WKL/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "CAP.PA": {
+      "currency": "EUR",
+      "price": {
+        "value": 115.05,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 169.74,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 7910,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 2630,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 2190,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 13.3469,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/epa/CAP/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "IMCD": {
+      "currency": "EUR",
+      "price": {
+        "value": 100.55,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 59.04,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 1560,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 401,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 370.4,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 6.2883,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/IMCD/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "CRDA.L": {
+      "currency": "GBp",
+      "price": {
+        "value": 3390,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 139.92,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 57790.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+        },
+        "calculation_method": "-(net cash) ; GBP m x100 -> GBp m"
+      },
+      "ebit": {
+        "value": 12560.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 18470.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 168.2382,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/CRDA/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "ROR.L": {
+      "currency": "GBp",
+      "price": {
+        "value": 490.4,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 813.49,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": -2530.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+        },
+        "calculation_method": "-(net cash) ; GBP m x100 -> GBp m"
+      },
+      "ebit": {
+        "value": 18730.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 11100.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 18.2169,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ROR/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "EMN": {
+      "currency": "USD",
+      "price": {
+        "value": 62.69,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/emn/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 114.33,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/emn/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 4770,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/emn/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 870,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/emn/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 539,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/emn/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 6.6691,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/emn/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "WSM": {
+      "currency": "USD",
+      "price": {
+        "value": 241.78,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 117.78,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 499.01,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 1430,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 1340,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 9.9212,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/wsm/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "DKS": {
+      "currency": "USD",
+      "price": {
+        "value": 136.65,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/dks/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 88.93,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/dks/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 7050,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/dks/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 1490,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/dks/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 239.41,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/dks/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 11.9345,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/dks/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "TXRH": {
+      "currency": "USD",
+      "price": {
+        "value": 161.5,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 65.64,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 885.13,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 483.16,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 406.39,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 7.146,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/txrh/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "MSM": {
+      "currency": "USD",
+      "price": {
+        "value": 129.51,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/msm/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 55.85,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/msm/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 481.33,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/msm/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 345.14,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/msm/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 219.93,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/msm/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 5.284,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/msm/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "MOD": {
+      "currency": "USD",
+      "price": {
+        "value": 181.56,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/mod/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 53.11,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/mod/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 576.1,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/mod/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 368.3,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/mod/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 100.2,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/mod/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 6.9938,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/mod/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "FUL": {
+      "currency": "USD",
+      "price": {
+        "value": 49.56,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ful/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 53.83,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ful/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 2090,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ful/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 426.47,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ful/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 100.03,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ful/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 5.1679,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ful/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "POWL": {
+      "currency": "USD",
+      "price": {
+        "value": 191.93,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/powl/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 36.43,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/powl/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": -631.04,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/powl/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 227.67,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/powl/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 243.96,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/powl/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 6.4536,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/powl/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "ESI": {
+      "currency": "USD",
+      "price": {
+        "value": 36.32,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 243.69,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 1930,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 401,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 137.7,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 1.9412,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/esi/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "TMDX": {
+      "currency": "USD",
+      "price": {
+        "value": 77.87,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 34.68,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 395.05,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "ebit": {
+        "value": 81.61,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 79.04,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 1.8046,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/tmdx/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      }
+    },
+    "LEU": {
+      "currency": "USD",
+      "price": {
+        "value": 142.44,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/leu/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 20.45,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/leu/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": -691,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/leu/statistics/"
+        },
+        "calculation_method": "-(net cash)"
+      },
+      "fcf": {
+        "value": -163.8,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/leu/statistics/"
+        }
+      },
+      "forward_eps": {
+        "value": 2.4097,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/leu/statistics/"
+        },
+        "calculation_method": "price / forward PE"
+      },
+      "ebit": {
+        "value": 71.4,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
+      },
+      "ebitda": {
+        "value": 89.2,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
+      }
+    },
+    "ASR": {
+      "currency": "EUR",
+      "price": {
+        "value": 71.48,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 201.55,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+        }
+      },
+      "bvps": {
+        "value": 51.98,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+        }
+      },
+      "eps_ttm": {
+        "value": 4.98,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+        }
+      },
+      "distributions_ttm": {
+        "value": 720.5,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/ams/ASRNL/statistics/"
+        },
+        "calculation_method": "shareholder yield x market cap"
+      }
+    },
+    "ADM.L": {
+      "currency": "GBp",
+      "price": {
+        "value": 3624,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 305.12,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+        }
+      },
+      "bvps": {
+        "value": 496.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+        }
+      },
+      "eps_ttm": {
+        "value": 219.0,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+        }
+      },
+      "distributions_ttm": {
+        "value": 60608.8,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/quote/lon/ADM/statistics/"
+        },
+        "calculation_method": "shareholder yield x market cap ; GBP m x100 -> GBp m"
+      }
+    },
+    "PLMR": {
+      "currency": "USD",
+      "price": {
+        "value": 130.76,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 26.32,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+        }
+      },
+      "bvps": {
+        "value": 37.46,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+        }
+      },
+      "eps_ttm": {
+        "value": 7.44,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+        }
+      },
+      "distributions_ttm": {
+        "value": 38.2,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/plmr/statistics/"
+        },
+        "calculation_method": "shareholder yield x market cap"
+      }
+    },
+    "ABX": {
+      "currency": "USD",
+      "price": {
+        "value": 41.06,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/b/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 1644.42,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/b/statistics/"
+        },
+        "calculation_method": "market cap / close"
+      },
+      "net_debt": {
+        "value": -1245,
+        "as_of_date": "2026-06-30",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "COMPANY_RESULTS",
+          "title": "Barrick Q2 2026 results — debt net of cash",
+          "url": "https://www.barrick.com/English/news/news-details/2026/q2-2026-results/default.aspx"
+        }
+      },
+      "normalized_ebitda": {
+        "value": 11312,
+        "as_of_date": "2025-12-31",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "COMPANY_RESULTS",
+          "title": "Barrick FY2025 results — adjusted EBITDA $11.312bn used as normalized full-year proxy",
+          "url": "https://www.barrick.com/English/news/news-details/2026/q4-2025-results/default.aspx"
+        }
+      },
+      "fcf": {
+        "value": 5188,
+        "as_of_date": "2026-06-30",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Barrick TTM free cash flow; underlying S&P Global Market Intelligence",
+          "url": "https://stockanalysis.com/stocks/b/financials/cash-flow-statement/"
+        }
+      },
+      "navps": {
+        "value": 45.715909,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_RESEARCH_NOTE",
+          "title": "Ik wil de data die ik mis aangevuld hebben — P/NAV 0.88x; NAV/share derived from 2026-10-02 close",
+          "url": null
+        }
+      }
+    },
+    "ERO": {
+      "currency": "USD",
+      "price": {
+        "value": 37.61,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 104.3,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        }
+      },
+      "net_debt": {
+        "value": 471.61,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        }
+      },
+      "fcf": {
+        "value": 171.59,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        }
+      },
+      "normalized_ebitda": {
+        "value": 517.03,
+        "as_of_date": "2026-06-30",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "StockAnalysis.com — Ero Copper TTM EBITDA used as normalized-EBITDA proxy pending explicit mid-cycle series",
+          "url": "https://stockanalysis.com/stocks/ero/statistics/"
+        }
+      },
+      "navps": {
+        "value": 48.602564,
+        "as_of_date": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_RESEARCH_NOTE",
+          "title": "Ik wil de data die ik mis aangevuld hebben — P/NAV 0.78x; NAV/share derived from 2026-10-02 close",
+          "url": null
+        }
+      }
+    },
+    "OKLO": {
+      "currency": "USD",
+      "price": {
+        "value": 34.7,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+        },
+        "calculation_method": "close as stated on page"
+      },
+      "shares_outstanding": {
+        "value": 186.02,
+        "as_of_date": "2026-10-09",
+        "retrieved_at": "2026-10-10T08:00:00Z",
+        "source": {
+          "source_type": "SECONDARY_AGGREGATOR",
+          "title": "stockanalysis.com — statistics page",
+          "url": "https://stockanalysis.com/stocks/oklo/statistics/"
+        }
+      },
+      "navps": {
+        "value": 3.15,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
+      },
+      "risked_npv": {
+        "value": 4250,
+        "as_of_date": "2026-10-05",
+        "retrieved_at": "2026-10-05",
+        "source": {
+          "source_type": "USER_SUPPLIED_PATCH",
+          "title": "Arie Alberts portfolio data patch — 2026-10-05",
+          "url": null
+        }
+      }
+    }
+  }
+}
