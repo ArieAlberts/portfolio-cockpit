@@ -265,5 +265,6 @@ The system never invents numbers. Templates and validators:
 | `data/market/<date>.json` | `data/templates/market.json` |
 | `data/valuation_refs/<T>.json` | `data/templates/valuation_refs/<T>.json` |
 | `data/observations/<T>/<date>.json` | `data/templates/observation.json` |
+| `data/market_peers/<date>.json` | `data/templates/market_peers.json` |
 
-Run `cockpit-check-inputs` after editing.
+Run `cockpit-check-inputs` after editing. It also prints `WARN` lines for `data/market_peers/`: no file, an invalid file, a file older than the latest `data/market/` file, or peers with datapoints older than `max_price_age_days` (those peers get `STALE_DATA` and no peer alert). These warnings never block the decision engine. Refresh `data/market_peers/` with every market update.

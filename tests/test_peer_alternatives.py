@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
@@ -410,3 +412,50 @@ def test_dashboard_without_alerts_says_so():
         row["peer_alerts"] = []
     html = dashboard.render(data)
     assert "Peer-alternatieven" in html and "No peer alternatives flagged." in html
+
+
+# ------------------------------------------------------- cockpit-check-inputs
+
+
+def _check(root: Path, as_of: str = AS_OF) -> dict:
+    from portfolio_cockpit.decision_layer.inputs import check_inputs
+
+    return check_inputs(root, as_of)
+
+
+def test_check_inputs_warns_without_peer_market_data(tmp_path):
+    root = repo_copy(tmp_path)
+    shutil.rmtree(root / "data/market_peers", ignore_errors=True)
+    report = _check(root)
+    assert any(w.startswith("no data/market_peers/") for w in report["warnings"])
+    assert not any("market_peers" in b for b in report["blocking"])
+
+
+def test_check_inputs_quiet_when_peer_market_data_is_current(tmp_path):
+    root = _setup(tmp_path, peer_entry=_peer_entry(0.8, 8.0, 0.096))
+    assert _check(root)["warnings"] == []
+
+
+def test_check_inputs_warns_when_peer_market_data_is_stale_or_behind(tmp_path):
+    from portfolio_cockpit.decision_layer.inputs import format_report
+
+    root = _setup(tmp_path, peer_entry=_peer_entry(0.8, 8.0, 0.096))
+    max_age = pa.load_decision_config(root)["valuation"]["max_price_age_days"]
+    write_market(root, {POSITION: market_entry(price_date=NEXT_WEEK, price=50.0)}, NEXT_WEEK)
+    behind = _check(root, NEXT_WEEK)
+    assert any("is older than data/market/" in w for w in behind["warnings"])
+
+    within = (date.fromisoformat(AS_OF) + timedelta(days=max_age)).isoformat()
+    assert not any("STALE_DATA" in w for w in _check(root, within)["warnings"])
+    later = (date.fromisoformat(AS_OF) + timedelta(days=max_age + 1)).isoformat()
+    stale = _check(root, later)
+    assert any("STALE_DATA" in w and f"{PEER} ({max_age + 1}d)" in w for w in stale["warnings"])
+    assert not any("market_peers" in b for b in stale["blocking"])
+    assert "WARN   " in format_report(stale)
+
+
+def test_check_inputs_flags_invalid_peer_market_data_without_blocking(tmp_path):
+    root = _setup(tmp_path, peer_entry={"multiples": {"pe": datapoint(8.0)}})  # method missing
+    report = _check(root)
+    assert any("invalid peer market data" in w for w in report["warnings"])
+    assert not any("market_peers" in b or "invalid input" in b for b in report["blocking"])
