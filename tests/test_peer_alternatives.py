@@ -385,6 +385,8 @@ def test_dashboard_section_and_badges():
     from portfolio_cockpit.decision_layer import dashboard
 
     data = dashboard.collect(ROOT)
+    # This test injects synthetic fresh alerts; real historical alerts are gated.
+    data["peer_signals_stale"] = False
     base = {"top_metric_differences": [{"axis": "valuation", "metric": "pe", "difference_points": 25.0}],
             "position_fundamental_quality": 66.1, "peer_fundamental_quality": 80.0,
             "position_comparison_valuation": 50.0, "peer_comparison_valuation": 75.0,
@@ -405,6 +407,8 @@ def test_dashboard_without_alerts_says_so():
     from portfolio_cockpit.decision_layer import dashboard
 
     data = dashboard.collect(ROOT)
+    # Test the presentation of the empty, but current, alert set.
+    data["peer_signals_stale"] = False
     data["peer_alternatives"] = {**data["peer_alternatives"], "alerts": []}
     for row in data["rows"]:
         row["peer_alerts"] = []
