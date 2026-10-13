@@ -46,8 +46,18 @@ def test_public_dashboard_hides_broker_details_and_historical_signals():
     assert "Unavailable: historical position weights." in page
 
 
-def test_local_explicit_private_mode_does_not_change_public_default():
+def test_local_explicit_private_mode_does_not_change_public_default(tmp_path, monkeypatch):
+    private_file = tmp_path / "broker-snapshot.json"
+    private_file.write_text('{"as_of":"2026-10-13","source":"private test","positions":[]}')
+    monkeypatch.setenv("COCKPIT_PRIVATE_ACCOUNT_FILE", str(private_file))
     public = collect(ROOT, "2026-10-13")
     private = collect(ROOT, "2026-10-13", include_private_account=True)
     assert public["account_snapshot"] is None
-    assert private["account_snapshot"]["as_of"] == "2026-10-04"
+    assert private["account_snapshot"]["as_of"] == "2026-10-13"
+
+
+def test_private_mode_rejects_files_inside_public_repository(monkeypatch):
+    from pytest import raises
+    monkeypatch.setenv("COCKPIT_PRIVATE_ACCOUNT_FILE", str(ROOT / "data/account/2026-10-04.json"))
+    with raises(ValueError, match="outside the public repository"):
+        collect(ROOT, "2026-10-13", include_private_account=True)
