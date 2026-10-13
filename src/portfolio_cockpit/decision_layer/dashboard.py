@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -71,14 +72,20 @@ def _history(root: Path, rel_dir: str, prefix: str, extract) -> dict[str, list[d
 
 
 def _latest_account_snapshot(root: Path) -> dict[str, Any] | None:
-    """Latest read-only broker/account snapshot for display only."""
-    directory = root / "data/account"
-    if not directory.is_dir():
+    """Private/local report only; public, tracked broker snapshots are ignored.
+
+    A private opt-in requires COCKPIT_PRIVATE_ACCOUNT_FILE outside this public
+    repository. GitHub Pages never opts in.
+    """
+    location = os.environ.get("COCKPIT_PRIVATE_ACCOUNT_FILE")
+    if not location:
         return None
-    files = sorted(directory.glob("????-??-??.json"))
-    if not files:
+    path = Path(location).expanduser().resolve()
+    if root.resolve() == path or root.resolve() in path.parents:
+        raise ValueError("Private account file must be outside the public repository")
+    if not path.is_file():
         return None
-    return json.loads(files[-1].read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def collect(root: Path, as_of: str | None = None, *, include_private_account: bool = False) -> dict[str, Any]:
