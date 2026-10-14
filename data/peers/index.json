@@ -9,7 +9,7 @@
   "datasets": {
     "ASR": "data/peers/ASR/2026-10-03.json",
     "ADM.L": "data/peers/ADM.L/2026-10-03.json",
-    "WKL": "data/peers/WKL/2026-10-02.json",
+    "WKL": "data/peers/WKL/2026-10-14.json",
     "CAP.PA": "data/peers/CAP.PA/2026-10-03.json",
     "IMCD": "data/peers/IMCD/2026-10-03.json",
     "CRDA.L": "data/peers/CRDA.L/2026-10-03.json",
