@@ -1,0 +1,942 @@
+{
+  "schema_version": 1,
+  "target_ticker": "POWL",
+  "collected_at": "2026-10-14",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_CALENDAR_2026",
+  "peer_universe_status": "READY_FOR_REVENUE_AND_GROWTH_CONTEXT",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PENDING_OR_BLOCKED_BY_COMPARABILITY",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "POWL": {
+      "company": "Powell Industries, Inc.",
+      "role": "TARGET",
+      "period": "Q3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Powell Industries Q3 Fiscal 2026 Results",
+        "url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000103/ex991-powlq3xfy2026earning.htm"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 9,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "gross_margin_pct": {
+          "value": 30.6,
+          "comparison_class": "Q2_GROSS_MARGIN",
+          "source_definition": "gross margin",
+          "score_eligible": true
+        },
+        "backlog_growth_pct": {
+          "value": 35,
+          "comparison_class": "BACKLOG_GROWTH",
+          "source_definition": "backlog growth versus March 2026",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": -2.682092,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "POWL Form 10-Q (2026-06-30) and Form 10-K (2025-09-30) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/80420/000008042025000152/powl-20250930.htm"
+          ],
+          "filing_ids": [
+            "0000080420-26-000107",
+            "0000080420-25-000152"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {},
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 633.561
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 217.86,
+              "ytd_current": 164.428,
+              "ytd_prior": 154.615
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationDepletionAndAmortization": {
+                "fy": 7.265,
+                "ytd_current": 6.496,
+                "ytd_prior": 5.215
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 273 days.",
+          "calculation": "(0 - 633.561) / ((217.86 + 164.428 - 154.615) + (7.265 + 6.496 - 5.215))",
+          "score_eligible": true,
+          "notes": "Powell fiscal Q3 FY2026 (quarter ended 2026-06-30); no borrowings on the balance sheet, so total debt is 0; TTM = FY2025 (ended 2025-09-30) + 9M FY2026 - 9M FY2025."
+        },
+        "operating_margin_pct": {
+          "value": 20.554308,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating income / revenue for the quarter, from the Form 10-Q income statement",
+          "period": "Q2_CALENDAR_2026_QUARTER",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "POWL Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm"
+          ],
+          "filing_ids": [
+            "0000080420-26-000107"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "quarter": 64.076
+            },
+            "revenue_usd_m": {
+              "RevenueFromContractWithCustomerExcludingAssessedTax": 311.74
+            }
+          },
+          "calculation_method": "Three-month operating income divided by three-month revenue for the fiscal quarter ending closest to 2026-06-30.",
+          "calculation": "64.076 / 311.74 * 100",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 21.075885,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property, plant and equipment) / TTM revenue; operating cash flow from continuing operations where separately presented",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "POWL Form 10-Q (2026-06-30) and Form 10-K (2025-09-30) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/80420/000008042026000107/powl-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/80420/000008042025000152/powl-20250930.htm"
+          ],
+          "filing_ids": [
+            "0000080420-26-000107",
+            "0000080420-25-000152"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_cash_flow_usd_m": {
+              "concept": "NetCashProvidedByUsedInOperatingActivities",
+              "fy": 167.937,
+              "ytd_current": 195.038,
+              "ytd_prior": 106.862
+            },
+            "capex_usd_m": {
+              "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "fy": 13.149,
+              "ytd_current": 10.386,
+              "ytd_prior": 11.38
+            },
+            "revenue_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "fy": 1104.318,
+              "ytd_current": 859.539,
+              "ytd_prior": 806.335
+            }
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 273 days.",
+          "calculation": "((167.937 + 195.038 - 106.862) - (13.149 + 10.386 - 11.38)) / (1104.318 + 859.539 - 806.335) * 100",
+          "score_eligible": true,
+          "notes": "Powell fiscal Q3 FY2026 (quarter ended 2026-06-30); no borrowings on the balance sheet, so total debt is 0; TTM = FY2025 (ended 2025-09-30) + 9M FY2026 - 9M FY2025."
+        }
+      }
+    },
+    "NVT": {
+      "company": "nVent Electric plc",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "nVent Q2 2026 results",
+        "url": "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051203/q22026nvtpressrelease.htm"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 53,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 47,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 69,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.168178,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "NVT Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051428/nvt-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051428/nvt-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1720635/000162828026008608/nvt-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-051428",
+            "0001628280-26-008608"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "LongTermDebtCurrent": 13.8,
+              "LongTermDebtNoncurrent": 1478.6
+            },
+            "cash_usd_m": {
+              "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents": 256.0
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 616.8,
+              "ytd_current": 496.4,
+              "ytd_prior": 286.7
+            },
+            "depreciation_amortization_usd_m": {
+              "Depreciation": {
+                "fy": 60.7,
+                "ytd_current": 34.2,
+                "ytd_prior": 28.2
+              },
+              "AmortizationOfIntangibleAssets": {
+                "fy": 147.1,
+                "ytd_current": 82.2,
+                "ytd_prior": 64.1
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(13.8 + 1478.6 - 256) / ((616.8 + 496.4 - 286.7) + (60.7 + 34.2 - 28.2) + (147.1 + 82.2 - 64.1))",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 20.437708,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating income / revenue for the quarter, from the Form 10-Q income statement",
+          "period": "Q2_CALENDAR_2026_QUARTER",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "NVT Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051428/nvt-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051428/nvt-20260630.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-051428"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "quarter": 300.7
+            },
+            "revenue_usd_m": {
+              "RevenueFromContractWithCustomerExcludingAssessedTax": 1471.3
+            }
+          },
+          "calculation_method": "Three-month operating income divided by three-month revenue for the fiscal quarter ending closest to 2026-06-30.",
+          "calculation": "300.7 / 1471.3 * 100",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 13.651221,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property, plant and equipment) / TTM revenue; operating cash flow from continuing operations where separately presented",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "NVT Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051428/nvt-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1720635/000162828026051428/nvt-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1720635/000162828026008608/nvt-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-051428",
+            "0001628280-26-008608"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_cash_flow_usd_m": {
+              "concept": "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations",
+              "fy": 649.0,
+              "ytd_current": 278.7,
+              "ytd_prior": 154.9
+            },
+            "capex_usd_m": {
+              "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "fy": 93.3,
+              "ytd_current": 57.6,
+              "ytd_prior": 38.0
+            },
+            "revenue_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "fy": 3893.1,
+              "ytd_current": 2713.3,
+              "ytd_prior": 1772.4
+            }
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "((649 + 278.7 - 154.9) - (93.3 + 57.6 - 38)) / (3893.1 + 2713.3 - 1772.4) * 100",
+          "score_eligible": true
+        }
+      }
+    },
+    "HUBB": {
+      "company": "Hubbell Incorporated",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Hubbell Reports Second Quarter 2026 Results",
+        "url": "https://hubbell.gcs-web.com/news-releases/news-release-details/hubbell-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 15,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 10,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 23.9,
+          "comparison_class": "Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": false
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 12,
+          "comparison_class": "Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 3.344495,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "HUBB Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/48898/000162828026050405/hubb-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/48898/000162828026050405/hubb-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-050405",
+            "0001628280-26-007500"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "DebtCurrent": 568.7,
+              "LongTermDebtNoncurrent": 4803.9
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 378.6
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 1208.8,
+              "ytd_current": 612.4,
+              "ytd_prior": 566.7
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationDepletionAndAmortization": {
+                "fy": 206.1,
+                "ytd_current": 127.8,
+                "ytd_prior": 95.2
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(568.7 + 4803.9 - 378.6) / ((1208.8 + 612.4 - 566.7) + (206.1 + 127.8 - 95.2))",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 20.364529,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating income / revenue for the quarter, from the Form 10-Q income statement",
+          "period": "Q2_CALENDAR_2026_QUARTER",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "HUBB Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/48898/000162828026050405/hubb-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/48898/000162828026050405/hubb-20260630.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-050405"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "quarter": 348.6
+            },
+            "revenue_usd_m": {
+              "RevenueFromContractWithCustomerExcludingAssessedTax": 1711.8
+            }
+          },
+          "calculation_method": "Three-month operating income divided by three-month revenue for the fiscal quarter ending closest to 2026-06-30.",
+          "calculation": "348.6 / 1711.8 * 100",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 14.483579,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property, plant and equipment) / TTM revenue; operating cash flow from continuing operations where separately presented",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "HUBB Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/48898/000162828026050405/hubb-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/48898/000162828026050405/hubb-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/48898/000162828026007500/hubb-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-050405",
+            "0001628280-26-007500"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_cash_flow_usd_m": {
+              "concept": "NetCashProvidedByUsedInOperatingActivities",
+              "fy": 1029.8,
+              "ytd_current": 336.4,
+              "ytd_prior": 298.0
+            },
+            "capex_usd_m": {
+              "concept": "PaymentsToAcquireProductiveAssets",
+              "fy": 155.1,
+              "ytd_current": 77.6,
+              "ytd_prior": 65.9
+            },
+            "revenue_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "fy": 5844.6,
+              "ytd_current": 3228.5,
+              "ytd_prior": 2849.5
+            }
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "((1029.8 + 336.4 - 298) - (155.1 + 77.6 - 65.9)) / (5844.6 + 3228.5 - 2849.5) * 100",
+          "score_eligible": true
+        }
+      }
+    },
+    "RRX": {
+      "company": "Regal Rexnord Corporation",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Regal Rexnord Q2 2026 results",
+        "url": "https://investors.regalrexnord.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 4.2,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3.3,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": false
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 23.5,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 3.451581,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "RRX Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000229/rbc-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/82811/000008281126000229/rbc-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/82811/000008281126000054/rbc-20251231.htm"
+          ],
+          "filing_ids": [
+            "0000082811-26-000229",
+            "0000082811-26-000054"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "LongTermDebtCurrent": 24.2,
+              "LongTermDebtNoncurrent": 4587.6
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 441.6
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 680.8,
+              "ytd_current": 367.8,
+              "ytd_prior": 342.0
+            },
+            "depreciation_amortization_usd_m": {
+              "Depreciation": {
+                "fy": 154.5,
+                "ytd_current": 75.8,
+                "ytd_prior": 75.6
+              },
+              "AmortizationOfIntangibleAssets": {
+                "fy": 346.1,
+                "ytd_current": 173.0,
+                "ytd_prior": 172.2
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(24.2 + 4587.6 - 441.6) / ((680.8 + 367.8 - 342) + (154.5 + 75.8 - 75.6) + (346.1 + 173 - 172.2))",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 13.809035,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating income / revenue for the quarter, from the Form 10-Q income statement",
+          "period": "Q2_CALENDAR_2026_QUARTER",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "RRX Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000229/rbc-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/82811/000008281126000229/rbc-20260630.htm"
+          ],
+          "filing_ids": [
+            "0000082811-26-000229"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "quarter": 215.2
+            },
+            "revenue_usd_m": {
+              "RevenueFromContractWithCustomerIncludingAssessedTax": 1558.4
+            }
+          },
+          "calculation_method": "Three-month operating income divided by three-month revenue for the fiscal quarter ending closest to 2026-06-30.",
+          "calculation": "215.2 / 1558.4 * 100",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 7.697514,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property, plant and equipment) / TTM revenue; operating cash flow from continuing operations where separately presented",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "RRX Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/82811/000008281126000229/rbc-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/82811/000008281126000229/rbc-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/82811/000008281126000054/rbc-20251231.htm"
+          ],
+          "filing_ids": [
+            "0000082811-26-000229",
+            "0000082811-26-000054"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_cash_flow_usd_m": {
+              "concept": "NetCashProvidedByUsedInOperatingActivities",
+              "fy": 990.8,
+              "ytd_current": 191.6,
+              "ytd_prior": 625.5
+            },
+            "capex_usd_m": {
+              "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "fy": 97.7,
+              "ytd_current": 39.9,
+              "ytd_prior": 47.0
+            },
+            "revenue_usd_m": {
+              "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+              "fy": 5934.5,
+              "ytd_current": 3037.5,
+              "ytd_prior": 2914.2
+            }
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "((990.8 + 191.6 - 625.5) - (97.7 + 39.9 - 47)) / (5934.5 + 3037.5 - 2914.2) * 100",
+          "score_eligible": true
+        }
+      }
+    },
+    "ETN": {
+      "company": "Eaton Corporation plc",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Eaton Reports Record Second Quarter 2026 Results",
+        "url": "https://www.eaton.com/cr/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html"
+      },
+      "metrics": {
+        "operating_margin_pct": {
+          "value": 16.316962,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating income / revenue for the quarter, from the Form 10-Q income statement",
+          "period": "Q2_CALENDAR_2026_QUARTER",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "ETN Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm"
+          ],
+          "filing_ids": [
+            "0001551182-26-000030"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_income_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax - CostOfRevenue - SellingGeneralAndAdministrativeExpense - ResearchAndDevelopmentExpense",
+              "quarter": 1392.0
+            },
+            "revenue_usd_m": {
+              "RevenueFromContractWithCustomerExcludingAssessedTax": 8531.0
+            }
+          },
+          "calculation_method": "Three-month operating income divided by three-month revenue for the fiscal quarter ending closest to 2026-06-30.",
+          "calculation": "1392 / 8531 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "ETN presents no operating-income subtotal; operating income derived as net sales - cost of products sold - selling and administrative expense - R&D (excludes interest and other expense (income) - net) Replaces previous-pass record (value=19.8, comparison_class=Q2_OPERATING_MARGIN, score_eligible=False, definition='total company operating margin')."
+        },
+        "orders_growth_pct": {
+          "value": 33,
+          "comparison_class": "ROLLING_12M_ORDERS_GROWTH",
+          "source_definition": "Electrical rolling 12-month orders organic growth",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 3.096615,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "ETN Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001551182-26-000030",
+            "0001551182-26-000007"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "ShortTermBorrowings": 2091.0,
+              "LongTermDebtAndCapitalLeaseObligationsCurrent": 11.0,
+              "LongTermDebtAndCapitalLeaseObligations": 18509.0
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 483.0
+            },
+            "operating_income_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax - CostOfRevenue - SellingGeneralAndAdministrativeExpense - ResearchAndDevelopmentExpense",
+              "fy": 5209.0,
+              "ytd_current": 2563.0,
+              "ytd_prior": 2456.0
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationDepletionAndAmortization": {
+                "fy": 1006.0,
+                "ytd_current": 671.0,
+                "ytd_prior": 493.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(2091 + 11 + 18509 - 483) / ((5209 + 2563 - 2456) + (1006 + 671 - 493))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "ETN presents no operating-income subtotal; operating income derived as net sales - cost of products sold - selling and administrative expense - R&D (excludes interest and other expense (income) - net)"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 13.101978,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property, plant and equipment) / TTM revenue; operating cash flow from continuing operations where separately presented",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "ETN Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001551182-26-000030",
+            "0001551182-26-000007"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_cash_flow_usd_m": {
+              "concept": "NetCashProvidedByUsedInOperatingActivities",
+              "fy": 4472.0,
+              "ytd_current": 1634.0,
+              "ytd_prior": 1156.0
+            },
+            "capex_usd_m": {
+              "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "fy": 919.0,
+              "ytd_current": 446.0,
+              "ytd_prior": 349.0
+            },
+            "revenue_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "fy": 27448.0,
+              "ytd_current": 15982.0,
+              "ytd_prior": 13404.0
+            }
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "((4472 + 1634 - 1156) - (919 + 446 - 349)) / (27448 + 15982 - 13404) * 100",
+          "score_eligible": true
+        }
+      }
+    },
+    "GNRC": {
+      "company": "Generac Holdings Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Generac Q2 2026 results",
+        "url": "https://investors.generac.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 11,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 8.544084,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property, plant and equipment) / TTM revenue; operating cash flow from continuing operations where separately presented",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "GNRC Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1474735/000143774926025669/gnrc20260630_10q.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1474735/000143774926025669/gnrc20260630_10q.htm",
+            "https://www.sec.gov/Archives/edgar/data/1474735/000143774926004568/gnrc20251231_10k.htm"
+          ],
+          "filing_ids": [
+            "0001437749-26-025669",
+            "0001437749-26-004568"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_cash_flow_usd_m": {
+              "concept": "NetCashProvidedByUsedInOperatingActivities",
+              "fy": 437.978,
+              "ytd_current": 240.496,
+              "ytd_prior": 130.341
+            },
+            "capex_usd_m": {
+              "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "fy": 169.85,
+              "ytd_current": 87.687,
+              "ytd_prior": 88.653
+            },
+            "revenue_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "fy": 4209.147,
+              "ytd_current": 2232.875,
+              "ytd_prior": 2003.29
+            }
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "((437.978 + 240.496 - 130.341) - (169.85 + 87.687 - 88.653)) / (4209.147 + 2232.875 - 2003.29) * 100",
+          "score_eligible": true,
+          "notes": "Generac debt captions include finance lease obligations (presented within the borrowing captions). Replaces previous-pass record (value=5.376068, comparison_class=Q2_FREE_CASH_FLOW_MARGIN, score_eligible=False, definition='free cash flow / sales')."
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.672951,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "GNRC Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1474735/000143774926025669/gnrc20260630_10q.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1474735/000143774926025669/gnrc20260630_10q.htm",
+            "https://www.sec.gov/Archives/edgar/data/1474735/000143774926004568/gnrc20251231_10k.htm"
+          ],
+          "filing_ids": [
+            "0001437749-26-025669",
+            "0001437749-26-004568"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "ShortTermBorrowings": 48.318,
+              "LongTermDebtAndCapitalLeaseObligationsCurrent": 32.052,
+              "LongTermDebtAndCapitalLeaseObligations": 1248.958
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 264.921
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 289.191,
+              "ytd_current": 327.724,
+              "ytd_prior": 195.427
+            },
+            "depreciation_amortization_usd_m": {
+              "Depreciation": {
+                "fy": 93.328,
+                "ytd_current": 53.189,
+                "ytd_prior": 43.292
+              },
+              "AmortizationOfIntangibleAssets": {
+                "fy": 101.507,
+                "ytd_current": 61.195,
+                "ytd_prior": 51.17
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(48.318 + 32.052 + 1248.958 - 264.921) / ((289.191 + 327.724 - 195.427) + (93.328 + 53.189 - 43.292) + (101.507 + 61.195 - 51.17))",
+          "score_eligible": true,
+          "notes": "Generac debt captions include finance lease obligations (presented within the borrowing captions)."
+        },
+        "operating_margin_pct": {
+          "value": 17.931931,
+          "comparison_class": "Q2_OPERATING_MARGIN",
+          "source_definition": "GAAP operating income / revenue for the quarter, from the Form 10-Q income statement",
+          "period": "Q2_CALENDAR_2026_QUARTER",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "GNRC Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1474735/000143774926025669/gnrc20260630_10q.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1474735/000143774926025669/gnrc20260630_10q.htm"
+          ],
+          "filing_ids": [
+            "0001437749-26-025669"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "quarter": 210.433
+            },
+            "revenue_usd_m": {
+              "RevenueFromContractWithCustomerExcludingAssessedTax": 1173.51
+            }
+          },
+          "calculation_method": "Three-month operating income divided by three-month revenue for the fiscal quarter ending closest to 2026-06-30.",
+          "calculation": "210.433 / 1173.51 * 100",
+          "score_eligible": true
+        }
+      }
+    }
+  },
+  "supersedes": "data/peers/POWL/2026-10-03.json"
+}

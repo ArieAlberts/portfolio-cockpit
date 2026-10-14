@@ -81,8 +81,9 @@ def test_absolute_anchors_explain_wkl_without_changing_relative_score_or_gate():
     assert "WKL" in payload["blocked"]
     wkl=payload["blocked"]["WKL"]
 
-    assert wkl["diagnostic_candidate"]["score"] == pytest.approx(16.4960426160)
-    assert wkl["weighted_component_coverage"] == pytest.approx(0.50)
+    # Pinned to the current WKL peer dataset (2026-10-14: peer leverage filled).
+    assert wkl["diagnostic_candidate"]["score"] == pytest.approx(22.8029456825)
+    assert wkl["weighted_component_coverage"] == pytest.approx(0.75)
     assert wkl["status"] == "DATA_CHECK"
 
     anchors=wkl["absolute_anchors"]
