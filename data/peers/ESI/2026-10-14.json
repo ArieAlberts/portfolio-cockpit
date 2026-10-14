@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ESI",
+  "collected_at": "2026-10-14",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_2026",
+  "peer_universe_status": "PARTIAL_CORE_COVERAGE_60_PERCENT",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PARTIAL_60_PERCENT_COMPONENT_COVERAGE",
+    "eligible_period_alignments": [
+      "ALIGNED_Q2"
+    ]
+  },
+  "companies": {
+    "ESI": {
+      "company": "Element Solutions Inc",
+      "role": "TARGET",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Element Solutions Q2 2026 Financial Results",
+        "url": "https://ir.elementsolutionsinc.com/Investors/news/news-details/2026/Element-Solutions-Inc-Reports-Record-Second-Quarter-2026-Financial-Results/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 56,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported sales growth",
+          "score_eligible": false,
+          "notes": "Reported growth includes a material acquisition contribution; organic growth is the preferred quality-growth signal."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 15,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 27.8,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 7.566462,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "company-defined free cash flow / net sales",
+          "score_eligible": true,
+          "calculation": "74 / 978 * 100",
+          "definition_confidence": 100
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 27.027027,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted EPS Q2 YoY",
+          "calculation": "(0.47 / 0.37 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 100
+        },
+        "net_debt_to_ebitda": {
+          "value": 3.454708,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "ESI Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000065/esi-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000065/esi-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1590714/000159071426000018/esi-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001590714-26-000065",
+            "0001590714-26-000018"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "LongTermDebtAndCapitalLeaseObligationsCurrent": 62.9,
+              "LongTermDebtAndCapitalLeaseObligations": 2056.5
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 189.6
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 342.2,
+              "ytd_current": 225.1,
+              "ytd_prior": 171.7
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationDepletionAndAmortization": {
+                "fy": 151.2,
+                "ytd_current": 87.2,
+                "ytd_prior": 75.4
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(62.9 + 2056.5 - 189.6) / ((342.2 + 225.1 - 171.7) + (151.2 + 87.2 - 75.4))",
+          "score_eligible": true
+        }
+      }
+    },
+    "ENTG": {
+      "company": "Entegris, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Entegris Q2 2026 results",
+        "url": "https://investor.entegris.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 11.46,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 28.4,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": true,
+          "definition_confidence": 90
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 24.5,
+          "comparison_class": "Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 13.620924,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "free cash flow / net sales; FCF equals operating cash flow less capital expenditures net of government incentives",
+          "calculation": "120.3 / 883.2 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 40.909091,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Diluted non-GAAP EPS Q2 YoY",
+          "calculation": "(0.93 / 0.66 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 3.436801,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-27",
+          "as_of_date": "2026-06-27",
+          "source_type": "SEC_FILING",
+          "source_title": "ENTG Form 10-Q (2026-06-27) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1101302/000110130226000150/entg-20260627.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1101302/000110130226000150/entg-20260627.htm",
+            "https://www.sec.gov/Archives/edgar/data/1101302/000110130226000012/entg-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001101302-26-000150",
+            "0001101302-26-000012"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "LongTermDebtNoncurrent": 3456.0
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 353.6
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 455.9,
+              "ytd_current": 306.2,
+              "ytd_prior": 228.4
+            },
+            "depreciation_amortization_usd_m": {
+              "Depreciation": {
+                "fy": 205.3,
+                "ytd_current": 68.5,
+                "ytd_prior": 101.2
+              },
+              "AmortizationOfIntangibleAssets": {
+                "fy": 184.4,
+                "ytd_current": 92.4,
+                "ytd_prior": 92.1
+              }
+            },
+            "noncash_impairment_addback_usd_m": {
+              "ImpairmentOfLongLivedAssetsToBeDisposedOf": {
+                "fy": 11.7,
+                "ytd_current": 0.0,
+                "ytd_prior": 0.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-27 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 178 days.",
+          "calculation": "(3456 - 353.6) / ((455.9 + 306.2 - 228.4) + (205.3 + 68.5 - 101.2) + (184.4 + 92.4 - 92.1) + (11.7 + 0 - 0))",
+          "score_eligible": true,
+          "notes": "Entegris presents no current debt caption at 2026-06-27."
+        }
+      }
+    },
+    "MKSI": {
+      "company": "MKS Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "MKS Q2 2026 results",
+        "url": "https://investor.mks.com/"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 28.685897,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / revenue",
+          "score_eligible": true,
+          "notes": "358 / 1248 * 100",
+          "definition_confidence": 90
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 15.064103,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "188 / 1248 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 43.478261,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Non-GAAP net earnings per diluted share Q2 YoY",
+          "calculation": "(3.30 / 2.30 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 3.250732,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "MKSI Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1049502/000119312526337821/mksi-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1049502/000119312526337821/mksi-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1049502/000119312526066820/mksi-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001193125-26-337821",
+            "0001193125-26-066820"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "ShortTermBorrowings": 1399.0,
+              "LongTermDebt": 2544.0
+            },
+            "cash_usd_m": {
+              "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents": 611.0
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 528.0,
+              "ytd_current": 400.0,
+              "ytd_prior": 246.0
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationAndAmortization": {
+                "fy": 344.0,
+                "ytd_current": 171.0,
+                "ytd_prior": 172.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(1399 + 2544 - 611) / ((528 + 400 - 246) + (344 + 171 - 172))",
+          "score_eligible": true
+        }
+      }
+    },
+    "KWR": {
+      "company": "Quaker Houghton",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Quaker Houghton Q2 2026 results",
+        "url": "https://investors.quakerhoughton.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 10,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": true
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 15.994,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / sales",
+          "score_eligible": true,
+          "notes": "85.2 / 532.6 * 100",
+          "definition_confidence": 90
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 28.070175,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Non-GAAP earnings per diluted share Q2 YoY",
+          "calculation": "(2.19 / 1.71 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.847774,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "KWR Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/81362/000162828026051107/kwr-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/81362/000162828026051107/kwr-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/81362/000162828026010694/kwr-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-051107",
+            "0001628280-26-010694"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "DebtCurrent": 15.654,
+              "LongTermDebtNoncurrent": 857.79
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 155.093
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 52.986,
+              "ytd_current": 74.192,
+              "ytd_prior": -24.886
+            },
+            "depreciation_amortization_usd_m": {
+              "ResultsOfOperationsDepreciationDepletionAmortizationAndAccretion": {
+                "fy": 93.453,
+                "ytd_current": 51.011,
+                "ytd_prior": 44.278
+              }
+            },
+            "noncash_impairment_addback_usd_m": {
+              "AssetImpairmentCharges": {
+                "fy": 88.84,
+                "ytd_current": 0.0,
+                "ytd_prior": 88.84
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(15.654 + 857.79 - 155.093) / ((52.986 + 74.192 - (-24.886)) + (93.453 + 51.011 - 44.278) + (88.84 + 0 - 88.84))",
+          "score_eligible": true
+        }
+      }
+    },
+    "DD": {
+      "company": "DuPont de Nemours, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "DuPont Reports Second Quarter 2026 Results",
+        "url": "https://www.investors.dupont.com/news-and-media/press-release-details/2026/DuPont-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "Q2_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true
+        },
+        "adjusted_ebitda_margin_pct": {
+          "value": 24.6,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "operating EBITDA margin",
+          "score_eligible": true,
+          "definition_confidence": 90
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 17.922,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "transaction-adjusted free cash flow / net sales",
+          "calculation": "326 / 1819 * 100",
+          "score_eligible": true,
+          "definition_confidence": 80,
+          "notes": "DuPont's transaction-adjusted FCF is broader than a plain CFO-minus-capex definition; retained with a definition-confidence penalty."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 48.031496,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted EPS Q2 YoY",
+          "calculation": "(1.88 / 1.27 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.048448,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "DD Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1666700/000166670026000053/dd-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1666700/000166670026000053/dd-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1666700/000166670026000013/dd-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001666700-26-000053",
+            "0001666700-26-000013"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "DebtCurrent": 0.0,
+              "LongTermDebtAndCapitalLeaseObligations": 3125.0
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 1740.0
+            },
+            "operating_income_usd_m": {
+              "concept": "RevenueFromContractWithCustomerExcludingAssessedTax - CostOfGoodsAndServicesSold - ResearchAndDevelopmentExpense - SellingGeneralAndAdministrativeExpense - AmortizationOfIntangibleAssets - RestructuringSettlementAndImpairmentProvisionsIncludingAdjustments - BusinessCombinationAcquisitionIntegrationAndSeparationRelatedCosts",
+              "fy": 506.0,
+              "ytd_current": 442.0,
+              "ytd_prior": 257.0
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationDepletionAndAmortization": {
+                "fy": 647.0,
+                "ytd_current": 309.0,
+                "ytd_prior": 326.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(0 + 3125 - 1740) / ((506 + 442 - 257) + (647 + 309 - 326))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "DD presents no operating-income subtotal; operating income derived as net sales - cost of sales - R&D - SG&A - amortization of intangibles - restructuring and asset related charges - acquisition, integration and separation costs (excludes equity affiliates, sundry income and interest)"
+        }
+      }
+    },
+    "ASH": {
+      "company": "Ashland Inc.",
+      "role": "PEER",
+      "period": "Q3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Ashland quarter ended June 30 2026",
+        "url": "https://investor.ashland.com/"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 21.93159,
+          "comparison_class": "Q2_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / sales",
+          "score_eligible": true,
+          "notes": "109 / 497 * 100",
+          "definition_confidence": 90
+        },
+        "leverage_ratio": {
+          "value": 2.4,
+          "comparison_class": "NET_LEVERAGE",
+          "source_definition": "reported leverage",
+          "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 20.724346,
+          "comparison_class": "Q2_COMPANY_DEFINED_FCF_MARGIN",
+          "source_definition": "ongoing free cash flow / sales",
+          "calculation": "103 / 497 * 100",
+          "score_eligible": true,
+          "definition_confidence": 75,
+          "notes": "Ashland's ongoing FCF contains company-specific adjustments; retained with a larger definition-confidence penalty."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -1.923077,
+          "comparison_class": "Q2_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted diluted EPS excluding intangibles amortization Q2 YoY",
+          "calculation": "(1.02 / 1.04 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 85
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.847561,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_Q2_CALENDAR_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "ASH Form 10-Q (2026-06-30) and Form 10-K (2025-09-30) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526324226/ash-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1674862/000119312526324226/ash-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1674862/000119312525289248/ash-20250930.htm"
+          ],
+          "filing_ids": [
+            "0001193125-26-324226",
+            "0001193125-25-289248"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "LongTermDebtNoncurrent": 1374.0
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 440.0
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": -775.0,
+              "ytd_current": 76.0,
+              "ytd_prior": -836.0
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationDepletionAndAmortization": {
+                "fy": 237.0,
+                "ytd_current": 141.0,
+                "ytd_prior": 187.0
+              }
+            },
+            "noncash_impairment_addback_usd_m": {
+              "GoodwillImpairmentLoss": {
+                "fy": 706.0,
+                "ytd_current": 0.0,
+                "ytd_prior": 706.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 273 days.",
+          "calculation": "(1374 - 440) / ((-775 + 76 - (-836)) + (237 + 141 - 187) + (706 + 0 - 706))",
+          "score_eligible": true,
+          "notes": "Ashland fiscal Q3 FY2026 (quarter ended 2026-06-30); no current debt caption on the balance sheet; TTM = FY2025 (ended 2025-09-30) + 9M FY2026 - 9M FY2025."
+        }
+      }
+    }
+  },
+  "supersedes": "data/peers/ESI/2026-10-03.json"
+}
