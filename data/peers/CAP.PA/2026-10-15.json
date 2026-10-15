@@ -1,0 +1,758 @@
+{
+  "schema_version": 1,
+  "target_ticker": "CAP.PA",
+  "collected_at": "2026-10-15",
+  "purpose": "Standardized IT-services peer observations for Capgemini. Strict H1 2026 scoring uses only period-aligned peers and comparable definitions.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "CAP.PA",
+    "CTSH",
+    "SOP.PA",
+    "EPAM",
+    "ACN",
+    "GIB.A.TO",
+    "INFY",
+    "ATE.PA",
+    "GLOB"
+  ],
+  "peer_universe_status": "READY_FOR_STRICT_H1_CORE_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PENDING_PIPELINE_REVIEW",
+    "eligible_period_alignments": [
+      "ALIGNED_H1",
+      "ALIGNED_H1_DERIVED"
+    ]
+  },
+  "supersedes": "data/peers/CAP.PA/2026-10-03.json",
+  "change_note": "Adds ATE.PA (ALIGNED_H1) and GLOB (ALIGNED_H1_DERIVED); fills standardized net debt / LTM EBITDA for the target, CTSH, EPAM and GLOB, and SOP.PA's reported ratio. ACN, GIB.A.TO and INFY remain CONTEXT_PEER.",
+  "companies": {
+    "CAP.PA": {
+      "company": "Capgemini SE",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Capgemini 2026 H1 Results",
+        "url": "https://investors.capgemini.com/en/publication/2026-h1-results/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 8.8,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 12.5,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": -11.9,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "normalized EPS growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 0.30624,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "organic free cash flow / revenue",
+          "calculation": "37 / 12082 * 100",
+          "score_eligible": true
+        },
+        "constant_currency_revenue_growth_pct": {
+          "value": 11.3,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "constant-currency revenue growth including acquisitions",
+          "score_eligible": false,
+          "notes": "Acquisitions made a material contribution; not treated as organic growth."
+        },
+        "net_debt_eur_m": {
+          "value": 6454,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net debt",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -0.9504,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "average number of shares outstanding H1 YoY",
+          "calculation": "(168337662 / 169952974 - 1) * 100",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.254279,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / LTM EBITDA; EBITDA = reported operating profit (GAAP/IFRS) + depreciation and amortization; computed from filings; Capgemini net debt as defined by the company (borrowings less cash, cash-management assets and debt hedges; excludes lease liabilities)",
+          "calculation": "6454 / ((2199 + 878 - 976) + (698 + 414 - 350))",
+          "score_eligible": true,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Capgemini Half-Year 2026 Financial Report (3 August 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://investors.capgemini.com/en/file/30861?download=1",
+          "filing_or_report_id": "Capgemini_-_2026-08-03_-_Half-Year_2026_Financial_Report.pdf",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "net_debt_eur_m": 6454,
+            "operating_profit_fy2025_h1_2026_h1_2025_eur_m": [
+              2199,
+              878,
+              976
+            ],
+            "depreciation_amortization_impairment_incl_right_of_use_fy2025_h1_2026_h1_2025_eur_m": [
+              698,
+              414,
+              350
+            ],
+            "operating_margin_fy2025_h1_2026_h1_2025_eur_m": [
+              2983,
+              1506,
+              1377
+            ]
+          },
+          "calculation_method": "LTM = FY2025 + H1 2026 - H1 2025; operating profit is after other operating income and expenses (restructuring, acquisition costs, share-based compensation, acquired-intangible amortization).",
+          "notes": "Standardized to the GAAP/IFRS-operating-profit basis used for CTSH, EPAM and GLOB. On Capgemini's operating-margin basis the ratio would be lower. LTM EBITDA is not pro-forma for WNS/Cloud4C (completed Q4 2025); IFRS EBITDA includes right-of-use depreciation while net debt excludes lease liabilities."
+        }
+      }
+    },
+    "CTSH": {
+      "company": "Cognizant Technology Solutions Corp.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Cognizant Reports Second Quarter 2026 Results",
+        "url": "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Second-Quarter-2026-Results/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 5.2,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported six-month revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 15.8,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 8.235294,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS H1 YoY",
+          "calculation": "(2.76 / 2.55 - 1) * 100",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 6.030842,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "657 / 10894 * 100",
+          "score_eligible": true
+        },
+        "constant_currency_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "constant-currency revenue growth",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -4.259635,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "(472 / 493 - 1) * 100",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 0.130663,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / LTM EBITDA; EBITDA = reported operating profit (GAAP/IFRS) + depreciation and amortization; computed from filings",
+          "calculation": "(33 + 1527 - 1038) / ((3389 + 1717 - 1670) + (550 + 284 - 275))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Cognizant Form 10-Q (2026-06-30) and Form 10-K (2025-12-31)",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630.htm",
+          "filing_or_report_id": "0001058290-26-000031; 0001058290-26-000008",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "short_term_debt_usd_m": 33,
+            "long_term_debt_usd_m": 1527,
+            "cash_usd_m": 1038,
+            "income_from_operations_fy2025_h1_2026_h1_2025_usd_m": [
+              3389,
+              1717,
+              1670
+            ],
+            "depreciation_amortization_fy2025_h1_2026_h1_2025_usd_m": [
+              550,
+              284,
+              275
+            ]
+          },
+          "calculation_method": "LTM = FY2025 (10-K) + H1 2026 - H1 2025 (10-Q). Short-term investments are not deducted."
+        }
+      }
+    },
+    "SOP.PA": {
+      "company": "Sopra Steria Group SA",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Sopra Steria H1 2026 results press release (29 July 2026)",
+        "url": "https://www.soprasteria.com/docs/librariesprovider2/sopra-steria-corporate/finance/cp-fi/29072026_cp-sopra-steria_h1-2026_eng.pdf?sfvrsn=242b18db_8"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 4.1,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 9.6,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "operating profit on business activity / revenue",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 18,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "basic recurring EPS growth",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": -4.853155,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "-143.6 / 2958.9 * 100",
+          "score_eligible": true
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": false
+        },
+        "net_debt_eur_m": {
+          "value": 618.7,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net financial debt",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -1.4,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "weighted average shares excluding treasury shares",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.1,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net financial debt / pro forma 12-month rolling EBITDA before IFRS 16 (company-reported)",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Sopra Steria H1 2026 results press release (29 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.soprasteria.com/docs/librariesprovider2/sopra-steria-corporate/finance/cp-fi/29072026_cp-sopra-steria_h1-2026_eng.pdf?sfvrsn=242b18db_8",
+          "filing_or_report_id": "Sopra Steria H1 2026 press release (29072026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "net_financial_debt_eur_m": 618.7,
+            "reported_ratio_x": 1.1
+          },
+          "calculation_method": "as reported by the company",
+          "notes": "Company ratio is pre-IFRS 16 and pro forma for acquisitions; published to one decimal."
+        }
+      }
+    },
+    "EPAM": {
+      "company": "EPAM Systems, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "EPAM Reports Results for Second Quarter 2026",
+        "url": "https://investors.epam.com/news/news-details/2026/EPAM-Reports-Results-for-Second-Quarter-2026/default.aspx"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 6,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported six-month revenue growth",
+          "score_eligible": true
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 15.4,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "non-GAAP operating margin",
+          "score_eligible": true
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 20.46332,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "non-GAAP diluted EPS H1 YoY",
+          "calculation": "(6.24 / 5.18 - 1) * 100",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": null,
+          "score_eligible": false,
+          "notes": "H1 operating cash flow was negative; no company-defined aligned H1 free-cash-flow metric stored in this pass."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3.5,
+          "comparison_class": "H1_ORGANIC_CONSTANT_CURRENCY_GROWTH",
+          "source_definition": "organic constant-currency revenue growth",
+          "score_eligible": false
+        },
+        "net_cash_usd_m": {
+          "value": 764.397,
+          "comparison_class": "NET_CASH_ABSOLUTE",
+          "source_definition": "cash and cash equivalents less long-term debt",
+          "calculation": "789.397 - 25.000",
+          "score_eligible": false
+        },
+        "weighted_average_share_change_pct": {
+          "value": -6.464199,
+          "comparison_class": "H1_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "(53.220 / 56.898 - 1) * 100",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": -1.109265,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / LTM EBITDA; EBITDA = reported operating profit (GAAP/IFRS) + depreciation and amortization; computed from filings",
+          "calculation": "(25.000 - 789.397) / ((520.003 + 268.990 - 225.806) + (124.811 + 63.640 - 62.711) + (0.175 + 0 - 0))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "EPAM Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1352010/000135201026000046/epam-20260630.htm",
+          "filing_or_report_id": "0001352010-26-000046; 0001352010-26-000015",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "long_term_debt_usd_m": 25.0,
+            "cash_usd_m": 789.397,
+            "operating_income_fy2025_h1_2026_h1_2025_usd_m": [
+              520.003,
+              268.99,
+              225.806
+            ],
+            "depreciation_amortization_fy2025_h1_2026_h1_2025_usd_m": [
+              124.811,
+              63.64,
+              62.711
+            ],
+            "asset_impairment_fy2025_usd_m": 0.175
+          },
+          "calculation_method": "LTM = FY2025 (10-K) + H1 2026 - H1 2025 (10-Q), from SEC XBRL. Net cash enters as negative net debt."
+        }
+      }
+    },
+    "ACN": {
+      "company": "Accenture plc",
+      "role": "CONTEXT_PEER",
+      "period": "Q3_FY2026",
+      "period_end": "2026-05-31",
+      "period_alignment": "NON_ALIGNED_FISCAL_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Accenture Reports Third-Quarter Fiscal 2026 Results",
+        "url": "https://newsroom.accenture.com/news/2026/accenture-reports-third-quarter-fiscal-2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 6,
+          "comparison_class": "QUARTER_REPORTED_REVENUE_GROWTH",
+          "source_definition": "Q3 FY26 reported revenue growth",
+          "score_eligible": false
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 17,
+          "comparison_class": "QUARTER_OPERATING_MARGIN",
+          "source_definition": "Q3 FY26 operating margin",
+          "score_eligible": false
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 9,
+          "comparison_class": "QUARTER_DILUTED_EPS_GROWTH",
+          "source_definition": "Q3 FY26 diluted EPS growth",
+          "score_eligible": false
+        },
+        "free_cash_flow_usd_bn": {
+          "value": 3.6,
+          "comparison_class": "QUARTER_FREE_CASH_FLOW",
+          "source_definition": "Q3 FY26 free cash flow",
+          "score_eligible": false
+        }
+      }
+    },
+    "GIB.A.TO": {
+      "company": "CGI Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_FISCAL_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "CGI reports third quarter Fiscal 2026 results",
+        "url": "https://www.cgi.com/en/cgi-reports-third-quarter-f2026-results"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 2.5,
+          "comparison_class": "QUARTER_REPORTED_REVENUE_GROWTH",
+          "source_definition": "Q3 fiscal 2026 revenue growth",
+          "score_eligible": false
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 16.3,
+          "comparison_class": "QUARTER_ADJUSTED_EBIT_MARGIN",
+          "source_definition": "adjusted EBIT margin",
+          "score_eligible": false
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 9,
+          "comparison_class": "QUARTER_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS growth",
+          "score_eligible": false
+        },
+        "operating_cash_flow_margin_pct": {
+          "value": 14.4,
+          "comparison_class": "QUARTER_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "cash provided by operating activities / revenue",
+          "score_eligible": false
+        }
+      }
+    },
+    "INFY": {
+      "company": "Infosys Limited",
+      "role": "CONTEXT_PEER",
+      "period": "Q1_FY2027",
+      "period_end": "2026-06-30",
+      "period_alignment": "NON_ALIGNED_SINGLE_QUARTER",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Infosys Q1 FY27 results",
+        "url": "https://www.infosys.com/about/last-quarter.html"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 14,
+          "comparison_class": "QUARTER_REPORTED_REVENUE_GROWTH_INR",
+          "source_definition": "reported INR revenue growth",
+          "score_eligible": false
+        },
+        "company_adjusted_operating_margin_pct": {
+          "value": 21.1,
+          "comparison_class": "QUARTER_OPERATING_MARGIN",
+          "source_definition": "operating margin",
+          "score_eligible": false
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": 14.9,
+          "comparison_class": "QUARTER_BASIC_EPS_GROWTH_INR",
+          "source_definition": "basic EPS growth in INR",
+          "score_eligible": false
+        },
+        "free_cash_flow_usd_bn": {
+          "value": 0.96,
+          "comparison_class": "QUARTER_FREE_CASH_FLOW",
+          "source_definition": "free cash flow",
+          "score_eligible": false
+        }
+      }
+    },
+    "ATE.PA": {
+      "company": "ALTEN SA",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_EXCHANGE_RELEASE",
+        "title": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+        "url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf"
+      },
+      "metrics": {
+        "company_adjusted_operating_margin_pct": {
+          "value": 8.880144,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "operating profit on activity (before share-based payments, acquired-intangible amortisation and non-recurring items) / revenue",
+          "calculation": "187.3 / 2109.2 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf",
+          "filing_or_report_id": "AMF/DILA FCECO083246_20260924",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "operating_profit_on_activity_eur_m": 187.3,
+            "revenue_eur_m": 2109.2
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "reported_revenue_growth_pct": {
+          "value": 1.204357,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported revenue growth",
+          "calculation": "(2109.2 / 2084.1 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf",
+          "filing_or_report_id": "AMF/DILA FCECO083246_20260924",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "revenue_h1_2026_eur_m": 2109.2,
+            "revenue_h1_2025_eur_m": 2084.1
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 4.945003,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow (company definition, excluding IFRS 16, i.e. after lease payments) / revenue",
+          "calculation": "104.3 / 2109.2 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf",
+          "filing_or_report_id": "AMF/DILA FCECO083246_20260924",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "free_cash_flow_eur_m": 104.3,
+            "revenue_eur_m": 2109.2
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 1.6,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "growth at constant scope and exchange rates",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf",
+          "filing_or_report_id": "AMF/DILA FCECO083246_20260924",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company",
+          "notes": "Not score-eligible: the target's comparable organic measure is not stored as eligible."
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": null,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf",
+          "filing_or_report_id": "AMF/DILA FCECO083246_20260924",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company",
+          "notes": "Not sourced: the results release gives net income group share (+37.8 %) but no normalized/adjusted EPS."
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "ALTEN 2026 Half-Year Results press release (24 September 2026, AMF regulated information via DILA open data)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ECO/2026/09/FCECO083246_20260924.pdf",
+          "filing_or_report_id": "AMF/DILA FCECO083246_20260924",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company",
+          "notes": "Not sourced: release gives net cash of EUR 313m but no EBITDA; the half-year financial report is only on alten.com, which blocks automated access."
+        }
+      }
+    },
+    "GLOB": {
+      "company": "Globant S.A.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Globant second quarter 2026 results (Form 6-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1557860/000110465926095916/tm2623064d1_ex99-1.htm"
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A. Calendar-year quarterly reporter; income-statement items from the six-months columns of the Q2 release, cash flow summed from the Q1 and Q2 releases (three-month cash flow only).",
+      "metrics": {
+        "company_adjusted_operating_margin_pct": {
+          "value": 13.612994,
+          "comparison_class": "H1_COMPANY_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "non-IFRS adjusted profit from operations (excl. share-based compensation, business optimization and acquisition-related charges) / revenue",
+          "calculation": "166.283 / 1221.502 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Globant second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1557860/000110465926095916/tm2623064d1_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-095916",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_profit_from_operations_usd_k": 166283,
+            "revenues_usd_k": 1221502
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "reported_revenue_growth_pct": {
+          "value": -0.307117,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "reported six-month revenue growth",
+          "calculation": "(1221.502 / 1225.265 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Globant second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1557860/000110465926095916/tm2623064d1_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-095916",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "revenues_h1_2026_usd_k": 1221502,
+            "revenues_h1_2025_usd_k": 1225265
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "company_adjusted_eps_growth_pct": {
+          "value": -4.620462,
+          "comparison_class": "H1_COMPANY_ADJUSTED_EPS_GROWTH",
+          "source_definition": "non-IFRS adjusted diluted EPS H1 YoY",
+          "calculation": "(2.89 / 3.03 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Globant second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1557860/000110465926095916/tm2623064d1_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-095916",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_diluted_eps_h1_2026_usd": 2.89,
+            "adjusted_diluted_eps_h1_2025_usd": 3.03
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 3.986813,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(cash flows from operating activities - capital expenditures) / revenue, Q1 + Q2",
+          "calculation": "((54.438 + 30.217) - (18.372 + 17.584)) / 1221.502 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Globant Q1 2026 and Q2 2026 results (Form 6-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1557860/000110465926095916/tm2623064d1_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-061172 (Q1 2026); 0001104659-26-095916 (Q2 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_q1_usd_k": 54438,
+            "ocf_q2_usd_k": 30217,
+            "capex_q1_usd_k": 18372,
+            "capex_q2_usd_k": 17584,
+            "revenues_h1_usd_k": 1221502
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease payments are in financing cash flow, unlike Capgemini's organic FCF which deducts them."
+        },
+        "net_debt_to_ebitda": {
+          "value": 0.752391,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / LTM EBITDA; EBITDA = reported operating profit (GAAP/IFRS) + depreciation and amortization; computed from filings (D&A as in the company's non-IFRS reconciliation)",
+          "calculation": "(19.364 + 402.591 - 163.766) / ((171.732 + 71.527 - 55.714) + (44.719 + 116.422) + (23.734 + 52.573) - (22.241 + 59.594))",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Globant Q2 2026 results (Form 6-K Exhibit 99.1) and FY2025 Form 20-F",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1557860/000110465926095916/tm2623064d1_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-095916; 0001628280-26-012910 (20-F, https://www.sec.gov/Archives/edgar/data/1557860/000162828026012910/glob-20251231.htm)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "borrowings_current_usd_m": 19.364,
+            "borrowings_noncurrent_usd_m": 402.591,
+            "cash_usd_m": 163.766,
+            "profit_from_operations_fy2025_h1_2026_h1_2025_usd_m": [
+              171.732,
+              71.527,
+              55.714
+            ],
+            "d_and_a_fy2025_cost_of_revenues_and_sga_usd_m": [
+              44.719,
+              116.422
+            ],
+            "d_and_a_h1_2026_usd_m": [
+              23.734,
+              52.573
+            ],
+            "d_and_a_h1_2025_usd_m": [
+              22.241,
+              59.594
+            ]
+          },
+          "calculation_method": "LTM = FY2025 (20-F) + H1 2026 - H1 2025; lease liabilities excluded from debt."
+        }
+      }
+    }
+  }
+}
