@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-10-15T09:11:52Z",
+  "event_id": "2ae2666d4ff7d9179962",
+  "execution_effect": "NONE",
+  "new_fingerprint": "3de97a2df4a561d7fb6f8467e2e70a89228617e3bc9f90bed170cc3eb1bb91d8",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 166,
+    "selected_link_count": 9,
+    "visible_text_chars": 13353
+  },
+  "old_fingerprint": "45cd9a284e6f04376a6c7f8141feea1c7da11bcab5aa5241f288660d5bfa3f70",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 166,
+    "selected_link_count": 8,
+    "visible_text_chars": 13383
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_publications",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "CAP.PA",
+  "url": "https://investors.capgemini.com/all-publications/"
+}
