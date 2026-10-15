@@ -12,6 +12,10 @@ on:
     types: [completed]
     branches: [main]
   workflow_dispatch:
+  # The site is static: redeploy daily so source-age warnings age correctly
+  # even on days with no commits. This does not fabricate or import quotes.
+  schedule:
+    - cron: "25 21 * * *"
 
 permissions:
   contents: read
