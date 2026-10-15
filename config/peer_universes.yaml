@@ -20,7 +20,7 @@ universes:
     label: UK personal-lines insurers
     status: INSUFFICIENT
     confidence: LOW
-    peers: [SBRE.L, AV.L]
+    peers: [SBRE.L, AV.L, LDA.MC, UNI.MI, MAP.MC]
     context_only: [SAGA.L]
     minimum_peer_count: 3
     comparable_metrics: [solvency_ratio, combined_ratio, roe, earnings_per_share_growth, dividend_per_share_growth]
@@ -37,7 +37,7 @@ universes:
     label: Global IT services and consulting
     status: VALIDATE
     confidence: HIGH
-    peers: [ACN, GIB.A.TO, CTSH, SOP.PA, EPAM, INFY]
+    peers: [ACN, GIB.A.TO, CTSH, SOP.PA, EPAM, INFY, ATE.PA, GLOB]
     comparable_metrics: [net_debt_to_ebitda, operating_margin, fcf_conversion, organic_revenue_growth, bookings_growth, eps_growth]
 
   IMCD:
@@ -53,14 +53,14 @@ universes:
     label: Specialty chemicals and high-value ingredients
     status: VALIDATE
     confidence: MEDIUM
-    peers: [ASH, CLN.SW, EVK.DE, SY1.DE, IFF]
+    peers: [ASH, CLN.SW, EVK.DE, SY1.DE, IFF, GIVN.SW, DSFIR.AS]
     comparable_metrics: [net_debt_to_ebitda, operating_margin, fcf_conversion, organic_revenue_growth, eps_growth]
 
   ROR.L:
     label: Flow control and industrial automation
     status: VALIDATE
     confidence: HIGH
-    peers: [IMI.L, FLS, SPX.L, CR, METSO.HE]
+    peers: [IMI.L, FLS, SPX.L, CR, METSO.HE, WEIR.L]
     comparable_metrics: [net_cash_or_leverage, roce, operating_margin, cash_conversion, organic_revenue_growth, eps_growth]
 
   EMN:
@@ -74,16 +74,17 @@ universes:
     label: Premium home furnishings retail
     status: VALIDATE
     confidence: HIGH
-    peers: [RH, ARHS, ETD, W, LZB]
+    peers: [RH, ARHS, ETD, W, LZB, HVT]
     comparable_metrics: [net_cash_or_leverage, operating_margin, fcf_margin, comparable_sales_growth, eps_growth, share_count_change]
 
   DKS:
     label: Sporting-goods retail
     status: LIMITED
     confidence: MEDIUM
-    peers: [ASO, JD.L, BGFV]
+    peers: [ASO, JD.L, SPWH]
     minimum_peer_count: 3
     comparable_metrics: [net_cash_or_leverage, operating_margin, inventory_growth, comparable_sales_growth, eps_growth, share_count_change]
+    note: Big 5 Sporting Goods (BGFV) was taken private and delisted in October 2025 and is removed. Sportsman's Warehouse reports the same retail quarter as DICK'S.
 
   TXRH:
     label: US casual dining
@@ -145,22 +146,22 @@ universes:
     label: Diversified gold and copper producer
     status: INSUFFICIENT
     confidence: LOW
-    peers: []
+    peers: [NEM, AEM, KGC, AU]
     comparable_metrics: [net_debt_to_ebitda, c1_cash_cost, operating_cash_flow_margin, production_growth, reserve_growth, eps_growth]
-    note: Internal monitor ticker ABX maps to Barrick Mining (NYSE:B; TSX:ABX). The former Abacus peer set is invalid; a mining-specific peer dataset must be validated before peer-normalized Fundamental Quality is published.
+    note: Internal monitor ticker ABX maps to Barrick Mining (NYSE:B; TSX:ABX). The former Abacus peer set is invalid; a mining-specific peer dataset must be validated before peer-normalized Fundamental Quality is published. Owner-approved gold-major peers (2026-10-15) are Newmont, Agnico Eagle, Kinross, AngloGold Ashanti; status stays INSUFFICIENT until their dataset is filled and validated.
 
   ERO:
     label: Copper producers
     status: VALIDATE
     confidence: HIGH
-    peers: [HBM, CS.TO, LUN.TO, IVN.TO, FM.TO]
+    peers: [HBM, CS.TO, LUN.TO, IVN.TO, FM.TO, TKO.TO]
     comparable_metrics: [net_debt_to_ebitda, c1_cash_cost, operating_cash_flow_margin, production_growth, reserve_growth, eps_growth]
 
   TMDX:
     label: High-growth medtech platforms
     status: LIMITED
     confidence: LOW
-    peers: [INSP, PODD, DXCM, MASI]
+    peers: [INSP, PODD, DXCM, MASI, XVIVO.ST, CDNA]
     minimum_peer_count: 4
     comparable_metrics: [net_cash_or_leverage, operating_margin, revenue_growth, fcf_margin, eps_growth]
     note: These are broad medtech comparators, not direct transplant-platform peers. Score must carry a low-confidence flag.
@@ -169,7 +170,7 @@ universes:
     label: Nuclear fuel and nuclear technology
     status: LIMITED
     confidence: LOW
-    peers: [CCJ, BWXT, UUUU, KAP.L]
+    peers: [CCJ, BWXT, UUUU, KAP.L, CW, MIR]
     minimum_peer_count: 4
     comparable_metrics: [net_cash_or_leverage, backlog_growth, contract_coverage, revenue_growth, eps_growth]
     note: Centrus has a distinctive enrichment/HALEU model; comparability is limited.
@@ -178,7 +179,7 @@ universes:
     label: Public advanced-nuclear development companies
     status: LIMITED
     confidence: MEDIUM
-    peers: [SMR, NNE, LTBR]
+    peers: [SMR, NNE, LTBR, IMSR]
     minimum_peer_count: 3
     comparable_metrics: [cash_runway_months, net_cash, dilution_rate, operating_cash_burn, regulatory_progress, project_milestone_progress]
     note: Use development-stage metrics only; never use P/E or EV/EBITDA as quality measures.
