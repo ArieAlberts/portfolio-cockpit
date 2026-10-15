@@ -55,7 +55,11 @@ jobs:
       - name: Poll peer-company official sources
         run: python scripts/monitor_peer_sources.py --fail-if-all-error
 
+      # Only main may be pushed to main. On any other branch (a push that touches
+      # the monitor config) this step must not run: it would push the whole
+      # feature branch to main without review.
       - name: Commit monitoring state and review events
+        if: github.ref == 'refs/heads/main'
         shell: bash
         run: |
           paths=(data/monitoring)
