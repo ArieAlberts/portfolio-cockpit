@@ -25,7 +25,16 @@ def test_abx_remains_blocked_without_fake_peers():
     data=json.loads((ROOT/index["datasets"]["ABX"]).read_text(encoding="utf-8"))
     assert data["target_ticker"]=="ABX"
     assert data["companies"]["ABX"]["company"]=="Barrick Mining Corporation"
-    assert data["peer_universe_status"]=="INSUFFICIENT_DIRECT_PUBLIC_PEERS"
+    # Gold-major peers are filled, but no gold peer reports the copper C1 cost the
+    # required cost_position component accepts, so the dataset must stay hard-blocked.
+    assert "INSUFFICIENT" in data["peer_universe_status"]
+    peers={t for t,c in data["companies"].items() if c["role"]=="PEER"}
+    assert peers=={"NEM","AEM","KGC","AU"}
+    assert not any(c["role"]=="GATE" for c in data["companies"].values())
+    assert all(
+        c["metrics"]["c1_cash_cost_usd_per_lb"]["value"] is None
+        for t,c in data["companies"].items() if t in peers
+    )
 
 
 def test_tmdx_has_three_broad_peer_observations_but_not_four_peer_score_readiness():
