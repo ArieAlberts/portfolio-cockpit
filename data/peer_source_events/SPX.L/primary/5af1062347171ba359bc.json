@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ROR.L"
+  ],
+  "detected_at": "2026-10-15T21:39:58Z",
+  "event_id": "5af1062347171ba359bc",
+  "execution_effect": "NONE",
+  "new_fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 0,
+    "selected_link_count": 0,
+    "visible_text_chars": 775576
+  },
+  "old_fingerprint": "d6b84427dc68b0dced97987652b8bcdf592055321b270c4371a8e25c977ebca6",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 166,
+    "selected_link_count": 109,
+    "visible_text_chars": 5689
+  },
+  "peer_ticker": "SPX.L",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf"
+}
