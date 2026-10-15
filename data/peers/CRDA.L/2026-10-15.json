@@ -1,0 +1,972 @@
+{
+  "schema_version": 1,
+  "target_ticker": "CRDA.L",
+  "collected_at": "2026-10-15",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "READY_FOR_STRICT_H1_CORE_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PENDING_PIPELINE_REVIEW",
+    "eligible_period_alignments": [
+      "ALIGNED_H1",
+      "ALIGNED_H1_DERIVED"
+    ]
+  },
+  "supersedes": "data/peers/CRDA.L/2026-10-03.json",
+  "change_note": "Adds GIVN.SW and DSFIR.AS (ALIGNED_H1); upgrades EVK.DE, IFF and ASH from context to PEER on derived H1 (method A); fills leverage, standardized FCF margin, organic growth and adjusted EPS growth from official reports.",
+  "companies": {
+    "CRDA.L": {
+      "company": "Croda International Plc",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+        "url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 23.611584,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA (adjusted operating profit + depreciation and amortisation) / sales",
+          "calculation": "207.9 / 880.5 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_ebitda_gbp_m": 207.9,
+            "sales_gbp_m": 880.5,
+            "reported_margin_pct": 23.6
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 17.7,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_operating_profit_gbp_m": 155.8,
+            "sales_gbp_m": 880.5
+          },
+          "calculation_method": "as reported by the company"
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.4,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "leverage ratio: net debt (cash, borrowings and lease liabilities) / LTM adjusted EBITDA including acquisitions and disposals",
+          "score_eligible": true,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_debt_gbp_m": 577.9,
+            "reported_leverage_x": 1.4
+          },
+          "calculation_method": "as reported by the company",
+          "notes": "Company-reported ratio, published to one decimal."
+        },
+        "net_debt": {
+          "value": 577.9,
+          "comparison_class": "NET_DEBT_ABSOLUTE",
+          "source_definition": "net debt GBPm (cash and cash equivalents, borrowings and lease liabilities)",
+          "score_eligible": false,
+          "period": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "as reported by the company"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 5.371948,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets) / sales; standardized across target and peers, gross purchases before disposal proceeds",
+          "calculation": "(90.3 - 41.8 - 1.2) / 880.5 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_cash_from_operating_activities_gbp_m": 90.3,
+            "purchase_of_ppe_gbp_m": 41.8,
+            "purchase_of_other_intangibles_gbp_m": 1.2,
+            "sales_gbp_m": 880.5
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow, so this standardized measure is before lease payments for IFRS reporters. Replaces the 2026-10-03 record, which used Croda's own free-cash-flow APM (after lease payments, interest received and exceptional cash); that APM is kept below as company_free_cash_flow_margin_pct."
+        },
+        "company_free_cash_flow_margin_pct": {
+          "value": 4.349801,
+          "comparison_class": "H1_COMPANY_DEFINED_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "Croda free cash flow APM / sales",
+          "calculation": "38.3 / 880.5 * 100",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4.6,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth (constant currency, excluding first-year acquisitions/disposals)",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 8.864266,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted basic EPS H1 YoY",
+          "calculation": "(78.6 / 72.2 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Croda International Plc Half Year Results 2026 (results statement, 28 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.croda.com/mediaassets/files/corporate/investors/2026-half-year-results/croda-h1-2026-results-statement-28-july-2026-final.pdf",
+          "filing_or_report_id": "Croda H1 2026 results statement (28 July 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_basic_eps_h1_2026_p": 78.6,
+            "adjusted_basic_eps_h1_2025_p": 72.2
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        }
+      }
+    },
+    "CLN.SW": {
+      "company": "Clariant AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Clariant First Half Year 2026 Financial Review and Q2 2026 media release",
+        "url": "https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Report-H1-2026-Financial-Review-20260731-EN.pdf"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 17.818534,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "EBITDA before exceptional items / sales",
+          "calculation": "331.3 / 1859.3 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Clariant First Half Year 2026 Financial Review and Q2 2026 media release",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Report-H1-2026-Financial-Review-20260731-EN.pdf",
+          "filing_or_report_id": "Clariant H1 2026 Financial Review (20260731); Clariant Q2 2026 media release (https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Media-Release-Q2-2026-20260731-EN.pdf)",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "ebitda_before_exceptional_items_chf_m": 331.3,
+            "sales_chf_m": 1859.3
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.2,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / LTM EBITDA before exceptional items (sum of the four most recent quarters)",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Clariant First Half Year 2026 Financial Review and Q2 2026 media release",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Report-H1-2026-Financial-Review-20260731-EN.pdf",
+          "filing_or_report_id": "Clariant H1 2026 Financial Review (20260731); Clariant Q2 2026 media release (https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Media-Release-Q2-2026-20260731-EN.pdf)",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "net_debt_chf_m": 1493.1,
+            "reported_leverage_x": 2.2
+          },
+          "calculation_method": "as reported by the company",
+          "notes": "Company-reported ratio, published to one decimal; previously stored as not score-eligible pending verification."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 6.65842,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets) / sales; standardized across target and peers, gross purchases before disposal proceeds",
+          "calculation": "(168.7 - 44.0 - 0.9) / 1859.3 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Clariant First Half Year 2026 Financial Review and Q2 2026 media release",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Report-H1-2026-Financial-Review-20260731-EN.pdf",
+          "filing_or_report_id": "Clariant H1 2026 Financial Review (20260731); Clariant Q2 2026 media release (https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Media-Release-Q2-2026-20260731-EN.pdf)",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "net_cash_from_operating_activities_chf_m": 168.7,
+            "investments_in_ppe_chf_m": 44.0,
+            "investments_in_intangibles_chf_m": 0.9,
+            "sales_chf_m": 1859.3
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow, so this standardized measure is before lease payments for IFRS reporters. Equals Clariant's own free-cash-flow definition (CHF 123.8m)."
+        },
+        "free_cash_flow_conversion_pct": {
+          "value": 52,
+          "comparison_class": "LTM_FREE_CASH_FLOW_CONVERSION",
+          "source_definition": "last-twelve-month free cash flow conversion",
+          "score_eligible": false
+        },
+        "organic_revenue_growth_pct": {
+          "value": -1.2,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "sales growth in local currency (scope 0 %), including portfolio-pruning volume effect",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Clariant First Half Year 2026 Financial Review and Q2 2026 media release",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Report-H1-2026-Financial-Review-20260731-EN.pdf",
+          "filing_or_report_id": "Clariant H1 2026 Financial Review (20260731); Clariant Q2 2026 media release (https://www.clariant.com/-/media/Files/Corporate/Investors/Quarterly-Results/Q2-2026/Clariant-Media-Release-Q2-2026-20260731-EN.pdf)",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "calculation_method": "as reported by the company",
+          "notes": "Clariant does not use the term organic; local-currency growth with zero scope effect is organic-like. Excluding the pruning impact it was 0.0 %."
+        }
+      }
+    },
+    "SY1.DE": {
+      "company": "Symrise AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Symrise Interim Group Report H1 2026 (30 July 2026)",
+        "url": "https://www.symrise.com/investors/financial-results/"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 21.777655,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / sales",
+          "calculation": "553.0 / 2539.3 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Symrise Interim Group Report H1 2026 (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.symrise.com/investors/financial-results/",
+          "filing_or_report_id": "260730-Symrise-Interim-group-report-H1-2026.pdf (listed on the Symrise financial-results page; the direct download link is a time-limited token)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "adjusted_ebitda_eur_m": 553.0,
+            "sales_eur_m": 2539.3
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 2.0,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Symrise Interim Group Report H1 2026 (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.symrise.com/investors/financial-results/",
+          "filing_or_report_id": "260730-Symrise-Interim-group-report-H1-2026.pdf (listed on the Symrise financial-results page; the direct download link is a time-limited token)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company"
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.7,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt (excluding pension provisions) / adjusted EBITDA (LTM)",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Symrise Interim Group Report H1 2026 (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.symrise.com/investors/financial-results/",
+          "filing_or_report_id": "260730-Symrise-Interim-group-report-H1-2026.pdf (listed on the Symrise financial-results page; the direct download link is a time-limited token)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "net_debt_eur_m": 1825.7,
+            "reported_ratio_x": 1.7
+          },
+          "calculation_method": "as reported by the company",
+          "notes": "Company-reported ratio, published to one decimal; Symrise also reports 2.2x including pension provisions, not used."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 7.780716,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets) / sales; standardized across target and peers, gross purchases before disposal proceeds",
+          "calculation": "(296.635 - 89.822 - 9.234) / 2539.342 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Symrise Interim Group Report H1 2026 (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.symrise.com/investors/financial-results/",
+          "filing_or_report_id": "260730-Symrise-Interim-group-report-H1-2026.pdf (listed on the Symrise financial-results page; the direct download link is a time-limited token)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "cash_flow_from_operating_activities_eur_k": 296635,
+            "payments_for_ppe_eur_k": 89822,
+            "payments_for_intangibles_eur_k": 9234,
+            "sales_eur_k": 2539342
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow, so this standardized measure is before lease payments for IFRS reporters."
+        },
+        "business_free_cash_flow_margin_pct": {
+          "value": 13.7,
+          "comparison_class": "H1_BUSINESS_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "business free cash flow margin",
+          "score_eligible": false,
+          "notes": "Definition differs from Croda free cash flow."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": null,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Symrise Interim Group Report H1 2026 (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.symrise.com/investors/financial-results/",
+          "filing_or_report_id": "260730-Symrise-Interim-group-report-H1-2026.pdf (listed on the Symrise financial-results page; the direct download link is a time-limited token)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company",
+          "notes": "Symrise reports only unadjusted basic EPS (EUR 1.91 vs 1.92); no adjusted EPS, so not comparable with adjusted EPS growth."
+        }
+      }
+    },
+    "GIVN.SW": {
+      "company": "Givaudan SA",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Givaudan 2026 Half-year Report",
+        "url": "https://www.givaudan.com/specials/file/giv-2026-hy-report.pdf"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 24.295867,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "Adjusted EBITDA (EBITDA adjusted for significant non-recurring items) / sales",
+          "calculation": "923 / 3799 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Givaudan 2026 Half-year Report",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.givaudan.com/specials/file/giv-2026-hy-report.pdf",
+          "filing_or_report_id": "Givaudan 2026 Half-year Report",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "adjusted_ebitda_chf_m": 923,
+            "sales_chf_m": 3799
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.620376,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt (short- and long-term debt less cash) / LTM adjusted EBITDA",
+          "calculation": "4604 / 1757",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Givaudan 2026 Half-year Report",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.givaudan.com/specials/file/giv-2026-hy-report.pdf",
+          "filing_or_report_id": "Givaudan 2026 Half-year Report",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "short_term_debt_chf_m": 1384,
+            "long_term_debt_chf_m": 3528,
+            "cash_chf_m": 308,
+            "net_debt_chf_m": 4604,
+            "ltm_adjusted_ebitda_chf_m": 1757
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Company-reported 'net debt to adjusted EBITDA ratio' (2.62) from the APM appendix. Givaudan's headline 2.8x uses unadjusted EBITDA and is not used. Net debt excludes lease liabilities."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": -0.631745,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets) / sales; standardized across target and peers, gross purchases before disposal proceeds",
+          "calculation": "(184 - 171 - 37) / 3799 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Givaudan 2026 Half-year Report",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.givaudan.com/specials/file/giv-2026-hy-report.pdf",
+          "filing_or_report_id": "Givaudan 2026 Half-year Report",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "cash_flows_from_operating_activities_chf_m": 184,
+            "purchase_of_ppe_chf_m": 171,
+            "purchase_of_intangibles_chf_m": 37,
+            "sales_chf_m": 3799
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow, so this standardized measure is before lease payments for IFRS reporters. Givaudan's own Adjusted FCF (-3.1 % of sales) also deducts interest, leases and own-share purchases and is not used."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 3.6,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "like-for-like sales growth (prior-year exchange rates, excluding acquisitions for 12 months and disposals)",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Givaudan 2026 Half-year Report",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.givaudan.com/specials/file/giv-2026-hy-report.pdf",
+          "filing_or_report_id": "Givaudan 2026 Half-year Report",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -9.683706,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "Adjusted basic EPS H1 YoY (net income adjusted for significant non-recurring items)",
+          "calculation": "(60.25 / 66.71 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Givaudan 2026 Half-year Report",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.givaudan.com/specials/file/giv-2026-hy-report.pdf",
+          "filing_or_report_id": "Givaudan 2026 Half-year Report",
+          "retrieved_at": "2026-10-15",
+          "currency": "CHF",
+          "raw_value": {
+            "adjusted_eps_h1_2026_chf": 60.25,
+            "adjusted_eps_h1_2025_chf": 66.71
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        }
+      }
+    },
+    "DSFIR.AS": {
+      "company": "DSM-Firmenich AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "dsm-firmenich H1 2026 results press release (30 July 2026)",
+        "url": "https://www.dsm-firmenich.com/content/dam/dsm-firmenich/investors/documents/results-center/2026/press-release-dsm-firmenich-h1-report-20260730.pdf"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 19.296741,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / net sales, continuing operations",
+          "calculation": "900 / 4664 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "dsm-firmenich H1 2026 results press release (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.dsm-firmenich.com/content/dam/dsm-firmenich/investors/documents/results-center/2026/press-release-dsm-firmenich-h1-report-20260730.pdf",
+          "filing_or_report_id": "dsm-firmenich H1 2026 report press release (20260730)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "adjusted_ebitda_eur_m": 900,
+            "net_sales_eur_m": 4664
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Continuing operations; Animal Nutrition & Health is reported as discontinued after the agreed sale to CVC."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "like-for-like sales growth, continuing operations",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "dsm-firmenich H1 2026 results press release (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.dsm-firmenich.com/content/dam/dsm-firmenich/investors/documents/results-center/2026/press-release-dsm-firmenich-h1-report-20260730.pdf",
+          "filing_or_report_id": "dsm-firmenich H1 2026 report press release (20260730)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 14.285714,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "core adjusted EPS H1 YoY, continuing operations",
+          "calculation": "(1.84 / 1.61 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "dsm-firmenich H1 2026 results press release (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.dsm-firmenich.com/content/dam/dsm-firmenich/investors/documents/results-center/2026/press-release-dsm-firmenich-h1-report-20260730.pdf",
+          "filing_or_report_id": "dsm-firmenich H1 2026 report press release (20260730)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "core_adjusted_eps_h1_2026_eur": 1.84,
+            "core_adjusted_eps_h1_2025_eur": 1.61
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "dsm-firmenich H1 2026 results press release (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.dsm-firmenich.com/content/dam/dsm-firmenich/investors/documents/results-center/2026/press-release-dsm-firmenich-h1-report-20260730.pdf",
+          "filing_or_report_id": "dsm-firmenich H1 2026 report press release (20260730)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company",
+          "notes": "Not sourced: the H1 release reports net debt (EUR 4,424m, total group incl. discontinued operations) but no leverage ratio and no LTM continuing-operations adjusted EBITDA; combining them would mix economic bases."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "dsm-firmenich H1 2026 results press release (30 July 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.dsm-firmenich.com/content/dam/dsm-firmenich/investors/documents/results-center/2026/press-release-dsm-firmenich-h1-report-20260730.pdf",
+          "filing_or_report_id": "dsm-firmenich H1 2026 report press release (20260730)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company",
+          "notes": "Not sourced: operating cash flow from continuing operations is disclosed (EUR 582m) but capital expenditure is only disclosed for the total group; the company's adjusted gross operating FCF is pre-tax and pre-interest and not comparable."
+        }
+      }
+    },
+    "EVK.DE": {
+      "company": "Evonik Industries AG",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Evonik Industries Interim Report Q2 2026",
+        "url": "https://www.evonik.com/content/dam/evonik/documents/Evonik%20Q2%202026_E.pdf"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 15.097691,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / sales, continuing operations",
+          "calculation": "1105 / 7319 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Evonik Industries Interim Report Q2 2026",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.evonik.com/content/dam/evonik/documents/Evonik%20Q2%202026_E.pdf",
+          "filing_or_report_id": "Evonik Q2 2026 interim report",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "adjusted_ebitda_h1_eur_m": 1105,
+            "sales_h1_eur_m": 7319
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.895288,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net financial debt (financial liabilities less cash, current securities and other financial investments; excludes pensions) / LTM adjusted EBITDA",
+          "calculation": "3620 / (1874 + 1105 - 1069)",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Evonik Industries Interim Report Q2 2026; Evonik Financials Q4 2025 (FY 2025 adjusted EBITDA)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.evonik.com/content/dam/evonik/documents/Evonik%20Q2%202026_E.pdf",
+          "filing_or_report_id": "Evonik Q2 2026 interim report; 260304 Evonik - Financials Q4 2025 (https://www.evonik.com/content/dam/evonik/documents/260304_Evonik%20-%20Financials%20Q4%202025.pdf)",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "net_financial_debt_eur_m": 3620,
+            "adjusted_ebitda_fy2025_eur_m": 1874,
+            "adjusted_ebitda_h1_2026_eur_m": 1105,
+            "adjusted_ebitda_h1_2025_eur_m": 1069
+          },
+          "calculation_method": "LTM adjusted EBITDA = FY2025 + H1 2026 - H1 2025; ratio computed, not company-reported. Evonik's own leverage factor includes pension provisions and is not used."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 3.169832,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets) / sales; standardized across target and peers, gross purchases before disposal proceeds",
+          "calculation": "(636 - 404) / 7319 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Evonik Industries Interim Report Q2 2026",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.evonik.com/content/dam/evonik/documents/Evonik%20Q2%202026_E.pdf",
+          "filing_or_report_id": "Evonik Q2 2026 interim report",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "cash_flow_from_operating_activities_continuing_eur_m": 636,
+            "cash_outflows_for_investments_in_intangibles_and_ppe_eur_m": 404,
+            "sales_eur_m": 7319
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow, so this standardized measure is before lease payments for IFRS reporters. Equals Evonik's own free cash flow (EUR 232m)."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Evonik Industries Interim Report Q2 2026",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.evonik.com/content/dam/evonik/documents/Evonik%20Q2%202026_E.pdf",
+          "filing_or_report_id": "Evonik Q2 2026 interim report",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 3.225806,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS H1 YoY",
+          "calculation": "(0.96 / 0.93 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Evonik Industries Interim Report Q2 2026",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://www.evonik.com/content/dam/evonik/documents/Evonik%20Q2%202026_E.pdf",
+          "filing_or_report_id": "Evonik Q2 2026 interim report",
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_value": {
+            "adjusted_eps_h1_2026_eur": 0.96,
+            "adjusted_eps_h1_2025_eur": 0.93
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        }
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A. Evonik reports quarterly; H1 values are the 1st-half columns of the Q2 2026 interim report (= Q1 + Q2)."
+    },
+    "IFF": {
+      "company": "International Flavors & Fragrances Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "IFF Reports Second Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/q22026991pressreleaseofiff.htm"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 21.787565,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted operating EBITDA / net sales, continuing operations",
+          "calculation": "841 / 3860 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IFF Reports Second Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/q22026991pressreleaseofiff.htm",
+          "filing_or_report_id": "0000051253-26-000028",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_operating_ebitda_usd_m": 841,
+            "net_sales_usd_m": 3860
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.512646,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt (debt for borrowed money incl. finance leases less cash) / trailing-12-month credit adjusted EBITDA; continuing and discontinued operations",
+          "calculation": "5166 / 2056",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "IFF Reports Second Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/q22026991pressreleaseofiff.htm",
+          "filing_or_report_id": "0000051253-26-000028",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "total_debt_usd_m": 5735,
+            "cash_usd_m": 569,
+            "net_debt_usd_m": 5166,
+            "ltm_credit_adjusted_ebitda_usd_m": 2056
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Credit-agreement definition: credit adjusted EBITDA also adds back stock-based compensation and other non-cash items. Both numerator and denominator include the Food Ingredients disposal group, so the bases match."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IFF Reports Second Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/q22026991pressreleaseofiff.htm",
+          "filing_or_report_id": "0000051253-26-000028",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Not stored: H1 cash flows (operating cash flow 679, capex 301) cover continuing and discontinued operations while H1 sales of 3,860 are continuing only; combining them would mix economic bases (PEER_DATA_STANDARD rule 5)."
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "comparable currency neutral sales growth, year-to-date (excludes divestitures and currency)",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IFF Reports Second Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/q22026991pressreleaseofiff.htm",
+          "filing_or_report_id": "0000051253-26-000028",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 4.191617,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS ex amortization H1 YoY, continuing operations",
+          "calculation": "(1.74 / 1.67 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IFF Reports Second Quarter 2026 Results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000028/q22026991pressreleaseofiff.htm",
+          "filing_or_report_id": "0000051253-26-000028",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_ex_amortization_h1_2026_usd": 1.74,
+            "adjusted_eps_ex_amortization_h1_2025_usd": 1.67
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Excludes acquisition-related amortization, unlike the target's adjusted EPS."
+        }
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A. Calendar-year quarterly reporter; H1 values are the six-months-ended columns of the Q2 2026 release (= Q1 + Q2)."
+    },
+    "ASH": {
+      "company": "Ashland Inc.",
+      "role": "PEER",
+      "period": "H1_2026_DERIVED_FQ2_FQ3_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Ashland fiscal Q2 2026 and fiscal Q3 2026 results (Form 8-K Exhibits 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526321238/ash-ex99_1.htm"
+      },
+      "metrics": {
+        "adjusted_ebitda_margin_pct": {
+          "value": 21.144025,
+          "comparison_class": "H1_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA / sales, Jan-Jun 2026 (fiscal Q2 + Q3)",
+          "calculation": "(98 + 109) / (482 + 497) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ashland fiscal Q2 2026 and fiscal Q3 2026 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526321238/ash-ex99_1.htm",
+          "filing_or_report_id": "0001193125-26-187700 (fiscal Q2, Jan-Mar 2026); 0001193125-26-321238 (fiscal Q3, Apr-Jun 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_ebitda_fq2_usd_m": 98,
+            "adjusted_ebitda_fq3_usd_m": 109,
+            "sales_fq2_usd_m": 482,
+            "sales_fq3_usd_m": 497
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.432292,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(long-term debt - cash and cash equivalents) / trailing-12-month adjusted EBITDA",
+          "calculation": "(1374 - 440) / (401 + 265 - 282)",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Ashland fiscal Q3 2026 results and fiscal Q4 2025 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526321238/ash-ex99_1.htm",
+          "filing_or_report_id": "0001193125-26-321238 (balance sheet 2026-06-30, nine-month adjusted EBITDA); 0001193125-25-264974 (FY2025 adjusted EBITDA)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "long_term_debt_usd_m": 1374,
+            "cash_usd_m": 440,
+            "adjusted_ebitda_fy2025_usd_m": 401,
+            "adjusted_ebitda_9m_fy2026_usd_m": 265,
+            "adjusted_ebitda_9m_fy2025_usd_m": 282
+          },
+          "calculation_method": "LTM adjusted EBITDA = FY2025 (to 2025-09-30) + nine months to 2026-06-30 - nine months to 2025-06-30. The balance sheet shows no short-term debt. Computed; matches the 2.4x net leverage cited by the CEO in the release."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 13.687436,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(operating cash flow from continuing operations - additions to property, plant and equipment) / sales, Jan-Jun 2026",
+          "calculation": "((50 + 121) - (17 + 20)) / (482 + 497) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ashland fiscal Q2 2026 and fiscal Q3 2026 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526321238/ash-ex99_1.htm",
+          "filing_or_report_id": "0001193125-26-187700 (fiscal Q2, Jan-Mar 2026); 0001193125-26-321238 (fiscal Q3, Apr-Jun 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "operating_cash_flow_fq2_usd_m": 50,
+            "operating_cash_flow_fq3_usd_m": 121,
+            "capex_fq2_usd_m": 17,
+            "capex_fq3_usd_m": 20
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "US GAAP: operating-lease payments are inside operating cash flow."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -4.926108,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS from continuing operations excluding intangibles amortization, Jan-Jun YoY",
+          "calculation": "((0.91 + 1.02) / (0.99 + 1.04) - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ashland fiscal Q2 2026 and fiscal Q3 2026 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526321238/ash-ex99_1.htm",
+          "filing_or_report_id": "0001193125-26-187700 (fiscal Q2, Jan-Mar 2026); 0001193125-26-321238 (fiscal Q3, Apr-Jun 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "fq2_2026": 0.91,
+            "fq3_2026": 1.02,
+            "fq2_2025": 0.99,
+            "fq3_2025": 1.04
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "H1 EPS is the sum of two quarterly per-share figures (quarterly share counts differ slightly). Excludes intangibles amortization, unlike the target's adjusted EPS."
+        },
+        "organic_revenue_growth_pct": {
+          "value": null,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ashland fiscal Q2 2026 and fiscal Q3 2026 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1674862/000119312526321238/ash-ex99_1.htm",
+          "filing_or_report_id": "0001193125-26-187700 (fiscal Q2, Jan-Mar 2026); 0001193125-26-321238 (fiscal Q3, Apr-Jun 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Not sourced: Ashland does not report organic sales growth."
+        }
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A. Fiscal year ends 30 September; fiscal Q2 (Jan-Mar 2026) + fiscal Q3 (Apr-Jun 2026) = calendar H1 2026. Flow items summed; ratios recomputed from summed components."
+    }
+  }
+}

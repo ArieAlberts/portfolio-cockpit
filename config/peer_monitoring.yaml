@@ -159,3 +159,15 @@ discovery_overrides:
     mode: HTML_PAGE
     url: https://www.soprasteria.com/investors/financial-publications-reports/results-presentation
     source_quality: HIGH
+  GIVN.SW:
+    mode: HTML_PAGE
+    url: https://www.givaudan.com/investors
+    source_quality: HIGH
+  DSFIR.AS:
+    mode: HTML_PAGE
+    url: https://www.dsm-firmenich.com/en/investors.html
+    source_quality: HIGH
+  EVK.DE:
+    mode: HTML_PAGE
+    url: https://www.evonik.com/en/investor-relations/Reporting.html
+    source_quality: HIGH
