@@ -1,0 +1,820 @@
+{
+  "schema_version": 1,
+  "target_ticker": "WSM",
+  "collected_at": "2026-10-15",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "Q2_FY2026_NEAR_CALENDAR_Q2",
+  "peer_universe_status": "READY_FOR_RETAIL_Q2_CORE_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PENDING_PIPELINE_REVIEW",
+    "eligible_period_alignments": [
+      "ALIGNED_RETAIL_Q2"
+    ]
+  },
+  "supersedes": "data/peers/WSM/2026-10-03.json",
+  "change_note": "ETD becomes PEER on ALIGNED_RETAIL_Q2 (fiscal Q4 Apr-Jun); adds HVT; margins restated on an ex-IEEPA-tariff-refund basis; fills TTM net debt/EBITDA and TTM FCF margin from SEC XBRL.",
+  "companies": {
+    "WSM": {
+      "company": "Williams-Sonoma, Inc.",
+      "role": "TARGET",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-02",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Williams-Sonoma second quarter 2026 results",
+        "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/exhibit991fy2026q2earnings.htm"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 6.2,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable brand revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 17.27158,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "non-GAAP / adjusted operating income excluding IEEPA tariff refund income and related items / net revenues",
+          "calculation": "338.481 / 1959.757 * 100",
+          "score_eligible": true,
+          "period": "Q2_FY2026",
+          "as_of_date": "2026-08-02",
+          "source": "Williams-Sonoma Q2 FY2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/exhibit991fy2026q2earnings.htm",
+          "filing_or_report_id": "0000719955-26-000203",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "non_gaap_operating_income_usd_k": 338481,
+            "net_revenues_usd_k": 1959757,
+            "gaap_operating_margin_pct": 22.9
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Non-GAAP excludes USD 167.8m IEEPA tariff refund income, net of vendor concessions and a one-time employee recognition cost. Source URL corrected (the 2026-10-03 file pointed to a non-existent exhibit name)."
+        },
+        "reported_revenue_growth_pct": {
+          "value": 6.7,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "total revenue growth",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.58132,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges; lease liabilities excluded",
+          "calculation": "(0 - 1028.936) / ((1415.722 + 740.483 - 618.772) + (231.449 + 112.683 - 113.165) + (1.6 + 0.3 - 0.3))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-08-02",
+          "as_of_date": "2026-08-02",
+          "source": "WSM Form 10-Q (2026-08-02) and Form 10-K (2026-02-01) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000208/wsm-20260802.htm",
+          "filing_or_report_id": "0000719955-26-000208; 0000719955-26-000059",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "borrowings_usd_m": 0,
+            "cash_usd_m": 1028.936,
+            "operating_income_fy_ytd_ytdprior_usd_m": [
+              1415.722,
+              740.483,
+              618.772
+            ],
+            "d_and_a_usd_m": [
+              231.449,
+              112.683,
+              113.165
+            ],
+            "tangible_asset_impairment_usd_m": [
+              1.6,
+              0.3,
+              0.3
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "No borrowings on the balance sheet; net cash enters as negative net debt. TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 16.782858,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property and equipment) / TTM revenue",
+          "calculation": "((1314.889 + 695.862 - 401.678) - (259.438 + 116.434 - 110.293)) / (7806.816 + 3765.213 - 3566.873) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-08-02",
+          "as_of_date": "2026-08-02",
+          "source": "WSM Form 10-Q (2026-08-02) and Form 10-K (2026-02-01) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000208/wsm-20260802.htm",
+          "filing_or_report_id": "0000719955-26-000208; 0000719955-26-000059",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": [
+              1314.889,
+              695.862,
+              401.678
+            ],
+            "capex_usd_m": [
+              259.438,
+              116.434,
+              110.293
+            ],
+            "revenue_usd_m": [
+              7806.816,
+              3765.213,
+              3566.873
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window. US GAAP: operating-lease payments are inside operating cash flow."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 5.0,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "non-GAAP diluted EPS excluding IEEPA tariff refund items, quarter YoY",
+          "calculation": "(2.10 / 2.00 - 1) * 100",
+          "score_eligible": true,
+          "period": "Q2_FY2026",
+          "as_of_date": "2026-08-02",
+          "source": "Williams-Sonoma Q2 FY2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/exhibit991fy2026q2earnings.htm",
+          "filing_or_report_id": "0000719955-26-000203",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "non_gaap_eps_q2_fy2026_usd": 2.1,
+            "eps_q2_fy2025_usd": 2.0
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        }
+      }
+    },
+    "ARHS": {
+      "company": "Arhaus, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Arhaus Reports Second Quarter 2026 Financial Results",
+        "url": "https://ir.arhaus.com/news-releases/news-release-details/arhaus-reports-second-quarter-2026-financial-results"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 4,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable delivered sales growth",
+          "score_eligible": true
+        },
+        "normalized_adjusted_ebitda_margin_pct": {
+          "value": 14.3,
+          "comparison_class": "RETAIL_Q2_NORMALIZED_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "normalized adjusted EBITDA margin excluding discrete tariff recovery",
+          "score_eligible": false
+        },
+        "reported_revenue_growth_pct": {
+          "value": 7.4,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 7.915364,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "(GAAP income from operations - IEEPA tariff recovery benefit) / net revenue",
+          "calculation": "(54.266 - 23.8) / 384.897 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "Q2_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Arhaus second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1875444/000187544426000028/q22026-earningsrelease.htm",
+          "filing_or_report_id": "0001875444-26-000028",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "income_from_operations_usd_k": 54266,
+            "ieepa_tariff_recovery_benefit_usd_m": 23.8,
+            "net_revenue_usd_k": 384897
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Arhaus does not publish an adjusted operating margin; the full USD 23.8m tariff recovery (of which 15.5m related to inventory sold before April 2026) is removed to match WSM's non-GAAP basis."
+        },
+        "net_debt_to_ebitda": {
+          "value": -1.593798,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges; lease liabilities excluded",
+          "calculation": "(0 - 226.399) / ((88.886 + 56.402 - 52.186) + (46.793 + 25.114 - 22.959))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "ARHS Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1875444/000187544426000030/arhs-20260630.htm",
+          "filing_or_report_id": "0001875444-26-000030; 0001875444-26-000010",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "borrowings_usd_m": 0,
+            "cash_usd_m": 226.399,
+            "operating_income_usd_m": [
+              88.886,
+              56.402,
+              52.186
+            ],
+            "d_and_a_usd_m": [
+              46.793,
+              25.114,
+              22.959
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "No borrowings under the credit facility; finance leases excluded. TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 2.90099,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property and equipment) / TTM revenue",
+          "calculation": "((136.848 + 59.784 - 81.428) - (77.870 + 38.093 - 41.622)) / (1379.222 + 699.173 - 669.807) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "ARHS Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1875444/000187544426000030/arhs-20260630.htm",
+          "filing_or_report_id": "0001875444-26-000030; 0001875444-26-000010",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": [
+              136.848,
+              59.784,
+              81.428
+            ],
+            "capex_usd_m": [
+              77.87,
+              38.093,
+              41.622
+            ],
+            "revenue_usd_m": [
+              1379.222,
+              699.173,
+              669.807
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window. US GAAP: operating-lease payments are inside operating cash flow."
+        }
+      }
+    },
+    "RH": {
+      "company": "RH",
+      "role": "PEER",
+      "period": "Q2_FY2026",
+      "period_end": "2026-08-01",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "RH Second Quarter Fiscal 2026 results and shareholder letter (Form 8-K Exhibit 99.2)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465926106743/rh-20260910xex99d2.htm"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 2.6,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": true
+        },
+        "normalized_adjusted_ebitda_margin_pct": {
+          "value": 13.4,
+          "comparison_class": "RETAIL_Q2_NORMALIZED_ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "normalized adjusted EBITDA (excl. IEEPA tariff refund benefit) / net revenues",
+          "score_eligible": false,
+          "period": "Q2_FY2026",
+          "as_of_date": "2026-08-01",
+          "source": "RH Second Quarter Fiscal 2026 results and shareholder letter (Form 8-K Exhibit 99.2)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465926106743/rh-20260910xex99d2.htm",
+          "filing_or_report_id": "0001104659-26-106743",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Corrects the 2026-10-03 record, which stored this EBITDA margin under an operating-margin name."
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 7.170634,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "(adjusted operating income - IEEPA tariff refund benefit) / net revenues",
+          "calculation": "(121.213 - 55.089) / 922.150 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "Q2_FY2026",
+          "as_of_date": "2026-08-01",
+          "source": "RH Second Quarter Fiscal 2026 results and shareholder letter (Form 8-K Exhibit 99.2)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465926106743/rh-20260910xex99d2.htm",
+          "filing_or_report_id": "0001104659-26-106743",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_operating_income_usd_k": 121213,
+            "ieepa_tariff_refund_benefit_usd_k": 55089,
+            "net_revenues_usd_k": 922150
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "RH's adjusted operating income includes the tariff refund benefit; it is removed here using RH's own disclosed amount."
+        },
+        "net_debt_to_ebitda": {
+          "value": 4.487859,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges; lease liabilities excluded",
+          "calculation": "((1905 + 481.25 + 0.315) - 125.492) / ((387.268 + 141.816 - 184.787) + (148.5 + 79.678 - 69.865) + (4.635 + 0.523 - 3.948))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-08-01",
+          "as_of_date": "2026-08-01",
+          "source": "RH Form 10-Q (2026-08-01) and Form 10-K (2026-01-31) XBRL; debt principal from the Q2 release",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465926106764/rh-20260801x10q.htm",
+          "filing_or_report_id": "0001104659-26-106764; 0001104659-26-037992; 0001104659-26-106743",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "term_loan_b_principal_usd_m": 1905,
+            "term_loan_b2_principal_usd_m": 481.25,
+            "notes_payable_usd_m": 0.315,
+            "cash_usd_m": 125.492,
+            "operating_income_usd_m": [
+              387.268,
+              141.816,
+              184.787
+            ],
+            "d_and_a_usd_m": [
+              148.5,
+              79.678,
+              69.865
+            ],
+            "asset_impairment_usd_m": [
+              4.635,
+              0.523,
+              3.948
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "Debt at principal per the release's total-debt table; finance lease liabilities (USD 860.9m) excluded. TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 7.263249,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property and equipment) / TTM revenue",
+          "calculation": "((452.241 + 197.718 - 224.319) - (199.843 + 84.859 - 109.565)) / (3439.536 + 1722.478 - 1713.103) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-08-01",
+          "as_of_date": "2026-08-01",
+          "source": "RH Form 10-Q (2026-08-01) and Form 10-K (2026-01-31) XBRL; debt principal from the Q2 release",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1528849/000110465926106764/rh-20260801x10q.htm",
+          "filing_or_report_id": "0001104659-26-106764; 0001104659-26-037992; 0001104659-26-106743",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": [
+              452.241,
+              197.718,
+              224.319
+            ],
+            "capex_usd_m": [
+              199.843,
+              84.859,
+              109.565
+            ],
+            "revenue_usd_m": [
+              3439.536,
+              1722.478,
+              1713.103
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window. US GAAP: operating-lease payments are inside operating cash flow."
+        }
+      }
+    },
+    "LZB": {
+      "company": "La-Z-Boy Incorporated",
+      "role": "PEER",
+      "period": "Q1_FY2027",
+      "period_end": "2026-07-25",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "La-Z-Boy Fiscal 2027 First Quarter Results",
+        "url": "https://ir.la-z-boy.com/2026-08-18-La-Z-Boy-Incorporated-Reports-First-Quarter-Results-Retail-Momentum-With-Positive-Written-Same-Store-Sales"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 3,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "Retail written same-store sales growth",
+          "score_eligible": true,
+          "notes": "Different fulfillment basis from WSM comparable brand revenue."
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 3.9,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "consolidated adjusted operating margin",
+          "score_eligible": false,
+          "notes": "Set to not score-eligible on 2026-10-15: La-Z-Boy's adjusted operating margin includes IEEPA tariff refunds that the release does not quantify, so it cannot be put on WSM's ex-refund basis."
+        },
+        "reported_revenue_growth_pct": {
+          "value": -3,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "consolidated sales growth including divestiture effect",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": -1.736329,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges; lease liabilities excluded",
+          "calculation": "(0 - 267.254) / ((129.207 - 2.104 - 21.987) + (47.440 + 12.692 - 11.329))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-07-25",
+          "as_of_date": "2026-07-25",
+          "source": "LZB Form 10-Q (2026-07-25) and Form 10-K (2026-04-25) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/57131/000005713126000035/lzb-20260725.htm",
+          "filing_or_report_id": "0000057131-26-000035; 0000057131-26-000019",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "borrowings_usd_m": 0,
+            "cash_usd_m": 267.254,
+            "operating_income_fy_q1_q1prior_usd_m": [
+              129.207,
+              -2.104,
+              21.987
+            ],
+            "d_and_a_usd_m": [
+              47.44,
+              12.692,
+              11.329
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "No borrowings; finance leases excluded. TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 4.849687,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property and equipment) / TTM revenue",
+          "calculation": "((204.106 + 15.648 - 36.292) - (76.306 + 23.284 - 18.461)) / (2126.635 + 475.689 - 492.229) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-07-25",
+          "as_of_date": "2026-07-25",
+          "source": "LZB Form 10-Q (2026-07-25) and Form 10-K (2026-04-25) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/57131/000005713126000035/lzb-20260725.htm",
+          "filing_or_report_id": "0000057131-26-000035; 0000057131-26-000019",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": [
+              204.106,
+              15.648,
+              36.292
+            ],
+            "capex_usd_m": [
+              76.306,
+              23.284,
+              18.461
+            ],
+            "revenue_usd_m": [
+              2126.635,
+              475.689,
+              492.229
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window. US GAAP: operating-lease payments are inside operating cash flow."
+        }
+      }
+    },
+    "ETD": {
+      "company": "Ethan Allen Interiors Inc.",
+      "role": "PEER",
+      "period": "Q4_FY2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Ethan Allen fiscal 2026 fourth quarter results (Form 8-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/896156/000143774926024880/ex_994023.htm"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 7.375027,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating income (excludes IEEPA tariff refunds and other items) / net sales",
+          "calculation": "10.823 / 146.752 * 100",
+          "score_eligible": true,
+          "period": "Q4_FY2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ethan Allen fiscal 2026 fourth quarter results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896156/000143774926024880/ex_994023.htm",
+          "filing_or_report_id": "0001437749-26-024880",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_operating_income_usd_k": 10823,
+            "net_sales_usd_k": 146752
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "reported_revenue_growth_pct": {
+          "value": -8.484195,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth, quarter YoY",
+          "calculation": "(146.752 / 160.357 - 1) * 100",
+          "score_eligible": true,
+          "period": "Q4_FY2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ethan Allen fiscal 2026 fourth quarter results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896156/000143774926024880/ex_994023.htm",
+          "filing_or_report_id": "0001437749-26-024880",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "net_sales_q4_fy2026_usd_k": 146752,
+            "net_sales_q4_fy2025_usd_k": 160357
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -26.530612,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS (excl. IEEPA tariff refunds) quarter YoY",
+          "calculation": "(0.36 / 0.49 - 1) * 100",
+          "score_eligible": true,
+          "period": "Q4_FY2026",
+          "as_of_date": "2026-06-30",
+          "source": "Ethan Allen fiscal 2026 fourth quarter results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896156/000143774926024880/ex_994023.htm",
+          "filing_or_report_id": "0001437749-26-024880",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_q4_fy2026_usd": 0.36,
+            "adjusted_eps_q4_fy2025_usd": 0.49
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": -1.221839,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges; lease liabilities excluded",
+          "calculation": "(0 - 73.628) / (45.016 + 15.244)",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "ETD Form 10-K (2026-06-30) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896156/000143774926029578/eth20260630c_10k.htm",
+          "filing_or_report_id": "0001437749-26-029578",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "borrowings_usd_m": 0,
+            "cash_usd_m": 73.628,
+            "operating_income_fy2026_usd_m": 45.016,
+            "d_and_a_fy2026_usd_m": 15.244
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "Fiscal year ends 30 June, so TTM equals FY2026. Debt-free; short-term investments (USD 59.6m) not deducted. TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 7.150462,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property and equipment) / TTM revenue",
+          "calculation": "(52.477 - 11.041) / 579.487 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "ETD Form 10-K (2026-06-30) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/896156/000143774926029578/eth20260630c_10k.htm",
+          "filing_or_report_id": "0001437749-26-029578",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_fy2026_usd_m": 52.477,
+            "capex_fy2026_usd_m": 11.041,
+            "revenue_fy2026_usd_m": 579.487
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window. US GAAP: operating-lease payments are inside operating cash flow."
+        }
+      },
+      "notes": "Fiscal Q4 (April-June 2026) covers the same calendar months as Arhaus/Havertys calendar Q2; aligned, not derived (docs/PEER_DATA_STANDARD.md)."
+    },
+    "W": {
+      "company": "Wayfair Inc.",
+      "role": "CONTEXT_PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RETAIL_Q2_BROAD_ONLINE",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Wayfair Q2 2026 results",
+        "url": "https://investor.wayfair.com/"
+      },
+      "metrics": {
+        "reported_revenue_growth_pct": {
+          "value": 7.5,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "revenue growth",
+          "score_eligible": false,
+          "notes": "Online-only model is broader/different."
+        }
+      }
+    },
+    "HVT": {
+      "company": "Haverty Furniture Companies, Inc.",
+      "role": "PEER",
+      "period": "Q2_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_RETAIL_Q2",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Havertys second quarter 2026 results (Form 8-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052124/ex991-hvtearningsreleasex2.htm"
+      },
+      "metrics": {
+        "comparable_sales_growth_pct": {
+          "value": 8.0,
+          "comparison_class": "RETAIL_Q2_COMPARABLE_SALES_GROWTH",
+          "source_definition": "comparable-store sales growth (stores and online)",
+          "score_eligible": true,
+          "period": "Q2_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Havertys second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052124/ex991-hvtearningsreleasex2.htm",
+          "filing_or_report_id": "0001628280-26-052124",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_operating_margin_pct": {
+          "value": 2.56334,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "(income before interest and income taxes - IEEPA tariff refund adjustment) / net sales",
+          "calculation": "(6.494 - 1.497) / 194.941 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "Q2_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Havertys second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052124/ex991-hvtearningsreleasex2.htm",
+          "filing_or_report_id": "0001628280-26-052124",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "income_before_interest_and_taxes_usd_k": 6494,
+            "ieepa_tariff_refund_adjustment_usd_k": 1497,
+            "net_sales_usd_k": 194941
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Havertys does not publish an adjusted operating margin; the disclosed tariff-refund adjustment is removed."
+        },
+        "reported_revenue_growth_pct": {
+          "value": 7.687336,
+          "comparison_class": "RETAIL_Q2_REPORTED_REVENUE_GROWTH",
+          "source_definition": "net sales growth, quarter YoY",
+          "calculation": "(194.941 / 181.025 - 1) * 100",
+          "score_eligible": true,
+          "period": "Q2_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Havertys second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052124/ex991-hvtearningsreleasex2.htm",
+          "filing_or_report_id": "0001628280-26-052124",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 56.25,
+          "comparison_class": "RETAIL_Q2_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS (excl. IEEPA tariff refund) quarter YoY; Q2 2025 had no adjustments",
+          "calculation": "(0.25 / 0.16 - 1) * 100",
+          "score_eligible": true,
+          "period": "Q2_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Havertys second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052124/ex991-hvtearningsreleasex2.htm",
+          "filing_or_report_id": "0001628280-26-052124",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_q2_2026_usd": 0.25,
+            "diluted_eps_q2_2025_usd": 0.16
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": -2.03988,
+          "comparison_class": "NET_DEBT_TO_TTM_EBITDA",
+          "source_definition": "(borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges; lease liabilities excluded",
+          "calculation": "(0 - 104.295) / ((21.713 + 11.488 - 6.873) + (23.822 + 12.340 - 11.831) + (0.469 + 0 - 0))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "HVT Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052652/hvt-20260630.htm",
+          "filing_or_report_id": "0001628280-26-052652; 0001628280-26-012199",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "borrowings_usd_m": 0,
+            "cash_usd_m": 104.295,
+            "income_before_interest_and_taxes_usd_m": [
+              21.713,
+              11.488,
+              6.873
+            ],
+            "d_and_a_usd_m": [
+              23.822,
+              12.34,
+              11.831
+            ],
+            "impairment_usd_m": [
+              0.469,
+              0,
+              0
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "No borrowings. TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 5.063084,
+          "comparison_class": "TTM_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "TTM (operating cash flow - purchases of property and equipment) / TTM revenue",
+          "calculation": "((52.644 + 21.363 - 13.377) - (19.672 + 13.148 - 11.702)) / (758.995 + 383.991 - 362.592) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "TTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "HVT Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL",
+          "source_type": "SEC_FILING",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026052652/hvt-20260630.htm",
+          "filing_or_report_id": "0001628280-26-052652; 0001628280-26-012199",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": [
+              52.644,
+              21.363,
+              13.377
+            ],
+            "capex_usd_m": [
+              19.672,
+              13.148,
+              11.702
+            ],
+            "revenue_usd_m": [
+              758.995,
+              383.991,
+              362.592
+            ]
+          },
+          "calculation_method": "TTM = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q).",
+          "notes": "TTM GAAP figures include 2026 IEEPA tariff refunds where the company recognised them; refunds reverse tariffs paid in 2025, partly inside the same TTM window. US GAAP: operating-lease payments are inside operating cash flow."
+        }
+      }
+    }
+  }
+}
