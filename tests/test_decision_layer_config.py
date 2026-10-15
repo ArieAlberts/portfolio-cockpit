@@ -82,19 +82,43 @@ def test_decision_layer_is_outside_fq_hash_scope():
         assert f"config/{name}.yaml" not in CONFIG_FILES
 
 
+FQ_CHANGE_TRAILER = "FQ-Change:"
+
+
 def test_branch_does_not_modify_fq_hashed_files():
+    """FQ-hashed files change only in commits that declare it.
+
+    CLAUDE.md: touch FQ-hashed files only when the change is genuinely about
+    Fundamental Quality, and say so in the commit message. A commit that does
+    so carries an ``FQ-Change: <reason>`` trailer; any other commit on the
+    branch that touches an FQ-hashed file fails this test.
+    """
+    hashed = FQ_HASHED_FILES | set(CONFIG_FILES) | set(CODE_FILES)
     try:
         base = subprocess.check_output(
             ["git", "merge-base", "HEAD", "origin/main"],
             cwd=ROOT, text=True, stderr=subprocess.DEVNULL,
         ).strip()
-        changed = subprocess.check_output(
-            ["git", "diff", "--name-only", base],
+        commits = subprocess.check_output(
+            ["git", "rev-list", f"{base}..HEAD"],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL,
+        ).split()
+        uncommitted = subprocess.check_output(
+            ["git", "diff", "--name-only", "HEAD"],
             cwd=ROOT, text=True, stderr=subprocess.DEVNULL,
         ).split()
     except (subprocess.CalledProcessError, FileNotFoundError):
         pytest.skip("origin/main is not available in this checkout")
-    assert not set(changed) & (FQ_HASHED_FILES | set(CONFIG_FILES) | set(CODE_FILES))
+    offending: list[str] = [f"uncommitted:{path}" for path in set(uncommitted) & hashed]
+    for commit in commits:
+        message = subprocess.check_output(["git", "show", "-s", "--format=%B", commit], cwd=ROOT, text=True)
+        files = subprocess.check_output(
+            ["git", "show", "--name-only", "--format=", commit], cwd=ROOT, text=True
+        ).split()
+        touched = set(files) & hashed
+        if touched and FQ_CHANGE_TRAILER not in message:
+            offending += [f"{commit[:8]}:{path}" for path in sorted(touched)]
+    assert not offending, f"FQ-hashed files changed without an {FQ_CHANGE_TRAILER} trailer: {offending}"
 
 
 @pytest.mark.parametrize(
