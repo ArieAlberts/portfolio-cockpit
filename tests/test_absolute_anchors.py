@@ -78,13 +78,15 @@ def test_wkl_is_strong_on_all_configured_absolute_anchors():
 
 def test_absolute_anchors_explain_wkl_without_changing_relative_score_or_gate():
     payload=build_score_snapshot(root=ROOT,code_version="TEST-COMMIT")
-    assert "WKL" in payload["blocked"]
-    wkl=payload["blocked"]["WKL"]
+    assert "WKL" in payload["scores"]
+    wkl=payload["scores"]["WKL"]
 
-    # Pinned to the current WKL peer dataset (2026-10-14: peer leverage filled).
-    assert wkl["diagnostic_candidate"]["score"] == pytest.approx(22.8029456825)
-    assert wkl["weighted_component_coverage"] == pytest.approx(0.75)
-    assert wkl["status"] == "DATA_CHECK"
+    # Pinned to the current WKL peer dataset (2026-10-15: H1 reported operating
+    # margin filled). Seven STRONG anchors coexist with a peer-relative score
+    # below 50, which shows the anchors do not feed the relative score.
+    assert wkl["diagnostic_candidate"]["score"] == pytest.approx(19.6905549885)
+    assert wkl["weighted_component_coverage"] == pytest.approx(1.0)
+    assert wkl["status"] == "DISPLAY_READY"
 
     anchors=wkl["absolute_anchors"]
     assert anchors["counts"]["STRONG"] == 7
