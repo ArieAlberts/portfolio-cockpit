@@ -1,0 +1,824 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ROR.L",
+  "collected_at": "2026-10-15",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "READY_FOR_STRICT_H1_CORE_METRICS",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "PENDING_PIPELINE_REVIEW",
+    "eligible_period_alignments": [
+      "ALIGNED_H1",
+      "ALIGNED_H1_DERIVED"
+    ]
+  },
+  "supersedes": "data/peers/ROR.L/2026-10-03.json",
+  "change_note": "Adds WEIR.L (ALIGNED_H1); upgrades FLS and CR to PEER on derived H1 (method A); fills leverage, standardized FCF margin and adjusted EPS growth; METSO.HE unchanged.",
+  "companies": {
+    "ROR.L": {
+      "company": "Rotork plc",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Rotork plc 2026 interim results (press release, 4 August 2026)",
+        "url": "https://media.rotork.com/api/public/content/pub082-420-halfyearresultspressrelease2026-pdf-yuq9oivmtso6wjckhxrt.pdf?v=0b70320b"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 22.385621,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit (excl. acquired-intangible amortisation and adjusting items) / revenue",
+          "calculation": "82.2 / 367.2 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Rotork plc 2026 interim results (press release, 4 August 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://media.rotork.com/api/public/content/pub082-420-halfyearresultspressrelease2026-pdf-yuq9oivmtso6wjckhxrt.pdf?v=0b70320b",
+          "filing_or_report_id": "Rotork 2026 interim results press release (4 August 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_operating_profit_gbp_m": 82.2,
+            "revenue_gbp_m": 367.2
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 1.3,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic constant-currency (OCC) revenue growth",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Rotork plc 2026 interim results (press release, 4 August 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://media.rotork.com/api/public/content/pub082-420-halfyearresultspressrelease2026-pdf-yuq9oivmtso6wjckhxrt.pdf?v=0b70320b",
+          "filing_or_report_id": "Rotork 2026 interim results press release (4 August 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "as reported by the company"
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.119396,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / LTM adjusted EBITDA (adjusted operating profit + depreciation and amortisation of owned and right-of-use assets); computed from reported components unless noted",
+          "calculation": "-25.3 / ((191.5 + 82.2 - 80.8) + (15.3 + 7.1 - 7.1) + (3.1 + 1.8 - 1.2))",
+          "score_eligible": true,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Rotork plc 2026 interim results (press release, 4 August 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://media.rotork.com/api/public/content/pub082-420-halfyearresultspressrelease2026-pdf-yuq9oivmtso6wjckhxrt.pdf?v=0b70320b",
+          "filing_or_report_id": "Rotork 2026 interim results press release (4 August 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_cash_gbp_m": 25.3,
+            "adjusted_operating_profit_fy2025_h1_2026_h1_2025_gbp_m": [
+              191.5,
+              82.2,
+              80.8
+            ],
+            "depreciation_fy2025_h1_2026_h1_2025_gbp_m": [
+              15.3,
+              7.1,
+              7.1
+            ],
+            "amortisation_and_impairment_of_development_costs_fy2025_h1_2026_h1_2025_gbp_m": [
+              3.1,
+              1.8,
+              1.2
+            ]
+          },
+          "calculation_method": "Net cash of GBP 25.3m (cash 70.0 less lease liabilities 22.7 and RCF borrowings 22.0) entered as negative net debt; LTM = FY2025 + H1 2026 - H1 2025. Rotork does not publish a leverage ratio."
+        },
+        "net_cash": {
+          "value": 25,
+          "comparison_class": "NET_CASH_ABSOLUTE",
+          "source_definition": "closing net cash GBPm",
+          "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 7.135076,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets incl. capitalised development) / revenue; standardized across target and peers",
+          "calculation": "(32.2 - 3.8 - 0 - 2.2) / 367.2 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Rotork plc 2026 interim results (press release, 4 August 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://media.rotork.com/api/public/content/pub082-420-halfyearresultspressrelease2026-pdf-yuq9oivmtso6wjckhxrt.pdf?v=0b70320b",
+          "filing_or_report_id": "Rotork 2026 interim results press release (4 August 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_cash_flows_from_operating_activities_gbp_m": 32.2,
+            "purchase_of_ppe_gbp_m": 3.8,
+            "purchase_of_intangibles_gbp_m": 0,
+            "capitalised_development_gbp_m": 2.2,
+            "revenue_gbp_m": 367.2
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 4.225352,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted basic EPS H1 YoY",
+          "calculation": "(7.4 / 7.1 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Rotork plc 2026 interim results (press release, 4 August 2026)",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_url": "https://media.rotork.com/api/public/content/pub082-420-halfyearresultspressrelease2026-pdf-yuq9oivmtso6wjckhxrt.pdf?v=0b70320b",
+          "filing_or_report_id": "Rotork 2026 interim results press release (4 August 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_basic_eps_h1_2026_p": 7.4,
+            "adjusted_basic_eps_h1_2025_p": 7.1
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "cash_conversion_pct": {
+          "value": 79,
+          "comparison_class": "H1_COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "cash conversion",
+          "score_eligible": false
+        },
+        "roce_pct": {
+          "value": 36.5,
+          "comparison_class": "H1_ROCE",
+          "source_definition": "return on capital employed",
+          "score_eligible": false
+        }
+      },
+      "notes": "ABB's recommended cash offer for Rotork (announced with the interim results) does not change H1 2026 fundamentals."
+    },
+    "IMI.L": {
+      "company": "IMI plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_EXCHANGE_RELEASE",
+        "title": "IMI plc 2026 Half Year Results (RNS, 31 July 2026, FCA National Storage Mechanism)",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/970fab16-89f2-4dce-8ace-345fec0580d3.html"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 18.731665,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit / revenue",
+          "calculation": "217.1 / 1159 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IMI plc 2026 Half Year Results (RNS, 31 July 2026, FCA National Storage Mechanism)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/970fab16-89f2-4dce-8ace-345fec0580d3.html",
+          "filing_or_report_id": "IMI plc RNS Half Year Results 31 July 2026",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_operating_profit_gbp_m": 217.1,
+            "revenue_gbp_m": 1159
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth (after adjusting for acquisitions, disposals and exchange rates)",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IMI plc 2026 Half Year Results (RNS, 31 July 2026, FCA National Storage Mechanism)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/970fab16-89f2-4dce-8ace-345fec0580d3.html",
+          "filing_or_report_id": "IMI plc RNS Half Year Results 31 July 2026",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 13.012478,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted basic EPS H1 YoY",
+          "calculation": "(63.4 / 56.1 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IMI plc 2026 Half Year Results (RNS, 31 July 2026, FCA National Storage Mechanism)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/970fab16-89f2-4dce-8ace-345fec0580d3.html",
+          "filing_or_report_id": "IMI plc RNS Half Year Results 31 July 2026",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_basic_eps_h1_2026_p": 63.4,
+            "adjusted_basic_eps_h1_2025_p": 56.1
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.173496,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt (cash, overdrafts, borrowings and lease liabilities) / LTM adjusted EBITDA",
+          "calculation": "673.0 / (549.5 + 265.8 - 241.8)",
+          "score_eligible": true,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "IMI plc 2026 Half Year Results (RNS, 31 July 2026, FCA National Storage Mechanism)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/970fab16-89f2-4dce-8ace-345fec0580d3.html",
+          "filing_or_report_id": "IMI plc RNS Half Year Results 31 July 2026",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_debt_gbp_m": 673.0,
+            "adjusted_ebitda_fy2025_h1_2026_h1_2025_gbp_m": [
+              549.5,
+              265.8,
+              241.8
+            ]
+          },
+          "calculation_method": "LTM adjusted EBITDA = FY2025 + H1 2026 - H1 2025 (note 11); company reports 1.2x."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 15.194133,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets incl. capitalised development) / revenue; standardized across target and peers",
+          "calculation": "(214.1 - 38.0) / 1159 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "IMI plc 2026 Half Year Results (RNS, 31 July 2026, FCA National Storage Mechanism)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/970fab16-89f2-4dce-8ace-345fec0580d3.html",
+          "filing_or_report_id": "IMI plc RNS Half Year Results 31 July 2026",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_cash_from_operations_gbp_m": 214.1,
+            "acquisition_of_ppe_and_non_acquired_intangibles_gbp_m": 38.0,
+            "revenue_gbp_m": 1159
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow."
+        }
+      }
+    },
+    "SPX.L": {
+      "company": "Spirax Group plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_EXCHANGE_RELEASE",
+        "title": "Spirax Group plc 2026 Half Year Results (RNS 0289Q, 11 August 2026; full statement PDF)",
+        "url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 19.807826,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit margin",
+          "calculation": "171.1 / 863.8 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Spirax Group plc 2026 Half Year Results (RNS 0289Q, 11 August 2026; full statement PDF)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf",
+          "filing_or_report_id": "RNS 0289Q (https://data.fca.org.uk/artefacts/NSM/RNS/a14e85a6-df40-4136-8180-15921866a912.html)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_operating_profit_gbp_m": 171.1,
+            "revenue_gbp_m": 863.8
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth (constant currency, excl. acquisitions and disposals)",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Spirax Group plc 2026 Half Year Results (RNS 0289Q, 11 August 2026; full statement PDF)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf",
+          "filing_or_report_id": "RNS 0289Q (https://data.fca.org.uk/artefacts/NSM/RNS/a14e85a6-df40-4136-8180-15921866a912.html)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "as reported by the company"
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 9.011628,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted basic EPS H1 YoY",
+          "calculation": "(150.0 / 137.6 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Spirax Group plc 2026 Half Year Results (RNS 0289Q, 11 August 2026; full statement PDF)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf",
+          "filing_or_report_id": "RNS 0289Q (https://data.fca.org.uk/artefacts/NSM/RNS/a14e85a6-df40-4136-8180-15921866a912.html)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_basic_eps_h1_2026_p": 150.0,
+            "adjusted_basic_eps_h1_2025_p": 137.6
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.550928,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt (excluding lease liabilities) / LTM EBITDA (adjusted operating profit + depreciation and amortisation of owned assets)",
+          "calculation": "618.2 / 398.6",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Spirax Group plc 2026 Half Year Results (RNS 0289Q, 11 August 2026; full statement PDF)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf",
+          "filing_or_report_id": "RNS 0289Q (https://data.fca.org.uk/artefacts/NSM/RNS/a14e85a6-df40-4136-8180-15921866a912.html)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_debt_gbp_m": 618.2,
+            "ltm_ebitda_gbp_m": 398.6
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Company APM; excludes lease liabilities and right-of-use depreciation on both sides."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 6.853438,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets incl. capitalised development) / revenue; standardized across target and peers",
+          "calculation": "(84.3 - 12.5 - 10.0 - 2.6) / 863.8 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Spirax Group plc 2026 Half Year Results (RNS 0289Q, 11 August 2026; full statement PDF)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "http://www.rns-pdf.londonstockexchange.com/rns/0289Q_1-2026-8-10.pdf",
+          "filing_or_report_id": "RNS 0289Q (https://data.fca.org.uk/artefacts/NSM/RNS/a14e85a6-df40-4136-8180-15921866a912.html)",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_cash_from_operating_activities_gbp_m": 84.3,
+            "purchase_of_ppe_gbp_m": 12.5,
+            "purchase_of_software_and_other_intangibles_gbp_m": 10.0,
+            "development_expenditure_capitalised_gbp_m": 2.6,
+            "revenue_gbp_m": 863.8
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow."
+        },
+        "cash_conversion_pct": {
+          "value": 54,
+          "comparison_class": "H1_COMPANY_DEFINED_CASH_CONVERSION",
+          "source_definition": "adjusted cash conversion",
+          "score_eligible": false
+        }
+      }
+    },
+    "METSO.HE": {
+      "company": "Metso Oyj",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Metso Half-Year Report January-June 2026",
+        "url": "https://www.metso.com/corporate/investors/financials/interim-review/?r=3"
+      },
+      "metrics": {
+        "adjusted_ebita_margin_pct": {
+          "value": 16.4,
+          "comparison_class": "H1_ADJUSTED_EBITA_MARGIN",
+          "source_definition": "adjusted EBITA margin",
+          "score_eligible": false,
+          "notes": "Not forced equal to adjusted operating margin."
+        },
+        "reported_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_REPORTED_REVENUE_GROWTH",
+          "source_definition": "sales growth",
+          "score_eligible": false
+        },
+        "eps_growth_pct": {
+          "value": 7.407407,
+          "comparison_class": "H1_EPS_GROWTH",
+          "source_definition": "EPS growth",
+          "score_eligible": false
+        },
+        "roce_pct": {
+          "value": 17.3,
+          "comparison_class": "H1_ROCE",
+          "source_definition": "ROCE before taxes",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.3,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": false
+        }
+      },
+      "notes": "Not refreshed in the 2026-10-15 pass; records unchanged from 2026-10-03 and not score-eligible (adjusted EBITA margin is not forced equal to adjusted operating margin)."
+    },
+    "WEIR.L": {
+      "company": "The Weir Group PLC",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_EXCHANGE_RELEASE",
+        "title": "The Weir Group PLC interim results six months to 30 June 2026 (RNS 2619O, 29 July 2026)",
+        "url": "https://data.fca.org.uk/artefacts/NSM/RNS/e320e413-4b53-463e-bcd0-f40efd6609a2.html"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 18.833727,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit (before adjusting items and adjusting amortisation) / revenue, continuing operations",
+          "calculation": "239.0 / 1269 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "The Weir Group PLC interim results six months to 30 June 2026 (RNS 2619O, 29 July 2026)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/e320e413-4b53-463e-bcd0-f40efd6609a2.html",
+          "filing_or_report_id": "RNS 2619O",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_operating_profit_gbp_m": 239.0,
+            "revenue_gbp_m": 1269
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.352273,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt (incl. IFRS 16 lease liabilities) / LTM adjusted EBITDA",
+          "calculation": "1449 / (608.2 + 288.0 - 280.2)",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "The Weir Group PLC interim results six months to 30 June 2026 (RNS 2619O, 29 July 2026)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/e320e413-4b53-463e-bcd0-f40efd6609a2.html",
+          "filing_or_report_id": "RNS 2619O",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_debt_gbp_m": 1449,
+            "of_which_leases_gbp_m": 154,
+            "adjusted_ebitda_fy2025_h1_2026_h1_2025_gbp_m": [
+              608.2,
+              288.0,
+              280.2
+            ]
+          },
+          "calculation_method": "LTM adjusted EBITDA = FY2025 + H1 2026 - H1 2025 (APM note 2). Weir's headline 2.2x is on a lender-covenant basis and is not used.",
+          "notes": "LTM EBITDA is not pro-forma for 2025-2026 acquisitions."
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 4.27108,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash from operating activities - purchases of property, plant and equipment - purchases of intangible assets incl. capitalised development) / revenue; standardized across target and peers",
+          "calculation": "(82.7 - 23.0 - 5.5) / 1269 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "The Weir Group PLC interim results six months to 30 June 2026 (RNS 2619O, 29 July 2026)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/e320e413-4b53-463e-bcd0-f40efd6609a2.html",
+          "filing_or_report_id": "RNS 2619O",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "net_cash_generated_from_operating_activities_gbp_m": 82.7,
+            "purchases_of_ppe_gbp_m": 23.0,
+            "purchases_of_intangible_assets_gbp_m": 5.5,
+            "revenue_gbp_m": 1269
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "IFRS: lease principal payments sit in financing cash flow. Operating cash flow is for total operations; revenue is continuing operations."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": -7.300509,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS H1 YoY, continuing operations (H1 2025 restated)",
+          "calculation": "(54.6 / 58.9 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "The Weir Group PLC interim results six months to 30 June 2026 (RNS 2619O, 29 July 2026)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/e320e413-4b53-463e-bcd0-f40efd6609a2.html",
+          "filing_or_report_id": "RNS 2619O",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_value": {
+            "adjusted_eps_h1_2026_p": 54.6,
+            "adjusted_eps_h1_2025_p": 58.9
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "constant_currency_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "H1_CONSTANT_CURRENCY_REVENUE_GROWTH",
+          "source_definition": "constant-currency revenue growth including acquisitions",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "The Weir Group PLC interim results six months to 30 June 2026 (RNS 2619O, 29 July 2026)",
+          "source_type": "OFFICIAL_EXCHANGE_RELEASE",
+          "source_url": "https://data.fca.org.uk/artefacts/NSM/RNS/e320e413-4b53-463e-bcd0-f40efd6609a2.html",
+          "filing_or_report_id": "RNS 2619O",
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "calculation_method": "as reported by the company",
+          "notes": "Weir reports organic growth for orders only, not for revenue; constant-currency revenue growth includes acquisitions (Micromine, Fast2Mine, ESEL) and is not organic."
+        }
+      }
+    },
+    "FLS": {
+      "company": "Flowserve Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Flowserve second quarter 2026 results (Form 8-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/30625/000119312526323649/d15165dex991.htm"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 15.17848,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating income (excl. realignment, acquisition items, intangible amortization, discrete items) / sales",
+          "calculation": "339.610 / 2237.444 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Flowserve second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/30625/000119312526323649/d15165dex991.htm",
+          "filing_or_report_id": "0001193125-26-323649",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_operating_income_usd_k": 339610,
+            "sales_usd_k": 2237444
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": -6.9,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "organic sales growth, year-to-date (excl. currency translation and acquisitions/divestitures)",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Flowserve second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/30625/000119312526323649/d15165dex991.htm",
+          "filing_or_report_id": "0001193125-26-323649",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "YTD reported -4.1 % = organic -6.9 % + acquisitions 0.6 pp + FX 2.2 pp."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 10.429448,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS H1 YoY",
+          "calculation": "(1.80 / 1.63 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Flowserve second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/30625/000119312526323649/d15165dex991.htm",
+          "filing_or_report_id": "0001193125-26-323649",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_h1_2026_usd": 1.8,
+            "adjusted_eps_h1_2025_usd": 1.63
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 2.340126,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(net cash flows provided by operating activities - capital expenditures) / sales",
+          "calculation": "(86.166 - 33.807) / 2237.444 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Flowserve second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/30625/000119312526323649/d15165dex991.htm",
+          "filing_or_report_id": "0001193125-26-323649",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "operating_cash_flow_usd_k": 86166,
+            "capital_expenditures_usd_k": 33807,
+            "sales_usd_k": 2237444
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "US GAAP: operating-lease payments are inside operating cash flow."
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.755916,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(debt due within one year + long-term debt - cash) / LTM (adjusted operating income + depreciation)",
+          "calculation": "(12.741 + 2122.423 - 731.007) / ((699.911 + 339.610 - 320.804) + (79.236 + 40.414 - 38.695))",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Flowserve Q2 2026 and Q4 2025 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/30625/000119312526323649/d15165dex991.htm",
+          "filing_or_report_id": "0001193125-26-323649 (H1 2026, balance sheet); 0001193125-26-039379 (FY2025 adjusted operating income); 0000030625-26-000003 FY2025 10-K and 0000030625-26-000020 Q2 10-Q XBRL (depreciation)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "debt_due_within_one_year_usd_m": 12.741,
+            "long_term_debt_usd_m": 2122.423,
+            "cash_usd_m": 731.007,
+            "adjusted_operating_income_fy2025_h1_2026_h1_2025_usd_m": [
+              699.911,
+              339.61,
+              320.804
+            ],
+            "depreciation_fy2025_h1_2026_h1_2025_usd_m": [
+              79.236,
+              40.414,
+              38.695
+            ]
+          },
+          "calculation_method": "LTM = FY2025 + H1 2026 - H1 2025. Adjusted operating income already excludes intangible amortization, so only depreciation is added back. Flowserve does not publish a leverage ratio in the release.",
+          "notes": "LTM EBITDA is not pro-forma for the 2026 acquisitions (Greenray, Trillium Valves, FAMCO)."
+        }
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A; calendar-year quarterly reporter, H1 values from the six-months-ended columns of the Q2 2026 release (= Q1 + Q2)."
+    },
+    "CR": {
+      "company": "Crane Company",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Crane Company second quarter 2026 results (Form 8-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1944013/000194401326000181/exhibit991-pressreleasexq2.htm"
+      },
+      "metrics": {
+        "adjusted_operating_margin_pct": {
+          "value": 20.5545,
+          "comparison_class": "H1_ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit (excl. transaction costs, repositioning, acquired-intangible amortization and tariff refunds) / net sales",
+          "calculation": "292.1 / 1421.1 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Crane Company second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1944013/000194401326000181/exhibit991-pressreleasexq2.htm",
+          "filing_or_report_id": "0001944013-26-000181",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_operating_profit_usd_m": 292.1,
+            "net_sales_usd_m": 1421.1
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "organic_revenue_growth_pct": {
+          "value": 4.529432,
+          "comparison_class": "H1_ORGANIC_REVENUE_GROWTH",
+          "source_definition": "core sales growth (excl. currency translation, acquisitions and divestitures), Jan-Jun",
+          "calculation": "(21.4 + 30.0) / (557.6 + 577.2) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Crane Company Q1 2026 and Q2 2026 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1944013/000194401326000181/exhibit991-pressreleasexq2.htm",
+          "filing_or_report_id": "0001944013-26-000125 (Q1 2026); 0001944013-26-000181 (Q2 2026)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "core_sales_change_q1_usd_m": 21.4,
+            "core_sales_change_q2_usd_m": 30.0,
+            "net_sales_q1_2025_usd_m": 557.6,
+            "net_sales_q2_2025_usd_m": 577.2
+          },
+          "calculation_method": "H1 core growth recomputed from the quarterly core-sales dollar changes over prior-year quarterly sales (Q1 3.8 %, Q2 5.2 %); Crane does not report a six-month core growth rate."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 16.216216,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS from continuing operations H1 YoY",
+          "calculation": "(3.44 / 2.96 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Crane Company second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1944013/000194401326000181/exhibit991-pressreleasexq2.htm",
+          "filing_or_report_id": "0001944013-26-000181",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_h1_2026_usd": 3.44,
+            "adjusted_eps_h1_2025_usd": 2.96
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 4.749842,
+          "comparison_class": "H1_FREE_CASH_FLOW_MARGIN",
+          "source_definition": "(cash provided by operating activities from continuing operations - capital expenditures) / net sales",
+          "calculation": "(92.8 - 25.3) / 1421.1 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Crane Company second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1944013/000194401326000181/exhibit991-pressreleasexq2.htm",
+          "filing_or_report_id": "0001944013-26-000181",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "operating_cash_flow_usd_m": 92.8,
+            "capital_expenditures_usd_m": 25.3,
+            "net_sales_usd_m": 1421.1
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "US GAAP: operating-lease payments are inside operating cash flow."
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.304272,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(short-term borrowings + long-term debt - cash) / LTM adjusted EBITDA",
+          "calculation": "(11.3 + 1087.1 - 350.4) / (495.7 + 315.6 - 237.8)",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Crane Company Q2 2026 and Q4 2025 results (Form 8-K Exhibits 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1944013/000194401326000181/exhibit991-pressreleasexq2.htm",
+          "filing_or_report_id": "0001944013-26-000181 (H1 2026, balance sheet); 0001944013-26-000009 (FY2025 adjusted EBITDA)",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "short_term_borrowings_usd_m": 11.3,
+            "long_term_debt_usd_m": 1087.1,
+            "cash_usd_m": 350.4,
+            "adjusted_ebitda_fy2025_h1_2026_h1_2025_usd_m": [
+              495.7,
+              315.6,
+              237.8
+            ]
+          },
+          "calculation_method": "LTM adjusted EBITDA = FY2025 + H1 2026 - H1 2025.",
+          "notes": "LTM EBITDA is not pro-forma for the 2026 acquisitions (Druck, Panametrics, Reuter-Stokes, optek-Danulat), so leverage is overstated versus a pro-forma basis."
+        }
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A; calendar-year quarterly reporter, H1 values from the six-months-ended columns of the Q2 2026 release (= Q1 + Q2)."
+    }
+  }
+}

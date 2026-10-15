@@ -171,3 +171,7 @@ discovery_overrides:
     mode: HTML_PAGE
     url: https://www.evonik.com/en/investor-relations/Reporting.html
     source_quality: HIGH
+  WEIR.L:
+    mode: HTML_PAGE
+    url: https://www.global.weir/investors/
+    source_quality: HIGH
