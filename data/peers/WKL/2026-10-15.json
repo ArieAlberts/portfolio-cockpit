@@ -1,0 +1,798 @@
+{
+  "schema_version": 1,
+  "target_ticker": "WKL",
+  "collected_at": "2026-10-15",
+  "purpose": "Standardized peer financial observations for Fundamental Quality normalization. No valuation or trading execution.",
+  "strict_reference_period": "H1_2026",
+  "target_and_peers": [
+    "WKL",
+    "RELX.L",
+    "TRI.TO",
+    "VRSK",
+    "FDS",
+    "SPGI",
+    "MCO"
+  ],
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "prohibit_forced_margin_equivalence": true,
+    "min_peer_values_per_metric": 4,
+    "final_score_status": "PARTIAL_50_PERCENT_COMPONENT_COVERAGE"
+  },
+  "companies": {
+    "WKL": {
+      "company": "Wolters Kluwer N.V.",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Wolters Kluwer 2026 Half-Year Report",
+        "url": "https://www.wolterskluwer.com/en/news/wolters-kluwer-2026-half-year-report"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 5,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 14,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "diluted adjusted EPS growth in constant currencies",
+          "score_eligible": true
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 17.57336,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "adjusted free cash flow / revenue",
+          "calculation": "533 / 3033 * 100",
+          "score_eligible": true
+        },
+        "net_debt_to_ebitda": {
+          "value": 2,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": true
+        },
+        "share_count_change_pct": {
+          "value": -3.717949,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares, H1 YoY",
+          "calculation": "(225.3 / 234.0 - 1) * 100",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": 91,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": "adjusted operating cash flow / adjusted operating profit",
+          "score_eligible": true
+        },
+        "reported_margin_pct": {
+          "value": 29.4,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating profit margin",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 27.035938,
+          "comparison_class": "H1_REPORTED_OPERATING_MARGIN",
+          "source_definition": "Operating profit as presented in the IFRS / US GAAP income statement / revenue, six months ended 2026-06-30",
+          "period": "H1_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_title": "Wolters Kluwer 2026 Half-Year Results (regulated half-year financial report filed with the AFM, deposited 2026-08-06), unaudited condensed consolidated interim statement of profit or loss",
+          "source_url": "https://www.afm.nl/nl-nl/sector/registers/meldingenregisters/financiele-verslaggeving/details?id=A2510-03975",
+          "source_urls": [
+            "https://www.afm.nl/nl-nl/sector/registers/meldingenregisters/financiele-verslaggeving/details?id=A2510-03975"
+          ],
+          "filing_ids": [
+            "AFM register financiele verslaggeving A2510-03975"
+          ],
+          "retrieved_at": "2026-10-15",
+          "currency": "EUR",
+          "raw_values": {
+            "operating_profit_eur_m": {
+              "line": "Operating profit",
+              "h1_2026": 820
+            },
+            "revenue_eur_m": {
+              "line": "Revenues",
+              "h1_2026": 3033
+            }
+          },
+          "calculation_method": "Six-month operating profit as presented in the income statement divided by six-month revenue; no adjustments. Ratio is currency-neutral.",
+          "calculation": "820 / 3033 * 100",
+          "score_eligible": true,
+          "notes": "Source retrieved from the AFM register because wolterskluwer.com serves a bot challenge to automated requests. Operating profit includes other gains and (losses) of EUR 3m."
+        }
+      }
+    },
+    "RELX.L": {
+      "company": "RELX plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "RELX 2026 First Half Results",
+        "url": "https://www.relx.com/media/press-releases/year-2026/first-half-2026"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 7,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "underlying revenue growth",
+          "score_eligible": true,
+          "notes": "Company-defined underlying growth; retained as organic-like rather than relabeled organic.",
+          "definition_confidence": 90
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 11,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS growth at constant currency",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "free_cash_flow_margin_pct": {
+          "value": null,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.3,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / EBITDA",
+          "score_eligible": true
+        },
+        "share_count_change_pct": {
+          "value": null,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "cash_conversion_pct": {
+          "value": 98,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": "adjusted cash flow conversion",
+          "score_eligible": true
+        },
+        "reported_margin_pct": {
+          "value": 35.5,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "group adjusted operating margin",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 32.53952,
+          "comparison_class": "H1_REPORTED_OPERATING_MARGIN",
+          "source_definition": "Operating profit as presented in the IFRS / US GAAP income statement / revenue, six months ended 2026-06-30",
+          "period": "H1_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "source_title": "RELX 2026 Interim Results press release (reported figures / condensed consolidated income statement)",
+          "source_url": "https://www.relx.com/~/media/Files/R/RELX-Group/documents/press-releases/2026/first-half-results-2026-pressrelease.pdf",
+          "source_urls": [
+            "https://www.relx.com/~/media/Files/R/RELX-Group/documents/press-releases/2026/first-half-results-2026-pressrelease.pdf"
+          ],
+          "filing_ids": [
+            "RELX 2026 Interim Results, 23 July 2026"
+          ],
+          "retrieved_at": "2026-10-15",
+          "currency": "GBP",
+          "raw_values": {
+            "operating_profit_gbp_m": {
+              "line": "Operating profit (reported)",
+              "h1_2026": 1585
+            },
+            "revenue_gbp_m": {
+              "line": "Revenue",
+              "h1_2026": 4871
+            }
+          },
+          "calculation_method": "Six-month operating profit as presented in the income statement divided by six-month revenue; no adjustments. Ratio is currency-neutral.",
+          "calculation": "1585 / 4871 * 100",
+          "score_eligible": true,
+          "notes": "Reported operating profit includes amortisation of acquired intangible assets of GBP 118m."
+        }
+      }
+    },
+    "TRI.TO": {
+      "company": "Thomson Reuters Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "Thomson Reuters Reports Second-Quarter 2026 Results",
+        "url": "https://ir.thomsonreuters.com/news-releases/news-release-details/thomson-reuters-reports-second-quarter-2026-results"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 8,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth",
+          "score_eligible": true
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 11,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted EPS H1 YoY, also 11% at constant currency",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 26.206385,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "1059 / 4041 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 0.9,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "net debt / adjusted EBITDA",
+          "score_eligible": true
+        },
+        "share_count_change_pct": {
+          "value": null,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": null,
+          "score_eligible": false,
+          "notes": "Return of capital reduced shares, but no aligned H1 diluted weighted-average comparison stored yet."
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 40.2,
+          "comparison_class": "ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false,
+          "notes": "Not interchangeable with adjusted operating margin."
+        },
+        "operating_margin_pct": {
+          "value": 29.621381,
+          "comparison_class": "H1_REPORTED_OPERATING_MARGIN",
+          "source_definition": "Operating profit as presented in the IFRS / US GAAP income statement / revenue, six months ended 2026-06-30",
+          "period": "H1_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "Thomson Reuters Form 6-K, Q2 2026 interim financial statements (IFRS XBRL)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1075124/000119312526338256/tri-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1075124/000119312526338256/tri-20260630.htm"
+          ],
+          "filing_ids": [
+            "0001193125-26-338256"
+          ],
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_values": {
+            "operating_profit_usd_m": {
+              "line": "ifrs-full:ProfitLossFromOperatingActivities",
+              "h1_2026": 1197
+            },
+            "revenue_usd_m": {
+              "line": "ifrs-full:Revenue",
+              "h1_2026": 4041
+            }
+          },
+          "calculation_method": "Six-month operating profit as presented in the income statement divided by six-month revenue; no adjustments. Ratio is currency-neutral.",
+          "calculation": "1197 / 4041 * 100",
+          "score_eligible": true,
+          "notes": "Operating profit as presented includes other operating gains, net."
+        }
+      }
+    },
+    "VRSK": {
+      "company": "Verisk Analytics, Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT_AND_SEC",
+        "title": "Verisk Q2 2026 Financial Results / Form 10-Q",
+        "url": "https://investor.verisk.com/financials/quarterly-results/default.aspx"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 5.698961,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenues H1 YoY",
+          "calculation": "(1576.5 / 1491.5 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 5,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "diluted adjusted EPS H1 YoY",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 39.291334,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "624.3 / 1588.9 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 2.302107,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_2026-06-30",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "VRSK Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/vrsk20260630_10q.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/vrsk20260630_10q.htm",
+            "https://www.sec.gov/Archives/edgar/data/1442145/000143774926004452/vrsk20251231_10k.htm"
+          ],
+          "filing_ids": [
+            "0001437749-26-024749",
+            "0001437749-26-004452"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "DebtCurrent": 257.7,
+              "LongTermDebtAndCapitalLeaseObligations": 4215.8
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 551.4
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 1343.9,
+              "ytd_current": 715.9,
+              "ytd_prior": 684.4
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationAndAmortization": {
+                "fy": 259.2,
+                "ytd_current": 136.2,
+                "ytd_prior": 133.4
+              },
+              "AmortizationOfIntangibleAssets": {
+                "fy": 67.5,
+                "ytd_current": 28.7,
+                "ytd_prior": 32.1
+              }
+            },
+            "noncash_impairment_addback_usd_m": {
+              "AssetImpairmentCharges": {
+                "fy": 2.2,
+                "ytd_current": 0.0,
+                "ytd_prior": 0.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(257.7 + 4215.8 - 551.4) / ((1343.9 + 715.9 - 684.4) + (259.2 + 136.2 - 133.4) + (67.5 + 28.7 - 32.1) + (2.2 + 0 - 0))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "Computed from SEC filings on the standardized definition; WKL, RELX.L and TRI.TO values in this class are company-reported ratios (company-defined net debt and EBITDA), so definition_confidence is set to 90 for these computed peer values. Replaces previous-pass record (value=None, comparison_class=NET_DEBT_TO_EBITDA, score_eligible=False, definition=None)."
+        },
+        "share_count_change_pct": {
+          "value": -5.406014,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "(133.036554 / 140.639547 - 1) * 100",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 56.7,
+          "comparison_class": "ADJUSTED_EBITDA_MARGIN",
+          "source_definition": "adjusted EBITDA margin",
+          "score_eligible": false,
+          "notes": "Not interchangeable with adjusted operating margin."
+        },
+        "operating_margin_pct": {
+          "value": 45.056328,
+          "comparison_class": "H1_REPORTED_OPERATING_MARGIN",
+          "source_definition": "Operating profit as presented in the IFRS / US GAAP income statement / revenue, six months ended 2026-06-30",
+          "period": "H1_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "Verisk Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/vrsk20260630_10q.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/vrsk20260630_10q.htm"
+          ],
+          "filing_ids": [
+            "0001437749-26-024749"
+          ],
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_values": {
+            "operating_profit_usd_m": {
+              "line": "us-gaap:OperatingIncomeLoss",
+              "h1_2026": 715.9
+            },
+            "revenue_usd_m": {
+              "line": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "h1_2026": 1588.9
+            }
+          },
+          "calculation_method": "Six-month operating profit as presented in the income statement divided by six-month revenue; no adjustments. Ratio is currency-neutral.",
+          "calculation": "715.9 / 1588.9 * 100",
+          "score_eligible": true
+        }
+      }
+    },
+    "FDS": {
+      "company": "FactSet Research Systems Inc.",
+      "role": "PEER",
+      "period": "FY_2026",
+      "period_end": "2026-08-31",
+      "period_alignment": "NON_ALIGNED_LATEST_FY",
+      "source": {
+        "type": "OFFICIAL_COMPANY_REPORT",
+        "title": "FactSet Q4 and Fiscal 2026 Earnings Release",
+        "url": "https://investor.factset.com/static-files/ba920b54-c271-426a-84e9-fd1208cfee67"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 6.7,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic revenue growth FY2026",
+          "score_eligible": false,
+          "notes": "Full-year period is not aligned with H1 reference period."
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 6.1,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS FY YoY",
+          "score_eligible": false
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 28.570552,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue FY",
+          "calculation": "707.480 / 2476.256 * 100",
+          "score_eligible": false
+        },
+        "net_debt_to_ebitda": {
+          "value": null,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "share_count_change_pct": {
+          "value": null,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 34.5,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin FY2026",
+          "score_eligible": false
+        }
+      }
+    },
+    "SPGI": {
+      "company": "S&P Global Inc.",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "S&P Global Q2 2026 Earnings Release with Mobility separation pro forma",
+        "url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000040/spgi2q2026-earningsrelease.htm"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 10,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "pro forma organic constant-currency revenue growth H1",
+          "score_eligible": true,
+          "notes": "Post-Mobility-separation pro forma continuing business basis.",
+          "definition_confidence": 90
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 19,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "pro forma non-GAAP adjusted diluted EPS H1 YoY",
+          "score_eligible": true,
+          "definition_confidence": 90
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 27.037749,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "as-reported H1 free cash flow / as-reported H1 revenue",
+          "calculation": "2249 / 8318 * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "Both numerator and denominator use the same historical H1 basis including Mobility. This fixes the prior basis mismatch; it does not mix historical FCF with post-separation pro forma revenue."
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.318676,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_2026-06-30",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "SPGI Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000045/spgi-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/64040/000006404026000045/spgi-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/64040/000006404026000013/spgi-20251231.htm"
+          ],
+          "filing_ids": [
+            "0000064040-26-000045",
+            "0000064040-26-000013"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "DebtCurrent": 2572.0,
+              "LongTermDebtNoncurrent": 12598.0
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 4134.0
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 6478.0,
+              "ytd_current": 3814.0,
+              "ytd_prior": 3129.0
+            },
+            "depreciation_amortization_usd_m": {
+              "Depreciation": {
+                "fy": 110.0,
+                "ytd_current": 64.0,
+                "ytd_prior": 51.0
+              },
+              "AmortizationOfIntangibleAssets": {
+                "fy": 1069.0,
+                "ytd_current": 551.0,
+                "ytd_prior": 537.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(2572 + 12598 - 4134) / ((6478 + 3814 - 3129) + (110 + 64 - 51) + (1069 + 551 - 537))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "Computed from SEC filings on the standardized definition; WKL, RELX.L and TRI.TO values in this class are company-reported ratios (company-defined net debt and EBITDA), so definition_confidence is set to 90 for these computed peer values. Replaces previous-pass record (value=None, comparison_class=NET_DEBT_TO_EBITDA, score_eligible=False, definition=None)."
+        },
+        "share_count_change_pct": {
+          "value": -3.356142,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "(296.6 / 306.9 - 1) * 100",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 54,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "pro forma non-GAAP adjusted operating profit margin excluding OSTTRA",
+          "score_eligible": true,
+          "notes": "Pro forma post-separation basis; retained with explicit basis flag."
+        },
+        "operating_margin_pct": {
+          "value": 45.852368,
+          "comparison_class": "H1_REPORTED_OPERATING_MARGIN",
+          "source_definition": "Operating profit as presented in the IFRS / US GAAP income statement / revenue, six months ended 2026-06-30",
+          "period": "H1_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "S&P Global Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000045/spgi-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/64040/000006404026000045/spgi-20260630.htm"
+          ],
+          "filing_ids": [
+            "0000064040-26-000045"
+          ],
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_values": {
+            "operating_profit_usd_m": {
+              "line": "us-gaap:OperatingIncomeLoss",
+              "h1_2026": 3814
+            },
+            "revenue_usd_m": {
+              "line": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "h1_2026": 8318
+            }
+          },
+          "calculation_method": "Six-month operating profit as presented in the income statement divided by six-month revenue; no adjustments. Ratio is currency-neutral.",
+          "calculation": "3814 / 8318 * 100",
+          "score_eligible": true,
+          "notes": "GAAP operating profit includes a USD 186m gain on dispositions in H1 2026."
+        }
+      }
+    },
+    "MCO": {
+      "company": "Moody's Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Moody's Q2 2026 Earnings Release",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049104/a2q26earningsrelease.htm"
+      },
+      "metrics": {
+        "organic_like_revenue_growth_pct": {
+          "value": 11,
+          "comparison_class": "ORGANIC_LIKE_REVENUE_GROWTH",
+          "source_definition": "organic constant-currency MCO revenue growth H1",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "adjusted_eps_growth_pct": {
+          "value": 21.95122,
+          "comparison_class": "ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted diluted EPS H1 YoY",
+          "calculation": "(9.00 / 7.38 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "free_cash_flow_margin_pct": {
+          "value": 35.928705,
+          "comparison_class": "FREE_CASH_FLOW_MARGIN",
+          "source_definition": "free cash flow / revenue",
+          "calculation": "1532 / 4264 * 100",
+          "score_eligible": true,
+          "definition_confidence": 95
+        },
+        "net_debt_to_ebitda": {
+          "value": 1.31897,
+          "comparison_class": "NET_DEBT_TO_EBITDA",
+          "source_definition": "(total borrowings - cash and cash equivalents) / TTM EBITDA; EBITDA = GAAP operating income + depreciation and amortization + separately disclosed non-cash impairment charges, all from SEC filings",
+          "period": "TTM_ENDING_2026-06-30",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "MCO Form 10-Q (2026-06-30) and Form 10-K (2025-12-31) XBRL financial statements",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm",
+            "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-049398",
+            "0001628280-26-009136"
+          ],
+          "retrieved_at": "2026-10-14",
+          "currency": "USD",
+          "raw_values": {
+            "total_debt_usd_m": {
+              "LongTermDebtCurrent": 571.0,
+              "LongTermDebtNoncurrent": 6375.0
+            },
+            "cash_usd_m": {
+              "CashAndCashEquivalentsAtCarryingValue": 1467.0
+            },
+            "operating_income_usd_m": {
+              "concept": "OperatingIncomeLoss",
+              "fy": 3351.0,
+              "ytd_current": 1968.0,
+              "ytd_prior": 1664.0
+            },
+            "depreciation_amortization_usd_m": {
+              "DepreciationAndAmortization": {
+                "fy": 480.0,
+                "ytd_current": 248.0,
+                "ytd_prior": 233.0
+              }
+            },
+            "noncash_impairment_addback_usd_m": {
+              "RestructuringCostsAndAssetImpairmentCharges": {
+                "fy": 9.0,
+                "ytd_current": 2.0,
+                "ytd_prior": 7.0
+              }
+            }
+          },
+          "calculation_method": "Total debt = balance-sheet borrowing captions at 2026-06-30 (lease liabilities excluded unless inside the debt caption); cash = balance-sheet cash and cash equivalents caption; TTM flows = last fiscal year (10-K) + current fiscal YTD - prior-year fiscal YTD (10-Q), YTD length 181 days.",
+          "calculation": "(571 + 6375 - 1467) / ((3351 + 1968 - 1664) + (480 + 248 - 233) + (9 + 2 - 7))",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "notes": "Computed from SEC filings on the standardized definition; WKL, RELX.L and TRI.TO values in this class are company-reported ratios (company-defined net debt and EBITDA), so definition_confidence is set to 90 for these computed peer values. Replaces previous-pass record (value=None, comparison_class=NET_DEBT_TO_EBITDA, score_eligible=False, definition=None)."
+        },
+        "share_count_change_pct": {
+          "value": -2.548476,
+          "comparison_class": "DILUTED_WEIGHTED_AVERAGE_SHARE_CHANGE",
+          "source_definition": "diluted weighted-average shares H1 YoY",
+          "calculation": "(175.9 / 180.5 - 1) * 100",
+          "score_eligible": true
+        },
+        "cash_conversion_pct": {
+          "value": null,
+          "comparison_class": "CASH_CONVERSION",
+          "source_definition": null,
+          "score_eligible": false
+        },
+        "reported_margin_pct": {
+          "value": 54.2,
+          "comparison_class": "ADJUSTED_OPERATING_MARGIN",
+          "source_definition": "adjusted operating margin H1",
+          "score_eligible": true
+        },
+        "operating_margin_pct": {
+          "value": 46.153846,
+          "comparison_class": "H1_REPORTED_OPERATING_MARGIN",
+          "source_definition": "Operating profit as presented in the IFRS / US GAAP income statement / revenue, six months ended 2026-06-30",
+          "period": "H1_2026",
+          "period_end": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source_type": "SEC_FILING",
+          "source_title": "Moody's Form 10-Q (2026-06-30) XBRL income statement",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm"
+          ],
+          "filing_ids": [
+            "0001628280-26-049398"
+          ],
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_values": {
+            "operating_profit_usd_m": {
+              "line": "us-gaap:OperatingIncomeLoss",
+              "h1_2026": 1968
+            },
+            "revenue_usd_m": {
+              "line": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+              "h1_2026": 4264
+            }
+          },
+          "calculation_method": "Six-month operating profit as presented in the income statement divided by six-month revenue; no adjustments. Ratio is currency-neutral.",
+          "calculation": "1968 / 4264 * 100",
+          "score_eligible": true
+        }
+      }
+    }
+  },
+  "peer_universe_status": "PARTIAL_STRICT_METRIC_COVERAGE_50_PERCENT",
+  "supersedes": "data/peers/WKL/2026-10-14.json"
+}
