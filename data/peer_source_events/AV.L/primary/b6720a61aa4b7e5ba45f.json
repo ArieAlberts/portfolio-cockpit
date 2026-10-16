@@ -1,0 +1,30 @@
+{
+  "dependent_targets": [
+    "ADM.L",
+    "ASR"
+  ],
+  "detected_at": "2026-10-16T09:04:38Z",
+  "event_id": "b6720a61aa4b7e5ba45f",
+  "execution_effect": "NONE",
+  "new_fingerprint": "31dde2e1003e41140fdec83265d7f36498178e4a79718b053e926e30277c7f23",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 130,
+    "selected_link_count": 27,
+    "visible_text_chars": 9614
+  },
+  "old_fingerprint": "83f630446c3a615a42c52e48ce8d4aafa8710159730e14ec0805dee8e65876cb",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 126,
+    "selected_link_count": 24,
+    "visible_text_chars": 10503
+  },
+  "peer_ticker": "AV.L",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.aviva.com/investors/strategy-and-performance-overview/results-presentations-reports/"
+}
