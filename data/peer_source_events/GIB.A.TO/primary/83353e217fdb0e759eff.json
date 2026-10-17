@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CAP.PA"
+  ],
+  "detected_at": "2026-10-17T08:37:30Z",
+  "event_id": "83353e217fdb0e759eff",
+  "execution_effect": "NONE",
+  "new_fingerprint": "df3f8c29e128db236bb7b630a50d77c6df380b13bd7c75f3584432519dc73c57",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 314,
+    "selected_link_count": 218,
+    "visible_text_chars": 17425
+  },
+  "old_fingerprint": "2fe8e19e37da1ba26ae14ae0abdc14309e58a6327b846b7eac7792a4687ac74f",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 314,
+    "selected_link_count": 218,
+    "visible_text_chars": 17363
+  },
+  "peer_ticker": "GIB.A.TO",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.cgi.com/en/investors/financial-reports"
+}
