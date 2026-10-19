@@ -19,9 +19,17 @@ def test_every_portfolio_ticker_has_a_peer_universe_definition():
 
 
 def test_insufficient_peer_set_is_blocked():
-    result = validate_peer_universe(load_universes()["ABX"])
+    result = validate_peer_universe(load_universes()["ADM.L"])
     assert result.valid is False
     assert result.status == "INSUFFICIENT"
+
+
+def test_abx_gold_major_peer_set_is_limited_not_validated():
+    universe = load_universes()["ABX"]
+    result = validate_peer_universe(universe)
+    assert universe["status"] == "LIMITED"
+    assert result.valid is True
+    assert result.peer_count == result.minimum_peer_count == 4
 
 
 def test_wkl_peer_set_meets_minimum_count():
