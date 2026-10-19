@@ -338,17 +338,17 @@
       "url": "https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx"
     },
     "WKL:regulated_news": {
-      "etag": "\"1792401150\"",
+      "etag": "\"1792403553\"",
       "fingerprint": "e83520a579e7015391c10def313f61041fe60f86bc589ff0a082ed644b2659a0",
-      "last_modified": "Mon, 19 Oct 2026 09:12:30 GMT",
+      "last_modified": "Mon, 19 Oct 2026 09:52:33 GMT",
       "last_observed_change_at": "2026-10-06T12:00:22Z",
       "mode": "HTML_PAGE",
       "source_id": "regulated_news",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 316,
+        "link_count": 318,
         "selected_link_count": 13,
-        "visible_text_chars": 11858
+        "visible_text_chars": 11980
       },
       "ticker": "WKL",
       "url": "https://live.euronext.com/en/product/equities/NL0000395903-XAMS"

@@ -83,7 +83,7 @@
       ],
       "etag": null,
       "fingerprint": "bdcb2bd4c78865d5ea748fb8f965ed054761abf21fb152afeb94677ce3ed8e00",
-      "last_modified": "Mon, 19 Oct 2026 09:04:35 GMT",
+      "last_modified": "Sun, 18 Oct 2026 22:19:00 GMT",
       "last_observed_change_at": "2026-10-17T08:37:30Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ARK.PA",
@@ -313,7 +313,7 @@
       ],
       "etag": null,
       "fingerprint": "a91352dcc4c83237f8b0be5eb75483d2a1d62d9200b49b658b9e615aa06af43b",
-      "last_modified": "Mon, 19 Oct 2026 05:28:59 GMT",
+      "last_modified": "Mon, 19 Oct 2026 09:33:46 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "CARR",
@@ -540,9 +540,9 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "etag": "\"675cf-65e2d862e000d-gzip\"",
+      "etag": "\"675cf-65e2d59a09531\"",
       "fingerprint": "084876ad0472cbb8959ed11f31a74b6bce7cf3e2606c29f28289083c8780720e",
-      "last_modified": "Mon, 19 Oct 2026 08:44:37 GMT",
+      "last_modified": "Mon, 19 Oct 2026 08:32:10 GMT",
       "last_observed_change_at": "2026-10-15T21:39:58Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "DSFIR.AS",
@@ -787,9 +787,9 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "etag": "\"1792399298\"",
+      "etag": "\"1792399204\"",
       "fingerprint": "df3f8c29e128db236bb7b630a50d77c6df380b13bd7c75f3584432519dc73c57",
-      "last_modified": "Mon, 19 Oct 2026 08:41:38 GMT",
+      "last_modified": "Mon, 19 Oct 2026 08:40:04 GMT",
       "last_observed_change_at": "2026-10-17T08:37:30Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "GIB.A.TO",
@@ -922,7 +922,7 @@
       ],
       "etag": null,
       "fingerprint": "4f1923145334b0d0e286a29fff355e583e57e7f5fcef97e36c3e085d606a4312",
-      "last_modified": "Mon, 19 Oct 2026 09:17:20 GMT",
+      "last_modified": "Mon, 19 Oct 2026 10:00:08 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "HRTG",
@@ -1055,7 +1055,7 @@
       ],
       "etag": null,
       "fingerprint": "64dcf538c024d3eb42e9d680f480c8636ac265935b684feb1e8b1181dfdea23e",
-      "last_modified": "Mon, 19 Oct 2026 09:17:26 GMT",
+      "last_modified": "Mon, 19 Oct 2026 09:08:53 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "JD.L",
@@ -1187,9 +1187,9 @@
         "ERO"
       ],
       "etag": null,
-      "fingerprint": "bd754a8ab647a8181d69e1a92a580d563f75a5f58accfa1ae8b6a8c939ff86c8",
+      "fingerprint": "5602893f6843ce6424bc68aea61dbb4cc340cdaa240fafe17535ff66087509e6",
       "last_modified": null,
-      "last_observed_change_at": "2026-10-19T09:15:45Z",
+      "last_observed_change_at": "2026-10-19T09:58:40Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LUN.TO",
       "source_quality": "HIGH",
@@ -1207,7 +1207,7 @@
       ],
       "etag": null,
       "fingerprint": "5db0a26af0813285ece1d576f711abff93067d653c02a70f0a9a534ea1194483",
-      "last_modified": "Mon, 19 Oct 2026 09:17:36 GMT",
+      "last_modified": "Mon, 19 Oct 2026 10:00:19 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LZB",
@@ -1472,7 +1472,7 @@
       "dependent_targets": [
         "ASR"
       ],
-      "etag": "\"-1602615110\"",
+      "etag": "\"-1378227883\"",
       "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1512,7 +1512,7 @@
       ],
       "etag": null,
       "fingerprint": "c7ac41541520a56903fa2975fc227753e2342f2d90bbad56708ad0d84881823d",
-      "last_modified": "Mon, 19 Oct 2026 09:17:05 GMT",
+      "last_modified": "Mon, 19 Oct 2026 09:53:07 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SIKA.SW",
@@ -1624,7 +1624,7 @@
       "dependent_targets": [
         "SNA"
       ],
-      "etag": null,
+      "etag": "\"883785282443d3ac2012733f7469247b\"",
       "fingerprint": "3856def95874e14e82dbf927690683b16addf4c7db6fb29b6d3c206dd8d25106",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1702,7 +1702,7 @@
       ],
       "etag": null,
       "fingerprint": "4d779cbb3095f76ce976d5db12b42a5498dfcb011bba5555c57f6f3c1cbeb69b",
-      "last_modified": "Mon, 19 Oct 2026 09:17:53 GMT",
+      "last_modified": "Mon, 19 Oct 2026 09:42:14 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "UUUU",
@@ -1738,7 +1738,7 @@
       "dependent_targets": [
         "MOD"
       ],
-      "etag": null,
+      "etag": "\"591836ffc758ea6b89d25cb065d73e2f\"",
       "fingerprint": "b6cfe2eee8651cc44e1f04488372d96924137ed8042e64d6b56635e6615c2011",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1747,9 +1747,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 242,
+        "link_count": 241,
         "selected_link_count": 19,
-        "visible_text_chars": 9508
+        "visible_text_chars": 9504
       },
       "url": "https://investors.vertiv.com/"
     },
