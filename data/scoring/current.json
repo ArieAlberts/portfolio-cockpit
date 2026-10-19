@@ -1,12 +1,12 @@
 {
   "as_of": "2026-10-03",
-  "config_hash": "d5d6e3c59a5ab676aaac9b8d52b809af707f69a99fadaafead08daf8502ba228",
-  "current_fundamental_quality": "data/scoring/fundamental_quality_2026-10-03_r16.json",
+  "config_hash": "bb702252bdf7eb50d6e593b3ef2534fe1ce1f8ccd270ad596f0749df070d061e",
+  "current_fundamental_quality": "data/scoring/fundamental_quality_2026-10-03_r17.json",
   "execution_effect": "NONE",
   "generated_by_pipeline": true,
   "pipeline_code_hash": "fc8f92487dd475016909507c056bdfe70a185b13c7b073fe3ef7eeffb1994e44",
   "pipeline_version": 2,
-  "reproducibility_hash": "b82845f604826f98527758ad409a8bf4e0d75520c45c0b1ab1ebc698636e6d7a",
-  "run_git_commit": "ebc26ba3ca7eb4d63d8bdbd6de44c09e8a29e789",
+  "reproducibility_hash": "b7a373362b1254e16fc140396e107e1afcd381bf3b66af56a9ef6fa456b52bc6",
+  "run_git_commit": "878a092346e93215b2e7c6f6143eb6f1ea72883c",
   "schema_version": 2
 }
