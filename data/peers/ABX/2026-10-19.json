@@ -1,0 +1,848 @@
+{
+  "schema_version": 1,
+  "target_ticker": "ABX",
+  "collected_at": "2026-10-19",
+  "purpose": "Barrick Mining peer-normalization input. Internal ticker ABX maps to NYSE:B / TSX:ABX. No live execution.",
+  "strict_reference_period": "H1_2026",
+  "peer_universe_status": "INSUFFICIENT_COST_POSITION_COMPARABILITY",
+  "rules": {
+    "missing_is_never_zero": true,
+    "preserve_company_definition": true,
+    "minimum_peer_values_per_metric": 4,
+    "final_score_status": "BLOCKED_REQUIRED_COMPONENT_COST_POSITION",
+    "eligible_period_alignments": [
+      "ALIGNED_H1",
+      "ALIGNED_H1_DERIVED"
+    ]
+  },
+  "supersedes": "data/peers/ABX/2026-10-15.json",
+  "change_note": "Adds H1 2026 gold all-in sustaining cost per ounce (aisc_usd_per_oz, the gold alias of the CYCLICAL_MINING cost_position unit-cost slot) for ABX and all four peers, and LTM net debt / EBITDA for AEM and KGC. Balance sheet now has four eligible peer values. Cost position still has only three: Agnico Eagle reports AISC per ounce of gold produced (production basis with an inventory adjustment) instead of per ounce sold, so its value is stored but not score-eligible. The dataset therefore stays blocked on cost_position and config/peer_universes.yaml keeps ABX at INSUFFICIENT.",
+  "companies": {
+    "ABX": {
+      "company": "Barrick Mining Corporation",
+      "role": "TARGET",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm"
+      },
+      "metrics": {
+        "net_debt_usd_m": {
+          "value": -1245.0,
+          "comparison_class": "BALANCE_SHEET_NET_DEBT",
+          "source_definition": "debt (current and long-term) net of cash and equivalents at 2026-06-30",
+          "calculation": "4682 - 5927",
+          "score_eligible": false,
+          "period": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Absolute net debt is scale-dependent and not comparable across producers of different size; stored for context only."
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.1,
+          "comparison_class": "NET_DEBT_TO_LTM_EBITDA",
+          "source_definition": "net leverage: debt net of cash / adjusted EBITDA of the last four quarters (company-reported)",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Published to one decimal (-0.1:1)."
+        },
+        "c1_cash_cost_usd_per_lb": {
+          "value": 2.52,
+          "comparison_class": "H1_COPPER_C1_COST",
+          "source_definition": "H1 2026 copper C1 cash costs per pound",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "No gold peer reports a copper C1 cost, so the required cost_position component cannot be peer-normalized."
+        },
+        "operating_cash_flow_margin_pct": {
+          "value": 40.513796,
+          "comparison_class": "H1_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "net cash provided by operating activities / revenues",
+          "calculation": "4258 / 10510 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": 4258,
+            "revenues_usd_m": 10510
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "operating_cash_flow_usd_m": {
+          "value": 4258,
+          "comparison_class": "H1_OPERATING_CASH_FLOW",
+          "source_definition": "H1 2026 net cash provided by operating activities",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Absolute amount; scale-dependent, context only."
+        },
+        "copper_production_tonnes": {
+          "value": 105000,
+          "comparison_class": "H1_COPPER_PRODUCTION",
+          "source_definition": "H1 2026 attributable copper production",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": null,
+          "calculation_method": "as reported by the company"
+        },
+        "production_growth_pct": {
+          "value": -2.572347,
+          "comparison_class": "H1_GOLD_PRODUCTION_GROWTH",
+          "source_definition": "attributable gold production H1 YoY",
+          "calculation": "(1515 / 1555 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": null,
+          "raw_value": {
+            "gold_production_h1_2026_koz": 1515,
+            "gold_production_h1_2025_koz": 1555
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "eps_growth_pct": {
+          "value": 119.512195,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted net earnings per share H1 YoY",
+          "calculation": "(1.80 / 0.82 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_h1_2026_usd": 1.8,
+            "adjusted_eps_h1_2025_usd": 0.82
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "diluted_eps_growth_pct": {
+          "value": 125.333333,
+          "comparison_class": "H1_DILUTED_EPS_GROWTH",
+          "source_definition": "net earnings per share H1 YoY",
+          "calculation": "(1.69 / 0.75 - 1) * 100",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Reported EPS; the adjusted measure is stored as eps_growth_pct. The 2026-10-04 value (125) is replaced by the exact calculation."
+        },
+        "aisc_usd_per_oz": {
+          "value": 1790,
+          "comparison_class": "H1_GOLD_AISC_PER_OZ",
+          "source_definition": "gold all-in sustaining costs per ounce sold, attributable basis, by-product (costs allocated to by-products deducted); WGC-based company definition",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Barrick Mining second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/756894/000119312526343857/d67611dex991.htm",
+          "filing_or_report_id": "0001193125-26-343857",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "aisc_attributable_usd_m": 2772,
+            "gold_ounces_sold_attributable_koz": 1549,
+            "reported_aisc_per_oz_h1_2026": 1790
+          },
+          "calculation_method": "as reported by the company (six-month column); components stored in raw_value",
+          "notes": "Six months ended 2026-06-30 from the reconciliation of gold cost of sales to TCC and AISC. Attributable basis (removes NGM, Pueblo Viejo, Loulo-Gounkoto, Tongon, North Mara and Bulyanhulu non-controlling interests; includes Kibali equity share). Copper operations are excluded from gold AISC."
+        }
+      }
+    },
+    "NEM": {
+      "company": "Newmont Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1_DERIVED",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm"
+      },
+      "metrics": {
+        "operating_cash_flow_margin_pct": {
+          "value": 49.973929,
+          "comparison_class": "H1_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "net cash provided by operating activities / sales",
+          "calculation": "6709 / 13425 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": 6709,
+            "sales_usd_m": 13425
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "eps_growth_pct": {
+          "value": 86.940299,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted net income per diluted share H1 YoY",
+          "calculation": "(5.01 / 2.68 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_h1_2026_usd": 5.01,
+            "adjusted_eps_h1_2025_usd": 2.68
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "production_growth_pct": {
+          "value": -13.963516,
+          "comparison_class": "H1_GOLD_PRODUCTION_GROWTH",
+          "source_definition": "attributable gold production H1 YoY",
+          "calculation": "(2594 / (1537 + 1478) - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-15",
+          "currency": null,
+          "raw_value": {
+            "attributable_gold_h1_2026_koz": 2594,
+            "attributable_gold_q1_2025_koz": 1537,
+            "attributable_gold_q2_2025_koz": 1478
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "H1 2025 comparative = Q1 + Q2 2025 from the release's quarterly table (derived); H1 2025 includes assets divested in 2025."
+        },
+        "net_debt_usd_m": {
+          "value": -3411,
+          "comparison_class": "BALANCE_SHEET_NET_DEBT",
+          "source_definition": "debt + lease and other financing obligations - cash",
+          "score_eligible": false,
+          "period": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Absolute net debt is scale-dependent and not comparable across producers of different size; stored for context only."
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.20346,
+          "comparison_class": "NET_DEBT_TO_LTM_EBITDA",
+          "source_definition": "net debt (incl. lease and other financing obligations) / 12-month trailing adjusted EBITDA",
+          "calculation": "-3411 / 16765",
+          "score_eligible": true,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "net_debt_usd_m": -3411,
+            "ltm_adjusted_ebitda_usd_m": 16765
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "c1_cash_cost_usd_per_lb": {
+          "value": null,
+          "comparison_class": "H1_COPPER_C1_COST",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Not applicable: gold producer without a copper C1 cash cost. Its gold unit cost is stored as aisc_usd_per_oz."
+        },
+        "aisc_usd_per_oz": {
+          "value": 1321,
+          "comparison_class": "H1_GOLD_AISC_PER_OZ",
+          "source_definition": "Total Gold AISC per ounce sold (by-product: copper, silver, lead and zinc sales deducted), consolidated gold ounces sold; WGC-based company definition",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Newmont second quarter 2026 results (Form 8-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1164727/000116472726000034/newmontq22026earningsrelea.htm",
+          "filing_or_report_id": "0001164727-26-000034",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "by_product_aisc_usd_m": 3205,
+            "consolidated_gold_ounces_sold_koz": 2427,
+            "reported_aisc_per_oz_h1_2026": 1321
+          },
+          "calculation_method": "as reported by the company (six-month column); components stored in raw_value",
+          "notes": "Six months ended 2026-06-30 as reported (gold by-product metrics reconciliation), not derived from quarters. Newmont divides by consolidated gold ounces sold (2,427 koz; attributable 2,388 koz); the difference to Barrick's attributable basis is the minor non-controlling share in Newmont's consolidated sales."
+        }
+      },
+      "notes": "ALIGNED_H1_DERIVED per docs/PEER_DATA_STANDARD.md method A: income and cash-flow items come from six-month columns; the H1 2025 production comparative is the sum of reported Q1 and Q2 2025."
+    },
+    "AEM": {
+      "company": "Agnico Eagle Mines Limited",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm"
+      },
+      "metrics": {
+        "operating_cash_flow_margin_pct": {
+          "value": 44.163759,
+          "comparison_class": "H1_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "cash provided by operating activities / revenues from mining operations",
+          "calculation": "3490 / 7902.407 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": 3490,
+            "revenues_usd_k": 7902407
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "eps_growth_pct": {
+          "value": 86.743516,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted net income per share (basic) H1 YoY",
+          "calculation": "(6.48 / 3.47 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 95,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_basic_h1_2026_usd": 6.48,
+            "adjusted_eps_basic_h1_2025_usd": 3.47
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Basic rather than diluted per-share basis."
+        },
+        "production_growth_pct": {
+          "value": -3.385287,
+          "comparison_class": "H1_GOLD_PRODUCTION_GROWTH",
+          "source_definition": "payable gold production H1 YoY",
+          "calculation": "(1680.925 / 1739.823 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794",
+          "retrieved_at": "2026-10-15",
+          "currency": null,
+          "raw_value": {
+            "gold_production_h1_2026_oz": 1680925,
+            "gold_production_h1_2025_oz": 1739823
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "net_debt_usd_m": {
+          "value": -3267,
+          "comparison_class": "BALANCE_SHEET_NET_DEBT",
+          "source_definition": "long-term debt - cash and cash equivalents (company net cash)",
+          "score_eligible": false,
+          "period": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Absolute net debt is scale-dependent and not comparable across producers of different size; stored for context only."
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.309877,
+          "comparison_class": "NET_DEBT_TO_LTM_EBITDA",
+          "source_definition": "(total debt - cash and cash equivalents) / LTM EBITDA; EBITDA = net earnings + income and mining tax expense + finance costs + depreciation, depletion and amortization (unadjusted); LTM = FY2025 + H1 2026 - H1 2025; Agnico Eagle has no current portion of long-term debt",
+          "calculation": "(196.825 - 3463.957) / (8440.353 + 5757.796 - 3654.819)",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794 (balance sheet 2026-06-30, H1 2026 and H1 2025 EBITDA); 0001104659-26-014451 (FY2025 EBITDA, Q4 2025 results Exhibit 99.1, https://www.sec.gov/Archives/edgar/data/2809/000110465926014451/aem-20251231xex99d1.htm)",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "long_term_debt_usd_m": 196.825,
+            "cash_usd_m": 3463.957,
+            "net_cash_reported_usd_m": 3267.132,
+            "ebitda_fy2025_h1_2026_h1_2025_usd_m": [
+              8440.353,
+              5757.796,
+              3654.819
+            ]
+          },
+          "calculation_method": "LTM EBITDA = FY2025 + H1 2026 - H1 2025, company-reported EBITDA (net income + finance costs + amortization + income and mining tax)",
+          "notes": "Unadjusted EBITDA is used so that AEM and KGC share one definition (Kinross reports no EBITDA). ABX and NEM use company adjusted EBITDA and AU its own leverage ratio; all five are net cash, so the definitional gap is small. Agnico's adjusted EBITDA would give (196.825 - 3463.957) / (8089.782 + 5748.429 - 3503.707) = -0.316."
+        },
+        "c1_cash_cost_usd_per_lb": {
+          "value": null,
+          "comparison_class": "H1_COPPER_C1_COST",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Not applicable: gold producer without a copper C1 cash cost. Its gold unit cost is stored as aisc_usd_per_oz."
+        },
+        "aisc_usd_per_oz": {
+          "value": 1471,
+          "comparison_class": "H1_GOLD_AISC_PER_OZ",
+          "source_definition": "all-in sustaining costs per ounce on a by-product basis, measured per ounce of gold PRODUCED (production basis with an inventory adjustment); NTI Payments at Meadowbank excluded (company deviation from WGC guidance)",
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Agnico Eagle second quarter 2026 results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2809/000110465926088794/tm2619289d4_ex99-1.htm",
+          "filing_or_report_id": "0001104659-26-088794",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "reported_aisc_per_oz_h1_2026": 1471,
+            "gold_production_oz": 1680925,
+            "gold_sales_oz": 1665156,
+            "total_cash_costs_by_product_per_oz": 1073,
+            "sustaining_capex_per_oz": 265,
+            "g_and_a_per_oz": 81,
+            "reclamation_and_sustaining_leases_per_oz": 52
+          },
+          "calculation_method": "as reported by the company (six-month column); components stored in raw_value",
+          "notes": "Not score-eligible: Agnico Eagle reports AISC only per ounce of production, while ABX, NEM, KGC and AU report per ounce sold. The company publishes no AISC dollar total, so a per-ounce-sold figure cannot be derived without mixing a production-basis numerator with a sales-basis denominator (docs/PEER_DATA_STANDARD.md rule 5). Making it eligible needs an owner decision that production-basis AISC is comparable."
+        }
+      }
+    },
+    "KGC": {
+      "company": "Kinross Gold Corporation",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+        "url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm"
+      },
+      "metrics": {
+        "operating_cash_flow_margin_pct": {
+          "value": 49.192819,
+          "comparison_class": "H1_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "net cash flow provided from operating activities / metal sales",
+          "calculation": "2285.4 / 4645.8 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": 2285.4,
+            "metal_sales_usd_m": 4645.8
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "eps_growth_pct": {
+          "value": 91.891892,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "adjusted net earnings per share H1 YoY",
+          "calculation": "(1.42 / 0.74 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "adjusted_eps_h1_2026_usd": 1.42,
+            "adjusted_eps_h1_2025_usd": 0.74
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "production_growth_pct": {
+          "value": -3.881573,
+          "comparison_class": "H1_GOLD_PRODUCTION_GROWTH",
+          "source_definition": "attributable gold-equivalent production H1 YoY",
+          "calculation": "(984.889 / 1024.662 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 90,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026",
+          "retrieved_at": "2026-10-15",
+          "currency": null,
+          "raw_value": {
+            "attributable_au_eq_h1_2026_oz": 984889,
+            "attributable_au_eq_h1_2025_oz": 1024662
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Gold-equivalent ounces include silver; silver is a small share of Kinross output."
+        },
+        "net_debt_usd_m": {
+          "value": -1917.6,
+          "comparison_class": "BALANCE_SHEET_NET_DEBT",
+          "source_definition": "long-term debt - cash and cash equivalents",
+          "calculation": "738.8 - 2656.4",
+          "score_eligible": false,
+          "period": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "Absolute net debt is scale-dependent and not comparable across producers of different size; stored for context only."
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.339422,
+          "comparison_class": "NET_DEBT_TO_LTM_EBITDA",
+          "source_definition": "(total debt - cash and cash equivalents) / LTM EBITDA; EBITDA = net earnings + income and mining tax expense + finance costs + depreciation, depletion and amortization (unadjusted); LTM = FY2025 + H1 2026 - H1 2025; computed from the consolidated statements of operations; Kinross has no current portion of long-term debt",
+          "calculation": "(738.8 - 2656.4) / ((2470.0 + 724.7 + 131.3 + 1105.0) + (1707.8 + 795.4 + 39.3 + 551.2) - (948.0 + 307.7 + 68.1 + 551.3))",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026 (balance sheet 2026-06-30, H1 2026 and H1 2025 statements of operations); 0001171843-26-000896 (FY2025 statement of operations, Q4 2025 results Exhibit 99.1, https://www.sec.gov/Archives/edgar/data/701818/000117184326000896/exh_991.htm)",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "long_term_debt_usd_m": 738.8,
+            "cash_usd_m": 2656.4,
+            "net_earnings_fy2025_h1_2026_h1_2025_usd_m": [
+              2470.0,
+              1707.8,
+              948.0
+            ],
+            "income_tax_expense_fy2025_h1_2026_h1_2025_usd_m": [
+              724.7,
+              795.4,
+              307.7
+            ],
+            "finance_expense_fy2025_h1_2026_h1_2025_usd_m": [
+              131.3,
+              39.3,
+              68.1
+            ],
+            "dda_fy2025_h1_2026_h1_2025_usd_m": [
+              1105.0,
+              551.2,
+              551.3
+            ]
+          },
+          "calculation_method": "computed from the reported components in the calculation field; LTM EBITDA = FY2025 + H1 2026 - H1 2025",
+          "notes": "Kinross publishes no EBITDA, so EBITDA is built from IFRS line items with Agnico Eagle's EBITDA definition. FY2025 earnings include a $116.1m impairment reversal that is not removed (unadjusted definition). Net debt matches the company's net cash of $1,917.6m."
+        },
+        "c1_cash_cost_usd_per_lb": {
+          "value": null,
+          "comparison_class": "H1_COPPER_C1_COST",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Not applicable: gold producer without a copper C1 cash cost. Its gold unit cost is stored as aisc_usd_per_oz."
+        },
+        "aisc_usd_per_oz": {
+          "value": 1704,
+          "comparison_class": "H1_GOLD_AISC_PER_OZ",
+          "source_definition": "attributable all-in sustaining cost per gold ounce sold on a by-product basis (silver deducted); WGC-based company definition",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "Kinross reports 2026 second-quarter results (Form 6-K Exhibit 99.1)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/701818/000117184326005026/exh_991.htm",
+          "filing_or_report_id": "0001171843-26-005026",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "aisc_by_product_attributable_usd_m": 1622.6,
+            "attributable_gold_ounces_sold_oz": 952338,
+            "reported_aisc_per_oz_h1_2026": 1704
+          },
+          "calculation_method": "as reported by the company (six-month column); components stored in raw_value",
+          "notes": "Six months ended 2026-06-30 as reported. The by-product per-gold-ounce figure is used, not Kinross's headline per gold-equivalent-ounce figure, to match the by-product basis of the other companies."
+        }
+      }
+    },
+    "AU": {
+      "company": "AngloGold Ashanti plc",
+      "role": "PEER",
+      "period": "H1_2026",
+      "period_end": "2026-06-30",
+      "period_alignment": "ALIGNED_H1",
+      "source": {
+        "type": "SEC_FILING_EXHIBIT",
+        "title": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+        "url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm"
+      },
+      "metrics": {
+        "operating_cash_flow_margin_pct": {
+          "value": 49.542587,
+          "comparison_class": "H1_OPERATING_CASH_FLOW_MARGIN",
+          "source_definition": "net cash flow from operating activities / revenue from product sales",
+          "calculation": "3141 / 6340 * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "ocf_usd_m": 3141,
+            "revenue_from_product_sales_usd_m": 6340
+          },
+          "calculation_method": "computed from the reported components in the calculation field"
+        },
+        "eps_growth_pct": {
+          "value": 110.747664,
+          "comparison_class": "H1_ADJUSTED_EPS_GROWTH",
+          "source_definition": "headline earnings per share H1 YoY (JSE headline earnings; excludes impairments and disposal gains/losses)",
+          "calculation": "(451 / 214 - 1) * 100",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "headline_eps_h1_2026_usc": 451,
+            "headline_eps_h1_2025_usc": 214
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "AngloGold publishes headline EPS rather than an adjusted EPS; closest comparable measure."
+        },
+        "production_growth_pct": {
+          "value": -3.674541,
+          "comparison_class": "H1_GOLD_PRODUCTION_GROWTH",
+          "source_definition": "group gold production H1 YoY",
+          "calculation": "(1468 / 1524 - 1) * 100",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-15",
+          "currency": null,
+          "raw_value": {
+            "gold_production_h1_2026_koz": 1468,
+            "gold_production_h1_2025_koz": 1524
+          },
+          "calculation_method": "computed from the reported components in the calculation field",
+          "notes": "H1 2025 includes 26 koz from Serra Grande, sold on 1 December 2025."
+        },
+        "net_debt_usd_m": {
+          "value": -991,
+          "comparison_class": "BALANCE_SHEET_NET_DEBT",
+          "source_definition": "total borrowings incl. lease liabilities - cash",
+          "score_eligible": false,
+          "period": "2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Absolute net debt is scale-dependent and not comparable across producers of different size; stored for context only."
+        },
+        "net_debt_to_ebitda": {
+          "value": -0.13,
+          "comparison_class": "NET_DEBT_TO_LTM_EBITDA",
+          "source_definition": "net debt (cash) / EBITDA (company-reported leverage ratio)",
+          "score_eligible": true,
+          "definition_confidence": 85,
+          "period": "LTM_TO_2026-06-30",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-15",
+          "currency": "USD",
+          "raw_value": {
+            "net_debt_usd_m": -991,
+            "reported_ratio": -0.13
+          },
+          "calculation_method": "as reported by the company"
+        },
+        "c1_cash_cost_usd_per_lb": {
+          "value": null,
+          "comparison_class": "H1_COPPER_C1_COST",
+          "source_definition": null,
+          "score_eligible": false,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "calculation_method": "as reported by the company",
+          "notes": "Not applicable: gold producer without a copper C1 cash cost. Its gold unit cost is stored as aisc_usd_per_oz."
+        },
+        "aisc_usd_per_oz": {
+          "value": 1998,
+          "comparison_class": "H1_GOLD_AISC_PER_OZ",
+          "source_definition": "Group all-in sustaining costs per ounce of gold sold (managed operations plus equity-accounted non-managed joint ventures; by-product revenue deducted); WGC 2018 guidance",
+          "score_eligible": true,
+          "period": "H1_2026",
+          "as_of_date": "2026-06-30",
+          "source": "AngloGold Ashanti Q2/H1 2026 earnings release (Form 6-K)",
+          "source_type": "SEC_FILING_EXHIBIT",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1973832/000197383226000125/agahy1june2026earningsrele.htm",
+          "filing_or_report_id": "0001973832-26-000125",
+          "retrieved_at": "2026-10-19",
+          "currency": "USD",
+          "raw_value": {
+            "aisc_group_usd_m": 2940,
+            "gold_sold_group_koz": 1472,
+            "reported_aisc_per_oz_h1_2026": 1998
+          },
+          "calculation_method": "as reported by the company (six-month column); components stored in raw_value",
+          "notes": "Six months ended 2026-06-30 as reported (Non-GAAP Disclosure Note A, Group total). Group includes the attributable share of Kibali (non-managed joint venture), like Barrick's attributable basis."
+        }
+      }
+    }
+  }
+}

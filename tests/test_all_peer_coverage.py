@@ -25,8 +25,9 @@ def test_abx_remains_blocked_without_fake_peers():
     data=json.loads((ROOT/index["datasets"]["ABX"]).read_text(encoding="utf-8"))
     assert data["target_ticker"]=="ABX"
     assert data["companies"]["ABX"]["company"]=="Barrick Mining Corporation"
-    # Gold-major peers are filled, but no gold peer reports the copper C1 cost the
-    # required cost_position component accepts, so the dataset must stay hard-blocked.
+    # Gold AISC per ounce is filled for the target and all four real peers, but
+    # Agnico Eagle reports it per ounce produced rather than sold, so only three
+    # peers are comparable and the required cost_position component stays blocked.
     assert "INSUFFICIENT" in data["peer_universe_status"]
     peers={t for t,c in data["companies"].items() if c["role"]=="PEER"}
     assert peers=={"NEM","AEM","KGC","AU"}
@@ -35,6 +36,18 @@ def test_abx_remains_blocked_without_fake_peers():
         c["metrics"]["c1_cash_cost_usd_per_lb"]["value"] is None
         for t,c in data["companies"].items() if t in peers
     )
+    assert all(
+        c["metrics"]["aisc_usd_per_oz"]["value"] is not None
+        and c["metrics"]["aisc_usd_per_oz"]["comparison_class"]=="H1_GOLD_AISC_PER_OZ"
+        for c in data["companies"].values()
+    )
+    assert data["companies"]["AEM"]["metrics"]["aisc_usd_per_oz"]["score_eligible"] is False
+    cost=eligible_metric_set(data,"aisc_usd_per_oz",min_peers=4)
+    assert cost.status=="INSUFFICIENT_ALIGNED_PEERS"
+    assert set(cost.peer_tickers)=={"NEM","KGC","AU"}
+    leverage=eligible_metric_set(data,"net_debt_to_ebitda",min_peers=4)
+    assert leverage.status=="READY"
+    assert set(leverage.peer_tickers)==peers
 
 
 def test_tmdx_has_three_broad_peer_observations_but_not_four_peer_score_readiness():
