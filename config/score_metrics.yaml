@@ -73,6 +73,7 @@ metric_directions:
     net_debt_to_ebitda: lower_is_better
     net_debt_usd_m: lower_is_better
     c1_cash_cost_usd_per_lb: lower_is_better
+    aisc_usd_per_oz: lower_is_better
     operating_cash_flow_margin_pct: higher_is_better
     operating_cash_flow_usd_m: higher_is_better
     copper_production_tonnes: higher_is_better
@@ -192,6 +193,7 @@ component_metric_aliases:
       - net_debt_usd_m
     cost_position:
       - c1_cash_cost_usd_per_lb
+      - aisc_usd_per_oz
     normalized_cashflow:
       - operating_cash_flow_margin_pct
       - operating_cash_flow_usd_m
@@ -283,6 +285,7 @@ metric_kinds:
   dividend_growth_pct: percentage
   net_debt_usd_m: currency_millions
   c1_cash_cost_usd_per_lb: currency_per_unit
+  aisc_usd_per_oz: currency_per_unit
   operating_cash_flow_usd_m: currency_millions
   copper_production_tonnes: physical_volume
   production_growth_pct: percentage
@@ -439,7 +442,11 @@ component_metric_slots:
     cost_position:
       unit_cost:
         weight: 1.00
-        aliases: [c1_cash_cost_usd_per_lb]
+        # Copper producers: C1 cash cost per lb. Gold producers: all-in sustaining
+        # cost per ounce (World Gold Council definition). The two never mix: a
+        # peer set only uses the alias the target reports, and comparison
+        # classes must match.
+        aliases: [c1_cash_cost_usd_per_lb, aisc_usd_per_oz]
     normalized_cashflow:
       cashflow_margin:
         weight: 0.60
