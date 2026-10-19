@@ -20,18 +20,16 @@ def test_all_23_portfolio_companies_have_peer_dataset():
         assert data["peer_universe_status"]
 
 
-def test_abx_remains_blocked_without_fake_peers():
+def test_abx_gold_peers_are_real_and_cost_position_uses_aisc():
     index=json.loads((ROOT/"data/peers/index.json").read_text(encoding="utf-8"))
     data=json.loads((ROOT/index["datasets"]["ABX"]).read_text(encoding="utf-8"))
     assert data["target_ticker"]=="ABX"
     assert data["companies"]["ABX"]["company"]=="Barrick Mining Corporation"
-    # Gold AISC per ounce is filled for the target and all four real peers, but
-    # Agnico Eagle reports it per ounce produced rather than sold, so only three
-    # peers are comparable and the required cost_position component stays blocked.
-    assert "INSUFFICIENT" in data["peer_universe_status"]
+    # Only the four owner-approved gold majors; no placeholder or gate peers.
     peers={t for t,c in data["companies"].items() if c["role"]=="PEER"}
     assert peers=={"NEM","AEM","KGC","AU"}
     assert not any(c["role"]=="GATE" for c in data["companies"].values())
+    # Gold producers never get a copper C1 cost; cost_position runs on gold AISC.
     assert all(
         c["metrics"]["c1_cash_cost_usd_per_lb"]["value"] is None
         for t,c in data["companies"].items() if t in peers
@@ -41,13 +39,20 @@ def test_abx_remains_blocked_without_fake_peers():
         and c["metrics"]["aisc_usd_per_oz"]["comparison_class"]=="H1_GOLD_AISC_PER_OZ"
         for c in data["companies"].values()
     )
-    assert data["companies"]["AEM"]["metrics"]["aisc_usd_per_oz"]["score_eligible"] is False
-    cost=eligible_metric_set(data,"aisc_usd_per_oz",min_peers=4)
-    assert cost.status=="INSUFFICIENT_ALIGNED_PEERS"
-    assert set(cost.peer_tickers)=={"NEM","KGC","AU"}
-    leverage=eligible_metric_set(data,"net_debt_to_ebitda",min_peers=4)
-    assert leverage.status=="READY"
-    assert set(leverage.peer_tickers)==peers
+    # AEM's production-basis AISC is eligible only by owner decision and carries
+    # a reduced definition confidence.
+    aem=data["companies"]["AEM"]["metrics"]["aisc_usd_per_oz"]
+    assert aem["score_eligible"] is True
+    assert aem["definition_confidence"]<100
+    assert "Owner decision" in aem["notes"]
+    # Both required components meet the four-peer minimum with every real peer.
+    assert data["rules"]["minimum_peer_values_per_metric"]==4
+    for metric in ("aisc_usd_per_oz","net_debt_to_ebitda"):
+        result=eligible_metric_set(data,metric,min_peers=4)
+        assert result.status=="READY"
+        assert set(result.peer_tickers)==peers
+    assert "LIMITED" in data["peer_universe_status"]
+    assert "INSUFFICIENT" not in data["peer_universe_status"]
 
 
 def test_tmdx_has_three_broad_peer_observations_but_not_four_peer_score_readiness():

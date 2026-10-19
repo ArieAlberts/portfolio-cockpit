@@ -62,7 +62,9 @@ def test_wkl_remains_blocked():
     assert run("WKL").production_ready is False
 
 
-def test_abx_is_hard_blocked():
+def test_abx_covers_required_components_but_cannot_publish_without_gates():
     r=run("ABX")
-    assert r.hard_blocked is True
+    assert r.hard_blocked is False
+    assert r.required_components_pass is True
     assert r.production_ready is False
+    assert "DATA_CONFIDENCE_PENDING" in r.warnings
