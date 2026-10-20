@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ADM.L"
+  ],
+  "detected_at": "2026-10-20T09:28:53Z",
+  "event_id": "80f03b6f36e8aba2686e",
+  "execution_effect": "NONE",
+  "new_fingerprint": "0c6a7c60dc70ff2274055081bbe31adefb5280db9a577b9f82d27db7dda3ad0a",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 85,
+    "selected_link_count": 28,
+    "visible_text_chars": 6103
+  },
+  "old_fingerprint": "aa0793bc5c2f4a344268ea1d321ac6936817a8547c672bb562379c6bdd2d1b94",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 90,
+    "selected_link_count": 31,
+    "visible_text_chars": 6539
+  },
+  "peer_ticker": "SBRE.L",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://sabreplc.co.uk/investors/results-reports-and-presentations/"
+}

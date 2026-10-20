@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "MSM"
+  ],
+  "detected_at": "2026-10-20T09:28:53Z",
+  "event_id": "db9d3acc60e83a466e17",
+  "execution_effect": "NONE",
+  "new_fingerprint": "9dc0c45dd421d404571267ded1c0d4b310c378d25eb66a96fc8fc35e3f2b7cb8",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 40,
+    "selected_link_count": 9,
+    "visible_text_chars": 2657
+  },
+  "old_fingerprint": "9b0abed48bab7c0354f877add27e1d8620c23ec706fe3634ef039c203e04849a",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 39,
+    "selected_link_count": 8,
+    "visible_text_chars": 2603
+  },
+  "peer_ticker": "FAST",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investor.fastenal.com/"
+}
