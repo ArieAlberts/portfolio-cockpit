@@ -11,7 +11,9 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +22,7 @@ from portfolio_cockpit.config import load_config
 from .config import load_decision_config, missing_owner_inputs
 from .decision import _fq_for, _fundamental_quality
 from .drift import build_drift_snapshot
+from .freshness import age_status, assess_freshness, stale_inputs
 from .io import read_current
 from .peer_alternatives import ACTIVE, build_peer_alternatives_snapshot, read_current_alerts
 from .risk import impact_pp
@@ -69,17 +72,23 @@ def _history(root: Path, rel_dir: str, prefix: str, extract) -> dict[str, list[d
 
 
 def _latest_account_snapshot(root: Path) -> dict[str, Any] | None:
-    """Latest read-only broker/account snapshot for display only."""
-    directory = root / "data/account"
-    if not directory.is_dir():
+    """Private/local report only; public, tracked broker snapshots are ignored.
+
+    A private opt-in requires COCKPIT_PRIVATE_ACCOUNT_FILE outside this public
+    repository. GitHub Pages never opts in.
+    """
+    location = os.environ.get("COCKPIT_PRIVATE_ACCOUNT_FILE")
+    if not location:
         return None
-    files = sorted(directory.glob("????-??-??.json"))
-    if not files:
+    path = Path(location).expanduser().resolve()
+    if root.resolve() == path or root.resolve() in path.parents:
+        raise ValueError("Private account file must be outside the public repository")
+    if not path.is_file():
         return None
-    return json.loads(files[-1].read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
-def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
+def collect(root: Path, as_of: str | None = None, *, include_private_account: bool = False) -> dict[str, Any]:
     """Gather everything the dashboard shows; computes drift/valuation in memory if not written."""
     repo_cfg = load_config(root)
     cfg = load_decision_config(root)
@@ -103,7 +112,19 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
     positions = cfg["positions"]["positions"]
     thesis = cfg["thesis_status"]["positions"]
     shock = float(cfg["risk_scenarios"]["standard_shock"])
-    account_snapshot = _latest_account_snapshot(root)
+    # GitHub Pages is public. Never expose account quantities, leverage or NLV there.
+    # A private local report may opt in explicitly; the Pages builder never does.
+    account_snapshot = _latest_account_snapshot(root) if include_private_account else None
+    freshness = assess_freshness(root, as_of)
+    portfolio_inputs_stale = (
+        freshness["positions"]["status"] != "FRESH"
+        or freshness["decisions"]["status"] != "FRESH"
+    )
+    peer_signals_stale = (
+        freshness["peer_market"]["status"] != "FRESH"
+        or freshness["peer_alternatives"]["status"] != "FRESH"
+    )
+    today = as_of or datetime.now(timezone.utc).date().isoformat()
     notional_by_ticker: dict[str, float] = {}
     if account_snapshot:
         for item in account_snapshot.get("positions", []):
@@ -139,6 +160,8 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
                 "company": position.get("company"),
                 "company_type": position["company_type"],
                 "current_weight_pct": weight,
+                "portfolio_inputs_stale": portfolio_inputs_stale,
+                "price_stale": age_status(v.get("price_as_of"), today)["status"] != "FRESH",
                 "notional_exposure_pct": notional_by_ticker.get(ticker),
                 "base_target_weight_pct": position["weight_pct"],
                 "portfolio_impact_pp": impact_pp(float(weight), shock) if weight is not None else None,
@@ -148,7 +171,10 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
                 "confidence": c,
                 "thesis": thesis[ticker],
                 "decision": decision,
-                "peer_alerts": [a for a in peer_alternatives["alerts"] if a["position"] == ticker],
+                "peer_alerts": (
+                    [] if peer_signals_stale else
+                    [a for a in peer_alternatives["alerts"] if a["position"] == ticker]
+                ),
                 "warnings": warnings,
                 "history": {k: h.get(ticker, []) for k, h in history.items()},
             }
@@ -164,6 +190,10 @@ def collect(root: Path, as_of: str | None = None) -> dict[str, Any]:
         "impact_label": cfg["risk_scenarios"]["standard_label"],
         "portfolio_risk": (decisions or {}).get("portfolio_risk"),
         "account_snapshot": account_snapshot,
+        "freshness": freshness,
+        "freshness_checked_at": today,
+        "portfolio_inputs_stale": portfolio_inputs_stale,
+        "peer_signals_stale": peer_signals_stale,
         "peer_alternatives": peer_alternatives,
         "peer_alternatives_written": peer_alternatives_written,
         "rows": rows,
@@ -182,6 +212,7 @@ STATE_CLASS = {
     "EXIT_REVIEW": "s-reduce",
     "THESIS_REVIEW": "s-thesis",
     "DATA_CHECK": "s-check",
+    "STALE_DATA": "s-check",
 }
 
 
@@ -246,7 +277,11 @@ def _adjusted_cell(decision: dict[str, Any] | None) -> str:
 
 def _row(r: dict[str, Any]) -> str:
     d, v, c, decision = r["drift"], r["valuation"], r["confidence"], r["decision"]
-    state = decision["decision_state"] if decision else "NOT_RUN"
+    inputs_stale = r.get("portfolio_inputs_stale", False)
+    price_stale = r.get("price_stale", False)
+    state = "STALE_DATA" if (inputs_stale or price_stale) else (
+        decision["decision_state"] if decision else "NOT_RUN"
+    )
     price = v.get("price")
     return (
         "<tr>"
@@ -254,15 +289,15 @@ def _row(r: dict[str, Any]) -> str:
         f'<div class=small>{_esc(r["company"])}</div>{_peer_badge(r.get("peer_alerts") or [])}</td>'
         f"<td class=num>{_fmt(r['base_target_weight_pct'], 1, '%')}</td>"
         f"<td class=num>{_adjusted_cell(decision)}</td>"
-        f"<td class=num>{_fmt(r['current_weight_pct'], 1, '%')}</td>"
-        f"<td class=num>{_fmt(r.get('notional_exposure_pct'), 2, '%')}</td>"
-        f"<td class=num>{_gap_cell(decision)}</td>"
-        f"<td class=num>{_fmt(price, 2)} {_esc(v.get('currency') or '')}</td>"
+        f"<td class=num>{_fmt(r['current_weight_pct'], 1, '%') if not inputs_stale else '—'}</td>"
+        f"<td class=num>{_fmt(r.get('notional_exposure_pct'), 2, '%') if not inputs_stale else '—'}</td>"
+        f"<td class=num>{_gap_cell(decision) if not inputs_stale else '—'}</td>"
+        f"<td class=num>{(_fmt(price, 2) + ' ' + _esc(v.get('currency') or '')) if not price_stale else '— (stale price)'}</td>"
         f"<td class=q>{_drift_cell(d)}</td>"
         f"<td class=f>{_fq_cell(r['fundamental_quality'])}</td>"
-        f"<td class=v>{_valuation_cell(v)}</td>"
+        f"<td class=v>{_valuation_cell(v) if not price_stale else 'STALE_DATA'}</td>"
         f"<td class=num>{_fmt(c.get('data_confidence'), 1)}</td>"
-        f"<td class=num>{_fmt(r['portfolio_impact_pp'], 2, ' pp')}</td>"
+        f"<td class=num>{_fmt(r['portfolio_impact_pp'], 2, ' pp') if not inputs_stale else '—'}</td>"
         f"<td>{_esc(r['thesis'].get('status') or '—')}</td>"
         f'<td><span class="state {STATE_CLASS.get(state, "s-none")}">{_esc(state)}</span></td>'
         f"<td>{_esc(d.get('last_fundamental_update') or '—')}</td>"
@@ -282,6 +317,11 @@ def _peer_badge(alerts: list[dict[str, Any]]) -> str:
 
 
 def _peer_alternatives(data: dict[str, Any]) -> str:
+    if data.get("peer_signals_stale"):
+        return (
+            '<h2 id="peer-alternatives">Peer-alternatieven</h2>'
+            '<p class=small>Historical data: peer alerts withheld until new verified peer quotes arrive.</p>'
+        )
     snap = data.get("peer_alternatives") or {}
     alerts = snap.get("alerts") or []
     summary = snap.get("summary") or {}
@@ -432,12 +472,17 @@ def _detail(r: dict[str, Any]) -> str:
     reasons = ", ".join(_esc(x) for x in decision.get("reasons", [])) or "—"
     flags = ", ".join(_esc(x) for x in decision.get("limit_flags", [])) or "—"
     note = _esc(r["thesis"].get("note") or "")
+    historical = (
+        "<p><b>Historical only:</b> stale position and/or price inputs; "
+        "the decision below must not be used as a current trading signal.</p>"
+        if r.get("portfolio_inputs_stale") or r.get("price_stale") else ""
+    )
     return (
         f'<details id="t-{_esc(r["ticker"])}"><summary><b>{_esc(r["ticker"])}</b> — '
         f'{_esc(r["company"])} <span class=small>({_esc(r["company_type"])})</span></summary>'
         f"<p><b>Decision:</b> {_esc(decision.get('decision_state', 'NOT_RUN'))}. Reasons: {reasons}. "
         f"Limit flags: {flags}. Thesis: {_esc(r['thesis'].get('status') or '—')} {note}</p>"
-        f"{_target_detail(decision)}"
+        f"{historical}{_target_detail(decision)}"
         f"<h3 class=hq>Quality Drift</h3>{_drift_detail(r['drift'])}"
         f"<h3 class=hv>Valuation</h3>{_valuation_detail(r['valuation'])}"
         f"<h3>Data confidence</h3>{_confidence_detail(r['confidence'])}"
@@ -449,7 +494,7 @@ def _detail(r: dict[str, Any]) -> str:
 def _account_summary(data: dict[str, Any]) -> str:
     account = data.get("account_snapshot")
     if not account:
-        return ""
+        return "<h2>IBKR</h2><p class=small>Private account data are not published on this public dashboard.</p>"
     rows = "".join(
         "<tr>"
         f"<td>{_esc(p.get('symbol'))}</td>"
@@ -492,12 +537,28 @@ def _banner(data: dict[str, Any]) -> str:
         notes.append("Quality Drift computed in memory (no written revision yet).")
     if not data["valuation_written"]:
         notes.append("Valuation computed in memory (no written revision yet).")
+    freshness = data.get("freshness") or {}
+    for key in ("account", "positions", "market", "valuation", "decisions", "peer_market"):
+        entry = freshness.get(key, {})
+        if entry.get("status") != "FRESH":
+            notes.append(
+                f"{_esc(key)}: {_esc(entry.get('status', 'UNKNOWN'))}; "
+                f"source dated {_esc(entry.get('as_of') or 'unknown')} "
+                f"(checked {_esc(data.get('freshness_checked_at'))})."
+            )
+    if data.get("portfolio_inputs_stale"):
+        notes.append(
+            "Historical portfolio inputs: current capital weights, portfolio impact "
+            "and trade signals are deliberately withheld until a fresh read-only import."
+        )
     if not notes:
         return ""
     return "<div class=banner>" + "<br>".join(notes) + "</div>"
 
 
 def _scenarios(data: dict[str, Any]) -> str:
+    if data.get("portfolio_inputs_stale"):
+        return "<h2>Portfolio risk scenarios</h2><p class=small>Unavailable: historical position weights.</p>"
     risk = data.get("portfolio_risk")
     if not risk:
         return ""
