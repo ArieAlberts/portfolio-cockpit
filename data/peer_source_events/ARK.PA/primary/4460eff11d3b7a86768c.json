@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "FUL"
+  ],
+  "detected_at": "2026-10-22T09:27:35Z",
+  "event_id": "4460eff11d3b7a86768c",
+  "execution_effect": "NONE",
+  "new_fingerprint": "916afc33b68cccd30fd0649271ed85006c470c6d29fcd1997524dc21a5ebc93d",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 302,
+    "selected_link_count": 162,
+    "visible_text_chars": 7494
+  },
+  "old_fingerprint": "93f42feccc2aa675ffffdcbed47a0496a5c70deeacf49d9c945144d3857e4c53",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 302,
+    "selected_link_count": 162,
+    "visible_text_chars": 7494
+  },
+  "peer_ticker": "ARK.PA",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.arkema.com/global/en/investor-relations/financials/financial-results/"
+}

@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "WKL"
+  ],
+  "detected_at": "2026-10-22T09:27:35Z",
+  "event_id": "b56b21af82ddd9eb4ee9",
+  "execution_effect": "NONE",
+  "new_fingerprint": "152157aae1ea47b629eca8a1bc86e09f54d76734de158b169a9277a47482fa8f",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 103,
+    "selected_link_count": 22,
+    "visible_text_chars": 5273
+  },
+  "old_fingerprint": "e66bf630ed376476249c12ca76b8a3c130a50ae14c8a4317ce183bd9052fc1ca",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 102,
+    "selected_link_count": 21,
+    "visible_text_chars": 5268
+  },
+  "peer_ticker": "RELX.L",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.relx.com/investors/results"
+}

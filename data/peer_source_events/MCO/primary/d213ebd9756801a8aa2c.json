@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "WKL"
+  ],
+  "detected_at": "2026-10-22T09:27:35Z",
+  "event_id": "d213ebd9756801a8aa2c",
+  "execution_effect": "NONE",
+  "new_fingerprint": "80328222e7601fd1287638ac6b53266096e9c7517605365bd50f82e75ee6d74b",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 49,
+    "selected_link_count": 5,
+    "visible_text_chars": 3086
+  },
+  "old_fingerprint": "af7a2dbb770630dc0677d2c388e5c4461d4c002210e6e4eb3e93108bd09449c4",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 48,
+    "selected_link_count": 6,
+    "visible_text_chars": 3082
+  },
+  "peer_ticker": "MCO",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://ir.moodys.com/investor-relations/"
+}

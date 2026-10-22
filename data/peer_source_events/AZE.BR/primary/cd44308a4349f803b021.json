@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "IMCD"
+  ],
+  "detected_at": "2026-10-22T09:27:35Z",
+  "event_id": "cd44308a4349f803b021",
+  "execution_effect": "NONE",
+  "new_fingerprint": "d672ffda54efbfdf2f4f3087a66d4c7d8a7a587167456664c5b217f2a8fbd60a",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 92,
+    "selected_link_count": 22,
+    "visible_text_chars": 4009
+  },
+  "old_fingerprint": "1ec10b3ab9d05274d87df2ffdda56cef294f97116120be563f70a4b8a0977fd3",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 89,
+    "selected_link_count": 19,
+    "visible_text_chars": 3962
+  },
+  "peer_ticker": "AZE.BR",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.azelis.com/en/reports-and-presentations"
+}
