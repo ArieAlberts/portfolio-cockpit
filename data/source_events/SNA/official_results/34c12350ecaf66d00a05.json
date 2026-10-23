@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-10-23T09:23:43Z",
+  "event_id": "34c12350ecaf66d00a05",
+  "execution_effect": "NONE",
+  "new_fingerprint": "63187770a843d88e4d944b1d110e59d28799ee38ff191abe1b3e49feb7cfbe4e",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 203,
+    "selected_link_count": 132,
+    "visible_text_chars": 7059
+  },
+  "old_fingerprint": "534919bb2a887db804619c91b06c0880ffa95865dfd77e643788707f34cfd37d",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 200,
+    "selected_link_count": 129,
+    "visible_text_chars": 6965
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "SNA",
+  "url": "https://www.snapon.com/EN/Investors/Financial-Information/Quarterly-Earnings"
+}

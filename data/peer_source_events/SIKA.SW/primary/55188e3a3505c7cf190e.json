@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "FUL"
+  ],
+  "detected_at": "2026-10-23T09:24:05Z",
+  "event_id": "55188e3a3505c7cf190e",
+  "execution_effect": "NONE",
+  "new_fingerprint": "3004330d48014557b2ab2b3c48bfae01a8de4de31fc6defa03096b9062408100",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 154,
+    "selected_link_count": 24,
+    "visible_text_chars": 3938
+  },
+  "old_fingerprint": "c7ac41541520a56903fa2975fc227753e2342f2d90bbad56708ad0d84881823d",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 154,
+    "selected_link_count": 24,
+    "visible_text_chars": 3926
+  },
+  "peer_ticker": "SIKA.SW",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.sika.com/en/investors/reports-publications/financial-reports.html"
+}
