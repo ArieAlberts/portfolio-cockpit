@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "LEU"
+  ],
+  "detected_at": "2026-10-27T09:51:48Z",
+  "event_id": "e3c294314d2bb1c4885c",
+  "execution_effect": "NONE",
+  "new_fingerprint": "5d18976896acbecc9f6fd14009f6f893ddc4ecbe1c9a0abda5de7679088122ca",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 47,
+    "selected_link_count": 2,
+    "visible_text_chars": 2981
+  },
+  "old_fingerprint": "4d779cbb3095f76ce976d5db12b42a5498dfcb011bba5555c57f6f3c1cbeb69b",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 47,
+    "selected_link_count": 3,
+    "visible_text_chars": 2924
+  },
+  "peer_ticker": "UUUU",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.energyfuels.com/"
+}
