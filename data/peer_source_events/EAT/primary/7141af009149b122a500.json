@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "TXRH"
+  ],
+  "detected_at": "2026-10-29T10:56:21Z",
+  "event_id": "7141af009149b122a500",
+  "execution_effect": "NONE",
+  "new_fingerprint": "d377b0e4c729f72a4bd0bba3fe623e0d99829fc5a8515e60b2d2a21feb41d3de",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 28,
+    "selected_link_count": 5,
+    "visible_text_chars": 2005
+  },
+  "old_fingerprint": "dd5bfa01fd3054e3c6de10c34395531877699b616e729f73b34e275ff8b5440c",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 33,
+    "selected_link_count": 9,
+    "visible_text_chars": 2280
+  },
+  "peer_ticker": "EAT",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.brinker.com/"
+}

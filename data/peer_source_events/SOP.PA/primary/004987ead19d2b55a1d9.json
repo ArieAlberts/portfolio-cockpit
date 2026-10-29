@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CAP.PA"
+  ],
+  "detected_at": "2026-10-29T10:56:21Z",
+  "event_id": "004987ead19d2b55a1d9",
+  "execution_effect": "NONE",
+  "new_fingerprint": "ed902e0c8071b5cf75d4cfdfa88d2bb5cc34c12579dbcb0837d7339d917944b3",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 191,
+    "selected_link_count": 152,
+    "visible_text_chars": 12689
+  },
+  "old_fingerprint": "d9b2b3f16598aefd3218b086f9e783ef13ccfe30e472dfbcd14614da278e20ea",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 190,
+    "selected_link_count": 151,
+    "visible_text_chars": 12610
+  },
+  "peer_ticker": "SOP.PA",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.soprasteria.com/investors/financial-publications-reports/results-presentation"
+}

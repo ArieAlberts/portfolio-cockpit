@@ -15,7 +15,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -33,9 +33,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -54,9 +54,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 27,
+          "consecutive_failures": 28,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -78,7 +78,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -99,7 +99,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -120,7 +120,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-21T09:24:41Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -141,7 +141,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -158,9 +158,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -179,9 +179,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -203,7 +203,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -221,9 +221,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -246,7 +246,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -265,7 +265,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -284,7 +284,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -305,7 +305,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -323,9 +323,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -347,7 +347,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -363,9 +363,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -387,7 +387,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -408,7 +408,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -429,7 +429,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -450,7 +450,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -471,7 +471,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -490,7 +490,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -511,7 +511,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -530,7 +530,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -549,7 +549,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -571,7 +571,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -592,7 +592,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -610,9 +610,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -634,7 +634,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -655,7 +655,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -674,7 +674,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -685,22 +685,20 @@
       "dependent_targets": [
         "TXRH"
       ],
-      "last_event_path": null,
-      "last_source_change_at": null,
+      "last_event_path": "data/peer_source_events/EAT/primary/7141af009149b122a500.json",
+      "last_source_change_at": "2026-10-29T10:56:21Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
-      "status": "CURRENT",
-      "warnings": [
-        "DISCOVERY_SOURCE_IS_STATIC_OR_FALLBACK"
-      ]
+      "status": "PEER_SOURCE_CHANGED",
+      "warnings": []
     },
     "ENTG": {
       "dependent_targets": [
@@ -714,7 +712,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -735,7 +733,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -756,7 +754,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -772,9 +770,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-15T09:12:50Z"
         }
       },
@@ -793,9 +791,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 27,
+          "consecutive_failures": 28,
           "last_error": "TimeoutError: The read operation timed out",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -817,7 +815,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -836,7 +834,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -852,9 +850,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -873,9 +871,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-15T09:12:50Z"
         }
       },
@@ -889,19 +887,19 @@
       "dependent_targets": [
         "ERO"
       ],
-      "last_event_path": null,
-      "last_source_change_at": null,
+      "last_event_path": "data/peer_source_events/FM.TO/primary/da6680f83152d4b96637.json",
+      "last_source_change_at": "2026-10-29T10:56:21Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
-      "status": "CURRENT",
+      "status": "PEER_SOURCE_CHANGED",
       "warnings": []
     },
     "G.MI": {
@@ -916,7 +914,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -937,7 +935,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -948,15 +946,15 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "last_event_path": "data/peer_source_events/GIVN.SW/primary/7e70f441764b5f6f2f1b.json",
-      "last_source_change_at": "2026-10-22T09:27:35Z",
+      "last_event_path": "data/peer_source_events/GIVN.SW/primary/6a596c32298459926a64.json",
+      "last_source_change_at": "2026-10-29T10:56:21Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -972,9 +970,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -993,9 +991,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1017,7 +1015,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1038,7 +1036,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1059,7 +1057,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-24T08:55:12Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1080,7 +1078,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1099,7 +1097,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1117,9 +1115,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1141,7 +1139,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1157,9 +1155,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -1178,9 +1176,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1199,9 +1197,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 27,
+          "consecutive_failures": 28,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -1220,9 +1218,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 27,
+          "consecutive_failures": 28,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -1244,7 +1242,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1263,7 +1261,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1284,7 +1282,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1303,7 +1301,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1322,7 +1320,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1338,9 +1336,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -1362,7 +1360,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1380,9 +1378,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1404,7 +1402,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1422,9 +1420,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1446,7 +1444,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1457,15 +1455,15 @@
       "dependent_targets": [
         "ERO"
       ],
-      "last_event_path": "data/peer_source_events/LUN.TO/primary/a5c3ff2762f592754b5e.json",
-      "last_source_change_at": "2026-10-28T10:38:18Z",
+      "last_event_path": "data/peer_source_events/LUN.TO/primary/7caa555142376b55e32b.json",
+      "last_source_change_at": "2026-10-29T10:56:21Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1484,7 +1482,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1505,7 +1503,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1526,7 +1524,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1545,7 +1543,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1561,9 +1559,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1582,9 +1580,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": null
         }
       },
@@ -1606,7 +1604,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1622,9 +1620,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1647,7 +1645,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1666,7 +1664,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1687,7 +1685,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1703,9 +1701,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 15,
+          "consecutive_failures": 16,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-15T09:12:50Z"
         }
       },
@@ -1727,7 +1725,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1748,7 +1746,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1769,7 +1767,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1790,7 +1788,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1809,7 +1807,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1828,7 +1826,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1844,9 +1842,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -1868,7 +1866,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1881,19 +1879,19 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "last_event_path": null,
-      "last_source_change_at": null,
+      "last_event_path": "data/peer_source_events/SOP.PA/primary/004987ead19d2b55a1d9.json",
+      "last_source_change_at": "2026-10-29T10:56:21Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
-      "status": "CURRENT",
+      "status": "PEER_SOURCE_CHANGED",
       "warnings": []
     },
     "SPGI": {
@@ -1908,7 +1906,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -1927,7 +1925,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1946,7 +1944,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1959,15 +1957,15 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "last_event_path": "data/peer_source_events/SY1.DE/primary/c2c96fa222f96bae5cbb.json",
-      "last_source_change_at": "2026-10-28T10:38:18Z",
+      "last_event_path": "data/peer_source_events/SY1.DE/primary/e88605022614a0518b5e.json",
+      "last_source_change_at": "2026-10-29T10:56:21Z",
       "source_health": {
         "primary": {
           "circuit_state": "CLOSED",
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1983,9 +1981,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -2007,7 +2005,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -2028,7 +2026,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -2047,7 +2045,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -2068,7 +2066,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -2089,7 +2087,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -2107,9 +2105,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -2131,7 +2129,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": "2026-10-06T11:39:04Z",
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -2152,7 +2150,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -2168,9 +2166,9 @@
       "source_health": {
         "primary": {
           "circuit_state": "OPEN",
-          "consecutive_failures": 21,
+          "consecutive_failures": 22,
           "last_error": "HTTPError: HTTP Error 403: Forbidden",
-          "last_error_at": "2026-10-28T10:38:18Z",
+          "last_error_at": "2026-10-29T10:56:21Z",
           "last_success_at": "2026-10-09T11:22:30Z"
         }
       },
@@ -2192,7 +2190,7 @@
           "consecutive_failures": 0,
           "last_error": null,
           "last_error_at": null,
-          "last_success_at": "2026-10-28T10:38:18Z"
+          "last_success_at": "2026-10-29T10:56:21Z"
         }
       },
       "source_quality": "HIGH",
@@ -2224,7 +2222,8 @@
     },
     "CAP.PA": {
       "changed_peers": [
-        "GIB.A.TO"
+        "GIB.A.TO",
+        "SOP.PA"
       ],
       "peer_review_required": true,
       "peer_status": "PEER_UPDATE_DETECTED"
@@ -2254,6 +2253,7 @@
     },
     "ERO": {
       "changed_peers": [
+        "FM.TO",
         "LUN.TO"
       ],
       "peer_review_required": true,
@@ -2339,9 +2339,11 @@
       "peer_status": "CURRENT_BASELINE_PEERS"
     },
     "TXRH": {
-      "changed_peers": [],
-      "peer_review_required": false,
-      "peer_status": "CURRENT_BASELINE_PEERS"
+      "changed_peers": [
+        "EAT"
+      ],
+      "peer_review_required": true,
+      "peer_status": "PEER_UPDATE_DETECTED"
     },
     "WKL": {
       "changed_peers": [
