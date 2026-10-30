@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ERO"
+  ],
+  "detected_at": "2026-10-30T10:54:23Z",
+  "event_id": "bf9e1f20ca2f06fc8804",
+  "execution_effect": "NONE",
+  "new_fingerprint": "9abb4321577b85e8f0b62fed646d4592e3592c5ff70bbf2bc12dc3dd33fc0fdf",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 164,
+    "selected_link_count": 114,
+    "visible_text_chars": 5518
+  },
+  "old_fingerprint": "71e7ad0acb9420d11ef403adfa9ac9ba8f88a66d5b08ec14f555a65568826fb7",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 160,
+    "selected_link_count": 110,
+    "visible_text_chars": 5506
+  },
+  "peer_ticker": "CS.TO",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://capstonecopper.com/investors/reports-and-filings/"
+}

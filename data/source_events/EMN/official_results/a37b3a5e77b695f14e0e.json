@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-10-30T10:53:55Z",
+  "event_id": "a37b3a5e77b695f14e0e",
+  "execution_effect": "NONE",
+  "new_fingerprint": "c8d025a109e3fc342dacfb3bb052e7c3712748e376c74e12125bba6507a2705f",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 52,
+    "selected_link_count": 14,
+    "visible_text_chars": 4322
+  },
+  "old_fingerprint": "45f13b59bf461345b0dfb0de05c5437f90985db985222d3f9e9d12b21cea3e61",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 53,
+    "selected_link_count": 15,
+    "visible_text_chars": 4377
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "EMN",
+  "url": "https://investors.eastman.com/overview/"
+}

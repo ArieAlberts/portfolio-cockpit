@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "TMDX"
+  ],
+  "detected_at": "2026-10-30T10:54:23Z",
+  "event_id": "077b700805d6f96cfaaf",
+  "execution_effect": "NONE",
+  "new_fingerprint": "40fe6837388d97256934fce775b7a1189cd738f1ce28867c66ca5635f4456487",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 31,
+    "selected_link_count": 6,
+    "visible_text_chars": 3828
+  },
+  "old_fingerprint": "fda44a3a99fe16a5776f8b344661736a8b8ab54f791d19835223016daeca03aa",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 32,
+    "selected_link_count": 6,
+    "visible_text_chars": 3816
+  },
+  "peer_ticker": "DXCM",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.dexcom.com/overview/"
+}
