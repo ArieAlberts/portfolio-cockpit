@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ASR"
+  ],
+  "detected_at": "2026-10-31T10:26:29Z",
+  "event_id": "5c732ee57e8f6ddb5eb4",
+  "execution_effect": "NONE",
+  "new_fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 0,
+    "selected_link_count": 0,
+    "visible_text_chars": 0
+  },
+  "old_fingerprint": "c644da97a5b418e2a56f801bc5f59b9022dc87d87722103b7c80bfeab097e597",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 162,
+    "selected_link_count": 25,
+    "visible_text_chars": 4042
+  },
+  "peer_ticker": "ZURN.SW",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.zurich.com/investor-relations/results-and-reports"
+}
