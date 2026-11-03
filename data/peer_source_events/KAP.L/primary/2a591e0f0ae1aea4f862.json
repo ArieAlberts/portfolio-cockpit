@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "LEU"
+  ],
+  "detected_at": "2026-11-03T11:59:19Z",
+  "event_id": "2a591e0f0ae1aea4f862",
+  "execution_effect": "NONE",
+  "new_fingerprint": "1ecf28b7402b28c9756a8148f5b41a41c838290732a3b4946d17bf6f5653a07f",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 321,
+    "selected_link_count": 228,
+    "visible_text_chars": 12227
+  },
+  "old_fingerprint": "7aff91b955661bbc9e62d81c3cb2acce570e4d427953f4d301ff28ba72de3792",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 320,
+    "selected_link_count": 227,
+    "visible_text_chars": 12227
+  },
+  "peer_ticker": "KAP.L",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.kazatomprom.kz/en/investors/finansovaya_otchetnost"
+}

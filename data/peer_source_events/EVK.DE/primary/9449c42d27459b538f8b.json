@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CRDA.L"
+  ],
+  "detected_at": "2026-11-03T11:59:19Z",
+  "event_id": "9449c42d27459b538f8b",
+  "execution_effect": "NONE",
+  "new_fingerprint": "d031fae2dc50ed8fce0519cd92ecc3ad776074875fe90b0b09b941e5b2fb105a",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 225,
+    "selected_link_count": 138,
+    "visible_text_chars": 5384
+  },
+  "old_fingerprint": "3ae59682b74fd9fbfa732288e8f7f09b2c5eddfe7a92fb61d2496d3626d6ea2a",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 218,
+    "selected_link_count": 131,
+    "visible_text_chars": 5350
+  },
+  "peer_ticker": "EVK.DE",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.evonik.com/en/investor-relations/Reporting.html"
+}

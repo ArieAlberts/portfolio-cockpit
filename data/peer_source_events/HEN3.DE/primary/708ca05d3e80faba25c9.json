@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "FUL"
+  ],
+  "detected_at": "2026-11-03T11:59:19Z",
+  "event_id": "708ca05d3e80faba25c9",
+  "execution_effect": "NONE",
+  "new_fingerprint": "476664706fe5a7c79fbd51fbe649fcc5cdeddd37f80dffe8d55d4bf6dc436813",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 171,
+    "selected_link_count": 32,
+    "visible_text_chars": 13306
+  },
+  "old_fingerprint": "7f18e94178f173ad5da26f911602f2de7bf967c4f1b90ee61d6259e5e0863259",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 169,
+    "selected_link_count": 33,
+    "visible_text_chars": 12460
+  },
+  "peer_ticker": "HEN3.DE",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.henkel.com/investors-and-analysts"
+}
