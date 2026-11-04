@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "SNA"
+  ],
+  "detected_at": "2026-11-04T12:13:50Z",
+  "event_id": "b28cdef231150f139f85",
+  "execution_effect": "NONE",
+  "new_fingerprint": "b65c1b3b53c0fe71ccd7ac6b167bd69ff15f7aeca45d9481221e67470f292da6",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 25,
+    "selected_link_count": 6,
+    "visible_text_chars": 3447
+  },
+  "old_fingerprint": "f081e87e3fa777c54f29d730fde00303d4dc2f61a51927e09d1aa002a1968240",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 25,
+    "selected_link_count": 6,
+    "visible_text_chars": 3447
+  },
+  "peer_ticker": "ESAB",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.esabcorporation.com/overview/default.aspx"
+}

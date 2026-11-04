@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ERO"
+  ],
+  "detected_at": "2026-11-04T12:13:50Z",
+  "event_id": "683c7aa401ab185d9c34",
+  "execution_effect": "NONE",
+  "new_fingerprint": "2b660c88a66182fb13fe9af1ebbce1917419553de9e35e6824eb042002da52a5",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 357,
+    "selected_link_count": 247,
+    "visible_text_chars": 15966
+  },
+  "old_fingerprint": "3d00fb1296392089f6efa94ee3498d4d8b270d366458ca5d7433ba8f868d5f53",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 356,
+    "selected_link_count": 246,
+    "visible_text_chars": 15952
+  },
+  "peer_ticker": "FM.TO",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.first-quantum.com/investors/results-and-reports/"
+}

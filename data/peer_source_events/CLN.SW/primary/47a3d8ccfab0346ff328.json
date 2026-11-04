@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CRDA.L"
+  ],
+  "detected_at": "2026-11-04T12:13:50Z",
+  "event_id": "47a3d8ccfab0346ff328",
+  "execution_effect": "NONE",
+  "new_fingerprint": "71cca3165f141c4c3914324ac64b475f180aebc7956d2a2ae902b90ad105adec",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 123,
+    "selected_link_count": 101,
+    "visible_text_chars": 7898
+  },
+  "old_fingerprint": "d1a9ac9b274d753ee7a5b98d8807ed340eae05bd97c678267b30ed7b6606acc9",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 124,
+    "selected_link_count": 100,
+    "visible_text_chars": 8154
+  },
+  "peer_ticker": "CLN.SW",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.clariant.com/en/Investors/Results-Reports-and-Publications"
+}

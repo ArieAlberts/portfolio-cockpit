@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CRDA.L"
+  ],
+  "detected_at": "2026-11-04T12:13:50Z",
+  "event_id": "e57c15dc11e850360500",
+  "execution_effect": "NONE",
+  "new_fingerprint": "e65d6aa3c97dae50d0a95fde8992420197025c5e2fe10d2be3eb67c7b26f6517",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 227,
+    "selected_link_count": 16,
+    "visible_text_chars": 14031
+  },
+  "old_fingerprint": "03060e172eff2d2ddc995947fd810847ff534d4e401c06f13e7b464308a8c3f7",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 225,
+    "selected_link_count": 17,
+    "visible_text_chars": 13854
+  },
+  "peer_ticker": "DSFIR.AS",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.dsm-firmenich.com/en/investors.html"
+}
