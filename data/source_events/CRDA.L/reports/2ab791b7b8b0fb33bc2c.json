@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-05T12:26:00Z",
+  "event_id": "2ab791b7b8b0fb33bc2c",
+  "execution_effect": "NONE",
+  "new_fingerprint": "039186010e0ef32e4f4159151ff5975f5456ffe05bb9032619de3e9b83e3a6ab",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 241,
+    "selected_link_count": 150,
+    "visible_text_chars": 22455
+  },
+  "old_fingerprint": "cd032b7fa0dbf28e7b32e41478822864000d5abe77076b993b36583f917a8beb",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 240,
+    "selected_link_count": 149,
+    "visible_text_chars": 22364
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "reports",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "CRDA.L",
+  "url": "https://www.croda.com/en-gb/investors/results-presentations-and-reports"
+}

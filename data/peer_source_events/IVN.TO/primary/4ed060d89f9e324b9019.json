@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ERO"
+  ],
+  "detected_at": "2026-11-05T12:26:19Z",
+  "event_id": "4ed060d89f9e324b9019",
+  "execution_effect": "NONE",
+  "new_fingerprint": "9b96d4c9efa2667e432053e4b9aba4ebdf136eed7de5c7b14128709cd3b76d57",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 39,
+    "selected_link_count": 2,
+    "visible_text_chars": 2783
+  },
+  "old_fingerprint": "ed0bd64d2913a0536bd9ce60dd73f971ec36c222d03154395672e236c4fc4048",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 39,
+    "selected_link_count": 2,
+    "visible_text_chars": 2783
+  },
+  "peer_ticker": "IVN.TO",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.ivanhoemines.com/investors/document-library/"
+}
