@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "LEU"
+  ],
+  "detected_at": "2026-11-06T12:10:51Z",
+  "event_id": "e6e01fcf6493a6aee311",
+  "execution_effect": "NONE",
+  "new_fingerprint": "4a5ba33ec051aa231ad5f0771acfefefd702ae43a6fa1445eee9153d78ab169d",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 49,
+    "selected_link_count": 22,
+    "visible_text_chars": 10812
+  },
+  "old_fingerprint": "24fd4da98da48da98c0b3706f1e312808064fbffe95e3eb4119dc777a7bdf778",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 48,
+    "selected_link_count": 21,
+    "visible_text_chars": 10761
+  },
+  "peer_ticker": "CCJ",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.cameco.com/invest/financial-information/quarterly-reports"
+}
