@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "OKLO"
+  ],
+  "detected_at": "2026-11-07T11:07:59Z",
+  "event_id": "1c8d71462053c2a46788",
+  "execution_effect": "NONE",
+  "new_fingerprint": "3b5a817fe5ddf02fd88183ce9b40ecf42472909b96b6c2b22e2ebd8f79f8e301",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 48,
+    "selected_link_count": 6,
+    "visible_text_chars": 18945
+  },
+  "old_fingerprint": "2c9b5d382175d0e1c1f49a9ed6263052bacd87b80a21bde7f4a49a8f4de52ca3",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 48,
+    "selected_link_count": 6,
+    "visible_text_chars": 18945
+  },
+  "peer_ticker": "LTBR",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.ltbridge.com/news-media/press-releases/detail/475/lightbridge-provides-business-update-and-announces-first-half-fiscal-2026-financial-results"
+}
