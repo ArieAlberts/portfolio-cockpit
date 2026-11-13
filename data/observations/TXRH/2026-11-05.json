@@ -1,0 +1,97 @@
+{
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_cash_equivalents_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-29",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001628280-26-071018",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Texas Roadhouse, Inc. Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001289460/000162828026071018/txrhq32026november52026-ex.htm"
+        },
+        "value": 141.412
+      },
+      "long_term_debt_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-29",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001628280-26-071018",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Texas Roadhouse, Inc. Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001289460/000162828026071018/txrhq32026november52026-ex.htm"
+        },
+        "value": 50.0
+      }
+    },
+    "profitability_capital_efficiency": {
+      "quarter_operating_income_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026 (13 weeks ended 2026-09-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001628280-26-071018",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Texas Roadhouse, Inc. Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001289460/000162828026071018/txrhq32026november52026-ex.htm"
+        },
+        "value": 102.988
+      }
+    },
+    "growth_stability": {
+      "quarter_revenue_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026 (13 weeks ended 2026-09-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001628280-26-071018",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Texas Roadhouse, Inc. Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001289460/000162828026071018/txrhq32026november52026-ex.htm"
+        },
+        "value": 1573.074
+      },
+      "quarter_revenue_growth_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (13 weeks ended 2026-09-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001628280-26-071018",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Texas Roadhouse, Inc. Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001289460/000162828026071018/txrhq32026november52026-ex.htm"
+        },
+        "value": 9.5
+      }
+    }
+  },
+  "observation_date": "2026-11-05",
+  "reporting_period_end": "2026-09-29",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "TXRH",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "half_year_* metrics omitted: PERIOD_MISMATCH (release gives 39-week YTD: OCF 585.9m, capex 314.4m).",
+    "shares_outstanding_m omitted: not stated (only weighted average)."
+  ]
+}

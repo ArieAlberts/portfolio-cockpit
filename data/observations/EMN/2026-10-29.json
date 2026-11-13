@@ -1,0 +1,113 @@
+{
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "ebit_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-29",
+          "report_id": "Q3 2026 news release and tables",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Eastman Announces Third-Quarter 2026 Financial Results",
+          "url": "https://s29.q4cdn.com/397220757/files/content_files/Eastman-Q3-2026-News-Release-and-Tables.pdf"
+        },
+        "value": 305
+      },
+      "adjusted_ebit_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-29",
+          "report_id": "Q3 2026 news release and tables",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Eastman Announces Third-Quarter 2026 Financial Results",
+          "url": "https://s29.q4cdn.com/397220757/files/content_files/Eastman-Q3-2026-News-Release-and-Tables.pdf"
+        },
+        "value": 305
+      }
+    },
+    "cashflow_quality": {
+      "operating_cash_flow_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-29",
+          "report_id": "Q3 2026 news release and tables",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Eastman Announces Third-Quarter 2026 Financial Results",
+          "url": "https://s29.q4cdn.com/397220757/files/content_files/Eastman-Q3-2026-News-Release-and-Tables.pdf"
+        },
+        "value": 290
+      }
+    },
+    "growth_stability": {
+      "sales_revenue_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-29",
+          "report_id": "Q3 2026 news release and tables",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Eastman Announces Third-Quarter 2026 Financial Results",
+          "url": "https://s29.q4cdn.com/397220757/files/content_files/Eastman-Q3-2026-News-Release-and-Tables.pdf"
+        },
+        "value": 2385
+      }
+    },
+    "value_per_share": {
+      "diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-29",
+          "report_id": "Q3 2026 news release and tables",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Eastman Announces Third-Quarter 2026 Financial Results",
+          "url": "https://s29.q4cdn.com/397220757/files/content_files/Eastman-Q3-2026-News-Release-and-Tables.pdf"
+        },
+        "value": 2.19
+      },
+      "adjusted_diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-29",
+          "report_id": "Q3 2026 news release and tables",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Eastman Announces Third-Quarter 2026 Financial Results",
+          "url": "https://s29.q4cdn.com/397220757/files/content_files/Eastman-Q3-2026-News-Release-and-Tables.pdf"
+        },
+        "value": 1.84
+      }
+    }
+  },
+  "observation_date": "2026-10-29",
+  "reporting_period_end": "2026-09-30",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "EMN",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "Adjusted EPS below GAAP EPS due to interim tax-provision adjustment of $(0.35)/share."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "metrics": {
+    "liquidity_runway": {
+      "cash_and_cash_equivalents_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-06",
+          "report_id": "10-Q 0001628280-26-071319",
+          "source_type": "SEC_10_Q",
+          "title": "Oklo Inc. Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026071319/oklo-20260930.htm"
+        },
+        "value": 1550.061
+      },
+      "cash_and_marketable_securities_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-06",
+          "report_id": "10-Q 0001628280-26-071319",
+          "source_type": "SEC_10_Q",
+          "title": "Oklo Inc. Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026071319/oklo-20260930.htm"
+        },
+        "value": 3130.785
+      }
+    },
+    "financing_dilution": {
+      "common_shares_outstanding_m": {
+        "calculation_method": "reported share count /1e6; cover page as of 2026-11-04",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-06",
+          "report_id": "10-Q 0001628280-26-071319",
+          "source_type": "SEC_10_Q",
+          "title": "Oklo Inc. Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026071319/oklo-20260930.htm"
+        },
+        "value": 195.289593
+      }
+    },
+    "project_execution": {
+      "quarter_revenue_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-06",
+          "report_id": "10-Q 0001628280-26-071319",
+          "source_type": "SEC_10_Q",
+          "title": "Oklo Inc. Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001849056/000162828026071319/oklo-20260930.htm"
+        },
+        "value": 1.861
+      }
+    }
+  },
+  "observation_date": "2026-11-06",
+  "reporting_period_end": "2026-09-30",
+  "schema_version": 1,
+  "source_confidence": 80,
+  "ticker": "OKLO",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "First read via a third-party mirror (stocktitan.net); verified against the 10-Q on EDGAR (filed 2026-11-06) on 2026-11-13, confidence updated accordingly.",
+    "H1 metrics (atm_shares_issued_h1, financing_cash_inflow_h1, half_year_*) omitted: PERIOD_MISMATCH (only Q3/9M available: 9M op. loss 195.2m, net loss 123.3m, op. cash used 110.9m).",
+    "marketable_debt_securities omitted: no single total printed."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "gaap_net_income_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-04",
+          "report_id": "PR Newswire 302929804; 8-K Ex.99.1 0001628280-26-070229",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Centrus Reports Third Quarter 2026 Results",
+          "url": "https://www.prnewswire.com/news-releases/centrus-reports-third-quarter-2026-results-302929804.html"
+        },
+        "value": 31.6
+      },
+      "adjusted_net_income_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-04",
+          "report_id": "PR Newswire 302929804; 8-K Ex.99.1 0001628280-26-070229",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Centrus Reports Third Quarter 2026 Results",
+          "url": "https://www.prnewswire.com/news-releases/centrus-reports-third-quarter-2026-results-302929804.html"
+        },
+        "value": -9.4
+      }
+    },
+    "growth_stability": {
+      "revenue_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-04",
+          "report_id": "PR Newswire 302929804; 8-K Ex.99.1 0001628280-26-070229",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Centrus Reports Third Quarter 2026 Results",
+          "url": "https://www.prnewswire.com/news-releases/centrus-reports-third-quarter-2026-results-302929804.html"
+        },
+        "value": 55.5
+      },
+      "contingent_leu_haleu_backlog_usd_bn": {
+        "calculation_method": "reported as approximately $5.4 billion contingent LEU and HALEU sales commitments",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-04",
+          "report_id": "PR Newswire 302929804; 8-K Ex.99.1 0001628280-26-070229",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Centrus Reports Third Quarter 2026 Results",
+          "url": "https://www.prnewswire.com/news-releases/centrus-reports-third-quarter-2026-results-302929804.html"
+        },
+        "value": 5.4
+      }
+    }
+  },
+  "observation_date": "2026-11-04",
+  "reporting_period_end": "2026-09-30",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "LEU",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "Total backlog $7.0bn; LEU segment ~$6.2bn.",
+    "prior_year_revenue omitted (excluded pattern); execution booleans not re-observed.",
+    "contingent_leu_haleu_backlog_usd_bn: period_basis is Q (quarter-end value, as in the Q2 baseline); the orders_backlog slot is not point-in-time in config/quality_drift.yaml."
+  ]
+}

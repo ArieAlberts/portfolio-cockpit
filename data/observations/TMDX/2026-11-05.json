@@ -1,0 +1,159 @@
+{
+  "metrics": {
+    "balance_sheet": {
+      "cash_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "10-Q 0001193125-26-449827",
+          "source_type": "SEC_10_Q",
+          "title": "TransMedics Group Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001756262/000119312526449827/tmdx-20260930.htm"
+        },
+        "value": 492.962
+      }
+    },
+    "profitability_capital_efficiency": {
+      "net_income_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "10-Q 0001193125-26-449827",
+          "source_type": "SEC_10_Q",
+          "title": "TransMedics Group Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001756262/000119312526449827/tmdx-20260930.htm"
+        },
+        "value": 17.073
+      },
+      "adjusted_net_income_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-13T08:45:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001193125-26-449729",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "TransMedics Reports Third Quarter 2026 Financial Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1756262/000119312526449729/tmdx-ex99_1.htm"
+        },
+        "value": 18.9
+      }
+    },
+    "growth_stability": {
+      "total_revenue_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "10-Q 0001193125-26-449827",
+          "source_type": "SEC_10_Q",
+          "title": "TransMedics Group Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001756262/000119312526449827/tmdx-20260930.htm"
+        },
+        "value": 203.005
+      },
+      "product_revenue_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "10-Q 0001193125-26-449827",
+          "source_type": "SEC_10_Q",
+          "title": "TransMedics Group Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001756262/000119312526449827/tmdx-20260930.htm"
+        },
+        "value": 113.419
+      },
+      "service_revenue_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "10-Q 0001193125-26-449827",
+          "source_type": "SEC_10_Q",
+          "title": "TransMedics Group Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001756262/000119312526449827/tmdx-20260930.htm"
+        },
+        "value": 89.586
+      },
+      "revenue_growth_pct": {
+        "calculation_method": "reported year-over-year increase in total revenue (203.0m versus 143.8m)",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-13T08:45:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001193125-26-449729",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "TransMedics Reports Third Quarter 2026 Financial Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1756262/000119312526449729/tmdx-ex99_1.htm"
+        },
+        "value": 41
+      }
+    },
+    "value_per_share": {
+      "diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "10-Q 0001193125-26-449827",
+          "source_type": "SEC_10_Q",
+          "title": "TransMedics Group Form 10-Q for the quarter ended September 30, 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001756262/000119312526449827/tmdx-20260930.htm"
+        },
+        "value": 0.46
+      },
+      "adjusted_diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-13T08:45:00Z",
+        "source": {
+          "publication_date": "2026-11-05",
+          "report_id": "8-K Ex.99.1 0001193125-26-449729",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "TransMedics Reports Third Quarter 2026 Financial Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/1756262/000119312526449729/tmdx-ex99_1.htm"
+        },
+        "value": 0.51
+      }
+    }
+  },
+  "observation_date": "2026-11-05",
+  "reporting_period_end": "2026-09-30",
+  "schema_version": 1,
+  "source_confidence": 80,
+  "ticker": "TMDX",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "10-Q filing date verified on EDGAR (2026-11-05).",
+    "adjusted_net_income_usd_m, adjusted_diluted_eps_usd and revenue_growth_pct added on 2026-11-13 from the press release (8-K Ex.99.1 0001193125-26-449729)."
+  ]
+}
