@@ -1,0 +1,160 @@
+{
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_short_term_investments_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 114.1
+      },
+      "net_debt_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 353.461
+      },
+      "available_liquidity_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 264.053
+      }
+    },
+    "cost_position": {
+      "copper_c1_cash_cost_usd_per_lb": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 2.51
+      }
+    },
+    "normalized_cashflow": {
+      "quarter_operating_cash_flow_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 191.2
+      },
+      "adjusted_ebitda_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 200.6
+      }
+    },
+    "execution": {
+      "quarter_copper_production_tonnes": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 18345
+      },
+      "quarter_gold_production_ounces": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 25258
+      }
+    },
+    "value_per_share": {
+      "diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-11-02",
+          "report_id": "6-K 0001628280-26-068971",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Ero Copper Reports Record Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001853860/000162828026068971/erocopper-pressreleasex202.htm"
+        },
+        "value": 1.1
+      }
+    }
+  },
+  "observation_date": "2026-11-02",
+  "reporting_period_end": "2026-09-30",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "ERO",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "total_debt_usd_m omitted: no total line printed (current 17,966k + long-term 449,548k)."
+  ]
+}

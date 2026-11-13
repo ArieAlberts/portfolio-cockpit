@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-10-19",
+  "as_of": "2026-11-13",
   "code_hash": "93d14ab6326c015a86327e573aa9ed539870b43cfe29af93767c31a9d97f2a6b",
   "config_hash": "6b948484e4cc81005b7edc0c6f161a7742d7ef50d38638bd3f22b9aa45db06ad",
-  "current_valuation": "data/valuation/valuation_2026-10-19.json",
+  "current_valuation": "data/valuation/valuation_2026-11-13.json",
   "execution_effect": "NONE",
   "generated_by_pipeline": true,
   "pipeline_version": 1,
-  "reproducibility_hash": "2f0d32917b5d23a6119265b4c4aad60c706918f752118ef9043625605c8ba9c8",
-  "run_git_commit": "9bf2fb7bcd080634fa48f5bc9c4bc4766a5412f7",
+  "reproducibility_hash": "462bf6a2e3fd002d40b038def7ad4d755c0602a75659e30120da58ca2488795b",
+  "run_git_commit": "9182f7c17284c15545cb396e6a42f2d2d8149cb0",
   "schema_version": 1
 }

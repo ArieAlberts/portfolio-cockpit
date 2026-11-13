@@ -1,0 +1,159 @@
+{
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "operating_income_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 72.8
+      },
+      "operating_margin_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 6.7
+      },
+      "adjusted_operating_margin_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 10.9
+      },
+      "gross_margin_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 40.6
+      }
+    },
+    "growth_stability": {
+      "net_sales_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 1079.2
+      },
+      "net_sales_growth_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 10.3
+      }
+    },
+    "value_per_share": {
+      "diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 0.85
+      },
+      "adjusted_diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "fiscal Q4 2026 (quarter ended 2026-08-29)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 1.45
+      }
+    },
+    "balance_sheet": {
+      "cash_usd_m": {
+        "calculation_method": "reported (printed in thousands; /1000 to millions)",
+        "currency": "USD",
+        "period": "as of 2026-08-29",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0001003078-26-000108",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "MSC Industrial Supply Co. Reports Fiscal 2026 Fourth Quarter and Full Year Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001003078/000100307826000108/exhibit991earningspressrel.htm"
+        },
+        "value": 65.028
+      }
+    }
+  },
+  "observation_date": "2026-10-22",
+  "reporting_period_end": "2026-08-29",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "MSM",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "year_to_date_operating_cash_flow_usd_m omitted: the release gives the full fiscal year (306.5m) while the baseline year-to-date value covers three fiscal quarters; not like-for-like.",
+    "guidance.full_year_free_cash_flow_conversion_pct omitted (guidance excluded); actual FY FCF conversion printed as 102%."
+  ]
+}

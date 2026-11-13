@@ -1,0 +1,130 @@
+{
+  "metrics": {
+    "profitability_capital_efficiency": {
+      "operating_earnings_before_financial_services_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (three months ended 2026-10-03)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": 248.1
+      },
+      "operating_margin_before_financial_services_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (three months ended 2026-10-03)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": 21.0
+      }
+    },
+    "growth_stability": {
+      "net_sales_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (three months ended 2026-10-03)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": 1183.7
+      },
+      "net_sales_growth_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (three months ended 2026-10-03)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": -0.6
+      },
+      "organic_sales_growth_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (three months ended 2026-10-03)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": -2.8
+      }
+    },
+    "value_per_share": {
+      "diluted_eps_usd": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026 (three months ended 2026-10-03)",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": 4.64
+      }
+    },
+    "balance_sheet": {
+      "cash_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "as of 2026-10-03",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-22",
+          "report_id": "8-K Ex.99.1 0000091440-26-000169",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Snap-on Announces Third Quarter 2026 Results",
+          "url": "https://www.sec.gov/Archives/edgar/data/0000091440/000009144026000169/q32026pressreleaseforpress.htm"
+        },
+        "value": 1670.0
+      }
+    }
+  },
+  "observation_date": "2026-10-22",
+  "reporting_period_end": "2026-10-03",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "SNA",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "gross_margin_pct omitted: no % printed in release.",
+    "half_year_operating_cash_flow_usd_m omitted: PERIOD_MISMATCH (release gives 9M YTD 887.9, baseline is H1).",
+    "prior_year_diluted_eps_usd (5.02) omitted: excluded _prior pattern."
+  ]
+}

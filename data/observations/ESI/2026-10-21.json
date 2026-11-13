@@ -1,0 +1,174 @@
+{
+  "metrics": {
+    "balance_sheet": {
+      "cash_and_cash_equivalents_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "as of 2026-09-30",
+        "period_basis": "POINT_IN_TIME",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 224.9
+      }
+    },
+    "profitability_capital_efficiency": {
+      "net_income_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 65.7
+      },
+      "net_income_margin_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 6.6
+      },
+      "adjusted_ebitda_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 191.0
+      },
+      "adjusted_ebitda_margin_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 28.2
+      }
+    },
+    "cashflow_quality": {
+      "operating_cash_flow_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 159.2
+      },
+      "free_cash_flow_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 134.5
+      }
+    },
+    "growth_stability": {
+      "net_sales_usd_m": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 995.3
+      },
+      "reported_sales_growth_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 52
+      },
+      "organic_sales_growth_pct": {
+        "calculation_method": "reported",
+        "currency": "USD",
+        "period": "Q3 2026",
+        "period_basis": "Q",
+        "retrieved_at": "2026-11-07T08:00:00Z",
+        "source": {
+          "publication_date": "2026-10-21",
+          "report_id": "8-K Ex.99.1 0001590714-26-000069",
+          "source_type": "OFFICIAL_COMPANY_REPORT",
+          "title": "Element Solutions Inc Reports Record Results for Third Quarter 2026",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001590714/000159071426000069/aearningsreleaseex99120269.htm"
+        },
+        "value": 13
+      }
+    }
+  },
+  "observation_date": "2026-10-21",
+  "reporting_period_end": "2026-09-30",
+  "schema_version": 1,
+  "source_confidence": 85,
+  "ticker": "ESI",
+  "update_trigger": "official_results",
+  "review_status": "VERIFIED_AGAINST_PRIMARY_SOURCE",
+  "notes": [
+    "Verified against the primary source on 2026-11-13; all values match.",
+    "Table values used (text rounds: 66 / 191 / 159 / 135 / 995).",
+    "adjusted_ebitda_margin_pct is on net sales excl. pass-through metals (check same definition as baseline)."
+  ]
+}
