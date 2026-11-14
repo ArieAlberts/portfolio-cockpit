@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "PLMR"
+  ],
+  "detected_at": "2026-11-14T11:33:33Z",
+  "event_id": "469e2eef41ccd169df0f",
+  "execution_effect": "NONE",
+  "new_fingerprint": "0f691b098eb1fc991efbd8c76fc0a3760fcfc2f09a08cc58503e9f2190a1527d",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 62,
+    "selected_link_count": 6,
+    "visible_text_chars": 24956
+  },
+  "old_fingerprint": "4f1923145334b0d0e286a29fff355e583e57e7f5fcef97e36c3e085d606a4312",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 62,
+    "selected_link_count": 6,
+    "visible_text_chars": 24956
+  },
+  "peer_ticker": "HRTG",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.heritagepci.com/2026-08-05-Heritage-Reports-Second-Quarter-2026-Results"
+}
