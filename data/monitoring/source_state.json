@@ -98,7 +98,7 @@
       "url": "https://investors.dicks.com/overview/"
     },
     "EMN:official_results": {
-      "etag": "\"82b3cde17c2bdc38561aeb09a6630e7b\"",
+      "etag": "\"d7e4b6f6324e2e50467b82d4d214db29\"",
       "fingerprint": "344d1f2462e2f2f9fd5eaf60f95e4a5337374e0eadf936b0d76c3f70714c22e0",
       "last_modified": null,
       "last_observed_change_at": "2026-10-31T10:26:05Z",
@@ -130,7 +130,7 @@
       "url": "https://www.ero.com/investors/reports-and-filings/"
     },
     "ESI:official_results": {
-      "etag": null,
+      "etag": "\"83b67a48cee3f5533317e9727c1f717b\"",
       "fingerprint": "8bc26f33d86b6734994c823ce48f7312e6911997dc0c383995d57336290a018b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -138,15 +138,15 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 62,
+        "link_count": 61,
         "selected_link_count": 6,
-        "visible_text_chars": 3609
+        "visible_text_chars": 3618
       },
       "ticker": "ESI",
       "url": "https://ir.elementsolutionsinc.com/Investors/Overview/"
     },
     "FUL:official_results": {
-      "etag": "\"03e8b574f4884780c29ee04ac7138c0a\"",
+      "etag": "\"4d3edaaec6443ead425a05d5dc4b9fb2\"",
       "fingerprint": "efb107c117ecac3d55592c9fce6955d5e5ca72a50b5bd8b35d0636f97c2467f8",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -194,7 +194,7 @@
       "url": "https://investors.centrusenergy.com/financial-information/quarterly-results"
     },
     "MOD:official_results": {
-      "etag": "\"1b7d6287fde290a1172f59ad1842f1d2\"",
+      "etag": "\"d2e2591362339b98a79e566868234b5b\"",
       "fingerprint": "cc5f49389cb5ec4ffec9c83e0b62559d8337ed63cd71f35a9f58845893ba9a50",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -226,7 +226,7 @@
       "url": "https://investor.mscdirect.com/quarterly-results"
     },
     "OKLO:official_results": {
-      "etag": "\"c5207af5650a2bf5ce6a229a8cfa970c\"",
+      "etag": "\"18210cd8c29e96fc09cc5e3df3d8f2ea\"",
       "fingerprint": "cf6b32994fa3a3b5a614e6cafb3f0fc97ad00e16983e4f0c696294c625655272",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -338,9 +338,9 @@
       "url": "https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx"
     },
     "WKL:regulated_news": {
-      "etag": "\"1794637054\"",
+      "etag": "\"1794725004\"",
       "fingerprint": "e83520a579e7015391c10def313f61041fe60f86bc589ff0a082ed644b2659a0",
-      "last_modified": "Sat, 14 Nov 2026 06:17:34 GMT",
+      "last_modified": "Sun, 15 Nov 2026 06:43:24 GMT",
       "last_observed_change_at": "2026-10-06T12:00:22Z",
       "mode": "HTML_PAGE",
       "source_id": "regulated_news",
@@ -354,7 +354,7 @@
       "url": "https://live.euronext.com/en/product/equities/NL0000395903-XAMS"
     },
     "WSM:official_results": {
-      "etag": "\"76bc7e3cb58612fdc2a88decde59b612\"",
+      "etag": "\"4cb82852270f70a53bd08b37198dbbfd\"",
       "fingerprint": "04ef56538b2f651e8e307744b291defae9b558a13ea0c8ffc563b0e441ffbf32",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
