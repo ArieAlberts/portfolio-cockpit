@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "IMCD"
+  ],
+  "detected_at": "2026-11-16T12:49:55Z",
+  "event_id": "756b166ccba9a9f23b15",
+  "execution_effect": "NONE",
+  "new_fingerprint": "14306e8039bbe26980eb0ebb35ee93616f3162f2c4a85e0fcd0903cda8feabce",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 38,
+    "selected_link_count": 15,
+    "visible_text_chars": 1661
+  },
+  "old_fingerprint": "e3a71a095538817ace2624224c42e8a2b2c9116925b441fc7ebed70e462824af",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 38,
+    "selected_link_count": 15,
+    "visible_text_chars": 1622
+  },
+  "peer_ticker": "BNR.DE",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://corporate.brenntag.com/en/investor-relations/publications-and-events/financial-publications/"
+}
