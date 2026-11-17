@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CRDA.L"
+  ],
+  "detected_at": "2026-11-17T13:31:50Z",
+  "event_id": "9677e2702e5165f0659b",
+  "execution_effect": "NONE",
+  "new_fingerprint": "2cdd0603a08c45388e64d7a347047c80ea42ce590d3b84880f102d3b17b43524",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 136,
+    "selected_link_count": 34,
+    "visible_text_chars": 6619
+  },
+  "old_fingerprint": "7ac7b2caa6f14d1a93bdbaa0516dfbd319e5218de5f9ac1aa7db249d26f1baf9",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 136,
+    "selected_link_count": 34,
+    "visible_text_chars": 6773
+  },
+  "peer_ticker": "SY1.DE",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.symrise.com/investors/financial-results/"
+}

@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ASR"
+  ],
+  "detected_at": "2026-11-17T13:31:50Z",
+  "event_id": "86936a1bf1dd60449fb3",
+  "execution_effect": "NONE",
+  "new_fingerprint": "a7be7617c4da36d17f9d7cfcaed622b543abfcb800e1f8fb98b11d044a5abdad",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 238,
+    "selected_link_count": 32,
+    "visible_text_chars": 34454
+  },
+  "old_fingerprint": "53c339a816e588e216f1b2d158f00b05528de405d633825449ae3e46912ac8b9",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 238,
+    "selected_link_count": 32,
+    "visible_text_chars": 34474
+  },
+  "peer_ticker": "G.MI",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.generali.com/media/press-releases/all/2026/Generali-Group-Consolidated-Results-as-at-30-June-2026"
+}

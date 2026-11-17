@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-17T13:31:33Z",
+  "event_id": "e91cbca419c45a55a9cd",
+  "execution_effect": "NONE",
+  "new_fingerprint": "6cb8ca9b07c89fdd5be35382ba35f73fc0f4ff601ad929e3abc89decbb24beb9",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 22,
+    "selected_link_count": 5,
+    "visible_text_chars": 1417
+  },
+  "old_fingerprint": "cc5f49389cb5ec4ffec9c83e0b62559d8337ed63cd71f35a9f58845893ba9a50",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 20,
+    "selected_link_count": 4,
+    "visible_text_chars": 1264
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "MOD",
+  "url": "https://investors.modine.com/financials/quarterly-results/default.aspx"
+}
