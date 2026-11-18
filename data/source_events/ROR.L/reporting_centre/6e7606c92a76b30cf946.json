@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-18T13:08:37Z",
+  "event_id": "6e7606c92a76b30cf946",
+  "execution_effect": "NONE",
+  "new_fingerprint": "50270e228d7a6dd3289591e371aa9fb2de972918fddba343ab2ccfd1bff35ad2",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 205,
+    "selected_link_count": 105,
+    "visible_text_chars": 13649
+  },
+  "old_fingerprint": "fe6ff9eaea367e0599965012981fcd677e887f9819c96f30252f7bee7a37cf32",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 204,
+    "selected_link_count": 104,
+    "visible_text_chars": 13626
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "reporting_centre",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "ROR.L",
+  "url": "https://www.rotork.com/en/investors/financial-reporting-centre"
+}

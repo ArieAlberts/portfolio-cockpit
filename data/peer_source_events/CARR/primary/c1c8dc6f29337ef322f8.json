@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "MOD"
+  ],
+  "detected_at": "2026-11-18T13:08:56Z",
+  "event_id": "c1c8dc6f29337ef322f8",
+  "execution_effect": "NONE",
+  "new_fingerprint": "dc3b8e43d115ac937517867730fccd677a084787e7c6cb682eac962b33b53d7a",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 171,
+    "selected_link_count": 3,
+    "visible_text_chars": 40287
+  },
+  "old_fingerprint": "a91352dcc4c83237f8b0be5eb75483d2a1d62d9200b49b658b9e615aa06af43b",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 168,
+    "selected_link_count": 2,
+    "visible_text_chars": 40272
+  },
+  "peer_ticker": "CARR",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.carrier.com/us/en/news/carrierreports-second-quarter-2026-results/"
+}
