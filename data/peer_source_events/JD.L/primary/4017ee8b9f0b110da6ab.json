@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "DKS"
+  ],
+  "detected_at": "2026-11-19T13:18:48Z",
+  "event_id": "4017ee8b9f0b110da6ab",
+  "execution_effect": "NONE",
+  "new_fingerprint": "3f14bc0755c18ba43fe75ec2a910f43cfd5d5199b5cca00ee36337a5b43039fa",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 84,
+    "selected_link_count": 30,
+    "visible_text_chars": 2279
+  },
+  "old_fingerprint": "64dcf538c024d3eb42e9d680f480c8636ac265935b684feb1e8b1181dfdea23e",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 83,
+    "selected_link_count": 29,
+    "visible_text_chars": 2215
+  },
+  "peer_ticker": "JD.L",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.jdplc.com/investors/reports-presentations/"
+}

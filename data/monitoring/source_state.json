@@ -2,7 +2,7 @@
   "schema_version": 1,
   "sources": {
     "ABX:official_results": {
-      "etag": "\"b6c7cfd3bf8f6f5310222b5a771fc9e3\"",
+      "etag": null,
       "fingerprint": "3f8bfbf931a72b44d384dd240b2bebdd827f614422a8713a70813f0ec85a1863",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -82,7 +82,7 @@
       "url": "https://www.croda.com/en-gb/investors/results-presentations-and-reports"
     },
     "DKS:official_results": {
-      "etag": "\"43cdc4916783d223751021891741b625\"",
+      "etag": "\"db936a0c3e2bb72564fcb5c84c68f698\"",
       "fingerprint": "d374d5319175b2a12be95df152ab1bd1d184f92524d2759bfb2f01f9635b378d",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -98,7 +98,7 @@
       "url": "https://investors.dicks.com/overview/"
     },
     "EMN:official_results": {
-      "etag": "\"d1cd8f515c428c874a22657a2bf7bf14\"",
+      "etag": "\"5c52d897317d1d3590162cda5c47f4fa\"",
       "fingerprint": "344d1f2462e2f2f9fd5eaf60f95e4a5337374e0eadf936b0d76c3f70714c22e0",
       "last_modified": null,
       "last_observed_change_at": "2026-10-31T10:26:05Z",
@@ -130,7 +130,7 @@
       "url": "https://www.ero.com/investors/reports-and-filings/"
     },
     "ESI:official_results": {
-      "etag": "\"c537e4695fe59456389f46420ead3a4b\"",
+      "etag": "\"901bdb700f879ecfae72d42e4a29edc4\"",
       "fingerprint": "8bc26f33d86b6734994c823ce48f7312e6911997dc0c383995d57336290a018b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -194,7 +194,7 @@
       "url": "https://investors.centrusenergy.com/financial-information/quarterly-results"
     },
     "MOD:official_results": {
-      "etag": "\"e06ee6351f95616435b70b3ffa3788ae\"",
+      "etag": "\"6fcc130d166fd54985e5aae9b9a13838\"",
       "fingerprint": "6cb8ca9b07c89fdd5be35382ba35f73fc0f4ff601ad929e3abc89decbb24beb9",
       "last_modified": null,
       "last_observed_change_at": "2026-11-17T13:31:33Z",
@@ -226,7 +226,7 @@
       "url": "https://investor.mscdirect.com/quarterly-results"
     },
     "OKLO:official_results": {
-      "etag": "\"39dae09e1add207ae5bd9bd0f5b242a0\"",
+      "etag": "\"0d272974df6f04c84bd3c2d6059a0177\"",
       "fingerprint": "cf6b32994fa3a3b5a614e6cafb3f0fc97ad00e16983e4f0c696294c625655272",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -322,7 +322,7 @@
       "url": "https://investors.transmedics.com/news-releases/"
     },
     "TXRH:official_results": {
-      "etag": null,
+      "etag": "\"7c35cdbe841d8294b1de92b4f192d2b7\"",
       "fingerprint": "b1c70e85ef76889531b85bfaa1ee9b6c46a22cb481b11fe66f0e46aed88b2211",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -330,17 +330,17 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 30,
+        "link_count": 29,
         "selected_link_count": 5,
-        "visible_text_chars": 1458
+        "visible_text_chars": 1470
       },
       "ticker": "TXRH",
       "url": "https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx"
     },
     "WKL:regulated_news": {
-      "etag": "\"1795007319\"",
+      "etag": "\"1795094106\"",
       "fingerprint": "e83520a579e7015391c10def313f61041fe60f86bc589ff0a082ed644b2659a0",
-      "last_modified": "Wed, 18 Nov 2026 13:08:39 GMT",
+      "last_modified": "Thu, 19 Nov 2026 13:15:06 GMT",
       "last_observed_change_at": "2026-10-06T12:00:22Z",
       "mode": "HTML_PAGE",
       "source_id": "regulated_news",
@@ -348,13 +348,13 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 320,
         "selected_link_count": 13,
-        "visible_text_chars": 11912
+        "visible_text_chars": 11924
       },
       "ticker": "WKL",
       "url": "https://live.euronext.com/en/product/equities/NL0000395903-XAMS"
     },
     "WSM:official_results": {
-      "etag": "\"7d4d71900ea781e3455a863c66e53c0d\"",
+      "etag": null,
       "fingerprint": "04ef56538b2f651e8e307744b291defae9b558a13ea0c8ffc563b0e441ffbf32",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -362,9 +362,9 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 28,
+        "link_count": 29,
         "selected_link_count": 6,
-        "visible_text_chars": 980
+        "visible_text_chars": 971
       },
       "ticker": "WSM",
       "url": "https://ir.williams-sonomainc.com/investor-information/news-releases/"

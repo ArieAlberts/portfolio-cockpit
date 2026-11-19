@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ERO"
+  ],
+  "detected_at": "2026-11-19T13:18:48Z",
+  "event_id": "cde6cdd95cf8ce0080d5",
+  "execution_effect": "NONE",
+  "new_fingerprint": "1e6131ccfab7b942929218f0ce3870c6f2202c07b57f74102b4ad6fc61c58540",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 136,
+    "selected_link_count": 95,
+    "visible_text_chars": 5783
+  },
+  "old_fingerprint": "612c841d8748015cfa5f85ae0b2e4fbd7d3071bb62e7d101f959ee022ab6d818",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 136,
+    "selected_link_count": 95,
+    "visible_text_chars": 5783
+  },
+  "peer_ticker": "LUN.TO",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.lundinmining.com/investors/financial-reports/"
+}
