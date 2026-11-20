@@ -24,7 +24,7 @@
       "dependent_targets": [
         "MSM"
       ],
-      "etag": "\"c74c4fd5c6d7cf8a0d3174e7a8bbe3db\"",
+      "etag": null,
       "fingerprint": "fa22b754ead98d13bcbe3dedcac0bb33c118a65cb5c1cdc0a518af97366de11a",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -33,7 +33,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 29,
+        "link_count": 30,
         "selected_link_count": 6,
         "visible_text_chars": 4702
       },
@@ -64,7 +64,7 @@
       ],
       "etag": null,
       "fingerprint": "83744010bafb7846379d2ae685d7ca53f747ecdc65a6fc32fb1d340b7395f65c",
-      "last_modified": "Thu, 19 Nov 2026 13:18:50 GMT",
+      "last_modified": "Fri, 20 Nov 2026 06:43:54 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ARHS",
@@ -83,7 +83,7 @@
       ],
       "etag": null,
       "fingerprint": "9fdc1418e0660f9be6d772637bc8053ec8d5ee133921b5c22b5e4d186fff8992",
-      "last_modified": "Thu, 19 Nov 2026 13:18:50 GMT",
+      "last_modified": "Fri, 20 Nov 2026 12:59:33 GMT",
       "last_observed_change_at": "2026-11-10T12:42:55Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ARK.PA",
@@ -216,7 +216,7 @@
       "dependent_targets": [
         "TXRH"
       ],
-      "etag": "\"c67e578fe80984fd75b5ef70a776fbb5\"",
+      "etag": null,
       "fingerprint": "b2503dcc72051d6952e6d0903b7c0d4f4e455220b62e5322238a3cf005b7d2b7",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -225,9 +225,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 37,
+        "link_count": 38,
         "selected_link_count": 3,
-        "visible_text_chars": 2767
+        "visible_text_chars": 2748
       },
       "url": "https://investors.bjsrestaurants.com/"
     },
@@ -313,7 +313,7 @@
       ],
       "etag": null,
       "fingerprint": "dc3b8e43d115ac937517867730fccd677a084787e7c6cb682eac962b33b53d7a",
-      "last_modified": "Thu, 19 Nov 2026 13:17:42 GMT",
+      "last_modified": "Fri, 20 Nov 2026 12:29:47 GMT",
       "last_observed_change_at": "2026-11-18T13:08:56Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "CARR",
@@ -330,9 +330,9 @@
       "dependent_targets": [
         "LEU"
       ],
-      "etag": "W/\"1795091559\"",
+      "etag": "W/\"1795177244\"",
       "fingerprint": "4a5ba33ec051aa231ad5f0771acfefefd702ae43a6fa1445eee9153d78ab169d",
-      "last_modified": "Thu, 19 Nov 2026 12:32:39 GMT",
+      "last_modified": "Fri, 20 Nov 2026 12:20:44 GMT",
       "last_observed_change_at": "2026-11-06T12:10:51Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "CCJ",
@@ -494,7 +494,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 122,
         "selected_link_count": 5,
-        "visible_text_chars": 12317
+        "visible_text_chars": 12359
       },
       "url": "https://www.dksh.com/in-en/home/media/news/corrigendum-dksh-delivers-another-solid-operating-performance-strong-cash-flow-generation-and-higher-eps-in-h1-2026"
     },
@@ -540,9 +540,9 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "etag": "\"6a6ac-660a0b892c104\"",
+      "etag": "\"6a7b0-660b44cc0d8de-gzip\"",
       "fingerprint": "e65d6aa3c97dae50d0a95fde8992420197025c5e2fe10d2be3eb67c7b26f6517",
-      "last_modified": "Thu, 19 Nov 2026 13:01:07 GMT",
+      "last_modified": "Fri, 20 Nov 2026 12:22:38 GMT",
       "last_observed_change_at": "2026-11-04T12:13:50Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "DSFIR.AS",
@@ -559,7 +559,7 @@
       "dependent_targets": [
         "TMDX"
       ],
-      "etag": "\"029a1e22af53e32d71dfbb5a198d69d1\"",
+      "etag": "\"8436c5cc523dc3d228e3c72f188ebc2b\"",
       "fingerprint": "40fe6837388d97256934fce775b7a1189cd738f1ce28867c66ca5635f4456487",
       "last_modified": null,
       "last_observed_change_at": "2026-10-30T10:54:23Z",
@@ -578,7 +578,7 @@
       "dependent_targets": [
         "TXRH"
       ],
-      "etag": "\"f629ea0dc99dda03912ccdf777a47348\"",
+      "etag": null,
       "fingerprint": "d377b0e4c729f72a4bd0bba3fe623e0d99829fc5a8515e60b2d2a21feb41d3de",
       "last_modified": null,
       "last_observed_change_at": "2026-10-29T10:56:21Z",
@@ -587,7 +587,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 28,
+        "link_count": 29,
         "selected_link_count": 5,
         "visible_text_chars": 1980
       },
@@ -597,7 +597,7 @@
       "dependent_targets": [
         "ESI"
       ],
-      "etag": null,
+      "etag": "\"31238a921487faf6a9ab21a6831adc9a\"",
       "fingerprint": "26c42fede1966a51075c70f6f33da152a572c495880aafac3bff52342b3cf7d2",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -616,7 +616,7 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "etag": null,
+      "etag": "\"5733deeadd4fe463fc0c656581066d49\"",
       "fingerprint": "f8e986a00e051c40969567dff13effb8d409f5b3e47d8193785d468c0234edbf",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -625,7 +625,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 137,
+        "link_count": 136,
         "selected_link_count": 9,
         "visible_text_chars": 26982
       },
@@ -692,7 +692,7 @@
       "dependent_targets": [
         "MSM"
       ],
-      "etag": null,
+      "etag": "\"df51c5c5e2780bea5a745c7fcbcde4c6\"",
       "fingerprint": "9dc0c45dd421d404571267ded1c0d4b310c378d25eb66a96fc8fc35e3f2b7cb8",
       "last_modified": null,
       "last_observed_change_at": "2026-10-20T09:28:53Z",
@@ -703,7 +703,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 40,
         "selected_link_count": 9,
-        "visible_text_chars": 2632
+        "visible_text_chars": 2796
       },
       "url": "https://investor.fastenal.com/"
     },
@@ -770,7 +770,7 @@
       ],
       "etag": null,
       "fingerprint": "a7be7617c4da36d17f9d7cfcaed622b543abfcb800e1f8fb98b11d044a5abdad",
-      "last_modified": "Thu, 19 Nov 2026 13:20:20 GMT",
+      "last_modified": "Fri, 20 Nov 2026 13:00:59 GMT",
       "last_observed_change_at": "2026-11-17T13:31:50Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "G.MI",
@@ -787,9 +787,9 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "etag": "\"1795089320\"",
+      "etag": "\"1795178472\"",
       "fingerprint": "273d7a30b70880689aaabd432f53caf734e013de127e9016d475953e9cf8c13f",
-      "last_modified": "Thu, 19 Nov 2026 11:55:20 GMT",
+      "last_modified": "Fri, 20 Nov 2026 12:41:12 GMT",
       "last_observed_change_at": "2026-11-14T11:33:33Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "GIB.A.TO",
@@ -844,7 +844,7 @@
       "dependent_targets": [
         "MSM"
       ],
-      "etag": null,
+      "etag": "\"e40507543f1d8a270871ed123c4634e7\"",
       "fingerprint": "b0702f84bf0cd409a8091f511dcab1a8b23218142a846b8b695d95a58686adc8",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -853,9 +853,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 25,
+        "link_count": 24,
         "selected_link_count": 3,
-        "visible_text_chars": 3331
+        "visible_text_chars": 3344
       },
       "url": "https://invest.grainger.com/"
     },
@@ -863,7 +863,7 @@
       "dependent_targets": [
         "ERO"
       ],
-      "etag": "\"798f7b6c23bfccc0198f174c90e716d9\"",
+      "etag": "\"530ca33cf1ace29485b320e2053d20eb\"",
       "fingerprint": "65170d1589f5b9b75030caf62268d79700c9708e9dcbff77e3f5c18cbfd378dd",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -902,17 +902,17 @@
         "FUL"
       ],
       "etag": null,
-      "fingerprint": "9d3f7e09812409ad06f0be5cb79e7a0482e60e88351b8345b4f4eb859c859f05",
+      "fingerprint": "37439f7a67c19ea6e4e0330f2f77f3a2aa254b156db8443e0307b4e155218be3",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-12T12:48:01Z",
+      "last_observed_change_at": "2026-11-20T12:59:32Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "HEN3.DE",
       "source_quality": "HIGH",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 169,
-        "selected_link_count": 32,
-        "visible_text_chars": 13603
+        "link_count": 168,
+        "selected_link_count": 31,
+        "visible_text_chars": 12388
       },
       "url": "https://www.henkel.com/investors-and-analysts"
     },
@@ -922,7 +922,7 @@
       ],
       "etag": null,
       "fingerprint": "0f691b098eb1fc991efbd8c76fc0a3760fcfc2f09a08cc58503e9f2190a1527d",
-      "last_modified": "Thu, 19 Nov 2026 13:20:26 GMT",
+      "last_modified": "Fri, 20 Nov 2026 13:01:06 GMT",
       "last_observed_change_at": "2026-11-14T11:33:33Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "HRTG",
@@ -996,7 +996,7 @@
       "dependent_targets": [
         "TMDX"
       ],
-      "etag": null,
+      "etag": "\"7dab05182af49ff7d530caa775bc1d37\"",
       "fingerprint": "e6f61ac6865bd378f69c6d599bcddb49d6605ce56f9d09b753b025f4a1ef852f",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:51:04Z",
@@ -1005,9 +1005,9 @@
       "source_quality": "HIGH",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 53,
+        "link_count": 52,
         "selected_link_count": 6,
-        "visible_text_chars": 3902
+        "visible_text_chars": 3904
       },
       "url": "https://investors.inspiresleep.com/overview/"
     },
@@ -1055,7 +1055,7 @@
       ],
       "etag": null,
       "fingerprint": "3f14bc0755c18ba43fe75ec2a910f43cfd5d5199b5cca00ee36337a5b43039fa",
-      "last_modified": "Thu, 19 Nov 2026 07:43:30 GMT",
+      "last_modified": "Thu, 19 Nov 2026 17:15:00 GMT",
       "last_observed_change_at": "2026-11-19T13:18:48Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "JD.L",
@@ -1091,7 +1091,7 @@
       "dependent_targets": [
         "PLMR"
       ],
-      "etag": null,
+      "etag": "\"a6f66a5a8831a887c3df624274f600a0\"",
       "fingerprint": "5b66cd801e2b0bf01c9c219f37a842225ccd1db78cb119fbc1bd8679df417df7",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1100,9 +1100,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 24,
+        "link_count": 23,
         "selected_link_count": 4,
-        "visible_text_chars": 23970
+        "visible_text_chars": 23979
       },
       "url": "https://ir.kinsalecapitalgroup.com/news/news-details/2026/Kinsale-Capital-Group-Reports-Second-Quarter-2026-Results/default.aspx"
     },
@@ -1129,7 +1129,7 @@
       "dependent_targets": [
         "SNA"
       ],
-      "etag": "\"ef374b49f88c102b8a36abb7449e2a85\"",
+      "etag": "\"710421aa3e35cef99a66c6c17edc178a\"",
       "fingerprint": "5f08d5baf39aa599333b02b115c1cf8c21dc09734e1c161bc7ed655402dbf476",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1187,9 +1187,9 @@
         "ERO"
       ],
       "etag": null,
-      "fingerprint": "1e6131ccfab7b942929218f0ce3870c6f2202c07b57f74102b4ad6fc61c58540",
+      "fingerprint": "e098265ed24a4b534d65b4954680858318f0538ebc362fb3bda4c914a80123c8",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-19T13:18:48Z",
+      "last_observed_change_at": "2026-11-20T12:59:32Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LUN.TO",
       "source_quality": "HIGH",
@@ -1207,7 +1207,7 @@
       ],
       "etag": null,
       "fingerprint": "5db0a26af0813285ece1d576f711abff93067d653c02a70f0a9a534ea1194483",
-      "last_modified": "Thu, 19 Nov 2026 13:20:38 GMT",
+      "last_modified": "Fri, 20 Nov 2026 13:01:21 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LZB",
@@ -1243,7 +1243,7 @@
       "dependent_targets": [
         "WKL"
       ],
-      "etag": "\"effeffec3008b42155f97e52414bd30d\"",
+      "etag": "\"c49896e23f390f7e50769f77691d1c83\"",
       "fingerprint": "80328222e7601fd1287638ac6b53266096e9c7517605365bd50f82e75ee6d74b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-22T09:27:35Z",
@@ -1339,7 +1339,7 @@
         "MOD",
         "POWL"
       ],
-      "etag": "\"b20839aaf851fa8ae0b0ff107155b787\"",
+      "etag": "\"a1379b3cca8edeb8645a3af4b6ee5920\"",
       "fingerprint": "e3e91dfea61d4ceb8366227de37b4b9e55256d1b36f3bcb7df75a5eac5d7a9b5",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:51:04Z",
@@ -1358,7 +1358,7 @@
       "dependent_targets": [
         "TMDX"
       ],
-      "etag": "\"fe5f5b472faa7c347fe046bc01ae384a\"",
+      "etag": "\"0ac5776c88418302bd49ca456b14c853\"",
       "fingerprint": "80e0cb0d5f7c6189fd13320b747ba7ada148791bb680aa619bead5f6f8910b09",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1415,7 +1415,7 @@
       "dependent_targets": [
         "PLMR"
       ],
-      "etag": "\"f7a59633dccf4e69fe3b42dc2c6e8a14\"",
+      "etag": "\"5e8c141218f53cc0652912546d94ad53\"",
       "fingerprint": "d33170578208f54eeada5c1ef7ac8311ac84d77036f3b73c814338b82b42fbf4",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1453,7 +1453,7 @@
       "dependent_targets": [
         "POWL"
       ],
-      "etag": "\"8b4578f650e75b56b0673f94043f6a3c\"",
+      "etag": null,
       "fingerprint": "da59da4cee71fd7cce92c28a5b490edc68d93711cd49545d5c26209ba0ef0379",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1462,9 +1462,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 52,
+        "link_count": 53,
         "selected_link_count": 6,
-        "visible_text_chars": 3388
+        "visible_text_chars": 3366
       },
       "url": "https://investors.regalrexnord.com/"
     },
@@ -1512,7 +1512,7 @@
       ],
       "etag": null,
       "fingerprint": "3004330d48014557b2ab2b3c48bfae01a8de4de31fc6defa03096b9062408100",
-      "last_modified": "Thu, 19 Nov 2026 11:16:34 GMT",
+      "last_modified": "Fri, 20 Nov 2026 11:57:15 GMT",
       "last_observed_change_at": "2026-10-23T09:24:05Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SIKA.SW",
@@ -1586,7 +1586,7 @@
       "dependent_targets": [
         "WKL"
       ],
-      "etag": "\"97e2ef8f70ff1b76443c7968f0f1b94b\"",
+      "etag": "\"b824c9444a73421f96d895b43b8c994f\"",
       "fingerprint": "283969a744741affc9023ac863ccf86f1d543c226f835b92085b8ad84dce393f",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:51:04Z",
@@ -1644,9 +1644,9 @@
         "CRDA.L"
       ],
       "etag": null,
-      "fingerprint": "5cd617119b2b17bde6c7823965daaa290a3ef8f61706b16a13cf618ec538d971",
+      "fingerprint": "a63bbede674052af542a903630bc77c179cd85f2174e31d5df9c488b14847168",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-19T13:18:48Z",
+      "last_observed_change_at": "2026-11-20T12:59:32Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SY1.DE",
       "source_quality": "HIGH",
@@ -1681,7 +1681,7 @@
       "dependent_targets": [
         "MOD"
       ],
-      "etag": "\"d48540c4a76427f4dc140c6a57c6ffac\"",
+      "etag": "\"7eed09356f0da841514ae39367828034\"",
       "fingerprint": "18fc654f6b6cfb10bdb9858482b39c5de777cf953ce3ba01460b010cf3db93ef",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1702,7 +1702,7 @@
       ],
       "etag": null,
       "fingerprint": "e8dede60a10efcd10e2dbe975f6512fa42f1eb7f0dd0c55bba5b1a2e298b8771",
-      "last_modified": "Thu, 19 Nov 2026 13:20:57 GMT",
+      "last_modified": "Fri, 20 Nov 2026 12:57:56 GMT",
       "last_observed_change_at": "2026-11-05T12:26:19Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "UUUU",
@@ -1719,7 +1719,7 @@
       "dependent_targets": [
         "WKL"
       ],
-      "etag": "\"39fbc4e15444a97181e1ccdf9bf05513\"",
+      "etag": null,
       "fingerprint": "b31e5659ab1c342c9fa978290a0a82473fa79240bff02efaad43663d1a6d2ddb",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1728,7 +1728,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 104,
+        "link_count": 105,
         "selected_link_count": 8,
         "visible_text_chars": 18296
       },
@@ -1738,7 +1738,7 @@
       "dependent_targets": [
         "MOD"
       ],
-      "etag": "\"dd9b0ce86ed79d509215dc5799c3a9d0\"",
+      "etag": null,
       "fingerprint": "b6cfe2eee8651cc44e1f04488372d96924137ed8042e64d6b56635e6615c2011",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1747,9 +1747,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 241,
+        "link_count": 242,
         "selected_link_count": 19,
-        "visible_text_chars": 9504
+        "visible_text_chars": 9508
       },
       "url": "https://investors.vertiv.com/"
     },
