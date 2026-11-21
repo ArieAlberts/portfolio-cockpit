@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CAP.PA"
+  ],
+  "detected_at": "2026-11-21T12:44:07Z",
+  "event_id": "2f94de6aecb79e681deb",
+  "execution_effect": "NONE",
+  "new_fingerprint": "6f3cc05ab04f0e2222d36084050ebe11f1135f2c6e6331ba5765e1ce64335a5d",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 136,
+    "selected_link_count": 9,
+    "visible_text_chars": 26982
+  },
+  "old_fingerprint": "f8e986a00e051c40969567dff13effb8d409f5b3e47d8193785d468c0234edbf",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 136,
+    "selected_link_count": 9,
+    "visible_text_chars": 26982
+  },
+  "peer_ticker": "EPAM",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.epam.com/news/news-details/2026/EPAM-Reports-Results-for-Second-Quarter-2026/default.aspx"
+}
