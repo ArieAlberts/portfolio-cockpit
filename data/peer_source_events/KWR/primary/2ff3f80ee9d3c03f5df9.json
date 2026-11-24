@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ESI"
+  ],
+  "detected_at": "2026-11-24T14:56:15Z",
+  "event_id": "2ff3f80ee9d3c03f5df9",
+  "execution_effect": "NONE",
+  "new_fingerprint": "16ae3e9fbb58a41469173524b8d71eafbfe6ccbc06e952573774e95dfb4fd99e",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 100,
+    "selected_link_count": 8,
+    "visible_text_chars": 5018
+  },
+  "old_fingerprint": "5a06aab635a28d46b8e7913c31882603c2901e6171747f7a5edafcc514ed1330",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 100,
+    "selected_link_count": 8,
+    "visible_text_chars": 4994
+  },
+  "peer_ticker": "KWR",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.quakerhoughton.com/"
+}

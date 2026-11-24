@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "POWL"
+  ],
+  "detected_at": "2026-11-24T14:56:15Z",
+  "event_id": "a296d3698ad609ff5fe4",
+  "execution_effect": "NONE",
+  "new_fingerprint": "d8ed6fa75b3203f051e499992d5495912ee6d0bbc4243515fa2d3dbe71d2c70a",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 153,
+    "selected_link_count": 17,
+    "visible_text_chars": 8177
+  },
+  "old_fingerprint": "620fd4c0a7a92d211b8e429b0c2b0ece82f426df13ee1fd7cf2c2dbd0fd14067",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 151,
+    "selected_link_count": 17,
+    "visible_text_chars": 8122
+  },
+  "peer_ticker": "GNRC",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.generac.com/"
+}

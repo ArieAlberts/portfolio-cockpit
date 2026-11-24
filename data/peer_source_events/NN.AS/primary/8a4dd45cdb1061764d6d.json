@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ASR"
+  ],
+  "detected_at": "2026-11-24T14:56:15Z",
+  "event_id": "8a4dd45cdb1061764d6d",
+  "execution_effect": "NONE",
+  "new_fingerprint": "eadf2c89b5a4d75d4c847f448d8902d746103c9b61b900bd6092a93fb99843bd",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 65,
+    "selected_link_count": 27,
+    "visible_text_chars": 3171
+  },
+  "old_fingerprint": "bab41cab82dd441d743654bb7d25e02c9842373503d200dd52d65384e6dbd978",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 64,
+    "selected_link_count": 26,
+    "visible_text_chars": 3147
+  },
+  "peer_ticker": "NN.AS",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.nn-group.com/investors/financial-results"
+}

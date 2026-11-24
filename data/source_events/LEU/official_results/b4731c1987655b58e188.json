@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-24T14:55:45Z",
+  "event_id": "b4731c1987655b58e188",
+  "execution_effect": "NONE",
+  "new_fingerprint": "79f4c0b066f46eb463ee91bc9d99ce537e413707bdf654c0cd6b0e1e48c9f869",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 85,
+    "selected_link_count": 19,
+    "visible_text_chars": 2701
+  },
+  "old_fingerprint": "3524802e895dded17f8cb513d015546ebcf097704de4367a5e09d00584da9eb4",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 81,
+    "selected_link_count": 18,
+    "visible_text_chars": 2623
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "LEU",
+  "url": "https://investors.centrusenergy.com/financial-information/quarterly-results"
+}

@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "MOD"
+  ],
+  "detected_at": "2026-11-24T14:56:15Z",
+  "event_id": "3249c6c0a3438d4da8ed",
+  "execution_effect": "NONE",
+  "new_fingerprint": "e3813fd154be667ac09da37844a4a0c49e1891e66aad06731f0df9b33ed75c8b",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 38,
+    "selected_link_count": 6,
+    "visible_text_chars": 2887
+  },
+  "old_fingerprint": "dbea2d07cc32d7a6379b8cea0072c999e571a1cd6e5414acdbd3c3fe10a8c6a4",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 39,
+    "selected_link_count": 7,
+    "visible_text_chars": 2810
+  },
+  "peer_ticker": "LII",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investor.lennox.com/"
+}

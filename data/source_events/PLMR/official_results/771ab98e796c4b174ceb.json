@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-24T14:55:45Z",
+  "event_id": "771ab98e796c4b174ceb",
+  "execution_effect": "NONE",
+  "new_fingerprint": "1ec2948a64eb167a7be38d605658e796ce7072ed670eb9ebb7ff26b4776f77c2",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 154,
+    "selected_link_count": 35,
+    "visible_text_chars": 2721
+  },
+  "old_fingerprint": "7f4a8798965e88f9d5cac1da0b20f4ceebaf61da1ee0c9c6389662dcd7511f47",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 150,
+    "selected_link_count": 34,
+    "visible_text_chars": 2663
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "PLMR",
+  "url": "https://palomarholdingsinc.gcs-web.com/financials/quarterly-results"
+}

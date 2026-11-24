@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-24T14:55:45Z",
+  "event_id": "5adfd355975f3e9f4fd9",
+  "execution_effect": "NONE",
+  "new_fingerprint": "54beff6fe1a6b2266a24c5f606915cb2a84594deef6a1da590b3e17edbcef99b",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 67,
+    "selected_link_count": 5,
+    "visible_text_chars": 5927
+  },
+  "old_fingerprint": "223512b033707e18a0450c720815cc9b9dfc913ca94a0ceca29cd0402a253408",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 67,
+    "selected_link_count": 5,
+    "visible_text_chars": 5896
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "POWL",
+  "url": "https://powellindustriesinc.gcs-web.com/"
+}

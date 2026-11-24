@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "LEU"
+  ],
+  "detected_at": "2026-11-24T14:56:15Z",
+  "event_id": "95c0a253194ab5724806",
+  "execution_effect": "NONE",
+  "new_fingerprint": "be91bf9dac297a4820709dec353f4034e7148b3750cfe36aa73d0752999b5ed7",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 40,
+    "selected_link_count": 7,
+    "visible_text_chars": 3101
+  },
+  "old_fingerprint": "defcffed2637a95fce91eaec999ee65516488cf35ac32612afdc3f7ecde0d793",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 42,
+    "selected_link_count": 7,
+    "visible_text_chars": 2970
+  },
+  "peer_ticker": "BWXT",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investors.bwxt.com/"
+}

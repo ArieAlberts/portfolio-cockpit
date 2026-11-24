@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "ESI"
+  ],
+  "detected_at": "2026-11-24T14:56:15Z",
+  "event_id": "112e877dc50cbcc56e0e",
+  "execution_effect": "NONE",
+  "new_fingerprint": "fe852e77c9db12438135b769a6d929a551c38344c0fb956dddf99adfad8ce209",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 121,
+    "selected_link_count": 21,
+    "visible_text_chars": 8667
+  },
+  "old_fingerprint": "637a2f5c02d583190bcb7988514280dbaef3a412a11857172408439ee76b26fc",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 121,
+    "selected_link_count": 21,
+    "visible_text_chars": 8683
+  },
+  "peer_ticker": "MKSI",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://investor.mks.com/"
+}

@@ -43,7 +43,7 @@
       "dependent_targets": [
         "EMN"
       ],
-      "etag": "\"84d480f5a144e23716edbf581987e217\"",
+      "etag": "\"148a1c860d4498fe1680ccba0a4a8ad0\"",
       "fingerprint": "a1e57e30ed09971ecbc4c11a563a01290d2718f0d44f1ae821d1a1d9a12eccd5",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -64,7 +64,7 @@
       ],
       "etag": null,
       "fingerprint": "83744010bafb7846379d2ae685d7ca53f747ecdc65a6fc32fb1d340b7395f65c",
-      "last_modified": "Sun, 22 Nov 2026 06:45:54 GMT",
+      "last_modified": "Mon, 23 Nov 2026 18:51:17 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ARHS",
@@ -83,7 +83,7 @@
       ],
       "etag": null,
       "fingerprint": "9fdc1418e0660f9be6d772637bc8053ec8d5ee133921b5c22b5e4d186fff8992",
-      "last_modified": "Mon, 23 Nov 2026 14:41:18 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:56:18 GMT",
       "last_observed_change_at": "2026-11-10T12:42:55Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ARK.PA",
@@ -120,9 +120,9 @@
       "dependent_targets": [
         "DKS"
       ],
-      "etag": "\"1791543009\"",
+      "etag": "\"1795532179\"",
       "fingerprint": "6b7372981a52f7ac8455a967a951261c48ef11c2e7a2d1e773a2db5c1e31b4ea",
-      "last_modified": "Fri, 09 Oct 2026 10:50:09 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:56:19 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ASO",
@@ -131,7 +131,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 35,
         "selected_link_count": 6,
-        "visible_text_chars": 24792
+        "visible_text_chars": 24805
       },
       "url": "https://investors.academy.com/news-releases/news-release-details/academy-sports-outdoors-reports-second-quarter-fiscal-2026"
     },
@@ -208,7 +208,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 0,
         "selected_link_count": 0,
-        "visible_text_chars": 1568
+        "visible_text_chars": 1566
       },
       "url": "https://www.big5sportinggoods.com/store/company/investorRelations"
     },
@@ -235,9 +235,9 @@
       "dependent_targets": [
         "TXRH"
       ],
-      "etag": "\"1791544957\"",
+      "etag": "\"1795529372\"",
       "fingerprint": "9a0f92aafef182b8c108d4ef30424e89f666ba2d1cc4433c3bfb53d22885af77",
-      "last_modified": "Fri, 09 Oct 2026 11:22:37 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:09:32 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "BLMN",
@@ -273,18 +273,18 @@
       "dependent_targets": [
         "LEU"
       ],
-      "etag": "\"1791470719\"",
-      "fingerprint": "defcffed2637a95fce91eaec999ee65516488cf35ac32612afdc3f7ecde0d793",
-      "last_modified": "Thu, 08 Oct 2026 14:45:19 GMT",
-      "last_observed_change_at": "2026-10-06T11:39:04Z",
+      "etag": "\"1795124298\"",
+      "fingerprint": "be91bf9dac297a4820709dec353f4034e7148b3750cfe36aa73d0752999b5ed7",
+      "last_modified": "Thu, 19 Nov 2026 21:38:18 GMT",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "BWXT",
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 42,
+        "link_count": 40,
         "selected_link_count": 7,
-        "visible_text_chars": 2970
+        "visible_text_chars": 3101
       },
       "url": "https://investors.bwxt.com/"
     },
@@ -292,7 +292,7 @@
       "dependent_targets": [
         "TXRH"
       ],
-      "etag": null,
+      "etag": "\"e3159deaeb658614a90e791daebdc016\"",
       "fingerprint": "09e4d9129f3d7ac9a9689d7336bde313ff655fe5fe161c87eb15cb0701826697",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -301,9 +301,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 64,
+        "link_count": 63,
         "selected_link_count": 6,
-        "visible_text_chars": 4430
+        "visible_text_chars": 4455
       },
       "url": "https://investors.thecheesecakefactory.com/"
     },
@@ -313,7 +313,7 @@
       ],
       "etag": null,
       "fingerprint": "dc3b8e43d115ac937517867730fccd677a084787e7c6cb682eac962b33b53d7a",
-      "last_modified": "Mon, 23 Nov 2026 14:39:26 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:56:37 GMT",
       "last_observed_change_at": "2026-11-18T13:08:56Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "CARR",
@@ -330,9 +330,9 @@
       "dependent_targets": [
         "LEU"
       ],
-      "etag": "W/\"1795443066\"",
+      "etag": "W/\"1795523509\"",
       "fingerprint": "4a5ba33ec051aa231ad5f0771acfefefd702ae43a6fa1445eee9153d78ab169d",
-      "last_modified": "Mon, 23 Nov 2026 14:11:06 GMT",
+      "last_modified": "Tue, 24 Nov 2026 12:31:49 GMT",
       "last_observed_change_at": "2026-11-06T12:10:51Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "CCJ",
@@ -387,7 +387,7 @@
       "dependent_targets": [
         "MSM"
       ],
-      "etag": null,
+      "etag": "\"2af2a00d9fd192a34d3cb711923ace67\"",
       "fingerprint": "d64169d57d51f0a42f2bc89c76cbfc3fcb8b3648c845a1eab3fe38ad5fbb8a5c",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -396,7 +396,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 25,
+        "link_count": 24,
         "selected_link_count": 5,
         "visible_text_chars": 5521
       },
@@ -444,7 +444,7 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "etag": "\"e9f94c6e2d44ecb84fbe8a457583f780\"",
+      "etag": "\"70c97e0fcf773e78873ad36542897048\"",
       "fingerprint": "53cda94e5b54dec55f6e31095642ca85a7ab9b06fdb2604c6ee437693e2c0f02",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -464,7 +464,7 @@
         "EMN",
         "ESI"
       ],
-      "etag": null,
+      "etag": "\"474487e2b43586c9d0346d29b8a39d48\"",
       "fingerprint": "d951837de0853e0af1081c79de3cabea2f933cade75347921c80e536033e3a94",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -473,9 +473,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 38,
+        "link_count": 37,
         "selected_link_count": 4,
-        "visible_text_chars": 49248
+        "visible_text_chars": 49269
       },
       "url": "https://www.investors.dupont.com/news-and-media/press-release-details/2026/DuPont-Reports-Second-Quarter-2026-Results/default.aspx"
     },
@@ -492,9 +492,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 122,
+        "link_count": 124,
         "selected_link_count": 5,
-        "visible_text_chars": 12359
+        "visible_text_chars": 12451
       },
       "url": "https://www.dksh.com/in-en/home/media/news/corrigendum-dksh-delivers-another-solid-operating-performance-strong-cash-flow-generation-and-higher-eps-in-h1-2026"
     },
@@ -502,18 +502,18 @@
       "dependent_targets": [
         "SNA"
       ],
-      "etag": "\"1791518461\"",
+      "etag": "\"1795501181\"",
       "fingerprint": "cf757d2197ce342859ce7af23b69ea0539a1bfcbd4bb05ea6a64740e26a6133a",
-      "last_modified": "Fri, 09 Oct 2026 04:01:01 GMT",
+      "last_modified": "Tue, 24 Nov 2026 06:19:41 GMT",
       "last_observed_change_at": "2026-10-06T11:51:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "DOV",
       "source_quality": "HIGH",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 319,
+        "link_count": 323,
         "selected_link_count": 5,
-        "visible_text_chars": 8527
+        "visible_text_chars": 8621
       },
       "url": "https://investors.dovercorporation.com/quarterly-and-other-reports/"
     },
@@ -540,9 +540,9 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "etag": "\"6a6ac-660f2011f0619-gzip\"",
+      "etag": "\"6a6ac-66103a0d1f887\"",
       "fingerprint": "e65d6aa3c97dae50d0a95fde8992420197025c5e2fe10d2be3eb67c7b26f6517",
-      "last_modified": "Mon, 23 Nov 2026 13:59:37 GMT",
+      "last_modified": "Tue, 24 Nov 2026 11:01:11 GMT",
       "last_observed_change_at": "2026-11-04T12:13:50Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "DSFIR.AS",
@@ -559,7 +559,7 @@
       "dependent_targets": [
         "TMDX"
       ],
-      "etag": "\"24589fdd1f979ea1dd56bf76513125d0\"",
+      "etag": "\"7d268268a4b0e58c57f6d19dda434914\"",
       "fingerprint": "40fe6837388d97256934fce775b7a1189cd738f1ce28867c66ca5635f4456487",
       "last_modified": null,
       "last_observed_change_at": "2026-10-30T10:54:23Z",
@@ -578,7 +578,7 @@
       "dependent_targets": [
         "TXRH"
       ],
-      "etag": "\"e24257a1e6b6b36a3c93b2a7a8f6225f\"",
+      "etag": null,
       "fingerprint": "d377b0e4c729f72a4bd0bba3fe623e0d99829fc5a8515e60b2d2a21feb41d3de",
       "last_modified": null,
       "last_observed_change_at": "2026-10-29T10:56:21Z",
@@ -587,7 +587,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 28,
+        "link_count": 29,
         "selected_link_count": 5,
         "visible_text_chars": 1980
       },
@@ -597,7 +597,7 @@
       "dependent_targets": [
         "ESI"
       ],
-      "etag": null,
+      "etag": "\"9111ee2bc978aa1ef9dbf3370d642e3c\"",
       "fingerprint": "26c42fede1966a51075c70f6f33da152a572c495880aafac3bff52342b3cf7d2",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -616,7 +616,7 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "etag": "\"a722deb7c07c81cc22b472f6fc907fae\"",
+      "etag": "\"b7e2e1d31d5e053bfe9feec694b11d3d\"",
       "fingerprint": "6f3cc05ab04f0e2222d36084050ebe11f1135f2c6e6331ba5765e1ce64335a5d",
       "last_modified": null,
       "last_observed_change_at": "2026-11-21T12:44:07Z",
@@ -770,7 +770,7 @@
       ],
       "etag": null,
       "fingerprint": "a7be7617c4da36d17f9d7cfcaed622b543abfcb800e1f8fb98b11d044a5abdad",
-      "last_modified": "Mon, 23 Nov 2026 14:46:39 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:52:27 GMT",
       "last_observed_change_at": "2026-11-17T13:31:50Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "G.MI",
@@ -787,9 +787,9 @@
       "dependent_targets": [
         "CAP.PA"
       ],
-      "etag": "\"1795444641\"",
+      "etag": "\"1795531031\"",
       "fingerprint": "273d7a30b70880689aaabd432f53caf734e013de127e9016d475953e9cf8c13f",
-      "last_modified": "Mon, 23 Nov 2026 14:37:21 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:37:11 GMT",
       "last_observed_change_at": "2026-11-14T11:33:33Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "GIB.A.TO",
@@ -806,9 +806,9 @@
       "dependent_targets": [
         "CRDA.L"
       ],
-      "etag": "W/\"1795188000-gzip\"",
+      "etag": "W/\"1795515220-gzip\"",
       "fingerprint": "25434e1acf2d05f32f8e0679ed3a2c914595eeeb8bc5039775eda109ab4cda35",
-      "last_modified": "Fri, 20 Nov 2026 15:20:00 GMT",
+      "last_modified": "Tue, 24 Nov 2026 10:13:40 GMT",
       "last_observed_change_at": "2026-10-29T10:56:21Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "GIVN.SW",
@@ -817,7 +817,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 217,
         "selected_link_count": 22,
-        "visible_text_chars": 11360
+        "visible_text_chars": 11358
       },
       "url": "https://www.givaudan.com/investors"
     },
@@ -825,18 +825,18 @@
       "dependent_targets": [
         "POWL"
       ],
-      "etag": "\"1791408851\"",
-      "fingerprint": "620fd4c0a7a92d211b8e429b0c2b0ece82f426df13ee1fd7cf2c2dbd0fd14067",
-      "last_modified": "Wed, 07 Oct 2026 21:34:11 GMT",
-      "last_observed_change_at": "2026-10-06T11:39:04Z",
+      "etag": "\"1794938813\"",
+      "fingerprint": "d8ed6fa75b3203f051e499992d5495912ee6d0bbc4243515fa2d3dbe71d2c70a",
+      "last_modified": "Tue, 17 Nov 2026 18:06:53 GMT",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "GNRC",
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 151,
+        "link_count": 153,
         "selected_link_count": 17,
-        "visible_text_chars": 8122
+        "visible_text_chars": 8177
       },
       "url": "https://investors.generac.com/"
     },
@@ -844,7 +844,7 @@
       "dependent_targets": [
         "MSM"
       ],
-      "etag": null,
+      "etag": "\"6f463946524aab56570db23e333da6b8\"",
       "fingerprint": "b0702f84bf0cd409a8091f511dcab1a8b23218142a846b8b695d95a58686adc8",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -853,9 +853,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 25,
+        "link_count": 24,
         "selected_link_count": 3,
-        "visible_text_chars": 3333
+        "visible_text_chars": 3344
       },
       "url": "https://invest.grainger.com/"
     },
@@ -863,7 +863,7 @@
       "dependent_targets": [
         "ERO"
       ],
-      "etag": null,
+      "etag": "\"e3f0810e811cc2b3433813357ab4cfea\"",
       "fingerprint": "65170d1589f5b9b75030caf62268d79700c9708e9dcbff77e3f5c18cbfd378dd",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -872,9 +872,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 45,
+        "link_count": 44,
         "selected_link_count": 7,
-        "visible_text_chars": 104166
+        "visible_text_chars": 104178
       },
       "url": "https://www.hudbay.com/investors/press-releases/press-release-details/2026/Hudbay-Delivers-Strong-Second-Quarter-2026-Results-and-Improves-Cash-Cost-Guidance/default.aspx"
     },
@@ -912,7 +912,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 168,
         "selected_link_count": 31,
-        "visible_text_chars": 12388
+        "visible_text_chars": 12368
       },
       "url": "https://www.henkel.com/investors-and-analysts"
     },
@@ -922,7 +922,7 @@
       ],
       "etag": null,
       "fingerprint": "0f691b098eb1fc991efbd8c76fc0a3760fcfc2f09a08cc58503e9f2190a1527d",
-      "last_modified": "Mon, 23 Nov 2026 14:46:43 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:57:01 GMT",
       "last_observed_change_at": "2026-11-14T11:33:33Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "HRTG",
@@ -939,9 +939,9 @@
       "dependent_targets": [
         "POWL"
       ],
-      "etag": "\"1791089259\"",
+      "etag": "\"1795433303\"",
       "fingerprint": "a2068054996d38e7664c073fe3be8c8bdf8501f301d1da07822ac10d0f142f98",
-      "last_modified": "Sun, 04 Oct 2026 04:47:39 GMT",
+      "last_modified": "Mon, 23 Nov 2026 11:28:23 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "HUBB",
@@ -996,7 +996,7 @@
       "dependent_targets": [
         "TMDX"
       ],
-      "etag": "\"46e5b9c74d0c456e1ff1c449be734fa1\"",
+      "etag": "\"1a35f666f79001589b360e1d9a904cef\"",
       "fingerprint": "e6f61ac6865bd378f69c6d599bcddb49d6605ce56f9d09b753b025f4a1ef852f",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:51:04Z",
@@ -1015,7 +1015,7 @@
       "dependent_targets": [
         "SNA"
       ],
-      "etag": "\"ee49002c5f84ec9529502f039e0d9598\"",
+      "etag": "\"a7f8732334ec0a7c38385f84740a80bb\"",
       "fingerprint": "04f3383633135b57577327d6cb6a39031b46aafb446c7b6684c93429c08b2736",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1055,7 +1055,7 @@
       ],
       "etag": null,
       "fingerprint": "3f14bc0755c18ba43fe75ec2a910f43cfd5d5199b5cca00ee36337a5b43039fa",
-      "last_modified": "Thu, 19 Nov 2026 17:03:42 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:34:15 GMT",
       "last_observed_change_at": "2026-11-19T13:18:48Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "JD.L",
@@ -1091,7 +1091,7 @@
       "dependent_targets": [
         "PLMR"
       ],
-      "etag": "\"1cf90c7f97c3b3770bcb0cf3f032118e\"",
+      "etag": "\"5998a8aac6a3b9c67ffb53a33da1e333\"",
       "fingerprint": "5b66cd801e2b0bf01c9c219f37a842225ccd1db78cb119fbc1bd8679df417df7",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1110,10 +1110,10 @@
       "dependent_targets": [
         "ESI"
       ],
-      "etag": "\"1791089769\"",
-      "fingerprint": "5a06aab635a28d46b8e7913c31882603c2901e6171747f7a5edafcc514ed1330",
-      "last_modified": "Sun, 04 Oct 2026 04:56:09 GMT",
-      "last_observed_change_at": "2026-10-06T11:39:04Z",
+      "etag": "\"1795106668\"",
+      "fingerprint": "16ae3e9fbb58a41469173524b8d71eafbfe6ccbc06e952573774e95dfb4fd99e",
+      "last_modified": "Thu, 19 Nov 2026 16:44:28 GMT",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "KWR",
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1121,7 +1121,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 100,
         "selected_link_count": 8,
-        "visible_text_chars": 4994
+        "visible_text_chars": 5018
       },
       "url": "https://investors.quakerhoughton.com/"
     },
@@ -1129,7 +1129,7 @@
       "dependent_targets": [
         "SNA"
       ],
-      "etag": null,
+      "etag": "\"f87f159778d9ca79d25c778f7368d909\"",
       "fingerprint": "5f08d5baf39aa599333b02b115c1cf8c21dc09734e1c161bc7ed655402dbf476",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1138,9 +1138,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 35,
+        "link_count": 34,
         "selected_link_count": 6,
-        "visible_text_chars": 27343
+        "visible_text_chars": 27375
       },
       "url": "https://ir.lincolnelectric.com/news/news-details/2026/Lincoln-Electric-Reports-Second-Quarter-2026-Results/default.aspx"
     },
@@ -1148,18 +1148,18 @@
       "dependent_targets": [
         "MOD"
       ],
-      "etag": "\"1791464972\"",
-      "fingerprint": "dbea2d07cc32d7a6379b8cea0072c999e571a1cd6e5414acdbd3c3fe10a8c6a4",
-      "last_modified": "Thu, 08 Oct 2026 13:09:32 GMT",
-      "last_observed_change_at": "2026-10-09T11:22:30Z",
+      "etag": "\"1794887376\"",
+      "fingerprint": "e3813fd154be667ac09da37844a4a0c49e1891e66aad06731f0df9b33ed75c8b",
+      "last_modified": "Tue, 17 Nov 2026 03:49:36 GMT",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LII",
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 39,
-        "selected_link_count": 7,
-        "visible_text_chars": 2810
+        "link_count": 38,
+        "selected_link_count": 6,
+        "visible_text_chars": 2887
       },
       "url": "https://investor.lennox.com/"
     },
@@ -1187,9 +1187,9 @@
         "ERO"
       ],
       "etag": null,
-      "fingerprint": "2d93fa4ad1337e12c6b28ced5abdcb9a6c21f78a8f81e740891bc32afded6906",
+      "fingerprint": "f8fe3d6334897c527259fb75b5d3de969cb4bf4e05e2e6d5dc05d1c9522909fe",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-23T14:45:14Z",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LUN.TO",
       "source_quality": "HIGH",
@@ -1207,7 +1207,7 @@
       ],
       "etag": null,
       "fingerprint": "5db0a26af0813285ece1d576f711abff93067d653c02a70f0a9a534ea1194483",
-      "last_modified": "Mon, 23 Nov 2026 14:15:21 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:58:10 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "LZB",
@@ -1243,7 +1243,7 @@
       "dependent_targets": [
         "WKL"
       ],
-      "etag": null,
+      "etag": "\"80d70e11f819635e2fdc6829e7af9fb7\"",
       "fingerprint": "80328222e7601fd1287638ac6b53266096e9c7517605365bd50f82e75ee6d74b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-22T09:27:35Z",
@@ -1252,9 +1252,9 @@
       "source_quality": "HIGH",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 49,
+        "link_count": 48,
         "selected_link_count": 5,
-        "visible_text_chars": 3086
+        "visible_text_chars": 3082
       },
       "url": "https://ir.moodys.com/investor-relations/"
     },
@@ -1281,10 +1281,10 @@
       "dependent_targets": [
         "ESI"
       ],
-      "etag": "\"1791090233\"",
-      "fingerprint": "637a2f5c02d583190bcb7988514280dbaef3a412a11857172408439ee76b26fc",
-      "last_modified": "Sun, 04 Oct 2026 05:03:53 GMT",
-      "last_observed_change_at": "2026-10-06T11:39:04Z",
+      "etag": "\"1795039383\"",
+      "fingerprint": "fe852e77c9db12438135b769a6d929a551c38344c0fb956dddf99adfad8ce209",
+      "last_modified": "Wed, 18 Nov 2026 22:03:03 GMT",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "MKSI",
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
@@ -1292,7 +1292,7 @@
         "fingerprint_mode": "RELEVANT_LINKS",
         "link_count": 121,
         "selected_link_count": 21,
-        "visible_text_chars": 8683
+        "visible_text_chars": 8667
       },
       "url": "https://investor.mks.com/"
     },
@@ -1301,17 +1301,17 @@
         "ASR"
       ],
       "etag": null,
-      "fingerprint": "bab41cab82dd441d743654bb7d25e02c9842373503d200dd52d65384e6dbd978",
+      "fingerprint": "eadf2c89b5a4d75d4c847f448d8902d746103c9b61b900bd6092a93fb99843bd",
       "last_modified": null,
-      "last_observed_change_at": "2026-10-06T11:51:04Z",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "NN.AS",
       "source_quality": "HIGH",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 64,
-        "selected_link_count": 26,
-        "visible_text_chars": 3147
+        "link_count": 65,
+        "selected_link_count": 27,
+        "visible_text_chars": 3171
       },
       "url": "https://www.nn-group.com/investors/financial-results"
     },
@@ -1319,9 +1319,9 @@
       "dependent_targets": [
         "OKLO"
       ],
-      "etag": "\"1791545062\"",
+      "etag": "\"1795519388\"",
       "fingerprint": "6aa3084a95cfceb962bc172f6f71eaa3923af31eb6ec10dfe828d54b081c6a49",
-      "last_modified": "Fri, 09 Oct 2026 11:24:22 GMT",
+      "last_modified": "Tue, 24 Nov 2026 11:23:08 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "NNE",
@@ -1358,7 +1358,7 @@
       "dependent_targets": [
         "TMDX"
       ],
-      "etag": "\"2a3518a9f1760c44f1ac7f2c6cdae614\"",
+      "etag": "\"2c28d9037a604cad6ad8e98e87e39e95\"",
       "fingerprint": "80e0cb0d5f7c6189fd13320b747ba7ada148791bb680aa619bead5f6f8910b09",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1415,7 +1415,7 @@
       "dependent_targets": [
         "PLMR"
       ],
-      "etag": "\"12fa841f6b4b87ddd4cd59c77ce6b37f\"",
+      "etag": "\"eae4cd8498b2ae475982ca042702ec6e\"",
       "fingerprint": "d33170578208f54eeada5c1ef7ac8311ac84d77036f3b73c814338b82b42fbf4",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1453,7 +1453,7 @@
       "dependent_targets": [
         "POWL"
       ],
-      "etag": null,
+      "etag": "\"449b651fe447bf62b185ea5f162d681b\"",
       "fingerprint": "da59da4cee71fd7cce92c28a5b490edc68d93711cd49545d5c26209ba0ef0379",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1462,9 +1462,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 53,
+        "link_count": 52,
         "selected_link_count": 6,
-        "visible_text_chars": 3366
+        "visible_text_chars": 3388
       },
       "url": "https://investors.regalrexnord.com/"
     },
@@ -1472,7 +1472,7 @@
       "dependent_targets": [
         "ASR"
       ],
-      "etag": "\"-510310638\"",
+      "etag": "\"-778885192\"",
       "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1512,7 +1512,7 @@
       ],
       "etag": null,
       "fingerprint": "3004330d48014557b2ab2b3c48bfae01a8de4de31fc6defa03096b9062408100",
-      "last_modified": "Mon, 23 Nov 2026 14:47:04 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:54:17 GMT",
       "last_observed_change_at": "2026-10-23T09:24:05Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SIKA.SW",
@@ -1529,9 +1529,9 @@
       "dependent_targets": [
         "PLMR"
       ],
-      "etag": "\"1791090471\"",
+      "etag": "\"1795418937\"",
       "fingerprint": "f4cfe04974b1b65824dbc01bf9c37d8ab00e53103f998dcb91ab31988e097fe7",
-      "last_modified": "Sun, 04 Oct 2026 05:07:51 GMT",
+      "last_modified": "Mon, 23 Nov 2026 07:28:57 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SKWD",
@@ -1586,7 +1586,7 @@
       "dependent_targets": [
         "WKL"
       ],
-      "etag": "\"88fe53b5d184f55bece789a0d85913f7\"",
+      "etag": null,
       "fingerprint": "283969a744741affc9023ac863ccf86f1d543c226f835b92085b8ad84dce393f",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:51:04Z",
@@ -1644,9 +1644,9 @@
         "CRDA.L"
       ],
       "etag": null,
-      "fingerprint": "906ac3805251f6488cf08ffcc041745d441243e837a119f2b0a1026eac231ebe",
+      "fingerprint": "9bcfedb2918021c5c2f68c82b642b57ae50bf30b096fea21ce68152d45090bb8",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-23T14:45:14Z",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "SY1.DE",
       "source_quality": "HIGH",
@@ -1662,9 +1662,9 @@
       "dependent_targets": [
         "WKL"
       ],
-      "etag": "\"1791095613\"",
+      "etag": "\"1795148472\"",
       "fingerprint": "8dd94d7f73b27034bfac82cdfbd9b1f3f9d9bbc80a27775d729aeae9f16994b0",
-      "last_modified": "Sun, 04 Oct 2026 06:33:33 GMT",
+      "last_modified": "Fri, 20 Nov 2026 04:21:12 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "TRI.TO",
@@ -1681,7 +1681,7 @@
       "dependent_targets": [
         "MOD"
       ],
-      "etag": null,
+      "etag": "\"71c9048845f46a9bafc1ffc663f03396\"",
       "fingerprint": "18fc654f6b6cfb10bdb9858482b39c5de777cf953ce3ba01460b010cf3db93ef",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1690,7 +1690,7 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 55,
+        "link_count": 54,
         "selected_link_count": 8,
         "visible_text_chars": 3373
       },
@@ -1702,7 +1702,7 @@
       ],
       "etag": null,
       "fingerprint": "e8dede60a10efcd10e2dbe975f6512fa42f1eb7f0dd0c55bba5b1a2e298b8771",
-      "last_modified": "Mon, 23 Nov 2026 14:35:10 GMT",
+      "last_modified": "Tue, 24 Nov 2026 14:46:08 GMT",
       "last_observed_change_at": "2026-11-05T12:26:19Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "UUUU",
@@ -1738,7 +1738,7 @@
       "dependent_targets": [
         "MOD"
       ],
-      "etag": "\"ceda1da2d38b06b42e27e200fdf1bf2c\"",
+      "etag": null,
       "fingerprint": "b6cfe2eee8651cc44e1f04488372d96924137ed8042e64d6b56635e6615c2011",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1747,9 +1747,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 241,
+        "link_count": 242,
         "selected_link_count": 19,
-        "visible_text_chars": 9504
+        "visible_text_chars": 9508
       },
       "url": "https://investors.vertiv.com/"
     },
@@ -1757,7 +1757,7 @@
       "dependent_targets": [
         "WSM"
       ],
-      "etag": null,
+      "etag": "\"3bb1d12ef623f1f758e3a9fe824cee60\"",
       "fingerprint": "22846e4f1b2d89669c8cb4ca2422c23c510bcf56810fc6c36f5dcc346971dab4",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:39:04Z",
@@ -1766,9 +1766,9 @@
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 54,
+        "link_count": 53,
         "selected_link_count": 5,
-        "visible_text_chars": 2405
+        "visible_text_chars": 2399
       },
       "url": "https://investor.wayfair.com/"
     },
@@ -1777,17 +1777,17 @@
         "MSM"
       ],
       "etag": null,
-      "fingerprint": "63b9948a170a1d4a8d57aff8db2714688d58a78c54ac38e2d9bab3e509fe4b6b",
+      "fingerprint": "8343470e027306edcbeeca70c61c510e8d5c16213e2346c5f1790f33475c8d1b",
       "last_modified": null,
-      "last_observed_change_at": "2026-10-08T11:25:08Z",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "WCC",
       "source_quality": "FALLBACK_STATIC_OR_IR_PAGE",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 95,
+        "link_count": 94,
         "selected_link_count": 7,
-        "visible_text_chars": 3559
+        "visible_text_chars": 3599
       },
       "url": "https://investors.wesco.com/"
     },
@@ -1833,9 +1833,9 @@
       "dependent_targets": [
         "EMN"
       ],
-      "etag": "\"1791115969\"",
+      "etag": "\"1795485970\"",
       "fingerprint": "2b4120ceee082ada0d24b3b6f9195c2dbd116fdf560da09cc6aa2a009d4bf981",
-      "last_modified": "Sun, 04 Oct 2026 12:12:49 GMT",
+      "last_modified": "Tue, 24 Nov 2026 02:06:10 GMT",
       "last_observed_change_at": "2026-10-06T11:39:04Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "WLK",
@@ -1852,18 +1852,18 @@
       "dependent_targets": [
         "ASR"
       ],
-      "etag": "\"fh26uruf2d8qdm\"",
-      "fingerprint": "8fe1fa27b96f33f31c38f149b178bde622bfcae49f1d1b5181c79dac19fd6754",
+      "etag": null,
+      "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-12T12:48:01Z",
+      "last_observed_change_at": "2026-11-24T14:56:15Z",
       "mode": "HTML_PAGE",
       "peer_ticker": "ZURN.SW",
       "source_quality": "HIGH",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 167,
-        "selected_link_count": 27,
-        "visible_text_chars": 4094
+        "link_count": 0,
+        "selected_link_count": 0,
+        "visible_text_chars": 0
       },
       "url": "https://www.zurich.com/investor-relations/results-and-reports"
     }

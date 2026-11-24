@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-24T14:55:45Z",
+  "event_id": "45f1358ee7034e64637f",
+  "execution_effect": "NONE",
+  "new_fingerprint": "914a1e0e96b8d9d24362963623b3c0dc131b199dceaca2290feacfb8403adff5",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 46,
+    "selected_link_count": 15,
+    "visible_text_chars": 1746
+  },
+  "old_fingerprint": "063394714c719d2bb67b7d6cf48932c670307c47aeaece51938ad6a8f49608cf",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 45,
+    "selected_link_count": 14,
+    "visible_text_chars": 1775
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "TMDX",
+  "url": "https://investors.transmedics.com/news-releases/"
+}
