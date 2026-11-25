@@ -82,23 +82,23 @@
       "url": "https://www.croda.com/en-gb/investors/results-presentations-and-reports"
     },
     "DKS:official_results": {
-      "etag": "\"f102de14184dae963245bc638494388e\"",
-      "fingerprint": "b21378758542f1d51b4672b0a1cd62bbc8c29290c06721af7e054dd1b95a64ac",
+      "etag": "\"59aedaddcded9dff72bfee292e0a86ee\"",
+      "fingerprint": "e19155de793bb7b1ebcd2dad2a91a501108581eb9817db91f374d093859ef881",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-24T14:55:45Z",
+      "last_observed_change_at": "2026-11-25T14:28:54Z",
       "mode": "HTML_PAGE",
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 39,
-        "selected_link_count": 9,
-        "visible_text_chars": 1757
+        "link_count": 40,
+        "selected_link_count": 10,
+        "visible_text_chars": 1812
       },
       "ticker": "DKS",
       "url": "https://investors.dicks.com/overview/"
     },
     "EMN:official_results": {
-      "etag": "\"65008b19dee5d0d7e0c4de09ac5ca89f\"",
+      "etag": "\"f8400df1c40e3e28f7381762342bc56b\"",
       "fingerprint": "344d1f2462e2f2f9fd5eaf60f95e4a5337374e0eadf936b0d76c3f70714c22e0",
       "last_modified": null,
       "last_observed_change_at": "2026-10-31T10:26:05Z",
@@ -130,7 +130,7 @@
       "url": "https://www.ero.com/investors/reports-and-filings/"
     },
     "ESI:official_results": {
-      "etag": null,
+      "etag": "\"132eb6bec5ba5a0f1ed3dcae129cbd6b\"",
       "fingerprint": "8bc26f33d86b6734994c823ce48f7312e6911997dc0c383995d57336290a018b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -138,15 +138,15 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 62,
+        "link_count": 61,
         "selected_link_count": 6,
-        "visible_text_chars": 3609
+        "visible_text_chars": 3618
       },
       "ticker": "ESI",
       "url": "https://ir.elementsolutionsinc.com/Investors/Overview/"
     },
     "FUL:official_results": {
-      "etag": null,
+      "etag": "\"11fbc2ccfa54ada154eb49b10ce858f5\"",
       "fingerprint": "efb107c117ecac3d55592c9fce6955d5e5ca72a50b5bd8b35d0636f97c2467f8",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -154,9 +154,9 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 73,
+        "link_count": 72,
         "selected_link_count": 5,
-        "visible_text_chars": 4117
+        "visible_text_chars": 4122
       },
       "ticker": "FUL",
       "url": "https://investors.hbfuller.com/"
@@ -194,7 +194,7 @@
       "url": "https://investors.centrusenergy.com/financial-information/quarterly-results"
     },
     "MOD:official_results": {
-      "etag": "\"8dae6ea6dc09921e75bd3ae9d6bcbd29\"",
+      "etag": "\"a9b331d7f28ffefe6700deff7ef6910a\"",
       "fingerprint": "6cb8ca9b07c89fdd5be35382ba35f73fc0f4ff601ad929e3abc89decbb24beb9",
       "last_modified": null,
       "last_observed_change_at": "2026-11-17T13:31:33Z",
@@ -210,23 +210,23 @@
       "url": "https://investors.modine.com/financials/quarterly-results/default.aspx"
     },
     "MSM:official_results": {
-      "etag": "W/\"673001752\"",
-      "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
+      "etag": null,
+      "fingerprint": "b8947db60db0d97114ceee1efc6b52cb93ddbe35182a464cbd33a2742c33940d",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-12T12:47:47Z",
+      "last_observed_change_at": "2026-11-25T14:28:54Z",
       "mode": "HTML_PAGE",
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 0,
-        "selected_link_count": 0,
-        "visible_text_chars": 17122
+        "link_count": 56,
+        "selected_link_count": 5,
+        "visible_text_chars": 1687
       },
       "ticker": "MSM",
       "url": "https://investor.mscdirect.com/quarterly-results"
     },
     "OKLO:official_results": {
-      "etag": "\"bd9469ccc3e75760b1dbeb6b912aa1ee\"",
+      "etag": "\"064ac61789978de010250988a3d56d1f\"",
       "fingerprint": "cf6b32994fa3a3b5a614e6cafb3f0fc97ad00e16983e4f0c696294c625655272",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -274,7 +274,7 @@
       "url": "https://powellindustriesinc.gcs-web.com/"
     },
     "ROR.L:reporting_centre": {
-      "etag": "W/\"fvmx0dywdu63rc\"",
+      "etag": "W/\"4niefbuz8t63uj\"",
       "fingerprint": "50270e228d7a6dd3289591e371aa9fb2de972918fddba343ab2ccfd1bff35ad2",
       "last_modified": null,
       "last_observed_change_at": "2026-11-18T13:08:37Z",
@@ -338,9 +338,9 @@
       "url": "https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx"
     },
     "WKL:regulated_news": {
-      "etag": "\"1795531524\"",
+      "etag": "\"1795616428\"",
       "fingerprint": "e83520a579e7015391c10def313f61041fe60f86bc589ff0a082ed644b2659a0",
-      "last_modified": "Tue, 24 Nov 2026 14:45:24 GMT",
+      "last_modified": "Wed, 25 Nov 2026 14:20:28 GMT",
       "last_observed_change_at": "2026-10-06T12:00:22Z",
       "mode": "HTML_PAGE",
       "source_id": "regulated_news",
@@ -354,7 +354,7 @@
       "url": "https://live.euronext.com/en/product/equities/NL0000395903-XAMS"
     },
     "WSM:official_results": {
-      "etag": null,
+      "etag": "\"034b21f5bdafb590568e52a0e28ad2a8\"",
       "fingerprint": "04ef56538b2f651e8e307744b291defae9b558a13ea0c8ffc563b0e441ffbf32",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -362,9 +362,9 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 29,
+        "link_count": 28,
         "selected_link_count": 6,
-        "visible_text_chars": 971
+        "visible_text_chars": 980
       },
       "ticker": "WSM",
       "url": "https://ir.williams-sonomainc.com/investor-information/news-releases/"

@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-25T14:28:54Z",
+  "event_id": "cf5f859adef4e1ee95a6",
+  "execution_effect": "NONE",
+  "new_fingerprint": "e19155de793bb7b1ebcd2dad2a91a501108581eb9817db91f374d093859ef881",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 40,
+    "selected_link_count": 10,
+    "visible_text_chars": 1812
+  },
+  "old_fingerprint": "b21378758542f1d51b4672b0a1cd62bbc8c29290c06721af7e054dd1b95a64ac",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 39,
+    "selected_link_count": 9,
+    "visible_text_chars": 1757
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_results",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "DKS",
+  "url": "https://investors.dicks.com/overview/"
+}
