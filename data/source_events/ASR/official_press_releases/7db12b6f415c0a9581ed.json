@@ -1,0 +1,26 @@
+{
+  "detected_at": "2026-11-26T13:57:27Z",
+  "event_id": "7db12b6f415c0a9581ed",
+  "execution_effect": "NONE",
+  "new_fingerprint": "0babf07b8c7d5742560e1028ea1ccbb748979e5f669aad647363e059b6af895c",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 45,
+    "selected_link_count": 5,
+    "visible_text_chars": 2158
+  },
+  "old_fingerprint": "f2e73b3f80a9e4606e76be135f1d5764e4a460ff2d8aa64b4fad6fe30878d62c",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 58,
+    "selected_link_count": 14,
+    "visible_text_chars": 4369
+  },
+  "requires_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_id": "official_press_releases",
+  "status": "NEW_DATA_DETECTED",
+  "ticker": "ASR",
+  "url": "https://asrnl.com/news-and-press/press-releases"
+}

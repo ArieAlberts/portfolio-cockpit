@@ -35,16 +35,16 @@
     },
     "ASR:official_press_releases": {
       "etag": null,
-      "fingerprint": "f2e73b3f80a9e4606e76be135f1d5764e4a460ff2d8aa64b4fad6fe30878d62c",
+      "fingerprint": "0babf07b8c7d5742560e1028ea1ccbb748979e5f669aad647363e059b6af895c",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-24T14:55:45Z",
+      "last_observed_change_at": "2026-11-26T13:57:27Z",
       "mode": "HTML_PAGE",
       "source_id": "official_press_releases",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 58,
-        "selected_link_count": 14,
-        "visible_text_chars": 4369
+        "link_count": 45,
+        "selected_link_count": 5,
+        "visible_text_chars": 2158
       },
       "ticker": "ASR",
       "url": "https://asrnl.com/news-and-press/press-releases"
@@ -82,7 +82,7 @@
       "url": "https://www.croda.com/en-gb/investors/results-presentations-and-reports"
     },
     "DKS:official_results": {
-      "etag": "\"59aedaddcded9dff72bfee292e0a86ee\"",
+      "etag": "\"0c8b5fe5d10710c2645243d56793b610\"",
       "fingerprint": "e19155de793bb7b1ebcd2dad2a91a501108581eb9817db91f374d093859ef881",
       "last_modified": null,
       "last_observed_change_at": "2026-11-25T14:28:54Z",
@@ -98,7 +98,7 @@
       "url": "https://investors.dicks.com/overview/"
     },
     "EMN:official_results": {
-      "etag": "\"f8400df1c40e3e28f7381762342bc56b\"",
+      "etag": "\"6ee1ed01c38a5b4039784f543988c8e6\"",
       "fingerprint": "344d1f2462e2f2f9fd5eaf60f95e4a5337374e0eadf936b0d76c3f70714c22e0",
       "last_modified": null,
       "last_observed_change_at": "2026-10-31T10:26:05Z",
@@ -130,7 +130,7 @@
       "url": "https://www.ero.com/investors/reports-and-filings/"
     },
     "ESI:official_results": {
-      "etag": "\"132eb6bec5ba5a0f1ed3dcae129cbd6b\"",
+      "etag": "\"2b7fd2f246529b50b4ad7c0ee259b073\"",
       "fingerprint": "8bc26f33d86b6734994c823ce48f7312e6911997dc0c383995d57336290a018b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -146,7 +146,7 @@
       "url": "https://ir.elementsolutionsinc.com/Investors/Overview/"
     },
     "FUL:official_results": {
-      "etag": "\"11fbc2ccfa54ada154eb49b10ce858f5\"",
+      "etag": null,
       "fingerprint": "efb107c117ecac3d55592c9fce6955d5e5ca72a50b5bd8b35d0636f97c2467f8",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -154,15 +154,15 @@
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 72,
+        "link_count": 73,
         "selected_link_count": 5,
-        "visible_text_chars": 4122
+        "visible_text_chars": 4117
       },
       "ticker": "FUL",
       "url": "https://investors.hbfuller.com/"
     },
     "IMCD:investor_news": {
-      "etag": "W/\"9BFD1DB690B91DE98AF506A1E440D941--gzip\"",
+      "etag": "W/\"479B67256229780DDAC75596C3E702DB--gzip\"",
       "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:38:58Z",
@@ -194,7 +194,7 @@
       "url": "https://investors.centrusenergy.com/financial-information/quarterly-results"
     },
     "MOD:official_results": {
-      "etag": "\"a9b331d7f28ffefe6700deff7ef6910a\"",
+      "etag": "\"1ceb77386e53ab764d8773fa74abc87c\"",
       "fingerprint": "6cb8ca9b07c89fdd5be35382ba35f73fc0f4ff601ad929e3abc89decbb24beb9",
       "last_modified": null,
       "last_observed_change_at": "2026-11-17T13:31:33Z",
@@ -210,23 +210,23 @@
       "url": "https://investors.modine.com/financials/quarterly-results/default.aspx"
     },
     "MSM:official_results": {
-      "etag": null,
-      "fingerprint": "b8947db60db0d97114ceee1efc6b52cb93ddbe35182a464cbd33a2742c33940d",
+      "etag": "W/\"673001752\"",
+      "fingerprint": "c18fbf192f8697e91444b95581c52428956c16e66c17d27767529a3ecee80c7b",
       "last_modified": null,
-      "last_observed_change_at": "2026-11-25T14:28:54Z",
+      "last_observed_change_at": "2026-11-26T13:57:27Z",
       "mode": "HTML_PAGE",
       "source_id": "official_results",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 56,
-        "selected_link_count": 5,
-        "visible_text_chars": 1687
+        "link_count": 0,
+        "selected_link_count": 0,
+        "visible_text_chars": 17122
       },
       "ticker": "MSM",
       "url": "https://investor.mscdirect.com/quarterly-results"
     },
     "OKLO:official_results": {
-      "etag": "\"064ac61789978de010250988a3d56d1f\"",
+      "etag": "\"7ac7e670d85e35e5d965ea8b43ecfe03\"",
       "fingerprint": "cf6b32994fa3a3b5a614e6cafb3f0fc97ad00e16983e4f0c696294c625655272",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",
@@ -274,7 +274,7 @@
       "url": "https://powellindustriesinc.gcs-web.com/"
     },
     "ROR.L:reporting_centre": {
-      "etag": "W/\"4niefbuz8t63uj\"",
+      "etag": "W/\"u71uii0ags63uj\"",
       "fingerprint": "50270e228d7a6dd3289591e371aa9fb2de972918fddba343ab2ccfd1bff35ad2",
       "last_modified": null,
       "last_observed_change_at": "2026-11-18T13:08:37Z",
@@ -338,23 +338,23 @@
       "url": "https://investor.texasroadhouse.com/financials/quarterly-results/default.aspx"
     },
     "WKL:regulated_news": {
-      "etag": "\"1795616428\"",
+      "etag": "\"1795700945\"",
       "fingerprint": "e83520a579e7015391c10def313f61041fe60f86bc589ff0a082ed644b2659a0",
-      "last_modified": "Wed, 25 Nov 2026 14:20:28 GMT",
+      "last_modified": "Thu, 26 Nov 2026 13:49:05 GMT",
       "last_observed_change_at": "2026-10-06T12:00:22Z",
       "mode": "HTML_PAGE",
       "source_id": "regulated_news",
       "summary": {
         "fingerprint_mode": "RELEVANT_LINKS",
-        "link_count": 321,
+        "link_count": 322,
         "selected_link_count": 13,
-        "visible_text_chars": 12008
+        "visible_text_chars": 12048
       },
       "ticker": "WKL",
       "url": "https://live.euronext.com/en/product/equities/NL0000395903-XAMS"
     },
     "WSM:official_results": {
-      "etag": "\"034b21f5bdafb590568e52a0e28ad2a8\"",
+      "etag": "\"5ca7317dd2151e4780b44df9fc487b05\"",
       "fingerprint": "04ef56538b2f651e8e307744b291defae9b558a13ea0c8ffc563b0e441ffbf32",
       "last_modified": null,
       "last_observed_change_at": "2026-10-06T11:50:46Z",

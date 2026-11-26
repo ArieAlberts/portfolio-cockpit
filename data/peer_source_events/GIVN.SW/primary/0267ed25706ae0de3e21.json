@@ -1,0 +1,29 @@
+{
+  "dependent_targets": [
+    "CRDA.L"
+  ],
+  "detected_at": "2026-11-26T13:57:43Z",
+  "event_id": "0267ed25706ae0de3e21",
+  "execution_effect": "NONE",
+  "new_fingerprint": "b6ded86126c600405243ea0d0d32d95c3c34b3a7b024b62e074436c72fc02ef9",
+  "new_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 217,
+    "selected_link_count": 24,
+    "visible_text_chars": 11238
+  },
+  "old_fingerprint": "25434e1acf2d05f32f8e0679ed3a2c914595eeeb8bc5039775eda109ab4cda35",
+  "old_summary": {
+    "fingerprint_mode": "RELEVANT_LINKS",
+    "link_count": 217,
+    "selected_link_count": 22,
+    "visible_text_chars": 11358
+  },
+  "peer_ticker": "GIVN.SW",
+  "requires_peer_standardization": true,
+  "schema_version": 2,
+  "score_update_allowed": false,
+  "source_quality": "HIGH",
+  "status": "PEER_SOURCE_CHANGED",
+  "url": "https://www.givaudan.com/investors"
+}
